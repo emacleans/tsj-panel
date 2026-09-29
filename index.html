@@ -127,6 +127,7 @@
       <ul class="pasos">
         <li><button class="paso" data-accion="verificar"><span class="num">1</span><span><div class="titulo">Verificar</div><div class="desc">Confirma que el sitio responde bien, sin descargar nada.</div></span></button></li>
         <li><button class="paso destacado" data-accion="iniciar"><span class="num">2</span><span><div class="titulo">Iniciar compilación</div><div class="desc">Descarga todo con el vigilante; corrige _revisar y EXP- obsoletos solo, al terminar.</div></span></button></li>
+        <li><button class="paso" data-accion="auditar"><span class="num">5</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Baja la lista completa del sitio (sin descargar PDF) y dice qué AS faltan por sala.</div></span></button></li>
         <li><button class="paso" data-accion="corregir"><span class="num">3</span><span><div class="titulo">Corregir _revisar</div><div class="desc">Reprocesa lo que quedó sin identificar.</div></span></button></li>
         <li class="modo"><label><input type="radio" name="m-corregir" value="sim" checked> Simulación</label><label><input type="radio" name="m-corregir" value="real"> Aplicar de verdad</label></li>
         <li><button class="paso" data-accion="detectar"><span class="num">4</span><span><div class="titulo">Detectar EXP- obsoletos</div><div class="desc">Renombra los que ya tienen número de Auto Supremo.</div></span></button></li>
@@ -154,8 +155,8 @@
 
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
-const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', verificacion: 'Verificando', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
-const NOMBRE_ACCION = { verificar: 'Verificar', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
+const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
+const NOMBRE_ACCION = { verificar: 'Verificar', auditar: 'Auditar contra el sitio', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts' };
 let TOKEN = null, equipos = [], gestion = null, pendiente = null, destinoManual = false;
 const $ = id => document.getElementById(id);
@@ -287,16 +288,17 @@ function renderAvance() {
   const total = `<div class="total"><span>Total</span><span>${av.total_archivos}${av.total_esperado ? ' / ' + av.total_esperado + (av.pct_total != null ? ' · ' + av.pct_total + ' %' : '') : ''}</span></div>`;
   let conc = '';
   if (av.total_esperado && av.salas.some(x => x.depurados != null)) {
-    const tr = av.salas.filter(x => x.esperado).map(x => `<tr><td>${esc(x.sala)}</td><td>${x.esperado}</td><td>${x.archivos}</td><td>${x.revisar}${x.posible_dup ? ' <small>(' + x.posible_dup + ' posible dup.)</small>' : ''}</td><td>${x.depurados}${x.dep_registrados ? ' <small>(' + x.dep_registrados + ' reg.)</small>' : ''}</td></tr>`).join('');
+    const au = av.auditoria && av.auditoria.salas || null;
+    const tr = av.salas.filter(x => x.esperado).map(x => { const a = au && au[x.sala]; return `<tr><td>${esc(x.sala)}</td><td>${x.esperado}</td><td>${x.archivos}</td><td>${x.revisar}${x.posible_dup ? ' <small>(' + x.posible_dup + ' posible dup.)</small>' : ''}</td><td>${x.depurados}${x.dep_registrados ? ' <small>(' + x.dep_registrados + ' reg.)</small>' : ''}</td>${au ? (a ? `<td>${a.repetidos_en_sitio}</td><td>${a.faltan}${a.faltan ? ' <small>(' + a.faltan_as + ' AS' + (a.faltan_exp ? ' + ' + a.faltan_exp + ' sin nº' : '') + ')</small>' : ''}</td>` : '<td>–</td><td>–</td>') : ''}</tr>`; }).join('');
     const sinSala = av.revisar_sin_sala ? `<div class="nota">${av.revisar_sin_sala} archivo(s) en _revisar sin sala identificable (no suman a ninguna fila).</div>` : '';
     const cierra = av.activo ? 'Por descargar aún' : 'Depurados / sin localizar';
     const ci = av.cierre || {};
     const clase = { cuadra: 'exito', abierta: 'activo', por_conciliar: 'mal', revisar: 'mal' }[ci.estado] || '';
     conc = `<div class="conc"><div class="tit">Conciliación: cifra inicial (verificación) → cierre</div>
       <div class="linea ${clase}">${esc(ci.texto || '')}</div>
-      <table><thead><tr><th>Sala</th><th>Inicial</th><th>En sala</th><th>En _revisar</th><th>${cierra}</th></tr></thead><tbody>${tr}
-      <tr class="tot"><td>Total</td><td>${av.total_esperado}</td><td>${av.total_archivos}</td><td>${av.revisar_total - (av.revisar_sin_sala || 0)}</td><td>${av.depurados_total}${av.dep_registrados_total ? ' <small>(' + av.dep_registrados_total + ' reg.)</small>' : ''}</td></tr></tbody></table>
-      <div class="nota">Inicial = total que reporta el sitio al verificar. Depurados = duplicados descartados u otros AS que no quedaron en su sala${av.dup_confirmados ? '; el cotejo manual registra ' + av.dup_confirmados + ' duplicado(s) confirmado(s)' : ''}. Al terminar el control, En sala + En _revisar + Depurados = Inicial.</div>${sinSala}</div>`;
+      <table><thead><tr><th>Sala</th><th>Inicial</th><th>En sala</th><th>En _revisar</th><th>${cierra}</th>${au ? '<th>Repetidos en sitio</th><th>Faltan (auditoría)</th>' : ''}</tr></thead><tbody>${tr}
+      <tr class="tot"><td>Total</td><td>${av.total_esperado}</td><td>${av.total_archivos}</td><td>${av.revisar_total - (av.revisar_sin_sala || 0)}</td><td>${av.depurados_total}${av.dep_registrados_total ? ' <small>(' + av.dep_registrados_total + ' reg.)</small>' : ''}</td>${au ? '<td>' + Object.values(au).reduce((t, a) => t + a.repetidos_en_sitio, 0) + '</td><td>' + Object.values(au).reduce((t, a) => t + a.faltan, 0) + '</td>' : ''}</tr></tbody></table>
+      <div class="nota">Inicial = total que reporta el sitio al verificar. Depurados = duplicados descartados u otros AS que no quedaron en su sala${av.dup_confirmados ? '; el cotejo manual registra ' + av.dup_confirmados + ' duplicado(s) confirmado(s)' : ''}. ${au ? ' Auditoría del ' + esc((av.auditoria.fecha || '').replace('T', ' ')) + ': «Repetidos» son AS que el sitio publica dos veces; «Faltan» son AS del sitio sin archivo (detalle en _faltantes.csv de esa Mac).' : ''} Al terminar el control, En sala + En _revisar + Depurados = Inicial.</div>${sinSala}</div>`;
   }
   const log = (av.ultimas_lineas || []).length ? `<div class="registro">${av.ultimas_lineas.map(esc).join('\n')}</div>` : '';
   $('avance').innerHTML = est + etaHtml(e, av) + filas + total + conc + log;
