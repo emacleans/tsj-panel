@@ -138,6 +138,7 @@
         <li><button class="paso" data-accion="auditar"><span class="num">5</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Baja la lista completa del sitio (sin descargar PDF) y dice qué AS faltan por sala.</div></span></button></li>
         <li><button class="paso" data-accion="corregir"><span class="num">3</span><span><div class="titulo">Corregir _revisar</div><div class="desc">Reprocesa lo que quedó sin identificar.</div></span></button></li>
         <li class="modo"><label><input type="radio" name="m-corregir" value="sim" checked> Simulación</label><label><input type="radio" name="m-corregir" value="real"> Aplicar de verdad</label></li>
+        <li><button class="paso" data-accion="cotejar"><span class="num">6</span><span><div class="titulo">Cotejar duplicados</div><div class="desc">Abre la pantalla de cotejo en el equipo elegido (necesita ver los PDF, así que se usa desde ese mismo equipo).</div></span></button></li>
         <li><button class="paso" data-accion="detectar"><span class="num">4</span><span><div class="titulo">Detectar EXP- obsoletos</div><div class="desc">Renombra los que ya tienen número de Auto Supremo.</div></span></button></li>
         <li class="modo"><label><input type="radio" name="m-detectar" value="sim" checked> Simulación</label><label><input type="radio" name="m-detectar" value="real"> Aplicar de verdad</label></li>
         <li><button class="paso peligro" data-accion="detener"><span class="num">■</span><span><div class="titulo">Detener todo</div><div class="desc">Frena la compilación y cualquier proceso en ese equipo (se retoma donde quedó).</div></span></button></li>
@@ -145,7 +146,7 @@
       </ul>
       <div id="orden"></div>
       <div id="actividad"></div>
-      <div class="nota">Cotejar duplicados necesita ver los PDF, así que se hace en el equipo dueño de la gestión (<code>4_Cotejar_duplicados.command</code>). Una orden para un equipo apagado se ejecuta al reconectarse, si tiene menos de 30 min.</div>
+      <div class="nota">El cotejo abre una pantalla local del equipo elegido: úsalo desde ese mismo equipo (o con <code>4_Cotejar_duplicados.command</code>). Una orden para un equipo apagado se ejecuta al reconectarse, si tiene menos de 30 min.</div>
     </section>
   </div>
   <footer>Datos en vivo desde GitHub (repositorio tsj-estado) · se actualiza cada 5 s</footer>
@@ -164,7 +165,7 @@
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
 const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
-const NOMBRE_ACCION = { verificar: 'Verificar', auditar: 'Auditar contra el sitio', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
+const NOMBRE_ACCION = { cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts' };
 let TOKEN = null, equipos = [], gestion = null, pendiente = null, destinoManual = false;
 const $ = id => document.getElementById(id);
@@ -334,6 +335,7 @@ function renderOrden() {
   if (r) {
     box.className = r.ok ? 'ok' : 'mal';
     box.textContent = (r.ok ? '✓ ' : '✗ ') + NOMBRE_ACCION[pendiente.accion] + ' en ' + e.nombre + ': ' + r.mensaje;
+    if (r.ok && pendiente.accion === 'cotejar') { const a = document.createElement('a'); a.href = 'http://localhost:8743'; a.target = '_blank'; a.textContent = ' → Abrir el cotejo'; a.style.fontWeight = '700'; box.appendChild(a); }
   } else {
     box.className = '';
     box.textContent = '⏳ Orden enviada a ' + (e ? e.nombre : pendiente.eid) + ' (' + NOMBRE_ACCION[pendiente.accion] + ', gestión ' + pendiente.g + ')' +
