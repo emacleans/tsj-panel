@@ -326,7 +326,7 @@ function renderActividad() {
   box.innerHTML = `<div class="tit">${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(a.accion)} ${esc(a.gestion)} en ${esc(e.nombre)} · último movimiento ${cuando}</div><div class="registro">${a.lineas.map(esc).join('\n')}</div>`;
 }
 
-function render() { renderActividad(); renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); renderOrden(); }
+function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); renderOrden(); renderActividad(); }
 
 function mostrarError(msg) {
   const b = $('banner');
