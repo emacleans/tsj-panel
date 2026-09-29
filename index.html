@@ -274,6 +274,7 @@ function renderAvance() {
   const { e, av } = el, on = enLinea(e);
   let est;
   if (!on) est = `<div class="linea aviso">⚠ ${esc(e.nombre)} está desconectado — datos de hace ${haceCuanto(e.ts)}</div>`;
+  else if (av.termino_con_exito && av.cierre && av.cierre.estado === 'abierta') est = `<div class="linea exito">✓ Recorrida hasta hoy en ${esc(e.nombre)} — gestión abierta, no cerrada (se recompila hasta fin de año)</div>`;
   else if (av.termino_con_exito) est = `<div class="linea exito">✓ Terminó con éxito en ${esc(e.nombre)} (el % puede no llegar a 100 por diseño)</div>`;
   else if (av.activo) est = `<div class="linea activo">● Compilando en ${esc(e.nombre)} — en vivo</div>`;
   else est = `<div class="linea">En ${esc(e.nombre)} · sin actividad reciente</div>`;
@@ -286,12 +287,15 @@ function renderAvance() {
   const total = `<div class="total"><span>Total</span><span>${av.total_archivos}${av.total_esperado ? ' / ' + av.total_esperado + (av.pct_total != null ? ' · ' + av.pct_total + ' %' : '') : ''}</span></div>`;
   let conc = '';
   if (av.total_esperado && av.salas.some(x => x.depurados != null)) {
-    const tr = av.salas.filter(x => x.esperado).map(x => `<tr><td>${esc(x.sala)}</td><td>${x.esperado}</td><td>${x.archivos}</td><td>${x.revisar}${x.posible_dup ? ' <small>(' + x.posible_dup + ' posible dup.)</small>' : ''}</td><td>${x.depurados}</td></tr>`).join('');
+    const tr = av.salas.filter(x => x.esperado).map(x => `<tr><td>${esc(x.sala)}</td><td>${x.esperado}</td><td>${x.archivos}</td><td>${x.revisar}${x.posible_dup ? ' <small>(' + x.posible_dup + ' posible dup.)</small>' : ''}</td><td>${x.depurados}${x.dep_registrados ? ' <small>(' + x.dep_registrados + ' reg.)</small>' : ''}</td></tr>`).join('');
     const sinSala = av.revisar_sin_sala ? `<div class="nota">${av.revisar_sin_sala} archivo(s) en _revisar sin sala identificable (no suman a ninguna fila).</div>` : '';
     const cierra = av.activo ? 'Por descargar aún' : 'Depurados / sin localizar';
+    const ci = av.cierre || {};
+    const clase = { cuadra: 'exito', abierta: 'activo', por_conciliar: 'mal', revisar: 'mal' }[ci.estado] || '';
     conc = `<div class="conc"><div class="tit">Conciliación: cifra inicial (verificación) → cierre</div>
+      <div class="linea ${clase}">${esc(ci.texto || '')}</div>
       <table><thead><tr><th>Sala</th><th>Inicial</th><th>En sala</th><th>En _revisar</th><th>${cierra}</th></tr></thead><tbody>${tr}
-      <tr class="tot"><td>Total</td><td>${av.total_esperado}</td><td>${av.total_archivos}</td><td>${av.revisar_total - (av.revisar_sin_sala || 0)}</td><td>${av.depurados_total}</td></tr></tbody></table>
+      <tr class="tot"><td>Total</td><td>${av.total_esperado}</td><td>${av.total_archivos}</td><td>${av.revisar_total - (av.revisar_sin_sala || 0)}</td><td>${av.depurados_total}${av.dep_registrados_total ? ' <small>(' + av.dep_registrados_total + ' reg.)</small>' : ''}</td></tr></tbody></table>
       <div class="nota">Inicial = total que reporta el sitio al verificar. Depurados = duplicados descartados u otros AS que no quedaron en su sala${av.dup_confirmados ? '; el cotejo manual registra ' + av.dup_confirmados + ' duplicado(s) confirmado(s)' : ''}. Al terminar el control, En sala + En _revisar + Depurados = Inicial.</div>${sinSala}</div>`;
   }
   const log = (av.ultimas_lineas || []).length ? `<div class="registro">${av.ultimas_lineas.map(esc).join('\n')}</div>` : '';
