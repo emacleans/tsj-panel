@@ -256,7 +256,7 @@ function renderEquipos() {
       <div class="e-estado">${on ? 'En línea' : 'Desconectado hace ' + haceCuanto(e.ts)}</div>
       <div class="e-trabajo ${p ? 'ocupado' : ''}">${esc(trabajo)}</div>
       ${etaLinea}
-      <div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}</div>
+      <div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>
       ${e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : ''}
     </div>`;
   }).join('');
