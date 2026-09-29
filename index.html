@@ -62,6 +62,8 @@
   .total { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 14px; }
   .actividad .tit { font-weight:600; margin-top:14px; font-size:13px; }
   .actividad .registro { margin-top:6px; max-height:260px; overflow:auto; white-space:pre-wrap; }
+  .conc { margin-top:16px; } .conc .tit { font-weight:600; font-size:13px; margin-bottom:6px; }
+  .conc table { width:100%; border-collapse:collapse; font-size:12.5px; } .conc th, .conc td { padding:4px 6px; text-align:right; border-bottom:1px solid #DDD9CC; } .conc th:first-child, .conc td:first-child { text-align:left; } .conc tr.tot td { font-weight:700; }
   .registro { margin-top: 14px; padding: 10px 12px; background: #F1EEE5; border-radius: 8px; font: 12px/1.5 ui-monospace, Menlo, monospace;
     color: #555; overflow-x: auto; white-space: pre; }
   .campo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
@@ -282,8 +284,18 @@ function renderAvance() {
       <span class="cifra">${s.esperado ? s.archivos + ' / ' + s.esperado : s.archivos}</span></div>`;
   }).join('');
   const total = `<div class="total"><span>Total</span><span>${av.total_archivos}${av.total_esperado ? ' / ' + av.total_esperado + (av.pct_total != null ? ' · ' + av.pct_total + ' %' : '') : ''}</span></div>`;
+  let conc = '';
+  if (av.total_esperado && av.salas.some(x => x.depurados != null)) {
+    const tr = av.salas.filter(x => x.esperado).map(x => `<tr><td>${esc(x.sala)}</td><td>${x.esperado}</td><td>${x.archivos}</td><td>${x.revisar}${x.posible_dup ? ' <small>(' + x.posible_dup + ' posible dup.)</small>' : ''}</td><td>${x.depurados}</td></tr>`).join('');
+    const sinSala = av.revisar_sin_sala ? `<div class="nota">${av.revisar_sin_sala} archivo(s) en _revisar sin sala identificable (no suman a ninguna fila).</div>` : '';
+    const cierra = av.activo ? 'Por descargar aún' : 'Depurados / sin localizar';
+    conc = `<div class="conc"><div class="tit">Conciliación: cifra inicial (verificación) → cierre</div>
+      <table><thead><tr><th>Sala</th><th>Inicial</th><th>En sala</th><th>En _revisar</th><th>${cierra}</th></tr></thead><tbody>${tr}
+      <tr class="tot"><td>Total</td><td>${av.total_esperado}</td><td>${av.total_archivos}</td><td>${av.revisar_total - (av.revisar_sin_sala || 0)}</td><td>${av.depurados_total}</td></tr></tbody></table>
+      <div class="nota">Inicial = total que reporta el sitio al verificar. Depurados = duplicados descartados u otros AS que no quedaron en su sala${av.dup_confirmados ? '; el cotejo manual registra ' + av.dup_confirmados + ' duplicado(s) confirmado(s)' : ''}. Al terminar el control, En sala + En _revisar + Depurados = Inicial.</div>${sinSala}</div>`;
+  }
   const log = (av.ultimas_lineas || []).length ? `<div class="registro">${av.ultimas_lineas.map(esc).join('\n')}</div>` : '';
-  $('avance').innerHTML = est + etaHtml(e, av) + filas + total + log;
+  $('avance').innerHTML = est + etaHtml(e, av) + filas + total + conc + log;
 }
 
 function renderDestino() {
