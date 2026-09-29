@@ -50,6 +50,10 @@
   .linea.activo { color: var(--active); font-weight: 600; }
   .linea.exito { color: var(--ok); font-weight: 600; }
   .linea.aviso { color: var(--warn); font-weight: 600; }
+  .eta { background: var(--gold-soft); border-radius: 10px; padding: 10px 12px; margin: 0 0 12px; font-size: 14px; }
+  .eta b { font-size: 16px; }
+  .eta span { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .e-eta { font-size: 12.5px; color: var(--active); }
   .fila { display: grid; grid-template-columns: 1fr 160px 90px; align-items: center; gap: 12px; padding: 7px 0; }
   .pista { height: 9px; background: #E4E0D4; border-radius: 6px; overflow: hidden; }
   .relleno { height: 100%; background: var(--gold); border-radius: 6px; transition: width .6s; }
@@ -200,6 +204,28 @@ function elegir(g) {
   return c[0];
 }
 
+function fmtDur(s) {
+  s = Math.max(0, Math.round(s));
+  const d = Math.floor(s / 86400), h = Math.floor((s % 86400) / 3600), m = Math.floor((s % 3600) / 60);
+  if (d) return d + ' d ' + h + ' h';
+  if (h) return h + ' h ' + m + ' min';
+  return Math.max(m, 1) + ' min';
+}
+function fmtFin(ts) {
+  const d = new Date(ts * 1000), hoy = new Date(), man = new Date(hoy.getTime() + 864e5);
+  const hora = d.toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+  if (d.toDateString() === hoy.toDateString()) return 'hoy ' + hora;
+  if (d.toDateString() === man.toDateString()) return 'mañana ' + hora;
+  return d.toLocaleDateString('es', { weekday: 'short', day: 'numeric', month: 'short' }) + ' ' + hora;
+}
+function etaHtml(e, av) {
+  if (!enLinea(e) || !av.activo || !av.eta) return '';
+  if (av.eta.calculando) return '<div class="eta">⏱ Tiempo estimado: calculando… <span>(necesita unos minutos de avance para medir la velocidad)</span></div>';
+  if (!av.eta.restantes) return '<div class="eta">⏱ Descarga completa; cerrando la gestión.</div>';
+  return `<div class="eta">⏱ Faltan ~<b>${fmtDur(av.eta.fin_ts - ahora())}</b> · termina ${fmtFin(av.eta.fin_ts)}
+    <span>${av.eta.tasa_min} documentos/min · ${av.eta.restantes} por descargar · estimación, se recalcula con cada avance</span></div>`;
+}
+
 function renderSelectorGestion() {
   const sel = $('sel-gestion');
   if (!sel.options.length) {
@@ -223,10 +249,13 @@ function renderEquipos() {
     const ps = e.procesos || [];
     const p = ps.find(x => x.tipo === 'compilacion' || x.tipo === 'vigilante') || ps[0];
     const trabajo = p ? (ETIQUETA[p.tipo] || p.tipo) + (p.gestion ? ' · ' + p.gestion : '') : 'Libre';
+    const avp = p && p.gestion && e.gestiones ? e.gestiones[p.gestion] : null;
+    const etaLinea = avp && on && avp.activo && avp.eta && avp.eta.fin_ts && avp.eta.restantes ? `<div class="e-eta">⏱ termina ${fmtFin(avp.eta.fin_ts)} (~${fmtDur(avp.eta.fin_ts - ahora())})</div>` : '';
     return `<div class="equipo ${on ? 'on' : 'off'}">
       <div class="e-nombre"><span class="punto"></span>${esc(e.nombre)}</div>
       <div class="e-estado">${on ? 'En línea' : 'Desconectado hace ' + haceCuanto(e.ts)}</div>
       <div class="e-trabajo ${p ? 'ocupado' : ''}">${esc(trabajo)}</div>
+      ${etaLinea}
       <div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}</div>
       ${e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : ''}
     </div>`;
@@ -251,7 +280,7 @@ function renderAvance() {
   }).join('');
   const total = `<div class="total"><span>Total</span><span>${av.total_archivos}${av.total_esperado ? ' / ' + av.total_esperado + (av.pct_total != null ? ' · ' + av.pct_total + ' %' : '') : ''}</span></div>`;
   const log = (av.ultimas_lineas || []).length ? `<div class="registro">${av.ultimas_lineas.map(esc).join('\n')}</div>` : '';
-  $('avance').innerHTML = est + filas + total + log;
+  $('avance').innerHTML = est + etaHtml(e, av) + filas + total + log;
 }
 
 function renderDestino() {
