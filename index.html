@@ -60,6 +60,8 @@
   .relleno.completa { background: var(--ok); }
   .cifra { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 14px; }
   .total { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 14px; }
+  .actividad .tit { font-weight:600; margin-top:14px; font-size:13px; }
+  .actividad .registro { margin-top:6px; max-height:260px; overflow:auto; white-space:pre-wrap; }
   .registro { margin-top: 14px; padding: 10px 12px; background: #F1EEE5; border-radius: 8px; font: 12px/1.5 ui-monospace, Menlo, monospace;
     color: #555; overflow-x: auto; white-space: pre; }
   .campo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
@@ -131,6 +133,7 @@
         <li><button class="paso" data-accion="actualizar"><span class="num">↻</span><span><div class="titulo">Actualizar scripts</div><div class="desc">Trae la última versión desde GitHub (normalmente ya se hace sola).</div></span></button></li>
       </ul>
       <div id="orden"></div>
+      <div id="actividad"></div>
       <div class="nota">Cotejar duplicados necesita ver los PDF, así que se hace en el equipo dueño de la gestión (<code>4_Cotejar_duplicados.command</code>). Una orden para un equipo apagado se ejecuta al reconectarse, si tiene menos de 30 min.</div>
     </section>
   </div>
@@ -311,7 +314,19 @@ function renderOrden() {
   }
 }
 
-function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); renderOrden(); }
+function renderActividad() {
+  const box = $('actividad');
+  const e = equipos.find(x => x.id === ($('sel-destino').value || ''));
+  const a = e && e.actividad;
+  if (!a || !(a.lineas || []).length) { box.style.display = 'none'; return; }
+  const hace = Math.max(0, Math.round(Date.now() / 1000 - a.ts));
+  const cuando = hace < 90 ? 'hace ' + hace + ' s' : 'hace ' + Math.round(hace / 60) + ' min';
+  box.style.display = 'block';
+  box.className = 'actividad';
+  box.innerHTML = `<div class="tit">${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(a.accion)} ${esc(a.gestion)} en ${esc(e.nombre)} · último movimiento ${cuando}</div><div class="registro">${a.lineas.map(esc).join('\n')}</div>`;
+}
+
+function render() { renderActividad(); renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); renderOrden(); }
 
 function mostrarError(msg) {
   const b = $('banner');
@@ -374,7 +389,7 @@ let autoGestion = !leer('tsj_gestion');
 render();
 if (!TOKEN) abrirToken(); else tick();
 setInterval(tick, 5000);
-setInterval(() => { if (equipos.length) { renderEquipos(); renderAvance(); renderOrden(); } }, 1000);
+setInterval(() => { if (equipos.length) { renderEquipos(); renderAvance(); renderOrden(); renderActividad(); } }, 1000);
 </script>
 </body>
 </html>
