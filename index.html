@@ -112,6 +112,15 @@
   dialog button, .btn { font: inherit; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--gold); background: var(--gold); color: #fff; cursor: pointer; }
   dialog button.sec { background: transparent; color: var(--ink); border-color: var(--line); }
   footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 26px; }
+  .aud { border:1px solid var(--line); border-radius:10px; margin-bottom:8px; padding:8px 12px; }
+  .aud summary { cursor:pointer; font-weight:600; font-size:14px; }
+  .aud summary small { font-weight:400; color:var(--muted); margin-left:8px; }
+  .aud h4 { margin:16px 0 6px; font-size:13px; }
+  .aud table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .aud th, .aud td { padding:4px 6px; border-bottom:1px solid #DDD9CC; text-align:right; }
+  .aud th:first-child, .aud td:first-child { text-align:left; }
+  .aud dl { margin:0; font-size:13px; } .aud dt { font-weight:600; margin-top:8px; } .aud dd { margin:2px 0 0 0; color:var(--muted); }
+  .aud p { font-size:13px; margin:4px 0; } .aud ul { font-size:13px; margin:4px 0; padding-left:20px; }
 </style>
 </head>
 <body>
@@ -165,6 +174,11 @@
     </section>
   </div>
   <footer>Datos en vivo desde GitHub (repositorio tsj-estado) · se actualiza cada 5 s</footer>
+  <section class="tarjeta" id="auditorias" style="margin-top:18px">
+    <h2>Repositorio de auditorías</h2>
+    <div class="desc" style="margin-bottom:10px">Cada vez que se valida el cierre de una gestión (o se revisa una gestión ya cerrada) queda aquí una foto de cómo estaba ese día, explicada en lenguaje sencillo. Orden cronológico: lo más reciente primero. Toca una auditoría para leerla.</div>
+    <div id="aud-lista"><div class="vacio">Cargando…</div></div>
+  </section>
 </main>
 
 <dialog id="dlg-cierre">
@@ -444,7 +458,7 @@ async function tick() {
       if (viva) { gestion = viva; }
       autoGestion = false;
     }
-    render();
+    render(); cargarAuditorias();
   }
   catch (e) { mostrarError(e.message || String(e)); }
 }
@@ -491,6 +505,52 @@ $('tok-borrar').onclick = () => { borrar('tsj_token'); TOKEN = null; equipos = [
 
 iniciarToken();
 gestion = leer('tsj_gestion') || '2026';
+
+// ---------- Repositorio de auditorías ----------
+let audLista = [], audDet = {}, audAbiertas = new Set(), audUltima = 0;
+function nombreAud(n) {
+  const m = n.match(/^(\d{4})(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)_(\d{4})_(\w+)\.json$/);
+  return m ? { fecha: `${m[3]}/${m[2]}/${m[1]} ${m[4]}:${m[5]}`, g: m[7], tipo: m[8] === 'cierre' ? 'Cierre validado' : 'Revisión periódica' } : { fecha: n, g: '', tipo: '' };
+}
+function htmlAud(d) {
+  const t = d.totales || {};
+  const filas = (d.salas || []).map(s => `<tr><td>${esc(corta(s.sala))}</td><td>${s.inicial ?? '–'}</td><td>${s.en_sala}</td><td>${s.revisar}</td><td>${s.depurados ?? '–'} <small>(${s.depurados_registrados} reg.)</small></td><td>${s.repetidos}</td><td>${s.faltan}</td><td>${s.sobran}</td></tr>`).join('');
+  const obs = (d.observaciones || '').split('\n').filter(Boolean).map(l => `<li>${esc(l)}</li>`).join('');
+  return `<h4>Cómo se llegó a este estado</h4>${(d.etapas || []).map(e => `<p><b>${esc(e.titulo)}.</b> ${esc(e.texto)}</p>`).join('')}
+    <h4>Cifras al momento del cierre</h4>
+    <table><thead><tr><th>Sala</th><th>Inicial</th><th>En sala</th><th>_revisar</th><th>Depur.</th><th>Repet.</th><th>Faltan</th><th>Sobran</th></tr></thead><tbody>${filas}
+    <tr><td><b>Total</b></td><td><b>${t.inicial}</b></td><td><b>${t.en_sala}</b></td><td><b>${t.revisar}</b></td><td><b>${t.depurados}</b></td><td><b>${t.repetidos}</b></td><td><b>${t.faltan}</b></td><td><b>${t.sobran}</b></td></tr></tbody></table>
+    <h4>Qué significa cada columna</h4><dl>${(d.glosario || []).map(x => `<dt>${esc(x.columna)}</dt><dd>${esc(x.explicacion)}</dd>`).join('')}</dl>
+    <h4>Diferencias explicadas una por una</h4>${obs ? `<ul>${obs}</ul>` : '<p>Sin diferencias: el sitio y las carpetas coinciden.</p>'}
+    ${d.nota_manual ? `<p><b>Nota de Enrique:</b> ${esc(d.nota_manual)}</p>` : ''}
+    <p class="e-meta">Validado en ${esc(d.equipo)} con la versión de scripts ${esc(d.scripts)}${d.fecha_auditoria ? ' · auditoría contra el sitio del ' + esc(String(d.fecha_auditoria).replace('T', ' ')) : ''}.</p>`;
+}
+function renderAuditorias() {
+  const box = $('aud-lista');
+  if (!audLista.length) { setHtmlKeep(box, '<div class="vacio">Aún no hay auditorías guardadas. Aparecerán aquí al validar el cierre de una gestión.</div>'); return; }
+  setHtmlKeep(box, audLista.map(n => {
+    const i = nombreAud(n), d = audDet[n];
+    return `<details class="aud" data-n="${esc(n)}"${audAbiertas.has(n) ? ' open' : ''}><summary>Gestión ${esc(i.g)} · ${esc(i.tipo)}<small>${esc(i.fecha)}</small></summary>${audAbiertas.has(n) ? (d ? htmlAud(d) : '<p>Cargando…</p>') : ''}</details>`;
+  }).join(''));
+}
+document.addEventListener('toggle', async ev => {
+  const el = ev.target; if (!el.classList || !el.classList.contains('aud')) return;
+  const n = el.dataset.n;
+  if (el.open) {
+    audAbiertas.add(n);
+    if (!audDet[n]) { const r = await gh(`/repos/${OWNER}/${REPO}/contents/auditorias/${n}`, { raw: true }); if (r.ok) audDet[n] = await r.json(); }
+    renderAuditorias();
+  } else audAbiertas.delete(n);
+}, true);
+async function cargarAuditorias() {
+  if (!TOKEN || Date.now() - audUltima < 60000) return;
+  audUltima = Date.now();
+  const r = await gh(`/repos/${OWNER}/${REPO}/contents/auditorias`);
+  if (r.status === 404) { audLista = []; renderAuditorias(); return; }
+  if (!r.ok) return;
+  const nuevo = (await r.json()).map(f => f.name).filter(n => n.endsWith('.json')).sort().reverse();
+  if (JSON.stringify(nuevo) !== JSON.stringify(audLista)) { audLista = nuevo; renderAuditorias(); }
+}
 let autoGestion = !leer('tsj_gestion');
 render();
 if (!TOKEN) abrirToken(); else tick();
