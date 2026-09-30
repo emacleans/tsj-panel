@@ -64,6 +64,13 @@
   .tit2 { font-weight:700; font-size:13.5px; margin-top:16px; color: var(--ink); display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
   .copiar { font: 600 12px/1 inherit; padding:6px 10px; border:1px solid var(--line); border-radius:8px; background: var(--card); color: var(--ink); cursor:pointer; white-space:nowrap; }
   .copiar:hover { background:#F1EEE5; }
+  .copiar:disabled { opacity:.45; cursor:not-allowed; }
+  .copiar:disabled:hover { background: var(--card); }
+  .semaforo { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; padding:3px 9px; border-radius:999px; margin-left:8px; }
+  .semaforo i { width:9px; height:9px; border-radius:50%; display:inline-block; }
+  .semaforo.rojo { background:#FBE9E7; color:#B3261E; } .semaforo.rojo i { background:#D93025; animation: pulso 1.2s infinite; }
+  .semaforo.verde { background:#E6F4EA; color:#1E7B34; } .semaforo.verde i { background:#1E8E3E; }
+  @keyframes pulso { 50% { opacity:.35; } }
   .sub2 { font-size:12px; color: var(--muted); margin-top:2px; line-height:1.45; }
   .actividad .registro { margin-top:6px; }
   .conc { margin-top:16px; } .conc .tit { font-weight:600; font-size:13px; margin-bottom:6px; }
@@ -177,7 +184,10 @@ const corta = n => String(n).replace('Sala Contenciosa Primera', 'Cont. 1ª').re
 // Reemplaza el HTML conservando el scroll de las cajas de registro: si el usuario estaba al final
 // (o es la primera vez) la caja sigue mostrando la última línea; si subió a leer, se queda donde estaba.
 const TEXTO_COPIA = {}, COPIADO = {};   // clave -> texto completo para copiar / hasta cuándo mostrar «¡Copiado!»
-const btnCopiar = k => `<button type="button" class="copiar" data-copiar="${k}">${Date.now() < (COPIADO[k] || 0) ? '✓ ¡Copiado!' : '📋 Copiar todo'}</button>`;
+const btnCopiar = (k, enCurso) => `<button type="button" class="copiar" data-copiar="${k}"${enCurso ? ' disabled title="Disponible cuando la acción termine"' : ''}>${Date.now() < (COPIADO[k] || 0) ? '✓ ¡Copiado!' : '📋 Copiar todo'}</button>`;
+const semaforo = enCurso => enCurso
+  ? '<span class="semaforo rojo"><i></i>En curso</span>'
+  : '<span class="semaforo verde"><i></i>Terminada</span>';
 document.addEventListener('click', async ev => {
   const b = ev.target.closest('[data-copiar]'); if (!b) return;
   const k = b.dataset.copiar, texto = TEXTO_COPIA[k] || '';
@@ -345,7 +355,7 @@ function renderAvance() {
       <div class="nota">Inicial = total que reporta el sitio al verificar. Depurados = duplicados descartados u otros AS que no quedaron en su sala${av.dup_confirmados ? '; el cotejo manual registra ' + av.dup_confirmados + ' duplicado(s) confirmado(s)' : ''}. ${au ? ' Auditoría del ' + esc((av.auditoria.fecha || '').replace('T', ' ')) + ': «Repetidos» son AS que el sitio publica dos veces; «Faltan» son AS del sitio sin archivo (detalle en _faltantes.csv de esa Mac).' : ''} Al terminar el control, En sala + En _revisar + Depurados = Inicial.</div>${sinSala}</div>`;
   }
   TEXTO_COPIA.reg = `Registro de la compilación · gestión ${av.gestion} · ${e.nombre} · copiado ${new Date().toLocaleString()}\n` + (av.ultimas_lineas || []).join('\n');
-  const log = (av.ultimas_lineas || []).length ? `<div class="bloque-log"><div class="tit2"><span>Registro de la compilación · gestión ${esc(av.gestion)}</span>${btnCopiar('reg')}</div><div class="sub2">Últimas líneas del archivo _registro.log de esta gestión en ${esc(e.nombre)}: lo que el compilador va anotando (salas recorridas, documentos guardados, avisos y errores). Se desplaza solo hasta la línea más reciente.</div><div class="registro" data-scroll="reg">${av.ultimas_lineas.map(esc).join('\n')}</div></div>` : '';
+  const log = (av.ultimas_lineas || []).length ? `<div class="bloque-log"><div class="tit2"><span>Registro de la compilación · gestión ${esc(av.gestion)}${semaforo(!!av.activo)}</span>${btnCopiar('reg', !!av.activo)}</div><div class="sub2">Últimas líneas del archivo _registro.log de esta gestión en ${esc(e.nombre)}: lo que el compilador va anotando (salas recorridas, documentos guardados, avisos y errores). Se desplaza solo hasta la línea más reciente.</div><div class="registro" data-scroll="reg">${av.ultimas_lineas.map(esc).join('\n')}</div></div>` : '';
   setHtmlKeep($('avance'), est + etaHtml(e, av) + filas + total + conc + log);
 }
 
@@ -389,7 +399,7 @@ function renderActividad() {
   box.className = 'actividad';
   const nombreAccion = NOMBRE_ACCION[a.accion] || a.accion;
   TEXTO_COPIA.act = `${a.en_curso ? 'En curso' : 'Última acción'} · ${nombreAccion} (gestión ${a.gestion}) en ${e.nombre} · último movimiento ${cuando} · copiado ${new Date().toLocaleString()}\n` + a.lineas.join('\n');
-  setHtmlKeep(box, `<div class="tit2"><span>${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}</span>${btnCopiar('act')}</div><div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>`);
+  setHtmlKeep(box, `<div class="tit2"><span>${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}${semaforo(a.en_curso)}</span>${btnCopiar('act', a.en_curso)}</div><div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>`);
 }
 
 function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); renderOrden(); renderActividad(); }
