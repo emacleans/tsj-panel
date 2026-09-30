@@ -121,6 +121,10 @@
   .aud th:first-child, .aud td:first-child { text-align:left; }
   .aud dl { margin:0; font-size:13px; } .aud dt { font-weight:600; margin-top:8px; } .aud dd { margin:2px 0 0 0; color:var(--muted); }
   .aud p { font-size:13px; margin:4px 0; } .aud ul { font-size:13px; margin:4px 0; padding-left:20px; }
+  .cierre-card { margin-top:16px; padding:12px 14px; border-radius:10px; font-size:13.5px; }
+  .cierre-card.ok { background:#E1F0E5; color:#1f5e37; } .cierre-card.mal { background:#F6DEDE; color:#7a2323; } .cierre-card.info { background:#F1EEE5; }
+  .cierre-card ol, .cierre-card ul { margin:6px 0 6px 18px; padding:0; } .cierre-card li { margin:6px 0; }
+  .cierre-card .btn { margin:4px 6px 0 0; font-size:12.5px; padding:5px 10px; }
 </style>
 </head>
 <body>
@@ -164,7 +168,7 @@
         <li><button class="paso" data-accion="cotejar"><span class="num">6</span><span><div class="titulo">Cotejar duplicados</div><div class="desc">Abre la pantalla de cotejo en el equipo elegido (necesita ver los PDF, así que se usa desde ese mismo equipo).</div></span></button></li>
         <li><button class="paso" data-accion="auditar"><span class="num">7</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Paso final antes del cierre: compara la lista completa del sitio (sin descargar PDF) con tus carpetas y dice qué AS faltan.</div></span></button></li>
         <li><button class="paso" data-accion="recuperar"><span class="num">8</span><span><div class="titulo">Recuperar faltantes</div><div class="desc">Después de auditar: vuelve a bajar del sitio solo los AS que faltan (los iguales a los que ya tienes se descartan solos; los distintos van a «Cotejar duplicados»). Luego audita otra vez.</div></span></button></li>
-        <li><button class="paso" data-accion="validar_cierre"><span class="num">9</span><span><div class="titulo">Validar cierre</div><div class="desc">Cuando la auditoría de una gestión ya terminada (de un año anterior) cuadra, o sus diferencias se explican con observaciones del sitio, deja constancia del cierre. Nunca para la gestión en curso.</div></span></button></li>
+        <li><button class="paso" data-accion="validar_cierre"><span class="num">9</span><span><div class="titulo">Validar cierre</div><div class="desc">Se ofrece solo cuando la auditoría no encuentra nada que corregir (aparece también como aviso verde en «Avance»). Deja constancia del cierre con su informe. Nunca para la gestión en curso.</div></span></button></li>
         <li><button class="paso peligro" data-accion="detener"><span class="num">■</span><span><div class="titulo">Detener todo</div><div class="desc">Frena la compilación y cualquier proceso en ese equipo (se retoma donde quedó).</div></span></button></li>
         <li><button class="paso" data-accion="actualizar"><span class="num">↻</span><span><div class="titulo">Actualizar scripts</div><div class="desc">Trae la última versión desde GitHub (normalmente ya se hace sola).</div></span></button></li>
       </ul>
@@ -362,6 +366,21 @@ function lineaAprendizaje() {
   return `<div class="e-meta" style="grid-column:1/-1;margin-top:8px">🧠 Aprendizaje de fechas: ${a.muestras} fecha(s) puestas a mano · ${a.exactas + a.por_vecinos} ya las resuelve el script solo · ${a.meses_aprendidos} variante(s) de mes aprendidas${pend}</div>`;
 }
 
+function cardCierre(av, e) {
+  const au = av.auditoria, v = au && au.veredicto;
+  if (!au || !v) return av.auditoria ? '<div class="cierre-card info">Esta auditoría es de una versión anterior y no trae veredicto. Repite «Auditar contra el sitio» para ver si la gestión puede cerrarse.</div>' : '';
+  const cv = (e.cierres || {})[av.gestion];
+  if (cv) return `<div class="cierre-card ok"><b>Cierre validado</b> el ${esc(String(cv.validado || '').replace('T', ' '))}. El informe completo está en el «Repositorio de auditorías», al final de la página.</div>`;
+  if (v.estado === 'en_curso') return '<div class="cierre-card info"><b>Gestión en curso.</b> Se puede auditar para ver el estado, pero el cierre solo se valida cuando el año haya terminado.</div>';
+  if (v.estado === 'acciones') {
+    const li = v.acciones.map(a => `<li>${esc(a.texto)}<br>${(a.botones || []).map(b => `<button type="button" class="btn" data-orden="${b}">${esc(NOMBRE_ACCION[b] || b)}</button>`).join('')}${(a.botones || []).length ? '' : '<i>Requiere que la revises tú.</i>'}</li>`).join('');
+    return `<div class="cierre-card mal"><b>Antes de cerrar la gestión ${esc(av.gestion)} hay ${v.acciones.length} cosa(s) por resolver:</b><ol>${li}</ol>Cuando termines, pulsa <button type="button" class="btn" data-orden="auditar">Auditar contra el sitio</button> otra vez: el sistema volverá a evaluar y, si todo está resuelto, te pedirá validar el cierre.</div>`;
+  }
+  const ex = (v.explicadas || []).length ? `<details><summary>Ver las ${v.explicadas.length} diferencia(s) explicadas</summary><ul>${v.explicadas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : '';
+  return `<div class="cierre-card ok"><b>La auditoría terminó sin nada que corregir.</b> Las diferencias que aparecen entre el sitio y las carpetas están comprobadas y explicadas (no son errores nuestros). ${ex}<div style="margin-top:8px"><button type="button" class="btn" data-orden="validar_cierre">Validar el cierre de la gestión ${esc(av.gestion)}</button></div></div>`;
+}
+document.addEventListener('click', ev => { const b = ev.target.closest('[data-orden]'); if (b) enviarOrden(b.dataset.orden); });
+
 function renderAvance() {
   $('av-titulo').textContent = 'Avance de la gestión ' + gestion;
   const el = elegir(gestion);
@@ -396,7 +415,7 @@ function renderAvance() {
   }
   TEXTO_COPIA.reg = `Registro de la compilación · gestión ${av.gestion} · ${e.nombre} · copiado ${new Date().toLocaleString()}\n` + (av.ultimas_lineas || []).join('\n');
   const log = (av.ultimas_lineas || []).length ? `<div class="bloque-log"><div class="tit2"><span>Registro de la compilación · gestión ${esc(av.gestion)}${semaforo(!!av.activo)}</span>${btnCopiar('reg', !!av.activo)}</div><div class="sub2">Últimas líneas del archivo _registro.log de esta gestión en ${esc(e.nombre)}: lo que el compilador va anotando (salas recorridas, documentos guardados, avisos y errores). Se desplaza solo hasta la línea más reciente.</div><div class="registro" data-scroll="reg">${av.ultimas_lineas.map(esc).join('\n')}</div></div>` : '';
-  setHtmlKeep($('avance'), est + etaHtml(e, av) + filas + total + conc + log);
+  setHtmlKeep($('avance'), est + etaHtml(e, av) + filas + total + conc + cardCierre(av, e) + log);
 }
 
 function renderDestino() {
@@ -472,7 +491,7 @@ function accionFinal(accion) {
 async function enviarOrden(base, obs) {
   const accion = accionFinal(base), eid = $('sel-destino').value, e = equipos.find(x => x.id === eid);
   if (!e) { alert('No hay equipo destino.'); return; }
-  if (accion === 'validar_cierre' && obs === undefined) { $('cierre-obs').value = ''; $('cierre-desc').dataset.g = gestion; $('dlg-cierre').showModal(); return; }
+  if (accion === 'validar_cierre' && !confirm(`Validar el cierre de la gestión ${gestion}. Queda registrado con su informe en el repositorio de auditorías. ¿Confirmas?`)) return;
   const pide = ['iniciar', 'detener', 'actualizar', 'corregir_real', 'detectar_real'].includes(accion);
   if (pide && !confirm(`${NOMBRE_ACCION[accion]} en ${e.nombre} (gestión ${gestion}). ¿Confirmas?`)) return;
   const ruta = `/repos/${OWNER}/${REPO}/contents/ordenes/${eid}.json`;
@@ -515,13 +534,14 @@ function nombreAud(n) {
 function htmlAud(d) {
   const t = d.totales || {};
   const filas = (d.salas || []).map(s => `<tr><td>${esc(corta(s.sala))}</td><td>${s.inicial ?? '–'}</td><td>${s.en_sala}</td><td>${s.revisar}</td><td>${s.depurados ?? '–'} <small>(${s.depurados_registrados} reg.)</small></td><td>${s.repetidos}</td><td>${s.faltan}</td><td>${s.sobran}</td></tr>`).join('');
-  const obs = (d.observaciones || '').split('\n').filter(Boolean).map(l => `<li>${esc(l)}</li>`).join('');
-  return `<p style="text-align:right"><button type="button" class="copiar" data-pdf="__N__">⬇ Descargar informe PDF</button></p><h4>Cómo se llegó a este estado</h4>${(d.etapas || []).map(e => `<p><b>${esc(e.titulo)}.</b> ${esc(e.texto)}</p>`).join('')}
+  const obs = ((d.explicadas && d.explicadas.length) ? d.explicadas : (d.observaciones || '').split('\n').filter(Boolean)).map(l => `<li>${esc(l)}</li>`).join('');
+  const concep = (d.conceptos || []).length ? `<h4>Antes de empezar: qué es cada cosa</h4><dl>${d.conceptos.map(x => `<dt>${esc(x.termino)}</dt><dd>${esc(x.explicacion)}</dd>`).join('')}</dl>` : '';
+  return `<p style="text-align:right"><button type="button" class="copiar" data-pdf="__N__">⬇ Descargar informe PDF</button></p>${concep}<h4>Cómo se llegó a este estado</h4>${(d.etapas || []).map(e => `<p><b>${esc(e.titulo)}.</b> ${esc(e.texto)}</p>`).join('')}
     <h4>Cifras al momento del cierre</h4>
     <table><thead><tr><th>Sala</th><th>Inicial</th><th>En sala</th><th>_revisar</th><th>Depur.</th><th>Repet.</th><th>Faltan</th><th>Sobran</th></tr></thead><tbody>${filas}
     <tr><td><b>Total</b></td><td><b>${t.inicial}</b></td><td><b>${t.en_sala}</b></td><td><b>${t.revisar}</b></td><td><b>${t.depurados}</b></td><td><b>${t.repetidos}</b></td><td><b>${t.faltan}</b></td><td><b>${t.sobran}</b></td></tr></tbody></table>
-    <h4>Qué significa cada columna</h4><dl>${(d.glosario || []).map(x => `<dt>${esc(x.columna)}</dt><dd>${esc(x.explicacion)}</dd>`).join('')}</dl>
-    <h4>Diferencias explicadas una por una</h4>${obs ? `<ul>${obs}</ul>` : '<p>Sin diferencias: el sitio y las carpetas coinciden.</p>'}
+    <h4>Qué significa cada columna de la tabla</h4><dl>${(d.glosario || []).map(x => `<dt>${esc(x.columna)}</dt><dd>${esc(x.explicacion)}</dd>`).join('')}</dl>
+    <h4>Diferencias explicadas una por una</h4>${obs ? `<ul>${obs}</ul>` : '<p>Sin diferencias: el sitio y las carpetas coinciden exactamente.</p>'}
     ${d.nota_manual ? `<p><b>Nota de Enrique:</b> ${esc(d.nota_manual)}</p>` : ''}
     <p class="e-meta">Validado en ${esc(d.equipo)} con la versión de scripts ${esc(d.scripts)}${d.fecha_auditoria ? ' · auditoría contra el sitio del ' + esc(String(d.fecha_auditoria).replace('T', ' ')) : ''}.</p>`;
 }
@@ -548,7 +568,7 @@ function imprimirAud(n) {
   const i = nombreAud(n);
   const w = window.open('', '_blank');
   if (!w) { alert('El navegador bloqueó la ventana. Permite ventanas emergentes para este panel y vuelve a intentar.'); return; }
-  const estilos = `@page{size:A4;margin:16mm}body{font-family:-apple-system,Helvetica,Arial,sans-serif;color:#1a1a1a;font-size:12px;line-height:1.45}
+  const estilos = `@page{size:letter;margin:0.7in}body{font-family:-apple-system,Helvetica,Arial,sans-serif;color:#1a1a1a;font-size:12px;line-height:1.45}
     h1{font-size:20px;margin:0 0 2px}h2{font-size:13px;color:#555;margin:0 0 14px;font-weight:400}h4{font-size:13px;margin:16px 0 6px;border-bottom:1px solid #999;padding-bottom:2px}
     table{width:100%;border-collapse:collapse;font-size:11.5px}th,td{padding:4px 6px;border-bottom:1px solid #ccc;text-align:right}th:first-child,td:first-child{text-align:left}
     dt{font-weight:700;margin-top:6px}dd{margin:1px 0 0}p{margin:4px 0}li{margin:2px 0}.e-meta{color:#666;font-size:11px;margin-top:14px}button{display:none}small{color:#666}`;
