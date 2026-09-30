@@ -152,6 +152,7 @@
         <li><button class="paso" data-accion="fechar"><span class="num">5</span><span><div class="titulo">Fechar archivos de _revisar</div><div class="desc">Paso previo al cotejo: les pones a mano la fecha a los documentos que el script no pudo fechar, y pasan a su sala.</div></span></button></li>
         <li><button class="paso" data-accion="cotejar"><span class="num">6</span><span><div class="titulo">Cotejar duplicados</div><div class="desc">Abre la pantalla de cotejo en el equipo elegido (necesita ver los PDF, así que se usa desde ese mismo equipo).</div></span></button></li>
         <li><button class="paso" data-accion="auditar"><span class="num">7</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Paso final antes del cierre: compara la lista completa del sitio (sin descargar PDF) con tus carpetas y dice qué AS faltan.</div></span></button></li>
+        <li><button class="paso" data-accion="recuperar"><span class="num">8</span><span><div class="titulo">Recuperar faltantes</div><div class="desc">Después de auditar: vuelve a bajar del sitio solo los AS que faltan (los iguales a los que ya tienes se descartan solos; los distintos van a «Cotejar duplicados»). Luego audita otra vez.</div></span></button></li>
         <li><button class="paso peligro" data-accion="detener"><span class="num">■</span><span><div class="titulo">Detener todo</div><div class="desc">Frena la compilación y cualquier proceso en ese equipo (se retoma donde quedó).</div></span></button></li>
         <li><button class="paso" data-accion="actualizar"><span class="num">↻</span><span><div class="titulo">Actualizar scripts</div><div class="desc">Trae la última versión desde GitHub (normalmente ya se hace sola).</div></span></button></li>
       </ul>
@@ -175,8 +176,8 @@
 
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
-const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
-const NOMBRE_ACCION = { fechar: 'Fechar archivos de _revisar', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
+const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
+const NOMBRE_ACCION = { fechar: 'Fechar archivos de _revisar', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts' };
 let TOKEN = null, equipos = [], gestion = null, pendiente = null, destinoManual = false;
 const $ = id => document.getElementById(id);
