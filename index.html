@@ -61,8 +61,9 @@
   .relleno.completa { background: var(--ok); }
   .cifra { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 14px; }
   .total { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 14px; }
-  .actividad .tit { font-weight:600; margin-top:14px; font-size:13px; }
-  .actividad .registro { margin-top:6px; max-height:260px; overflow:auto; white-space:pre-wrap; }
+  .tit2 { font-weight:700; font-size:13.5px; margin-top:16px; color: var(--ink); }
+  .sub2 { font-size:12px; color: var(--muted); margin-top:2px; line-height:1.45; }
+  .actividad .registro { margin-top:6px; }
   .conc { margin-top:16px; } .conc .tit { font-weight:600; font-size:13px; margin-bottom:6px; }
   .conc table { width:100%; table-layout: auto; border-collapse:collapse; font-size:12.5px; } .conc th, .conc td { padding:4px 6px; text-align:right; border-bottom:1px solid #DDD9CC; } .conc th:first-child, .conc td:first-child { text-align:left; } .conc tr.tot td { font-weight:700; }
   body { overflow-x: hidden; }
@@ -73,7 +74,7 @@
   @media (max-width: 560px) { .conc small { display: none; } .conc th, .conc td { padding: 4px 2px; } }
   @media (max-width: 1100px) { .conc table { font-size: 11.5px; } .conc th, .conc td { padding: 4px 3px; } }
   .registro { margin-top: 14px; padding: 10px 12px; background: #F1EEE5; border-radius: 8px; font: 12px/1.5 ui-monospace, Menlo, monospace;
-    color: #555; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
+    color: #555; max-height: 240px; overflow-y: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
   .campo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
   .campo label { font-size: 13px; color: var(--muted); white-space: nowrap; }
   .campo select { flex: 1; }
@@ -170,6 +171,16 @@ const NOMBRE_ACCION = { cotejar: 'Cotejar duplicados', verificar: 'Verificar', a
 let TOKEN = null, equipos = [], gestion = null, pendiente = null, destinoManual = false;
 const $ = id => document.getElementById(id);
 const corta = n => String(n).replace('Sala Contenciosa Primera', 'Cont. 1ª').replace('Sala Contenciosa Segunda', 'Cont. 2ª').replace('Sala ', '');
+// Reemplaza el HTML conservando el scroll de las cajas de registro: si el usuario estaba al final
+// (o es la primera vez) la caja sigue mostrando la última línea; si subió a leer, se queda donde estaba.
+function setHtmlKeep(el, html) {
+  if (el._h === html) return;
+  const y = window.scrollY, prev = {};
+  el.querySelectorAll('[data-scroll]').forEach(n => { prev[n.dataset.scroll] = { top: n.scrollTop, fin: n.scrollTop + n.clientHeight >= n.scrollHeight - 12 }; });
+  el.innerHTML = html; el._h = html;
+  el.querySelectorAll('[data-scroll]').forEach(n => { const q = prev[n.dataset.scroll]; n.scrollTop = (!q || q.fin) ? n.scrollHeight : q.top; });
+  if (window.scrollY !== y) window.scrollTo(0, y);
+}
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const ahora = () => Math.floor(Date.now() / 1000);
 
@@ -310,8 +321,8 @@ function renderAvance() {
       <tr class="tot"><td>Total</td><td>${av.total_esperado}</td><td>${av.total_archivos}</td><td>${av.revisar_total - (av.revisar_sin_sala || 0)}</td><td>${av.depurados_total}${av.dep_registrados_total ? ' <small>(' + av.dep_registrados_total + ' reg.)</small>' : ''}</td>${au ? '<td>' + Object.values(au).reduce((t, a) => t + a.repetidos_en_sitio, 0) + '</td><td>' + Object.values(au).reduce((t, a) => t + a.faltan, 0) + '</td>' : ''}</tr></tbody></table>
       <div class="nota">Inicial = total que reporta el sitio al verificar. Depurados = duplicados descartados u otros AS que no quedaron en su sala${av.dup_confirmados ? '; el cotejo manual registra ' + av.dup_confirmados + ' duplicado(s) confirmado(s)' : ''}. ${au ? ' Auditoría del ' + esc((av.auditoria.fecha || '').replace('T', ' ')) + ': «Repetidos» son AS que el sitio publica dos veces; «Faltan» son AS del sitio sin archivo (detalle en _faltantes.csv de esa Mac).' : ''} Al terminar el control, En sala + En _revisar + Depurados = Inicial.</div>${sinSala}</div>`;
   }
-  const log = (av.ultimas_lineas || []).length ? `<div class="registro">${av.ultimas_lineas.map(esc).join('\n')}</div>` : '';
-  $('avance').innerHTML = est + etaHtml(e, av) + filas + total + conc + log;
+  const log = (av.ultimas_lineas || []).length ? `<div class="bloque-log"><div class="tit2">Registro de la compilación · gestión ${esc(av.gestion)}</div><div class="sub2">Últimas líneas del archivo _registro.log de esta gestión en ${esc(e.nombre)}: lo que el compilador va anotando (salas recorridas, documentos guardados, avisos y errores). Se desplaza solo hasta la línea más reciente.</div><div class="registro" data-scroll="reg">${av.ultimas_lineas.map(esc).join('\n')}</div></div>` : '';
+  setHtmlKeep($('avance'), est + etaHtml(e, av) + filas + total + conc + log);
 }
 
 function renderDestino() {
@@ -352,7 +363,8 @@ function renderActividad() {
   const cuando = hace < 90 ? 'hace ' + hace + ' s' : 'hace ' + Math.round(hace / 60) + ' min';
   box.style.display = 'block';
   box.className = 'actividad';
-  box.innerHTML = `<div class="tit">${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(a.accion)} ${esc(a.gestion)} en ${esc(e.nombre)} · último movimiento ${cuando}</div><div class="registro">${a.lineas.map(esc).join('\n')}</div>`;
+  const nombreAccion = NOMBRE_ACCION[a.accion] || a.accion;
+  setHtmlKeep(box, `<div class="tit2">${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}</div><div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>`);
 }
 
 function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); renderOrden(); renderActividad(); }
