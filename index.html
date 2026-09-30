@@ -299,7 +299,17 @@ function renderEquipos() {
       <div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>
       ${e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : ''}
     </div>`;
-  }).join('');
+  }).join('') + lineaAprendizaje();
+}
+
+function lineaAprendizaje() {
+  const pub = equipos.find(e => e.aprendizaje);
+  if (!pub) return '';
+  const a = pub.aprendizaje;
+  const pend = a.pendientes
+    ? ` · <b style="color:var(--warn,#b45309)">${a.pendientes} sin cubrir</b> (patrón nuevo: requiere ajuste del reconocedor)`
+    : ' · todas cubiertas';
+  return `<div class="e-meta" style="grid-column:1/-1;margin-top:8px">🧠 Aprendizaje de fechas: ${a.muestras} fecha(s) puestas a mano · ${a.exactas + a.por_vecinos} ya las resuelve el script solo · ${a.meses_aprendidos} variante(s) de mes aprendidas${pend}</div>`;
 }
 
 function renderAvance() {
