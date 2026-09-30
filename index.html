@@ -516,7 +516,7 @@ function htmlAud(d) {
   const t = d.totales || {};
   const filas = (d.salas || []).map(s => `<tr><td>${esc(corta(s.sala))}</td><td>${s.inicial ?? '–'}</td><td>${s.en_sala}</td><td>${s.revisar}</td><td>${s.depurados ?? '–'} <small>(${s.depurados_registrados} reg.)</small></td><td>${s.repetidos}</td><td>${s.faltan}</td><td>${s.sobran}</td></tr>`).join('');
   const obs = (d.observaciones || '').split('\n').filter(Boolean).map(l => `<li>${esc(l)}</li>`).join('');
-  return `<h4>Cómo se llegó a este estado</h4>${(d.etapas || []).map(e => `<p><b>${esc(e.titulo)}.</b> ${esc(e.texto)}</p>`).join('')}
+  return `<p style="text-align:right"><button type="button" class="copiar" data-pdf="__N__">⬇ Descargar informe PDF</button></p><h4>Cómo se llegó a este estado</h4>${(d.etapas || []).map(e => `<p><b>${esc(e.titulo)}.</b> ${esc(e.texto)}</p>`).join('')}
     <h4>Cifras al momento del cierre</h4>
     <table><thead><tr><th>Sala</th><th>Inicial</th><th>En sala</th><th>_revisar</th><th>Depur.</th><th>Repet.</th><th>Faltan</th><th>Sobran</th></tr></thead><tbody>${filas}
     <tr><td><b>Total</b></td><td><b>${t.inicial}</b></td><td><b>${t.en_sala}</b></td><td><b>${t.revisar}</b></td><td><b>${t.depurados}</b></td><td><b>${t.repetidos}</b></td><td><b>${t.faltan}</b></td><td><b>${t.sobran}</b></td></tr></tbody></table>
@@ -530,7 +530,7 @@ function renderAuditorias() {
   if (!audLista.length) { setHtmlKeep(box, '<div class="vacio">Aún no hay auditorías guardadas. Aparecerán aquí al validar el cierre de una gestión.</div>'); return; }
   setHtmlKeep(box, audLista.map(n => {
     const i = nombreAud(n), d = audDet[n];
-    return `<details class="aud" data-n="${esc(n)}"${audAbiertas.has(n) ? ' open' : ''}><summary>Gestión ${esc(i.g)} · ${esc(i.tipo)}<small>${esc(i.fecha)}</small></summary>${audAbiertas.has(n) ? (d ? htmlAud(d) : '<p>Cargando…</p>') : ''}</details>`;
+    return `<details class="aud" data-n="${esc(n)}"${audAbiertas.has(n) ? ' open' : ''}><summary>Gestión ${esc(i.g)} · ${esc(i.tipo)}<small>${esc(i.fecha)}</small></summary>${audAbiertas.has(n) ? (d ? htmlAud(d).replace('__N__', esc(n)) : '<p>Cargando…</p>') : ''}</details>`;
   }).join(''));
 }
 document.addEventListener('toggle', async ev => {
@@ -542,6 +542,25 @@ document.addEventListener('toggle', async ev => {
     renderAuditorias();
   } else audAbiertas.delete(n);
 }, true);
+
+function imprimirAud(n) {
+  const d = audDet[n]; if (!d) return;
+  const i = nombreAud(n);
+  const w = window.open('', '_blank');
+  if (!w) { alert('El navegador bloqueó la ventana. Permite ventanas emergentes para este panel y vuelve a intentar.'); return; }
+  const estilos = `@page{size:A4;margin:16mm}body{font-family:-apple-system,Helvetica,Arial,sans-serif;color:#1a1a1a;font-size:12px;line-height:1.45}
+    h1{font-size:20px;margin:0 0 2px}h2{font-size:13px;color:#555;margin:0 0 14px;font-weight:400}h4{font-size:13px;margin:16px 0 6px;border-bottom:1px solid #999;padding-bottom:2px}
+    table{width:100%;border-collapse:collapse;font-size:11.5px}th,td{padding:4px 6px;border-bottom:1px solid #ccc;text-align:right}th:first-child,td:first-child{text-align:left}
+    dt{font-weight:700;margin-top:6px}dd{margin:1px 0 0}p{margin:4px 0}li{margin:2px 0}.e-meta{color:#666;font-size:11px;margin-top:14px}button{display:none}small{color:#666}`;
+  w.document.write(`<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Auditoría ${d.gestion} · ${i.tipo} · ${i.fecha}</title><style>${estilos}</style></head><body>
+    <h1>Informe de auditoría · Gestión ${esc(d.gestion)}</h1><h2>${esc(i.tipo)} · ${esc(i.fecha)} · JurisPrud (Iuris Pactum Editorial) · Autos Supremos del TSJ de Bolivia</h2>${htmlAud(d).replace('__N__', '')}</body></html>`);
+  w.document.close();
+  let hecho = false;
+  const imprimir = () => { if (hecho) return; hecho = true; try { w.focus(); w.print(); } catch (e) {} };
+  w.onload = imprimir;
+  setTimeout(imprimir, 700);
+}
+document.addEventListener('click', ev => { const b = ev.target.closest('[data-pdf]'); if (b) imprimirAud(b.dataset.pdf); });
 async function cargarAuditorias() {
   if (!TOKEN || Date.now() - audUltima < 60000) return;
   audUltima = Date.now();
