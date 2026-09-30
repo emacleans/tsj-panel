@@ -125,6 +125,10 @@
   .cierre-card.ok { background:#E1F0E5; color:#1f5e37; } .cierre-card.mal { background:#F6DEDE; color:#7a2323; } .cierre-card.info { background:#F1EEE5; }
   .cierre-card ol, .cierre-card ul { margin:6px 0 6px 18px; padding:0; } .cierre-card li { margin:6px 0; }
   .cierre-card .btn { margin:4px 6px 0 0; font-size:12.5px; padding:5px 10px; }
+  .prog { margin:8px 0 4px; } .prog .pista { height:10px; background:#E4E0D3; border-radius:6px; overflow:hidden; }
+  .prog .relleno { height:100%; background:var(--gold); transition:width .8s; } .prog.fin .relleno { background:#1f8a4c; }
+  .prog .txt { font-size:12.5px; color:var(--muted); margin-top:4px; } .prog .txt b { color:var(--ink); }
+  .otras { margin-top:10px; font-size:12.5px; } .otras .o-tit { font-weight:600; margin-top:6px; }
 </style>
 </head>
 <body>
@@ -447,6 +451,38 @@ function renderOrden() {
   }
 }
 
+const CON_BARRA = ['verificar', 'auditar', 'recuperar', 'corregir_sim', 'corregir_real', 'detectar_sim', 'detectar_real'];
+function fmtDur(s) {
+  s = Math.max(0, Math.round(s));
+  if (s < 60) return s + ' s';
+  const m = Math.floor(s / 60), r = s % 60;
+  if (m < 60) return m + ' min' + (m < 10 && r ? ' ' + r + ' s' : '');
+  return Math.floor(m / 60) + ' h ' + (m % 60) + ' min';
+}
+function progresoHtml(a) {
+  if (!CON_BARRA.includes(a.accion) || !a.inicio) return '';
+  const trans = Math.max(0, Date.now() / 1000 - a.inicio);
+  if (!a.en_curso) {
+    return `<div class="prog fin"><div class="pista"><div class="relleno" style="width:100%"></div></div><div class="txt"><b>100 %</b> · terminada en ${fmtDur(a.ts - a.inicio)}</div></div>`;
+  }
+  let pct, eta, nota;
+  if (a.pasos && a.pasos.total) {
+    const f = a.pasos.hecho / a.pasos.total;
+    pct = Math.min(97, f * 100);
+    eta = f >= 0.1 ? trans * (1 - f) / f : Math.max(a.estimado - trans, 15);
+    nota = `${a.pasos.hecho} de ${a.pasos.total} salas`;
+  } else {
+    pct = Math.min(97, trans / a.estimado * 100);
+    eta = Math.max(a.estimado - trans, 15);
+    nota = 'estimado según ' + (a.base_estimado || 'ejecuciones anteriores');
+  }
+  const pasado = !(a.pasos && a.pasos.total) && trans > a.estimado * 1.3;
+  const fin = new Date(Date.now() + eta * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const txt = pasado ? `<b>${Math.round(pct)} %</b> · tarda más de lo habitual, sigue en curso (lleva ${fmtDur(trans)})`
+    : `<b>${Math.round(pct)} %</b> · faltan aprox. <b>${fmtDur(eta)}</b> · termina hacia las <b>${fin}</b> · ${esc(nota)}`;
+  return `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt">${txt}</div></div>`;
+}
+
 function renderActividad() {
   const box = $('actividad');
   const e = equipos.find(x => x.id === ($('sel-destino').value || ''));
@@ -458,7 +494,7 @@ function renderActividad() {
   box.className = 'actividad';
   const nombreAccion = NOMBRE_ACCION[a.accion] || a.accion;
   TEXTO_COPIA.act = `${a.en_curso ? 'En curso' : 'Última acción'} · ${nombreAccion} (gestión ${a.gestion}) en ${e.nombre} · último movimiento ${cuando} · copiado ${new Date().toLocaleString()}\n` + a.lineas.join('\n');
-  setHtmlKeep(box, `<div class="tit2"><span>${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}${semaforo(a.en_curso)}</span>${btnCopiar('act', a.en_curso)}</div><div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>`);
+  setHtmlKeep(box, `<div class="tit2"><span>${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}${semaforo(a.en_curso)}</span>${btnCopiar('act', a.en_curso)}</div>${progresoHtml(a)}<div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>${(a.otras || []).length ? '<div class="otras"><b>También en curso en este equipo (otras gestiones):</b>' + a.otras.map(o => `<div class="o-tit">${esc(NOMBRE_ACCION[o.accion] || o.accion)} · gestión ${esc(o.gestion)}</div>${progresoHtml(o)}`).join('') + '</div>' : ''}`);
 }
 
 function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); renderOrden(); renderActividad(); }
