@@ -96,6 +96,11 @@
     display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; }
   .destacado .num { background: var(--gold); color: #fff; }
   .peligro .num { background: #F1D9D9; color: var(--bad); }
+  .paso.pendiente { background: #F6DEDE; }
+  .paso.pendiente:hover { background: #F1D0D0; }
+  .paso.pendiente .num { background: var(--bad); color: #fff; }
+  .paso.pendiente .titulo::after { content: " ⚠ pendiente para esta gestión"; font-weight: 600; color: var(--bad); font-size: 12px; }
+  #sel-gestion option.pendiente { color: var(--bad); font-weight: 700; }
   .titulo { font-weight: 500; }
   .desc { font-size: 13px; color: var(--muted); }
   .modo { display: flex; gap: 16px; margin: 0 6px 6px 50px; font-size: 13px; color: var(--muted); }
@@ -299,6 +304,22 @@ function elegir(g) {
   return c[0];
 }
 
+// Traduce el id de cada "acción pendiente" del veredicto de auditoría (evaluar_cierre, en compilar_tsj.py)
+// al data-accion del botón correspondiente en el menú "Acciones". "manual" no tiene botón: solo se puede
+// resolver revisando el archivo a mano (ya se explica con texto en la tarjeta de cierre).
+const ACCION_A_PASO = { barrido: 'barrido', detectar: 'detectar', cotejar: 'cotejar', revisar: 'corregir', recuperar: 'recuperar' };
+
+function pendienteGestion(el) {
+  const v = el && el.av && el.av.auditoria && el.av.auditoria.veredicto;
+  return !!(v && v.estado === 'acciones');
+}
+
+function marcarPasosPendientes(el) {
+  const v = el && el.av && el.av.auditoria && el.av.auditoria.veredicto;
+  const pend = new Set(v && v.estado === 'acciones' ? v.acciones.map(a => ACCION_A_PASO[a.id]).filter(Boolean) : []);
+  document.querySelectorAll('.paso').forEach(b => b.classList.toggle('pendiente', pend.has(b.dataset.accion)));
+}
+
 function fmtDur(s) {
   s = Math.max(0, Math.round(s));
   const d = Math.floor(s / 86400), h = Math.floor((s % 86400) / 3600), m = Math.floor((s % 3600) / 60);
@@ -329,7 +350,9 @@ function renderSelectorGestion() {
   }
   for (const o of sel.options) {
     const el = elegir(o.value);
-    o.textContent = o.value + (el ? ' · ' + el.e.nombre.split(' ')[0] + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : '');
+    const pend = pendienteGestion(el);
+    o.classList.toggle('pendiente', pend);
+    o.textContent = (pend ? '⚠ ' : '') + o.value + (el ? ' · ' + el.e.nombre.split(' ')[0] + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : '');
   }
   sel.value = gestion;
 }
@@ -398,7 +421,8 @@ document.addEventListener('click', ev => { const b = ev.target.closest('[data-or
 function renderAvance() {
   $('av-titulo').textContent = 'Avance de la gestión ' + gestion;
   const el = elegir(gestion);
-  if (!el) { $('avance').innerHTML = '<div class="vacio">Esta gestión no está iniciada en ningún equipo que esté reportando.</div>'; return; }
+  if (!el) { $('avance').innerHTML = '<div class="vacio">Esta gestión no está iniciada en ningún equipo que esté reportando.</div>'; marcarPasosPendientes(null); return; }
+  marcarPasosPendientes(el);
   const { e, av } = el, on = enLinea(e);
   let est;
   if (!on) est = `<div class="linea aviso">⚠ ${esc(e.nombre)} está desconectado — datos de hace ${haceCuanto(e.ts)}</div>`;
