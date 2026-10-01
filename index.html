@@ -174,6 +174,9 @@
         <li class="modo"><label><input type="radio" name="m-corregir" value="sim" checked> Simulación</label><label><input type="radio" name="m-corregir" value="real"> Aplicar de verdad</label></li>
         <li><button class="paso" data-accion="detectar"><span class="num">4</span><span><div class="titulo">Detectar EXP- obsoletos</div><div class="desc">Renombra los que ya tienen número de Auto Supremo.</div></span></button></li>
         <li class="modo"><label><input type="radio" name="m-detectar" value="sim" checked> Simulación</label><label><input type="radio" name="m-detectar" value="real"> Aplicar de verdad</label></li>
+        <li><button class="paso" data-accion="barrido"><span class="num">B</span><span><div class="titulo">Barrido general</div><div class="desc">Aplica de forma retroactiva a las gestiones ya compiladas todos los arreglos descubiertos en cualquier gestión (año de fecha mal impreso, autos de otro año, números mal leídos, copias con otro sello). El cierre de una gestión exige haberlo pasado.</div></span></button></li>
+        <li class="modo"><label><input type="radio" name="m-barrido" value="sim" checked> Simulación</label><label><input type="radio" name="m-barrido" value="real"> Aplicar de verdad</label></li>
+        <li class="modo"><label><input type="radio" name="a-barrido" value="esta" checked> Esta gestión</label><label><input type="radio" name="a-barrido" value="todas"> Todas las gestiones de este equipo</label></li>
         <li><button class="paso" data-accion="fechar"><span class="num">5</span><span><div class="titulo">Fechar archivos de _revisar</div><div class="desc">Paso previo al cotejo: les pones a mano la fecha a los documentos que el script no pudo fechar, y pasan a su sala.</div></span></button></li>
         <li><button class="paso" data-accion="cotejar"><span class="num">6</span><span><div class="titulo">Cotejar duplicados</div><div class="desc">Abre la pantalla de cotejo en el equipo elegido (necesita ver los PDF, así que se usa desde ese mismo equipo).</div></span></button></li>
         <li><button class="paso" data-accion="auditar"><span class="num">7</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Paso final antes del cierre: compara la lista completa del sitio (sin descargar PDF) con tus carpetas y dice qué AS faltan.</div></span></button></li>
@@ -218,7 +221,8 @@
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
 const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
 const NOMBRE_ACCION = { fechar: 'Fechar archivos de _revisar', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
-  detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre' };
+  detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre',
+  barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)' };
 let TOKEN = null, equipos = [], gestion = null, pendiente = null, destinoManual = false;
 const $ = id => document.getElementById(id);
 const corta = n => String(n).replace('Sala Contenciosa Primera', 'Cont. 1ª').replace('Sala Contenciosa Segunda', 'Cont. 2ª').replace('Sala ', '');
@@ -457,7 +461,7 @@ function renderOrden() {
   }
 }
 
-const CON_BARRA = ['verificar', 'auditar', 'recuperar', 'corregir_sim', 'corregir_real', 'detectar_sim', 'detectar_real'];
+const CON_BARRA = ['verificar', 'auditar', 'recuperar', 'corregir_sim', 'corregir_real', 'detectar_sim', 'detectar_real', 'barrido_sim', 'barrido_real', 'barrido_todas_sim', 'barrido_todas_real'];
 function fmtDur(s) {
   s = Math.max(0, Math.round(s));
   if (s < 60) return s + ' s';
@@ -527,6 +531,7 @@ async function tick() {
 function accionFinal(accion) {
   if (accion === 'corregir') return 'corregir_' + document.querySelector('input[name=m-corregir]:checked').value;
   if (accion === 'detectar') return 'detectar_' + document.querySelector('input[name=m-detectar]:checked').value;
+  if (accion === 'barrido') return 'barrido_' + (document.querySelector('input[name=a-barrido]:checked').value === 'todas' ? 'todas_' : '') + document.querySelector('input[name=m-barrido]:checked').value;
   return accion;
 }
 
@@ -534,7 +539,7 @@ async function enviarOrden(base, obs) {
   const accion = accionFinal(base), eid = $('sel-destino').value, e = equipos.find(x => x.id === eid);
   if (!e) { alert('No hay equipo destino.'); return; }
   if (accion === 'validar_cierre' && !confirm(`Validar el cierre de la gestión ${gestion}. Queda registrado con su informe en el repositorio de auditorías. ¿Confirmas?`)) return;
-  const pide = ['iniciar', 'detener', 'actualizar', 'corregir_real', 'detectar_real'].includes(accion);
+  const pide = ['iniciar', 'detener', 'actualizar', 'corregir_real', 'detectar_real', 'barrido_real', 'barrido_todas_real'].includes(accion);
   if (pide && !confirm(`${NOMBRE_ACCION[accion]} en ${e.nombre} (gestión ${gestion}). ¿Confirmas?`)) return;
   const ruta = `/repos/${OWNER}/${REPO}/contents/ordenes/${eid}.json`;
   const btns = document.querySelectorAll('.paso'); btns.forEach(b => b.disabled = true);
