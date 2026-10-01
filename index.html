@@ -463,6 +463,7 @@ function renderAvance() {
   const { e, av } = el, on = enLinea(e);
   let est;
   if (!on) est = `<div class="linea aviso">⚠ ${esc(e.nombre)} está desconectado — datos de hace ${haceCuanto(e.ts)}</div>`;
+  else if (av.termino_con_exito && av.con_faltantes) est = `<div class="linea aviso">⚠ Terminó CON FALTANTES en ${esc(e.nombre)}: ${esc(av.con_faltantes)}</div>`;
   else if (av.termino_con_exito && av.cierre && av.cierre.estado === 'abierta') est = `<div class="linea exito">✓ Recorrida hasta hoy en ${esc(e.nombre)} — gestión abierta, no cerrada (se recompila hasta fin de año)</div>`;
   else if (av.termino_con_exito) est = `<div class="linea exito">✓ Terminó con éxito en ${esc(e.nombre)} (el % puede no llegar a 100 por diseño)</div>`;
   else if (av.activo) est = `<div class="linea activo">● Compilando en ${esc(e.nombre)} — en vivo</div>`;
