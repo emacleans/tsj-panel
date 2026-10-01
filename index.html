@@ -713,7 +713,7 @@ async function cargarAuditorias() {
 let autoGestion = !leer('tsj_gestion');
 render();
 if (!TOKEN) abrirToken(); else tick();
-setInterval(tick, 5000);
+setInterval(() => { if (!document.hidden) tick(); }, 3000);  // 3 s (antes 5 s); las consultas repetidas son condicionales (304) y no gastan cuota
 setInterval(() => { if (equipos.length) { renderEquipos(); renderAvance(); marcarPasosCumplidos(); renderOrden(); renderActividad(); } }, 1000);
 </script>
 </body>
