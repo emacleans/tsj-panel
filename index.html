@@ -105,6 +105,10 @@
   .paso.pendiente:hover { background: #F1D0D0; }
   .paso.pendiente .num { background: var(--bad); color: #fff; }
   .paso.pendiente .titulo::after { content: " ⚠ pendiente para esta gestión"; font-weight: 600; color: var(--bad); font-size: 12px; }
+  .paso.cumplida { background: #E7F1EA; }
+  .paso.cumplida:hover { background: #DCEAE0; }
+  .paso.cumplida .num { background: var(--ok); color: #fff; }
+  .paso.cumplida .titulo::after { content: " ✓ hecho (última vez, en este equipo)"; font-weight: 600; color: var(--ok); font-size: 12px; }
   #sel-gestion option.pendiente { color: var(--bad); font-weight: 700; }
   .titulo { font-weight: 500; }
   .desc { font-size: 13px; color: var(--muted); }
@@ -325,6 +329,22 @@ function marcarPasosPendientes(el) {
   document.querySelectorAll('.paso').forEach(b => b.classList.toggle('pendiente', pend.has(b.dataset.accion)));
 }
 
+// Marca en verde cada paso del menú "Acciones" cuya ÚLTIMA corrida, en el equipo elegido como destino y
+// para la gestión actual, terminó sin error (lo guarda el agente en hist_acciones, por gestión y por paso,
+// así no se pierde cuando después se lanza otra acción distinta encima). Si el mismo paso está marcado en
+// rojo (pendiente() según la última auditoría) ese aviso manda: no tiene sentido mostrarlo también como
+// "hecho" cuando el sistema acaba de decir que todavía hace falta.
+function marcarPasosCumplidos() {
+  const eid = $('sel-destino').value;
+  const e = equipos.find(x => x.id === eid);
+  const h = (e && e.hist_acciones && e.hist_acciones[gestion]) || {};
+  document.querySelectorAll('.paso').forEach(b => {
+    if (b.classList.contains('pendiente')) { b.classList.remove('cumplida'); return; }
+    const r = h[b.dataset.accion];
+    b.classList.toggle('cumplida', !!(r && r.ok));
+  });
+}
+
 function fmtDur(s) {
   s = Math.max(0, Math.round(s));
   const d = Math.floor(s / 86400), h = Math.floor((s % 86400) / 3600), m = Math.floor((s % 3600) / 60);
@@ -482,7 +502,7 @@ function renderDestino() {
   let valor = (destinoManual && equipos.some(e => e.id === previo)) ? previo
     : dueño ? dueño.e.id : ((equipos.find(enLinea) || equipos[0] || {}).id || '');
   sel.value = valor;
-  sel.onchange = () => { destinoManual = true; };
+  sel.onchange = () => { destinoManual = true; marcarPasosCumplidos(); };
 }
 
 function renderOrden() {
@@ -548,7 +568,7 @@ function renderActividad() {
   setHtmlKeep(box, `<div class="tit2"><span>${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}${semaforo(a.en_curso)}</span>${btnCopiar('act', a.en_curso)}</div>${progresoHtml(a)}<div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>${(a.otras || []).length ? '<div class="otras"><b>También en curso en este equipo (otras gestiones):</b>' + a.otras.map(o => `<div class="o-tit">${esc(NOMBRE_ACCION[o.accion] || o.accion)} · gestión ${esc(o.gestion)}</div>${progresoHtml(o)}`).join('') + '</div>' : ''}`);
 }
 
-function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); renderOrden(); renderActividad(); }
+function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); marcarPasosCumplidos(); renderOrden(); renderActividad(); }
 
 function mostrarError(msg) {
   const b = $('banner');
@@ -693,7 +713,7 @@ let autoGestion = !leer('tsj_gestion');
 render();
 if (!TOKEN) abrirToken(); else tick();
 setInterval(tick, 5000);
-setInterval(() => { if (equipos.length) { renderEquipos(); renderAvance(); renderOrden(); renderActividad(); } }, 1000);
+setInterval(() => { if (equipos.length) { renderEquipos(); renderAvance(); marcarPasosCumplidos(); renderOrden(); renderActividad(); } }, 1000);
 </script>
 </body>
 </html>
