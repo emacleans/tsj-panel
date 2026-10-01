@@ -44,6 +44,11 @@
   .equipo.off .e-estado { color: var(--warn); }
   .e-trabajo { margin-top: 6px; font-size: 14px; color: var(--muted); }
   .e-trabajo.ocupado { color: var(--active); font-weight: 600; }
+  .e-procesos { margin-top: 4px; display: flex; flex-direction: column; gap: 3px; }
+  .e-proceso { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--active); }
+  .e-proceso button { flex: none; border: 1px solid var(--bad); color: var(--bad); background: none; border-radius: 6px; font-size: 11px; padding: 1px 7px; cursor: pointer; line-height: 1.6; }
+  .e-proceso button:hover { background: var(--bad); color: #fff; }
+  .e-proceso button:disabled { opacity: .5; cursor: default; }
   .e-meta { margin-top: 4px; font-size: 12px; color: var(--muted); }
   .e-error { margin-top: 6px; font-size: 12px; color: var(--bad); }
   .vacio { color: var(--muted); padding: 14px 4px; }
@@ -187,7 +192,7 @@
         <li><button class="paso" data-accion="auditar"><span class="num">7</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Paso final antes del cierre: compara la lista completa del sitio (sin descargar PDF) con tus carpetas y dice qué AS faltan.</div></span></button></li>
         <li><button class="paso" data-accion="recuperar"><span class="num">8</span><span><div class="titulo">Recuperar faltantes</div><div class="desc">Después de auditar: vuelve a bajar del sitio solo los AS que faltan (los iguales a los que ya tienes se descartan solos; los distintos van a «Cotejar duplicados»). Luego audita otra vez.</div></span></button></li>
         <li><button class="paso" data-accion="validar_cierre"><span class="num">9</span><span><div class="titulo">Validar cierre</div><div class="desc">Se ofrece solo cuando la auditoría no encuentra nada que corregir (aparece también como aviso verde en «Avance»). Deja constancia del cierre con su informe. Nunca para la gestión en curso.</div></span></button></li>
-        <li><button class="paso peligro" data-accion="detener"><span class="num">■</span><span><div class="titulo">Detener todo</div><div class="desc">Frena la compilación y cualquier proceso en ese equipo (se retoma donde quedó).</div></span></button></li>
+        <li><button class="paso peligro" data-accion="detener"><span class="num">■</span><span><div class="titulo">Detener todo</div><div class="desc">Frena TODO lo que corra en ese equipo (se retoma donde quedó). Para frenar solo un proceso puntual sin tocar los demás, usa el botón «Detener» junto a ese proceso en la tarjeta del equipo, arriba.</div></span></button></li>
         <li><button class="paso" data-accion="actualizar"><span class="num">↻</span><span><div class="titulo">Actualizar scripts</div><div class="desc">Trae la última versión desde GitHub (normalmente ya se hace sola).</div></span></button></li>
       </ul>
       <div id="orden"></div>
@@ -380,10 +385,18 @@ function renderEquipos() {
     const trabajo = p ? (ETIQUETA[p.tipo] || p.tipo) + (p.gestion ? ' · ' + p.gestion : '') : 'Libre';
     const avp = p && p.gestion && e.gestiones ? e.gestiones[p.gestion] : null;
     const etaLinea = avp && on && avp.activo && avp.eta && avp.eta.fin_ts && avp.eta.restantes ? `<div class="e-eta">⏱ termina ${fmtFin(avp.eta.fin_ts)} (~${fmtDur(avp.eta.fin_ts - ahora())})</div>` : '';
+    // Lista de TODOS los procesos en curso en este equipo (puede haber más de uno: gestiones distintas
+    // corren en paralelo), cada uno con su propio botón para detener SOLO ese proceso sin tocar los demás.
+    const procesosHtml = ps.length ? `<div class="e-procesos">${ps.map(x => {
+      const etq = (ETIQUETA[x.tipo] || x.tipo) + (x.gestion ? ' · ' + x.gestion : '');
+      return `<div class="e-proceso"><span>${esc(etq)}</span>
+      <button type="button" data-detener-eid="${esc(e.id)}" data-detener-pid="${x.pid}" data-detener-etiqueta="${esc(etq)}">Detener</button></div>`;
+    }).join('')}</div>` : '';
     return `<div class="equipo ${on ? 'on' : 'off'}">
       <div class="e-nombre"><span class="punto"></span>${esc(e.nombre)}</div>
       <div class="e-estado">${on ? 'En línea' : 'Desconectado hace ' + haceCuanto(e.ts)}</div>
       <div class="e-trabajo ${p ? 'ocupado' : ''}">${esc(trabajo)}</div>
+      ${procesosHtml}
       ${etaLinea}
       <div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>
       ${insigniaVersion(e, on)}
@@ -417,6 +430,10 @@ function cardCierre(av, e) {
   return `<div class="cierre-card ok"><b>La auditoría terminó sin nada que corregir.</b> Las diferencias que aparecen entre el sitio y las carpetas están comprobadas y explicadas (no son errores nuestros). ${ex}<div style="margin-top:8px"><button type="button" class="btn" data-orden="validar_cierre">Validar el cierre de la gestión ${esc(av.gestion)}</button></div></div>`;
 }
 document.addEventListener('click', ev => { const b = ev.target.closest('[data-orden]'); if (b) enviarOrden(b.dataset.orden); });
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('[data-detener-pid]');
+  if (b) detenerProceso(b.dataset.detenerEid, Number(b.dataset.detenerPid), b.dataset.detenerEtiqueta);
+});
 
 function renderAvance() {
   $('av-titulo').textContent = 'Avance de la gestión ' + gestion;
@@ -559,29 +576,40 @@ function accionFinal(accion) {
   return accion;
 }
 
-async function enviarOrden(base, obs) {
-  const accion = accionFinal(base), eid = $('sel-destino').value, e = equipos.find(x => x.id === eid);
+async function enviarOrden(base, obs, opts) {
+  opts = opts || {};
+  const accion = accionFinal(base), eid = opts.eid || $('sel-destino').value, e = equipos.find(x => x.id === eid);
   if (!e) { alert('No hay equipo destino.'); return; }
   if (accion === 'validar_cierre' && !confirm(`Validar el cierre de la gestión ${gestion}. Queda registrado con su informe en el repositorio de auditorías. ¿Confirmas?`)) return;
+  const gEtiqueta = opts.pid ? (opts.etiqueta || '') : `gestión ${gestion}`;
   const pide = ['iniciar', 'detener', 'actualizar', 'corregir_real', 'detectar_real', 'barrido_real', 'barrido_todas_real'].includes(accion);
-  if (pide && !confirm(`${NOMBRE_ACCION[accion]} en ${e.nombre} (gestión ${gestion}). ¿Confirmas?`)) return;
+  if (pide && !confirm(`${opts.pid ? 'Detener' : NOMBRE_ACCION[accion]} en ${e.nombre} (${gEtiqueta}). ¿Confirmas?`)) return;
   const ruta = `/repos/${OWNER}/${REPO}/contents/ordenes/${eid}.json`;
-  const btns = document.querySelectorAll('.paso'); btns.forEach(b => b.disabled = true);
+  const btns = document.querySelectorAll('.paso, .e-proceso button'); btns.forEach(b => b.disabled = true);
   try {
     let sha = null;
     const actual = await gh(ruta);
     if (actual.ok) sha = (await actual.json()).sha;
     const seq = Date.now();
-    const orden = { seq, ts: ahora(), accion, gestion, origen: 'panel-central' };
+    const g = opts.pid ? (opts.gestionProceso || gestion) : gestion;
+    const orden = { seq, ts: ahora(), accion, gestion: g, origen: 'panel-central' };
+    if (opts.pid) orden.pid = opts.pid;
     if (accion === 'validar_cierre') orden.obs = String(obs || '').slice(0, 2000);
-    const cuerpo = { message: `orden ${accion} ${gestion} -> ${eid}`, content: btoa(unescape(encodeURIComponent(JSON.stringify(orden)))) };
+    const cuerpo = { message: `orden ${accion} ${g} -> ${eid}`, content: btoa(unescape(encodeURIComponent(JSON.stringify(orden)))) };
     if (sha) cuerpo.sha = sha;
     const r = await gh(ruta, { method: 'PUT', body: JSON.stringify(cuerpo) });
     if (!r.ok) throw new Error('No se pudo enviar la orden (HTTP ' + r.status + ').');
-    pendiente = { seq, eid, accion, g: gestion };
+    pendiente = { seq, eid, accion, g };
     renderOrden();
   } catch (err) { mostrarError(err.message || String(err)); }
   finally { btns.forEach(b => b.disabled = false); }
+}
+
+// Botón "Detener" de un proceso individual (tarjetas de equipo): para solo ESE proceso (por pid), sin
+// tocar los demás que corran en el mismo equipo -- a diferencia del paso "Detener todo" del menú de Acciones.
+function detenerProceso(eid, pid, etiqueta) {
+  const m = /· (\d{4})$/.exec(etiqueta || '');
+  enviarOrden('detener', null, { eid, pid, etiqueta, gestionProceso: m ? m[1] : null });
 }
 
 function abrirToken() { $('inp-token').value = ''; $('dlg-token').showModal(); }
