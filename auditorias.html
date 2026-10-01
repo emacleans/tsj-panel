@@ -41,13 +41,18 @@
   .aud th:first-child, .aud td:first-child { text-align:left; }
   .aud dl { margin:0; font-size:13px; } .aud dt { font-weight:600; margin-top:8px; } .aud dd { margin:2px 0 0 0; color:var(--muted); }
   .aud p { font-size:13px; margin:4px 0; } .aud ul { font-size:13px; margin:4px 0; padding-left:20px; }
+  nav.menu { background: #1B2536; padding: 0 24px; display: flex; gap: 4px; overflow-x: auto; border-top: 1px solid #34435C; }
+  nav.menu a { color: #C7CEDA; text-decoration: none; font-size: 14px; padding: 11px 16px; border-bottom: 3px solid transparent; white-space: nowrap; }
+  nav.menu a:hover { color: #fff; }
+  nav.menu a.act { color: #fff; font-weight: 600; border-bottom-color: var(--gold); }
+  @media (max-width: 560px) { nav.menu { padding: 0 8px; } nav.menu a { padding: 10px 12px; } }
 </style>
 </head>
 <body>
 <header>
   <div class="marca"><div class="sello">JP</div><div><h1>Repositorio de auditorías</h1><div class="subtitulo">JurisPrud · Iuris Pactum Editorial · Autos Supremos del TSJ de Bolivia</div></div></div>
-  <a href="./">← Panel central</a>
 </header>
+<nav class="menu" aria-label="Secciones"><a href="./">Inicio</a><a href="auditorias.html" class="act" aria-current="page">Repositorio de auditorías</a></nav>
 <main>
   <section class="tarjeta">
     <p class="desc">Cada fila es una auditoría guardada: una «foto» de cómo estaba una gestión (año) el día en que se validó su cierre, o cuando se revisó de nuevo después. Pulsa <b>Descargar PDF</b> para guardar el informe completo en tamaño carta: se abre una ventana y, en el cuadro de impresión de tu navegador, eliges «Guardar como PDF».</p>
