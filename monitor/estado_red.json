@@ -1,5 +1,5 @@
 {
- "ts": 1790949019,
+ "ts": 1790949101,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790950660,
@@ -24,19 +24,19 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947424,
-   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
+   "ts": 1790947495,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948083,
-   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
+   "ts": 1790948163,
+   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
   },
   {
-   "ts": 1790948740,
-   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
+   "ts": 1790948766,
+   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948934,
+   "ts": 1790948893,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   }
  ],
@@ -44,7 +44,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790949002,
+   "ts": 1790949065,
    "version": "0b5078a",
    "procesos": [
     {
@@ -71,8 +71,8 @@
      "eta": {
       "tasa_min": 0.98,
       "restantes": 2215,
-      "segundos": 136164,
-      "fin_ts": 1791085166
+      "segundos": 136280,
+      "fin_ts": 1791085346
      },
      "salud": {
       "estado": "alerta",
@@ -115,7 +115,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790948957,
+   "ts": 1790949086,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
@@ -137,7 +137,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790949001,
+   "ts": 1790949086,
    "version": "0b5078a",
    "procesos": [
     {
@@ -153,52 +153,26 @@
      "inicio_ts": 1790948762
     }
    ],
-   "gestiones": {
-    "2013": {
-     "activo": true,
-     "total_archivos": 616,
-     "total_esperado": 5271,
-     "pct_total": 11.7,
-     "termino_con_exito": false,
-     "con_faltantes": null,
-     "eta": {
-      "tasa_min": 2.58,
-      "restantes": 4655,
-      "segundos": 108395,
-      "fin_ts": 1791057396
-     },
-     "salud": {
-      "estado": "alerta",
-      "limite_30m": 0,
-      "fallos_30m": 24,
-      "fallos_15m": 9,
-      "fallos_total": 535,
-      "ultimo_movimiento_ts": 1790948738,
-      "ultimo_limite_ts": null,
-      "ultima_falla_ts": 1790948738,
-      "detalle": "9 documentos fallidos en 15 min"
-     }
-    }
-   },
+   "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-02 09:49:51]   SIN RESOLVER: 2026-10-02-TSJ-AS-164-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 09:49:51]     diagnóstico: texto embebido 4021 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 164 Sucre, 11/04/2013 Expediente: 16/2013-S Distrito: Tarija Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en la forma y en el fondo de fs. 138-140, ",
-    "[2026-10-02 09:49:51]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 164\\nSucre, 11/04/2013\\nExpediente: 16/2013-S\\nDistrito: Tarija\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación en la forma y en el fondo de fs. 138-140, interpuesto por\\n",
-    "[2026-10-02 09:49:51]     fechas con formato de fecha halladas en el texto: ['11/04/2013', '16 de noviembre de 2012', '14 de abril de 2011', '16 de noviembre de 2012', '1 de mayo de 2006']",
-    "[2026-10-02 09:49:55]   SIN RESOLVER: 2026-10-02-TSJ-AS-165-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 09:49:55]     diagnóstico: texto embebido 4128 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 165 Sucre, 11/04/2013 Expediente: 09/2013-A Distrito: Cochabamba Magistrado Relator: Antonio G. Campero Segovia VISTOS: Elrecurso de casación en el fondo de fs. 200-203, interpuesto",
-    "[2026-10-02 09:49:55]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 165\\nSucre, 11/04/2013\\nExpediente: 09/2013-A\\nDistrito: Cochabamba\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: Elrecurso de casación en el fondo de fs. 200-203, interpuesto por Ángel Camper",
-    "[2026-10-02 09:49:55]     fechas con formato de fecha halladas en el texto: ['11/04/2013', '29 de agosto de 2012', '7 de febrero de 2011', '2 de mayo de 2008', '29 de agosto de\\n2012']",
-    "[2026-10-02 09:49:58]   SIN RESOLVER: 2026-10-02-TSJ-AS-166-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 09:49:58]     diagnóstico: texto embebido 3792 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 166 Sucre, 11/04/2013 Expediente: 17/2013-S Distrito: Cochabamba Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de casación en el fondo de fs. 97-98 interpuesto por",
-    "[2026-10-02 09:49:58]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 166\\nSucre, 11/04/2013\\nExpediente: 17/2013-S\\nDistrito: Cochabamba\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: El recurso de casación en el fondo de fs. 97-98 interpuesto por Karla Tatiana\\nC",
-    "[2026-10-02 09:49:58]     fechas con formato de fecha halladas en el texto: ['11/04/2013', '2 de mayo de 2012', '16\\nde febrero de 2009', '02 de mayo de 2012', '16 de\\nfebrero de 2009']"
+    "[2026-10-02 09:51:16]   SIN RESOLVER: 2026-10-02-TSJ-AS-184-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 09:51:16]     diagnóstico: texto embebido 3934 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 184 Sucre, 23/04/2013 Expediente: 41/2013-S Distrito: La Paz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de casación en el fondo de fs. 372-376 interpuesto por J",
+    "[2026-10-02 09:51:16]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 184\\nSucre, 23/04/2013\\nExpediente: 41/2013-S\\nDistrito: La Paz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: El recurso de casación en el fondo de fs. 372-376 interpuesto por José Bernardo\\nAzu",
+    "[2026-10-02 09:51:16]     fechas con formato de fecha halladas en el texto: ['23/04/2013', '9 de\\nmarzo de 1937', '16 de mayo de 1974', '2 de febrero de 1967', '9 de marzo de 1937']",
+    "[2026-10-02 09:51:20]   SIN RESOLVER: 2026-10-02-TSJ-AS-185-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 09:51:20]     diagnóstico: texto embebido 3948 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 185 Sucre, 23/04/2013 Expediente: 52/2013-S Distrito: Santa Cruz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en la forma y en el fondo de fs. 211-2",
+    "[2026-10-02 09:51:20]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 185\\nSucre, 23/04/2013\\nExpediente: 52/2013-S\\nDistrito: Santa Cruz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación en la forma y en el fondo de fs. 211-218 interpuesto po",
+    "[2026-10-02 09:51:20]     fechas con formato de fecha halladas en el texto: ['23/04/2013', '16 de abril de 2012', '17 de noviembre de 2011', '17 de abril de 2009', '16 de abril de 2012']",
+    "[2026-10-02 09:51:24]   SIN RESOLVER: 2026-10-02-TSJ-AS-186-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 09:51:24]     diagnóstico: texto embebido 4032 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 186 Sucre, 23/04/2013 Expediente: 51/2013-S Distrito: La Paz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: Los recursos de casación de fs. 553-561 y 567-568, interpuestos por",
+    "[2026-10-02 09:51:24]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 186\\nSucre, 23/04/2013\\nExpediente: 51/2013-S\\nDistrito: La Paz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: Los recursos de casación de fs. 553-561 y 567-568, interpuestos por Edgar Hugo\\nDelg",
+    "[2026-10-02 09:51:24]     fechas con formato de fecha halladas en el texto: ['23/04/2013', '19\\nde abril de 2012', '19 de abril de 2012', '20 de marzo de 2008', '02/10/2026']"
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790948973,
+   "ts": 1790949036,
    "version": "0b5078a",
    "procesos": [
     {
@@ -226,7 +200,7 @@
       "tasa_min": 0.98,
       "restantes": 1569,
       "segundos": 95626,
-      "fin_ts": 1791044600
+      "fin_ts": 1791044663
      },
      "salud": {
       "estado": "alerta",
@@ -259,36 +233,10 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790948952,
+   "ts": 1790949050,
    "version": "0b5078a",
    "procesos": [],
-   "gestiones": {
-    "2016": {
-     "activo": true,
-     "total_archivos": 2311,
-     "total_esperado": 4051,
-     "pct_total": 57.0,
-     "termino_con_exito": false,
-     "con_faltantes": null,
-     "eta": {
-      "tasa_min": 2.19,
-      "restantes": 1740,
-      "segundos": 47708,
-      "fin_ts": 1790996660
-     },
-     "salud": {
-      "estado": "alerta",
-      "limite_30m": 0,
-      "fallos_30m": 24,
-      "fallos_15m": 9,
-      "fallos_total": 666,
-      "ultimo_movimiento_ts": 1790948744,
-      "ultimo_limite_ts": 1790946831,
-      "ultima_falla_ts": 1790948744,
-      "detalle": "9 documentos fallidos en 15 min"
-     }
-    }
-   },
+   "gestiones": {},
    "ultimas_lineas": [
     "    at PipeTransport.send (/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/playwright/driver/package/lib/protocol/transport.js:51:21)",
     "    at dispatcherConnection.onmessage (/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/playwright/driver/package/lib/cli/driver.js:59:57)",
@@ -307,7 +255,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790949005,
+   "ts": 1790949067,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
