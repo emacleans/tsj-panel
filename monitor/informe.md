@@ -1,16 +1,16 @@
-# Informe del orquestador — 02/10 14:50
+# Informe del orquestador — 02/10 14:54
 
-Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:54
+Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 
 ## Equipos
 
 | Equipo | Estado | Trabajo | Avance | Termina | Salud |
 |---|---|---|---|---|---|
 | IPE01 (Mac Mini oficina) | en línea | libre | - | - | - |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 861/1132 (76.1 %) | 02/10 15:49 | alerta (el sitio limitó 1 vez(es) en 30 min) |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2879/4051 (71.1 %) | 02/10 22:13 | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 861/1132 (76.1 %) | 02/10 16:17 | aviso (4 documento(s) fallido(s) en 30 min) |
+| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2879/4051 (71.1 %) | 03/10 02:26 | aviso (4 documento(s) fallido(s) en 30 min) |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | - | - |
-| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3633/4584 (79.3 %) | 02/10 19:42 | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3633/4584 (79.3 %) | 02/10 20:12 | aviso (4 documento(s) fallido(s) en 30 min) |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | - | - |
 
 ## Cola de compilación
@@ -19,7 +19,7 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:54
 |---|---|---|---|---|
 | 2013 | incompleta | IPE02 (Mac Mini casa) | 616/5271 (11.7 %) | 0 |
 | 2014 | activa | MacBook Air | 3633/4584 (79.3 %) | 0 |
-| 2015 | incompleta | iMac-Sala (iMac de la sala) | 2232/4298 (51.9 %) | 1 |
+| 2015 | incompleta | iMac-Sala (iMac de la sala) | 2232/4298 (51.9 %) | 2 |
 | 2016 | activa | MM-Ali (Mac Mini Alicia) | 2879/4051 (71.1 %) | 1 |
 | 2012 | activa | IPE02 (Mac Mini casa) | 861/1132 (76.1 %) | 0 |
 | 2011 | completa | IPE01 (Mac Mini oficina) | 1552/1572 (98.7 %) | 0 |
@@ -51,3 +51,4 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:54
 - 02/10 10:37 · el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06
 - 02/10 12:59 · el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 13:28
 - 02/10 14:04 · el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 14:34
+- 02/10 14:54 · inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 2)
