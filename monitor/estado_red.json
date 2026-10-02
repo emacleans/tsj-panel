@@ -1,5 +1,5 @@
 {
- "ts": 1790955290,
+ "ts": 1790955292,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790954784,
@@ -24,39 +24,43 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947495,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+   "ts": 1790947424,
+   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948163,
-   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
+   "ts": 1790948083,
+   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
   },
   {
-   "ts": 1790948766,
-   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
+   "ts": 1790948740,
+   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948893,
+   "ts": 1790948934,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   },
   {
-   "ts": 1790950662,
-   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
+   "ts": 1790950702,
+   "texto": "inicia 2012 en IPE02 (Mac Mini casa) (sin_empezar; intento 1)"
   },
   {
-   "ts": 1790951360,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
-  },
-  {
-   "ts": 1790951497,
+   "ts": 1790951232,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951568,
+   "ts": 1790951434,
+   "texto": "inicia 2011 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
+  },
+  {
+   "ts": 1790951505,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951834,
+   "ts": 1790951576,
+   "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
+  },
+  {
+   "ts": 1790951838,
    "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06"
   }
  ],
@@ -64,7 +68,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790955219,
+   "ts": 1790955285,
    "version": "a05df34",
    "procesos": [],
    "gestiones": {
@@ -97,7 +101,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790955272,
+   "ts": 1790955288,
    "version": "a05df34",
    "procesos": [
     {
@@ -116,16 +120,16 @@
    "gestiones": {
     "2011": {
      "activo": true,
-     "total_archivos": 448,
+     "total_archivos": 450,
      "total_esperado": 625,
-     "pct_total": 71.7,
+     "pct_total": 72.0,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
       "tasa_min": 7.03,
-      "restantes": 177,
-      "segundos": 1510,
-      "fin_ts": 1790956782
+      "restantes": 175,
+      "segundos": 1493,
+      "fin_ts": 1790956781
      },
      "salud": {
       "estado": "ok",
@@ -133,7 +137,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1790955193,
+      "ultimo_movimiento_ts": 1790955274,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -141,7 +145,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 11:20:45] Sala Contenciosa Primera: 230 documentos nuevos guardados, 0 ya existían (índice 229 de 268).",
     "[2026-10-02 11:22:11] Sala Contenciosa Primera: 240 documentos nuevos guardados, 0 ya existían (índice 239 de 268).",
     "[2026-10-02 11:23:37] Sala Contenciosa Primera: 250 documentos nuevos guardados, 0 ya existían (índice 249 de 268).",
     "[2026-10-02 11:25:03] Sala Contenciosa Primera: 260 documentos nuevos guardados, 0 ya existían (índice 259 de 268).",
@@ -152,7 +155,8 @@
     "[2026-10-02 11:29:05] Sala Contenciosa Segunda: 20 documentos nuevos guardados, 0 ya existían (índice 19 de 229).",
     "[2026-10-02 11:30:28] Sala Contenciosa Segunda: 30 documentos nuevos guardados, 0 ya existían (índice 29 de 229).",
     "[2026-10-02 11:31:48] Sala Contenciosa Segunda: 40 documentos nuevos guardados, 0 ya existían (índice 39 de 229).",
-    "[2026-10-02 11:33:13] Sala Contenciosa Segunda: 50 documentos nuevos guardados, 0 ya existían (índice 49 de 229)."
+    "[2026-10-02 11:33:13] Sala Contenciosa Segunda: 50 documentos nuevos guardados, 0 ya existían (índice 49 de 229).",
+    "[2026-10-02 11:34:34] Sala Contenciosa Segunda: 60 documentos nuevos guardados, 1 ya existían (índice 60 de 229)."
    ]
   },
   {
