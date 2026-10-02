@@ -1,5 +1,5 @@
 {
- "ts": 1790959600,
+ "ts": 1790959631,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790954784,
@@ -24,43 +24,39 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947424,
-   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
+   "ts": 1790947495,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948083,
-   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
+   "ts": 1790948163,
+   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
   },
   {
-   "ts": 1790948740,
-   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
+   "ts": 1790948766,
+   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948934,
+   "ts": 1790948893,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   },
   {
-   "ts": 1790950702,
-   "texto": "inicia 2012 en IPE02 (Mac Mini casa) (sin_empezar; intento 1)"
+   "ts": 1790950662,
+   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
   },
   {
-   "ts": 1790951232,
+   "ts": 1790951360,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1790951497,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951434,
-   "texto": "inicia 2011 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
-  },
-  {
-   "ts": 1790951505,
+   "ts": 1790951568,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951576,
-   "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
-  },
-  {
-   "ts": 1790951838,
+   "ts": 1790951834,
    "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06"
   }
  ],
@@ -101,7 +97,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790959587,
+   "ts": 1790959603,
    "version": "a05df34",
    "procesos": [
     {
@@ -120,16 +116,16 @@
    "gestiones": {
     "2011": {
      "activo": true,
-     "total_archivos": 954,
+     "total_archivos": 956,
      "total_esperado": 996,
-     "pct_total": 95.8,
+     "pct_total": 96.0,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 7.05,
-      "restantes": 42,
-      "segundos": 357,
-      "fin_ts": 1790959944
+      "tasa_min": 7.06,
+      "restantes": 40,
+      "segundos": 340,
+      "fin_ts": 1790959943
      },
      "salud": {
       "estado": "ok",
@@ -162,35 +158,35 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790959590,
+   "ts": 1790959623,
    "version": "a05df34",
    "procesos": [
     {
      "pid": 11315,
      "tipo": "vigilante",
      "gestion": "2012",
-     "inicio_ts": 1790950705
+     "inicio_ts": 1790950706
     },
     {
      "pid": 22425,
      "tipo": "compilacion",
      "gestion": "2012",
-     "inicio_ts": 1790958472
+     "inicio_ts": 1790958473
     }
    ],
    "gestiones": {
     "2012": {
      "activo": true,
-     "total_archivos": 500,
+     "total_archivos": 504,
      "total_esperado": 739,
-     "pct_total": 67.7,
+     "pct_total": 68.2,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.31,
-      "restantes": 239,
-      "segundos": 6214,
-      "fin_ts": 1790965803
+      "tasa_min": 2.45,
+      "restantes": 235,
+      "segundos": 5762,
+      "fin_ts": 1790965385
      },
      "salud": {
       "estado": "alerta",
@@ -223,7 +219,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790959580,
+   "ts": 1790959615,
    "version": "a05df34",
    "procesos": [
     {
@@ -242,16 +238,16 @@
    "gestiones": {
     "2014": {
      "activo": true,
-     "total_archivos": 3427,
+     "total_archivos": 3431,
      "total_esperado": 4584,
      "pct_total": 74.8,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 1.64,
-      "restantes": 1157,
-      "segundos": 42435,
-      "fin_ts": 1791002015
+      "tasa_min": 1.79,
+      "restantes": 1153,
+      "segundos": 38641,
+      "fin_ts": 1790998257
      },
      "salud": {
       "estado": "aviso",
@@ -284,7 +280,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790959584,
+   "ts": 1790959620,
    "version": "a05df34",
    "procesos": [
     {
@@ -303,16 +299,16 @@
    "gestiones": {
     "2016": {
      "activo": true,
-     "total_archivos": 2635,
+     "total_archivos": 2639,
      "total_esperado": 4051,
-     "pct_total": 65.0,
+     "pct_total": 65.1,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.88,
-      "restantes": 1416,
-      "segundos": 29452,
-      "fin_ts": 1790989037
+      "tasa_min": 3.0,
+      "restantes": 1412,
+      "segundos": 28240,
+      "fin_ts": 1790987860
      },
      "salud": {
       "estado": "aviso",
