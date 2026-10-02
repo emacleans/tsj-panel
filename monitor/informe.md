@@ -7,8 +7,8 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 | Equipo | Estado | Trabajo | Avance | Termina | Salud |
 |---|---|---|---|---|---|
 | IPE01 (Mac Mini oficina) | en línea | libre | - | - | - |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2013, compilacion 2013 | 2013: 576/5271 (10.9 %) | 03/10 15:41 | alerta (15 documentos fallidos en 15 min) |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2276/4051 (56.2 %) | 03/10 02:51 | alerta (el sitio limitó 1 vez(es) en 30 min; 15 documentos fallidos en 15 min) |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2013, compilacion 2013 | 2013: 582/5271 (11.0 %) | 03/10 13:37 | alerta (15 documentos fallidos en 15 min) |
+| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2279/4051 (56.3 %) | 03/10 00:57 | alerta (el sitio limitó 1 vez(es) en 30 min; 15 documentos fallidos en 15 min) |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | - | - |
 | MacBook Air | en línea | libre | - | - | - |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | - | - |
@@ -17,10 +17,10 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 
 | Gestión | Estado | Equipo | Avance | Lanzamientos |
 |---|---|---|---|---|
-| 2013 | activa | IPE02 (Mac Mini casa) | 576/5271 (10.9 %) | 0 |
-| 2014 | incompleta | MacBook Air | 2996/4584 (65.4 %) | 0 |
+| 2013 | activa | IPE02 (Mac Mini casa) | 582/5271 (11.0 %) | 0 |
+| 2014 | incompleta | MacBook Air | 2996/4584 (65.4 %) | 1 |
 | 2015 | incompleta | iMac-Sala (iMac de la sala) | 2064/4298 (48.0 %) | 0 |
-| 2016 | activa | MM-Ali (Mac Mini Alicia) | 2276/4051 (56.2 %) | 0 |
+| 2016 | activa | MM-Ali (Mac Mini Alicia) | 2279/4051 (56.3 %) | 0 |
 | 2012 | sin_empezar | MM-Sofi (Mac Mini Sofía) | 0/3211 (0.0 %) | 0 |
 | 2011 | sin_empezar | - | - | 0 |
 | 2010 | sin_empezar | - | - | 0 |
@@ -41,3 +41,4 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 ## Últimas acciones del orquestador
 
 - 02/10 09:23 · reinicio de 2014 en MacBook Air: corría con código anterior al último cambio
+- 02/10 09:34 · inicia 2014 en MacBook Air (incompleta; intento 1)
