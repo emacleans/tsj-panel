@@ -1,5 +1,5 @@
 {
- "ts": 1790947427,
+ "ts": 1790947499,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 0,
@@ -24,26 +24,28 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947424,
-   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
+   "ts": 1790947495,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790947402,
-   "version": "4e86d77",
+   "ts": 1790947481,
+   "version": "0b5078a",
    "procesos": [
     {
      "pid": 16716,
      "tipo": "vigilante",
-     "gestion": "2015"
+     "gestion": "2015",
+     "inicio_ts": 1790912110
     },
     {
      "pid": 16722,
      "tipo": "compilacion",
-     "gestion": "2015"
+     "gestion": "2015",
+     "inicio_ts": 1790912110
     }
    ],
    "gestiones": {
@@ -55,21 +57,21 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.39,
+      "tasa_min": 2.95,
       "restantes": 2234,
-      "segundos": 39578,
-      "fin_ts": 1790986980
+      "segundos": 45399,
+      "fin_ts": 1790992881
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 0,
       "fallos_30m": 28,
-      "fallos_15m": 15,
+      "fallos_15m": 14,
       "fallos_total": 640,
-      "ultimo_movimiento_ts": 1790947381,
+      "ultimo_movimiento_ts": 1790947451,
       "ultimo_limite_ts": 1790942279,
       "ultima_falla_ts": 1790947042,
-      "detalle": "15 documentos fallidos en 15 min"
+      "detalle": "14 documentos fallidos en 15 min"
      }
     },
     "2018": {
@@ -84,8 +86,6 @@
     }
    },
    "ultimas_lineas": [
-    "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(46)",
     "[2026-10-02 09:16:48] AVISO: el documento #47 de Sala Contenciosa Primera falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(47)",
@@ -95,13 +95,15 @@
     "[2026-10-02 09:18:21] Sala Contenciosa Primera: 40 documentos nuevos guardados, 0 ya existían (índice 54 de 920).",
     "[2026-10-02 09:19:54] Sala Contenciosa Primera: 50 documentos nuevos guardados, 0 ya existían (índice 64 de 920).",
     "[2026-10-02 09:21:25] Sala Contenciosa Primera: 60 documentos nuevos guardados, 0 ya existían (índice 74 de 920).",
-    "[2026-10-02 09:23:01] Sala Contenciosa Primera: 70 documentos nuevos guardados, 0 ya existían (índice 84 de 920)."
+    "[2026-10-02 09:23:01] Sala Contenciosa Primera: 70 documentos nuevos guardados, 0 ya existían (índice 84 de 920).",
+    "[2026-10-02 09:23:43] Sala Contenciosa Primera: la descarga de la fila #87 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 8s...",
+    "[2026-10-02 09:24:11] Sala Contenciosa Primera: la descarga de la fila #87 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 17s..."
    ]
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790947418,
+   "ts": 1790947434,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
@@ -123,8 +125,8 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790947397,
-   "version": "4e86d77",
+   "ts": 1790947485,
+   "version": "0b5078a",
    "procesos": [
     {
      "pid": 56900,
@@ -146,58 +148,45 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.61,
+      "tasa_min": 3.1,
       "restantes": 4704,
-      "segundos": 78269,
-      "fin_ts": 1791025666
+      "segundos": 91100,
+      "fin_ts": 1791038586
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 0,
-      "fallos_30m": 29,
+      "fallos_30m": 30,
       "fallos_15m": 15,
-      "fallos_total": 511,
-      "ultimo_movimiento_ts": 1790947311,
+      "fallos_total": 512,
+      "ultimo_movimiento_ts": 1790947475,
       "ultimo_limite_ts": null,
-      "ultima_falla_ts": 1790947036,
+      "ultima_falla_ts": 1790947475,
       "detalle": "15 documentos fallidos en 15 min"
      }
     }
    },
    "ultimas_lineas": [
     "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(239)",
-    "[2026-10-02 09:16:42] AVISO: el documento #240 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(240)",
-    "[2026-10-02 09:17:16] AVISO: el documento #241 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
     "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(241)",
     "[2026-10-02 09:17:26] Sala Penal 1: 170 documentos nuevos guardados, 0 ya existían (índice 242 de 384).",
     "[2026-10-02 09:18:51] Sala Penal 1: 180 documentos nuevos guardados, 0 ya existían (índice 252 de 384).",
     "[2026-10-02 09:20:22] Sala Penal 1: 190 documentos nuevos guardados, 0 ya existían (índice 262 de 384).",
-    "[2026-10-02 09:21:51] Sala Penal 1: 200 documentos nuevos guardados, 0 ya existían (índice 272 de 384)."
+    "[2026-10-02 09:21:51] Sala Penal 1: 200 documentos nuevos guardados, 0 ya existían (índice 272 de 384).",
+    "[2026-10-02 09:23:35] Sala Penal 1: la descarga de la fila #282 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 9s...",
+    "[2026-10-02 09:24:04] Sala Penal 1: la descarga de la fila #282 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 12s...",
+    "[2026-10-02 09:24:35] AVISO: el documento #282 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
+    "=========================== logs ===========================",
+    "waiting for event \"download\"",
+    "============================================================"
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790947422,
+   "ts": 1790947478,
    "version": "0b5078a",
-   "procesos": [
-    {
-     "pid": 55968,
-     "tipo": "vigilante",
-     "gestion": "2014",
-     "inicio_ts": 1790895231
-    },
-    {
-     "pid": 55974,
-     "tipo": "compilacion",
-     "gestion": "2014",
-     "inicio_ts": 1790895231
-    }
-   ],
+   "procesos": [],
    "gestiones": {
     "2014": {
      "activo": true,
@@ -207,54 +196,56 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.65,
+      "tasa_min": 3.23,
       "restantes": 1588,
-      "segundos": 26069,
-      "fin_ts": 1790973491
+      "segundos": 29477,
+      "fin_ts": 1790976955
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 0,
       "fallos_30m": 29,
-      "fallos_15m": 15,
+      "fallos_15m": 14,
       "fallos_total": 642,
       "ultimo_movimiento_ts": 1790947416,
       "ultimo_limite_ts": 1790936879,
       "ultima_falla_ts": 1790947036,
-      "detalle": "15 documentos fallidos en 15 min"
+      "detalle": "14 documentos fallidos en 15 min"
      }
     }
    },
    "ultimas_lineas": [
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(633)",
-    "[2026-10-02 09:16:42] AVISO: el documento #634 de Sala Civil 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(634)",
-    "[2026-10-02 09:17:16] AVISO: el documento #635 de Sala Civil 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(635)",
-    "[2026-10-02 09:18:42] Sala Civil 1: 490 documentos nuevos guardados, 0 ya existían (índice 645 de 777).",
-    "[2026-10-02 09:20:08] Sala Civil 1: 500 documentos nuevos guardados, 0 ya existían (índice 655 de 777).",
-    "[2026-10-02 09:21:30] Sala Civil 1: 510 documentos nuevos guardados, 0 ya existían (índice 665 de 777).",
-    "[2026-10-02 09:22:53] Sala Civil 1: 520 documentos nuevos guardados, 0 ya existían (índice 675 de 777).",
-    "[2026-10-02 09:23:36] Sala Civil 1: la descarga de la fila #678 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 7s..."
+    "    at PipeTransport.send (/Users/enriquemaclean/Library/Python/3.14/lib/python/site-packages/playwright/driver/package/lib/server/utils/pipeTransport.js:52:21)",
+    "    at dispatcherConnection.onmessage (/Users/enriquemaclean/Library/Python/3.14/lib/python/site-packages/playwright/driver/package/lib/cli/driver.js:60:59)",
+    "    at DispatcherConnection.sendDispose (/Users/enriquemaclean/Library/Python/3.14/lib/python/site-packages/playwright/driver/package/lib/server/dispatchers/dispatcher.js:191:10)",
+    "Emitted 'error' event on Socket instance at:",
+    "    at emitErrorNT (node:internal/streams/destroy:170:8)",
+    "    at emitErrorCloseNT (node:internal/streams/destroy:129:3)",
+    "    at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {",
+    "  errno: -32,",
+    "  code: 'EPIPE',",
+    "  syscall: 'write'",
+    "}",
+    "Node.js v24.11.1"
    ]
   },
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790947408,
+   "ts": 1790947493,
    "version": "0b5078a",
    "procesos": [
     {
      "pid": 17010,
      "tipo": "vigilante",
-     "gestion": "2016"
+     "gestion": "2016",
+     "inicio_ts": 1790908741
     },
     {
      "pid": 17016,
      "tipo": "compilacion",
-     "gestion": "2016"
+     "gestion": "2016",
+     "inicio_ts": 1790908741
     }
    ],
    "gestiones": {
@@ -266,44 +257,44 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.53,
+      "tasa_min": 2.16,
       "restantes": 1783,
-      "segundos": 42292,
-      "fin_ts": 1790989701
+      "segundos": 49626,
+      "fin_ts": 1790997120
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 1,
-      "fallos_30m": 22,
+      "fallos_30m": 23,
       "fallos_15m": 8,
-      "fallos_total": 665,
-      "ultimo_movimiento_ts": 1790947325,
+      "fallos_total": 664,
+      "ultimo_movimiento_ts": 1790947478,
       "ultimo_limite_ts": 1790946831,
-      "ultima_falla_ts": 1790946803,
+      "ultima_falla_ts": 1790947478,
       "detalle": "el sitio limitó 1 vez(es) en 30 min; 8 documentos fallidos en 15 min"
      }
     }
    },
    "ultimas_lineas": [
-    "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(1405)",
-    "[2026-10-02 09:13:23] AVISO: el documento #1406 de Sala Civil falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(1406)",
-    "[2026-10-02 09:13:26] --- Sala Civil terminada: 281 nuevos, 0 ya existentes. Archivos totales ahora en la carpeta: 1284 (el sitio reporta 1409 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
     "[2026-10-02 09:13:26] --- Sala Civil terminada: 1289 nuevos, 0 ya existentes. Archivos totales ahora en la carpeta: 1284 (el sitio reporta 1409 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
     "[2026-10-02 09:13:26] --- Iniciando Sala Plena (Gestión 2016) ---",
     "[2026-10-02 09:13:51] Sala Plena: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3).",
     "[2026-10-02 09:18:56] Sala Plena: 125 resultados encontrados en el sitio.",
     "[2026-10-02 09:20:30] Sala Plena: 10 documentos nuevos guardados, 0 ya existían (índice 9 de 125).",
-    "[2026-10-02 09:22:05] Sala Plena: 20 documentos nuevos guardados, 0 ya existían (índice 19 de 125)."
+    "[2026-10-02 09:22:05] Sala Plena: 20 documentos nuevos guardados, 0 ya existían (índice 19 de 125).",
+    "[2026-10-02 09:23:35] Sala Plena: la descarga de la fila #27 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 8s...",
+    "[2026-10-02 09:24:04] Sala Plena: la descarga de la fila #27 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 14s...",
+    "[2026-10-02 09:24:38] AVISO: el documento #27 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
+    "=========================== logs ===========================",
+    "waiting for event \"download\"",
+    "============================================================"
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790947405,
-   "version": "4e86d77",
+   "ts": 1790947464,
+   "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
    "ultimas_lineas": [
