@@ -1,5 +1,5 @@
 {
- "ts": 1790947799,
+ "ts": 1790948048,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 0,
@@ -24,43 +24,18 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947495,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+   "ts": 1790947424,
+   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790947783,
+   "ts": 1790947991,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {
-    "2015": {
-     "activo": true,
-     "total_archivos": 2064,
-     "total_esperado": 4298,
-     "pct_total": 48.0,
-     "termino_con_exito": false,
-     "con_faltantes": null,
-     "eta": {
-      "tasa_min": 2.01,
-      "restantes": 2234,
-      "segundos": 66608,
-      "fin_ts": 1791014392
-     },
-     "salud": {
-      "estado": "alerta",
-      "limite_30m": 0,
-      "fallos_30m": 20,
-      "fallos_15m": 6,
-      "fallos_total": 641,
-      "ultimo_movimiento_ts": 1790947488,
-      "ultimo_limite_ts": 1790942279,
-      "ultima_falla_ts": 1790947488,
-      "detalle": "6 documentos fallidos en 15 min"
-     }
-    },
     "2018": {
      "activo": false,
      "total_archivos": 3874,
@@ -90,7 +65,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790947751,
+   "ts": 1790948006,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
@@ -112,7 +87,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790947777,
+   "ts": 1790948029,
    "version": "0b5078a",
    "procesos": [
     {
@@ -131,49 +106,49 @@
    "gestiones": {
     "2013": {
      "activo": true,
-     "total_archivos": 567,
+     "total_archivos": 576,
      "total_esperado": 5271,
-     "pct_total": 10.8,
+     "pct_total": 10.9,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.17,
-      "restantes": 4704,
-      "segundos": 129830,
-      "fin_ts": 1791077607
+      "tasa_min": 2.6,
+      "restantes": 4695,
+      "segundos": 108464,
+      "fin_ts": 1791056493
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 0,
       "fallos_30m": 30,
       "fallos_15m": 15,
-      "fallos_total": 521,
-      "ultimo_movimiento_ts": 1790947776,
+      "fallos_total": 526,
+      "ultimo_movimiento_ts": 1790947952,
       "ultimo_limite_ts": null,
-      "ultima_falla_ts": 1790947776,
+      "ultima_falla_ts": 1790947943,
       "detalle": "15 documentos fallidos en 15 min"
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 09:27:56] AVISO: el documento #288 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(288)",
-    "[2026-10-02 09:28:29] AVISO: el documento #289 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(293)",
+    "[2026-10-02 09:31:17] AVISO: el documento #294 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(289)",
-    "[2026-10-02 09:29:03] AVISO: el documento #290 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(294)",
+    "[2026-10-02 09:31:50] AVISO: el documento #295 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(290)",
-    "[2026-10-02 09:29:36] AVISO: el documento #291 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(295)",
+    "[2026-10-02 09:32:23] AVISO: el documento #296 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(291)"
+    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(296)",
+    "[2026-10-02 09:32:32] Sala Penal 1: 210 documentos nuevos guardados, 0 ya existían (índice 297 de 384)."
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790947730,
+   "ts": 1790947987,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
@@ -195,7 +170,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790947772,
+   "ts": 1790948042,
    "version": "0b5078a",
    "procesos": [
     {
@@ -214,49 +189,49 @@
    "gestiones": {
     "2016": {
      "activo": true,
-     "total_archivos": 2268,
+     "total_archivos": 2276,
      "total_esperado": 4051,
-     "pct_total": 56.0,
+     "pct_total": 56.2,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 1.38,
-      "restantes": 1783,
-      "segundos": 77766,
-      "fin_ts": 1791025539
+      "tasa_min": 1.71,
+      "restantes": 1775,
+      "segundos": 62229,
+      "fin_ts": 1791010272
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 1,
-      "fallos_30m": 22,
-      "fallos_15m": 9,
+      "fallos_30m": 23,
+      "fallos_15m": 15,
       "fallos_total": 666,
-      "ultimo_movimiento_ts": 1790947755,
+      "ultimo_movimiento_ts": 1790947994,
       "ultimo_limite_ts": 1790946831,
-      "ultima_falla_ts": 1790947755,
-      "detalle": "el sitio limitó 1 vez(es) en 30 min; 9 documentos fallidos en 15 min"
+      "ultima_falla_ts": 1790947964,
+      "detalle": "el sitio limitó 1 vez(es) en 30 min; 15 documentos fallidos en 15 min"
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 09:27:31] AVISO: el documento #32 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(32)",
-    "[2026-10-02 09:28:06] AVISO: el documento #33 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(38)",
+    "[2026-10-02 09:31:34] AVISO: el documento #39 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(33)",
-    "[2026-10-02 09:28:41] AVISO: el documento #34 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(39)",
+    "[2026-10-02 09:32:09] AVISO: el documento #40 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(34)",
-    "[2026-10-02 09:29:15] AVISO: el documento #35 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(40)",
+    "[2026-10-02 09:32:44] AVISO: el documento #41 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(35)"
+    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(41)",
+    "[2026-10-02 09:33:14] Sala Plena: 30 documentos nuevos guardados, 0 ya existían (índice 44 de 125)."
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790947751,
+   "ts": 1790948002,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
