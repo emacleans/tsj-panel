@@ -1,5 +1,5 @@
 {
- "ts": 1790949101,
+ "ts": 1790949328,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790950660,
@@ -24,19 +24,19 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947495,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+   "ts": 1790947424,
+   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948163,
-   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
+   "ts": 1790948083,
+   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
   },
   {
-   "ts": 1790948766,
-   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
+   "ts": 1790948740,
+   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948893,
+   "ts": 1790948934,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   }
  ],
@@ -44,7 +44,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790949065,
+   "ts": 1790949312,
    "version": "0b5078a",
    "procesos": [
     {
@@ -63,24 +63,24 @@
    "gestiones": {
     "2015": {
      "activo": true,
-     "total_archivos": 2083,
+     "total_archivos": 2093,
      "total_esperado": 4298,
-     "pct_total": 48.5,
+     "pct_total": 48.7,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 0.98,
-      "restantes": 2215,
-      "segundos": 136280,
-      "fin_ts": 1791085346
+      "tasa_min": 1.48,
+      "restantes": 2205,
+      "segundos": 89264,
+      "fin_ts": 1791038576
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 1,
-      "fallos_30m": 3,
+      "fallos_30m": 2,
       "fallos_15m": 2,
       "fallos_total": 643,
-      "ultimo_movimiento_ts": 1790948860,
+      "ultimo_movimiento_ts": 1790949301,
       "ultimo_limite_ts": 1790948860,
       "ultima_falla_ts": 1790948510,
       "detalle": "el sitio limitó 1 vez(es) en 30 min"
@@ -98,24 +98,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 09:41:50] AVISO: el documento #174 de Sala Civil falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(174)",
-    "[2026-10-02 09:41:50] Sala Civil: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
-    "[2026-10-02 09:47:06] *** El registro lleva 316s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
-    "/Users/enriquemaclean/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 48394 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
-    "[2026-10-02 09:47:09] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
-    "[2026-10-02 09:47:09] Esperando 5s antes de continuar...",
-    "[2026-10-02 09:47:14] Iniciando compilar_tsj.py --gestion 2015...",
-    "[2026-10-02 09:47:16] Filas ya registradas históricamente en _progreso.csv: 2088.",
-    "[2026-10-02 09:47:16] --- Iniciando Sala Penal (Gestión 2015) ---",
-    "[2026-10-02 09:47:40] Sala Penal: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
+    "[2026-10-02 09:52:51] Sala Penal: 300 ya existian hasta ahora (indice 299 de 767, siguen revisandose...).",
+    "[2026-10-02 09:52:51] Sala Penal: 400 ya existian hasta ahora (indice 399 de 767, siguen revisandose...).",
+    "[2026-10-02 09:52:51] Sala Penal: 500 ya existian hasta ahora (indice 499 de 767, siguen revisandose...).",
+    "[2026-10-02 09:52:51] Sala Penal: 600 ya existian hasta ahora (indice 599 de 767, siguen revisandose...).",
+    "[2026-10-02 09:52:51] Sala Penal: 700 ya existian hasta ahora (indice 699 de 767, siguen revisandose...).",
+    "[2026-10-02 09:52:51] --- Sala Penal terminada: 0 nuevos, 767 ya existentes. Archivos totales ahora en la carpeta: 767 (el sitio reporta 767 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 09:52:51] --- Iniciando Sala Civil (Gestión 2015) ---",
+    "[2026-10-02 09:52:55] Sala Civil: 1176 resultados encontrados en el sitio.",
+    "[2026-10-02 09:52:55] Sala Civil: 100 ya existian hasta ahora (indice 99 de 1176, siguen revisandose...).",
+    "[2026-10-02 09:54:22] Sala Civil: 200 ya existian hasta ahora (indice 205 de 1176, siguen revisandose...).",
+    "[2026-10-02 09:54:22] Sala Civil: 300 ya existian hasta ahora (indice 305 de 1176, siguen revisandose...).",
+    "[2026-10-02 09:55:01] Sala Civil: 10 documentos nuevos guardados, 333 ya existían (índice 342 de 1176)."
    ]
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790949086,
+   "ts": 1790949276,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
@@ -137,7 +137,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790949086,
+   "ts": 1790949322,
    "version": "0b5078a",
    "procesos": [
     {
@@ -155,24 +155,24 @@
    ],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-02 09:51:16]   SIN RESOLVER: 2026-10-02-TSJ-AS-184-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 09:51:16]     diagnóstico: texto embebido 3934 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 184 Sucre, 23/04/2013 Expediente: 41/2013-S Distrito: La Paz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de casación en el fondo de fs. 372-376 interpuesto por J",
-    "[2026-10-02 09:51:16]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 184\\nSucre, 23/04/2013\\nExpediente: 41/2013-S\\nDistrito: La Paz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: El recurso de casación en el fondo de fs. 372-376 interpuesto por José Bernardo\\nAzu",
-    "[2026-10-02 09:51:16]     fechas con formato de fecha halladas en el texto: ['23/04/2013', '9 de\\nmarzo de 1937', '16 de mayo de 1974', '2 de febrero de 1967', '9 de marzo de 1937']",
-    "[2026-10-02 09:51:20]   SIN RESOLVER: 2026-10-02-TSJ-AS-185-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 09:51:20]     diagnóstico: texto embebido 3948 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 185 Sucre, 23/04/2013 Expediente: 52/2013-S Distrito: Santa Cruz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en la forma y en el fondo de fs. 211-2",
-    "[2026-10-02 09:51:20]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 185\\nSucre, 23/04/2013\\nExpediente: 52/2013-S\\nDistrito: Santa Cruz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación en la forma y en el fondo de fs. 211-218 interpuesto po",
-    "[2026-10-02 09:51:20]     fechas con formato de fecha halladas en el texto: ['23/04/2013', '16 de abril de 2012', '17 de noviembre de 2011', '17 de abril de 2009', '16 de abril de 2012']",
-    "[2026-10-02 09:51:24]   SIN RESOLVER: 2026-10-02-TSJ-AS-186-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 09:51:24]     diagnóstico: texto embebido 4032 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 186 Sucre, 23/04/2013 Expediente: 51/2013-S Distrito: La Paz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: Los recursos de casación de fs. 553-561 y 567-568, interpuestos por",
-    "[2026-10-02 09:51:24]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 186\\nSucre, 23/04/2013\\nExpediente: 51/2013-S\\nDistrito: La Paz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: Los recursos de casación de fs. 553-561 y 567-568, interpuestos por Edgar Hugo\\nDelg",
-    "[2026-10-02 09:51:24]     fechas con formato de fecha halladas en el texto: ['23/04/2013', '19\\nde abril de 2012', '19 de abril de 2012', '20 de marzo de 2008', '02/10/2026']"
+    "[2026-10-02 09:55:11]   SIN RESOLVER: 2026-10-02-TSJ-AS-237-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 09:55:11]     diagnóstico: texto embebido 3918 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 237 Sucre, 13/05/2013 Expediente: 63/2013-A Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en el fondo y en la forma de fs. 96-99, in",
+    "[2026-10-02 09:55:11]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 237\\nSucre, 13/05/2013\\nExpediente: 63/2013-A\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación en el fondo y en la forma de fs. 96-99, interpuesto por el\\",
+    "[2026-10-02 09:55:11]     fechas con formato de fecha halladas en el texto: ['13/05/2013', '20 de agosto de 2012', '23 de\\nabril de 2009', '20 de mayo de 2010', '23 de abril de 2009']",
+    "[2026-10-02 09:55:15]   SIN RESOLVER: 2026-10-02-TSJ-AS-238-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 09:55:15]     diagnóstico: texto embebido 4022 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 238 Sucre, 13/05/2013 Expediente: 66/2013-S Distrito: La Paz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: Los recursos de casación de fs. 156-159 y 161-163, interpuestos por",
+    "[2026-10-02 09:55:15]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 238\\nSucre, 13/05/2013\\nExpediente: 66/2013-S\\nDistrito: La Paz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: Los recursos de casación de fs. 156-159 y 161-163, interpuestos por Jacqueline\\nMari",
+    "[2026-10-02 09:55:15]     fechas con formato de fecha halladas en el texto: ['13/05/2013', '18 de mayo de 2012', '28 de abril de 2010', '18 de mayo de 2012', '2 de enero de 2010']",
+    "[2026-10-02 09:55:19]   SIN RESOLVER: 2026-10-02-TSJ-AS-239-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 09:55:19]     diagnóstico: texto embebido 4080 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 239 Sucre, 13/05/2013 Expediente: 67/2013-S Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en la forma y en el fondo de fs. 358-365 i",
+    "[2026-10-02 09:55:19]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 239\\nSucre, 13/05/2013\\nExpediente: 67/2013-S\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación en la forma y en el fondo de fs. 358-365 interpuesto por\\nJ",
+    "[2026-10-02 09:55:19]     fechas con formato de fecha halladas en el texto: ['13/05/2013', '28 de septiembre de 2012', '16 de abril de 2010', '28 de septiembre de 2012', '16 de abril de 2010']"
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790949036,
+   "ts": 1790949324,
    "version": "0b5078a",
    "procesos": [
     {
@@ -191,24 +191,24 @@
    "gestiones": {
     "2014": {
      "activo": true,
-     "total_archivos": 3015,
+     "total_archivos": 3024,
      "total_esperado": 4584,
-     "pct_total": 65.8,
+     "pct_total": 66.0,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 0.98,
-      "restantes": 1569,
-      "segundos": 95626,
-      "fin_ts": 1791044663
+      "tasa_min": 1.21,
+      "restantes": 1560,
+      "segundos": 77220,
+      "fin_ts": 1791026544
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 1,
       "fallos_30m": 2,
       "fallos_15m": 2,
-      "fallos_total": 636,
-      "ultimo_movimiento_ts": 1790948841,
+      "fallos_total": 631,
+      "ultimo_movimiento_ts": 1790949189,
       "ultimo_limite_ts": 1790948841,
       "ultima_falla_ts": 1790948501,
       "detalle": "el sitio limitó 1 vez(es) en 30 min"
@@ -216,24 +216,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 09:41:41] AVISO: el documento #88 de Sala Contenciosa Segunda falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(88)",
-    "[2026-10-02 09:41:41] Sala Contenciosa Segunda: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
-    "[2026-10-02 09:46:48] *** El registro lleva 307s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
-    "/Users/enriquemaclean/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 20919 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
-    "[2026-10-02 09:46:52] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
-    "[2026-10-02 09:46:52] Esperando 5s antes de continuar...",
-    "[2026-10-02 09:46:57] Iniciando compilar_tsj.py --gestion 2014...",
-    "[2026-10-02 09:46:57] Filas ya registradas históricamente en _progreso.csv: 3048.",
-    "[2026-10-02 09:46:57] --- Iniciando Sala Penal (Gestión 2014) ---",
-    "[2026-10-02 09:47:21] Sala Penal: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
+    "[2026-10-02 09:52:35] Sala Plena: 200 ya existian hasta ahora (indice 199 de 202, siguen revisandose...).",
+    "[2026-10-02 09:52:35] --- Sala Plena terminada: 0 nuevos, 202 ya existentes. Archivos totales ahora en la carpeta: 202 (el sitio reporta 202 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 09:52:35] --- Iniciando Sala Contenciosa Primera (Gestión 2014) ---",
+    "[2026-10-02 09:52:39] Sala Contenciosa Primera: 549 resultados encontrados en el sitio.",
+    "[2026-10-02 09:53:05] Sala Contenciosa Primera: 100 ya existian hasta ahora (indice 99 de 549, siguen revisandose...).",
+    "[2026-10-02 09:53:05] Sala Contenciosa Primera: 200 ya existian hasta ahora (indice 199 de 549, siguen revisandose...).",
+    "[2026-10-02 09:53:05] Sala Contenciosa Primera: 300 ya existian hasta ahora (indice 299 de 549, siguen revisandose...).",
+    "[2026-10-02 09:53:05] Sala Contenciosa Primera: 400 ya existian hasta ahora (indice 399 de 549, siguen revisandose...).",
+    "[2026-10-02 09:53:05] Sala Contenciosa Primera: 500 ya existian hasta ahora (indice 499 de 549, siguen revisandose...).",
+    "[2026-10-02 09:53:05] --- Sala Contenciosa Primera terminada: 0 nuevos, 549 ya existentes. Archivos totales ahora en la carpeta: 545 (el sitio reporta 549 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 09:53:05] --- Iniciando Sala Contenciosa Segunda (Gestión 2014) ---",
+    "[2026-10-02 09:53:09] Sala Contenciosa Segunda: 389 resultados encontrados en el sitio."
    ]
   },
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790949050,
+   "ts": 1790949307,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
@@ -255,7 +255,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790949067,
+   "ts": 1790949320,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
