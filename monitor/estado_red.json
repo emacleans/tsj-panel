@@ -1,5 +1,5 @@
 {
- "ts": 1790949947,
+ "ts": 1790950022,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790950660,
@@ -24,19 +24,19 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947424,
-   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
+   "ts": 1790947495,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948083,
-   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
+   "ts": 1790948163,
+   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
   },
   {
-   "ts": 1790948740,
-   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
+   "ts": 1790948766,
+   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948934,
+   "ts": 1790948893,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   }
  ],
@@ -44,7 +44,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790949940,
+   "ts": 1790949973,
    "version": "64cfdfa",
    "procesos": [
     {
@@ -72,17 +72,17 @@
       "tasa_min": 3.02,
       "restantes": 2158,
       "segundos": 42819,
-      "fin_ts": 1790992759
+      "fin_ts": 1790992792
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 1,
-      "fallos_30m": 3,
-      "fallos_15m": 1,
-      "fallos_total": 644,
-      "ultimo_movimiento_ts": 1790949930,
+      "fallos_30m": 4,
+      "fallos_15m": 2,
+      "fallos_total": 645,
+      "ultimo_movimiento_ts": 1790949964,
       "ultimo_limite_ts": 1790948860,
-      "ultima_falla_ts": 1790949930,
+      "ultima_falla_ts": 1790949964,
       "detalle": "el sitio limitó 1 vez(es) en 30 min"
      }
     },
@@ -98,10 +98,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 09:59:42] Sala Civil: 600 ya existian hasta ahora (indice 631 de 1176, siguen revisandose...).",
-    "[2026-10-02 09:59:42] Sala Civil: 700 ya existian hasta ahora (indice 731 de 1176, siguen revisandose...).",
-    "[2026-10-02 10:01:00] Sala Civil: 40 documentos nuevos guardados, 726 ya existían (índice 765 de 1176).",
-    "[2026-10-02 10:02:03] Sala Civil: 800 ya existian hasta ahora (indice 845 de 1176, siguen revisandose...).",
     "[2026-10-02 10:02:32] Sala Civil: 900 ya existian hasta ahora (indice 948 de 1176, siguen revisandose...).",
     "[2026-10-02 10:02:39] Sala Civil: 50 documentos nuevos guardados, 914 ya existían (índice 963 de 1176).",
     "[2026-10-02 10:04:28] Sala Civil: la descarga de la fila #972 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 7s...",
@@ -109,13 +105,17 @@
     "[2026-10-02 10:05:30] AVISO: el documento #972 de Sala Civil falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
     "=========================== logs ===========================",
     "waiting for event \"download\"",
-    "============================================================"
+    "============================================================",
+    "[2026-10-02 10:06:04] AVISO: el documento #973 de Sala Civil falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "Call log:",
+    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(973)",
+    "[2026-10-02 10:06:04] Sala Civil: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
    ]
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790949915,
+   "ts": 1790949978,
    "version": "64cfdfa",
    "procesos": [],
    "gestiones": {},
@@ -137,7 +137,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790949931,
+   "ts": 1790950014,
    "version": "64cfdfa",
    "procesos": [
     {
@@ -155,24 +155,24 @@
    ],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-02 10:05:20]   SIN RESOLVER: 2026-10-02-TSJ-AS-385-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:05:20]     diagnóstico: texto embebido 3921 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 385 Sucre, 11/07/2013 Expediente: 93/2013-A Distrito: Cochabamba Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en el fondo de fs. 561-563, interpuest",
-    "[2026-10-02 10:05:20]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\nAuto Supremo Nº 385\\nSucre, 11/07/2013\\nExpediente: 93/2013-A\\nDistrito: Cochabamba\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\nVISTOS: El recurso de casación en el fondo de fs. 561-563, interpuesto por Álvaro Jaim",
-    "[2026-10-02 10:05:20]     fechas con formato de fecha halladas en el texto: ['11/07/2013', '20 de noviembre de 2012', '4 de mayo de 2011', '18 de marzo de 2010', '22 de diciembre de 2009']",
-    "[2026-10-02 10:05:24]   SIN RESOLVER: 2026-10-02-TSJ-AS-386-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:05:24]     diagnóstico: texto embebido 4237 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 386 Sucre, 11/07/2013 Expediente: 255/2013-S Distrito: La Paz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de casación de fs. 589-594, interpuesto por la empresa ",
-    "[2026-10-02 10:05:24]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 386\\nSucre, 11/07/2013\\nExpediente: 255/2013-S\\nDistrito: La Paz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\nVISTOS: El recurso de casación de fs. 589-594, interpuesto por la empresa Clay Pacific\\nSRL., r",
-    "[2026-10-02 10:05:24]     fechas con formato de fecha halladas en el texto: ['11/07/2013', '15\\nde febrero de 2013', '19 de marzo de 2013', '10 de febrero\\nde 2003', '15 de febrero de 2013']",
-    "[2026-10-02 10:05:28]   SIN RESOLVER: 2026-10-02-TSJ-AS-387-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:05:28]     diagnóstico: texto embebido 3932 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 387 Sucre, 15/07/2013 Expediente: 102/2013-A Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en el fondo de fs. 91-97, interpuesto por",
-    "[2026-10-02 10:05:28]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\nAuto Supremo Nº 387\\nSucre, 15/07/2013\\nExpediente: 102/2013-A\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\nVISTOS: El recurso de casación en el fondo de fs. 91-97, interpuesto por la Empresa\\nCOMESU",
-    "[2026-10-02 10:05:28]     fechas con formato de fecha halladas en el texto: ['15/07/2013', '13 de noviembre de 2012', '13 de agosto de 2008', '28 de mayo\\nde 1992', '18 de mayo de 2005']"
+    "[2026-10-02 10:06:44]   SIN RESOLVER: 2026-10-02-TSJ-AS-410-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:06:44]     diagnóstico: texto embebido 3944 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 410 Sucre, 16/07/2013 Expediente: 94/2013-A Distrito: Cochabamba Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de casación en el fondo, interpuesto por Álvaro Jaim",
+    "[2026-10-02 10:06:44]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 410\\nSucre, 16/07/2013\\nExpediente: 94/2013-A\\nDistrito: Cochabamba\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\nVISTOS: El recurso de casación en el fondo, interpuesto por Álvaro Jaime Moscoso Blanco,\\nen",
+    "[2026-10-02 10:06:44]     fechas con formato de fecha halladas en el texto: ['16/07/2013', '20 de noviembre de\\n2012', '20 de marzo de 2013', '1 de octubre de\\n2011', '22 de diciembre de 2009']",
+    "[2026-10-02 10:06:48]   SIN RESOLVER: 2026-10-02-TSJ-AS-411-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:06:48]     diagnóstico: texto embebido 3918 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 411 Sucre, 16/07/2013 Expediente: 161/2013-S Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación o nulidad en el fondo de fs. 256-258, int",
+    "[2026-10-02 10:06:48]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\n\\nAuto Supremo Nº 411\\nSucre, 16/07/2013\\nExpediente: 161/2013-S\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\nVISTOS: El recurso de casación o nulidad en el fondo de fs. 256-258, interpuesto por\\nYac",
+    "[2026-10-02 10:06:48]     fechas con formato de fecha halladas en el texto: ['16/07/2013', '14 de\\nenero de 2013', '14 de junio de\\n2010', '7 de mayo de 2012', '14 de enero de 2013']",
+    "[2026-10-02 10:06:52]   SIN RESOLVER: 2026-10-02-TSJ-AS-412-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:06:52]     diagnóstico: texto embebido 3936 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 412 Sucre, 16/07/2013 Expediente: 143/2013-S Distrito: Chuquisaca Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en el fondo de fs. 54-56 interpuesto ",
+    "[2026-10-02 10:06:52]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 412\\nSucre, 16/07/2013\\nExpediente: 143/2013-S\\nDistrito: Chuquisaca\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\nVISTOS: El recurso de casación en el fondo de fs. 54-56 interpuesto por Jenny Vargas\\nCal",
+    "[2026-10-02 10:06:52]     fechas con formato de fecha halladas en el texto: ['16/07/2013', '25 de febrero de 2013', '10 de diciembre de 2012', '25 de\\nfebrero de 2013', '10 de\\ndiciembre de 2012']"
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790949940,
+   "ts": 1790949973,
    "version": "64cfdfa",
    "procesos": [
     {
@@ -197,29 +197,25 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.71,
+      "tasa_min": 2.56,
       "restantes": 1518,
-      "segundos": 33663,
-      "fin_ts": 1790983604
+      "segundos": 35539,
+      "fin_ts": 1790985512
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 1,
-      "fallos_30m": 3,
-      "fallos_15m": 1,
-      "fallos_total": 627,
-      "ultimo_movimiento_ts": 1790949927,
+      "fallos_30m": 4,
+      "fallos_15m": 2,
+      "fallos_total": 626,
+      "ultimo_movimiento_ts": 1790949961,
       "ultimo_limite_ts": 1790948841,
-      "ultima_falla_ts": 1790949927,
+      "ultima_falla_ts": 1790949961,
       "detalle": "el sitio limitó 1 vez(es) en 30 min"
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 09:57:37] Sala Penal Liquidadora: 100 ya existian hasta ahora (indice 99 de 611, siguen revisandose...).",
-    "[2026-10-02 09:59:01] Sala Penal Liquidadora: 10 documentos nuevos guardados, 121 ya existían (índice 130 de 611).",
-    "[2026-10-02 09:59:48] Sala Penal Liquidadora: 200 ya existian hasta ahora (indice 212 de 611, siguen revisandose...).",
-    "[2026-10-02 10:00:31] Sala Penal Liquidadora: 300 ya existian hasta ahora (indice 312 de 611, siguen revisandose...).",
     "[2026-10-02 10:01:44] Sala Penal Liquidadora: 20 documentos nuevos guardados, 350 ya existían (índice 369 de 611).",
     "[2026-10-02 10:02:54] Sala Penal Liquidadora: 400 ya existian hasta ahora (indice 426 de 611, siguen revisandose...).",
     "[2026-10-02 10:04:25] Sala Penal Liquidadora: la descarga de la fila #483 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 7s...",
@@ -227,13 +223,17 @@
     "[2026-10-02 10:05:27] AVISO: el documento #483 de Sala Penal Liquidadora falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
     "=========================== logs ===========================",
     "waiting for event \"download\"",
-    "============================================================"
+    "============================================================",
+    "[2026-10-02 10:06:01] AVISO: el documento #484 de Sala Penal Liquidadora falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "Call log:",
+    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(484)",
+    "[2026-10-02 10:06:01] Sala Penal Liquidadora: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
    ]
   },
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790949942,
+   "ts": 1790950006,
    "version": "64cfdfa",
    "procesos": [],
    "gestiones": {},
@@ -255,7 +255,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790949918,
+   "ts": 1790949981,
    "version": "64cfdfa",
    "procesos": [],
    "gestiones": {},
