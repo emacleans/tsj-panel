@@ -1,4 +1,4 @@
-# Informe del orquestador — 02/10 09:56
+# Informe del orquestador — 02/10 10:00
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 10:17
 
@@ -10,16 +10,16 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 10:17
 | IPE02 (Mac Mini casa) | en línea | libre | - | - | - |
 | MM-Ali (Mac Mini Alicia) | en línea | libre | - | - | - |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | - | - |
-| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3032/4584 (66.1 %) | 03/10 04:16 | alerta (el sitio limitó 1 vez(es) en 30 min) |
-| iMac-Sala (iMac de la sala) | en línea | vigilante 2015, compilacion 2015 | 2015: 2100/4298 (48.9 %) | 03/10 07:26 | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3052/4584 (66.6 %) | 02/10 22:57 | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| iMac-Sala (iMac de la sala) | en línea | vigilante 2015, compilacion 2015 | 2015: 2118/4298 (49.3 %) | 03/10 06:05 | alerta (el sitio limitó 1 vez(es) en 30 min) |
 
 ## Cola de compilación
 
 | Gestión | Estado | Equipo | Avance | Lanzamientos |
 |---|---|---|---|---|
 | 2013 | incompleta | IPE02 (Mac Mini casa) | 616/5271 (11.7 %) | 0 |
-| 2014 | activa | MacBook Air | 3032/4584 (66.1 %) | 0 |
-| 2015 | activa | iMac-Sala (iMac de la sala) | 2100/4298 (48.9 %) | 1 |
+| 2014 | activa | MacBook Air | 3052/4584 (66.6 %) | 1 |
+| 2015 | activa | iMac-Sala (iMac de la sala) | 2118/4298 (49.3 %) | 0 |
 | 2016 | incompleta | MM-Ali (Mac Mini Alicia) | 2311/4051 (57.0 %) | 0 |
 | 2012 | sin_empezar | MM-Sofi (Mac Mini Sofía) | 0/3211 (0.0 %) | 0 |
 | 2011 | sin_empezar | - | - | 0 |
@@ -40,7 +40,7 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 10:17
 
 ## Últimas acciones del orquestador
 
-- 02/10 09:24 · reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio
-- 02/10 09:36 · inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)
-- 02/10 09:46 · reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio
+- 02/10 09:23 · reinicio de 2014 en MacBook Air: corría con código anterior al último cambio
+- 02/10 09:34 · inicia 2014 en MacBook Air (incompleta; intento 1)
+- 02/10 09:45 · reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio
 - 02/10 09:48 · el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17
