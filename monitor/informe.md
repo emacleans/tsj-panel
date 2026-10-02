@@ -1,4 +1,4 @@
-# Informe del orquestador — 02/10 09:24
+# Informe del orquestador — 02/10 09:28
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 
@@ -7,11 +7,11 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 | Equipo | Estado | Trabajo | Avance | Termina | Salud |
 |---|---|---|---|---|---|
 | IPE01 (Mac Mini oficina) | en línea | libre | - | - | - |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2013, compilacion 2013 | 2013: 567/5271 (10.8 %) | 03/10 10:43 | alerta (15 documentos fallidos en 15 min) |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2268/4051 (56.0 %) | 02/10 23:12 | alerta (el sitio limitó 1 vez(es) en 30 min; 8 documentos fallidos en 15 min) |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2013, compilacion 2013 | 2013: 567/5271 (10.8 %) | 03/10 23:41 | alerta (15 documentos fallidos en 15 min) |
+| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2268/4051 (56.0 %) | 03/10 07:03 | alerta (el sitio limitó 1 vez(es) en 30 min; 8 documentos fallidos en 15 min) |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | - | - |
 | MacBook Air | en línea | libre | - | - | - |
-| iMac-Sala (iMac de la sala) | en línea | vigilante 2015, compilacion 2015 | 2015: 2064/4298 (48.0 %) | 02/10 22:01 | alerta (14 documentos fallidos en 15 min) |
+| iMac-Sala (iMac de la sala) | en línea | libre | - | - | - |
 
 ## Cola de compilación
 
@@ -19,7 +19,7 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 |---|---|---|---|---|
 | 2013 | activa | IPE02 (Mac Mini casa) | 567/5271 (10.8 %) | 0 |
 | 2014 | incompleta | MacBook Air | 2996/4584 (65.4 %) | 0 |
-| 2015 | activa | iMac-Sala (iMac de la sala) | 2064/4298 (48.0 %) | 0 |
+| 2015 | incompleta | iMac-Sala (iMac de la sala) | 2064/4298 (48.0 %) | 0 |
 | 2016 | activa | MM-Ali (Mac Mini Alicia) | 2268/4051 (56.0 %) | 0 |
 | 2012 | sin_empezar | MM-Sofi (Mac Mini Sofía) | 0/3211 (0.0 %) | 0 |
 | 2011 | sin_empezar | - | - | 0 |
@@ -40,4 +40,4 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 
 ## Últimas acciones del orquestador
 
-- 02/10 09:24 · reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio
+- 02/10 09:23 · reinicio de 2014 en MacBook Air: corría con código anterior al último cambio
