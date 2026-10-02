@@ -1,5 +1,5 @@
 {
- "ts": 1790953427,
+ "ts": 1790953431,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790954784,
@@ -24,39 +24,43 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947495,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+   "ts": 1790947424,
+   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948163,
-   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
+   "ts": 1790948083,
+   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
   },
   {
-   "ts": 1790948766,
-   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
+   "ts": 1790948740,
+   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948893,
+   "ts": 1790948934,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   },
   {
-   "ts": 1790950662,
-   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
+   "ts": 1790950702,
+   "texto": "inicia 2012 en IPE02 (Mac Mini casa) (sin_empezar; intento 1)"
   },
   {
-   "ts": 1790951360,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
-  },
-  {
-   "ts": 1790951497,
+   "ts": 1790951232,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951568,
+   "ts": 1790951434,
+   "texto": "inicia 2011 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
+  },
+  {
+   "ts": 1790951505,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951834,
+   "ts": 1790951576,
+   "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
+  },
+  {
+   "ts": 1790951838,
    "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06"
   }
  ],
@@ -97,7 +101,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790953407,
+   "ts": 1790953423,
    "version": "a05df34",
    "procesos": [
     {
@@ -116,16 +120,16 @@
    "gestiones": {
     "2011": {
      "activo": true,
-     "total_archivos": 229,
+     "total_archivos": 231,
      "total_esperado": 396,
-     "pct_total": 57.8,
+     "pct_total": 58.3,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
       "tasa_min": 7.08,
-      "restantes": 167,
-      "segundos": 1415,
-      "fin_ts": 1790954823
+      "restantes": 165,
+      "segundos": 1397,
+      "fin_ts": 1790954821
      },
      "salud": {
       "estado": "ok",
@@ -133,7 +137,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1790953334,
+      "ultimo_movimiento_ts": 1790953419,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -141,7 +145,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 10:48:26] --- Iniciando Sala Contenciosa Primera (Gestión 2011) ---",
     "[2026-10-02 10:48:30] Sala Contenciosa Primera: 268 resultados encontrados en el sitio.",
     "[2026-10-02 10:49:50] Sala Contenciosa Primera: 10 documentos nuevos guardados, 0 ya existían (índice 9 de 268).",
     "[2026-10-02 10:51:11] Sala Contenciosa Primera: 20 documentos nuevos guardados, 0 ya existían (índice 19 de 268).",
@@ -152,13 +155,14 @@
     "[2026-10-02 10:58:06] Sala Contenciosa Primera: 70 documentos nuevos guardados, 0 ya existían (índice 69 de 268).",
     "[2026-10-02 10:59:28] Sala Contenciosa Primera: 80 documentos nuevos guardados, 0 ya existían (índice 79 de 268).",
     "[2026-10-02 11:00:52] Sala Contenciosa Primera: 90 documentos nuevos guardados, 0 ya existían (índice 89 de 268).",
-    "[2026-10-02 11:02:14] Sala Contenciosa Primera: 100 documentos nuevos guardados, 0 ya existían (índice 99 de 268)."
+    "[2026-10-02 11:02:14] Sala Contenciosa Primera: 100 documentos nuevos guardados, 0 ya existían (índice 99 de 268).",
+    "[2026-10-02 11:03:39] Sala Contenciosa Primera: 110 documentos nuevos guardados, 0 ya existían (índice 109 de 268)."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790953410,
+   "ts": 1790953427,
    "version": "a05df34",
    "procesos": [
     {
@@ -177,16 +181,16 @@
    "gestiones": {
     "2012": {
      "activo": true,
-     "total_archivos": 154,
+     "total_archivos": 156,
      "total_esperado": 184,
-     "pct_total": 83.7,
+     "pct_total": 84.8,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
       "tasa_min": 4.31,
-      "restantes": 30,
-      "segundos": 417,
-      "fin_ts": 1790953828
+      "restantes": 28,
+      "segundos": 389,
+      "fin_ts": 1790953816
      },
      "salud": {
       "estado": "alerta",
@@ -194,7 +198,7 @@
       "fallos_30m": 2,
       "fallos_15m": 2,
       "fallos_total": 6,
-      "ultimo_movimiento_ts": 1790953322,
+      "ultimo_movimiento_ts": 1790953410,
       "ultimo_limite_ts": 1790951791,
       "ultima_falla_ts": 1790952646,
       "detalle": "el sitio limitó 1 vez(es) en 30 min"
@@ -202,7 +206,6 @@
     }
    },
    "ultimas_lineas": [
-    "/Users/enriquemacleanipe02/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 13586 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
     "[2026-10-02 10:56:12] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
     "[2026-10-02 10:56:12] Esperando 5s antes de continuar...",
     "[2026-10-02 10:56:17] Iniciando compilar_tsj.py --gestion 2012...",
@@ -213,7 +216,8 @@
     "[2026-10-02 10:57:50] Sala Plena: 10 documentos nuevos guardados, 107 ya existían (índice 116 de 184).",
     "[2026-10-02 10:59:14] Sala Plena: 20 documentos nuevos guardados, 107 ya existían (índice 126 de 184).",
     "[2026-10-02 11:00:38] Sala Plena: 30 documentos nuevos guardados, 107 ya existían (índice 136 de 184).",
-    "[2026-10-02 11:02:02] Sala Plena: 40 documentos nuevos guardados, 107 ya existían (índice 146 de 184)."
+    "[2026-10-02 11:02:02] Sala Plena: 40 documentos nuevos guardados, 107 ya existían (índice 146 de 184).",
+    "[2026-10-02 11:03:30] Sala Plena: 50 documentos nuevos guardados, 107 ya existían (índice 156 de 184)."
    ]
   },
   {
@@ -280,7 +284,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790953406,
+   "ts": 1790953426,
    "version": "a05df34",
    "procesos": [
     {
@@ -299,16 +303,16 @@
    "gestiones": {
     "2016": {
      "activo": true,
-     "total_archivos": 2405,
+     "total_archivos": 2406,
      "total_esperado": 4051,
      "pct_total": 59.4,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
       "tasa_min": 2.7,
-      "restantes": 1646,
-      "segundos": 36591,
-      "fin_ts": 1790989998
+      "restantes": 1645,
+      "segundos": 36500,
+      "fin_ts": 1790989926
      },
      "salud": {
       "estado": "alerta",
