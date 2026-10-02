@@ -1,8 +1,8 @@
 {
- "ts": 1790951579,
+ "ts": 1790951884,
  "pausado": false,
  "max_simultaneas": 4,
- "pausa_hasta": 1790950660,
+ "pausa_hasta": 1790953591,
  "cola": [
   "2013",
   "2014",
@@ -24,75 +24,50 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947424,
-   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
+   "ts": 1790947495,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948083,
-   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
+   "ts": 1790948163,
+   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
   },
   {
-   "ts": 1790948740,
-   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
+   "ts": 1790948766,
+   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948934,
+   "ts": 1790948893,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   },
   {
-   "ts": 1790950702,
-   "texto": "inicia 2012 en IPE02 (Mac Mini casa) (sin_empezar; intento 1)"
+   "ts": 1790950662,
+   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
   },
   {
-   "ts": 1790951232,
+   "ts": 1790951360,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1790951497,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951434,
-   "texto": "inicia 2011 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
-  },
-  {
-   "ts": 1790951505,
+   "ts": 1790951568,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951576,
-   "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
+   "ts": 1790951834,
+   "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790951558,
+   "ts": 1790951833,
    "version": "a05df34",
    "procesos": [],
    "gestiones": {
-    "2015": {
-     "activo": true,
-     "total_archivos": 2232,
-     "total_esperado": 4298,
-     "pct_total": 51.9,
-     "termino_con_exito": false,
-     "con_faltantes": null,
-     "eta": {
-      "tasa_min": 4.35,
-      "restantes": 2066,
-      "segundos": 28500,
-      "fin_ts": 1790980059
-     },
-     "salud": {
-      "estado": "aviso",
-      "limite_30m": 0,
-      "fallos_30m": 4,
-      "fallos_15m": 2,
-      "fallos_total": 647,
-      "ultimo_movimiento_ts": 1790951336,
-      "ultimo_limite_ts": 1790948860,
-      "ultima_falla_ts": 1790950915,
-      "detalle": "4 documento(s) fallido(s) en 30 min"
-     }
-    },
     "2018": {
      "activo": false,
      "total_archivos": 3874,
@@ -122,7 +97,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790951569,
+   "ts": 1790951869,
    "version": "a05df34",
    "procesos": [
     {
@@ -141,13 +116,16 @@
    "gestiones": {
     "2011": {
      "activo": true,
-     "total_archivos": 15,
+     "total_archivos": 50,
      "total_esperado": 128,
-     "pct_total": 11.7,
+     "pct_total": 39.1,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "calculando": true
+      "tasa_min": 7.05,
+      "restantes": 78,
+      "segundos": 663,
+      "fin_ts": 1790952533
      },
      "salud": {
       "estado": "ok",
@@ -155,7 +133,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1790951521,
+      "ultimo_movimiento_ts": 1790951858,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -163,10 +141,6 @@
     }
    },
    "ultimas_lineas": [
-    " de más.",
-    " Para ver el avance: abrí OTRA ventana y usá",
-    " 3_Ver_avance.command, como siempre.",
-    " Para detener TODO antes de que termine: Control+C",
     " en ESTA ventana.",
     "==================================================",
     "[2026-10-02 10:30:35] Iniciando compilar_tsj.py --gestion 2011...",
@@ -174,13 +148,17 @@
     "[2026-10-02 10:30:36] Filas ya registradas históricamente en _progreso.csv: 0.",
     "[2026-10-02 10:30:36] --- Iniciando Sala Plena (Gestión 2011) ---",
     "[2026-10-02 10:30:41] Sala Plena: 128 resultados encontrados en el sitio.",
-    "[2026-10-02 10:32:01] Sala Plena: 10 documentos nuevos guardados, 0 ya existían (índice 9 de 128)."
+    "[2026-10-02 10:32:01] Sala Plena: 10 documentos nuevos guardados, 0 ya existían (índice 9 de 128).",
+    "[2026-10-02 10:33:27] Sala Plena: 20 documentos nuevos guardados, 0 ya existían (índice 19 de 128).",
+    "[2026-10-02 10:34:48] Sala Plena: 30 documentos nuevos guardados, 0 ya existían (índice 29 de 128).",
+    "[2026-10-02 10:36:12] Sala Plena: 40 documentos nuevos guardados, 0 ya existían (índice 39 de 128).",
+    "[2026-10-02 10:37:38] Sala Plena: 50 documentos nuevos guardados, 0 ya existían (índice 49 de 128)."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790951574,
+   "ts": 1790951870,
    "version": "a05df34",
    "procesos": [
     {
@@ -190,22 +168,10 @@
      "inicio_ts": 1790950705
     },
     {
-     "pid": 11321,
+     "pid": 13586,
      "tipo": "compilacion",
      "gestion": "2012",
-     "inicio_ts": 1790950705
-    },
-    {
-     "pid": 12735,
-     "tipo": "barrido",
-     "gestion": "2013",
-     "inicio_ts": 1790951275
-    },
-    {
-     "pid": 12737,
-     "tipo": "correccion",
-     "gestion": "2013",
-     "inicio_ts": 1790951275
+     "inicio_ts": 1790951766
     }
    ],
    "gestiones": {
@@ -217,43 +183,43 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.73,
+      "tasa_min": 2.84,
       "restantes": 130,
-      "segundos": 2089,
-      "fin_ts": 1790953663
+      "segundos": 2744,
+      "fin_ts": 1790954615
      },
      "salud": {
-      "estado": "aviso",
-      "limite_30m": 0,
+      "estado": "alerta",
+      "limite_30m": 1,
       "fallos_30m": 4,
-      "fallos_15m": 4,
+      "fallos_15m": 2,
       "fallos_total": 4,
-      "ultimo_movimiento_ts": 1790951430,
-      "ultimo_limite_ts": null,
+      "ultimo_movimiento_ts": 1790951791,
+      "ultimo_limite_ts": 1790951791,
       "ultima_falla_ts": 1790951430,
-      "detalle": "4 documento(s) fallido(s) en 30 min"
+      "detalle": "el sitio limitó 1 vez(es) en 30 min"
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 10:32:44]   SIN RESOLVER: 2026-10-02-TSJ-AS-178-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:32:44]     diagnóstico: texto embebido 3932 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 178 Sucre, 22/04/2013 Expediente: 39/2013-S Distrito: Pando Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de nulidad de fs. 32, interpuesto por Germán Gonzalo Gamb",
-    "[2026-10-02 10:32:44]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 178\\nSucre, 22/04/2013\\nExpediente: 39/2013-S\\nDistrito: Pando\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: El recurso de nulidad de fs. 32, interpuesto por Germán Gonzalo Gamboa\\nCórdova, en r",
-    "[2026-10-02 10:32:44]     fechas con formato de fecha halladas en el texto: ['22/04/2013', '22 de noviembre de 2012', '26 de septiembre de 2012', '22 de noviembre de 2012', '26 de septiembre 2012']",
-    "[2026-10-02 10:32:48]   SIN RESOLVER: 2026-10-02-TSJ-AS-179-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:32:48]     diagnóstico: texto embebido 3781 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 179 Sucre, 22/04/2013 Expediente: 42/2013-S Distrito: Santa Cruz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación o nulidad de fs. 145-148, interpuesto ",
-    "[2026-10-02 10:32:48]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 179\\nSucre, 22/04/2013\\nExpediente: 42/2013-S\\nDistrito: Santa Cruz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación o nulidad de fs. 145-148, interpuesto por Abel Moisés\\n",
-    "[2026-10-02 10:32:48]     fechas con formato de fecha halladas en el texto: ['22/04/2013', '27\\nde junio de 2012', '6 de enero de 2012', '27 de junio de 2012', '6 de enero de 2012']",
-    "[2026-10-02 10:32:52]   SIN RESOLVER: 2026-10-02-TSJ-AS-18-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:32:52]     diagnóstico: texto embebido 3860 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 18 Sucre, 18/02/2013 Expediente: 196/2012-A Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en el fondo de fs. 297-298, interpuesto po",
-    "[2026-10-02 10:32:52]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\nAuto Supremo Nº 18\\nSucre, 18/02/2013\\nExpediente: 196/2012-A\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación en el fondo de fs. 297-298, interpuesto por Juan Edwin\\nM",
-    "[2026-10-02 10:32:52]     fechas con formato de fecha halladas en el texto: ['18/02/2013', '14 de agosto de 2012', '12 de octubre de\\n2001', '9 de enero de 2008', '20 de mayo\\nde 2010']"
+    "[2026-10-02 10:30:30] AVISO: el documento #57 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "Call log:",
+    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(57)",
+    "[2026-10-02 10:30:30] Sala Plena: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
+    "[2026-10-02 10:35:57] *** El registro lleva 327s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
+    "/Users/enriquemacleanipe02/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 11321 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
+    "[2026-10-02 10:36:01] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
+    "[2026-10-02 10:36:01] Esperando 5s antes de continuar...",
+    "[2026-10-02 10:36:06] Iniciando compilar_tsj.py --gestion 2012...",
+    "[2026-10-02 10:36:06] Filas ya registradas históricamente en _progreso.csv: 54.",
+    "[2026-10-02 10:36:06] --- Iniciando Sala Plena (Gestión 2012) ---",
+    "[2026-10-02 10:36:31] Sala Plena: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790951566,
+   "ts": 1790951877,
    "version": "a05df34",
    "procesos": [
     {
@@ -263,10 +229,10 @@
      "inicio_ts": 1790948085
     },
     {
-     "pid": 21981,
+     "pid": 27585,
      "tipo": "compilacion",
      "gestion": "2014",
-     "inicio_ts": 1790948817
+     "inicio_ts": 1790951747
     }
    ],
    "gestiones": {
@@ -278,43 +244,43 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.99,
+      "tasa_min": 2.45,
       "restantes": 1434,
-      "segundos": 21566,
-      "fin_ts": 1790973133
+      "segundos": 35178,
+      "fin_ts": 1790987056
      },
      "salud": {
-      "estado": "aviso",
-      "limite_30m": 0,
-      "fallos_30m": 6,
-      "fallos_15m": 4,
-      "fallos_total": 622,
-      "ultimo_movimiento_ts": 1790951425,
-      "ultimo_limite_ts": 1790948841,
+      "estado": "alerta",
+      "limite_30m": 1,
+      "fallos_30m": 4,
+      "fallos_15m": 2,
+      "fallos_total": 621,
+      "ultimo_movimiento_ts": 1790951772,
+      "ultimo_limite_ts": 1790951772,
       "ultima_falla_ts": 1790951425,
-      "detalle": "6 documento(s) fallido(s) en 30 min"
+      "detalle": "el sitio limitó 1 vez(es) en 30 min"
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 10:25:53] Sala Civil 1: 60 documentos nuevos guardados, 227 ya existían (índice 288 de 777).",
-    "[2026-10-02 10:27:32] Sala Civil 1: 70 documentos nuevos guardados, 272 ya existían (índice 343 de 777).",
-    "[2026-10-02 10:28:48] Sala Civil 1: la descarga de la fila #350 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 7s...",
-    "[2026-10-02 10:29:15] Sala Civil 1: la descarga de la fila #350 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 17s...",
-    "[2026-10-02 10:29:51] AVISO: el documento #350 de Sala Civil 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
-    "=========================== logs ===========================",
-    "waiting for event \"download\"",
-    "============================================================",
     "[2026-10-02 10:30:25] AVISO: el documento #351 de Sala Civil 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(351)",
-    "[2026-10-02 10:30:25] Sala Civil 1: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
+    "[2026-10-02 10:30:25] Sala Civil 1: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
+    "[2026-10-02 10:35:39] *** El registro lleva 314s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
+    "/Users/enriquemaclean/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 21981 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
+    "[2026-10-02 10:35:42] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
+    "[2026-10-02 10:35:42] Esperando 5s antes de continuar...",
+    "[2026-10-02 10:35:47] Iniciando compilar_tsj.py --gestion 2014...",
+    "[2026-10-02 10:35:48] Filas ya registradas históricamente en _progreso.csv: 3187.",
+    "[2026-10-02 10:35:48] --- Iniciando Sala Penal (Gestión 2014) ---",
+    "[2026-10-02 10:36:12] Sala Penal: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
    ]
   },
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790951571,
+   "ts": 1790951853,
    "version": "a05df34",
    "procesos": [
     {
@@ -324,10 +290,10 @@
      "inicio_ts": 1790950663
     },
     {
-     "pid": 57235,
+     "pid": 58467,
      "tipo": "compilacion",
      "gestion": "2016",
-     "inicio_ts": 1790950663
+     "inicio_ts": 1790951757
     }
    ],
    "gestiones": {
@@ -339,43 +305,43 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 1.99,
+      "tasa_min": 1.89,
       "restantes": 1702,
-      "segundos": 51418,
-      "fin_ts": 1791002989
+      "segundos": 53958,
+      "fin_ts": 1791005811
      },
      "salud": {
-      "estado": "aviso",
-      "limite_30m": 0,
+      "estado": "alerta",
+      "limite_30m": 1,
       "fallos_30m": 4,
-      "fallos_15m": 4,
-      "fallos_total": 660,
-      "ultimo_movimiento_ts": 1790951441,
-      "ultimo_limite_ts": 1790946831,
+      "fallos_15m": 2,
+      "fallos_total": 659,
+      "ultimo_movimiento_ts": 1790951783,
+      "ultimo_limite_ts": 1790951783,
       "ultima_falla_ts": 1790951441,
-      "detalle": "4 documento(s) fallido(s) en 30 min"
+      "detalle": "el sitio limitó 1 vez(es) en 30 min"
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 10:27:59] Sala Civil: 400 ya existian hasta ahora (indice 437 de 1409, siguen revisandose...).",
-    "[2026-10-02 10:28:42] Sala Civil: 500 ya existian hasta ahora (indice 539 de 1409, siguen revisandose...).",
-    "[2026-10-02 10:29:08] Sala Civil: la descarga de la fila #541 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 7s...",
-    "[2026-10-02 10:29:35] Sala Civil: la descarga de la fila #541 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 11s...",
-    "[2026-10-02 10:30:07] AVISO: el documento #541 de Sala Civil falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
-    "=========================== logs ===========================",
-    "waiting for event \"download\"",
-    "============================================================",
     "[2026-10-02 10:30:41] AVISO: el documento #542 de Sala Civil falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(542)",
-    "[2026-10-02 10:30:41] Sala Civil: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
+    "[2026-10-02 10:30:41] Sala Civil: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
+    "[2026-10-02 10:35:49] *** El registro lleva 308s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
+    "/Users/usuario/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 57235 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
+    "[2026-10-02 10:35:52] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
+    "[2026-10-02 10:35:52] Esperando 5s antes de continuar...",
+    "[2026-10-02 10:35:57] Iniciando compilar_tsj.py --gestion 2016...",
+    "[2026-10-02 10:35:58] Filas ya registradas históricamente en _progreso.csv: 2355.",
+    "[2026-10-02 10:35:58] --- Iniciando Sala Penal (Gestión 2016) ---",
+    "[2026-10-02 10:36:23] Sala Penal: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790951554,
+   "ts": 1790951868,
    "version": "a05df34",
    "procesos": [],
    "gestiones": {},
