@@ -1,5 +1,5 @@
 {
- "ts": 1790950973,
+ "ts": 1790951014,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790950660,
@@ -24,31 +24,31 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947495,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+   "ts": 1790947424,
+   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948163,
-   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
+   "ts": 1790948083,
+   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
   },
   {
-   "ts": 1790948766,
-   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
+   "ts": 1790948740,
+   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948893,
+   "ts": 1790948934,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   },
   {
-   "ts": 1790950662,
-   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
+   "ts": 1790950702,
+   "texto": "inicia 2012 en IPE02 (Mac Mini casa) (sin_empezar; intento 1)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790950967,
+   "ts": 1790951001,
    "version": "64cfdfa",
    "procesos": [
     {
@@ -67,16 +67,16 @@
    "gestiones": {
     "2015": {
      "activo": true,
-     "total_archivos": 2195,
+     "total_archivos": 2199,
      "total_esperado": 4298,
-     "pct_total": 51.1,
+     "pct_total": 51.2,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.2,
-      "restantes": 2103,
-      "segundos": 39448,
-      "fin_ts": 1790990415
+      "tasa_min": 3.17,
+      "restantes": 2099,
+      "segundos": 39747,
+      "fin_ts": 1790990748
      },
      "salud": {
       "estado": "aviso",
@@ -119,7 +119,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790950925,
+   "ts": 1790950990,
    "version": "64cfdfa",
    "procesos": [],
    "gestiones": {},
@@ -141,7 +141,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790950956,
+   "ts": 1790951009,
    "version": "64cfdfa",
    "procesos": [
     {
@@ -172,16 +172,16 @@
    "gestiones": {
     "2012": {
      "activo": true,
-     "total_archivos": 10,
+     "total_archivos": 17,
      "total_esperado": 184,
-     "pct_total": 5.4,
+     "pct_total": 9.2,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.67,
-      "restantes": 174,
-      "segundos": 3905,
-      "fin_ts": 1790954862
+      "tasa_min": 3.33,
+      "restantes": 167,
+      "segundos": 3006,
+      "fin_ts": 1790954015
      },
      "salud": {
       "estado": "aviso",
@@ -197,24 +197,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 10:22:28]   SIN RESOLVER: 2026-10-02-TSJ-AS-639-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:22:28]     diagnóstico: texto embebido 4060 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 639 Sucre, 29/10/2013 Expediente: 329/2013-S Distrito: Chuquisaca Magistrada Relatora: Norka N. Mercado Guzmán ======================================================================",
-    "[2026-10-02 10:22:28]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\n\\nAuto Supremo Nº 639\\nSucre, 29/10/2013\\nExpediente: 329/2013-S\\nDistrito: Chuquisaca\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n======================================================================\\n====\\nVISTOS: El ",
-    "[2026-10-02 10:22:28]     fechas con formato de fecha halladas en el texto: ['29/10/2013', '7 de junio de 2013', '16 de enero de 2013', '7 de junio de 2013', '16 de enero de 2013']",
-    "[2026-10-02 10:22:32]   SIN RESOLVER: 2026-10-02-TSJ-AS-64-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:22:32]     diagnóstico: texto embebido 4000 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 64 Sucre, 01/03/2013 Expediente: 413/2012-S Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación de fs. 146 interpuesto por WILMER NICANOR ",
-    "[2026-10-02 10:22:32]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 64\\nSucre, 01/03/2013\\nExpediente: 413/2012-S\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación de fs. 146 interpuesto por WILMER NICANOR CHOQUE\\nFLORES, a",
-    "[2026-10-02 10:22:32]     fechas con formato de fecha halladas en el texto: ['01/03/2013', '5 de abril de 2012', '01 de mayo de 2006', '5 de\\nabril de 2012', '20 de\\nabril de 2010']",
-    "[2026-10-02 10:22:36]   SIN RESOLVER: 2026-10-02-TSJ-AS-640-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:22:36]     diagnóstico: texto embebido 4022 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 640 Sucre, 29/10/2013 Expediente: 392/2013-S Distrito: Cochabamba Magistrada Relatora: Norka N. Mercado Guzmán ======================================================================",
-    "[2026-10-02 10:22:36]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\n\\nAuto Supremo Nº 640\\nSucre, 29/10/2013\\nExpediente: 392/2013-S\\nDistrito: Cochabamba\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n======================================================================\\n==\\nVISTOS: El re",
-    "[2026-10-02 10:22:36]     fechas con formato de fecha halladas en el texto: ['29/10/2013', '20 de marzo de 2010', '23 de septiembre de 2009', '1\\nde mayo de 2006', '02/10/2026']"
+    "[2026-10-02 10:23:19]   SIN RESOLVER: 2026-10-02-TSJ-AS-650-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:23:19]     diagnóstico: texto embebido 3980 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 650 Sucre, 30/10/2013 Expediente: 380/2013-S. Distrito: La Paz Magistrada Relatora: Dra. Norka N. Mercado Guzmán. ===================================================================",
+    "[2026-10-02 10:23:19]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\nAuto Supremo Nº 650\\nSucre, 30/10/2013\\nExpediente: 380/2013-S.\\nDistrito: La Paz\\nMagistrada Relatora: Dra. Norka N. Mercado Guzmán.\\n======================================================================\\n==\\nVISTOS: El r",
+    "[2026-10-02 10:23:19]     fechas con formato de fecha halladas en el texto: ['30/10/2013', '9\\nde marzo de 2012', '28 de septiembre de 2009', '1\\nde mayo de 2006', '9 de marzo de 2012']",
+    "[2026-10-02 10:23:23]   SIN RESOLVER: 2026-10-02-TSJ-AS-651-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:23:23]     diagnóstico: texto embebido 3864 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 651 Sucre, 30/10/2013 Expediente: 362/2013-S Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia ====================================================================== =",
+    "[2026-10-02 10:23:23]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\nAuto Supremo Nº 651\\nSucre, 30/10/2013\\nExpediente: 362/2013-S\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n======================================================================\\n==\\nVISTOS: El recurs",
+    "[2026-10-02 10:23:23]     fechas con formato de fecha halladas en el texto: ['30/10/2013', '15 de mayo de 2013', '5 de\\nabril de 2012', '15 de mayo de 2013', '5 de junio de 2010']",
+    "[2026-10-02 10:23:28]   SIN RESOLVER: 2026-10-02-TSJ-AS-652-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:23:28]     diagnóstico: texto embebido 4095 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 652 Sucre, 30/10/2013 Expediente: 377/2013-S Distrito: La Paz Magistrado Relator: Dr. Antonio G. Campero Segovia ====================================================================",
+    "[2026-10-02 10:23:28]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\n\\nAuto Supremo Nº 652\\nSucre, 30/10/2013\\nExpediente: 377/2013-S\\nDistrito: La Paz\\nMagistrado Relator: Dr. Antonio G. Campero Segovia\\n======================================================================\\n====\\nVISTOS: E",
+    "[2026-10-02 10:23:28]     fechas con formato de fecha halladas en el texto: ['30/10/2013', '11 de junio de 2013', '20 de julio de 2012', '30 de julio de 2010', '17 de agosto de 2012']"
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790950913,
+   "ts": 1790951010,
    "version": "64cfdfa",
    "procesos": [
     {
@@ -233,16 +233,16 @@
    "gestiones": {
     "2014": {
      "activo": true,
-     "total_archivos": 3115,
+     "total_archivos": 3117,
      "total_esperado": 4584,
      "pct_total": 68.0,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.86,
-      "restantes": 1469,
-      "segundos": 30849,
-      "fin_ts": 1790981762
+      "tasa_min": 2.62,
+      "restantes": 1467,
+      "segundos": 33625,
+      "fin_ts": 1790984636
      },
      "salud": {
       "estado": "aviso",
@@ -250,7 +250,7 @@
       "fallos_30m": 4,
       "fallos_15m": 2,
       "fallos_total": 624,
-      "ultimo_movimiento_ts": 1790950903,
+      "ultimo_movimiento_ts": 1790950990,
       "ultimo_limite_ts": 1790948841,
       "ultima_falla_ts": 1790950903,
       "detalle": "4 documento(s) fallido(s) en 30 min"
@@ -258,7 +258,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 10:18:06] Sala Civil 1: 30 documentos nuevos guardados, 136 ya existían (índice 165 de 777).",
     "[2026-10-02 10:19:36] Sala Civil 1: 40 documentos nuevos guardados, 136 ya existían (índice 175 de 777).",
     "[2026-10-02 10:20:08] Sala Civil 1: la descarga de la fila #222 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 5s...",
     "[2026-10-02 10:20:33] Sala Civil 1: la descarga de la fila #222 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 17s...",
@@ -269,13 +268,14 @@
     "[2026-10-02 10:21:43] AVISO: el documento #223 de Sala Civil 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(223)",
-    "[2026-10-02 10:21:43] Sala Civil 1: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
+    "[2026-10-02 10:21:43] Sala Civil 1: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
+    "[2026-10-02 10:23:10] Sala Civil 1: el sitio volvió a responder tras ~1 min 20 s. Se continúa."
    ]
   },
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790950922,
+   "ts": 1790950989,
    "version": "64cfdfa",
    "procesos": [
     {
@@ -302,8 +302,8 @@
      "eta": {
       "tasa_min": 0.5,
       "restantes": 1730,
-      "segundos": 206389,
-      "fin_ts": 1791157310
+      "segundos": 206562,
+      "fin_ts": 1791157551
      },
      "salud": {
       "estado": "aviso",
@@ -336,7 +336,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790950923,
+   "ts": 1790950986,
    "version": "64cfdfa",
    "procesos": [],
    "gestiones": {},
