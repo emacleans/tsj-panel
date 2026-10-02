@@ -1,16 +1,16 @@
-# Informe del orquestador — 02/10 14:15
+# Informe del orquestador — 02/10 14:20
 
-Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:34
+Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:46
 
 ## Equipos
 
 | Equipo | Estado | Trabajo | Avance | Termina | Salud |
 |---|---|---|---|---|---|
 | IPE01 (Mac Mini oficina) | en línea | libre | - | - | - |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 753/1132 (66.5 %) | 02/10 16:49 | alerta (el sitio limitó 1 vez(es) en 30 min) |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2822/4051 (69.7 %) | 03/10 06:25 | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 761/1132 (67.2 %) | 02/10 16:48 | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2829/4051 (69.8 %) | 03/10 05:10 | alerta (el sitio limitó 1 vez(es) en 30 min) |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | - | - |
-| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3572/4584 (77.9 %) | - | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3572/4584 (77.9 %) | - | alerta (el sitio limitó 2 vez(es) en 30 min) |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | - | - |
 
 ## Cola de compilación
@@ -20,9 +20,9 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:34
 | 2013 | incompleta | IPE02 (Mac Mini casa) | 616/5271 (11.7 %) | 0 |
 | 2014 | activa | MacBook Air | 3572/4584 (77.9 %) | 0 |
 | 2015 | incompleta | iMac-Sala (iMac de la sala) | 2232/4298 (51.9 %) | 1 |
-| 2016 | activa | MM-Ali (Mac Mini Alicia) | 2822/4051 (69.7 %) | 1 |
-| 2012 | activa | IPE02 (Mac Mini casa) | 753/1132 (66.5 %) | 0 |
-| 2011 | incompleta | IPE01 (Mac Mini oficina) | 1552/1572 (98.7 %) | 0 |
+| 2016 | activa | MM-Ali (Mac Mini Alicia) | 2829/4051 (69.8 %) | 1 |
+| 2012 | activa | IPE02 (Mac Mini casa) | 761/1132 (67.2 %) | 0 |
+| 2011 | completa | IPE01 (Mac Mini oficina) | 1552/1572 (98.7 %) | 0 |
 | 2010 | sin_empezar | - | - | 0 |
 | 2009 | sin_empezar | - | - | 0 |
 | 2008 | sin_empezar | - | - | 0 |
