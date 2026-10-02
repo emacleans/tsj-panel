@@ -1,4 +1,4 @@
-# Informe del orquestador — 02/10 19:00
+# Informe del orquestador — 02/10 19:05
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 19:21
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -7,12 +7,12 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 | Gestión | Estado | Salas medidas | Documentos | % | ETA | Equipo | Dato |
 |---|---|---|---|---|---|---|---|
-| 2013 | Sin verificar | 10 de 11 | 616 docs · total por confirmar | - | - | IPE02 (Mac Mini casa) | hace 6 s |
-| 2014 | Compilando | 13 de 13 | 3633 / 4584 | 79.3 % | por calcular | MacBook Air | hace 7 s |
-| 2015 | Compilando | 7 de 7 | 2539 / 4298 | 59.1 % | ~03/10 19:26 (03/10 15:27–03/10 21:53) | iMac-Sala (iMac de la sala) | hace 15 s |
-| 2016 | Compilando | 5 de 5 | 3072 / 4051 | 75.8 % | ~03/10 22:23 (03/10 19:38–04/10 01:07) | MM-Ali (Mac Mini Alicia) | hace 16 s |
-| 2012 | Compilando | 4 de 8 | 1337 docs · total por confirmar | - | sin ETA (total por confirmar) | IPE02 (Mac Mini casa) | hace 6 s |
-| 2011 | Compilada completa | 6 de 6 | 1552 / 1572 | 98.7 % | - | IPE01 (Mac Mini oficina) | hace 57 s |
+| 2013 | Sin verificar | 10 de 11 | 616 docs · total por confirmar | - | - | IPE02 (Mac Mini casa) | hace 21 s |
+| 2014 | Compilando | 13 de 13 | 3633 / 4584 | 79.3 % | por calcular | MacBook Air | hace 61 s |
+| 2015 | Compilando | 7 de 7 | 2552 / 4298 | 59.4 % | ~03/10 18:21 (03/10 16:02–03/10 21:58) | iMac-Sala (iMac de la sala) | hace 4 s |
+| 2016 | Compilando | 5 de 5 | 3083 / 4051 | 76.1 % | ~03/10 16:20 (03/10 14:13–03/10 23:26) | MM-Ali (Mac Mini Alicia) | hace 61 s |
+| 2012 | Compilando | 4 de 8 | 1348 docs · total por confirmar | - | sin ETA (total por confirmar) | IPE02 (Mac Mini casa) | hace 21 s |
+| 2011 | Compilada completa | 6 de 6 | 1552 / 1572 | 98.7 % | - | IPE01 (Mac Mini oficina) | hace 42 s |
 | 2010 | Sin verificar | por medir | - | - | - | - | - |
 | 2009 | Sin verificar | por medir | - | - | - | - | - |
 | 2008 | Sin verificar | por medir | - | - | - | - | - |
@@ -28,12 +28,12 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 | Equipo | Estado | Trabajo | Salud | Dato |
 |---|---|---|---|---|
-| IPE01 (Mac Mini oficina) | en línea | libre | - | hace 57 s |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | alerta (el sitio limitó 2 vez(es) en 30 min) | hace 6 s |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | alerta (el sitio limitó 2 vez(es) en 30 min) | hace 16 s |
-| MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 29 s |
-| MacBook Air | en línea | vigilante 2014, compilacion 2014 | alerta (el sitio limitó 2 vez(es) en 30 min) | hace 7 s |
-| iMac-Sala (iMac de la sala) | en línea | vigilante 2015, compilacion 2015 | alerta (el sitio limitó 2 vez(es) en 30 min) | hace 15 s |
+| IPE01 (Mac Mini oficina) | en línea | libre | - | hace 42 s |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | alerta (el sitio limitó 1 vez(es) en 30 min) | hace 21 s |
+| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | alerta (el sitio limitó 1 vez(es) en 30 min) | hace 61 s |
+| MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 16 s |
+| MacBook Air | en línea | vigilante 2014, compilacion 2014 | alerta (el sitio limitó 1 vez(es) en 30 min) | hace 61 s |
+| iMac-Sala (iMac de la sala) | en línea | vigilante 2015, compilacion 2015 | alerta (el sitio limitó 1 vez(es) en 30 min) | hace 4 s |
 
 ## Incidencias abiertas
 
