@@ -1,5 +1,5 @@
 {
- "ts": 1790958681,
+ "ts": 1790958700,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790954784,
@@ -24,43 +24,39 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947424,
-   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
+   "ts": 1790947495,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948083,
-   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
+   "ts": 1790948163,
+   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
   },
   {
-   "ts": 1790948740,
-   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
+   "ts": 1790948766,
+   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948934,
+   "ts": 1790948893,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   },
   {
-   "ts": 1790950702,
-   "texto": "inicia 2012 en IPE02 (Mac Mini casa) (sin_empezar; intento 1)"
+   "ts": 1790950662,
+   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
   },
   {
-   "ts": 1790951232,
+   "ts": 1790951360,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1790951497,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951434,
-   "texto": "inicia 2011 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
-  },
-  {
-   "ts": 1790951505,
+   "ts": 1790951568,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951576,
-   "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
-  },
-  {
-   "ts": 1790951838,
+   "ts": 1790951834,
    "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06"
   }
  ],
@@ -101,7 +97,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790958672,
+   "ts": 1790958688,
    "version": "a05df34",
    "procesos": [
     {
@@ -120,16 +116,16 @@
    "gestiones": {
     "2011": {
      "activo": true,
-     "total_archivos": 847,
+     "total_archivos": 850,
      "total_esperado": 996,
-     "pct_total": 85.0,
+     "pct_total": 85.3,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 7.18,
-      "restantes": 149,
-      "segundos": 1245,
-      "fin_ts": 1790959917
+      "tasa_min": 7.24,
+      "restantes": 146,
+      "segundos": 1209,
+      "fin_ts": 1790959898
      },
      "salud": {
       "estado": "ok",
@@ -137,7 +133,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1790958603,
+      "ultimo_movimiento_ts": 1790958687,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -145,7 +141,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 12:14:47] Sala Penal 1: 120 documentos nuevos guardados, 2 ya existían (índice 121 de 371).",
     "[2026-10-02 12:16:07] Sala Penal 1: 130 documentos nuevos guardados, 2 ya existían (índice 131 de 371).",
     "[2026-10-02 12:17:31] Sala Penal 1: 140 documentos nuevos guardados, 2 ya existían (índice 141 de 371).",
     "[2026-10-02 12:18:54] Sala Penal 1: 150 documentos nuevos guardados, 2 ya existían (índice 151 de 371).",
@@ -156,7 +151,8 @@
     "[2026-10-02 12:25:54] Sala Penal 1: 200 documentos nuevos guardados, 2 ya existían (índice 201 de 371).",
     "[2026-10-02 12:27:16] Sala Penal 1: 210 documentos nuevos guardados, 2 ya existían (índice 211 de 371).",
     "[2026-10-02 12:28:43] Sala Penal 1: 220 documentos nuevos guardados, 2 ya existían (índice 221 de 371).",
-    "[2026-10-02 12:30:03] Sala Penal 1: 230 documentos nuevos guardados, 2 ya existían (índice 231 de 371)."
+    "[2026-10-02 12:30:03] Sala Penal 1: 230 documentos nuevos guardados, 2 ya existían (índice 231 de 371).",
+    "[2026-10-02 12:31:27] Sala Penal 1: 240 documentos nuevos guardados, 2 ya existían (índice 241 de 371)."
    ]
   },
   {
@@ -284,7 +280,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790958662,
+   "ts": 1790958679,
    "version": "a05df34",
    "procesos": [
     {
@@ -303,16 +299,16 @@
    "gestiones": {
     "2016": {
      "activo": true,
-     "total_archivos": 2583,
+     "total_archivos": 2585,
      "total_esperado": 4051,
      "pct_total": 63.8,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 1.65,
-      "restantes": 1468,
-      "segundos": 53260,
-      "fin_ts": 1791011922
+      "tasa_min": 1.73,
+      "restantes": 1466,
+      "segundos": 50792,
+      "fin_ts": 1791009471
      },
      "salud": {
       "estado": "aviso",
