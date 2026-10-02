@@ -1,16 +1,16 @@
-# Informe del orquestador — 02/10 13:59
+# Informe del orquestador — 02/10 14:04
 
-Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
+Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:34
 
 ## Equipos
 
 | Equipo | Estado | Trabajo | Avance | Termina | Salud |
 |---|---|---|---|---|---|
-| IPE01 (Mac Mini oficina) | en línea | vigilante 2011, compilacion 2011 | 2011: 1475/1572 (93.8 %) | 02/10 14:12 | ok |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 712/739 (96.3 %) | 02/10 14:05 | aviso (6 documento(s) fallido(s) en 30 min) |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2802/4051 (69.2 %) | 02/10 23:52 | aviso (6 documento(s) fallido(s) en 30 min) |
+| IPE01 (Mac Mini oficina) | en línea | vigilante 2011, compilacion 2011 | 2011: 1513/1572 (96.2 %) | 02/10 14:12 | ok |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 712/739 (96.3 %) | 02/10 14:14 | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2802/4051 (69.2 %) | 03/10 05:28 | alerta (el sitio limitó 1 vez(es) en 30 min) |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | - | - |
-| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3572/4584 (77.9 %) | 03/10 06:15 | aviso (6 documento(s) fallido(s) en 30 min) |
+| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3572/4584 (77.9 %) | - | alerta (el sitio limitó 1 vez(es) en 30 min) |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | - | - |
 
 ## Cola de compilación
@@ -22,7 +22,7 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 | 2015 | incompleta | iMac-Sala (iMac de la sala) | 2232/4298 (51.9 %) | 1 |
 | 2016 | activa | MM-Ali (Mac Mini Alicia) | 2802/4051 (69.2 %) | 1 |
 | 2012 | activa | IPE02 (Mac Mini casa) | 712/739 (96.3 %) | 0 |
-| 2011 | activa | IPE01 (Mac Mini oficina) | 1475/1572 (93.8 %) | 0 |
+| 2011 | activa | IPE01 (Mac Mini oficina) | 1513/1572 (96.2 %) | 0 |
 | 2010 | sin_empezar | - | - | 0 |
 | 2009 | sin_empezar | - | - | 0 |
 | 2008 | sin_empezar | - | - | 0 |
@@ -50,3 +50,4 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 - 02/10 10:32 · se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente
 - 02/10 10:37 · el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06
 - 02/10 12:59 · el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 13:28
+- 02/10 14:04 · el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 14:34
