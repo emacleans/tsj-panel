@@ -1,5 +1,5 @@
 {
- "ts": 1790951508,
+ "ts": 1790951573,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790950660,
@@ -24,35 +24,35 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947424,
-   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
+   "ts": 1790947495,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948083,
-   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
+   "ts": 1790948163,
+   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
   },
   {
-   "ts": 1790948740,
-   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
+   "ts": 1790948766,
+   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948934,
+   "ts": 1790948893,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   },
   {
-   "ts": 1790950702,
-   "texto": "inicia 2012 en IPE02 (Mac Mini casa) (sin_empezar; intento 1)"
+   "ts": 1790950662,
+   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
   },
   {
-   "ts": 1790951232,
+   "ts": 1790951360,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1790951497,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951434,
-   "texto": "inicia 2011 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
-  },
-  {
-   "ts": 1790951505,
+   "ts": 1790951568,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   }
  ],
@@ -60,7 +60,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790951494,
+   "ts": 1790951558,
    "version": "a05df34",
    "procesos": [],
    "gestiones": {
@@ -72,10 +72,10 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 4.58,
+      "tasa_min": 4.35,
       "restantes": 2066,
-      "segundos": 27076,
-      "fin_ts": 1790978571
+      "segundos": 28500,
+      "fin_ts": 1790980059
      },
      "salud": {
       "estado": "aviso",
@@ -118,7 +118,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790951502,
+   "ts": 1790951569,
    "version": "a05df34",
    "procesos": [
     {
@@ -137,9 +137,9 @@
    "gestiones": {
     "2011": {
      "activo": true,
-     "total_archivos": 7,
+     "total_archivos": 15,
      "total_esperado": 128,
-     "pct_total": 5.5,
+     "pct_total": 11.7,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
@@ -151,7 +151,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1790951441,
+      "ultimo_movimiento_ts": 1790951521,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -159,7 +159,6 @@
     }
    },
    "ultimas_lineas": [
-    " éxito (todas las salas recorridas) -- no reinicia",
     " de más.",
     " Para ver el avance: abrí OTRA ventana y usá",
     " 3_Ver_avance.command, como siempre.",
@@ -170,13 +169,14 @@
     "[2026-10-02 10:30:35] La gestión 2011 no tenía _salas.json: se arma desde el catálogo de salas incluido en los scripts (sin consultar el sitio).",
     "[2026-10-02 10:30:36] Filas ya registradas históricamente en _progreso.csv: 0.",
     "[2026-10-02 10:30:36] --- Iniciando Sala Plena (Gestión 2011) ---",
-    "[2026-10-02 10:30:41] Sala Plena: 128 resultados encontrados en el sitio."
+    "[2026-10-02 10:30:41] Sala Plena: 128 resultados encontrados en el sitio.",
+    "[2026-10-02 10:32:01] Sala Plena: 10 documentos nuevos guardados, 0 ya existían (índice 9 de 128)."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790951488,
+   "ts": 1790951557,
    "version": "a05df34",
    "procesos": [
     {
@@ -213,10 +213,10 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 4.44,
+      "tasa_min": 4.06,
       "restantes": 130,
-      "segundos": 1756,
-      "fin_ts": 1790953244
+      "segundos": 1923,
+      "fin_ts": 1790953480
      },
      "salud": {
       "estado": "aviso",
@@ -232,24 +232,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 10:31:17]   SIN RESOLVER: 2026-10-02-TSJ-AS-158-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:31:17]     diagnóstico: texto embebido 3971 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 158 Sucre, 11/04/2013 Expediente: 13/2013-S Distrito: Santa Cruz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de casación en el fondo de fs. 99-100, interpuesto p",
-    "[2026-10-02 10:31:17]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 158\\nSucre, 11/04/2013\\nExpediente: 13/2013-S\\nDistrito: Santa Cruz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: El recurso de casación en el fondo de fs. 99-100, interpuesto por Carlos Alberto",
-    "[2026-10-02 10:31:17]     fechas con formato de fecha halladas en el texto: ['11/04/2013', '16 de abril de 2012', '7 de\\ndiciembre de 2011', '7 de diciembre de 2011', '02/10/2026']",
-    "[2026-10-02 10:31:21]   SIN RESOLVER: 2026-10-02-TSJ-AS-159-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:31:21]     diagnóstico: texto embebido 3855 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 159 Sucre, 11/04/2013 Expediente: 05/2013-S Distrito: Santa Cruz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de nulidad o casación en el fondo de fs. 219-223, in",
-    "[2026-10-02 10:31:21]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 159\\nSucre, 11/04/2013\\nExpediente: 05/2013-S\\nDistrito: Santa Cruz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: El recurso de nulidad o casación en el fondo de fs. 219-223, interpuesto por Mer",
-    "[2026-10-02 10:31:21]     fechas con formato de fecha halladas en el texto: ['11/04/2013', '2 de octubre de 2012', '8 de\\nagosto de 2011', '2 de octubre de 2012', '26 de enero de 2009']",
-    "[2026-10-02 10:31:25]   SIN RESOLVER: 2026-10-02-TSJ-AS-16-SCA1.pdf -> fecha no reconocida",
-    "[2026-10-02 10:31:25]     diagnóstico: texto embebido 3533 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 16 Sucre, 15/02/2013 Expediente : 11/2013 Distrito : La Paz VISTOS: El recurso de compulsa formalizado por Doris Duchen Mostajo en representación de la familia Duchen Mostajo, dentr",
-    "[2026-10-02 10:31:25]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\nAuto Supremo Nº 16\\nSucre, 15/02/2013\\n\\nExpediente : 11/2013\\nDistrito : La Paz\\n\\n\\n\\nVISTOS: El recurso de compulsa formalizado por Doris Duchen Mostajo en representación\\nde la familia Duchen Mostajo, dentro del fenecid",
-    "[2026-10-02 10:31:25]     fechas con formato de fecha halladas en el texto: ['15/02/2013', '2 de enero de 2013', '13 de\\nenero de 2012', '13 de junio de 2012', '16 de noviembre de 2012']"
+    "[2026-10-02 10:32:27]   SIN RESOLVER: 2026-10-02-TSJ-AS-174-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:32:27]     diagnóstico: texto embebido 3657 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 174 Sucre, 22/04/2013 Expediente: 34/2013-S Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación o nulidad en el fondo de fs. 63-64, interp",
+    "[2026-10-02 10:32:27]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 174\\nSucre, 22/04/2013\\nExpediente: 34/2013-S\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación o nulidad en el fondo de fs. 63-64, interpuesto por\\nYacimi",
+    "[2026-10-02 10:32:27]     fechas con formato de fecha halladas en el texto: ['22/04/2013', '26 de octubre de\\n2012', '14 de\\nenero de 2011', '26 de octubre de 2012', '5 de mayo de 2009']",
+    "[2026-10-02 10:32:31]   SIN RESOLVER: 2026-10-02-TSJ-AS-175-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:32:31]     diagnóstico: texto embebido 4020 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 175 Sucre, 22/04/2013 Expediente: 47/2013-S Distrito: La Paz Magistrada Relatora: Norka N. Mercado Guzmán VISTOS: El recurso de casación de fs. 115-116, interpuesto por Víctor Ramir",
+    "[2026-10-02 10:32:31]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 175\\nSucre, 22/04/2013\\nExpediente: 47/2013-S\\nDistrito: La Paz\\nMagistrada Relatora: Norka N. Mercado Guzmán\\n\\n\\n\\nVISTOS: El recurso de casación de fs. 115-116, interpuesto por Víctor Ramiro Estrada\\nArcién",
+    "[2026-10-02 10:32:31]     fechas con formato de fecha halladas en el texto: ['22/04/2013', '14 de\\nmayo de 2012', '5 de octubre\\nde 2011', '14 de mayo de 2012', '5 de octubre 2011']",
+    "[2026-10-02 10:32:35]   SIN RESOLVER: 2026-10-02-TSJ-AS-176-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-02 10:32:35]     diagnóstico: texto embebido 4021 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Auto Supremo Nº 176 Sucre, 22/04/2013 Expediente: 22/2013-A Distrito: La Paz Magistrado Relator: Antonio G. Campero Segovia VISTOS: El recurso de casación en el fondo de fs. 79-82, interpuesto por ",
+    "[2026-10-02 10:32:35]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\nAuto Supremo Nº 176\\nSucre, 22/04/2013\\nExpediente: 22/2013-A\\nDistrito: La Paz\\nMagistrado Relator: Antonio G. Campero Segovia\\n\\n\\n\\nVISTOS: El recurso de casación en el fondo de fs. 79-82, interpuesto por el Diario S.A. a\\",
+    "[2026-10-02 10:32:35]     fechas con formato de fecha halladas en el texto: ['22/04/2013', '17 de\\noctubre de 2012', '20 de octubre de 2011', '31 de mayo de 2011', '17 de octubre de 2012']"
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790951503,
+   "ts": 1790951566,
    "version": "a05df34",
    "procesos": [
     {
@@ -274,10 +274,10 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.98,
+      "tasa_min": 3.99,
       "restantes": 1434,
-      "segundos": 21604,
-      "fin_ts": 1790973107
+      "segundos": 21566,
+      "fin_ts": 1790973133
      },
      "salud": {
       "estado": "aviso",
@@ -310,7 +310,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790951442,
+   "ts": 1790951506,
    "version": "a05df34",
    "procesos": [
     {
@@ -337,8 +337,8 @@
      "eta": {
       "tasa_min": 1.99,
       "restantes": 1702,
-      "segundos": 51283,
-      "fin_ts": 1791002726
+      "segundos": 51373,
+      "fin_ts": 1791002880
      },
      "salud": {
       "estado": "aviso",
@@ -371,7 +371,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790951491,
+   "ts": 1790951554,
    "version": "a05df34",
    "procesos": [],
    "gestiones": {},
