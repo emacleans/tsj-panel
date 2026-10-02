@@ -1,5 +1,5 @@
 {
- "ts": 1790948048,
+ "ts": 1790948085,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 0,
@@ -26,13 +26,17 @@
   {
    "ts": 1790947424,
    "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1790948083,
+   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790947991,
+   "ts": 1790948057,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {
@@ -65,7 +69,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790948006,
+   "ts": 1790948069,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
@@ -87,7 +91,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790948029,
+   "ts": 1790948081,
    "version": "0b5078a",
    "procesos": [
     {
@@ -106,16 +110,16 @@
    "gestiones": {
     "2013": {
      "activo": true,
-     "total_archivos": 576,
+     "total_archivos": 582,
      "total_esperado": 5271,
-     "pct_total": 10.9,
+     "pct_total": 11.0,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.6,
-      "restantes": 4695,
-      "segundos": 108464,
-      "fin_ts": 1791056493
+      "tasa_min": 2.79,
+      "restantes": 4689,
+      "segundos": 100941,
+      "fin_ts": 1791049022
      },
      "salud": {
       "estado": "alerta",
@@ -123,7 +127,7 @@
       "fallos_30m": 30,
       "fallos_15m": 15,
       "fallos_total": 526,
-      "ultimo_movimiento_ts": 1790947952,
+      "ultimo_movimiento_ts": 1790948043,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": 1790947943,
       "detalle": "15 documentos fallidos en 15 min"
@@ -131,7 +135,6 @@
     }
    },
    "ultimas_lineas": [
-    "Call log:",
     "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(293)",
     "[2026-10-02 09:31:17] AVISO: el documento #294 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
@@ -142,13 +145,14 @@
     "[2026-10-02 09:32:23] AVISO: el documento #296 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(296)",
-    "[2026-10-02 09:32:32] Sala Penal 1: 210 documentos nuevos guardados, 0 ya existían (índice 297 de 384)."
+    "[2026-10-02 09:32:32] Sala Penal 1: 210 documentos nuevos guardados, 0 ya existían (índice 297 de 384).",
+    "[2026-10-02 09:34:03] Sala Penal 1: 220 documentos nuevos guardados, 0 ya existían (índice 307 de 384)."
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790947987,
+   "ts": 1790948051,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
@@ -170,7 +174,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790948042,
+   "ts": 1790948076,
    "version": "0b5078a",
    "procesos": [
     {
@@ -189,16 +193,16 @@
    "gestiones": {
     "2016": {
      "activo": true,
-     "total_archivos": 2276,
+     "total_archivos": 2279,
      "total_esperado": 4051,
-     "pct_total": 56.2,
+     "pct_total": 56.3,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 1.71,
-      "restantes": 1775,
-      "segundos": 62229,
-      "fin_ts": 1791010272
+      "tasa_min": 1.92,
+      "restantes": 1772,
+      "segundos": 55363,
+      "fin_ts": 1791003439
      },
      "salud": {
       "estado": "alerta",
@@ -231,7 +235,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790948002,
+   "ts": 1790948064,
    "version": "0b5078a",
    "procesos": [],
    "gestiones": {},
