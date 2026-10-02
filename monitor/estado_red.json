@@ -1,5 +1,5 @@
 {
- "ts": 1790970672,
+ "ts": 1790970988,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790972235,
@@ -84,7 +84,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790970637,
+   "ts": 1790970968,
    "version": "a05df34",
    "procesos": [
     {
@@ -103,24 +103,24 @@
    "gestiones": {
     "2015": {
      "activo": true,
-     "total_archivos": 2312,
+     "total_archivos": 2323,
      "total_esperado": 4298,
-     "pct_total": 53.8,
+     "pct_total": 54.0,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 1.19,
-      "restantes": 1986,
-      "segundos": 99904,
-      "fin_ts": 1791070541
+      "tasa_min": 1.51,
+      "restantes": 1975,
+      "segundos": 78407,
+      "fin_ts": 1791049375
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 2,
-      "fallos_30m": 4,
-      "fallos_15m": 2,
-      "fallos_total": 624,
-      "ultimo_movimiento_ts": 1790970435,
+      "fallos_30m": 2,
+      "fallos_15m": 1,
+      "fallos_total": 616,
+      "ultimo_movimiento_ts": 1790970956,
       "ultimo_limite_ts": 1790970435,
       "ultima_falla_ts": 1790970075,
       "detalle": "el sitio limitó 2 vez(es) en 30 min"
@@ -138,24 +138,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 15:41:15] AVISO: el documento #224 de Sala Contenciosa Primera falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(224)",
-    "[2026-10-02 15:41:15] Sala Contenciosa Primera: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
-    "[2026-10-02 15:46:42] *** El registro lleva 327s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
-    "/Users/enriquemaclean/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 58339 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
-    "[2026-10-02 15:46:45] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
-    "[2026-10-02 15:46:45] Esperando 5s antes de continuar...",
-    "[2026-10-02 15:46:50] Iniciando compilar_tsj.py --gestion 2015...",
-    "[2026-10-02 15:46:51] Filas ya registradas históricamente en _progreso.csv: 2318.",
-    "[2026-10-02 15:46:51] --- Iniciando Sala Penal (Gestión 2015) ---",
-    "[2026-10-02 15:47:15] Sala Penal: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
+    "[2026-10-02 15:53:51] Sala Civil: 900 ya existian hasta ahora (indice 899 de 1176, siguen revisandose...).",
+    "[2026-10-02 15:54:06] Sala Civil: 1100 ya existian hasta ahora (indice 1099 de 1176, siguen revisandose...).",
+    "[2026-10-02 15:54:06] --- Sala Civil terminada: 0 nuevos, 1176 ya existentes. Archivos totales ahora en la carpeta: 1170 (el sitio reporta 1176 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 15:54:06] --- Iniciando Sala Plena (Gestión 2015) ---",
+    "[2026-10-02 15:54:11] Sala Plena: 152 resultados encontrados en el sitio.",
+    "[2026-10-02 15:54:17] Sala Plena: 100 ya existian hasta ahora (indice 99 de 152, siguen revisandose...).",
+    "[2026-10-02 15:54:17] --- Sala Plena terminada: 0 nuevos, 152 ya existentes. Archivos totales ahora en la carpeta: 152 (el sitio reporta 152 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 15:54:17] --- Iniciando Sala Contenciosa Primera (Gestión 2015) ---",
+    "[2026-10-02 15:54:22] Sala Contenciosa Primera: 920 resultados encontrados en el sitio.",
+    "[2026-10-02 15:54:22] Sala Contenciosa Primera: 100 ya existian hasta ahora (indice 99 de 920, siguen revisandose...).",
+    "[2026-10-02 15:54:22] Sala Contenciosa Primera: 200 ya existian hasta ahora (indice 199 de 920, siguen revisandose...).",
+    "[2026-10-02 15:55:56] Sala Contenciosa Primera: 10 documentos nuevos guardados, 223 ya existían (índice 232 de 920)."
    ]
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790970651,
+   "ts": 1790970966,
    "version": "a05df34",
    "procesos": [],
    "gestiones": {},
@@ -177,7 +177,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790970610,
+   "ts": 1790970976,
    "version": "a05df34",
    "procesos": [
     {
@@ -196,24 +196,24 @@
    "gestiones": {
     "2012": {
      "activo": true,
-     "total_archivos": 965,
+     "total_archivos": 990,
      "total_esperado": 1132,
-     "pct_total": 85.2,
+     "pct_total": 87.5,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 1.82,
-      "restantes": 167,
-      "segundos": 5520,
-      "fin_ts": 1790976130
+      "tasa_min": 2.29,
+      "restantes": 142,
+      "segundos": 3717,
+      "fin_ts": 1790974693
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 2,
-      "fallos_30m": 4,
-      "fallos_15m": 2,
+      "fallos_30m": 2,
+      "fallos_15m": 1,
       "fallos_total": 42,
-      "ultimo_movimiento_ts": 1790970418,
+      "ultimo_movimiento_ts": 1790970926,
       "ultimo_limite_ts": 1790970418,
       "ultima_falla_ts": 1790970082,
       "detalle": "el sitio limitó 2 vez(es) en 30 min"
@@ -221,24 +221,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 15:41:22] AVISO: el documento #232 de Sala Penal 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(232)",
-    "[2026-10-02 15:41:22] Sala Penal 1: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
-    "[2026-10-02 15:46:25] *** El registro lleva 303s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
-    "/Users/enriquemacleanipe02/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 37247 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
-    "[2026-10-02 15:46:28] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
-    "[2026-10-02 15:46:28] Esperando 5s antes de continuar...",
-    "[2026-10-02 15:46:33] Iniciando compilar_tsj.py --gestion 2012...",
-    "[2026-10-02 15:46:34] Filas ya registradas históricamente en _progreso.csv: 967.",
-    "[2026-10-02 15:46:34] --- Iniciando Sala Plena (Gestión 2012) ---",
-    "[2026-10-02 15:46:58] Sala Plena: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
+    "[2026-10-02 15:52:19] Sala Contenciosa Primera: 100 ya existian hasta ahora (indice 99 de 555, siguen revisandose...).",
+    "[2026-10-02 15:52:19] Sala Contenciosa Primera: 200 ya existian hasta ahora (indice 199 de 555, siguen revisandose...).",
+    "[2026-10-02 15:52:19] Sala Contenciosa Primera: 300 ya existian hasta ahora (indice 299 de 555, siguen revisandose...).",
+    "[2026-10-02 15:52:19] Sala Contenciosa Primera: 400 ya existian hasta ahora (indice 399 de 555, siguen revisandose...).",
+    "[2026-10-02 15:52:19] Sala Contenciosa Primera: 500 ya existian hasta ahora (indice 499 de 555, siguen revisandose...).",
+    "[2026-10-02 15:52:19] --- Sala Contenciosa Primera terminada: 0 nuevos, 555 ya existentes. Archivos totales ahora en la carpeta: 554 (el sitio reporta 555 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 15:52:19] --- Iniciando Sala Penal 1 (Gestión 2012) ---",
+    "[2026-10-02 15:52:22] Sala Penal 1: 393 resultados encontrados en el sitio.",
+    "[2026-10-02 15:52:28] Sala Penal 1: 100 ya existian hasta ahora (indice 99 de 393, siguen revisandose...).",
+    "[2026-10-02 15:52:28] Sala Penal 1: 200 ya existian hasta ahora (indice 199 de 393, siguen revisandose...).",
+    "[2026-10-02 15:54:04] Sala Penal 1: 10 documentos nuevos guardados, 231 ya existían (índice 240 de 393).",
+    "[2026-10-02 15:55:26] Sala Penal 1: 20 documentos nuevos guardados, 231 ya existían (índice 250 de 393)."
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790970623,
+   "ts": 1790970982,
    "version": "a05df34",
    "procesos": [
     {
@@ -268,10 +268,10 @@
      "salud": {
       "estado": "alerta",
       "limite_30m": 2,
-      "fallos_30m": 4,
-      "fallos_15m": 2,
-      "fallos_total": 516,
-      "ultimo_movimiento_ts": 1790970418,
+      "fallos_30m": 2,
+      "fallos_15m": 0,
+      "fallos_total": 507,
+      "ultimo_movimiento_ts": 1790970892,
       "ultimo_limite_ts": 1790970418,
       "ultima_falla_ts": 1790970078,
       "detalle": "el sitio limitó 2 vez(es) en 30 min"
@@ -279,24 +279,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 15:41:18] AVISO: el documento #574 de Sala Penal Liquidadora falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(574)",
-    "[2026-10-02 15:41:18] Sala Penal Liquidadora: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
-    "[2026-10-02 15:46:25] *** El registro lleva 307s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
-    "/Users/enriquemaclean/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 52804 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
-    "[2026-10-02 15:46:29] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
-    "[2026-10-02 15:46:29] Esperando 5s antes de continuar...",
-    "[2026-10-02 15:46:34] Iniciando compilar_tsj.py --gestion 2014...",
-    "[2026-10-02 15:46:34] Filas ya registradas históricamente en _progreso.csv: 3711.",
-    "[2026-10-02 15:46:34] --- Iniciando Sala Penal (Gestión 2014) ---",
-    "[2026-10-02 15:46:58] Sala Penal: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
+    "[2026-10-02 15:52:38] Sala Contenciosa Segunda: 389 resultados encontrados en el sitio.",
+    "[2026-10-02 15:53:20] Sala Contenciosa Segunda: 100 ya existian hasta ahora (indice 99 de 389, siguen revisandose...).",
+    "[2026-10-02 15:53:20] Sala Contenciosa Segunda: 200 ya existian hasta ahora (indice 199 de 389, siguen revisandose...).",
+    "[2026-10-02 15:53:20] Sala Contenciosa Segunda: 300 ya existian hasta ahora (indice 299 de 389, siguen revisandose...).",
+    "[2026-10-02 15:53:20] --- Sala Contenciosa Segunda terminada: 0 nuevos, 389 ya existentes. Archivos totales ahora en la carpeta: 373 (el sitio reporta 389 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 15:53:20] --- Iniciando Sala Penal 1 (Gestión 2014) ---",
+    "[2026-10-02 15:53:24] Sala Penal 1: 52 resultados encontrados en el sitio.",
+    "[2026-10-02 15:53:24] --- Sala Penal 1 terminada: 0 nuevos, 52 ya existentes. Archivos totales ahora en la carpeta: 52 (el sitio reporta 52 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 15:53:24] --- Iniciando Sala Penal Liquidadora (Gestión 2014) ---",
+    "[2026-10-02 15:53:27] Sala Penal Liquidadora: 611 resultados encontrados en el sitio.",
+    "[2026-10-02 15:53:27] Sala Penal Liquidadora: 100 ya existian hasta ahora (indice 99 de 611, siguen revisandose...).",
+    "[2026-10-02 15:54:52] Sala Penal Liquidadora: 400 ya existian hasta ahora (indice 399 de 611, siguen revisandose...)."
    ]
   },
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790970659,
+   "ts": 1790970981,
    "version": "a05df34",
    "procesos": [
     {
@@ -315,24 +315,24 @@
    "gestiones": {
     "2016": {
      "activo": true,
-     "total_archivos": 2928,
+     "total_archivos": 2940,
      "total_esperado": 4051,
-     "pct_total": 72.3,
+     "pct_total": 72.6,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 0.97,
-      "restantes": 1123,
-      "segundos": 69438,
-      "fin_ts": 1791040097
+      "tasa_min": 1.45,
+      "restantes": 1111,
+      "segundos": 45895,
+      "fin_ts": 1791016877
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 2,
-      "fallos_30m": 4,
-      "fallos_15m": 2,
-      "fallos_total": 526,
-      "ultimo_movimiento_ts": 1790970419,
+      "fallos_30m": 2,
+      "fallos_15m": 0,
+      "fallos_total": 517,
+      "ultimo_movimiento_ts": 1790970953,
       "ultimo_limite_ts": 1790970419,
       "ultima_falla_ts": 1790970078,
       "detalle": "el sitio limitó 2 vez(es) en 30 min"
@@ -340,24 +340,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 15:41:18] AVISO: el documento #604 de Sala Contenciosa Primera falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(604)",
-    "[2026-10-02 15:41:18] Sala Contenciosa Primera: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
-    "[2026-10-02 15:46:25] *** El registro lleva 307s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
-    "/Users/usuario/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 76914 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
-    "[2026-10-02 15:46:28] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
-    "[2026-10-02 15:46:28] Esperando 5s antes de continuar...",
-    "[2026-10-02 15:46:33] Iniciando compilar_tsj.py --gestion 2016...",
-    "[2026-10-02 15:46:34] Filas ya registradas históricamente en _progreso.csv: 2935.",
-    "[2026-10-02 15:46:34] --- Iniciando Sala Penal (Gestión 2016) ---",
-    "[2026-10-02 15:46:59] Sala Penal: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
+    "[2026-10-02 15:53:53] Sala Plena: 100 ya existian hasta ahora (indice 99 de 125, siguen revisandose...).",
+    "[2026-10-02 15:54:07] --- Sala Plena terminada: 0 nuevos, 125 ya existentes. Archivos totales ahora en la carpeta: 124 (el sitio reporta 125 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-02 15:54:07] --- Iniciando Sala Contenciosa Primera (Gestión 2016) ---",
+    "[2026-10-02 15:54:11] Sala Contenciosa Primera: 917 resultados encontrados en el sitio.",
+    "[2026-10-02 15:54:11] Sala Contenciosa Primera: 100 ya existian hasta ahora (indice 99 de 917, siguen revisandose...).",
+    "[2026-10-02 15:54:11] Sala Contenciosa Primera: 200 ya existian hasta ahora (indice 199 de 917, siguen revisandose...).",
+    "[2026-10-02 15:54:11] Sala Contenciosa Primera: fila #222 con identificador de catalogo no reconocible ('AS/0111-1/2016-A') -- se intenta igual, por si es un documento real.",
+    "[2026-10-02 15:54:17] Sala Contenciosa Primera: 300 ya existian hasta ahora (indice 299 de 917, siguen revisandose...).",
+    "[2026-10-02 15:54:17] Sala Contenciosa Primera: 400 ya existian hasta ahora (indice 399 de 917, siguen revisandose...).",
+    "[2026-10-02 15:54:17] Sala Contenciosa Primera: 500 ya existian hasta ahora (indice 499 de 917, siguen revisandose...).",
+    "[2026-10-02 15:54:17] Sala Contenciosa Primera: 600 ya existian hasta ahora (indice 599 de 917, siguen revisandose...).",
+    "[2026-10-02 15:55:53] Sala Contenciosa Primera: 10 documentos nuevos guardados, 608 ya existían (índice 617 de 917)."
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790970632,
+   "ts": 1790970945,
    "version": "a05df34",
    "procesos": [],
    "gestiones": {},
