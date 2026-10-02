@@ -1,4 +1,4 @@
-# Informe del orquestador — 02/10 11:55
+# Informe del orquestador — 02/10 12:00
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 
@@ -6,11 +6,11 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 
 | Equipo | Estado | Trabajo | Avance | Termina | Salud |
 |---|---|---|---|---|---|
-| IPE01 (Mac Mini oficina) | en línea | vigilante 2011, compilacion 2011 | 2011: 588/625 (94.1 %) | 02/10 12:00 | ok |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 345/739 (46.7 %) | 02/10 13:56 | aviso (4 documento(s) fallido(s) en 30 min) |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2500/4051 (61.7 %) | 03/10 21:50 | alerta (el sitio limitó 2 vez(es) en 30 min) |
+| IPE01 (Mac Mini oficina) | en línea | vigilante 2011, compilacion 2011 | 2011: 625/996 (62.8 %) | 02/10 12:54 | ok |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 364/739 (49.3 %) | 02/10 13:30 | aviso (4 documento(s) fallido(s) en 30 min) |
+| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2516/4051 (62.1 %) | 03/10 04:48 | alerta (el sitio limitó 2 vez(es) en 30 min) |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | - | - |
-| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3303/4584 (72.1 %) | 02/10 18:48 | aviso (4 documento(s) fallido(s) en 30 min) |
+| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3322/4584 (72.5 %) | 02/10 17:10 | aviso (4 documento(s) fallido(s) en 30 min) |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | - | - |
 
 ## Cola de compilación
@@ -18,11 +18,11 @@ Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 | Gestión | Estado | Equipo | Avance | Lanzamientos |
 |---|---|---|---|---|
 | 2013 | incompleta | IPE02 (Mac Mini casa) | 616/5271 (11.7 %) | 0 |
-| 2014 | activa | MacBook Air | 3303/4584 (72.1 %) | 1 |
+| 2014 | activa | MacBook Air | 3322/4584 (72.5 %) | 1 |
 | 2015 | incompleta | iMac-Sala (iMac de la sala) | 2232/4298 (51.9 %) | 0 |
-| 2016 | activa | MM-Ali (Mac Mini Alicia) | 2500/4051 (61.7 %) | 0 |
-| 2012 | activa | IPE02 (Mac Mini casa) | 345/739 (46.7 %) | 1 |
-| 2011 | activa | IPE01 (Mac Mini oficina) | 588/625 (94.1 %) | 1 |
+| 2016 | activa | MM-Ali (Mac Mini Alicia) | 2516/4051 (62.1 %) | 0 |
+| 2012 | activa | IPE02 (Mac Mini casa) | 364/739 (49.3 %) | 1 |
+| 2011 | activa | IPE01 (Mac Mini oficina) | 625/996 (62.8 %) | 1 |
 | 2010 | sin_empezar | - | - | 0 |
 | 2009 | sin_empezar | - | - | 0 |
 | 2008 | sin_empezar | - | - | 0 |
