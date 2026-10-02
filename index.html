@@ -60,6 +60,11 @@
   .eta b { font-size: 16px; }
   .eta span { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
   .e-eta { font-size: 12.5px; color: var(--active); }
+  .e-salud { margin-top: 5px; font-size: 12px; font-weight: 600; }
+  .e-salud.ok { color: #1f8a4c; } .e-salud.aviso { color: #b7791f; } .e-salud.alerta, .e-salud.parado { color: var(--bad); }
+  #alertas { margin: 0 0 12px; }
+  #alertas .alerta { padding: 9px 12px; border-radius: 8px; background: #F6DEDE; color: var(--bad); font-size: 13.5px; margin-bottom: 6px; }
+  #alertas .alerta.aviso { background: #F7ECD3; color: #8a5a10; }
   .fila { display: grid; grid-template-columns: minmax(0, 1fr) minmax(70px, 160px) auto; align-items: center; gap: 12px; padding: 7px 0; }
   .pista { height: 9px; background: #E4E0D4; border-radius: 6px; overflow: hidden; }
   .relleno { height: 100%; background: var(--gold); border-radius: 6px; transition: width .6s; }
@@ -170,6 +175,7 @@
 <main>
   <div id="banner"></div>
 
+  <section id="alertas"></section>
   <section id="equipos"></section>
 
   <div class="rejilla">
@@ -418,12 +424,34 @@ function renderEquipos() {
       <div class="e-trabajo ${p ? 'ocupado' : ''}">${esc(trabajo)}</div>
       ${procesosHtml}
       ${etaLinea}
+      ${saludHtml(e, on)}
       <div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>
       ${insigniaVersion(e, on)}
       ${Object.keys(e.cierres || {}).length ? `<div class="e-meta">cierres validados: ${Object.keys(e.cierres).map(esc).join(', ')}</div>` : ''}
       ${e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : ''}
     </div>`;
   }).join('') + lineaAprendizaje();
+}
+
+// Salud de la compilación (la calcula el agente leyendo el _registro.log): peor estado entre las gestiones activas del equipo.
+const ORDEN_SALUD = { ok: 0, aviso: 1, alerta: 2, parado: 3 };
+function saludEquipo(e) {
+  let peor = null;
+  Object.entries(e.gestiones || {}).forEach(([g, a]) => {
+    if (a && a.activo && a.salud && (!peor || ORDEN_SALUD[a.salud.estado] > ORDEN_SALUD[peor.salud.estado])) peor = { g, salud: a.salud };
+  });
+  return peor;
+}
+function saludHtml(e, on) {
+  const x = on ? saludEquipo(e) : null;
+  if (!x) return '';
+  const s = x.salud;
+  const txt = { ok: '● Compilando sin incidencias', aviso: '● Con fallos aislados', alerta: '● Atención', parado: '● Parece detenido' }[s.estado] || '';
+  return `<div class="e-salud ${esc(s.estado)}" title="${esc(s.detalle || '')}">${txt}${s.detalle ? ' · ' + esc(s.detalle) : ''}</div>`;
+}
+function renderAlertas() {
+  const filas = equipos.filter(enLinea).map(e => ({ e, x: saludEquipo(e) })).filter(o => o.x && o.x.salud.estado !== 'ok');
+  $('alertas').innerHTML = filas.map(o => `<div class="alerta ${o.x.salud.estado === 'aviso' ? 'aviso' : ''}"><b>${esc(o.e.nombre)}</b> · gestión ${esc(o.x.g)}: ${esc(o.x.salud.detalle || 'revisar')}</div>`).join('');
 }
 
 function lineaAprendizaje() {
@@ -569,7 +597,7 @@ function renderActividad() {
   setHtmlKeep(box, `<div class="tit2"><span>${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}${semaforo(a.en_curso)}</span>${btnCopiar('act', a.en_curso)}</div>${progresoHtml(a)}<div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>${(a.otras || []).length ? '<div class="otras"><b>También en curso en este equipo (otras gestiones):</b>' + a.otras.map(o => `<div class="o-tit">${esc(NOMBRE_ACCION[o.accion] || o.accion)} · gestión ${esc(o.gestion)}</div>${progresoHtml(o)}`).join('') + '</div>' : ''}`);
 }
 
-function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); marcarPasosCumplidos(); renderOrden(); renderActividad(); }
+function render() { renderSelectorGestion(); renderAlertas(); renderEquipos(); renderAvance(); renderDestino(); marcarPasosCumplidos(); renderOrden(); renderActividad(); }
 
 function mostrarError(msg) {
   const b = $('banner');
