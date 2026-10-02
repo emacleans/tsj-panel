@@ -52,6 +52,26 @@
   .e-meta { margin-top: 4px; font-size: 12px; color: var(--muted); }
   .e-error { margin-top: 6px; font-size: 12px; color: var(--bad); }
   .vacio { color: var(--muted); padding: 14px 4px; }
+  .nota-lectura { font-size: 12.5px; color: var(--muted); margin: -4px 0 12px; }
+  .tabla-wrap { overflow-x: auto; margin-bottom: 4px; }
+  table.res { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  table.res th { text-align: left; font: 600 11.5px/1.2 inherit; color: var(--muted); padding: 5px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  table.res td { padding: 7px 8px; border-bottom: 1px solid #E6E2D6; vertical-align: top; }
+  table.res tr[data-g] { cursor: pointer; }
+  table.res tr[data-g]:hover { background: #F1EEE5; }
+  table.res tr.sel { background: var(--gold-soft); }
+  table.res td.num2 { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .est { font-weight: 600; white-space: nowrap; }
+  .est.compilando, .est.verificando { color: var(--active); } .est.completa { color: var(--ok); } .est.con_faltantes { color: var(--bad); }
+  .est.en_pausa { color: var(--warn); } .est.sin_verificar { color: var(--muted); } .est.verificada { color: var(--navy); }
+  .pm { color: var(--muted); font-style: italic; }
+  .dato { white-space: nowrap; font-size: 12.5px; color: var(--muted); }
+  .dato.viejo { color: var(--warn); font-weight: 600; }
+  .res-sub { font: 600 13px Georgia, serif; color: var(--navy); margin: 16px 0 6px; }
+  details.plegable { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 8px; }
+  details.plegable > summary { cursor: pointer; font-weight: 600; font-size: 13px; color: var(--navy); }
+  details.cmp > summary { cursor: pointer; font-size: 12.5px; color: var(--muted); }
+  .fila.pm-fila .relleno { width: 0 !important; }
   .linea { display: flex; align-items: center; gap: 8px; font-size: 13.5px; margin-bottom: 12px; color: var(--muted); }
   .linea.activo { color: var(--active); font-weight: 600; }
   .linea.exito { color: var(--ok); font-weight: 600; }
@@ -175,8 +195,13 @@
 <main>
   <div id="banner"></div>
 
-  <section id="alertas"></section>
-  <section id="equipos"></section>
+  <section class="tarjeta" id="resumen">
+    <h2>Estado de la compilación</h2>
+    <div class="nota-lectura">Una fila por gestión y una por equipo. «Por medir» / «total por confirmar»: aún no se midieron todas las salas de la gestión, así que no hay % ni hora de término. Toca una gestión para ver su detalle.</div>
+    <div id="res-gestiones"></div>
+    <div id="res-equipos"></div>
+    <div id="res-aprendizaje"></div>
+  </section>
 
   <div class="rejilla">
     <section class="tarjeta">
@@ -202,7 +227,7 @@
         <li><button class="paso" data-accion="auditar"><span class="num">7</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Paso final antes del cierre: compara la lista completa del sitio (sin descargar PDF) con tus carpetas y dice qué AS faltan.</div></span></button></li>
         <li><button class="paso" data-accion="recuperar"><span class="num">8</span><span><div class="titulo">Recuperar faltantes</div><div class="desc">Después de auditar: vuelve a bajar del sitio solo los AS que faltan (los iguales a los que ya tienes se descartan solos; los distintos van a «Cotejar duplicados»). Luego audita otra vez.</div></span></button></li>
         <li><button class="paso" data-accion="validar_cierre"><span class="num">9</span><span><div class="titulo">Validar cierre</div><div class="desc">Se ofrece solo cuando la auditoría no encuentra nada que corregir (aparece también como aviso verde en «Avance»). Deja constancia del cierre con su informe. Nunca para la gestión en curso.</div></span></button></li>
-        <li><button class="paso peligro" data-accion="detener"><span class="num">■</span><span><div class="titulo">Detener todo</div><div class="desc">Frena TODO lo que corra en ese equipo (se retoma donde quedó). Para frenar solo un proceso puntual sin tocar los demás, usa el botón «Detener» junto a ese proceso en la tarjeta del equipo, arriba.</div></span></button></li>
+        <li><button class="paso peligro" data-accion="detener"><span class="num">■</span><span><div class="titulo">Detener todo</div><div class="desc">Frena TODO lo que corra en ese equipo (se retoma donde quedó). Para frenar solo un proceso puntual sin tocar los demás, usa el botón «Detener» junto a ese proceso en la fila del equipo, arriba.</div></span></button></li>
         <li><button class="paso" data-accion="actualizar"><span class="num">↻</span><span><div class="titulo">Actualizar scripts</div><div class="desc">Trae la última versión desde GitHub (normalmente ya se hace sola).</div></span></button></li>
       </ul>
       <div id="orden"></div>
@@ -239,7 +264,7 @@
 
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
-const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
+const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
 const NOMBRE_ACCION = { fechar: 'Fechar archivos de _revisar', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre',
   barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)' };
@@ -366,11 +391,15 @@ function fmtFin(ts) {
   return d.toLocaleDateString('es', { weekday: 'short', day: 'numeric', month: 'short' }) + ' ' + hora;
 }
 function etaHtml(e, av) {
-  if (!enLinea(e) || !av.activo || !av.eta) return '';
-  if (av.eta.calculando) return '<div class="eta">⏱ Tiempo estimado: calculando… <span>(necesita unos minutos de avance para medir la velocidad)</span></div>';
+  if (!enLinea(e) || !av.activo) return '';
+  if (!(av.total_completo === true && av.total_esperado != null))
+    return '<div class="eta">⏱ Hora de término: se calcula cuando estén medidas todas las salas <span>(total por confirmar: ' + (av.salas_medidas != null ? av.salas_medidas + ' de ' + av.salas_n + ' salas medidas' : 'reporte de un agente anterior') + ')</span></div>';
+  if (!av.eta) return '';
+  if (av.eta.calculando) return '<div class="eta">⏱ Tiempo estimado: calculando… <span>(necesita unos minutos de avance real para medir el ritmo)</span></div>';
   if (!av.eta.restantes) return '<div class="eta">⏱ Descarga completa; cerrando la gestión.</div>';
-  return `<div class="eta">⏱ Faltan ~<b>${fmtDur(av.eta.fin_ts - ahora())}</b> · termina ${fmtFin(av.eta.fin_ts)}
-    <span>${av.eta.tasa_min} documentos/min · ${av.eta.restantes} por descargar · estimación, se recalcula con cada avance</span></div>`;
+  const rango = av.eta.fin_min_ts && av.eta.fin_max_ts && av.eta.fin_max_ts - av.eta.fin_min_ts > 120 ? ` (entre ${fmtFin(av.eta.fin_min_ts)} y ${fmtFin(av.eta.fin_max_ts)})` : '';
+  return `<div class="eta">⏱ Faltan ~<b>${fmtDur(av.eta.fin_ts - ahora())}</b> · termina ~${fmtFin(av.eta.fin_ts)}${rango}
+    <span>${av.eta.tasa_min} documentos/min (ritmo de la última hora, sin contar pausas del sitio) · ${av.eta.restantes} por descargar · estimación, se recalcula con cada avance</span></div>`;
 }
 
 function renderSelectorGestion() {
@@ -399,39 +428,89 @@ function insigniaVersion(e, on) {
   return '<div class="e-ver ok">✓ scripts al día</div>';
 }
 
-function renderEquipos() {
+const ABIERTOS = new Set();   // <details> que el usuario abrió: se conservan al redibujar cada segundo
+document.addEventListener('toggle', ev => {
+  const d = ev.target; if (!d || !d.dataset || !d.dataset.k) return;
+  if (d.open) ABIERTOS.add(d.dataset.k); else ABIERTOS.delete(d.dataset.k);
+}, true);
+const plegable = (k, titulo, html, cls) => `<details class="${cls || 'plegable'}" data-k="${esc(k)}"${ABIERTOS.has(k) ? ' open' : ''}><summary>${titulo}</summary>${html}</details>`;
+const fmtHora = ts => new Date(ts * 1000).toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+const hace = ts => ahora() - ts < 60 ? 'hace menos de 1 min' : 'hace ' + haceCuanto(ts);   // sin segundos: la vista no se redibuja cada segundo
+const datoViejo = e => !enLinea(e) || ahora() - e.ts > 600;   // regla 7: dato de más de 10 min = viejo
+
+// Datos de una fila de gestión. Regla 1-5: sin total completo no hay %, ni ETA; la sala/total sin medir dice «por medir».
+function datosGestion(g) {
+  const el = elegir(g);
+  if (!el) return null;
+  const { e, av } = el, on = enLinea(e);
+  const fase0 = (e.procesos || []).some(p => p.tipo === 'fase0' && p.gestion === g);
+  const completo = av.total_completo === true && av.total_esperado != null;   // un reporte de agente antiguo no dice si es completo
+  const docs = av.docs_descargados != null ? av.docs_descargados : av.total_archivos;
+  let estado = fase0 ? 'Verificando totales' : (av.estado_texto || (av.activo ? 'Compilando' : av.termino_con_exito ? (av.con_faltantes ? 'Con faltantes' : 'Compilada completa') : 'Total por confirmar'));
+  const base = estado.split(' (')[0];
+  const cod = { 'Compilando': 'compilando', 'Verificando totales': 'verificando', 'Compilada completa': 'completa', 'Con faltantes': 'con_faltantes',
+    'En pausa': 'en_pausa', 'Sin verificar': 'sin_verificar', 'Verificada': 'verificada' }[base] || 'sin_verificar';
+  let eta;
+  if (completo && on && av.activo && av.eta) {
+    if (av.eta.calculando) eta = '<span class="pm">por calcular</span>';
+    else if (!av.eta.restantes) eta = 'cerrando';
+    else {
+      const rango = av.eta.fin_min_ts && av.eta.fin_max_ts && av.eta.fin_max_ts - av.eta.fin_min_ts > 120 ? ` <small>(${fmtHora(av.eta.fin_min_ts)}–${fmtHora(av.eta.fin_max_ts)})</small>` : '';
+      eta = `~${esc(fmtFin(av.eta.fin_ts))}${rango}`;
+    }
+  } else if (av.activo && !completo) eta = '<span class="pm">sin total</span>';
+  else eta = '–';
+  return { g, e, av, on, estado, cod, completo, docs, eta,
+    salas: av.salas_n != null ? `${av.salas_medidas} de ${av.salas_n}` : '<span class="pm">por medir</span>',
+    docsTxt: completo ? `${docs} / ${av.total_esperado}` : (docs ? `${docs} · <span class="pm">total por confirmar</span>` : '–'),
+    pct: completo && av.pct_total != null ? av.pct_total + ' %' : '–' };
+}
+const ORDEN_ESTADO = { compilando: 0, verificando: 1, en_pausa: 2, con_faltantes: 3, sin_verificar: 4, verificada: 5, completa: 6 };
+
+function filaGestionHtml(d) {
+  const viejo = datoViejo(d.e);
+  return `<tr data-g="${esc(d.g)}" class="${d.g === gestion ? 'sel' : ''}"><td><b>${esc(d.g)}</b></td><td><span class="est ${d.cod}">${esc(d.estado)}</span></td>
+    <td class="num2">${d.salas}</td><td class="num2">${d.docsTxt}</td><td class="num2">${d.pct}</td><td class="num2">${d.eta}</td>
+    <td>${esc(d.e.nombre.split(' (')[0])}</td><td class="dato ${viejo ? 'viejo' : ''}">${d.on ? hace(d.e.ts) : 'desconectado · ' + hace(d.e.ts)}${viejo ? ' · dato viejo' : ''}</td></tr>`;
+}
+const CABECERA_GESTIONES = '<thead><tr><th>Gestión</th><th>Estado</th><th>Salas medidas</th><th>Documentos</th><th>%</th><th>ETA</th><th>Equipo</th><th>Dato</th></tr></thead>';
+
+function renderEquipos() {   // vista principal: una fila por gestión + una fila por equipo (detalle plegado)
   if (!equipos.length) {
-    $('equipos').innerHTML = '<div class="vacio">Aún ningún equipo ha reportado. Ejecuta Instalar_agente.command en cada Mac.</div>';
+    $('res-gestiones').innerHTML = '<div class="vacio">Aún ningún equipo ha reportado. Ejecuta Instalar_agente.command en cada Mac.</div>';
+    $('res-equipos').innerHTML = ''; $('res-aprendizaje').innerHTML = '';
     return;
   }
-  $('equipos').innerHTML = equipos.map(e => {
-    const on = enLinea(e);
-    const ps = e.procesos || [];
-    const p = ps.find(x => x.tipo === 'compilacion' || x.tipo === 'vigilante') || ps[0];
-    const trabajo = p ? (ETIQUETA[p.tipo] || p.tipo) + (p.gestion ? ' · ' + p.gestion : '') : 'Libre';
-    const avp = p && p.gestion && e.gestiones ? e.gestiones[p.gestion] : null;
-    const etaLinea = avp && on && avp.activo && avp.eta && avp.eta.fin_ts && avp.eta.restantes ? `<div class="e-eta">⏱ termina ${fmtFin(avp.eta.fin_ts)} (~${fmtDur(avp.eta.fin_ts - ahora())})</div>` : '';
-    // Lista de TODOS los procesos en curso en este equipo (puede haber más de uno: gestiones distintas
-    // corren en paralelo), cada uno con su propio botón para detener SOLO ese proceso sin tocar los demás.
-    const procesosHtml = ps.length ? `<div class="e-procesos">${ps.map(x => {
+  const todas = [...new Set(equipos.flatMap(e => Object.keys(e.gestiones || {})))].sort((a, b) => b - a);
+  const ds = todas.map(datosGestion).filter(Boolean);
+  ds.sort((a, b) => ORDEN_ESTADO[a.cod] - ORDEN_ESTADO[b.cod] || b.g - a.g);
+  const pendientes = ds.filter(d => d.cod !== 'completa'), completas = ds.filter(d => d.cod === 'completa');
+  const tabla = filas => `<div class="tabla-wrap"><table class="res">${CABECERA_GESTIONES}<tbody>${filas.map(filaGestionHtml).join('')}</tbody></table></div>`;
+  setHtmlKeep($('res-gestiones'), '<div class="res-sub" style="margin-top:0">Gestiones</div>' +
+    (pendientes.length ? tabla(pendientes) : '<div class="vacio">Ninguna gestión en curso o pendiente.</div>') +
+    (completas.length ? plegable('g-completas', `Compiladas completas (${completas.length}): ${completas.map(d => esc(d.g)).join(', ')}`, tabla(completas)) : ''));
+
+  const filasEq = equipos.map(e => {
+    const on = enLinea(e), ps = e.procesos || [];
+    const trabajo = ps.length ? ps.map(x => {
       const etq = (ETIQUETA[x.tipo] || x.tipo) + (x.gestion ? ' · ' + x.gestion : '');
-      return `<div class="e-proceso"><span>${esc(etq)}</span>
-      <button type="button" data-detener-eid="${esc(e.id)}" data-detener-pid="${x.pid}" data-detener-etiqueta="${esc(etq)}">Detener</button></div>`;
-    }).join('')}</div>` : '';
-    return `<div class="equipo ${on ? 'on' : 'off'}">
-      <div class="e-nombre"><span class="punto"></span>${esc(e.nombre)}</div>
-      <div class="e-estado">${on ? 'En línea' : 'Desconectado hace ' + haceCuanto(e.ts)}</div>
-      <div class="e-trabajo ${p ? 'ocupado' : ''}">${esc(trabajo)}</div>
-      ${procesosHtml}
-      ${etaLinea}
-      ${saludHtml(e, on)}
-      <div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>
-      ${insigniaVersion(e, on)}
-      ${Object.keys(e.cierres || {}).length ? `<div class="e-meta">cierres validados: ${Object.keys(e.cierres).map(esc).join(', ')}</div>` : ''}
-      ${e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : ''}
-    </div>`;
-  }).join('') + lineaAprendizaje();
+      return `<div class="e-proceso"><span>${esc(etq)}</span><button type="button" data-detener-eid="${esc(e.id)}" data-detener-pid="${x.pid}" data-detener-etiqueta="${esc(etq)}">Detener</button></div>`;
+    }).join('') : '<span class="pm">Libre</span>';
+    const detalle = `<div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>${insigniaVersion(e, on)}` +
+      (Object.keys(e.cierres || {}).length ? `<div class="e-meta">cierres validados: ${Object.keys(e.cierres).map(esc).join(', ')}</div>` : '') +
+      (e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : '');
+    const viejo = datoViejo(e);
+    return `<tr><td><b>${esc(e.nombre)}</b></td><td class="est ${on ? 'compilando' : 'en_pausa'}">${on ? '● En línea' : 'Desconectado'}</td><td>${trabajo}</td>
+      <td>${saludHtml(e, on) || '<span class="pm">–</span>'}</td><td class="dato ${viejo ? 'viejo' : ''}">${hace(e.ts)}${viejo ? ' · dato viejo' : ''}</td>
+      <td>${plegable('eq-' + e.id, 'Detalle', detalle, 'cmp')}</td></tr>`;
+  }).join('');
+  setHtmlKeep($('res-equipos'), `<div class="res-sub">Equipos</div><div class="tabla-wrap"><table class="res"><thead><tr><th>Equipo</th><th>Estado</th><th>Trabajo</th><th>Salud</th><th>Dato</th><th></th></tr></thead><tbody>${filasEq}</tbody></table></div>`);
+  setHtmlKeep($('res-aprendizaje'), lineaAprendizaje());
 }
+$('resumen').addEventListener('click', ev => {
+  const tr = ev.target.closest('tr[data-g]'); if (!tr || ev.target.closest('button, summary, details')) return;
+  gestion = tr.dataset.g; guardar('tsj_gestion', gestion); destinoManual = false; render();
+});
 
 // Salud de la compilación (la calcula el agente leyendo el _registro.log): peor estado entre las gestiones activas del equipo.
 const ORDEN_SALUD = { ok: 0, aviso: 1, alerta: 2, parado: 3 };
@@ -449,11 +528,6 @@ function saludHtml(e, on) {
   const txt = { ok: '● Compilando sin incidencias', aviso: '● Con fallos aislados', alerta: '● Atención', parado: '● Parece detenido' }[s.estado] || '';
   return `<div class="e-salud ${esc(s.estado)}" title="${esc(s.detalle || '')}">${txt}${s.detalle ? ' · ' + esc(s.detalle) : ''}</div>`;
 }
-function renderAlertas() {
-  const filas = equipos.filter(enLinea).map(e => ({ e, x: saludEquipo(e) })).filter(o => o.x && o.x.salud.estado !== 'ok');
-  $('alertas').innerHTML = filas.map(o => `<div class="alerta ${o.x.salud.estado === 'aviso' ? 'aviso' : ''}"><b>${esc(o.e.nombre)}</b> · gestión ${esc(o.x.g)}: ${esc(o.x.salud.detalle || 'revisar')}</div>`).join('');
-}
-
 function lineaAprendizaje() {
   const pub = equipos.find(e => e.aprendizaje);
   if (!pub) return '';
@@ -461,7 +535,7 @@ function lineaAprendizaje() {
   const pend = a.pendientes
     ? ` · <b style="color:var(--warn,#b45309)">${a.pendientes} sin cubrir</b> (patrón nuevo: requiere ajuste del reconocedor)`
     : ' · todas cubiertas';
-  return `<div class="e-meta" style="grid-column:1/-1;margin-top:8px">🧠 Aprendizaje de fechas: ${a.muestras} fecha(s) puestas a mano · ${a.exactas + a.por_vecinos} ya las resuelve el script solo · ${a.meses_aprendidos} variante(s) de mes aprendidas${pend}</div>`;
+  return `<div class="e-meta" style="margin-top:12px">🧠 Aprendizaje de fechas: ${a.muestras} fecha(s) puestas a mano · ${a.exactas + a.por_vecinos} ya las resuelve el script solo · ${a.meses_aprendidos} variante(s) de mes aprendidas${pend}</div>`;
 }
 
 function cardCierre(av, e) {
@@ -489,22 +563,25 @@ function renderAvance() {
   if (!el) { $('avance').innerHTML = '<div class="vacio">Esta gestión no está iniciada en ningún equipo que esté reportando.</div>'; marcarPasosPendientes(null); return; }
   marcarPasosPendientes(el);
   const { e, av } = el, on = enLinea(e);
+  const completo = av.total_completo === true && av.total_esperado != null;
+  const viejo = datoViejo(e), frescura = `actualizado ${hace(e.ts)}${viejo ? ' · dato viejo' : ''}`;
+  const dg = datosGestion(gestion);
   let est;
-  if (!on) est = `<div class="linea aviso">⚠ ${esc(e.nombre)} está desconectado — datos de hace ${haceCuanto(e.ts)}</div>`;
-  else if (av.termino_con_exito && av.con_faltantes) est = `<div class="linea aviso">⚠ Terminó CON FALTANTES en ${esc(e.nombre)}: ${esc(av.con_faltantes)}</div>`;
-  else if (av.termino_con_exito && av.cierre && av.cierre.estado === 'abierta') est = `<div class="linea exito">✓ Recorrida hasta hoy en ${esc(e.nombre)} — gestión abierta, no cerrada (se recompila hasta fin de año)</div>`;
-  else if (av.termino_con_exito) est = `<div class="linea exito">✓ Terminó con éxito en ${esc(e.nombre)} (el % puede no llegar a 100 por diseño)</div>`;
-  else if (av.activo) est = `<div class="linea activo">● Compilando en ${esc(e.nombre)} — en vivo</div>`;
-  else est = `<div class="linea">En ${esc(e.nombre)} · sin actividad reciente</div>`;
+  if (!on) est = `<div class="linea aviso">⚠ ${esc(e.nombre)} está desconectado — dato viejo (${hace(e.ts)})</div>`;
+  else if (av.termino_con_exito && av.con_faltantes) est = `<div class="linea aviso">⚠ ${esc(dg.estado)} en ${esc(e.nombre)}: ${esc(av.con_faltantes)} · ${frescura}</div>`;
+  else if (av.termino_con_exito && av.cierre && av.cierre.estado === 'abierta') est = `<div class="linea exito">✓ Recorrida hasta hoy en ${esc(e.nombre)} — gestión abierta, no cerrada (se recompila hasta fin de año) · ${frescura}</div>`;
+  else if (av.termino_con_exito) est = `<div class="linea exito">✓ ${esc(dg.estado)} en ${esc(e.nombre)} (el % puede no llegar a 100 por diseño) · ${frescura}</div>`;
+  else est = `<div class="linea ${av.activo ? 'activo' : ''}">${av.activo ? '● ' : ''}${esc(dg.estado)} en ${esc(e.nombre)} · ${frescura}</div>`;
   const filas = av.salas.map(s => {
-    const pct = s.pct == null ? 0 : s.pct, completa = s.pct != null && s.pct >= 99.5;
-    return `<div class="fila"><span>${esc(s.sala)}</span>
-      <div class="pista"><div class="relleno ${completa ? 'completa' : ''}" style="width:${Math.min(pct, 100)}%"></div></div>
-      <span class="cifra">${s.esperado ? s.archivos + ' / ' + s.esperado : s.archivos}</span></div>`;
+    const medida = s.esperado != null, pct = s.pct == null ? 0 : s.pct, completa = s.pct != null && s.pct >= 99.5;
+    return `<div class="fila ${medida ? '' : 'pm-fila'}"><span>${esc(s.sala)}</span>
+      <div class="pista"><div class="relleno ${completa ? 'completa' : ''}" style="width:${medida ? Math.min(pct, 100) : 0}%"></div></div>
+      <span class="cifra">${medida ? s.archivos + ' / ' + s.esperado : (s.archivos ? s.archivos + ' · ' : '') + '<span class="pm">por medir</span>'}</span></div>`;
   }).join('');
-  const total = `<div class="total"><span>Total</span><span>${av.total_archivos}${av.total_esperado ? ' / ' + av.total_esperado + (av.pct_total != null ? ' · ' + av.pct_total + ' %' : '') : ''}</span></div>`;
+  const docs = av.docs_descargados != null ? av.docs_descargados : av.total_archivos;
+  const total = `<div class="total"><span>Total${av.salas_n != null ? ' · salas medidas ' + av.salas_medidas + ' de ' + av.salas_n : ''}</span><span>${completo ? docs + ' / ' + av.total_esperado + (av.pct_total != null ? ' · ' + av.pct_total + ' %' : '') : '<span class="pm">por confirmar</span> · ' + docs + ' descargados'}</span></div>`;
   let conc = '';
-  if (av.total_esperado && av.salas.some(x => x.depurados != null)) {
+  if (completo && av.salas.some(x => x.depurados != null)) {
     const au = av.auditoria && av.auditoria.salas || null;
     const tr = av.salas.filter(x => x.esperado).map(x => { const a = au && au[x.sala]; return `<tr><td title="${esc(x.sala)}">${esc(corta(x.sala))}</td><td>${x.esperado}</td><td>${x.archivos}</td><td>${x.revisar}${x.posible_dup ? ' <small>(' + x.posible_dup + ' posible dup.)</small>' : ''}</td><td>${x.depurados}${x.dep_registrados ? ' <small>(' + x.dep_registrados + ' reg.)</small>' : ''}</td>${au ? (a ? `<td>${a.repetidos_en_sitio}</td><td>${a.faltan}${a.faltan ? ' <small>(' + a.faltan_as + ' AS' + (a.faltan_exp ? ' + ' + a.faltan_exp + ' sin nº' : '') + ')</small>' : ''}</td>` : '<td>–</td><td>–</td>') : ''}</tr>`; }).join('');
     const sinSala = av.revisar_sin_sala ? `<div class="nota">${av.revisar_sin_sala} archivo(s) en _revisar sin sala identificable (no suman a ninguna fila).</div>` : '';
@@ -519,7 +596,9 @@ function renderAvance() {
   }
   TEXTO_COPIA.reg = `Registro de la compilación · gestión ${av.gestion} · ${e.nombre} · copiado ${new Date().toLocaleString()}\n` + (av.ultimas_lineas || []).join('\n');
   const log = (av.ultimas_lineas || []).length ? `<div class="bloque-log"><div class="tit2"><span>Registro de la compilación · gestión ${esc(av.gestion)}${semaforo(!!av.activo)}</span>${btnCopiar('reg', !!av.activo)}</div><div class="sub2">Últimas líneas del archivo _registro.log de esta gestión en ${esc(e.nombre)}: lo que el compilador va anotando (salas recorridas, documentos guardados, avisos y errores). Se desplaza solo hasta la línea más reciente.</div><div class="registro" data-scroll="reg">${av.ultimas_lineas.map(esc).join('\n')}</div></div>` : '';
-  setHtmlKeep($('avance'), est + etaHtml(e, av) + filas + total + conc + cardCierre(av, e) + log);
+  const concP = conc ? plegable('conc-' + gestion, 'Conciliación: cifra inicial → cierre', conc) : '';
+  const logP = log ? plegable('log-' + gestion, 'Registro de la compilación (últimas líneas)', log) : '';
+  setHtmlKeep($('avance'), est + etaHtml(e, av) + filas + total + cardCierre(av, e) + concP + logP);
 }
 
 function renderDestino() {
@@ -562,25 +641,13 @@ function fmtDur(s) {
 function progresoHtml(a) {
   if (!CON_BARRA.includes(a.accion) || !a.inicio) return '';
   const trans = Math.max(0, Date.now() / 1000 - a.inicio);
-  if (!a.en_curso) {
-    return `<div class="prog fin"><div class="pista"><div class="relleno" style="width:100%"></div></div><div class="txt"><b>100 %</b> · terminada en ${fmtDur(a.ts - a.inicio)}</div></div>`;
+  if (!a.en_curso) return `<div class="prog fin"><div class="txt">Terminada en ${fmtDur(a.ts - a.inicio)}</div></div>`;
+  if (a.pasos && a.pasos.total) {   // solo cuando el registro permite contar de verdad (salas terminadas de N)
+    const f = a.pasos.hecho / a.pasos.total, pct = Math.min(99, f * 100);
+    const eta = f >= 0.1 ? 'faltan ~' + fmtDur(trans * (1 - f) / f) : 'tiempo restante por calcular';
+    return `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt"><b>${Math.round(pct)} %</b> · ${a.pasos.hecho} de ${a.pasos.total} salas · ${eta} · lleva ${fmtDur(trans)}</div></div>`;
   }
-  let pct, eta, nota;
-  if (a.pasos && a.pasos.total) {
-    const f = a.pasos.hecho / a.pasos.total;
-    pct = Math.min(97, f * 100);
-    eta = f >= 0.1 ? trans * (1 - f) / f : Math.max(a.estimado - trans, 15);
-    nota = `${a.pasos.hecho} de ${a.pasos.total} salas`;
-  } else {
-    pct = Math.min(97, trans / a.estimado * 100);
-    eta = Math.max(a.estimado - trans, 15);
-    nota = 'estimado según ' + (a.base_estimado || 'ejecuciones anteriores');
-  }
-  const pasado = !(a.pasos && a.pasos.total) && trans > a.estimado * 1.3;
-  const fin = new Date(Date.now() + eta * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  const txt = pasado ? `<b>${Math.round(pct)} %</b> · tarda más de lo habitual, sigue en curso (lleva ${fmtDur(trans)})`
-    : `<b>${Math.round(pct)} %</b> · faltan aprox. <b>${fmtDur(eta)}</b> · termina hacia las <b>${fin}</b> · ${esc(nota)}`;
-  return `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt">${txt}</div></div>`;
+  return `<div class="prog"><div class="txt">En curso desde hace ${fmtDur(trans)} · <span class="pm">sin porcentaje: esta acción no informa su avance</span></div></div>`;
 }
 
 function renderActividad() {
@@ -597,7 +664,7 @@ function renderActividad() {
   setHtmlKeep(box, `<div class="tit2"><span>${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}${semaforo(a.en_curso)}</span>${btnCopiar('act', a.en_curso)}</div>${progresoHtml(a)}<div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>${(a.otras || []).length ? '<div class="otras"><b>También en curso en este equipo (otras gestiones):</b>' + a.otras.map(o => `<div class="o-tit">${esc(NOMBRE_ACCION[o.accion] || o.accion)} · gestión ${esc(o.gestion)}</div>${progresoHtml(o)}`).join('') + '</div>' : ''}`);
 }
 
-function render() { renderSelectorGestion(); renderAlertas(); renderEquipos(); renderAvance(); renderDestino(); marcarPasosCumplidos(); renderOrden(); renderActividad(); }
+function render() { renderSelectorGestion(); renderEquipos(); renderAvance(); renderDestino(); marcarPasosCumplidos(); renderOrden(); renderActividad(); }
 
 function mostrarError(msg) {
   const b = $('banner');
