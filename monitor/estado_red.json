@@ -1,5 +1,5 @@
 {
- "ts": 1790948085,
+ "ts": 1790948111,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 0,
@@ -24,12 +24,8 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947424,
-   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
-  },
-  {
-   "ts": 1790948083,
-   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
+   "ts": 1790947495,
+   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
   }
  ],
  "equipos": [
@@ -91,7 +87,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790948081,
+   "ts": 1790948097,
    "version": "0b5078a",
    "procesos": [
     {
@@ -110,16 +106,16 @@
    "gestiones": {
     "2013": {
      "activo": true,
-     "total_archivos": 582,
+     "total_archivos": 584,
      "total_esperado": 5271,
-     "pct_total": 11.0,
+     "pct_total": 11.1,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.79,
-      "restantes": 4689,
-      "segundos": 100941,
-      "fin_ts": 1791049022
+      "tasa_min": 3.02,
+      "restantes": 4687,
+      "segundos": 93164,
+      "fin_ts": 1791041262
      },
      "salud": {
       "estado": "alerta",
@@ -152,29 +148,68 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790948051,
+   "ts": 1790948103,
    "version": "0b5078a",
-   "procesos": [],
-   "gestiones": {},
+   "procesos": [
+    {
+     "pid": 20913,
+     "tipo": "vigilante",
+     "gestion": "2014",
+     "inicio_ts": 1790948085
+    },
+    {
+     "pid": 20919,
+     "tipo": "compilacion",
+     "gestion": "2014",
+     "inicio_ts": 1790948085
+    }
+   ],
+   "gestiones": {
+    "2014": {
+     "activo": true,
+     "total_archivos": 2997,
+     "total_esperado": 4584,
+     "pct_total": 65.4,
+     "termino_con_exito": false,
+     "con_faltantes": null,
+     "eta": {
+      "tasa_min": 2.26,
+      "restantes": 1587,
+      "segundos": 42221,
+      "fin_ts": 1790990324
+     },
+     "salud": {
+      "estado": "aviso",
+      "limite_30m": 0,
+      "fallos_30m": 15,
+      "fallos_15m": 0,
+      "fallos_total": 642,
+      "ultimo_movimiento_ts": 1790948089,
+      "ultimo_limite_ts": 1790936879,
+      "ultima_falla_ts": 1790947036,
+      "detalle": "15 documento(s) fallido(s) en 30 min"
+     }
+    }
+   },
    "ultimas_lineas": [
-    "    at PipeTransport.send (/Users/enriquemaclean/Library/Python/3.14/lib/python/site-packages/playwright/driver/package/lib/server/utils/pipeTransport.js:52:21)",
-    "    at dispatcherConnection.onmessage (/Users/enriquemaclean/Library/Python/3.14/lib/python/site-packages/playwright/driver/package/lib/cli/driver.js:60:59)",
-    "    at DispatcherConnection.sendDispose (/Users/enriquemaclean/Library/Python/3.14/lib/python/site-packages/playwright/driver/package/lib/server/dispatchers/dispatcher.js:191:10)",
-    "Emitted 'error' event on Socket instance at:",
-    "    at emitErrorNT (node:internal/streams/destroy:170:8)",
-    "    at emitErrorCloseNT (node:internal/streams/destroy:129:3)",
-    "    at process.processTicksAndRejections (node:internal/process/task_queues:89:21) {",
-    "  errno: -32,",
-    "  code: 'EPIPE',",
-    "  syscall: 'write'",
-    "}",
-    "Node.js v24.11.1"
+    " 3_Ver_avance.command, como siempre.",
+    " Para detener TODO antes de que termine: Control+C",
+    " en ESTA ventana.",
+    "==================================================",
+    "[2026-10-02 09:34:45] Iniciando compilar_tsj.py --gestion 2014...",
+    "[2026-10-02 09:34:46] Filas ya registradas históricamente en _progreso.csv: 3029.",
+    "[2026-10-02 09:34:46] --- Iniciando Sala Penal (Gestión 2014) ---",
+    "[2026-10-02 09:34:49] Sala Penal: 785 resultados encontrados en el sitio.",
+    "[2026-10-02 09:34:49] Sala Penal: 100 ya existian hasta ahora (indice 99 de 785, siguen revisandose...).",
+    "[2026-10-02 09:34:49] Sala Penal: 200 ya existian hasta ahora (indice 199 de 785, siguen revisandose...).",
+    "[2026-10-02 09:34:49] Sala Penal: 300 ya existian hasta ahora (indice 299 de 785, siguen revisandose...).",
+    "[2026-10-02 09:34:49] Sala Penal: 400 ya existian hasta ahora (indice 399 de 785, siguen revisandose...)."
    ]
   },
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790948076,
+   "ts": 1790948094,
    "version": "0b5078a",
    "procesos": [
     {
@@ -193,16 +228,16 @@
    "gestiones": {
     "2016": {
      "activo": true,
-     "total_archivos": 2279,
+     "total_archivos": 2281,
      "total_esperado": 4051,
      "pct_total": 56.3,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 1.92,
-      "restantes": 1772,
-      "segundos": 55363,
-      "fin_ts": 1791003439
+      "tasa_min": 1.99,
+      "restantes": 1770,
+      "segundos": 53281,
+      "fin_ts": 1791001375
      },
      "salud": {
       "estado": "alerta",
@@ -210,7 +245,7 @@
       "fallos_30m": 23,
       "fallos_15m": 15,
       "fallos_total": 666,
-      "ultimo_movimiento_ts": 1790947994,
+      "ultimo_movimiento_ts": 1790948086,
       "ultimo_limite_ts": 1790946831,
       "ultima_falla_ts": 1790947964,
       "detalle": "el sitio limitó 1 vez(es) en 30 min; 15 documentos fallidos en 15 min"
@@ -218,7 +253,6 @@
     }
    },
    "ultimas_lineas": [
-    "Call log:",
     "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(38)",
     "[2026-10-02 09:31:34] AVISO: el documento #39 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
@@ -229,7 +263,8 @@
     "[2026-10-02 09:32:44] AVISO: el documento #41 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(41)",
-    "[2026-10-02 09:33:14] Sala Plena: 30 documentos nuevos guardados, 0 ya existían (índice 44 de 125)."
+    "[2026-10-02 09:33:14] Sala Plena: 30 documentos nuevos guardados, 0 ya existían (índice 44 de 125).",
+    "[2026-10-02 09:34:46] Sala Plena: 40 documentos nuevos guardados, 0 ya existían (índice 54 de 125)."
    ]
   },
   {
