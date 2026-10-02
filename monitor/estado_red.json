@@ -1,5 +1,5 @@
 {
- "ts": 1790957138,
+ "ts": 1790957143,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790954784,
@@ -24,39 +24,43 @@
  "incidencias_abiertas": [],
  "acciones": [
   {
-   "ts": 1790947495,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+   "ts": 1790947424,
+   "texto": "reinicio de 2014 en MacBook Air: corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948163,
-   "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
+   "ts": 1790948083,
+   "texto": "inicia 2014 en MacBook Air (incompleta; intento 1)"
   },
   {
-   "ts": 1790948766,
-   "texto": "reinicio de 2016 en MM-Ali (Mac Mini Alicia): corría con código anterior al último cambio"
+   "ts": 1790948740,
+   "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
   },
   {
-   "ts": 1790948893,
+   "ts": 1790948934,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 10:17"
   },
   {
-   "ts": 1790950662,
-   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
+   "ts": 1790950702,
+   "texto": "inicia 2012 en IPE02 (Mac Mini casa) (sin_empezar; intento 1)"
   },
   {
-   "ts": 1790951360,
-   "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
-  },
-  {
-   "ts": 1790951497,
+   "ts": 1790951232,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951568,
+   "ts": 1790951434,
+   "texto": "inicia 2011 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
+  },
+  {
+   "ts": 1790951505,
    "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
   },
   {
-   "ts": 1790951834,
+   "ts": 1790951576,
+   "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
+  },
+  {
+   "ts": 1790951838,
    "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06"
   }
  ],
@@ -97,7 +101,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790957119,
+   "ts": 1790957136,
    "version": "a05df34",
    "procesos": [
     {
@@ -116,16 +120,16 @@
    "gestiones": {
     "2011": {
      "activo": true,
-     "total_archivos": 661,
+     "total_archivos": 663,
      "total_esperado": 996,
-     "pct_total": 66.4,
+     "pct_total": 66.6,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 6.91,
-      "restantes": 335,
-      "segundos": 2910,
-      "fin_ts": 1790960030
+      "tasa_min": 6.9,
+      "restantes": 333,
+      "segundos": 2896,
+      "fin_ts": 1790960032
      },
      "salud": {
       "estado": "ok",
@@ -219,7 +223,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1790957120,
+   "ts": 1790957137,
    "version": "a05df34",
    "procesos": [
     {
@@ -238,16 +242,16 @@
    "gestiones": {
     "2014": {
      "activo": true,
-     "total_archivos": 3335,
+     "total_archivos": 3337,
      "total_esperado": 4584,
      "pct_total": 72.8,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
       "tasa_min": 3.62,
-      "restantes": 1249,
-      "segundos": 20677,
-      "fin_ts": 1790977798
+      "restantes": 1247,
+      "segundos": 20644,
+      "fin_ts": 1790977782
      },
      "salud": {
       "estado": "aviso",
@@ -280,7 +284,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790957118,
+   "ts": 1790957136,
    "version": "a05df34",
    "procesos": [
     {
@@ -299,16 +303,16 @@
    "gestiones": {
     "2016": {
      "activo": true,
-     "total_archivos": 2546,
+     "total_archivos": 2548,
      "total_esperado": 4051,
-     "pct_total": 62.8,
+     "pct_total": 62.9,
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.14,
-      "restantes": 1505,
-      "segundos": 28745,
-      "fin_ts": 1790985863
+      "tasa_min": 3.2,
+      "restantes": 1503,
+      "segundos": 28193,
+      "fin_ts": 1790985329
      },
      "salud": {
       "estado": "alerta",
