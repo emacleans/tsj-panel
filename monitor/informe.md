@@ -1,16 +1,16 @@
-# Informe del orquestador — 02/10 14:20
+# Informe del orquestador — 02/10 14:25
 
-Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:46
+Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: 02/10 14:54
 
 ## Equipos
 
 | Equipo | Estado | Trabajo | Avance | Termina | Salud |
 |---|---|---|---|---|---|
 | IPE01 (Mac Mini oficina) | en línea | libre | - | - | - |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 761/1132 (67.2 %) | 02/10 16:48 | alerta (el sitio limitó 1 vez(es) en 30 min) |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2829/4051 (69.8 %) | 03/10 05:10 | alerta (el sitio limitó 1 vez(es) en 30 min) |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | 2012: 761/1132 (67.2 %) | 02/10 16:46 | alerta (el sitio limitó 2 vez(es) en 30 min) |
+| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2016, compilacion 2016 | 2016: 2829/4051 (69.8 %) | 03/10 04:26 | alerta (el sitio limitó 2 vez(es) en 30 min) |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | - | - |
-| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3572/4584 (77.9 %) | - | alerta (el sitio limitó 2 vez(es) en 30 min) |
+| MacBook Air | en línea | vigilante 2014, compilacion 2014 | 2014: 3572/4584 (77.9 %) | - | alerta (el sitio limitó 3 vez(es) en 30 min) |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | - | - |
 
 ## Cola de compilación
