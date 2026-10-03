@@ -1,8 +1,8 @@
 {
- "ts": 1791040257,
+ "ts": 1791040567,
  "pausado": false,
  "max_simultaneas": 4,
- "pausa_hasta": 1791041367,
+ "pausa_hasta": 1791042141,
  "cola": [
   "2013",
   "2014",
@@ -34,7 +34,7 @@
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791040240,
+   "actualizado_ts": 1791040534,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 79.3,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791040240,
+   "actualizado_ts": 1791040534,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791040248,
+   "actualizado_ts": 1791040549,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 91.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791040236,
+   "actualizado_ts": 1791040559,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791040240,
+   "actualizado_ts": 1791040534,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 98.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791040241,
+   "actualizado_ts": 1791040554,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 95.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791040241,
+   "actualizado_ts": 1791040554,
    "viejo": false
   },
   {
@@ -137,9 +137,11 @@
    "total_esperado": 2255,
    "total_completo": true,
    "pct": 28.9,
-   "eta": null,
+   "eta": {
+    "calculando": true
+   },
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791040248,
+   "actualizado_ts": 1791040521,
    "viejo": false
   },
   {
@@ -154,7 +156,7 @@
    "pct": 74.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791040241,
+   "actualizado_ts": 1791040554,
    "viejo": false
   },
   {
@@ -163,20 +165,20 @@
    "estado_interno": "activa",
    "salas_n": 6,
    "salas_medidas": 6,
-   "docs": 745,
+   "docs": 754,
    "total_esperado": 3331,
    "total_completo": true,
-   "pct": 22.4,
+   "pct": 22.6,
    "eta": {
-    "tasa_min": 2.62,
-    "restantes": 2586,
-    "segundos": 59262,
-    "fin_ts": 1791099510,
-    "fin_min_ts": 1791093584,
-    "fin_max_ts": 1791113395
+    "tasa_min": 2.34,
+    "restantes": 2577,
+    "segundos": 66063,
+    "fin_ts": 1791106612,
+    "fin_min_ts": 1791100006,
+    "fin_max_ts": 1791113218
    },
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791040248,
+   "actualizado_ts": 1791040549,
    "viejo": false
   },
   {
@@ -266,7 +268,7 @@
    "pct": 96.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791040236,
+   "actualizado_ts": 1791040559,
    "viejo": false
   }
  ],
@@ -381,7 +383,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791040248,
+   "ts": 1791040549,
    "version": "0648be0",
    "procesos": [
     {
@@ -400,34 +402,34 @@
    "gestiones": {
     "2007": {
      "activo": true,
-     "total_archivos": 745,
-     "docs_descargados": 745,
+     "total_archivos": 754,
+     "docs_descargados": 754,
      "salas_n": 6,
      "salas_medidas": 6,
      "total_completo": true,
      "total_esperado": 3331,
-     "pct_total": 22.4,
+     "pct_total": 22.6,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.62,
-      "restantes": 2586,
-      "segundos": 59262,
-      "fin_ts": 1791099510,
-      "fin_min_ts": 1791093584,
-      "fin_max_ts": 1791113395
+      "tasa_min": 2.34,
+      "restantes": 2577,
+      "segundos": 66063,
+      "fin_ts": 1791106612,
+      "fin_min_ts": 1791100006,
+      "fin_max_ts": 1791113218
      },
      "salud": {
       "estado": "alerta",
       "limite_30m": 1,
-      "fallos_30m": 2,
-      "fallos_15m": 0,
-      "fallos_total": 34,
-      "ultimo_movimiento_ts": 1791040162,
+      "fallos_30m": 4,
+      "fallos_15m": 2,
+      "fallos_total": 36,
+      "ultimo_movimiento_ts": 1791040500,
       "ultimo_limite_ts": 1791039567,
-      "ultima_falla_ts": 1791039212,
+      "ultima_falla_ts": 1791040410,
       "detalle": "el sitio limitó 1 vez(es) en 30 min"
      }
     },
@@ -449,24 +451,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-03 11:04:39] Sala Plena: 100 ya existian hasta ahora (indice 99 de 290, siguen revisandose...).",
-    "[2026-10-03 11:04:39] Sala Plena: 200 ya existian hasta ahora (indice 199 de 290, siguen revisandose...).",
-    "[2026-10-03 11:04:39] --- Sala Plena terminada: 0 nuevos, 290 ya existentes. Archivos totales ahora en la carpeta: 289 (el sitio reporta 290 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
-    "[2026-10-03 11:04:39] --- Iniciando Sala Contenciosa Primera (Gestión 2007) ---",
-    "[2026-10-03 11:04:44] Sala Contenciosa Primera: 634 resultados encontrados en el sitio.",
-    "[2026-10-03 11:04:44] Sala Contenciosa Primera: 100 ya existian hasta ahora (indice 99 de 634, siguen revisandose...).",
-    "[2026-10-03 11:04:44] Sala Contenciosa Primera: 200 ya existian hasta ahora (indice 199 de 634, siguen revisandose...).",
-    "[2026-10-03 11:04:44] Sala Contenciosa Primera: 300 ya existian hasta ahora (indice 299 de 634, siguen revisandose...).",
-    "[2026-10-03 11:04:44] Sala Contenciosa Primera: 400 ya existian hasta ahora (indice 399 de 634, siguen revisandose...).",
-    "[2026-10-03 11:06:16] Sala Contenciosa Primera: 10 documentos nuevos guardados, 420 ya existían (índice 429 de 634).",
-    "[2026-10-03 11:07:49] Sala Contenciosa Primera: 20 documentos nuevos guardados, 420 ya existían (índice 439 de 634).",
-    "[2026-10-03 11:09:22] Sala Contenciosa Primera: 30 documentos nuevos guardados, 420 ya existían (índice 449 de 634)."
+    "[2026-10-03 11:10:59] Sala Contenciosa Primera: 40 documentos nuevos guardados, 420 ya existían (índice 459 de 634).",
+    "[2026-10-03 11:11:51] Sala Contenciosa Primera: la descarga de la fila #463 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 6s...",
+    "[2026-10-03 11:12:17] Sala Contenciosa Primera: la descarga de la fila #463 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 19s...",
+    "[2026-10-03 11:12:56] AVISO: el documento #463 de Sala Contenciosa Primera falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
+    "=========================== logs ===========================",
+    "waiting for event \"download\"",
+    "============================================================",
+    "[2026-10-03 11:13:30] AVISO: el documento #464 de Sala Contenciosa Primera falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "Call log:",
+    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(464)",
+    "[2026-10-03 11:13:30] Sala Contenciosa Primera: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
+    "[2026-10-03 11:15:00] Sala Contenciosa Primera: el sitio volvió a responder tras ~1 min 20 s. Se continúa."
    ]
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791040241,
+   "ts": 1791040554,
    "version": "0648be0",
    "procesos": [
     {
@@ -490,24 +492,24 @@
    ],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-03 11:10:29]   SIN RESOLVER: 2026-10-03-TSJ-AS-301-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-03 11:10:29]     diagnóstico: texto embebido 3517 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 301 Sucre, 28 de agosto de 2.008 DISTRITO: Chuquisaca PROCESO: Coactivo Fiscal PARTES: H. Alcaldía Municipal de Sucre c/ Ives Rosales Ríos y otros. MINISTRO RELATOR: Dr. Julio Ortiz Lina",
-    "[2026-10-03 11:10:29]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 301\\n\\nSucre, 28 de agosto de 2.008\\n\\nDISTRITO: Chuquisaca PROCESO: Coactivo Fiscal\\n\\nPARTES: H. Alcaldía Municipal de Sucre c/ Ives Rosales Ríos y otros.\\n\\nMINISTRO RELATOR: Dr. Julio Ortiz Linares.\\n\\n+++++++++",
-    "[2026-10-03 11:10:29]     fechas con formato de fecha halladas en el texto: ['14 de septiembre de\\n2006', '23 de\\nseptiembre de 2005', '14 de septiembre de 2006', '23 de septiembre de 2005', '03/10/2026']",
-    "[2026-10-03 11:10:33]   SIN RESOLVER: 2026-10-03-TSJ-AS-302-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-03 11:10:33]     diagnóstico: texto embebido 3550 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 302 Sucre, 28 de agosto de 2.008 DISTRITO: Chuquisaca PROCESO: Coactivo Fiscal PARTES: H. Alcaldía Municipal de Sucre c/ Ives Rosales Ríos y otra. MINISTRO RELATOR: Dr. Julio Ortiz Linar",
-    "[2026-10-03 11:10:33]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 302\\n\\nSucre, 28 de agosto de 2.008\\n\\nDISTRITO: Chuquisaca PROCESO: Coactivo Fiscal\\n\\nPARTES: H. Alcaldía Municipal de Sucre c/ Ives Rosales Ríos y otra.\\n\\nMINISTRO RELATOR: Dr. Julio Ortiz Linares.\\n\\n++++++++++",
-    "[2026-10-03 11:10:33]     fechas con formato de fecha halladas en el texto: ['15 de septiembre de\\n2006', '17 de\\nagosto de 2005', '15 de septiembre de 2006', '17 de agosto de 2005', '03/10/2026']",
-    "[2026-10-03 11:10:37]   SIN RESOLVER: 2026-10-03-TSJ-AS-303-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-03 11:10:37]     diagnóstico: texto embebido 3519 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 303 Sucre, 29 de agosto de 2.008 DISTRITO: Chuquisaca PROCESO: Coactivo Fiscal PARTES: Contraloría General de la República c/ Halder Higueras Ríos y otros. MINISTRO RELATOR: Dr. Hugo R. ",
-    "[2026-10-03 11:10:37]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 303\\n\\nSucre, 29 de agosto de 2.008\\n\\nDISTRITO: Chuquisaca PROCESO: Coactivo Fiscal\\n\\nPARTES: Contraloría General de la República c/ Halder Higueras Ríos y otros.\\n\\nMINISTRO RELATOR: Dr. Hugo R. Suárez Calbimonte",
-    "[2026-10-03 11:10:37]     fechas con formato de fecha halladas en el texto: ['27 de marzo de 2006', '16 de marzo de 2000', '29 de agosto de 2003', '27 de marzo de 2006', '10\\nde diciembre de 1948']"
+    "[2026-10-03 11:15:46]   SIN RESOLVER: 2026-10-03-TSJ-AS-377-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-03 11:15:46]     diagnóstico: texto embebido 3189 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 377 Sucre, 27 de octubre de 2.008 DISTRITO: Oruro PROCESO: Reclamación PARTES: Jorge Alberto Cárdenas Pimentel c/ SENASIR. MINISTRO RELATOR: Hugo R. Suárez Calbimonte. ++++++++++++++++++",
+    "[2026-10-03 11:15:46]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 377\\n\\nSucre, 27 de octubre de 2.008\\n\\nDISTRITO: Oruro PROCESO: Reclamación\\n\\nPARTES: Jorge Alberto Cárdenas Pimentel c/ SENASIR.\\n\\nMINISTRO RELATOR: Hugo R. Suárez Calbimonte.\\n\\n++++++++++++++++++++++++++++++++",
+    "[2026-10-03 11:15:46]     fechas con formato de fecha halladas en el texto: ['15 de noviembre de 2005', '6 de febrero de 2006', '6 de febrero de 2005', '15 de noviembre de 2005', '25 de enero de 2005']",
+    "[2026-10-03 11:15:50]   SIN RESOLVER: 2026-10-03-TSJ-AS-378-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-03 11:15:50]     diagnóstico: texto embebido 3468 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 378 Sucre, 28 de octubre de 2.008 DISTRITO: La Paz PROCESO: Reclamación PARTES: Margarita Carrasco Vda. Castro c/ SENASIR. MINISTRO RELATOR: Min. Jaime Ampuero García. ++++++++++++++++++",
+    "[2026-10-03 11:15:50]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 378\\n\\nSucre, 28 de octubre de 2.008\\n\\nDISTRITO: La Paz PROCESO: Reclamación\\n\\nPARTES: Margarita Carrasco Vda. Castro c/ SENASIR.\\n\\nMINISTRO RELATOR: Min. Jaime Ampuero García.\\n\\n++++++++++++++++++++++++++++++++",
+    "[2026-10-03 11:15:50]     fechas con formato de fecha halladas en el texto: ['3 de abril de 2006', '15 de mayo\\nde 2000', '9 de\\nnoviembre de 2001', '29 de noviembre de\\n2000', '31 de agosto\\nde 2005']",
+    "[2026-10-03 11:15:53]   SIN RESOLVER: 2026-10-03-TSJ-AS-379-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-03 11:15:53]     diagnóstico: texto embebido 3207 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 379 Sucre, 28 de octubre de 2.008 DISTRITO: Beni PROCESO: Coactivo Fiscal PARTES: AASANA c/ Iver Vargas Ribera. MINISTRO RELATOR: Hugo R. Suárez Calbimonte. +++++++++++++++++++++++++++++",
+    "[2026-10-03 11:15:53]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 379\\n\\nSucre, 28 de octubre de 2.008\\n\\nDISTRITO: Beni PROCESO: Coactivo Fiscal\\n\\nPARTES: AASANA c/ Iver Vargas Ribera.\\n\\nMINISTRO RELATOR: Hugo R. Suárez Calbimonte.\\n\\n+++++++++++++++++++++++++++++++++++++++++++",
+    "[2026-10-03 11:15:53]     fechas con formato de fecha halladas en el texto: ['18 de diciembre de 2006', '30 de diciembre de 2005', '8 de septiembre de 2006', '18 de diciembre de 2006', '03/10/2026']"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791040240,
+   "ts": 1791040534,
    "version": "0648be0",
    "procesos": [
     {
@@ -517,10 +519,10 @@
      "inicio_ts": 1790950705
     },
     {
-     "pid": 56815,
+     "pid": 58460,
      "tipo": "compilacion",
      "gestion": "2012",
-     "inicio_ts": 1791039524
+     "inicio_ts": 1791040316
     }
    ],
    "gestiones": {
@@ -540,30 +542,30 @@
      "eta": null,
      "salud": {
       "estado": "alerta",
-      "limite_30m": 1,
+      "limite_30m": 2,
       "fallos_30m": 2,
       "fallos_15m": 0,
       "fallos_total": 134,
-      "ultimo_movimiento_ts": 1791040004,
-      "ultimo_limite_ts": 1791039549,
+      "ultimo_movimiento_ts": 1791040341,
+      "ultimo_limite_ts": 1791040341,
       "ultima_falla_ts": 1791039212,
-      "detalle": "el sitio limitó 1 vez(es) en 30 min"
+      "detalle": "el sitio limitó 2 vez(es) en 30 min"
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-03 11:06:18] Sala Civil 1: 300 ya existian hasta ahora (indice 299 de 535, siguen revisandose...).",
-    "[2026-10-03 11:06:25] Sala Civil 1: 400 ya existian hasta ahora (indice 399 de 535, siguen revisandose...).",
-    "[2026-10-03 11:06:25] Sala Civil 1: 500 ya existian hasta ahora (indice 499 de 535, siguen revisandose...).",
-    "[2026-10-03 11:06:25] --- Sala Civil 1 terminada: 0 nuevos, 535 ya existentes. Archivos totales ahora en la carpeta: 531 (el sitio reporta 535 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
-    "[2026-10-03 11:06:25] --- Iniciando Sala Civil Liquidadora (Gestión 2012) ---",
-    "[2026-10-03 11:06:29] Sala Civil Liquidadora: 364 resultados encontrados en el sitio.",
-    "[2026-10-03 11:06:34] Sala Civil Liquidadora: 100 ya existian hasta ahora (indice 99 de 364, siguen revisandose...).",
-    "[2026-10-03 11:06:34] Sala Civil Liquidadora: 200 ya existian hasta ahora (indice 199 de 364, siguen revisandose...).",
     "[2026-10-03 11:06:40] Sala Civil Liquidadora: 300 ya existian hasta ahora (indice 299 de 364, siguen revisandose...).",
     "[2026-10-03 11:06:40] --- Sala Civil Liquidadora terminada: 0 nuevos, 364 ya existentes. Archivos totales ahora en la carpeta: 363 (el sitio reporta 364 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
     "[2026-10-03 11:06:40] --- Iniciando Sala Social Liquidadora (Gestión 2012) ---",
-    "[2026-10-03 11:06:44] Sala Social Liquidadora: 423 resultados encontrados en el sitio."
+    "[2026-10-03 11:06:44] Sala Social Liquidadora: 423 resultados encontrados en el sitio.",
+    "[2026-10-03 11:11:48] *** El registro lleva 304s sin ninguna línea nueva -- parece colgado. Reiniciando. ***",
+    "/Users/enriquemacleanipe02/Documents/TSJ/_scripts/4_Vigilar_y_reiniciar_TSJ.command: line 152: 56815 Killed: 9               python3 \"$RAIZ/_scripts/compilar_tsj.py\" --gestion \"$GESTION\"",
+    "[2026-10-03 11:11:51] compilar_tsj.py terminó (solo, o porque lo reinició el vigilante).",
+    "[2026-10-03 11:11:51] Esperando 5s antes de continuar...",
+    "[2026-10-03 11:11:56] Iniciando compilar_tsj.py --gestion 2012...",
+    "[2026-10-03 11:11:57] Filas ya registradas históricamente en _progreso.csv: 2668.",
+    "[2026-10-03 11:11:57] --- Iniciando Sala Plena (Gestión 2012) ---",
+    "[2026-10-03 11:12:21] Sala Plena: el sitio responde «Demasiadas solicitudes» (límite de ritmo). Se espera 5 min sin consultar (pausa 1 de 3)."
    ]
   },
   {
@@ -591,7 +593,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791040236,
+   "ts": 1791040559,
    "version": "0648be0",
    "procesos": [],
    "gestiones": {},
@@ -613,7 +615,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791040248,
+   "ts": 1791040521,
    "version": "0648be0",
    "procesos": [
     {
@@ -623,26 +625,55 @@
      "inicio_ts": 1791006188
     },
     {
-     "pid": 68963,
+     "pid": 69744,
      "tipo": "compilacion",
      "gestion": "2009",
-     "inicio_ts": 1791039540
+     "inicio_ts": 1791040271
     }
    ],
-   "gestiones": {},
+   "gestiones": {
+    "2009": {
+     "activo": true,
+     "total_archivos": 652,
+     "docs_descargados": 652,
+     "salas_n": 7,
+     "salas_medidas": 7,
+     "total_completo": true,
+     "total_esperado": 2255,
+     "pct_total": 28.9,
+     "estado": "compilando",
+     "estado_texto": "Compilando",
+     "termino_con_exito": false,
+     "con_faltantes": null,
+     "eta": {
+      "calculando": true
+     },
+     "salud": {
+      "estado": "alerta",
+      "limite_30m": 1,
+      "fallos_30m": 3,
+      "fallos_15m": 1,
+      "fallos_total": 58,
+      "ultimo_movimiento_ts": 1791040386,
+      "ultimo_limite_ts": 1791039566,
+      "ultima_falla_ts": 1791040381,
+      "detalle": "el sitio limitó 1 vez(es) en 30 min"
+     }
+    }
+   },
    "ultimas_lineas": [
-    "[2026-10-03 11:04:30] Sala Plena: 280 resultados encontrados en el sitio.",
-    "[2026-10-03 11:04:30] Sala Plena: 100 ya existian hasta ahora (indice 99 de 280, siguen revisandose...).",
-    "[2026-10-03 11:04:30] Sala Plena: 200 ya existian hasta ahora (indice 199 de 280, siguen revisandose...).",
-    "[2026-10-03 11:04:45] Sala Plena: fila #279 con identificador de catalogo no reconocible ('AS/SN/2009') -- se intenta igual, por si es un documento real.",
-    "[2026-10-03 11:04:52] --- Sala Plena terminada: 0 nuevos, 280 ya existentes. Archivos totales ahora en la carpeta: 277 (el sitio reporta 280 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
-    "[2026-10-03 11:04:52] --- Iniciando Sala Contenciosa Primera (Gestión 2009) ---",
-    "[2026-10-03 11:04:57] Sala Contenciosa Primera: 283 resultados encontrados en el sitio.",
-    "[2026-10-03 11:05:32] Sala Contenciosa Primera: 100 ya existian hasta ahora (indice 99 de 283, siguen revisandose...).",
-    "[2026-10-03 11:05:32] Sala Contenciosa Primera: 200 ya existian hasta ahora (indice 199 de 283, siguen revisandose...).",
-    "[2026-10-03 11:05:32] --- Sala Contenciosa Primera terminada: 0 nuevos, 283 ya existentes. Archivos totales ahora en la carpeta: 279 (el sitio reporta 283 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
-    "[2026-10-03 11:05:32] --- Iniciando Sala Contenciosa Segunda (Gestión 2009) ---",
-    "[2026-10-03 11:05:36] Sala Contenciosa Segunda: 260 resultados encontrados en el sitio."
+    "[2026-10-03 11:11:12] --- Iniciando Sala Plena (Gestión 2009) ---",
+    "[2026-10-03 11:11:17] Sala Plena: 280 resultados encontrados en el sitio.",
+    "[2026-10-03 11:11:17] Sala Plena: 100 ya existian hasta ahora (indice 99 de 280, siguen revisandose...).",
+    "[2026-10-03 11:11:17] Sala Plena: 200 ya existian hasta ahora (indice 199 de 280, siguen revisandose...).",
+    "[2026-10-03 11:11:31] Sala Plena: fila #279 con identificador de catalogo no reconocible ('AS/SN/2009') -- se intenta igual, por si es un documento real.",
+    "[2026-10-03 11:11:54] Sala Plena: la descarga de la fila #279 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 8s...",
+    "[2026-10-03 11:12:22] Sala Plena: la descarga de la fila #279 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 19s...",
+    "[2026-10-03 11:13:01] AVISO: el documento #279 de Sala Plena falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
+    "=========================== logs ===========================",
+    "waiting for event \"download\"",
+    "============================================================",
+    "[2026-10-03 11:13:06] Sala Plena: 1 documento(s) fallaron; se reintentan tras una pausa de 3 min (el sitio suele recuperarse solo)."
    ]
   }
  ]
