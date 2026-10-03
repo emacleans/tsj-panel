@@ -479,7 +479,7 @@ function datosGestion(g) {
   else eta = '–';
   return { g, e, av, on, estado, cod, completo, docs, eta,
     salas: av.salas_n != null ? `${av.salas_medidas} de ${av.salas_n}` : '<span class="pm">por medir</span>',
-    docsTxt: completo ? `${docs} / ${av.total_esperado}` : (docs ? `${docs} · <span class="pm">total por confirmar</span>` : '–'),
+    docsTxt: completo ? `${docs} / ${av.total_esperado}${av.en_revision ? ` <small>(${av.en_revision} en revisión)</small>` : ''}` : (docs ? `${docs} · <span class="pm">total por confirmar</span>` : '–'),
     pct: completo && av.pct_total != null ? av.pct_total + ' %' : '–' };
 }
 const ORDEN_ESTADO = { compilando: 0, verificando: 1, en_pausa: 2, con_faltantes: 3, sin_verificar: 4, verificada: 5, completa: 6 };
@@ -667,17 +667,17 @@ function renderAvance() {
   else if (av.termino_con_exito) est = `<div class="linea exito">✓ ${esc(dg.estado)} en ${esc(e.nombre)} (el % puede no llegar a 100 por diseño) · ${frescura}</div>`;
   else est = `<div class="linea ${av.activo ? 'activo' : ''}">${av.activo ? '● ' : ''}${esc(dg.estado)} en ${esc(e.nombre)} · ${frescura}</div>`;
   const filas = av.salas.map(s => {
-    const medida = s.esperado != null, pct = s.pct == null ? 0 : s.pct, completa = s.pct != null && s.pct >= 99.5;
+    const medida = s.esperado != null, rev = s.revisar || 0, pct = medida && s.esperado ? 100 * (s.archivos + rev) / s.esperado : 0, completa = medida && pct >= 99.5;
     return `<div class="fila ${medida ? '' : 'pm-fila'}"><span>${esc(s.sala)}</span>
       <div class="pista"><div class="relleno ${completa ? 'completa' : ''}" style="width:${medida ? Math.min(pct, 100) : 0}%"></div></div>
-      <span class="cifra">${medida ? s.archivos + ' / ' + s.esperado : (s.archivos ? s.archivos + ' · ' : '') + '<span class="pm">por medir</span>'}</span></div>`;
+      <span class="cifra">${medida ? s.archivos + ' / ' + s.esperado + (rev ? ' <small>+ ' + rev + ' en revisión</small>' : '') : (s.archivos ? s.archivos + ' · ' : '') + '<span class="pm">por medir</span>'}</span></div>`;
   }).join('');
   const docs = av.docs_descargados != null ? av.docs_descargados : av.total_archivos;
-  const total = `<div class="total"><span>Total${av.salas_n != null ? ' · salas medidas ' + av.salas_medidas + ' de ' + av.salas_n : ''}</span><span>${completo ? docs + ' / ' + av.total_esperado + (av.pct_total != null ? ' · ' + av.pct_total + ' %' : '') : '<span class="pm">por confirmar</span> · ' + docs + ' descargados'}</span></div>`;
+  const total = `<div class="total"><span>Total${av.salas_n != null ? ' · salas medidas ' + av.salas_medidas + ' de ' + av.salas_n : ''}</span><span>${completo ? docs + ' / ' + av.total_esperado + (av.pct_total != null ? ' · ' + av.pct_total + ' %' : '') + (av.en_revision ? ' <small>(' + av.en_revision + ' en revisión)</small>' : '') : '<span class="pm">por confirmar</span> · ' + docs + ' descargados'}</span></div>`;
   let conc = '';
   if (completo && av.salas.some(x => x.depurados != null)) {
     const au = av.auditoria && av.auditoria.salas || null;
-    const tr = av.salas.filter(x => x.esperado).map(x => { const a = au && au[x.sala]; return `<tr><td title="${esc(x.sala)}">${esc(corta(x.sala))}</td><td>${x.esperado}</td><td>${x.archivos}</td><td>${x.revisar}${x.posible_dup ? ' <small>(' + x.posible_dup + ' posible dup.)</small>' : ''}</td><td>${x.depurados}${x.dep_registrados ? ' <small>(' + x.dep_registrados + ' reg.)</small>' : ''}</td>${au ? (a ? `<td>${a.repetidos_en_sitio}</td><td>${a.faltan}${a.faltan ? ' <small>(' + a.faltan_as + ' AS' + (a.faltan_exp ? ' + ' + a.faltan_exp + ' sin nº' : '') + ')</small>' : ''}</td>` : '<td>–</td><td>–</td>') : ''}</tr>`; }).join('');
+    const tr = av.salas.filter(x => x.esperado).map(x => { const a = au && au[x.sala]; return `<tr><td title="${esc(x.sala)}">${esc(corta(x.sala))}</td><td>${x.esperado}</td><td>${x.archivos}</td><td>${x.revisar}${x.posible_dup ? ' <small>(' + x.posible_dup + ' posible dup.)</small>' : ''}</td><td>${x.depurados ?? '–'}${x.dep_registrados ? ' <small>(' + x.dep_registrados + ' reg.)</small>' : ''}</td>${au ? (a ? `<td>${a.repetidos_en_sitio}</td><td>${a.faltan}${a.faltan ? ' <small>(' + a.faltan_as + ' AS' + (a.faltan_exp ? ' + ' + a.faltan_exp + ' sin nº' : '') + ')</small>' : ''}</td>` : '<td>–</td><td>–</td>') : ''}</tr>`; }).join('');
     const sinSala = av.revisar_sin_sala ? `<div class="nota">${av.revisar_sin_sala} archivo(s) en _revisar sin sala identificable (no suman a ninguna fila).</div>` : '';
     const cierra = av.activo ? 'Por descargar aún' : 'Depurados / sin localizar';
     const ci = av.cierre || {};
@@ -685,7 +685,7 @@ function renderAvance() {
     conc = `<div class="conc"><div class="tit">Conciliación: cifra inicial (verificación) → cierre</div>
       <div class="linea ${clase}">${esc(ci.texto || '')}</div>
       <table><thead><tr><th>Sala</th><th title="Total que reporta el sitio al verificar">Inicial</th><th title="PDF ya clasificados en su sala">En sala</th><th title="Archivos en _revisar">_revisar</th><th title="${cierra}">${av.activo ? 'Por bajar' : 'Depur.'}</th>${au ? '<th title="AS que el sitio publica dos veces">Repet.</th><th title="AS del sitio sin archivo (auditoría)">Faltan</th>' : ''}</tr></thead><tbody>${tr}
-      <tr class="tot"><td>Total</td><td>${av.total_esperado}</td><td>${av.total_archivos}</td><td>${av.revisar_total - (av.revisar_sin_sala || 0)}</td><td>${av.depurados_total}${av.dep_registrados_total ? ' <small>(' + av.dep_registrados_total + ' reg.)</small>' : ''}</td>${au ? '<td>' + Object.values(au).reduce((t, a) => t + a.repetidos_en_sitio, 0) + '</td><td>' + Object.values(au).reduce((t, a) => t + a.faltan, 0) + '</td>' : ''}</tr></tbody></table>
+      <tr class="tot"><td>Total</td><td>${av.total_esperado}</td><td>${av.total_archivos}</td><td>${av.revisar_total - (av.revisar_sin_sala || 0)}</td><td>${av.depurados_total ?? '–'}${av.dep_registrados_total ? ' <small>(' + av.dep_registrados_total + ' reg.)</small>' : ''}</td>${au ? '<td>' + Object.values(au).reduce((t, a) => t + a.repetidos_en_sitio, 0) + '</td><td>' + Object.values(au).reduce((t, a) => t + a.faltan, 0) + '</td>' : ''}</tr></tbody></table>
       <div class="nota">Inicial = total que reporta el sitio al verificar. Depurados = duplicados descartados u otros AS que no quedaron en su sala${av.dup_confirmados ? '; el cotejo manual registra ' + av.dup_confirmados + ' duplicado(s) confirmado(s)' : ''}. ${au ? ' Auditoría del ' + esc((av.auditoria.fecha || '').replace('T', ' ')) + ': «Repetidos» son AS que el sitio publica dos veces; «Faltan» son AS del sitio sin archivo (detalle en _faltantes.csv de esa Mac).' : ''} Al terminar el control, En sala + En _revisar + Depurados = Inicial.</div>${sinSala}</div>`;
   }
   TEXTO_COPIA.reg = `Registro de la compilación · gestión ${av.gestion} · ${e.nombre} · copiado ${new Date().toLocaleString()}\n` + (av.ultimas_lineas || []).join('\n');
