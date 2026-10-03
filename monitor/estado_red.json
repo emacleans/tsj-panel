@@ -1,5 +1,5 @@
 {
- "ts": 1790996432,
+ "ts": 1790996740,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1790991012,
@@ -34,7 +34,7 @@
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1790996411,
+   "actualizado_ts": 1790996703,
    "viejo": false
   },
   {
@@ -50,7 +50,7 @@
    "eta": null,
    "equipo": "MacBook Air",
    "actualizado_ts": 1790996071,
-   "viejo": false
+   "viejo": true
   },
   {
    "gestion": "2015",
@@ -65,13 +65,13 @@
    "eta": {
     "tasa_min": 2.22,
     "restantes": 1316,
-    "segundos": 35511,
-    "fin_ts": 1791031909,
-    "fin_min_ts": 1791020983,
-    "fin_max_ts": 1791035460
+    "segundos": 35542,
+    "fin_ts": 1791032231,
+    "fin_min_ts": 1791028676,
+    "fin_max_ts": 1791037560
    },
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1790996397,
+   "actualizado_ts": 1790996689,
    "viejo": false
   },
   {
@@ -85,15 +85,15 @@
    "total_completo": true,
    "pct": 83.0,
    "eta": {
-    "tasa_min": 2.07,
+    "tasa_min": 2.03,
     "restantes": 689,
-    "segundos": 19975,
-    "fin_ts": 1791016401,
-    "fin_min_ts": 1791014404,
-    "fin_max_ts": 1791018399
+    "segundos": 20373,
+    "fin_ts": 1791017080,
+    "fin_min_ts": 1791015042,
+    "fin_max_ts": 1791032816
    },
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1790996426,
+   "actualizado_ts": 1790996706,
    "viejo": false
   },
   {
@@ -108,7 +108,7 @@
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1790996411,
+   "actualizado_ts": 1790996703,
    "viejo": false
   },
   {
@@ -123,7 +123,7 @@
    "pct": 98.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1790996414,
+   "actualizado_ts": 1790996730,
    "viejo": false
   },
   {
@@ -132,20 +132,20 @@
    "estado_interno": "activa",
    "salas_n": 6,
    "salas_medidas": 6,
-   "docs": 835,
+   "docs": 854,
    "total_esperado": 2947,
    "total_completo": true,
-   "pct": 28.3,
+   "pct": 29.0,
    "eta": {
-    "tasa_min": 5.95,
-    "restantes": 2112,
-    "segundos": 21304,
-    "fin_ts": 1791017718,
-    "fin_min_ts": 1791015588,
-    "fin_max_ts": 1791024865
+    "tasa_min": 5.64,
+    "restantes": 2093,
+    "segundos": 22271,
+    "fin_ts": 1791019001,
+    "fin_min_ts": 1791016774,
+    "fin_max_ts": 1791031351
    },
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1790996414,
+   "actualizado_ts": 1790996730,
    "viejo": false
   },
   {
@@ -355,7 +355,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1790996397,
+   "ts": 1790996689,
    "version": "0648be0",
    "procesos": [
     {
@@ -388,20 +388,20 @@
      "eta": {
       "tasa_min": 2.22,
       "restantes": 1316,
-      "segundos": 35511,
-      "fin_ts": 1791031909,
-      "fin_min_ts": 1791020983,
-      "fin_max_ts": 1791035460
+      "segundos": 35542,
+      "fin_ts": 1791032231,
+      "fin_min_ts": 1791028676,
+      "fin_max_ts": 1791037560
      },
      "salud": {
       "estado": "aviso",
       "limite_30m": 0,
       "fallos_30m": 4,
       "fallos_15m": 2,
-      "fallos_total": 430,
-      "ultimo_movimiento_ts": 1790996394,
+      "fallos_total": 429,
+      "ultimo_movimiento_ts": 1790996493,
       "ultimo_limite_ts": 1790993173,
-      "ultima_falla_ts": 1790995597,
+      "ultima_falla_ts": 1790996493,
       "detalle": "4 documento(s) fallido(s) en 30 min"
      }
     },
@@ -423,24 +423,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 22:53:55] Sala Contenciosa Primera: 100 ya existian hasta ahora (indice 99 de 920, siguen revisandose...).",
-    "[2026-10-02 22:53:55] Sala Contenciosa Primera: 200 ya existian hasta ahora (indice 199 de 920, siguen revisandose...).",
-    "[2026-10-02 22:53:55] Sala Contenciosa Primera: 300 ya existian hasta ahora (indice 299 de 920, siguen revisandose...).",
-    "[2026-10-02 22:53:55] Sala Contenciosa Primera: 400 ya existian hasta ahora (indice 399 de 920, siguen revisandose...).",
-    "[2026-10-02 22:53:55] Sala Contenciosa Primera: 500 ya existian hasta ahora (indice 499 de 920, siguen revisandose...).",
-    "[2026-10-02 22:53:55] Sala Contenciosa Primera: 600 ya existian hasta ahora (indice 599 de 920, siguen revisandose...).",
-    "[2026-10-02 22:53:55] Sala Contenciosa Primera: 700 ya existian hasta ahora (indice 699 de 920, siguen revisandose...).",
-    "[2026-10-02 22:53:55] Sala Contenciosa Primera: 800 ya existian hasta ahora (indice 799 de 920, siguen revisandose...).",
-    "[2026-10-02 22:55:31] Sala Contenciosa Primera: 10 documentos nuevos guardados, 858 ya existían (índice 867 de 920).",
     "[2026-10-02 22:57:06] Sala Contenciosa Primera: 20 documentos nuevos guardados, 858 ya existían (índice 877 de 920).",
     "[2026-10-02 22:58:43] Sala Contenciosa Primera: 30 documentos nuevos guardados, 858 ya existían (índice 887 de 920).",
-    "[2026-10-02 22:59:54] Sala Contenciosa Primera: la descarga de la fila #893 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 7s..."
+    "[2026-10-02 22:59:54] Sala Contenciosa Primera: la descarga de la fila #893 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 7s...",
+    "[2026-10-02 23:00:22] Sala Contenciosa Primera: la descarga de la fila #893 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 17s...",
+    "[2026-10-02 23:00:58] AVISO: el documento #893 de Sala Contenciosa Primera falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
+    "=========================== logs ===========================",
+    "waiting for event \"download\"",
+    "============================================================",
+    "[2026-10-02 23:01:33] AVISO: el documento #894 de Sala Contenciosa Primera falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "Call log:",
+    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(894)",
+    "[2026-10-02 23:01:33] Sala Contenciosa Primera: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
    ]
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1790996414,
+   "ts": 1790996730,
    "version": "0648be0",
    "procesos": [
     {
@@ -459,24 +459,24 @@
    "gestiones": {
     "2010": {
      "activo": true,
-     "total_archivos": 835,
-     "docs_descargados": 835,
+     "total_archivos": 854,
+     "docs_descargados": 854,
      "salas_n": 6,
      "salas_medidas": 6,
      "total_completo": true,
      "total_esperado": 2947,
-     "pct_total": 28.3,
+     "pct_total": 29.0,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 5.95,
-      "restantes": 2112,
-      "segundos": 21304,
-      "fin_ts": 1791017718,
-      "fin_min_ts": 1791015588,
-      "fin_max_ts": 1791024865
+      "tasa_min": 5.64,
+      "restantes": 2093,
+      "segundos": 22271,
+      "fin_ts": 1791019001,
+      "fin_min_ts": 1791016774,
+      "fin_max_ts": 1791031351
      },
      "salud": {
       "estado": "ok",
@@ -484,7 +484,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1790996396,
+      "ultimo_movimiento_ts": 1790996692,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -492,9 +492,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 22:45:42] Sala Contenciosa Primera: 570 documentos nuevos guardados, 3 ya existían (índice 572 de 589).",
-    "[2026-10-02 22:47:14] Sala Contenciosa Primera: 580 documentos nuevos guardados, 3 ya existían (índice 582 de 589).",
-    "[2026-10-02 22:48:09] --- Sala Contenciosa Primera terminada: 586 nuevos, 3 ya existentes. Archivos totales ahora en la carpeta: 584 (el sitio reporta 589 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
     "[2026-10-02 22:48:09] --- Iniciando Sala Contenciosa Segunda (Gestión 2010) ---",
     "[2026-10-02 22:48:13] Sala Contenciosa Segunda: 570 resultados encontrados en el sitio.",
     "[2026-10-02 22:49:54] Sala Contenciosa Segunda: 10 documentos nuevos guardados, 0 ya existían (índice 9 de 570).",
@@ -503,13 +500,16 @@
     "[2026-10-02 22:54:55] Sala Contenciosa Segunda: 40 documentos nuevos guardados, 0 ya existían (índice 39 de 570).",
     "[2026-10-02 22:56:40] Sala Contenciosa Segunda: 50 documentos nuevos guardados, 1 ya existían (índice 50 de 570).",
     "[2026-10-02 22:58:14] Sala Contenciosa Segunda: 60 documentos nuevos guardados, 1 ya existían (índice 60 de 570).",
-    "[2026-10-02 22:59:56] Sala Contenciosa Segunda: 70 documentos nuevos guardados, 1 ya existían (índice 70 de 570)."
+    "[2026-10-02 22:59:56] Sala Contenciosa Segunda: 70 documentos nuevos guardados, 1 ya existían (índice 70 de 570).",
+    "[2026-10-02 23:01:41] Sala Contenciosa Segunda: 80 documentos nuevos guardados, 2 ya existían (índice 81 de 570).",
+    "[2026-10-02 23:03:18] Sala Contenciosa Segunda: 90 documentos nuevos guardados, 2 ya existían (índice 91 de 570).",
+    "[2026-10-02 23:04:52] Sala Contenciosa Segunda: 100 documentos nuevos guardados, 2 ya existían (índice 101 de 570)."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1790996411,
+   "ts": 1790996703,
    "version": "0648be0",
    "procesos": [
     {
@@ -545,27 +545,27 @@
       "limite_30m": 0,
       "fallos_30m": 4,
       "fallos_15m": 2,
-      "fallos_total": 90,
-      "ultimo_movimiento_ts": 1790996398,
+      "fallos_total": 92,
+      "ultimo_movimiento_ts": 1790996498,
       "ultimo_limite_ts": 1790989202,
-      "ultima_falla_ts": 1790995595,
+      "ultima_falla_ts": 1790996498,
       "detalle": "4 documento(s) fallido(s) en 30 min"
      }
     }
    },
    "ultimas_lineas": [
-    "============================================================",
-    "[2026-10-02 22:46:35] AVISO: el documento #325 de Sala Civil 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
-    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(325)",
-    "[2026-10-02 22:46:35] Sala Civil 1: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
-    "[2026-10-02 22:51:39] Sala Civil 1: el sitio volvió a responder tras ~4 min 40 s. Se continúa.",
-    "[2026-10-02 22:52:39] Sala Civil 1: 50 documentos nuevos guardados, 281 ya existían (índice 332 de 535).",
-    "[2026-10-02 22:54:03] Sala Civil 1: 60 documentos nuevos guardados, 281 ya existían (índice 342 de 535).",
-    "[2026-10-02 22:55:27] Sala Civil 1: 70 documentos nuevos guardados, 281 ya existían (índice 352 de 535).",
     "[2026-10-02 22:56:51] Sala Civil 1: 80 documentos nuevos guardados, 281 ya existían (índice 362 de 535).",
     "[2026-10-02 22:58:23] Sala Civil 1: 90 documentos nuevos guardados, 282 ya existían (índice 373 de 535).",
-    "[2026-10-02 22:59:58] Sala Civil 1: la descarga de la fila #382 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 8s..."
+    "[2026-10-02 22:59:58] Sala Civil 1: la descarga de la fila #382 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 8s...",
+    "[2026-10-02 23:00:26] Sala Civil 1: la descarga de la fila #382 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 19s...",
+    "[2026-10-02 23:01:05] AVISO: el documento #382 de Sala Civil 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
+    "=========================== logs ===========================",
+    "waiting for event \"download\"",
+    "============================================================",
+    "[2026-10-02 23:01:38] AVISO: el documento #383 de Sala Civil 1 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "Call log:",
+    "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(383)",
+    "[2026-10-02 23:01:38] Sala Civil 1: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
    ]
   },
   {
@@ -593,7 +593,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1790996426,
+   "ts": 1790996706,
    "version": "0648be0",
    "procesos": [
     {
@@ -624,45 +624,45 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 2.07,
+      "tasa_min": 2.03,
       "restantes": 689,
-      "segundos": 19975,
-      "fin_ts": 1791016401,
-      "fin_min_ts": 1791014404,
-      "fin_max_ts": 1791018399
+      "segundos": 20373,
+      "fin_ts": 1791017080,
+      "fin_min_ts": 1791015042,
+      "fin_max_ts": 1791032816
      },
      "salud": {
       "estado": "aviso",
       "limite_30m": 0,
       "fallos_30m": 4,
       "fallos_15m": 2,
-      "fallos_total": 229,
-      "ultimo_movimiento_ts": 1790996425,
+      "fallos_total": 228,
+      "ultimo_movimiento_ts": 1790996500,
       "ultimo_limite_ts": 1790991191,
-      "ultima_falla_ts": 1790995602,
+      "ultima_falla_ts": 1790996500,
       "detalle": "4 documento(s) fallido(s) en 30 min"
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-02 22:55:43] Sala Contenciosa Primera: fila #819 con identificador de catalogo no reconocible ('AS/0407-1/2016') -- se intenta igual, por si es un documento real.",
-    "[2026-10-02 22:55:51] Sala Contenciosa Primera: fila #832 con identificador de catalogo no reconocible ('AS/0413-1/2016') -- se intenta igual, por si es un documento real.",
-    "[2026-10-02 22:55:59] Sala Contenciosa Primera: fila #895 con identificador de catalogo no reconocible ('AS/0466-1/2016-A') -- se intenta igual, por si es un documento real.",
-    "[2026-10-02 22:56:06] Sala Contenciosa Primera: 900 ya existian hasta ahora (indice 899 de 917, siguen revisandose...).",
-    "[2026-10-02 22:56:06] --- Sala Contenciosa Primera terminada: 0 nuevos, 917 ya existentes. Archivos totales ahora en la carpeta: 675 (el sitio reporta 917 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
-    "[2026-10-02 22:56:06] --- Iniciando Sala Contenciosa Segunda (Gestión 2016) ---",
-    "[2026-10-02 22:56:11] Sala Contenciosa Segunda: 642 resultados encontrados en el sitio.",
-    "[2026-10-02 22:56:11] Sala Contenciosa Segunda: 100 ya existian hasta ahora (indice 99 de 642, siguen revisandose...).",
     "[2026-10-02 22:57:41] Sala Contenciosa Segunda: 10 documentos nuevos guardados, 192 ya existían (índice 201 de 642).",
     "[2026-10-02 22:59:12] Sala Contenciosa Segunda: 20 documentos nuevos guardados, 194 ya existían (índice 213 de 642).",
     "[2026-10-02 22:59:59] Sala Contenciosa Segunda: la descarga de la fila #218 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 6s...",
-    "[2026-10-02 23:00:25] Sala Contenciosa Segunda: la descarga de la fila #218 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 20s..."
+    "[2026-10-02 23:00:25] Sala Contenciosa Segunda: la descarga de la fila #218 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 20s...",
+    "[2026-10-02 23:01:05] AVISO: el documento #218 de Sala Contenciosa Segunda falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
+    "=========================== logs ===========================",
+    "waiting for event \"download\"",
+    "============================================================",
+    "[2026-10-02 23:01:40] AVISO: el documento #219 de Sala Contenciosa Segunda falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
+    "Call log:",
+    "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(219)",
+    "[2026-10-02 23:01:40] Sala Contenciosa Segunda: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1790996412,
+   "ts": 1790996725,
    "version": "0648be0",
    "procesos": [],
    "gestiones": {},
