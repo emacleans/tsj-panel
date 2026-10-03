@@ -1,5 +1,5 @@
 {
- "ts": 1791022799,
+ "ts": 1791022826,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791018779,
@@ -64,7 +64,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791022755,
+   "actualizado_ts": 1791022819,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 98.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791022779,
+   "actualizado_ts": 1791022812,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 95.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791022779,
+   "actualizado_ts": 1791022812,
    "viejo": false
   },
   {
@@ -141,7 +141,7 @@
     "calculando": true
    },
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791022791,
+   "actualizado_ts": 1791022823,
    "viejo": false
   },
   {
@@ -150,20 +150,20 @@
    "estado_interno": "activa",
    "salas_n": 6,
    "salas_medidas": 6,
-   "docs": 728,
+   "docs": 731,
    "total_esperado": 2340,
    "total_completo": true,
-   "pct": 31.1,
+   "pct": 31.2,
    "eta": {
-    "tasa_min": 6.85,
-    "restantes": 1612,
-    "segundos": 14126,
-    "fin_ts": 1791036905,
-    "fin_min_ts": 1791035492,
-    "fin_max_ts": 1791038318
+    "tasa_min": 6.83,
+    "restantes": 1609,
+    "segundos": 14138,
+    "fin_ts": 1791036950,
+    "fin_min_ts": 1791035537,
+    "fin_max_ts": 1791038364
    },
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791022779,
+   "actualizado_ts": 1791022812,
    "viejo": false
   },
   {
@@ -365,13 +365,17 @@
   {
    "ts": 1791022176,
    "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (faltantes; intento 1)"
+  },
+  {
+   "ts": 1791022823,
+   "texto": "inicia 2007 en iMac-Sala (iMac de la sala) (sin_empezar; intento 1)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791022755,
+   "ts": 1791022819,
    "version": "0648be0",
    "procesos": [],
    "gestiones": {
@@ -410,7 +414,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791022779,
+   "ts": 1791022812,
    "version": "0648be0",
    "procesos": [
     {
@@ -429,24 +433,24 @@
    "gestiones": {
     "2008": {
      "activo": true,
-     "total_archivos": 728,
-     "docs_descargados": 728,
+     "total_archivos": 731,
+     "docs_descargados": 731,
      "salas_n": 6,
      "salas_medidas": 6,
      "total_completo": true,
      "total_esperado": 2340,
-     "pct_total": 31.1,
+     "pct_total": 31.2,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 6.85,
-      "restantes": 1612,
-      "segundos": 14126,
-      "fin_ts": 1791036905,
-      "fin_min_ts": 1791035492,
-      "fin_max_ts": 1791038318
+      "tasa_min": 6.83,
+      "restantes": 1609,
+      "segundos": 14138,
+      "fin_ts": 1791036950,
+      "fin_min_ts": 1791035537,
+      "fin_max_ts": 1791038364
      },
      "salud": {
       "estado": "ok",
@@ -585,7 +589,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791022791,
+   "ts": 1791022823,
    "version": "0648be0",
    "procesos": [
     {
