@@ -1,5 +1,5 @@
 {
- "ts": 1791006188,
+ "ts": 1791006499,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791006178,
@@ -34,7 +34,7 @@
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791006168,
+   "actualizado_ts": 1791006482,
    "viejo": false
   },
   {
@@ -58,20 +58,20 @@
    "estado_interno": "activa",
    "salas_n": 7,
    "salas_medidas": 7,
-   "docs": 3410,
+   "docs": 3419,
    "total_esperado": 4298,
    "total_completo": true,
-   "pct": 79.3,
+   "pct": 79.5,
    "eta": {
-    "tasa_min": 3.06,
-    "restantes": 888,
-    "segundos": 17398,
-    "fin_ts": 1791023580,
-    "fin_min_ts": 1791020917,
-    "fin_max_ts": 1791025320
+    "tasa_min": 2.96,
+    "restantes": 879,
+    "segundos": 17843,
+    "fin_ts": 1791024284,
+    "fin_min_ts": 1791019367,
+    "fin_max_ts": 1791026069
    },
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791006181,
+   "actualizado_ts": 1791006441,
    "viejo": false
   },
   {
@@ -86,7 +86,7 @@
    "pct": 91.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791006142,
+   "actualizado_ts": 1791006465,
    "viejo": false
   },
   {
@@ -95,13 +95,13 @@
    "estado_interno": "activa",
    "salas_n": 8,
    "salas_medidas": 6,
-   "docs": 2398,
+   "docs": 2421,
    "total_esperado": null,
    "total_completo": false,
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791006168,
+   "actualizado_ts": 1791006482,
    "viejo": false
   },
   {
@@ -116,7 +116,7 @@
    "pct": 98.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791006169,
+   "actualizado_ts": 1791006484,
    "viejo": false
   },
   {
@@ -125,35 +125,42 @@
    "estado_interno": "activa",
    "salas_n": 6,
    "salas_medidas": 6,
-   "docs": 1864,
+   "docs": 1899,
    "total_esperado": 2947,
    "total_completo": true,
-   "pct": 63.3,
+   "pct": 64.4,
    "eta": {
-    "tasa_min": 6.79,
-    "restantes": 1083,
-    "segundos": 9573,
-    "fin_ts": 1791015742,
-    "fin_min_ts": 1791014785,
-    "fin_max_ts": 1791016700
+    "tasa_min": 6.75,
+    "restantes": 1048,
+    "segundos": 9310,
+    "fin_ts": 1791015794,
+    "fin_min_ts": 1791014863,
+    "fin_max_ts": 1791016725
    },
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791006169,
+   "actualizado_ts": 1791006484,
    "viejo": false
   },
   {
    "gestion": "2009",
-   "estado": "Sin verificar",
-   "estado_interno": "sin_empezar",
-   "salas_n": null,
-   "salas_medidas": null,
-   "docs": 0,
-   "total_esperado": null,
-   "total_completo": null,
-   "pct": null,
-   "eta": null,
-   "equipo": null,
-   "actualizado_ts": null,
+   "estado": "Compilando",
+   "estado_interno": "activa",
+   "salas_n": 7,
+   "salas_medidas": 7,
+   "docs": 18,
+   "total_esperado": 2255,
+   "total_completo": true,
+   "pct": 0.8,
+   "eta": {
+    "tasa_min": 3.75,
+    "restantes": 2237,
+    "segundos": 35792,
+    "fin_ts": 1791042285,
+    "fin_min_ts": 1791038706,
+    "fin_max_ts": 1791045864
+   },
+   "equipo": "MM-Sofi (Mac Mini Sofía)",
+   "actualizado_ts": 1791006493,
    "viejo": false
   },
   {
@@ -360,7 +367,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791006181,
+   "ts": 1791006441,
    "version": "0648be0",
    "procesos": [
     {
@@ -379,24 +386,24 @@
    "gestiones": {
     "2015": {
      "activo": true,
-     "total_archivos": 3410,
-     "docs_descargados": 3410,
+     "total_archivos": 3419,
+     "docs_descargados": 3419,
      "salas_n": 7,
      "salas_medidas": 7,
      "total_completo": true,
      "total_esperado": 4298,
-     "pct_total": 79.3,
+     "pct_total": 79.5,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 3.06,
-      "restantes": 888,
-      "segundos": 17398,
-      "fin_ts": 1791023580,
-      "fin_min_ts": 1791020917,
-      "fin_max_ts": 1791025320
+      "tasa_min": 2.96,
+      "restantes": 879,
+      "segundos": 17843,
+      "fin_ts": 1791024284,
+      "fin_min_ts": 1791019367,
+      "fin_max_ts": 1791026069
      },
      "salud": {
       "estado": "aviso",
@@ -404,7 +411,7 @@
       "fallos_30m": 4,
       "fallos_15m": 2,
       "fallos_total": 373,
-      "ultimo_movimiento_ts": 1791006103,
+      "ultimo_movimiento_ts": 1791006369,
       "ultimo_limite_ts": 1791003504,
       "ultima_falla_ts": 1791006103,
       "detalle": "4 documento(s) fallido(s) en 30 min"
@@ -428,9 +435,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-03 01:37:36] Sala Contenciosa Segunda: 130 documentos nuevos guardados, 286 ya existían (índice 419 de 445).",
-    "[2026-10-03 01:39:07] Sala Contenciosa Segunda: 140 documentos nuevos guardados, 286 ya existían (índice 429 de 445).",
-    "[2026-10-03 01:40:09] Sala Contenciosa Segunda: la descarga de la fila #434 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 7s...",
     "[2026-10-03 01:40:37] Sala Contenciosa Segunda: la descarga de la fila #434 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 12s...",
     "[2026-10-03 01:41:09] AVISO: el documento #434 de Sala Contenciosa Segunda falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
     "=========================== logs ===========================",
@@ -439,13 +443,16 @@
     "[2026-10-03 01:41:43] AVISO: el documento #435 de Sala Contenciosa Segunda falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(435)",
-    "[2026-10-03 01:41:43] Sala Contenciosa Segunda: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
+    "[2026-10-03 01:41:43] Sala Contenciosa Segunda: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
+    "[2026-10-03 01:44:42] Sala Contenciosa Segunda: el sitio volvió a responder tras ~2 min 40 s. Se continúa.",
+    "[2026-10-03 01:45:39] Sala Contenciosa Segunda: 150 documentos nuevos guardados, 286 ya existían (índice 441 de 445).",
+    "[2026-10-03 01:46:09] Sala Contenciosa Segunda: 6 documento(s) fallaron; se reintentan tras una pausa de 3 min (el sitio suele recuperarse solo)."
    ]
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791006169,
+   "ts": 1791006484,
    "version": "0648be0",
    "procesos": [
     {
@@ -464,24 +471,24 @@
    "gestiones": {
     "2010": {
      "activo": true,
-     "total_archivos": 1864,
-     "docs_descargados": 1864,
+     "total_archivos": 1899,
+     "docs_descargados": 1899,
      "salas_n": 6,
      "salas_medidas": 6,
      "total_completo": true,
      "total_esperado": 2947,
-     "pct_total": 63.3,
+     "pct_total": 64.4,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 6.79,
-      "restantes": 1083,
-      "segundos": 9573,
-      "fin_ts": 1791015742,
-      "fin_min_ts": 1791014785,
-      "fin_max_ts": 1791016700
+      "tasa_min": 6.75,
+      "restantes": 1048,
+      "segundos": 9310,
+      "fin_ts": 1791015794,
+      "fin_min_ts": 1791014863,
+      "fin_max_ts": 1791016725
      },
      "salud": {
       "estado": "ok",
@@ -489,7 +496,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1791006165,
+      "ultimo_movimiento_ts": 1791006434,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -497,9 +504,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-03 01:26:10] Sala Penal 1: 490 documentos nuevos guardados, 2 ya existían (índice 491 de 703).",
-    "[2026-10-03 01:27:35] Sala Penal 1: 500 documentos nuevos guardados, 2 ya existían (índice 501 de 703).",
-    "[2026-10-03 01:29:03] Sala Penal 1: 510 documentos nuevos guardados, 2 ya existían (índice 511 de 703).",
     "[2026-10-03 01:30:34] Sala Penal 1: 520 documentos nuevos guardados, 2 ya existían (índice 521 de 703).",
     "[2026-10-03 01:32:03] Sala Penal 1: 530 documentos nuevos guardados, 2 ya existían (índice 531 de 703).",
     "[2026-10-03 01:33:30] Sala Penal 1: 540 documentos nuevos guardados, 2 ya existían (índice 541 de 703).",
@@ -508,13 +512,16 @@
     "[2026-10-03 01:38:06] Sala Penal 1: 570 documentos nuevos guardados, 2 ya existían (índice 571 de 703).",
     "[2026-10-03 01:39:41] Sala Penal 1: 580 documentos nuevos guardados, 2 ya existían (índice 581 de 703).",
     "[2026-10-03 01:41:13] Sala Penal 1: 590 documentos nuevos guardados, 2 ya existían (índice 591 de 703).",
-    "[2026-10-03 01:42:45] Sala Penal 1: 600 documentos nuevos guardados, 2 ya existían (índice 601 de 703)."
+    "[2026-10-03 01:42:45] Sala Penal 1: 600 documentos nuevos guardados, 2 ya existían (índice 601 de 703).",
+    "[2026-10-03 01:44:19] Sala Penal 1: 610 documentos nuevos guardados, 2 ya existían (índice 611 de 703).",
+    "[2026-10-03 01:45:48] Sala Penal 1: 620 documentos nuevos guardados, 2 ya existían (índice 621 de 703).",
+    "[2026-10-03 01:47:14] Sala Penal 1: 630 documentos nuevos guardados, 2 ya existían (índice 631 de 703)."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791006168,
+   "ts": 1791006482,
    "version": "0648be0",
    "procesos": [
     {
@@ -533,8 +540,8 @@
    "gestiones": {
     "2012": {
      "activo": true,
-     "total_archivos": 2398,
-     "docs_descargados": 2398,
+     "total_archivos": 2421,
+     "docs_descargados": 2421,
      "salas_n": 8,
      "salas_medidas": 6,
      "total_completo": false,
@@ -551,7 +558,7 @@
       "fallos_30m": 4,
       "fallos_15m": 2,
       "fallos_total": 112,
-      "ultimo_movimiento_ts": 1791006097,
+      "ultimo_movimiento_ts": 1791006457,
       "ultimo_limite_ts": 1791002292,
       "ultima_falla_ts": 1791006097,
       "detalle": "4 documento(s) fallido(s) en 30 min"
@@ -559,10 +566,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-03 01:36:54] Sala Civil Liquidadora: 170 documentos nuevos guardados, 137 ya existían (índice 310 de 364).",
-    "[2026-10-03 01:38:20] Sala Civil Liquidadora: 180 documentos nuevos guardados, 137 ya existían (índice 320 de 364).",
-    "[2026-10-03 01:40:05] Sala Civil Liquidadora: la descarga de la fila #330 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 8s...",
-    "[2026-10-03 01:40:33] Sala Civil Liquidadora: la descarga de la fila #330 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 11s...",
     "[2026-10-03 01:41:03] AVISO: el documento #330 de Sala Civil Liquidadora falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
     "=========================== logs ===========================",
     "waiting for event \"download\"",
@@ -570,7 +573,11 @@
     "[2026-10-03 01:41:37] AVISO: el documento #331 de Sala Civil Liquidadora falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(331)",
-    "[2026-10-03 01:41:37] Sala Civil Liquidadora: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min."
+    "[2026-10-03 01:41:37] Sala Civil Liquidadora: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
+    "[2026-10-03 01:44:31] Sala Civil Liquidadora: el sitio volvió a responder tras ~2 min 40 s. Se continúa.",
+    "[2026-10-03 01:44:40] Sala Civil Liquidadora: 190 documentos nuevos guardados, 137 ya existían (índice 332 de 364).",
+    "[2026-10-03 01:46:08] Sala Civil Liquidadora: 200 documentos nuevos guardados, 137 ya existían (índice 342 de 364).",
+    "[2026-10-03 01:47:37] Sala Civil Liquidadora: 210 documentos nuevos guardados, 137 ya existían (índice 352 de 364)."
    ]
   },
   {
@@ -598,7 +605,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791006142,
+   "ts": 1791006465,
    "version": "0648be0",
    "procesos": [],
    "gestiones": {},
@@ -620,23 +627,70 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791006169,
+   "ts": 1791006493,
    "version": "0648be0",
-   "procesos": [],
-   "gestiones": {},
+   "procesos": [
+    {
+     "pid": 31222,
+     "tipo": "vigilante",
+     "gestion": "2009",
+     "inicio_ts": 1791006188
+    },
+    {
+     "pid": 31697,
+     "tipo": "compilacion",
+     "gestion": "2009",
+     "inicio_ts": 1791006333
+    }
+   ],
+   "gestiones": {
+    "2009": {
+     "activo": true,
+     "total_archivos": 18,
+     "docs_descargados": 18,
+     "salas_n": 7,
+     "salas_medidas": 7,
+     "total_completo": true,
+     "total_esperado": 2255,
+     "pct_total": 0.8,
+     "estado": "compilando",
+     "estado_texto": "Compilando",
+     "termino_con_exito": false,
+     "con_faltantes": null,
+     "eta": {
+      "tasa_min": 3.75,
+      "restantes": 2237,
+      "segundos": 35792,
+      "fin_ts": 1791042285,
+      "fin_min_ts": 1791038706,
+      "fin_max_ts": 1791045864
+     },
+     "salud": {
+      "estado": "ok",
+      "limite_30m": 0,
+      "fallos_30m": 0,
+      "fallos_15m": 0,
+      "fallos_total": 0,
+      "ultimo_movimiento_ts": 1791006422,
+      "ultimo_limite_ts": null,
+      "ultima_falla_ts": null,
+      "detalle": ""
+     }
+    }
+   },
    "ultimas_lineas": [
-    "[2026-10-02 08:34:57] OK  Sala Plena                 -> sala reconocida como «Sala Plena», Tipo Resolución reconocido como «Auto Supremo». Resultados encontrados: 184",
-    "[2026-10-02 08:35:07] OK  Sala Contenciosa Primera   -> sala reconocida como «Sala Contenciosa y Contenciosa Administrativa Social y Administrativa Primera», Tipo Resolución reconocido como «Auto Supremo». Resultados encontrados: 555",
-    "[2026-10-02 08:35:17] OK  Sala Penal 1               -> sala reconocida como «Sala Penal 1». Resultados encontrados: 393",
-    "[2026-10-02 08:35:27] OK  Sala Penal Liquidadora     -> sala reconocida como «Sala Penal Liquidadora». Resultados encontrados: 420",
-    "[2026-10-02 08:35:37] OK  Sala Civil 1               -> sala reconocida como «Sala Civil 1». Resultados encontrados: 535",
-    "[2026-10-02 08:35:47] OK  Sala Civil Liquidadora     -> sala reconocida como «Sala Civil Liquidadora». Resultados encontrados: 364",
-    "[2026-10-02 08:35:57] OK  Sala Social Liquidadora    -> sala reconocida como «Sala Social Liquidadora», Tipo Resolución reconocido como «Auto Supremo». Resultados encontrados: 423",
-    "[2026-10-02 08:36:07] OK  Sala Penal 2               -> sala reconocida como «Sala Penal 2». Resultados encontrados: 337",
-    "[2026-10-02 08:36:07] Salas de la gestión 2012 guardadas en /Users/emaclean-mmsofi/Documents/TSJ/Compilacion/2012/_salas.json (todas las categorías del sitio y cuáles ofrece esa gestión).",
-    "[2026-10-02 08:36:07] Totales guardados en /Users/emaclean-mmsofi/Documents/TSJ/Compilacion/2012/_totales_confirmados.json (ver_avance.py los usa para el % y el tiempo estimado).",
-    "[2026-10-02 08:36:07] Suma de las salas con total confirmado: 3211 filas.",
-    "[2026-10-02 08:36:07] === Fin de la verificación. Todas las salas dieron OK -- ya se puede iniciar la compilación real (sin --check). ==="
+    " éxito (todas las salas recorridas) -- no reinicia",
+    " de más.",
+    " Para ver el avance: abrí OTRA ventana y usá",
+    " 3_Ver_avance.command, como siempre.",
+    " Para detener TODO antes de que termine: Control+C",
+    " en ESTA ventana.",
+    "==================================================",
+    "[2026-10-03 01:45:33] Iniciando compilar_tsj.py --gestion 2009...",
+    "[2026-10-03 01:45:34] Filas ya registradas históricamente en _progreso.csv: 0.",
+    "[2026-10-03 01:45:34] --- Iniciando Sala Plena (Gestión 2009) ---",
+    "[2026-10-03 01:45:39] Sala Plena: 280 resultados encontrados en el sitio.",
+    "[2026-10-03 01:47:02] Sala Plena: 10 documentos nuevos guardados, 0 ya existían (índice 9 de 280)."
    ]
   }
  ]
