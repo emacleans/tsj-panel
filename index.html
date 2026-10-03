@@ -164,6 +164,19 @@
   .cierre-card.ok { background:#E1F0E5; color:#1f5e37; } .cierre-card.mal { background:#F6DEDE; color:#7a2323; } .cierre-card.info { background:#F1EEE5; }
   .cierre-card ol, .cierre-card ul { margin:6px 0 6px 18px; padding:0; } .cierre-card li { margin:6px 0; }
   .cierre-card .btn { margin:4px 6px 0 0; font-size:12.5px; padding:5px 10px; }
+  .btn.sec { background: transparent; color: var(--ink); border-color: var(--line); }
+  .manual-sec { margin-top:12px; }
+  .manual-sec-tit { font-weight:700; font-size:13px; margin-bottom:6px; }
+  .manual-sec.urgente { background:#FBE9E7; border:1px solid #E8B4AE; border-radius:10px; padding:10px 12px; }
+  .manual-sec.urgente .manual-sec-tit { color:#8a2a20; }
+  ul.manual-lista { list-style:none; margin:0; padding:0; }
+  ul.manual-lista li.manual { padding:8px 2px; border-top:1px solid rgba(0,0,0,.08); }
+  ul.manual-lista li.manual:first-child { border-top:0; }
+  .manual-txt { font-size:13.5px; }
+  .manual-ctrl { margin-top:6px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:12.5px; color:var(--muted); }
+  .nota-manual { flex:1; min-width:170px; font:inherit; padding:5px 8px; border-radius:6px; border:1px solid var(--line); background:#fff; color:var(--ink); font-size:12.5px; }
+  li.manual.resuelto { opacity:.75; }
+  li.manual.resuelto .manual-txt s { color:var(--muted); }
   .prog { margin:8px 0 4px; } .prog .pista { height:10px; background:#E4E0D3; border-radius:6px; overflow:hidden; }
   .prog .relleno { height:100%; background:var(--gold); transition:width .8s; } .prog.fin .relleno { background:#1f8a4c; }
   .prog .txt { font-size:12.5px; color:var(--muted); margin-top:4px; } .prog .txt b { color:var(--ink); }
@@ -542,6 +555,66 @@ function lineaAprendizaje() {
   return `<div class="e-meta" style="margin-top:12px">🧠 Aprendizaje de fechas: ${a.muestras} fecha(s) puestas a mano · ${a.exactas + a.por_vecinos} ya las resuelve el script solo · ${a.meses_aprendidos} variante(s) de mes aprendidas${pend}</div>`;
 }
 
+// ---------- Revisión manual persistida (acciones "manual" de la auditoría: no tienen botón, solo las
+// resuelve Enrique mirando el archivo a mano) ----------
+// Se guarda en GitHub (tsj-estado/revision_manual/<gestion>.json) para que "ya lo revisé" se recuerde entre
+// sesiones y equipos, en vez de perderse cada vez que se vuelve a auditar (la auditoría puede repetir el
+// mismo caso muchas veces mientras el sitio no lo explique). Clave estable por caso: sala+numero cuando la
+// auditoría los trae estructurados (ver evaluar_cierre en compilar_tsj.py); si algún día hay una acción
+// "manual" sin esos campos (versión antigua de auditoría), se cae a una clave por texto, para no romper.
+const REVISION_MANUAL_CACHE = {}, REVISION_MANUAL_TS = {};
+function claveManual(a) { return (a.sala && a.numero != null) ? `${a.sala}|${a.numero}` : ('txt:' + a.texto); }
+function cargarRevisionManual(g) {
+  if (Date.now() - (REVISION_MANUAL_TS[g] || 0) < 20000) return;   // no más de 1 vez cada 20 s por gestión
+  REVISION_MANUAL_TS[g] = Date.now();
+  gh(`/repos/${OWNER}/${REPO}/contents/revision_manual/${g}.json`, { raw: true })
+    .then(r => r.ok ? r.json() : {})
+    .catch(() => ({}))
+    .then(d => { REVISION_MANUAL_CACHE[g] = d || {}; if (g === gestion) renderAvance(); });
+}
+async function marcarRevisado(g, clave, resuelto, nota) {
+  const ruta = `/repos/${OWNER}/${REPO}/contents/revision_manual/${g}.json`;
+  try {
+    const actual = await gh(ruta);
+    let sha = null, datos = {};
+    if (actual.ok) {
+      const j = await actual.json();
+      sha = j.sha;
+      try { datos = JSON.parse(decodeURIComponent(escape(atob(j.content)))); } catch (_) { datos = {}; }
+    } else if (actual.status !== 404) {
+      throw new Error('No se pudo leer lo que ya habías revisado (HTTP ' + actual.status + ').');
+    }
+    datos[clave] = { resuelto, nota: String(nota || '').slice(0, 400), ts: ahora() };
+    const cuerpo = { message: `revisión manual ${g}: ${resuelto ? 'revisado' : 'reabierto'} (${clave})`, content: btoa(unescape(encodeURIComponent(JSON.stringify(datos, null, 1)))) };
+    if (sha) cuerpo.sha = sha;
+    const r = await gh(ruta, { method: 'PUT', body: JSON.stringify(cuerpo) });
+    if (!r.ok) throw new Error('No se pudo guardar la revisión manual (HTTP ' + r.status + ').');
+    REVISION_MANUAL_CACHE[g] = datos; REVISION_MANUAL_TS[g] = Date.now();
+    renderAvance();
+  } catch (err) { mostrarError(err.message || String(err)); }
+}
+function filaManual(g, a, info) {
+  const clave = claveManual(a), payload = esc(JSON.stringify([g, clave]));
+  if (info && info.resuelto) {
+    return `<li class="manual resuelto"><div class="manual-txt"><s>${esc(a.texto)}</s></div>
+      <div class="manual-ctrl">✓ revisado ${esc(hace(info.ts))}${info.nota ? ' — «' + esc(info.nota) + '»' : ''} · <button type="button" class="btn sec" data-reabrir="${payload}">Reabrir</button></div></li>`;
+  }
+  return `<li class="manual"><div class="manual-txt">${esc(a.texto)}</div>
+    <div class="manual-ctrl"><input type="text" class="nota-manual" maxlength="400" placeholder="Nota opcional: por qué lo dejas así" value="${esc((info && info.nota) || '')}">
+      <button type="button" class="btn" data-revisado="${payload}">✓ Ya lo revisé</button></div></li>`;
+}
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('[data-revisado]'); if (!b) return;
+  const [g, clave] = JSON.parse(b.dataset.revisado);
+  const nota = b.closest('li').querySelector('.nota-manual');
+  marcarRevisado(g, clave, true, nota ? nota.value : '');
+});
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('[data-reabrir]'); if (!b) return;
+  const [g, clave] = JSON.parse(b.dataset.reabrir);
+  marcarRevisado(g, clave, false, '');
+});
+
 function cardCierre(av, e) {
   const au = av.auditoria, v = au && au.veredicto;
   if (!au || !v) return av.auditoria ? '<div class="cierre-card info">Esta auditoría es de una versión anterior y no trae veredicto. Repite «Auditar contra el sitio» para ver si la gestión puede cerrarse.</div>' : '';
@@ -549,8 +622,25 @@ function cardCierre(av, e) {
   if (cv) return `<div class="cierre-card ok"><b>Cierre validado</b> el ${esc(String(cv.validado || '').replace('T', ' '))}. El informe completo está en el «Repositorio de auditorías», al final de la página.</div>`;
   if (v.estado === 'en_curso') return '<div class="cierre-card info"><b>Gestión en curso.</b> Se puede auditar para ver el estado, pero el cierre solo se valida cuando el año haya terminado.</div>';
   if (v.estado === 'acciones') {
-    const li = v.acciones.map(a => `<li>${esc(a.texto)}<br>${(a.botones || []).map(b => `<button type="button" class="btn" data-orden="${b}">${esc(NOMBRE_ACCION[b] || b)}</button>`).join('')}${(a.botones || []).length ? '' : '<i>Requiere que la revises tú.</i>'}</li>`).join('');
-    return `<div class="cierre-card mal"><b>Antes de cerrar la gestión ${esc(av.gestion)} hay ${v.acciones.length} cosa(s) por resolver:</b><ol>${li}</ol>Cuando termines, pulsa <button type="button" class="btn" data-orden="auditar">Auditar contra el sitio</button> otra vez: el sistema volverá a evaluar y, si todo está resuelto, te pedirá validar el cierre.</div>`;
+    const manual = v.acciones.filter(a => a.id === 'manual'), resto = v.acciones.filter(a => a.id !== 'manual');
+    const liResto = resto.map(a => `<li>${esc(a.texto)}<br>${(a.botones || []).map(b => `<button type="button" class="btn" data-orden="${b}">${esc(NOMBRE_ACCION[b] || b)}</button>`).join('')}${(a.botones || []).length ? '' : '<i>Requiere que la revises tú.</i>'}</li>`).join('');
+    const seccAutom = resto.length ? `<div class="manual-sec"><div class="manual-sec-tit">Se resuelve solo con «Releer pendientes» (${resto.length})</div><ol>${liResto}</ol></div>` : '';
+    let seccManual = '';
+    if (manual.length) {
+      cargarRevisionManual(av.gestion);
+      const cache = REVISION_MANUAL_CACHE[av.gestion];
+      if (cache === undefined) {
+        seccManual = `<div class="manual-sec urgente"><div class="manual-sec-tit">⚠ Revisión manual tuya (${manual.length})</div><div class="vacio">Cargando lo que ya revisaste…</div></div>`;
+      } else {
+        const infoDe = a => cache[claveManual(a)];
+        const abiertos = manual.filter(a => !(infoDe(a) || {}).resuelto), hechos = manual.filter(a => (infoDe(a) || {}).resuelto);
+        const listaAbiertos = abiertos.map(a => filaManual(av.gestion, a, infoDe(a))).join('') || '<li class="manual vacio">Ya marcaste todos como revisados.</li>';
+        const listaHechos = hechos.length ? plegable('rev-hechos-' + av.gestion, `Ya revisados por ti (${hechos.length})`, `<ul class="manual-lista">${hechos.map(a => filaManual(av.gestion, a, infoDe(a))).join('')}</ul>`) : '';
+        seccManual = `<div class="manual-sec urgente"><div class="manual-sec-tit">⚠ Revisión manual tuya — ${abiertos.length} de ${manual.length} sin marcar</div><ul class="manual-lista">${listaAbiertos}</ul>${listaHechos}</div>`;
+      }
+    }
+    const nota = manual.length ? `<div class="nota">Marcar «Ya lo revisé» es solo para que no se te pierda qué ya viste entre una sesión y otra; la gestión sigue sin poder cerrarse mientras el sitio no explique estos archivos. Si decides que alguno está bien tal como está, dilo en el chat y vemos cómo reflejarlo en el cierre.</div>` : '';
+    return `<div class="cierre-card mal"><b>Antes de cerrar la gestión ${esc(av.gestion)} hay ${v.acciones.length} cosa(s) por resolver:</b>${seccAutom}${seccManual}<div style="margin-top:10px">Cuando termines lo de arriba, pulsa <button type="button" class="btn" data-orden="auditar">Auditar contra el sitio</button> otra vez: el sistema volverá a evaluar y, si todo está resuelto, te pedirá validar el cierre.</div>${nota}</div>`;
   }
   const ex = (v.explicadas || []).length ? `<details><summary>Ver las ${v.explicadas.length} diferencia(s) explicadas</summary><ul>${v.explicadas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : '';
   return `<div class="cierre-card ok"><b>La auditoría terminó sin nada que corregir.</b> Las diferencias que aparecen entre el sitio y las carpetas están comprobadas y explicadas (no son errores nuestros). ${ex}<div style="margin-top:8px"><button type="button" class="btn" data-orden="validar_cierre">Validar el cierre de la gestión ${esc(av.gestion)}</button></div></div>`;
