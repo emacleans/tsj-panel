@@ -215,6 +215,8 @@
       <ul class="pasos">
         <li><button class="paso" data-accion="verificar"><span class="num">1</span><span><div class="titulo">Verificar</div><div class="desc">Confirma que el sitio responde bien, sin descargar nada.</div></span></button></li>
         <li><button class="paso destacado" data-accion="iniciar"><span class="num">2</span><span><div class="titulo">Iniciar compilación</div><div class="desc">Descarga todo con el vigilante; corrige _revisar y EXP- obsoletos solo, al terminar.</div></span></button></li>
+        <li><button class="paso destacado" data-accion="releer"><span class="num">R</span><span><div class="titulo">Releer pendientes (recomendado)</div><div class="desc">Encadena sola, sin volver a tocar nada: corrige _revisar, detecta EXP- obsoletos y (en modo real) audita contra el sitio; si la auditoría pide recuperar faltantes, lo hace y vuelve a auditar (hasta 2 vueltas) antes de dejarlo para revisión manual. Los pasos 3 y 4 de abajo quedan para repetir uno solo a mano si hace falta.</div></span></button></li>
+        <li class="modo"><label><input type="radio" name="m-releer" value="sim" checked> Simulación</label><label><input type="radio" name="m-releer" value="real"> Aplicar de verdad</label></li>
         <li><button class="paso" data-accion="corregir"><span class="num">3</span><span><div class="titulo">Corregir _revisar</div><div class="desc">Reprocesa lo que quedó sin identificar.</div></span></button></li>
         <li class="modo"><label><input type="radio" name="m-corregir" value="sim" checked> Simulación</label><label><input type="radio" name="m-corregir" value="real"> Aplicar de verdad</label></li>
         <li><button class="paso" data-accion="detectar"><span class="num">4</span><span><div class="titulo">Detectar EXP- obsoletos</div><div class="desc">Renombra los que ya tienen número de Auto Supremo.</div></span></button></li>
@@ -267,7 +269,8 @@ const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
 const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
 const NOMBRE_ACCION = { fechar: 'Fechar archivos de _revisar', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre',
-  barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)' };
+  barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)',
+  releer_sim: 'Releer pendientes (simulación)', releer_real: 'Releer pendientes (real)' };
 let TOKEN = null, equipos = [], gestion = null, pendiente = null, destinoManual = false;
 const $ = id => document.getElementById(id);
 const corta = n => String(n).replace('Sala Contenciosa Primera', 'Cont. 1ª').replace('Sala Contenciosa Segunda', 'Cont. 2ª').replace('Sala ', '');
@@ -345,9 +348,10 @@ function elegir(g) {
 }
 
 // Traduce el id de cada "acción pendiente" del veredicto de auditoría (evaluar_cierre, en compilar_tsj.py)
-// al data-accion del botón correspondiente en el menú "Acciones". "manual" no tiene botón: solo se puede
-// resolver revisando el archivo a mano (ya se explica con texto en la tarjeta de cierre).
-const ACCION_A_PASO = { barrido: 'barrido', detectar: 'detectar', cotejar: 'cotejar', revisar: 'corregir', recuperar: 'recuperar' };
+// a los data-accion de los botones correspondientes en el menú "Acciones" (puede ser más de uno: "revisar"
+// y "detectar" marcan también el botón combinado "releer", que hace lo mismo encadenado). "manual" no tiene
+// botón: solo se puede resolver revisando el archivo a mano (ya se explica con texto en la tarjeta de cierre).
+const ACCION_A_PASO = { barrido: ['barrido'], detectar: ['detectar', 'releer'], cotejar: ['cotejar'], revisar: ['corregir', 'releer'], recuperar: ['recuperar'] };
 
 function pendienteGestion(el) {
   const v = el && el.av && el.av.auditoria && el.av.auditoria.veredicto;
@@ -356,7 +360,7 @@ function pendienteGestion(el) {
 
 function marcarPasosPendientes(el) {
   const v = el && el.av && el.av.auditoria && el.av.auditoria.veredicto;
-  const pend = new Set(v && v.estado === 'acciones' ? v.acciones.map(a => ACCION_A_PASO[a.id]).filter(Boolean) : []);
+  const pend = new Set(v && v.estado === 'acciones' ? v.acciones.flatMap(a => ACCION_A_PASO[a.id] || []) : []);
   document.querySelectorAll('.paso').forEach(b => b.classList.toggle('pendiente', pend.has(b.dataset.accion)));
 }
 
@@ -688,6 +692,7 @@ async function tick() {
 function accionFinal(accion) {
   if (accion === 'corregir') return 'corregir_' + document.querySelector('input[name=m-corregir]:checked').value;
   if (accion === 'detectar') return 'detectar_' + document.querySelector('input[name=m-detectar]:checked').value;
+  if (accion === 'releer') return 'releer_' + document.querySelector('input[name=m-releer]:checked').value;
   if (accion === 'barrido') return 'barrido_' + (document.querySelector('input[name=a-barrido]:checked').value === 'todas' ? 'todas_' : '') + document.querySelector('input[name=m-barrido]:checked').value;
   return accion;
 }
@@ -698,7 +703,7 @@ async function enviarOrden(base, obs, opts) {
   if (!e) { alert('No hay equipo destino.'); return; }
   if (accion === 'validar_cierre' && !confirm(`Validar el cierre de la gestión ${gestion}. Queda registrado con su informe en el repositorio de auditorías. ¿Confirmas?`)) return;
   const gEtiqueta = opts.pid ? (opts.etiqueta || '') : `gestión ${gestion}`;
-  const pide = ['iniciar', 'detener', 'actualizar', 'corregir_real', 'detectar_real', 'barrido_real', 'barrido_todas_real'].includes(accion);
+  const pide = ['iniciar', 'detener', 'actualizar', 'corregir_real', 'detectar_real', 'barrido_real', 'barrido_todas_real', 'releer_real'].includes(accion);
   if (pide && !confirm(`${opts.pid ? 'Detener' : NOMBRE_ACCION[accion]} en ${e.nombre} (${gEtiqueta}). ¿Confirmas?`)) return;
   const ruta = `/repos/${OWNER}/${REPO}/contents/ordenes/${eid}.json`;
   const btns = document.querySelectorAll('.paso, .e-proceso button'); btns.forEach(b => b.disabled = true);
