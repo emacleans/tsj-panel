@@ -1,5 +1,5 @@
 {
- "ts": 1791052992,
+ "ts": 1791053016,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791051742,
@@ -64,7 +64,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791052988,
+   "actualizado_ts": 1791053004,
    "viejo": false
   },
   {
@@ -163,20 +163,20 @@
    "estado_interno": "activa",
    "salas_n": 6,
    "salas_medidas": 6,
-   "docs": 1177,
+   "docs": 1179,
    "total_esperado": 3331,
    "total_completo": true,
-   "pct": 35.3,
+   "pct": 35.4,
    "eta": {
     "tasa_min": 1.66,
-    "restantes": 2154,
-    "segundos": 78000,
-    "fin_ts": 1791130988,
-    "fin_min_ts": 1791081643,
-    "fin_max_ts": 1791138788
+    "restantes": 2152,
+    "segundos": 77906,
+    "fin_ts": 1791130911,
+    "fin_min_ts": 1791081222,
+    "fin_max_ts": 1791138701
    },
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791052988,
+   "actualizado_ts": 1791053004,
    "viejo": false
   },
   {
@@ -272,10 +272,6 @@
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1790950662,
-   "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
-  },
   {
    "ts": 1790951360,
    "texto": "reinicio de 2015 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
@@ -391,13 +387,17 @@
   {
    "ts": 1791052355,
    "texto": "reinicio de 2006 en IPE01 (Mac Mini oficina): corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1791053013,
+   "texto": "inicia 2006 en IPE01 (Mac Mini oficina) (incompleta; intento 2)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791052988,
+   "ts": 1791053004,
    "version": "04b208e",
    "procesos": [
     {
@@ -416,24 +416,24 @@
    "gestiones": {
     "2007": {
      "activo": true,
-     "total_archivos": 1177,
-     "docs_descargados": 1177,
+     "total_archivos": 1179,
+     "docs_descargados": 1179,
      "salas_n": 6,
      "salas_medidas": 6,
      "total_completo": true,
      "total_esperado": 3331,
-     "pct_total": 35.3,
+     "pct_total": 35.4,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
       "tasa_min": 1.66,
-      "restantes": 2154,
-      "segundos": 78000,
-      "fin_ts": 1791130988,
-      "fin_min_ts": 1791081643,
-      "fin_max_ts": 1791138788
+      "restantes": 2152,
+      "segundos": 77906,
+      "fin_ts": 1791130911,
+      "fin_min_ts": 1791081222,
+      "fin_max_ts": 1791138701
      },
      "salud": {
       "estado": "aviso",
@@ -566,7 +566,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791052979,
+   "ts": 1791052995,
    "version": "04b208e",
    "procesos": [
     {
@@ -594,15 +594,15 @@
       "calculando": true
      },
      "salud": {
-      "estado": "ok",
+      "estado": "aviso",
       "limite_30m": 0,
-      "fallos_30m": 0,
-      "fallos_15m": 0,
-      "fallos_total": 6,
-      "ultimo_movimiento_ts": 1791052968,
+      "fallos_30m": 1,
+      "fallos_15m": 1,
+      "fallos_total": 7,
+      "ultimo_movimiento_ts": 1791052992,
       "ultimo_limite_ts": null,
-      "ultima_falla_ts": 1791049421,
-      "detalle": ""
+      "ultima_falla_ts": 1791052983,
+      "detalle": "1 documento(s) fallido(s) en 30 min"
      }
     }
    },
@@ -611,7 +611,12 @@
     "[2026-10-03 14:42:37] --- Iniciando Sala Civil (Gestión 2025) ---",
     "[2026-10-03 14:42:41] Sala Civil: 1400 resultados encontrados en el sitio.",
     "[2026-10-03 14:42:43] Sala Civil: la descarga de la fila #1370 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 5s...",
-    "[2026-10-03 14:42:48] Sala Civil: la descarga de la fila #1370 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 15s..."
+    "[2026-10-03 14:42:48] Sala Civil: la descarga de la fila #1370 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 15s...",
+    "[2026-10-03 14:43:03] AVISO: el documento #1370 de Sala Civil falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: el PDF descargado llego en blanco (glitch conocido del sitio al generarlo)",
+    "[2026-10-03 14:43:07] --- Sala Civil terminada: 0 nuevos, 0 ya existentes. Archivos totales ahora en la carpeta: 1398 (el sitio reporta 1400 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-03 14:43:07] --- Iniciando Sala Contenciosa Segunda (Gestión 2025) ---",
+    "[2026-10-03 14:43:11] Sala Contenciosa Segunda: 209 resultados encontrados en el sitio.",
+    "[2026-10-03 14:43:12] Sala Contenciosa Segunda: la descarga de la fila #206 no respondio a tiempo, o llego en blanco (intento 1 de 3). Reintentando en 6s..."
    ]
   },
   {
