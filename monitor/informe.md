@@ -1,4 +1,4 @@
-# Informe del orquestador — 03/10 03:47
+# Informe del orquestador — 03/10 03:53
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -7,14 +7,14 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 | Gestión | Estado | Salas medidas | Documentos | % | ETA | Equipo | Dato |
 |---|---|---|---|---|---|---|---|
-| 2013 | Sin verificar | 10 de 11 | 616 docs · total por confirmar | - | - | IPE02 (Mac Mini casa) | hace 33 s |
-| 2014 | En pausa (3633 de 4584 docs) | 13 de 13 | 3633 / 4584 | 79.3 % | - | MacBook Air | hace 34 min (viejo) |
-| 2015 | Compilando | 7 de 7 | 3802 / 4298 | 88.5 % | ~03/10 06:15 (03/10 06:01–03/10 06:30) | iMac-Sala (iMac de la sala) | hace 12 s |
-| 2016 | Compilada completa | 5 de 5 | 3685 / 4051 | 91.0 % | - | MM-Ali (Mac Mini Alicia) | hace 29 s |
-| 2012 | Compilando | 7 de 8 | 2465 docs · total por confirmar | - | sin ETA (total por confirmar) | IPE02 (Mac Mini casa) | hace 33 s |
-| 2011 | Compilada completa | 6 de 6 | 1552 / 1572 | 98.7 % | - | IPE01 (Mac Mini oficina) | hace 8 s |
-| 2010 | Compilando | 6 de 6 | 2726 / 2947 | 92.5 % | ~03/10 04:19 (03/10 04:16–03/10 04:23) | IPE01 (Mac Mini oficina) | hace 8 s |
-| 2009 | Compilando | 7 de 7 | 413 / 2255 | 18.3 % | ~03/10 13:47 (03/10 12:47–03/10 14:47) | MM-Sofi (Mac Mini Sofía) | hace 11 s |
+| 2013 | Sin verificar | 10 de 11 | 616 docs · total por confirmar | - | - | IPE02 (Mac Mini casa) | hace 39 s |
+| 2014 | En pausa (3633 de 4584 docs) | 13 de 13 | 3633 / 4584 | 79.3 % | - | MacBook Air | hace 39 min (viejo) |
+| 2015 | Compilando | 7 de 7 | 3837 / 4298 | 89.3 % | ~03/10 06:10 (03/10 05:43–03/10 06:23) | iMac-Sala (iMac de la sala) | hace 8 s |
+| 2016 | Compilada completa | 5 de 5 | 3685 / 4051 | 91.0 % | - | MM-Ali (Mac Mini Alicia) | hace 18 s |
+| 2012 | Compilando | 7 de 8 | 2465 docs · total por confirmar | - | sin ETA (total por confirmar) | IPE02 (Mac Mini casa) | hace 39 s |
+| 2011 | Compilada completa | 6 de 6 | 1552 / 1572 | 98.7 % | - | IPE01 (Mac Mini oficina) | hace 7 s |
+| 2010 | Compilando | 6 de 6 | 2761 / 2947 | 93.7 % | ~03/10 04:19 (03/10 04:17–03/10 04:22) | IPE01 (Mac Mini oficina) | hace 7 s |
+| 2009 | Compilando | 7 de 7 | 449 / 2255 | 19.9 % | ~03/10 13:30 (03/10 10:49–03/10 14:27) | MM-Sofi (Mac Mini Sofía) | hace 5 s |
 | 2008 | Sin verificar | por medir | - | - | - | - | - |
 | 2007 | Sin verificar | por medir | - | - | - | - | - |
 | 2006 | Sin verificar | por medir | - | - | - | - | - |
@@ -28,12 +28,12 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 | Equipo | Estado | Trabajo | Salud | Dato |
 |---|---|---|---|---|
-| IPE01 (Mac Mini oficina) | en línea | vigilante 2010, compilacion 2010 | ok | hace 8 s |
-| IPE02 (Mac Mini casa) | en línea | compilacion 2012, vigilante 2012 | aviso (4 documento(s) fallido(s) en 30 min) | hace 33 s |
-| MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 29 s |
-| MM-Sofi (Mac Mini Sofía) | en línea | vigilante 2009, compilacion 2009 | aviso (4 documento(s) fallido(s) en 30 min) | hace 11 s |
-| MacBook Air | DESCONECTADO | libre | - | hace 34 min (viejo) |
-| iMac-Sala (iMac de la sala) | en línea | vigilante 2015, compilacion 2015 | aviso (5 documento(s) fallido(s) en 30 min) | hace 12 s |
+| IPE01 (Mac Mini oficina) | en línea | vigilante 2010, compilacion 2010 | ok | hace 7 s |
+| IPE02 (Mac Mini casa) | en línea | compilacion 2012, vigilante 2012 | aviso (4 documento(s) fallido(s) en 30 min) | hace 39 s |
+| MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 18 s |
+| MM-Sofi (Mac Mini Sofía) | en línea | vigilante 2009, compilacion 2009 | aviso (4 documento(s) fallido(s) en 30 min) | hace 5 s |
+| MacBook Air | DESCONECTADO | libre | - | hace 39 min (viejo) |
+| iMac-Sala (iMac de la sala) | en línea | vigilante 2015, compilacion 2015 | aviso (4 documento(s) fallido(s) en 30 min) | hace 8 s |
 
 ## Incidencias abiertas
 
