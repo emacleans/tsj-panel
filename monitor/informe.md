@@ -1,4 +1,4 @@
-# Informe del orquestador — 03/10 06:14
+# Informe del orquestador — 03/10 06:19
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -7,15 +7,15 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 | Gestión | Estado | Salas medidas | Documentos | % | ETA | Equipo | Dato |
 |---|---|---|---|---|---|---|---|
-| 2013 | Sin verificar | 10 de 11 | 616 docs · total por confirmar | - | - | IPE02 (Mac Mini casa) | hace 31 s |
-| 2014 | En pausa (3633 de 4584 docs) | 13 de 13 | 3633 / 4584 | 79.3 % | - | MacBook Air | hace 49 min (viejo) |
-| 2015 | Compilando | 7 de 7 | 4259 / 4298 | 99.1 % | ~03/10 06:27 (03/10 06:26–03/10 06:50) | iMac-Sala (iMac de la sala) | hace 6 s |
-| 2016 | Compilada completa | 5 de 5 | 3685 / 4051 | 91.0 % | - | MM-Ali (Mac Mini Alicia) | hace 27 s |
-| 2012 | Compilando | 7 de 8 | 2465 docs · total por confirmar | - | sin ETA (total por confirmar) | IPE02 (Mac Mini casa) | hace 31 s |
-| 2011 | Compilada completa | 6 de 6 | 1552 / 1572 | 98.7 % | - | IPE01 (Mac Mini oficina) | hace 7 s |
-| 2010 | Compilada completa | 6 de 6 | 2825 / 2947 | 95.9 % | - | IPE01 (Mac Mini oficina) | hace 7 s |
-| 2009 | Compilando | 7 de 7 | 556 / 2255 | 24.7 % | por calcular | MM-Sofi (Mac Mini Sofía) | hace 11 s |
-| 2008 | Compilando | 6 de 6 | 696 / 2340 | 29.7 % | ~03/10 10:11 (03/10 09:48–03/10 10:35) | IPE01 (Mac Mini oficina) | hace 7 s |
+| 2013 | Sin verificar | 10 de 11 | 616 docs · total por confirmar | - | - | IPE02 (Mac Mini casa) | hace 42 s |
+| 2014 | En pausa (3633 de 4584 docs) | 13 de 13 | 3633 / 4584 | 79.3 % | - | MacBook Air | hace 4 min |
+| 2015 | Compilada completa | 7 de 7 | 4259 / 4298 | 99.1 % | - | iMac-Sala (iMac de la sala) | hace 43 s |
+| 2016 | Compilada completa | 5 de 5 | 3685 / 4051 | 91.0 % | - | MM-Ali (Mac Mini Alicia) | hace 17 s |
+| 2012 | Compilando | 7 de 8 | 2465 docs · total por confirmar | - | sin ETA (total por confirmar) | IPE02 (Mac Mini casa) | hace 42 s |
+| 2011 | Compilada completa | 6 de 6 | 1552 / 1572 | 98.7 % | - | IPE01 (Mac Mini oficina) | hace 19 s |
+| 2010 | Compilada completa | 6 de 6 | 2825 / 2947 | 95.9 % | - | IPE01 (Mac Mini oficina) | hace 19 s |
+| 2009 | Compilando | 7 de 7 | 556 / 2255 | 24.7 % | por calcular | MM-Sofi (Mac Mini Sofía) | hace 7 s |
+| 2008 | Compilando | 6 de 6 | 728 / 2340 | 31.1 % | ~03/10 10:15 (03/10 09:51–03/10 10:38) | IPE01 (Mac Mini oficina) | hace 19 s |
 | 2007 | Sin verificar | por medir | - | - | - | - | - |
 | 2006 | Sin verificar | por medir | - | - | - | - | - |
 | 2005 | Sin verificar | por medir | - | - | - | - | - |
@@ -28,12 +28,12 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 | Equipo | Estado | Trabajo | Salud | Dato |
 |---|---|---|---|---|
-| IPE01 (Mac Mini oficina) | en línea | vigilante 2008, compilacion 2008 | ok | hace 7 s |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | aviso (3 documento(s) fallido(s) en 30 min) | hace 31 s |
-| MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 27 s |
-| MM-Sofi (Mac Mini Sofía) | en línea | vigilante 2009, compilacion 2009 | aviso (2 documento(s) fallido(s) en 30 min) | hace 11 s |
-| MacBook Air | DESCONECTADO | libre | - | hace 49 min (viejo) |
-| iMac-Sala (iMac de la sala) | en línea | vigilante 2015 | aviso (2 documento(s) fallido(s) en 30 min) | hace 6 s |
+| IPE01 (Mac Mini oficina) | en línea | vigilante 2008, compilacion 2008 | ok | hace 19 s |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2012, compilacion 2012 | alerta (el sitio limitó 1 vez(es) en 30 min) | hace 42 s |
+| MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 17 s |
+| MM-Sofi (Mac Mini Sofía) | en línea | vigilante 2009, compilacion 2009 | aviso (3 documento(s) fallido(s) en 30 min) | hace 7 s |
+| MacBook Air | DESCONECTADO | libre | - | hace 4 min |
+| iMac-Sala (iMac de la sala) | en línea | libre | - | hace 43 s |
 
 ## Incidencias abiertas
 
