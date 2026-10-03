@@ -1,5 +1,5 @@
 {
- "ts": 1791054258,
+ "ts": 1791054348,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791051742,
@@ -34,7 +34,7 @@
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791054201,
+   "actualizado_ts": 1791054312,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 79.3,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791054201,
+   "actualizado_ts": 1791054312,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791054250,
+   "actualizado_ts": 1791054314,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 91.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791054251,
+   "actualizado_ts": 1791054315,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791054201,
+   "actualizado_ts": 1791054312,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 98.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791054188,
+   "actualizado_ts": 1791054317,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 95.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791054188,
+   "actualizado_ts": 1791054317,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 29.0,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791054231,
+   "actualizado_ts": 1791054294,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 74.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791054188,
+   "actualizado_ts": 1791054317,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 36.4,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791054250,
+   "actualizado_ts": 1791054314,
    "viejo": false
   },
   {
@@ -186,7 +186,7 @@
     "calculando": true
    },
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791054188,
+   "actualizado_ts": 1791054317,
    "viejo": false
   },
   {
@@ -261,20 +261,20 @@
    "pct": 96.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791054251,
+   "actualizado_ts": 1791054315,
    "viejo": false
   }
  ],
- "incidencias_abiertas": [],
+ "incidencias_abiertas": [
+  {
+   "clave": "gestion_2007",
+   "texto": "La gestión 2007 sigue incompleta tras 3 lanzamientos; el orquestador no insiste. Requiere diagnóstico.",
+   "nivel": "critica",
+   "ts": 1791054343,
+   "ultimo_ts": 1791054343
+  }
+ ],
  "acciones": [
-  {
-   "ts": 1790951497,
-   "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
-  },
-  {
-   "ts": 1790951568,
-   "texto": "se detiene barrido de 2013 en IPE02 (Mac Mini casa): bloquea la compilación pendiente"
-  },
   {
    "ts": 1790951834,
    "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 11:06"
@@ -386,13 +386,21 @@
   {
    "ts": 1791053682,
    "texto": "reinicio de 2007 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1791054343,
+   "texto": "INCIDENCIA [critica] La gestión 2007 sigue incompleta tras 3 lanzamientos; el orquestador no insiste. Requiere diagnóstico."
+  },
+  {
+   "ts": 1791054345,
+   "texto": "inicia 2009 en MM-Sofi (Mac Mini Sofía) (incompleta; intento 1)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791054250,
+   "ts": 1791054314,
    "version": "04b208e",
    "procesos": [],
    "gestiones": {
@@ -431,7 +439,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791054188,
+   "ts": 1791054317,
    "version": "04b208e",
    "procesos": [
     {
@@ -495,7 +503,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791054201,
+   "ts": 1791054312,
    "version": "04b208e",
    "procesos": [
     {
@@ -530,7 +538,7 @@
       "estado": "aviso",
       "limite_30m": 0,
       "fallos_30m": 4,
-      "fallos_15m": 2,
+      "fallos_15m": 1,
       "fallos_total": 104,
       "ultimo_movimiento_ts": 1791054191,
       "ultimo_limite_ts": 1791049942,
@@ -557,7 +565,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791054227,
+   "ts": 1791054290,
    "version": "04b208e",
    "procesos": [],
    "gestiones": {},
@@ -579,7 +587,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791054251,
+   "ts": 1791054315,
    "version": "04b208e",
    "procesos": [],
    "gestiones": {},
@@ -601,7 +609,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791054231,
+   "ts": 1791054294,
    "version": "04b208e",
    "procesos": [],
    "gestiones": {},
