@@ -1,4 +1,4 @@
-# Informe del orquestador — 04/10 11:42
+# Informe del orquestador — 04/10 11:47
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -7,33 +7,33 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 | Gestión | Estado | Salas medidas | Documentos | % | ETA | Equipo | Dato |
 |---|---|---|---|---|---|---|---|
-| 2013 | Compilando | 11 de 11 | 4745 / 5271 | 90.0 % | ~04/10 13:20 (04/10 13:11–04/10 13:30) | IPE02 (Mac Mini casa) | hace 12 s |
-| 2014 | En pausa (3664 de 4584 docs) | 13 de 13 | 3664 / 4584 | 79.9 % | - | IPE02 (Mac Mini casa) | hace 12 s |
-| 2015 | Compilada completa | 7 de 7 | 4266 / 4298 | 99.3 % | - | iMac-Sala (iMac de la sala) | hace 58 s |
-| 2016 | Compilada completa | 5 de 5 | 3695 / 4051 | 91.2 % | - | MM-Ali (Mac Mini Alicia) | hace 66 s |
-| 2012 | Compilada completa | 8 de 8 | 3207 / 3211 | 99.9 % | - | IPE02 (Mac Mini casa) | hace 12 s |
-| 2011 | Compilada completa | 6 de 6 | 1564 / 1572 | 99.5 % | - | IPE01 (Mac Mini oficina) | hace 6 s |
-| 2010 | Compilada completa | 6 de 6 | 2927 / 2947 | 99.3 % | - | IPE01 (Mac Mini oficina) | hace 6 s |
-| 2009 | Compilada completa | 7 de 7 | 2249 / 2255 | 99.7 % | - | MM-Sofi (Mac Mini Sofía) | hace 48 s |
-| 2008 | Compilada completa | 6 de 6 | 2324 / 2340 | 99.3 % | - | IPE01 (Mac Mini oficina) | hace 6 s |
-| 2007 | Compilada completa | 6 de 6 | 3310 / 3331 | 99.4 % | - | iMac-Sala (iMac de la sala) | hace 58 s |
-| 2006 | Compilada completa | 6 de 6 | 2999 / 3009 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 6 s |
-| 2005 | Compilada completa | 7 de 7 | 2157 / 2182 | 98.9 % | - | MM-Ali (Mac Mini Alicia) | hace 66 s |
-| 2004 | Compilada completa | 6 de 6 | 1742 / 1747 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 6 s |
-| 2003 | Compilada completa | 4 de 4 | 1376 / 1379 | 99.8 % | - | IPE01 (Mac Mini oficina) | hace 6 s |
-| 2002 | Compilando | 5 de 5 | 44 / 1323 | 3.3 % | ~04/10 16:32 (04/10 16:03–04/10 17:01) | IPE01 (Mac Mini oficina) | hace 6 s |
-| 2001 | Compilada completa | 3 de 3 | 422 / 423 | 99.8 % | - | MM-Ali (Mac Mini Alicia) | hace 66 s |
+| 2013 | Compilando | 11 de 11 | 4780 / 5271 | 90.7 % | ~04/10 13:11 (04/10 13:03–04/10 13:20) | IPE02 (Mac Mini casa) | hace 5 s |
+| 2014 | En pausa (3664 de 4584 docs) | 13 de 13 | 3664 / 4584 | 79.9 % | - | IPE02 (Mac Mini casa) | hace 5 s |
+| 2015 | Compilada completa | 7 de 7 | 4266 / 4298 | 99.3 % | - | iMac-Sala (iMac de la sala) | hace 31 s |
+| 2016 | Compilada completa | 5 de 5 | 3695 / 4051 | 91.2 % | - | MM-Ali (Mac Mini Alicia) | hace 42 s |
+| 2012 | Compilada completa | 8 de 8 | 3207 / 3211 | 99.9 % | - | IPE02 (Mac Mini casa) | hace 5 s |
+| 2011 | Compilada completa | 6 de 6 | 1564 / 1572 | 99.5 % | - | IPE01 (Mac Mini oficina) | hace 18 s |
+| 2010 | Compilada completa | 6 de 6 | 2927 / 2947 | 99.3 % | - | IPE01 (Mac Mini oficina) | hace 18 s |
+| 2009 | Compilada completa | 7 de 7 | 2249 / 2255 | 99.7 % | - | MM-Sofi (Mac Mini Sofía) | hace 23 s |
+| 2008 | Compilada completa | 6 de 6 | 2324 / 2340 | 99.3 % | - | IPE01 (Mac Mini oficina) | hace 18 s |
+| 2007 | Compilada completa | 6 de 6 | 3310 / 3331 | 99.4 % | - | iMac-Sala (iMac de la sala) | hace 31 s |
+| 2006 | Compilada completa | 6 de 6 | 2999 / 3009 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 18 s |
+| 2005 | Compilada completa | 7 de 7 | 2157 / 2182 | 98.9 % | - | MM-Ali (Mac Mini Alicia) | hace 42 s |
+| 2004 | Compilada completa | 6 de 6 | 1742 / 1747 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 18 s |
+| 2003 | Compilada completa | 4 de 4 | 1376 / 1379 | 99.8 % | - | IPE01 (Mac Mini oficina) | hace 18 s |
+| 2002 | Compilando | 5 de 5 | 77 / 1323 | 5.8 % | ~04/10 15:46 (04/10 15:22–04/10 16:10) | IPE01 (Mac Mini oficina) | hace 18 s |
+| 2001 | Compilada completa | 3 de 3 | 422 / 423 | 99.8 % | - | MM-Ali (Mac Mini Alicia) | hace 42 s |
 
 ## Equipos
 
 | Equipo | Estado | Trabajo | Salud | Dato |
 |---|---|---|---|---|
-| IPE01 (Mac Mini oficina) | en línea | vigilante 2002, compilacion 2002 | ok | hace 6 s |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2013, compilacion 2013 | ok | hace 12 s |
-| MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 66 s |
-| MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 48 s |
-| MacBook Air | en línea | libre | - | hace 8 s |
-| iMac-Sala (iMac de la sala) | en línea | libre | - | hace 58 s |
+| IPE01 (Mac Mini oficina) | en línea | vigilante 2002, compilacion 2002 | ok | hace 18 s |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2013, compilacion 2013 | ok | hace 5 s |
+| MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 42 s |
+| MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 23 s |
+| MacBook Air | en línea | libre | - | hace 55 s |
+| iMac-Sala (iMac de la sala) | en línea | libre | - | hace 31 s |
 
 ## Incidencias abiertas
 
