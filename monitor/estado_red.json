@@ -1,5 +1,5 @@
 {
- "ts": 1791131268,
+ "ts": 1791131322,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 94.5,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791131222,
+   "actualizado_ts": 1791131286,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 79.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791131222,
+   "actualizado_ts": 1791131286,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 91.2,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791131213,
+   "actualizado_ts": 1791131278,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791131222,
+   "actualizado_ts": 1791131286,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791131254,
+   "actualizado_ts": 1791131305,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791131254,
+   "actualizado_ts": 1791131305,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791131218,
+   "actualizado_ts": 1791131281,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791131254,
+   "actualizado_ts": 1791131305,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791131254,
+   "actualizado_ts": 1791131305,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791131213,
+   "actualizado_ts": 1791131278,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791131254,
+   "actualizado_ts": 1791131305,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791131254,
+   "actualizado_ts": 1791131305,
    "viejo": false
   },
   {
@@ -238,20 +238,20 @@
    "estado_interno": "activa",
    "salas_n": 5,
    "salas_medidas": 5,
-   "docs": 281,
+   "docs": 287,
    "total_esperado": 1323,
    "total_completo": true,
-   "pct": 21.2,
+   "pct": 21.7,
    "eta": {
-    "tasa_min": 5.13,
-    "restantes": 1042,
-    "segundos": 12181,
-    "fin_ts": 1791143435,
-    "fin_min_ts": 1791140130,
-    "fin_max_ts": 1791144653
+    "tasa_min": 5.16,
+    "restantes": 1036,
+    "segundos": 12042,
+    "fin_ts": 1791143347,
+    "fin_min_ts": 1791140156,
+    "fin_max_ts": 1791144552
    },
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791131254,
+   "actualizado_ts": 1791131305,
    "viejo": false
   },
   {
@@ -266,16 +266,12 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791131213,
+   "actualizado_ts": 1791131278,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791026320,
-   "texto": "orden de Claude 2026-10-03-ali-2001: iniciar 2001 en MM-Ali (Mac Mini Alicia)"
-  },
   {
    "ts": 1791041102,
    "texto": "reinicio de 2007 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
@@ -391,6 +387,10 @@
   {
    "ts": 1791130660,
    "texto": "reinicio de 2013 en IPE02 (Mac Mini casa): corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1791131319,
+   "texto": "inicia 2013 en IPE02 (Mac Mini casa) (incompleta; relanzada tras reinicio)"
   }
  ],
  "equipos": [
@@ -436,7 +436,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791131254,
+   "ts": 1791131305,
    "version": "25fd679",
    "procesos": [
     {
@@ -455,24 +455,24 @@
    "gestiones": {
     "2002": {
      "activo": true,
-     "total_archivos": 230,
-     "docs_descargados": 281,
+     "total_archivos": 236,
+     "docs_descargados": 287,
      "salas_n": 5,
      "salas_medidas": 5,
      "total_completo": true,
      "total_esperado": 1323,
-     "pct_total": 21.2,
+     "pct_total": 21.7,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 5.13,
-      "restantes": 1042,
-      "segundos": 12181,
-      "fin_ts": 1791143435,
-      "fin_min_ts": 1791140130,
-      "fin_max_ts": 1791144653
+      "tasa_min": 5.16,
+      "restantes": 1036,
+      "segundos": 12042,
+      "fin_ts": 1791143347,
+      "fin_min_ts": 1791140156,
+      "fin_max_ts": 1791144552
      },
      "salud": {
       "estado": "ok",
@@ -480,7 +480,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1791131235,
+      "ultimo_movimiento_ts": 1791131272,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -488,7 +488,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 12:18:44] Sala Contenciosa Primera: 80 documentos nuevos guardados, 40 ya existían (índice 119 de 364).",
     "[2026-10-04 12:20:04] Sala Contenciosa Primera: sigue revisando (fila 130 de 364; 40 ya existian, 89 nuevos).",
     "[2026-10-04 12:20:10] Sala Contenciosa Primera: 90 documentos nuevos guardados, 40 ya existían (índice 129 de 364).",
     "[2026-10-04 12:21:35] Sala Contenciosa Primera: 100 documentos nuevos guardados, 40 ya existían (índice 139 de 364).",
@@ -499,13 +498,14 @@
     "[2026-10-04 12:24:44] Sala Contenciosa Primera: sigue revisando (fila 163 de 364; 40 ya existian, 122 nuevos).",
     "[2026-10-04 12:25:48] Sala Contenciosa Primera: 130 documentos nuevos guardados, 40 ya existían (índice 169 de 364).",
     "[2026-10-04 12:26:17] Sala Contenciosa Primera: sigue revisando (fila 174 de 364; 40 ya existian, 133 nuevos).",
-    "[2026-10-04 12:27:15] Sala Contenciosa Primera: 140 documentos nuevos guardados, 40 ya existían (índice 179 de 364)."
+    "[2026-10-04 12:27:15] Sala Contenciosa Primera: 140 documentos nuevos guardados, 40 ya existían (índice 179 de 364).",
+    "[2026-10-04 12:27:52] Sala Contenciosa Primera: sigue revisando (fila 185 de 364; 40 ya existian, 144 nuevos)."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791131222,
+   "ts": 1791131286,
    "version": "25fd679",
    "procesos": [],
    "gestiones": {},
@@ -549,7 +549,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791131213,
+   "ts": 1791131278,
    "version": "25fd679",
    "procesos": [],
    "gestiones": {},
@@ -571,7 +571,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791131218,
+   "ts": 1791131281,
    "version": "25fd679",
    "procesos": [],
    "gestiones": {},
