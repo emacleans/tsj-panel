@@ -1,4 +1,4 @@
-# Informe del orquestador — 04/10 03:23
+# Informe del orquestador — 04/10 03:28
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -7,33 +7,33 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 | Gestión | Estado | Salas medidas | Documentos | % | ETA | Equipo | Dato |
 |---|---|---|---|---|---|---|---|
-| 2013 | Compilando | 11 de 11 | 2268 / 5271 | 43.0 % | ~04/10 12:18 (04/10 11:25–04/10 13:12) | IPE02 (Mac Mini casa) | hace 7 s |
-| 2014 | En pausa (3664 de 4584 docs) | 13 de 13 | 3664 / 4584 | 79.9 % | - | IPE02 (Mac Mini casa) | hace 7 s |
-| 2015 | Compilada completa | 7 de 7 | 4266 / 4298 | 99.3 % | - | iMac-Sala (iMac de la sala) | hace 13 s |
-| 2016 | Compilada completa | 5 de 5 | 3695 / 4051 | 91.2 % | - | MM-Ali (Mac Mini Alicia) | hace 19 s |
-| 2012 | Compilada completa | 8 de 8 | 3207 / 3211 | 99.9 % | - | IPE02 (Mac Mini casa) | hace 7 s |
-| 2011 | Compilada completa | 6 de 6 | 1564 / 1572 | 99.5 % | - | IPE01 (Mac Mini oficina) | hace 9 s |
-| 2010 | Compilada completa | 6 de 6 | 2927 / 2947 | 99.3 % | - | IPE01 (Mac Mini oficina) | hace 9 s |
-| 2009 | Con faltantes (2) | 7 de 7 | 2248 / 2255 | 99.7 % | - | MM-Sofi (Mac Mini Sofía) | hace 41 s |
-| 2008 | Compilada completa | 6 de 6 | 2324 / 2340 | 99.3 % | - | IPE01 (Mac Mini oficina) | hace 9 s |
-| 2007 | En pausa (1215 de 3331 docs) | 6 de 6 | 1215 / 3331 | 36.5 % | - | iMac-Sala (iMac de la sala) | hace 13 s |
-| 2006 | Compilada completa | 6 de 6 | 2999 / 3009 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 9 s |
-| 2005 | Compilando | 7 de 7 | 2157 / 2182 | 98.9 % | - | MM-Ali (Mac Mini Alicia) | hace 19 s |
-| 2004 | Sin verificar | por medir | - | - | - | - | - |
+| 2013 | Compilando | 11 de 11 | 2292 / 5271 | 43.5 % | ~04/10 12:33 (04/10 11:38–04/10 13:27) | IPE02 (Mac Mini casa) | hace 13 s |
+| 2014 | En pausa (3664 de 4584 docs) | 13 de 13 | 3664 / 4584 | 79.9 % | - | IPE02 (Mac Mini casa) | hace 13 s |
+| 2015 | Compilada completa | 7 de 7 | 4266 / 4298 | 99.3 % | - | iMac-Sala (iMac de la sala) | hace 5 s |
+| 2016 | Compilada completa | 5 de 5 | 3695 / 4051 | 91.2 % | - | MM-Ali (Mac Mini Alicia) | hace 10 s |
+| 2012 | Compilada completa | 8 de 8 | 3207 / 3211 | 99.9 % | - | IPE02 (Mac Mini casa) | hace 13 s |
+| 2011 | Compilada completa | 6 de 6 | 1564 / 1572 | 99.5 % | - | IPE01 (Mac Mini oficina) | hace 15 s |
+| 2010 | Compilada completa | 6 de 6 | 2927 / 2947 | 99.3 % | - | IPE01 (Mac Mini oficina) | hace 15 s |
+| 2009 | Con faltantes (2) | 7 de 7 | 2248 / 2255 | 99.7 % | - | MM-Sofi (Mac Mini Sofía) | hace 40 s |
+| 2008 | Compilada completa | 6 de 6 | 2324 / 2340 | 99.3 % | - | IPE01 (Mac Mini oficina) | hace 15 s |
+| 2007 | En pausa (1215 de 3331 docs) | 6 de 6 | 1215 / 3331 | 36.5 % | - | iMac-Sala (iMac de la sala) | hace 5 s |
+| 2006 | Compilada completa | 6 de 6 | 2999 / 3009 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 15 s |
+| 2005 | Compilada completa | 7 de 7 | 2157 / 2182 | 98.9 % | - | MM-Ali (Mac Mini Alicia) | hace 10 s |
+| 2004 | Compilando | 6 de 6 | 20 / 1747 | 1.1 % | ~04/10 10:10 (04/10 09:30–04/10 10:51) | IPE01 (Mac Mini oficina) | hace 15 s |
 | 2003 | Sin verificar | por medir | - | - | - | - | - |
 | 2002 | Sin verificar | por medir | - | - | - | - | - |
-| 2001 | Compilada completa | 3 de 3 | 422 / 423 | 99.8 % | - | MM-Ali (Mac Mini Alicia) | hace 19 s |
+| 2001 | Compilada completa | 3 de 3 | 422 / 423 | 99.8 % | - | MM-Ali (Mac Mini Alicia) | hace 10 s |
 
 ## Equipos
 
 | Equipo | Estado | Trabajo | Salud | Dato |
 |---|---|---|---|---|
-| IPE01 (Mac Mini oficina) | en línea | libre | - | hace 9 s |
-| IPE02 (Mac Mini casa) | en línea | vigilante 2013, compilacion 2013 | ok | hace 7 s |
-| MM-Ali (Mac Mini Alicia) | en línea | vigilante 2005 | - | hace 19 s |
-| MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 41 s |
-| MacBook Air | DESCONECTADO | libre | - | hace 7 min |
-| iMac-Sala (iMac de la sala) | en línea | libre | - | hace 13 s |
+| IPE01 (Mac Mini oficina) | en línea | vigilante 2004, compilacion 2004 | ok | hace 15 s |
+| IPE02 (Mac Mini casa) | en línea | vigilante 2013, compilacion 2013 | ok | hace 13 s |
+| MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 10 s |
+| MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 40 s |
+| MacBook Air | DESCONECTADO | libre | - | hace 12 min (viejo) |
+| iMac-Sala (iMac de la sala) | en línea | libre | - | hace 5 s |
 
 ## Incidencias abiertas
 
