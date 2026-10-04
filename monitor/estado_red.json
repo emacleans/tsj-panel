@@ -1,5 +1,5 @@
 {
- "ts": 1791133840,
+ "ts": 1791134156,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,22 +34,29 @@
    "pct": 96.6,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791133789,
+   "actualizado_ts": 1791134132,
    "viejo": false
   },
   {
    "gestion": "2014",
-   "estado": "En pausa (3663 de 4584 docs)",
+   "estado": "Compilando",
    "estado_interno": "incompleta",
    "salas_n": 13,
    "salas_medidas": 13,
-   "docs": 3663,
+   "docs": 3665,
    "total_esperado": 4584,
    "total_completo": true,
-   "pct": 79.9,
-   "eta": null,
+   "pct": 80.0,
+   "eta": {
+    "tasa_min": 0.03,
+    "restantes": 919,
+    "segundos": 1626630,
+    "fin_ts": 1792760762,
+    "fin_min_ts": 1791649691,
+    "fin_max_ts": 1792923425
+   },
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791133789,
+   "actualizado_ts": 1791134132,
    "viejo": false
   },
   {
@@ -58,20 +65,20 @@
    "estado_interno": "incompleta",
    "salas_n": 7,
    "salas_medidas": 7,
-   "docs": 4319,
+   "docs": 4324,
    "total_esperado": 4298,
    "total_completo": true,
    "pct": 100.0,
    "eta": {
     "segundos": 0,
-    "fin_ts": 1791133826,
-    "fin_min_ts": 1791133826,
-    "fin_max_ts": 1791133826,
+    "fin_ts": 1791134142,
+    "fin_min_ts": 1791134142,
+    "fin_max_ts": 1791134142,
     "restantes": 0,
     "tasa_min": 0
    },
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791133826,
+   "actualizado_ts": 1791134142,
    "viejo": false
   },
   {
@@ -86,12 +93,12 @@
    "pct": 91.2,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791133827,
+   "actualizado_ts": 1791134141,
    "viejo": false
   },
   {
    "gestion": "2012",
-   "estado": "Compilando",
+   "estado": "En pausa (3210 de 3211 docs)",
    "estado_interno": "incompleta",
    "salas_n": 8,
    "salas_medidas": 8,
@@ -99,16 +106,9 @@
    "total_esperado": 3211,
    "total_completo": true,
    "pct": 100.0,
-   "eta": {
-    "tasa_min": 0.05,
-    "restantes": 1,
-    "segundos": 1164,
-    "fin_ts": 1791134953,
-    "fin_min_ts": 1791134162,
-    "fin_max_ts": 1791135069
-   },
+   "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791133789,
+   "actualizado_ts": 1791134132,
    "viejo": false
   },
   {
@@ -123,7 +123,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791133832,
+   "actualizado_ts": 1791134150,
    "viejo": false
   },
   {
@@ -138,7 +138,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791133832,
+   "actualizado_ts": 1791134150,
    "viejo": false
   },
   {
@@ -153,7 +153,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791133776,
+   "actualizado_ts": 1791134093,
    "viejo": false
   },
   {
@@ -168,7 +168,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791133832,
+   "actualizado_ts": 1791134150,
    "viejo": false
   },
   {
@@ -183,7 +183,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791133826,
+   "actualizado_ts": 1791134142,
    "viejo": false
   },
   {
@@ -198,22 +198,29 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791133832,
+   "actualizado_ts": 1791134150,
    "viejo": false
   },
   {
    "gestion": "2005",
-   "estado": "Compilada completa",
-   "estado_interno": "completa",
+   "estado": "Compilando",
+   "estado_interno": "incompleta",
    "salas_n": 7,
    "salas_medidas": 7,
-   "docs": 2157,
+   "docs": 2163,
    "total_esperado": 2182,
    "total_completo": true,
-   "pct": 98.9,
-   "eta": null,
+   "pct": 99.1,
+   "eta": {
+    "tasa_min": 0.1,
+    "restantes": 19,
+    "segundos": 11210,
+    "fin_ts": 1791145351,
+    "fin_min_ts": 1791137798,
+    "fin_max_ts": 1791146472
+   },
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791133827,
+   "actualizado_ts": 1791134141,
    "viejo": false
   },
   {
@@ -228,7 +235,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791133832,
+   "actualizado_ts": 1791134150,
    "viejo": false
   },
   {
@@ -243,7 +250,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791133832,
+   "actualizado_ts": 1791134150,
    "viejo": false
   },
   {
@@ -258,7 +265,7 @@
    "pct": 27.1,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791133832,
+   "actualizado_ts": 1791134150,
    "viejo": false
   },
   {
@@ -273,7 +280,7 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791133827,
+   "actualizado_ts": 1791134141,
    "viejo": false
   }
  ],
@@ -404,21 +411,21 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791133826,
+   "ts": 1791134142,
    "version": "d0d1ebf",
    "procesos": [
     {
-     "pid": 74868,
-     "tipo": "recuperacion",
-     "gestion": "2015",
-     "inicio_ts": 1791133319
+     "pid": 79508,
+     "tipo": "auditoria",
+     "gestion": "2018",
+     "inicio_ts": 1791134134
     }
    ],
    "gestiones": {
     "2015": {
      "activo": true,
-     "total_archivos": 4286,
-     "docs_descargados": 4319,
+     "total_archivos": 4289,
+     "docs_descargados": 4324,
      "salas_n": 7,
      "salas_medidas": 7,
      "total_completo": true,
@@ -430,9 +437,9 @@
      "con_faltantes": null,
      "eta": {
       "segundos": 0,
-      "fin_ts": 1791133826,
-      "fin_min_ts": 1791133826,
-      "fin_max_ts": 1791133826,
+      "fin_ts": 1791134142,
+      "fin_min_ts": 1791134142,
+      "fin_max_ts": 1791134142,
       "restantes": 0,
       "tasa_min": 0
      },
@@ -441,8 +448,8 @@
       "limite_30m": 0,
       "fallos_30m": 0,
       "fallos_15m": 0,
-      "fallos_total": 274,
-      "ultimo_movimiento_ts": 1791133803,
+      "fallos_total": 273,
+      "ultimo_movimiento_ts": 1791133868,
       "ultimo_limite_ts": 1791016320,
       "ultima_falla_ts": 1791021712,
       "detalle": ""
@@ -466,24 +473,13 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 13:02:12] --- Iniciando Sala Contenciosa Segunda (Gestión 2015) ---",
-    "[2026-10-04 13:02:16] Sala Contenciosa Segunda: 445 resultados encontrados en el sitio.",
-    "[2026-10-04 13:03:47] Sala Contenciosa Segunda: 10 documentos nuevos guardados, 0 ya existían (índice 13 de 445).",
-    "[2026-10-04 13:03:50] Sala Contenciosa Segunda: sigue revisando (fila 19 de 445; 0 ya existian, 10 nuevos).",
-    "[2026-10-04 13:05:16] Sala Contenciosa Segunda: 20 documentos nuevos guardados, 0 ya existían (índice 33 de 445).",
-    "[2026-10-04 13:05:30] Sala Contenciosa Segunda: sigue revisando (fila 38 de 445; 0 ya existian, 21 nuevos).",
-    "[2026-10-04 13:06:50] Sala Contenciosa Segunda: 30 documentos nuevos guardados, 0 ya existían (índice 49 de 445).",
-    "[2026-10-04 13:07:01] Sala Contenciosa Segunda: sigue revisando (fila 52 de 445; 0 ya existian, 31 nuevos).",
-    "[2026-10-04 13:08:17] Sala Contenciosa Segunda: 40 documentos nuevos guardados, 0 ya existían (índice 63 de 445).",
-    "[2026-10-04 13:08:31] Sala Contenciosa Segunda: sigue revisando (fila 68 de 445; 0 ya existian, 41 nuevos).",
-    "[2026-10-04 13:09:51] Sala Contenciosa Segunda: 50 documentos nuevos guardados, 0 ya existían (índice 81 de 445).",
-    "[2026-10-04 13:10:03] Sala Contenciosa Segunda: sigue revisando (fila 84 de 445; 0 ya existian, 51 nuevos)."
+    "[2026-10-04 13:15:39] AUDITORÍA Sala Penal                : 1111 filas leídas del sitio."
    ]
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791133832,
+   "ts": 1791134150,
    "version": "d0d1ebf",
    "procesos": [
     {
@@ -495,74 +491,87 @@
    ],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-04 13:10:23]   SIN RESOLVER: 2026-10-03-TSJ-AS-1248-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 13:10:23]     diagnóstico: texto embebido 3414 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1248 Sucre, 22 de noviembre de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Rodolfo Chavarría Blas c/ Fondo Complementario de Seguridad Social de Y.P.F.B.. MINISTRO RELATOR: Dr. Juan ",
-    "[2026-10-04 13:10:23]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1248 Sucre, 22 de noviembre de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Rodolfo Chavarría Blas c/ Fondo Complementario de Seguridad Social de Y.P.F.B..\\n\\nMINISTRO RELATOR: Dr. Juan José González Osio.\\",
-    "[2026-10-04 13:10:23]     fechas con formato de fecha halladas en el texto: ['13 de junio de 2005', '5 de agosto de\\n2004', '13 de junio de 2005', '04/10/2026']",
-    "[2026-10-04 13:10:26]   SIN RESOLVER: 2026-10-03-TSJ-AS-1249-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 13:10:26]     diagnóstico: texto embebido 3524 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1249 Sucre, 22 de noviembre de 2.006 DISTRITO: Beni PROCESO: Social. PARTES: Ana del Carmen Aquin Suárez c/ Empresa Hotelera Industrial Agropecuaria y Turística \"ORION\".. MINISTRO RELATO",
-    "[2026-10-04 13:10:26]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1249 Sucre, 22 de noviembre de 2.006\\n\\nDISTRITO: Beni PROCESO: Social.\\n\\nPARTES: Ana del Carmen Aquin Suárez c/ Empresa Hotelera Industrial Agropecuaria y\\nTurística \"ORION\"..\\n\\nMINISTRO RELATOR: Dr. Juan José Go",
-    "[2026-10-04 13:10:26]     fechas con formato de fecha halladas en el texto: ['8 de septiembre de 2005', '6 de julio de\\n2005', '8 de septiembre de 2005', '04/10/2026']",
-    "[2026-10-04 13:10:30]   SIN RESOLVER: 2026-10-03-TSJ-AS-125-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 13:10:30]     diagnóstico: texto embebido 3326 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 125 Sucre, 12 de mayo de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Aldo Arana Díaz c/ Honorable Alcaldía Municipal de La Paz. MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.",
-    "[2026-10-04 13:10:30]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 125\\n\\nSucre, 12 de mayo de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Aldo Arana Díaz c/ Honorable Alcaldía Municipal de La Paz.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++++++++++++",
-    "[2026-10-04 13:10:30]     fechas con formato de fecha halladas en el texto: ['15 de junio de\\n2001', '8 de junio de 1999', '29 de diciembre de 1992', '03/10/2026']"
+    "[2026-10-04 13:15:40]   SIN RESOLVER: 2026-10-03-TSJ-AS-1324-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 13:15:40]     diagnóstico: texto embebido 3542 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1324 Sucre, 22 de noviembre de 2.006 DISTRITO: Santa Cruz PROCESO: Social. PARTES: Marco Joaquín Cerrón Quispe c/ Empresa Metal Atlas. MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérr",
+    "[2026-10-04 13:15:40]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1324\\n\\nSucre, 22 de noviembre de 2.006\\n\\nDISTRITO: Santa Cruz PROCESO: Social.\\n\\nPARTES: Marco Joaquín Cerrón Quispe c/ Empresa Metal Atlas.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n++++++++++",
+    "[2026-10-04 13:15:40]     fechas con formato de fecha halladas en el texto: ['21 de junio de 2005', '13 de octubre\\nde 2004', '29 de diciembre de 1992', '21 de\\njunio de 2005', '04/10/2026']",
+    "[2026-10-04 13:15:44]   SIN RESOLVER: 2026-10-03-TSJ-AS-1325-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 13:15:44]     diagnóstico: texto embebido 3688 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1325 Sucre, 22 de noviembre de 2.006 DISTRITO: Potosí PROCESO: Social. PARTES: Gladys Siacara Martínez c/ EMSER CONSULTORES. MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez. ++++++",
+    "[2026-10-04 13:15:44]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1325\\n\\nSucre, 22 de noviembre de 2.006\\n\\nDISTRITO: Potosí PROCESO: Social.\\n\\nPARTES: Gladys Siacara Martínez c/ EMSER CONSULTORES.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n++++++++++++++++++++",
+    "[2026-10-04 13:15:44]     fechas con formato de fecha halladas en el texto: ['3 de septiembre de 2005', '27 de marzo de 2005', '29 de diciembre\\nde 1992', '3 de septiembre de 2005', '04/10/2026']",
+    "[2026-10-04 13:15:48]   SIN RESOLVER: 2026-10-03-TSJ-AS-1326-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 13:15:48]     diagnóstico: texto embebido 3306 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1326 Sucre, 22 de noviembre de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Marco Antonio Rivero García c/ Empresa \"BATT\". MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez. +++++",
+    "[2026-10-04 13:15:48]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1326\\n\\nSucre, 22 de noviembre de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Marco Antonio Rivero García c/ Empresa \"BATT\".\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++++++++++++++++++",
+    "[2026-10-04 13:15:48]     fechas con formato de fecha halladas en el texto: ['20 de mayo\\nde 2005', '4 de febrero de\\n2003', '20 de mayo de 2005', '04/10/2026']"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791133789,
+   "ts": 1791134132,
    "version": "d0d1ebf",
    "procesos": [
     {
-     "pid": 20887,
-     "tipo": "deteccion",
+     "pid": 24852,
+     "tipo": "recuperacion",
      "gestion": "2014",
-     "inicio_ts": 1791133788
+     "inicio_ts": 1791134053
     }
    ],
    "gestiones": {
-    "2012": {
+    "2014": {
      "activo": true,
-     "total_archivos": 3195,
-     "docs_descargados": 3210,
-     "salas_n": 8,
-     "salas_medidas": 8,
+     "total_archivos": 3652,
+     "docs_descargados": 3665,
+     "salas_n": 13,
+     "salas_medidas": 13,
      "total_completo": true,
-     "total_esperado": 3211,
-     "pct_total": 100.0,
+     "total_esperado": 4584,
+     "pct_total": 80.0,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 0.05,
-      "restantes": 1,
-      "segundos": 1164,
-      "fin_ts": 1791134953,
-      "fin_min_ts": 1791134162,
-      "fin_max_ts": 1791135069
+      "tasa_min": 0.03,
+      "restantes": 919,
+      "segundos": 1626630,
+      "fin_ts": 1792760762,
+      "fin_min_ts": 1791649691,
+      "fin_max_ts": 1792923425
      },
      "salud": {
       "estado": "ok",
       "limite_30m": 0,
       "fallos_30m": 0,
       "fallos_15m": 0,
-      "fallos_total": 90,
-      "ultimo_movimiento_ts": 1791133628,
-      "ultimo_limite_ts": 1791074630,
-      "ultima_falla_ts": 1791075473,
+      "fallos_total": 356,
+      "ultimo_movimiento_ts": 1791134128,
+      "ultimo_limite_ts": 1790988094,
+      "ultima_falla_ts": 1790988812,
       "detalle": ""
      }
     }
    },
-   "ultimas_lineas": []
+   "ultimas_lineas": [
+    "[2026-10-04 13:14:51] Sala Contenciosa Primera: la fila #70 ('AS/0070/2014') entregó un PDF idéntico a «2014-04-30-TSJ-AS-70-SCA1.pdf», que ya existe: se descarta.",
+    "[2026-10-04 13:14:51] --- Sala Contenciosa Primera terminada: 1 nuevos, 1 ya existentes. Archivos totales ahora en la carpeta: 549 (el sitio reporta 549 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-04 13:14:51] --- Iniciando Sala Contenciosa Segunda (Gestión 2014) ---",
+    "[2026-10-04 13:14:55] Sala Contenciosa Segunda: 389 resultados encontrados en el sitio.",
+    "[2026-10-04 13:15:06] Sala Contenciosa Segunda: la fila #81 ('AS/0072/2014') entregó un PDF idéntico a «2026-10-02-TSJ-SINID-_SCA2_81-SCA2.pdf», que ya existe: se descarta.",
+    "[2026-10-04 13:15:06] --- Sala Contenciosa Segunda terminada: 0 nuevos, 1 ya existentes. Archivos totales ahora en la carpeta: 388 (el sitio reporta 389 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-04 13:15:06] --- Iniciando Sala Penal Liquidadora (Gestión 2014) ---",
+    "[2026-10-04 13:15:09] Sala Penal Liquidadora: 611 resultados encontrados en el sitio.",
+    "[2026-10-04 13:15:09] Sala Penal Liquidadora: 1 filas ya estan guardadas en _revisar (pendientes de corregir): no se vuelven a descargar.",
+    "[2026-10-04 13:15:15] Sala Penal Liquidadora: la fila #147 ('AS/0168/2014') entregó un PDF idéntico a «2014-07-04-TSJ-AS-154-SPLIQ.pdf», que ya existe: se descarta.",
+    "[2026-10-04 13:15:21] Sala Penal Liquidadora: la fila #148 ('AS/0169/2014') entregó un PDF idéntico a «2014-07-04-TSJ-AS-156-SPLIQ.pdf», que ya existe: se descarta.",
+    "[2026-10-04 13:15:28] Sala Penal Liquidadora: la fila #199 ('AS/0259/2014') entregó un PDF idéntico a «2014-09-03-TSJ-AS-214-SPLIQ.pdf», que ya existe: se descarta."
+   ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791133456,
+   "ts": 1791134149,
    "version": "d0d1ebf",
    "procesos": [
     {
@@ -578,29 +587,70 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791133827,
+   "ts": 1791134141,
    "version": "d0d1ebf",
-   "procesos": [],
-   "gestiones": {},
+   "procesos": [
+    {
+     "pid": 32316,
+     "tipo": "recuperacion",
+     "gestion": "2005",
+     "inicio_ts": 1791133930
+    }
+   ],
+   "gestiones": {
+    "2005": {
+     "activo": true,
+     "total_archivos": 2047,
+     "docs_descargados": 2163,
+     "salas_n": 7,
+     "salas_medidas": 7,
+     "total_completo": true,
+     "total_esperado": 2182,
+     "pct_total": 99.1,
+     "estado": "compilando",
+     "estado_texto": "Compilando",
+     "termino_con_exito": false,
+     "con_faltantes": null,
+     "eta": {
+      "tasa_min": 0.1,
+      "restantes": 19,
+      "segundos": 11210,
+      "fin_ts": 1791145351,
+      "fin_min_ts": 1791137798,
+      "fin_max_ts": 1791146472
+     },
+     "salud": {
+      "estado": "ok",
+      "limite_30m": 0,
+      "fallos_30m": 0,
+      "fallos_15m": 0,
+      "fallos_total": 57,
+      "ultimo_movimiento_ts": 1791134127,
+      "ultimo_limite_ts": 1791070072,
+      "ultima_falla_ts": 1791096721,
+      "detalle": ""
+     }
+    }
+   },
    "ultimas_lineas": [
-    "Copias del mismo documento con otro sello de impresión, apartadas en _revisar/_descartados_copias: 0",
-    "BARRIDO: año de la fecha corregido (error de año del TSJ en la fecha): 0",
-    "BARRIDO: número leído como el día de la fecha, corregido: 0",
-    "Números con dígito de más (barra leída como dígito) corregidos en archivos ya nombrados: 0",
-    "Año del número inconsistente con la fecha, RESUELTOS por arbitraje (vecinos/expediente/Auto de Vista; se quedan en su sala): 0",
-    "Año del número inconsistente con la fecha, SIN resolver (evidencia insuficiente o contradictoria; NO movidos, revisar a mano): 0",
-    "Identificados solo gracias al respaldo de OCR (no tenían ninguna capa de texto): 0",
-    "Siguen siendo EXP- (sin numero de AS reconocible): 0",
-    "   de ellos: dicen «Auto Supremo» pero no se lee el número (revisar a mano): 0",
-    "   de ellos: sin texto legible ni siquiera con OCR (escaneos ilegibles, revisar a mano): 0",
-    "Huérfanos de _revisar revisados (pareja ya renombrada): 0",
-    "Huérfanos resueltos y migrados a su Sala: 0"
+    "[2026-10-04 13:13:54] Sala Contenciosa Primera: la fila #282 ('AS/0279-C/2005') entregó un PDF idéntico a «2005-09-27-TSJ-AS-279-C-SCA1.pdf», que ya existe: se descarta.",
+    "[2026-10-04 13:13:54] --- Sala Contenciosa Primera terminada: 3 nuevos, 5 ya existentes. Archivos totales ahora en la carpeta: 376 (el sitio reporta 377 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-04 13:13:54] --- Iniciando Sala Contenciosa Segunda (Gestión 2005) ---",
+    "[2026-10-04 13:13:59] Sala Contenciosa Segunda: 110 resultados encontrados en el sitio.",
+    "[2026-10-04 13:13:59] Sala Contenciosa Segunda: 108 filas ya estan guardadas en _revisar (pendientes de corregir): no se vuelven a descargar.",
+    "[2026-10-04 13:14:17] Sala Contenciosa Segunda: la fila #41 ('AS/0043/2005') entregó un PDF idéntico a «2026-10-03-TSJ-AS-43-SCA2.pdf», que ya existe: se descarta.",
+    "[2026-10-04 13:14:55] Sala Contenciosa Segunda: la fila #50 ('AS/0051/2005') entregó un PDF idéntico a «2026-10-03-TSJ-AS-51-SCA2.pdf», que ya existe: se descarta.",
+    "[2026-10-04 13:15:11] --- Sala Contenciosa Segunda terminada: 2 nuevos, 2 ya existentes. Archivos totales ahora en la carpeta: 0 (el sitio reporta 110 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-04 13:15:11] --- Iniciando Sala Penal 1 (Gestión 2005) ---",
+    "[2026-10-04 13:15:14] Sala Penal 1: 541 resultados encontrados en el sitio.",
+    "[2026-10-04 13:15:21] Sala Penal 1: la fila #110 ('AS/0112/2005') entregó un PDF idéntico a «2005-05-16-TSJ-AS-155-SP1.pdf», que ya existe: se descarta.",
+    "[2026-10-04 13:15:27] Sala Penal 1: la fila #285 ('AS/0287/2005') entregó un PDF idéntico a «2005-08-18-TSJ-AS-287-SP1.pdf», que ya existe: se descarta."
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791133776,
+   "ts": 1791134093,
    "version": "d0d1ebf",
    "procesos": [],
    "gestiones": {},
