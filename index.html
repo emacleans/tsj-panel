@@ -275,6 +275,7 @@
         <li class="modo"><label><input type="radio" name="m-barrido" value="sim" checked> Simulación</label><label><input type="radio" name="m-barrido" value="real"> Aplicar de verdad</label></li>
         <li class="modo"><label><input type="radio" name="a-barrido" value="esta" checked> Esta gestión</label><label><input type="radio" name="a-barrido" value="todas"> Todas las gestiones de este equipo</label></li>
         <li><button class="paso" data-accion="fechar"><span class="num">5</span><span><div class="titulo">Fechar archivos de _revisar</div><div class="desc">Paso previo al cotejo: les pones a mano la fecha a los documentos que el script no pudo fechar, y pasan a su sala.</div></span></button></li>
+        <li><button class="paso" data-accion="noas"><span class="num">5b</span><span><div class="titulo">Revisar _no_AS</div><div class="desc">Abre el revisor de los documentos que el sistema apartó por no parecer Autos Supremos (Decretos, Resoluciones, PDF en blanco…). «Confirmar descarte» o, si el sistema se equivocó, «Es AS» con número y fecha: el sistema aprende de lo que corriges.</div></span></button></li>
         <li><button class="paso" data-accion="cotejar"><span class="num">6</span><span><div class="titulo">Cotejar duplicados</div><div class="desc">Abre la pantalla de cotejo en el equipo elegido (necesita ver los PDF, así que se usa desde ese mismo equipo).</div></span></button></li>
         <li><button class="paso" data-accion="auditar"><span class="num">7</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Paso final antes del cierre: compara la lista completa del sitio (sin descargar PDF) con tus carpetas y dice qué AS faltan.</div></span></button></li>
         <li><button class="paso" data-accion="recuperar"><span class="num">8</span><span><div class="titulo">Recuperar faltantes</div><div class="desc">Después de auditar: vuelve a bajar del sitio solo los AS que faltan (los iguales a los que ya tienes se descartan solos; los distintos van a «Cotejar duplicados»). Luego audita otra vez.</div></span></button></li>
@@ -320,7 +321,7 @@
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
 const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
-const NOMBRE_ACCION = { fechar: 'Fechar archivos de _revisar', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
+const NOMBRE_ACCION = { fechar: 'Fechar archivos de _revisar', noas: 'Revisar _no_AS', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre',
   barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)',
   releer_sim: 'Releer pendientes (simulación)', releer_real: 'Releer pendientes (real)' };
@@ -404,7 +405,10 @@ function elegir(g) {
 // a los data-accion de los botones correspondientes en el menú "Acciones" (puede ser más de uno: "revisar"
 // y "detectar" marcan también el botón combinado "releer", que hace lo mismo encadenado). "manual" no tiene
 // botón: solo se puede resolver revisando el archivo a mano (ya se explica con texto en la tarjeta de cierre).
-const ACCION_A_PASO = { barrido: ['barrido'], detectar: ['detectar', 'releer'], cotejar: ['cotejar'], revisar: ['corregir', 'releer'], recuperar: ['recuperar'] };
+const ACCION_A_PASO = { barrido: ['barrido'], detectar: ['detectar', 'releer'], cotejar: ['cotejar'], noas: ['noas'], revisar: ['corregir', 'releer'], recuperar: ['recuperar'] };
+
+// Pantallas locales que abre el agente en el equipo elegido (solo se ven desde ese mismo equipo).
+const LOCAL_UI = { fechar: { url: 'http://localhost:8745', nombre: '«Fechar archivos»' }, cotejar: { url: 'http://localhost:8743', nombre: 'el cotejo' }, noas: { url: 'http://localhost:8747', nombre: 'el revisor de _no_AS' } };
 
 function pendienteGestion(el) {
   const v = el && el.av && el.av.auditoria && el.av.auditoria.veredicto;
@@ -663,11 +667,11 @@ document.addEventListener('click', ev => {
 // Etapas: 1 Compilación -> 2 Revisión automática -> 3 Tu revisión (único tramo manual) -> 4 Cierre.
 const NOTAS_GUIA = {};   // tipo de tarea -> nota que Enrique está escribiendo (sobrevive al redibujo)
 const ETAPAS_GUIA = ['Compilación', 'Revisión automática', 'Tu revisión', 'Cierre'];
-const ORDEN_TAREA = ['revisar', 'cotejar', 'exp', 'recuperar', 'manual'];
+const ORDEN_TAREA = ['revisar', 'cotejar', 'noas', 'exp', 'recuperar', 'manual'];
 
 // Lo que solo una persona puede juzgar. La auditoría nueva lo dice en «ackable»; las antiguas se deducen por el texto.
 const aceptable = a => a.ackable !== undefined ? !!a.ackable : (a.id === 'revisar' || a.id === 'recuperar' || a.id === 'manual' || (a.id === 'detectar' && /EXP-/.test(a.texto || '')));
-const esTareaTuya = a => aceptable(a) || a.id === 'cotejar';
+const esTareaTuya = a => aceptable(a) || a.id === 'cotejar' || a.id === 'noas';
 const tipoTarea = a => a.id === 'detectar' ? 'exp' : a.id;
 function agruparTareas(acciones) {
   const m = {};
@@ -701,7 +705,7 @@ function estadoGuia(g, esActual) {
   let cache = REVISION_MANUAL_CACHE[g];
   if (esActual) cargarRevisionManual(g);
   if (cache === undefined) { if (esActual) return { ...base, fase: 'cargando', etapa: 2 }; cache = {}; }
-  const tareas = agruparTareas(acciones).map(t => ({ ...t, hecha: t.tipo !== 'cotejar' && t.claves.every(c => (cache[c] || {}).resuelto) }));
+  const tareas = agruparTareas(acciones).map(t => ({ ...t, hecha: t.tipo !== 'cotejar' && t.tipo !== 'noas' && t.claves.every(c => (cache[c] || {}).resuelto) }));
   const pend = tareas.filter(t => !t.hecha);
   if (pend.length) return { ...base, fase: 'turno', etapa: 2, tareas, pend, hechas: tareas.filter(t => t.hecha), cache };
   return { ...base, fase: 'validar', etapa: 3, acciones, tareas, cache };
@@ -743,6 +747,13 @@ function cuerpoTarea(t, st) {
       <ol class="g-pasos"><li>Pulsa «Abrir el cotejo»: se abre la pantalla en <b>${eq}</b> (hazlo estando en ese equipo).</li><li>Compara cada par y decide cuál se conserva.</li><li>Vuelve aquí y pulsa «Ya terminé».</li></ol>
       <div class="g-ctrl">${gBtn('cotejar', 'Abrir el cotejo', '', eid)}${aud}</div>` };
   }
+  if (t.tipo === 'noas') {
+    const arc = a0.archivos || [], n = a0.cantidad || arc.length;
+    return { titulo: `Revisar ${n || 'los'} documento(s) que el sistema apartó por no parecer Autos Supremos`,
+      html: `<p>Son Decretos, Resoluciones, PDF en blanco u otros que no dicen «Auto Supremo». Tú decides, uno por uno (o por grupos del mismo tipo): <b>Confirmar descarte</b> si de verdad no son un AS, o <b>Es AS</b> si el sistema se equivocó (pones número, fecha y sala). Lo que corriges, el sistema lo aprende.</p>${listaCorta(arc)}
+      <ol class="g-pasos"><li>Pulsa «Abrir el revisor de _no_AS»: se abre la pantalla en <b>${eq}</b> (hazlo estando en ese equipo).</li><li>Revisa cada documento y decide.</li><li>Vuelve aquí y pulsa «Ya terminé».</li></ol>
+      <div class="g-ctrl">${gBtn('noas', 'Abrir el revisor de _no_AS', '', eid)}${aud}</div>` };
+  }
   if (t.tipo === 'exp') {
     const arc = a0.archivos || [];
     return { titulo: `${arc.length || 'Varios'} archivo(s) con nombre provisional (EXP-)`,
@@ -769,8 +780,8 @@ function ordenGuiaHtml(g) {
   if (!e) return '';
   const r = e.orden && e.orden.seq === pendiente.seq ? e.orden : null, nom = NOMBRE_ACCION[pendiente.accion] || pendiente.accion;
   if (!r) return `<div class="g-orden">⏳ Orden enviada a ${esc(e.nombre)} (${esc(nom)}) — esperando respuesta…${enLinea(e) ? '' : ' El equipo está desconectado; se ejecuta al reconectarse (máx. 30 min).'}</div>`;
-  const link = r.ok && (pendiente.accion === 'fechar' || pendiente.accion === 'cotejar')
-    ? ` <a href="${pendiente.accion === 'fechar' ? 'http://localhost:8745' : 'http://localhost:8743'}" target="_blank">→ Abrir ${pendiente.accion === 'fechar' ? '«Fechar archivos»' : 'el cotejo'}</a> <span class="g-o">(solo funciona en ${esc(e.nombre.split(' (')[0])})</span>` : '';
+  const link = r.ok && (pendiente.accion in LOCAL_UI)
+    ? ` <a href="${LOCAL_UI[pendiente.accion].url}" target="_blank">→ Abrir ${LOCAL_UI[pendiente.accion].nombre}</a> <span class="g-o">(solo funciona en ${esc(e.nombre.split(' (')[0])})</span>` : '';
   return `<div class="g-orden ${r.ok ? 'ok' : 'mal'}">${r.ok ? '✓' : '✗'} ${esc(nom)} en ${esc(e.nombre)}: ${esc(r.mensaje)}${link}</div>`;
 }
 
@@ -958,7 +969,7 @@ function renderOrden() {
   if (r) {
     box.className = r.ok ? 'ok' : 'mal';
     box.textContent = (r.ok ? '✓ ' : '✗ ') + NOMBRE_ACCION[pendiente.accion] + ' en ' + e.nombre + ': ' + r.mensaje;
-    if (r.ok && (pendiente.accion === 'cotejar' || pendiente.accion === 'fechar')) { const a = document.createElement('a'); a.href = pendiente.accion === 'fechar' ? 'http://localhost:8745' : 'http://localhost:8743'; a.target = '_blank'; a.textContent = pendiente.accion === 'fechar' ? ' → Abrir «Fechar archivos»' : ' → Abrir el cotejo'; a.style.fontWeight = '700'; box.appendChild(a); }
+    if (r.ok && (pendiente.accion in LOCAL_UI)) { const a = document.createElement('a'); a.href = LOCAL_UI[pendiente.accion].url; a.target = '_blank'; a.textContent = ' → Abrir ' + LOCAL_UI[pendiente.accion].nombre; a.style.fontWeight = '700'; box.appendChild(a); }
   } else {
     box.className = '';
     box.textContent = '⏳ Orden enviada a ' + (e ? e.nombre : pendiente.eid) + ' (' + NOMBRE_ACCION[pendiente.accion] + ', gestión ' + pendiente.g + ')' +
