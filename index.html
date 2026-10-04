@@ -683,10 +683,12 @@ function estadoGuia(g, esActual) {
   if ((e.cierres || {})[g]) return { ...base, fase: 'cerrada', etapa: 4 };
   if (!enLinea(e)) return { ...base, fase: 'desconectado', etapa: av.termino_con_exito ? 1 : 0 };
   const procs = (e.procesos || []).filter(p => p.gestion === g);
-  if (procs.length || av.activo) {
+  const enCurso = (e.releer_en_curso || []).includes(g), enCola = (e.releer_pendiente || []).includes(g);
+  if (procs.length || av.activo || enCurso) {
     const compila = av.activo || procs.some(p => ['compilacion', 'vigilante', 'fase0', 'verificacion'].includes(p.tipo));
-    return { ...base, fase: 'trabaja', etapa: compila ? 0 : 1, procs };
+    return { ...base, fase: 'trabaja', etapa: compila ? 0 : 1, procs, enCurso };
   }
+  if (enCola) return { ...base, fase: 'en_cola', etapa: av.activo ? 0 : 1 };   // arranca sola en cuanto el equipo no compile
   if (!v) return { ...base, fase: av.termino_con_exito ? 'lanzar' : 'reanudar', etapa: av.termino_con_exito ? 1 : 0 };
   if (v.estado === 'en_curso') return { ...base, fase: 'en_curso', etapa: 0 };
   const acciones = v.acciones || [];
@@ -796,15 +798,18 @@ function renderGuia() {
       clase = 'aviso'; tit = `⏸ ${nom} está desconectado`; cuerpo = `<p>No se puede avanzar hasta que ese equipo se reconecte (último dato ${esc(hace(st.e.ts))}). Aquí no hay nada que hacer salvo esperar o encender el equipo.</p>`; break;
     case 'trabaja':
       clase = 'trabaja'; tit = '⏳ El sistema está trabajando — no tienes que hacer nada';
-      cuerpo = `<p>En ${nom}: ${st.procs.length ? esc(st.procs.map(p => ETIQUETA[p.tipo] || p.tipo).join(' · ')) : 'compilando'}. Esta pantalla se actualiza sola y, cuando sea tu turno, aparecerá aquí lo que debes hacer.</p>${etaHtml(st.e, st.av)}`; break;
+      cuerpo = `<p>En ${nom}: ${st.procs.length ? esc(st.procs.map(p => ETIQUETA[p.tipo] || p.tipo).join(' · ')) : (st.enCurso ? 'revisión automática en marcha' : 'compilando')}. Esta pantalla se actualiza sola y, cuando sea tu turno, aparecerá aquí lo que debes hacer.</p>${etaHtml(st.e, st.av)}`; break;
     case 'en_curso':
       clase = 'trabaja'; tit = 'Gestión del año en curso'; cuerpo = '<p>Una gestión del año en curso no se cierra hasta que termine el año; se sigue recompilando. No tienes nada que hacer aquí.</p>'; break;
+    case 'en_cola':
+      clase = 'trabaja'; tit = '⏳ La revisión automática arranca sola — no tienes que hacer nada';
+      cuerpo = `<p>En cuanto ${nom} no tenga ninguna compilación en curso, el sistema corrige, audita contra el sitio y recupera lo que falte de la gestión ${esc(g)}. Esta tarjeta te avisará cuando sea tu turno.</p>`; break;
     case 'reanudar':
       tit = 'La compilación no terminó y no hay nada corriendo';
       cuerpo = `<p>${nom} no está compilando la gestión ${esc(g)} ahora mismo. Pulsa para retomarla donde quedó.</p><div class="g-ctrl">${gBtn('iniciar', 'Reanudar compilación', '', eid)}</div>`; break;
     case 'lanzar':
       tit = st.vieja ? 'Hace falta una revisión automática actualizada' : 'Siguiente: revisión automática';
-      cuerpo = `<p>El sistema corrige solo lo que puede (archivos sin identificar, nombres provisionales), audita contra el sitio y vuelve a bajar lo que falte. Tarda unos minutos y <b>no arranca sola</b>: pulsa el botón. Al terminar, esta tarjeta te dirá si queda algo para ti.</p><div class="g-ctrl">${gBtn('releer', 'Ejecutar revisión automática', '', eid)}</div>`; break;
+      cuerpo = `<p>El sistema corrige solo lo que puede (archivos sin identificar, nombres provisionales), audita contra el sitio y vuelve a bajar lo que falte. Tarda unos minutos y Normalmente <b>arranca sola</b> en cuanto el equipo no tiene compilaciones en curso; si estás viendo esto es que no pudo arrancar sola (por ejemplo, ya lo intentó 3 veces hoy): pulsa el botón. Al terminar, esta tarjeta te dirá si queda algo para ti.</p><div class="g-ctrl">${gBtn('releer', 'Ejecutar revisión automática', '', eid)}</div>`; break;
     case 'sistema_pendiente': {
       const barr = st.sistema.some(a => a.id === 'barrido');
       tit = barr ? 'Falta pasar el barrido general' : 'El sistema aún tiene algo por resolver solo';
