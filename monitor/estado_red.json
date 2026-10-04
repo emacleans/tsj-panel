@@ -1,5 +1,5 @@
 {
- "ts": 1791114189,
+ "ts": 1791114228,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -33,15 +33,15 @@
    "total_completo": true,
    "pct": 68.0,
    "eta": {
-    "tasa_min": 4.95,
+    "tasa_min": 4.83,
     "restantes": 1685,
-    "segundos": 20422,
-    "fin_ts": 1791134560,
-    "fin_min_ts": 1791132518,
-    "fin_max_ts": 1791137005
+    "segundos": 20929,
+    "fin_ts": 1791135130,
+    "fin_min_ts": 1791133037,
+    "fin_max_ts": 1791139103
    },
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791114137,
+   "actualizado_ts": 1791114200,
    "viejo": false
   },
   {
@@ -56,7 +56,7 @@
    "pct": 79.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791114137,
+   "actualizado_ts": 1791114200,
    "viejo": false
   },
   {
@@ -71,7 +71,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791114141,
+   "actualizado_ts": 1791114207,
    "viejo": false
   },
   {
@@ -101,7 +101,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791114137,
+   "actualizado_ts": 1791114200,
    "viejo": false
   },
   {
@@ -116,7 +116,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791114173,
+   "actualizado_ts": 1791114204,
    "viejo": false
   },
   {
@@ -131,7 +131,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791114173,
+   "actualizado_ts": 1791114204,
    "viejo": false
   },
   {
@@ -146,7 +146,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791114141,
+   "actualizado_ts": 1791114204,
    "viejo": false
   },
   {
@@ -161,7 +161,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791114173,
+   "actualizado_ts": 1791114204,
    "viejo": false
   },
   {
@@ -175,15 +175,15 @@
    "total_completo": true,
    "pct": 70.2,
    "eta": {
-    "tasa_min": 4.98,
+    "tasa_min": 4.87,
     "restantes": 993,
-    "segundos": 11952,
-    "fin_ts": 1791126093,
-    "fin_min_ts": 1791124898,
-    "fin_max_ts": 1791128220
+    "segundos": 12233,
+    "fin_ts": 1791126440,
+    "fin_min_ts": 1791125217,
+    "fin_max_ts": 1791129540
    },
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791114141,
+   "actualizado_ts": 1791114207,
    "viejo": false
   },
   {
@@ -198,7 +198,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791114173,
+   "actualizado_ts": 1791114204,
    "viejo": false
   },
   {
@@ -219,7 +219,7 @@
   {
    "gestion": "2004",
    "estado": "Compilando",
-   "estado_interno": "activa",
+   "estado_interno": "incompleta",
    "salas_n": 6,
    "salas_medidas": 6,
    "docs": 1742,
@@ -227,15 +227,15 @@
    "total_completo": true,
    "pct": 99.7,
    "eta": {
-    "tasa_min": 6.93,
+    "tasa_min": 6.82,
     "restantes": 5,
     "segundos": 43,
-    "fin_ts": 1791114216,
-    "fin_min_ts": 1791114212,
-    "fin_max_ts": 1791114220
+    "fin_ts": 1791114248,
+    "fin_min_ts": 1791114244,
+    "fin_max_ts": 1791114253
    },
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791114173,
+   "actualizado_ts": 1791114204,
    "viejo": false
   },
   {
@@ -286,10 +286,6 @@
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791002366,
-   "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 01:08"
-  },
   {
    "ts": 1791006185,
    "texto": "inicia 2009 en MM-Sofi (Mac Mini Sofía) (sin_empezar; intento 1)"
@@ -405,13 +401,17 @@
   {
    "ts": 1791099916,
    "texto": "inicia 2007 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
+  },
+  {
+   "ts": 1791114225,
+   "texto": "inicia 2004 en IPE01 (Mac Mini oficina) (incompleta; intento 2)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791114141,
+   "ts": 1791114207,
    "version": "e974fd1",
    "procesos": [
     {
@@ -442,12 +442,12 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 4.98,
+      "tasa_min": 4.87,
       "restantes": 993,
-      "segundos": 11952,
-      "fin_ts": 1791126093,
-      "fin_min_ts": 1791124898,
-      "fin_max_ts": 1791128220
+      "segundos": 12233,
+      "fin_ts": 1791126440,
+      "fin_min_ts": 1791125217,
+      "fin_max_ts": 1791129540
      },
      "salud": {
       "estado": "aviso",
@@ -496,28 +496,9 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791114173,
+   "ts": 1791114204,
    "version": "e974fd1",
-   "procesos": [
-    {
-     "pid": 44143,
-     "tipo": "barrido",
-     "gestion": "2004",
-     "inicio_ts": 1791114143
-    },
-    {
-     "pid": 44180,
-     "tipo": "deteccion",
-     "gestion": "2004",
-     "inicio_ts": 1791114158
-    },
-    {
-     "pid": 73018,
-     "tipo": "vigilante",
-     "gestion": "2004",
-     "inicio_ts": 1791098582
-    }
-   ],
+   "procesos": [],
    "gestiones": {
     "2004": {
      "activo": true,
@@ -533,12 +514,12 @@
      "termino_con_exito": true,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 6.93,
+      "tasa_min": 6.82,
       "restantes": 5,
       "segundos": 43,
-      "fin_ts": 1791114216,
-      "fin_min_ts": 1791114212,
-      "fin_max_ts": 1791114220
+      "fin_ts": 1791114248,
+      "fin_min_ts": 1791114244,
+      "fin_max_ts": 1791114253
      },
      "salud": {
       "estado": "ok",
@@ -554,24 +535,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 07:42:35]     fechas con formato de fecha halladas en el texto: ['2 de marzo de 2004', '9 de octubre de 2001', '9 de octubre de 2001', '04/10/2026']",
-    "[2026-10-04 07:42:38]   SIN RESOLVER: 2004-03-16-TSJ-SINID-SCA1_116-SCA1.pdf -> sin numero de AS ni de Expediente reconocible",
-    "[2026-10-04 07:42:38]     diagnóstico: texto embebido 2594 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA Expediente Nº347/00 AUTO SUPRENO Nº 116 - Social Sucre, 16 de marzo de 2004. DISTRITO: Santa Cruz PARTES: Clemente Agreda Pardo c/ Nelly Apaza Fernández. RELATOR: MINISTRO DR.- Carlos Rocha Orosco.",
-    "[2026-10-04 07:42:38]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA\\n\\nExpediente Nº347/00\\n\\nAUTO SUPRENO Nº 116 - Social Sucre, 16 de marzo de 2004.\\n\\nDISTRITO: Santa Cruz\\n\\nPARTES: Clemente Agreda Pardo c/ Nelly Apaza Fernández.\\n\\nRELATOR: MINISTRO DR.- Carlos Rocha Orosco.\\n\\n\\n\\n\\nVIST",
-    "[2026-10-04 07:42:38]     fechas con formato de fecha halladas en el texto: ['16 de marzo de 2004', '16 de marzo de 2004', '04/10/2026']",
-    "[2026-10-04 07:42:38]   OK: 2004-10-06-TSJ-AS-129-SPL.pdf -> Sala Plena/2004-10-06-TSJ-AS-129-SPL.pdf",
-    "[2026-10-04 07:42:38]",
-    "[2026-10-04 07:42:38] === RESUMEN ===",
-    "[2026-10-04 07:42:38] Resueltos y migrados a su Sala: 1 (de los cuales 0 necesitaron OCR)",
-    "[2026-10-04 07:42:38] Conflictos dejados en _revisar como POSIBLE-DUPLICADO: 0",
-    "[2026-10-04 07:42:38] Siguen sin poder identificarse (quedan en _revisar tal cual): 5",
-    "--- detectar_exp_obsoletos.py ---"
+    "Siguen siendo EXP- (sin numero de AS reconocible): 0",
+    "   de ellos: dicen «Auto Supremo» pero no se lee el número (revisar a mano): 0",
+    "   de ellos: sin texto legible ni siquiera con OCR (escaneos ilegibles, revisar a mano): 0",
+    "Huérfanos de _revisar revisados (pareja ya renombrada): 0",
+    "Huérfanos resueltos y migrados a su Sala: 0",
+    "Barrido de 2004 registrado (v3). Repite «Auditar contra el sitio» para esta gestión.",
+    "=== RESUMEN DEL BARRIDO GENERAL ===",
+    "  2004: completo",
+    "[2026-10-04 07:43:18] Corrección automática terminada. Lo que quede en _revisar como",
+    "[2026-10-04 07:43:18] -POSIBLE-DUPLICADO ya necesita tu revisión visual (opción 'Cotejar",
+    "[2026-10-04 07:43:18] duplicados' del panel). El vigilante se detiene, no hace falta reiniciar de nuevo.",
+    "[2026-10-04 07:43:18] Vigilante detenido."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791114137,
+   "ts": 1791114200,
    "version": "e974fd1",
    "procesos": [
     {
@@ -602,12 +583,12 @@
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 4.95,
+      "tasa_min": 4.83,
       "restantes": 1685,
-      "segundos": 20422,
-      "fin_ts": 1791134560,
-      "fin_min_ts": 1791132518,
-      "fin_max_ts": 1791137005
+      "segundos": 20929,
+      "fin_ts": 1791135130,
+      "fin_min_ts": 1791133037,
+      "fin_max_ts": 1791139103
      },
      "salud": {
       "estado": "aviso",
@@ -684,7 +665,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791114141,
+   "ts": 1791114204,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {},
