@@ -377,8 +377,6 @@ document.addEventListener('click', async ev => {
 });
 function setHtmlKeep(el, html) {
   if (el._h === html) return;
-  const act = document.activeElement;   // no redibujar mientras el usuario tiene un menú (select) abierto: lo cerraría
-  if (act && act.tagName === 'SELECT' && el.contains(act)) return;
   const y = window.scrollY, prev = {};
   el.querySelectorAll('[data-scroll]').forEach(n => { prev[n.dataset.scroll] = { top: n.scrollTop, fin: n.scrollTop + n.clientHeight >= n.scrollHeight - 12 }; });
   el.innerHTML = html; el._h = html;
@@ -442,7 +440,6 @@ function elegir(g) {
 const ACCION_A_PASO = { barrido: ['barrido'], detectar: ['detectar', 'releer'], cotejar: ['cotejar'], noas: ['noas'], revisar: ['corregir', 'releer'], recuperar: ['recuperar'] };
 
 // Pantallas locales que abre el agente en el equipo elegido (solo se ven desde ese mismo equipo).
-function urlLocalUI(accion, msg) { const m = /(http:\/\/[\d.]+:\d+)/.exec(msg || ''); return m ? m[1] : LOCAL_UI[accion].url; }
 const LOCAL_UI = { fechar: { url: 'http://localhost:8745', nombre: '«Fechar archivos»' }, cotejar: { url: 'http://localhost:8743', nombre: 'el cotejo' }, noas: { url: 'http://localhost:8747', nombre: 'el revisor de _no_AS' } };
 
 function pendienteGestion(el) {
@@ -835,7 +832,7 @@ function ordenGuiaHtml(g) {
   const r = e.orden && e.orden.seq === pendiente.seq ? e.orden : null, nom = NOMBRE_ACCION[pendiente.accion] || pendiente.accion;
   if (!r) return `<div class="g-orden">⏳ Orden enviada a ${esc(e.nombre)} (${esc(nom)}) — esperando respuesta…${enLinea(e) ? '' : ' El equipo está desconectado; se ejecuta al reconectarse (máx. 30 min).'}</div>`;
   const link = r.ok && (pendiente.accion in LOCAL_UI)
-    ? ` <a href="${urlLocalUI(pendiente.accion, r.mensaje)}" target="_blank">→ Abrir ${LOCAL_UI[pendiente.accion].nombre}</a> <span class="g-o">${/http:\/\/[\d.]+:/.test(r.mensaje || '') ? '(funciona desde cualquier equipo de la misma red que ' + esc(e.nombre.split(' (')[0]) + ')' : '(solo funciona en ' + esc(e.nombre.split(' (')[0]) + ')'}</span>` : '';
+    ? ` <a href="${LOCAL_UI[pendiente.accion].url}" target="_blank">→ Abrir ${LOCAL_UI[pendiente.accion].nombre}</a> <span class="g-o">(solo funciona en ${esc(e.nombre.split(' (')[0])})</span>` : '';
   return `<div class="g-orden ${r.ok ? 'ok' : 'mal'}">${r.ok ? '✓' : '✗'} ${esc(nom)} en ${esc(e.nombre)}: ${esc(r.mensaje)}${link}</div>`;
 }
 
@@ -1017,7 +1014,6 @@ function renderAvance() {
 
 function renderDestino() {
   const sel = $('sel-destino');
-  if (document.activeElement === sel) return;   // menú abierto: no tocarlo
   const previo = sel.value;
   const html = equipos.map(e => `<option value="${esc(e.id)}">${esc(e.nombre)}${enLinea(e) ? '' : ' (desconectado)'}</option>`).join('');
   if (html !== sel.dataset.html) { sel.innerHTML = html; sel.dataset.html = html; }
@@ -1037,7 +1033,7 @@ function renderOrden() {
   if (r) {
     box.className = r.ok ? 'ok' : 'mal';
     box.textContent = (r.ok ? '✓ ' : '✗ ') + NOMBRE_ACCION[pendiente.accion] + ' en ' + e.nombre + ': ' + r.mensaje;
-    if (r.ok && (pendiente.accion in LOCAL_UI)) { const a = document.createElement('a'); a.href = urlLocalUI(pendiente.accion, r.mensaje); a.target = '_blank'; a.textContent = ' → Abrir ' + LOCAL_UI[pendiente.accion].nombre; a.style.fontWeight = '700'; box.appendChild(a); }
+    if (r.ok && (pendiente.accion in LOCAL_UI)) { const a = document.createElement('a'); a.href = LOCAL_UI[pendiente.accion].url; a.target = '_blank'; a.textContent = ' → Abrir ' + LOCAL_UI[pendiente.accion].nombre; a.style.fontWeight = '700'; box.appendChild(a); }
   } else {
     box.className = '';
     box.textContent = '⏳ Orden enviada a ' + (e ? e.nombre : pendiente.eid) + ' (' + NOMBRE_ACCION[pendiente.accion] + ', gestión ' + pendiente.g + ')' +
@@ -1313,7 +1309,7 @@ function renderTcp() {
       cuerpo = `${ps || '<div class="e-trabajo">Sin procesos TCP en curso.</div>'}
         <div class="e-meta">Descargados aquí: ${tcpNum((t.ok || 0) + (t.ocr || 0) + (t.revisar || 0) + (t.duplicado || 0))} · ritmo ${t.ritmo_min ? t.ritmo_min.toFixed(1) + ' /min' : '—'} · escaneos pendientes ${t.ocr_pendientes || 0} · por revisar ${t.revisar_n || 0}${t.error ? ' · con error ' + t.error : ''}${t.ultimo_ts ? ' · último doc hace ' + haceCuanto(t.ultimo_ts) : ''}</div>
         ${c ? `<div class="e-meta">Última conciliación (${esc((c.ts || '').replace('T', ' '))}): plan ${tcpNum(c.plan)} · ok ${tcpNum(c.ok)} · faltan ${tcpNum(c.faltan)} · por revisar ${tcpNum((c.revisar || 0) + (c.ocr || 0))} · errores ${tcpNum(c.error)} · sin archivo ${c.sin_archivo} · huérfanos ${c.huerfanos}</div>` : ''}
-        ${(t.log || []).length ? `<details class="cmp" data-k="tcplog-${esc(e.id)}"${ABIERTOS.has('tcplog-' + e.id) ? ' open' : ''}><summary>Registro reciente</summary><div class="t-log" data-scroll="tcplog-${esc(e.id)}">${esc((t.log || []).join('\n'))}</div></details>` : ''}`;
+        ${(t.log || []).length ? `<details class="cmp"><summary>Registro reciente</summary><div class="t-log" data-scroll="tcplog-${esc(e.id)}">${esc((t.log || []).join('\n'))}</div></details>` : ''}`;
     }
     return `<div class="equipo ${on ? 'on' : 'off'}"><div style="display:flex;gap:8px;align-items:center"><span class="punto"></span><b>${esc(e.nombre)}</b><span class="e-estado">${on ? 'en línea' : 'desconectado hace ' + haceCuanto(e.ts)}</span></div>${cuerpo}</div>`;
   }).join('');
@@ -1357,7 +1353,7 @@ function renderTcp() {
     </div>
     ${pendHtml}
     ${ord}
-    <details class="cmp" style="margin-top:12px" data-k="tcp-todas"${ABIERTOS.has('tcp-todas') ? ' open' : ''}><summary>Todas las acciones del TCP</summary>
+    <details class="cmp" style="margin-top:12px"><summary>Todas las acciones del TCP</summary>
       <div class="t-btns" style="margin-top:8px">
         <button type="button" class="g-btn" data-tcp-accion="tcp_iniciar"${dis}>▶ Compilar / reanudar gestión</button>
         <button type="button" class="g-btn sec" data-tcp-accion="tcp_conciliar"${dis}>Conciliar la gestión elegida</button>
