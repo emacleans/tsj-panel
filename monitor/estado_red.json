@@ -1,5 +1,5 @@
 {
- "ts": 1791097798,
+ "ts": 1791098113,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -28,20 +28,20 @@
    "estado_interno": "activa",
    "salas_n": 11,
    "salas_medidas": 11,
-   "docs": 2187,
+   "docs": 2219,
    "total_esperado": 5271,
    "total_completo": true,
-   "pct": 41.5,
+   "pct": 42.1,
    "eta": {
-    "tasa_min": 5.31,
-    "restantes": 3084,
-    "segundos": 34855,
-    "fin_ts": 1791132643,
-    "fin_min_ts": 1791129157,
-    "fin_max_ts": 1791136128
+    "tasa_min": 5.27,
+    "restantes": 3052,
+    "segundos": 34721,
+    "fin_ts": 1791132824,
+    "fin_min_ts": 1791127829,
+    "fin_max_ts": 1791136297
    },
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791097788,
+   "actualizado_ts": 1791098103,
    "viejo": false
   },
   {
@@ -56,7 +56,7 @@
    "pct": 79.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791097788,
+   "actualizado_ts": 1791098103,
    "viejo": false
   },
   {
@@ -71,7 +71,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791097730,
+   "actualizado_ts": 1791098054,
    "viejo": false
   },
   {
@@ -86,7 +86,7 @@
    "pct": 91.2,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791097779,
+   "actualizado_ts": 1791098098,
    "viejo": false
   },
   {
@@ -101,7 +101,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791097788,
+   "actualizado_ts": 1791098103,
    "viejo": false
   },
   {
@@ -116,7 +116,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791097781,
+   "actualizado_ts": 1791098095,
    "viejo": false
   },
   {
@@ -131,7 +131,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791097781,
+   "actualizado_ts": 1791098095,
    "viejo": false
   },
   {
@@ -146,7 +146,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791097782,
+   "actualizado_ts": 1791098100,
    "viejo": false
   },
   {
@@ -161,7 +161,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791097781,
+   "actualizado_ts": 1791098095,
    "viejo": false
   },
   {
@@ -176,7 +176,7 @@
    "pct": 36.5,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791097730,
+   "actualizado_ts": 1791098054,
    "viejo": false
   },
   {
@@ -191,7 +191,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791097781,
+   "actualizado_ts": 1791098095,
    "viejo": false
   },
   {
@@ -206,7 +206,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791097779,
+   "actualizado_ts": 1791098098,
    "viejo": false
   },
   {
@@ -266,17 +266,17 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791097779,
+   "actualizado_ts": 1791098098,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [
   {
    "clave": "estancada_2006",
-   "texto": "La gestión 2006 (IPE01 (Mac Mini oficina)) está en marcha pero no suma documentos procesados hace 76 min (se quedó en 2999). Revisar el registro de la compilación.",
+   "texto": "La gestión 2006 (IPE01 (Mac Mini oficina)) está en marcha pero no suma documentos procesados hace 81 min (se quedó en 2999). Revisar el registro de la compilación.",
    "nivel": "aviso",
    "ts": 1791096848,
-   "ultimo_ts": 1791097779
+   "ultimo_ts": 1791098110
   }
  ],
  "acciones": [
@@ -405,7 +405,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791097730,
+   "ts": 1791098054,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {
@@ -444,7 +444,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791097781,
+   "ts": 1791098095,
    "version": "e974fd1",
    "procesos": [
     {
@@ -468,24 +468,24 @@
    ],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-04 03:09:33]   SIN RESOLVER: 2026-10-03-TSJ-AS-82-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 03:09:33]     diagnóstico: texto embebido 3628 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 082 Sucre, 22 de abril de 2.006 DISTRITO: La Paz PROCESO: Recurso de Reclamación. PARTES: Asunta Quenallata Vda. de Mendoza c/ Servicio Nacional del Sistema de Reparto (SENASIR). MINISTR",
-    "[2026-10-04 03:09:33]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 082\\n\\nSucre, 22 de abril de 2.006\\n\\nDISTRITO: La Paz PROCESO: Recurso de Reclamación.\\n\\nPARTES: Asunta Quenallata Vda. de Mendoza c/ Servicio Nacional del Sistema de Reparto\\n(SENASIR).\\n\\nMINISTRO RELATOR: Dr. E",
-    "[2026-10-04 03:09:33]     fechas con formato de fecha halladas en el texto: ['24 de septiembre de 2004', '14 de julio\\nde 2003', '3 de octubre de 2002', '24 de septiembre de 2004', '21 de julio de 1997']",
-    "[2026-10-04 03:09:37]   SIN RESOLVER: 2026-10-03-TSJ-AS-820-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 03:09:37]     diagnóstico: texto embebido 3526 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 820 Sucre, 11 de septiembre de 2.006 DISTRITO: Chuquisaca PROCESO: Social. PARTES: Javier Triveño Ortega c/ Empresa Brink`s Bolivia S.A. MINISTRO RELATOR: Dr. Juan José González Osio. ++",
-    "[2026-10-04 03:09:37]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 820\\n\\nSucre, 11 de septiembre de 2.006\\n\\nDISTRITO: Chuquisaca PROCESO: Social.\\n\\nPARTES: Javier Triveño Ortega c/ Empresa Brink`s Bolivia S.A.\\n\\nMINISTRO RELATOR: Dr. Juan José González Osio.\\n\\n++++++++++++++++",
-    "[2026-10-04 03:09:37]     fechas con formato de fecha halladas en el texto: ['9\\nde febrero de 2004', '20 de noviembre de 2003', '9 de febrero de 2004', '03/10/2026']",
-    "[2026-10-04 03:09:41]   SIN RESOLVER: 2026-10-03-TSJ-AS-821-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 03:09:41]     diagnóstico: texto embebido 3686 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 821 Sucre, 11 de septiembre de 2.006 DISTRITO: Chuquisaca PROCESO: Social. PARTES: Cristóbal Gonzáles c/ Estación de Servicio Ostria Gutiérrez. MINISTRO RELATOR: Dr. Juan José González O",
-    "[2026-10-04 03:09:41]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 821\\n\\nSucre, 11 de septiembre de 2.006\\n\\nDISTRITO: Chuquisaca PROCESO: Social.\\n\\nPARTES: Cristóbal Gonzáles c/ Estación de Servicio Ostria Gutiérrez.\\n\\nMINISTRO RELATOR: Dr. Juan José González Osio.\\n\\n+++++++++",
-    "[2026-10-04 03:09:41]     fechas con formato de fecha halladas en el texto: ['25 de marzo de 2004', '5 de diciembre de 2003', '26\\nde marzo de 2004', '03/10/2026']"
+    "[2026-10-04 03:14:45]   SIN RESOLVER: 2026-10-03-TSJ-AS-897-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 03:14:45]     diagnóstico: texto embebido 3217 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 897 Sucre, 28 de septiembre de 2.006 DISTRITO: Chuquisaca PROCESO: Social. PARTES: Rosa Quispe Arancibia c/ Jessmy Montes de Jaldín MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.",
+    "[2026-10-04 03:14:45]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 897\\n\\nSucre, 28 de septiembre de 2.006\\n\\nDISTRITO: Chuquisaca PROCESO: Social.\\n\\nPARTES: Rosa Quispe Arancibia c/ Jessmy Montes de Jaldín\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++++++++++++",
+    "[2026-10-04 03:14:45]     fechas con formato de fecha halladas en el texto: ['12 de julio de 2004', '03/10/2026']",
+    "[2026-10-04 03:14:48]   SIN RESOLVER: 2026-10-03-TSJ-AS-898-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 03:14:48]     diagnóstico: texto embebido 3402 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 898 Sucre, 28 de septiembre de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Luís Olivera Tejada c/ Dirección Nacional de la Unidad de Coordinación de Programas Especiales MINISTRO REL",
+    "[2026-10-04 03:14:48]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 898\\n\\nSucre, 28 de septiembre de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Luís Olivera Tejada c/ Dirección Nacional de la Unidad de Coordinación de\\nProgramas Especiales\\n\\nMINISTRO RELATOR: Dr. Juan J",
+    "[2026-10-04 03:14:48]     fechas con formato de fecha halladas en el texto: ['4 de junio de 2004', '4 de junio de 2004', '17 de junio de 1997', '4 de junio de\\n2004', '03/10/2026']",
+    "[2026-10-04 03:14:52]   SIN RESOLVER: 2026-10-03-TSJ-AS-899-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 03:14:52]     diagnóstico: texto embebido 3546 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 899 Sucre, 28 de septiembre de 2.006 DISTRITO: Tarija PROCESO: Social. PARTES: Adolfo Armando Guzmán Pantoja c/ la Empresa Peral Damulakis Bolivia S.A. MINISTRO RELATOR: Dr. Juan José Go",
+    "[2026-10-04 03:14:52]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 899\\n\\nSucre, 28 de septiembre de 2.006\\n\\nDISTRITO: Tarija PROCESO: Social.\\n\\nPARTES: Adolfo Armando Guzmán Pantoja c/ la Empresa Peral Damulakis Bolivia S.A.\\n\\nMINISTRO RELATOR: Dr. Juan José González Osio.\\n\\n+",
+    "[2026-10-04 03:14:52]     fechas con formato de fecha halladas en el texto: ['8 de septiembre de 2004', '31 de marzo de 2004', '8 de septiembre de\\n2004', '03/10/2026']"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791097788,
+   "ts": 1791098103,
    "version": "e974fd1",
    "procesos": [
     {
@@ -504,24 +504,24 @@
    "gestiones": {
     "2013": {
      "activo": true,
-     "total_archivos": 1467,
-     "docs_descargados": 2187,
+     "total_archivos": 1499,
+     "docs_descargados": 2219,
      "salas_n": 11,
      "salas_medidas": 11,
      "total_completo": true,
      "total_esperado": 5271,
-     "pct_total": 41.5,
+     "pct_total": 42.1,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 5.31,
-      "restantes": 3084,
-      "segundos": 34855,
-      "fin_ts": 1791132643,
-      "fin_min_ts": 1791129157,
-      "fin_max_ts": 1791136128
+      "tasa_min": 5.27,
+      "restantes": 3052,
+      "segundos": 34721,
+      "fin_ts": 1791132824,
+      "fin_min_ts": 1791127829,
+      "fin_max_ts": 1791136297
      },
      "salud": {
       "estado": "aviso",
@@ -529,7 +529,7 @@
       "fallos_30m": 2,
       "fallos_15m": 0,
       "fallos_total": 552,
-      "ultimo_movimiento_ts": 1791097762,
+      "ultimo_movimiento_ts": 1791098055,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": 1791096725,
       "detalle": "2 documento(s) fallido(s) en 30 min"
@@ -537,24 +537,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 03:00:53] Sala Penal Liquidadora: sigue revisando (fila 591 de 751; 0 ya existian, 577 nuevos).",
-    "[2026-10-04 03:01:17] Sala Penal Liquidadora: 580 documentos nuevos guardados, 1 ya existían (índice 593 de 751).",
-    "[2026-10-04 03:02:28] Sala Penal Liquidadora: sigue revisando (fila 602 de 751; 1 ya existian, 587 nuevos).",
-    "[2026-10-04 03:02:53] Sala Penal Liquidadora: 590 documentos nuevos guardados, 1 ya existían (índice 603 de 751).",
-    "[2026-10-04 03:03:58] Sala Penal Liquidadora: sigue revisando (fila 611 de 751; 1 ya existian, 596 nuevos).",
-    "[2026-10-04 03:04:35] Sala Penal Liquidadora: 600 documentos nuevos guardados, 1 ya existían (índice 613 de 751).",
     "[2026-10-04 03:05:38] Sala Penal Liquidadora: sigue revisando (fila 621 de 751; 1 ya existian, 606 nuevos).",
     "[2026-10-04 03:06:12] Sala Penal Liquidadora: 610 documentos nuevos guardados, 1 ya existían (índice 623 de 751).",
     "[2026-10-04 03:07:10] Sala Penal Liquidadora: sigue revisando (fila 631 de 751; 1 ya existian, 616 nuevos).",
     "[2026-10-04 03:07:46] Sala Penal Liquidadora: 620 documentos nuevos guardados, 1 ya existían (índice 633 de 751).",
     "[2026-10-04 03:08:48] Sala Penal Liquidadora: sigue revisando (fila 641 de 751; 1 ya existian, 626 nuevos).",
-    "[2026-10-04 03:09:22] Sala Penal Liquidadora: 630 documentos nuevos guardados, 1 ya existían (índice 643 de 751)."
+    "[2026-10-04 03:09:22] Sala Penal Liquidadora: 630 documentos nuevos guardados, 1 ya existían (índice 643 de 751).",
+    "[2026-10-04 03:10:23] Sala Penal Liquidadora: sigue revisando (fila 651 de 751; 1 ya existian, 636 nuevos).",
+    "[2026-10-04 03:10:59] Sala Penal Liquidadora: 640 documentos nuevos guardados, 1 ya existían (índice 653 de 751).",
+    "[2026-10-04 03:12:02] Sala Penal Liquidadora: sigue revisando (fila 661 de 751; 1 ya existian, 646 nuevos).",
+    "[2026-10-04 03:12:38] Sala Penal Liquidadora: 650 documentos nuevos guardados, 1 ya existían (índice 663 de 751).",
+    "[2026-10-04 03:13:39] Sala Penal Liquidadora: sigue revisando (fila 671 de 751; 1 ya existian, 656 nuevos).",
+    "[2026-10-04 03:14:15] Sala Penal Liquidadora: 660 documentos nuevos guardados, 1 ya existían (índice 673 de 751)."
    ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791097306,
+   "ts": 1791098104,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {},
@@ -576,7 +576,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791097779,
+   "ts": 1791098098,
    "version": "e974fd1",
    "procesos": [
     {
@@ -600,24 +600,24 @@
    ],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-04 03:09:12]   SIN RESOLVER: 2026-10-03-TSJ-AS-24-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 03:09:12]     diagnóstico: texto embebido 1735 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 024 Sucre, 10 de noviembre de 2.005 DISTRITO: Cochabamba PROCESO: Contencioso tributario. PARTES: Compañía Molinera Boliviana S. A. c/ Dirección General de Aduanas. MINISTR",
-    "[2026-10-04 03:09:12]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 024\\n\\nSucre, 10 de noviembre de 2.005\\n\\nDISTRITO: Cochabamba PROCESO: Contencioso tributario.\\n\\nPARTES: Compañía Molinera Boliviana S. A. c/ Dirección General de Aduanas.\\n\\nMINISTRO RELATOR: Dr. Ed",
-    "[2026-10-04 03:09:12]     fechas con formato de fecha halladas en el texto: ['5\\nde junio de 2001', '04/10/2026']",
-    "[2026-10-04 03:09:24]   SIN RESOLVER: 2026-10-03-TSJ-AS-25-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 03:09:24]     diagnóstico: texto embebido 3453 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 025 Sucre, 18 de noviembre de 2.005 DISTRITO: Cochabamba PROCESO: Pago Beneficios Sociales. PARTES: Oscar Mariscal Medrano c/ Bolivian wire and Cable Company S. A. CABLEBOL",
-    "[2026-10-04 03:09:24]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 025\\n\\nSucre, 18 de noviembre de 2.005\\n\\nDISTRITO: Cochabamba PROCESO: Pago Beneficios Sociales.\\n\\nPARTES: Oscar Mariscal Medrano c/ Bolivian wire and Cable Company S. A. CABLEBOL\\n\\nMINISTRO RELATOR",
-    "[2026-10-04 03:09:24]     fechas con formato de fecha halladas en el texto: ['5 de abril de 2001', '28 de febrero de 2001', '5 de abril de 2001', '04/10/2026']",
-    "[2026-10-04 03:09:35]   SIN RESOLVER: 2026-10-03-TSJ-AS-26-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 03:09:35]     diagnóstico: texto embebido 3474 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 026 Sucre, 18 de noviembre de 2.005 DISTRITO: La Paz PROCESO: Contencioso Tributario. PARTES: Industrias Textiles Punto Blanco S. A. c/ Administración Regional de Impuestos",
-    "[2026-10-04 03:09:35]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 026\\n\\nSucre, 18 de noviembre de 2.005\\n\\nDISTRITO: La Paz PROCESO: Contencioso Tributario.\\n\\nPARTES: Industrias Textiles Punto Blanco S. A. c/ Administración Regional de Impuestos\\nInternos de La Paz",
-    "[2026-10-04 03:09:35]     fechas con formato de fecha halladas en el texto: ['10 de mayo de 1996', '04/10/2026']"
+    "[2026-10-04 03:14:31]   SIN RESOLVER: 2026-10-03-TSJ-AS-5-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 03:14:31]     diagnóstico: texto embebido 2154 car.; inicio: 'SALA SOCIAL SEGUNDA AUTO SUPREMO: Nº 005 Sucre, 4 de octubre de 2.005 DISTRITO: Tarija PROCESO:Contencioso Tributario. PARTES: Luis Ariel Tolay Borda c/Impuestos Internos administración Regional Tarija MINISTRO RELATOR: Dr. Ed",
+    "[2026-10-04 03:14:31]     crudo (400 car.): 'SALA SOCIAL SEGUNDA AUTO SUPREMO: Nº 005\\n\\nSucre, 4 de octubre de 2.005\\n\\nDISTRITO: Tarija PROCESO:Contencioso Tributario.\\n\\nPARTES: Luis Ariel Tolay Borda c/Impuestos Internos administración Regional Tarija\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernánd",
+    "[2026-10-04 03:14:31]     fechas con formato de fecha halladas en el texto: ['24 de agosto de 2005', '2 de agosto de 2003', '22 de diciembre de 2003', '04/10/2026']",
+    "[2026-10-04 03:14:44]   SIN RESOLVER: 2026-10-03-TSJ-AS-50-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 03:14:44]     diagnóstico: texto embebido 3325 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 050 Sucre, 22 de noviembre de 2.005 DISTRITO: Santa Cruz PROCESO: Social. PARTES: Lorgio Moro Roca c/ Empresa SIATEC MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez. ",
+    "[2026-10-04 03:14:44]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 050\\n\\nSucre, 22 de noviembre de 2.005\\n\\nDISTRITO: Santa Cruz PROCESO: Social.\\n\\nPARTES: Lorgio Moro Roca c/ Empresa SIATEC\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n++++++++++++++",
+    "[2026-10-04 03:14:44]     fechas con formato de fecha halladas en el texto: ['26 de mayo de 2001', '5 de marzo de 2001', '04/10/2026']",
+    "[2026-10-04 03:14:57]   SIN RESOLVER: 2026-10-03-TSJ-AS-51-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 03:14:57]     diagnóstico: texto embebido 3486 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 051 Sucre, 22 de noviembre de 2.005 DISTRITO: Oruro PROCESO: Coactivo social. PARTES: Caja Nacional Social Regional de Oruro c/ CADEMIN. MINISTRO RELATOR: Dr. Eddy Walter F",
+    "[2026-10-04 03:14:57]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO: Nº 051\\n\\nSucre, 22 de noviembre de 2.005\\n\\nDISTRITO: Oruro PROCESO: Coactivo social.\\n\\nPARTES: Caja Nacional Social Regional de Oruro c/ CADEMIN.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérre",
+    "[2026-10-04 03:14:57]     fechas con formato de fecha halladas en el texto: ['10 de enero\\nde 2001', '2 de junio de 2001', '14 de julio de 1997', '1 de diciembre de 1997', '5 de agosto\\nde 1999']"
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791097782,
+   "ts": 1791098100,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {
