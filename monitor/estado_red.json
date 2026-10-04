@@ -1,5 +1,5 @@
 {
- "ts": 1791096868,
+ "ts": 1791097182,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -28,20 +28,20 @@
    "estado_interno": "activa",
    "salas_n": 11,
    "salas_medidas": 11,
-   "docs": 2090,
+   "docs": 2123,
    "total_esperado": 5271,
    "total_completo": true,
-   "pct": 39.7,
+   "pct": 40.3,
    "eta": {
     "tasa_min": 5.0,
-    "restantes": 3181,
-    "segundos": 38161,
-    "fin_ts": 1791135015,
-    "fin_min_ts": 1791131199,
-    "fin_max_ts": 1791138831
+    "restantes": 3148,
+    "segundos": 37765,
+    "fin_ts": 1791134930,
+    "fin_min_ts": 1791131154,
+    "fin_max_ts": 1791138707
    },
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791096854,
+   "actualizado_ts": 1791097165,
    "viejo": false
   },
   {
@@ -56,7 +56,7 @@
    "pct": 79.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791096854,
+   "actualizado_ts": 1791097165,
    "viejo": false
   },
   {
@@ -71,7 +71,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791096825,
+   "actualizado_ts": 1791097146,
    "viejo": false
   },
   {
@@ -86,7 +86,7 @@
    "pct": 91.2,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791096853,
+   "actualizado_ts": 1791097140,
    "viejo": false
   },
   {
@@ -101,7 +101,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791096854,
+   "actualizado_ts": 1791097165,
    "viejo": false
   },
   {
@@ -116,7 +116,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791096860,
+   "actualizado_ts": 1791097178,
    "viejo": false
   },
   {
@@ -131,7 +131,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791096860,
+   "actualizado_ts": 1791097178,
    "viejo": false
   },
   {
@@ -146,7 +146,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791096836,
+   "actualizado_ts": 1791097152,
    "viejo": false
   },
   {
@@ -161,7 +161,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791096860,
+   "actualizado_ts": 1791097178,
    "viejo": false
   },
   {
@@ -176,7 +176,7 @@
    "pct": 36.5,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791096825,
+   "actualizado_ts": 1791097146,
    "viejo": false
   },
   {
@@ -191,7 +191,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791096860,
+   "actualizado_ts": 1791097178,
    "viejo": false
   },
   {
@@ -200,20 +200,20 @@
    "estado_interno": "activa",
    "salas_n": 7,
    "salas_medidas": 7,
-   "docs": 2117,
+   "docs": 2144,
    "total_esperado": 2182,
    "total_completo": true,
-   "pct": 97.0,
+   "pct": 98.3,
    "eta": {
-    "tasa_min": 4.52,
-    "restantes": 65,
-    "segundos": 862,
-    "fin_ts": 1791097715,
-    "fin_min_ts": 1791097629,
-    "fin_max_ts": 1791097824
+    "tasa_min": 4.49,
+    "restantes": 38,
+    "segundos": 507,
+    "fin_ts": 1791097647,
+    "fin_min_ts": 1791097597,
+    "fin_max_ts": 1791097698
    },
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791096853,
+   "actualizado_ts": 1791097140,
    "viejo": false
   },
   {
@@ -273,17 +273,17 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791096853,
+   "actualizado_ts": 1791097140,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [
   {
    "clave": "estancada_2006",
-   "texto": "La gestión 2006 (IPE01 (Mac Mini oficina)) está en marcha pero no suma documentos procesados hace 60 min (se quedó en 2999). Revisar el registro de la compilación.",
+   "texto": "La gestión 2006 (IPE01 (Mac Mini oficina)) está en marcha pero no suma documentos procesados hace 66 min (se quedó en 2999). Revisar el registro de la compilación.",
    "nivel": "aviso",
    "ts": 1791096848,
-   "ultimo_ts": 1791096848
+   "ultimo_ts": 1791097179
   }
  ],
  "acciones": [
@@ -412,7 +412,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791096825,
+   "ts": 1791097146,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {
@@ -451,7 +451,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791096860,
+   "ts": 1791097178,
    "version": "e974fd1",
    "procesos": [
     {
@@ -475,24 +475,24 @@
    ],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-04 02:54:09]   SIN RESOLVER: 2026-10-03-TSJ-AS-594-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 02:54:09]     diagnóstico: texto embebido 3235 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 594 Sucre, 10 de agosto de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Esther Rocío Nogales Corrales c/ Honorable Cámara de Diputados. MINISTRO RELATOR: Dr. Eddy Walter Fernández Gut",
-    "[2026-10-04 02:54:09]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 594\\n\\nSucre, 10 de agosto de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Esther Rocío Nogales Corrales c/ Honorable Cámara de Diputados.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n++++++",
-    "[2026-10-04 02:54:09]     fechas con formato de fecha halladas en el texto: ['24 de febrero de\\n2003', '30 de\\nnoviembre de 2000', '24 de febrero de 2003', '03/10/2026']",
-    "[2026-10-04 02:54:13]   SIN RESOLVER: 2026-10-03-TSJ-AS-595-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 02:54:13]     diagnóstico: texto embebido 3423 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 595 Sucre, 10 de agosto de 2.006 DISTRITO: Santa Cruz PROCESO: Social. PARTES: Alberto Egüez Justiniano c/ Honorable Alcaldía Municipal de Santa Cruz. MINISTRO RELATOR: Dr. Eddy Walter F",
-    "[2026-10-04 02:54:13]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 595\\n\\nSucre, 10 de agosto de 2.006\\n\\nDISTRITO: Santa Cruz PROCESO: Social.\\n\\nPARTES: Alberto Egüez Justiniano c/ Honorable Alcaldía Municipal de Santa Cruz.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérre",
-    "[2026-10-04 02:54:13]     fechas con formato de fecha halladas en el texto: ['7 de abril de 2003', '22 de julio de 2002', '7 de abril de 2003', '03/10/2026']",
-    "[2026-10-04 02:54:17]   SIN RESOLVER: 2026-10-03-TSJ-AS-596-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-04 02:54:17]     diagnóstico: texto embebido 3337 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 596 Sucre, 10 de agosto de 2.006 DISTRITO: Chuquisaca PROCESO: Social. PARTES: Juvenal Vásquez Ortiz c/ Empresa de Correos de Bolivia ECOBOL. MINISTRO RELATOR: Dr. Eddy Walter Fernández ",
-    "[2026-10-04 02:54:17]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 596\\n\\nSucre, 10 de agosto de 2.006\\n\\nDISTRITO: Chuquisaca PROCESO: Social.\\n\\nPARTES: Juvenal Vásquez Ortiz c/ Empresa de Correos de Bolivia ECOBOL.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++",
-    "[2026-10-04 02:54:17]     fechas con formato de fecha halladas en el texto: ['16 de junio de 2003', '22 de abril de 2003', '16 de junio de 2003', '03/10/2026']"
+    "[2026-10-04 02:59:28]   SIN RESOLVER: 2026-10-03-TSJ-AS-672-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 02:59:28]     diagnóstico: texto embebido 3424 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 672 Sucre, 29 de agosto de 2.006 DISTRITO: Chuquisaca PROCESO: Social. PARTES: Francisco Moreno Arancibia c/ CARITAS - Sucre. MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez. +++++",
+    "[2026-10-04 02:59:28]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 672\\n\\nSucre, 29 de agosto de 2.006\\n\\nDISTRITO: Chuquisaca PROCESO: Social.\\n\\nPARTES: Francisco Moreno Arancibia c/ CARITAS - Sucre.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++++++++++++++++++",
+    "[2026-10-04 02:59:28]     fechas con formato de fecha halladas en el texto: ['30 de agosto de 2003', '26 de junio de\\n2003', '30 de\\nagosto de 2003', '23 de agosto de 1943', '16 de febrero de 1979']",
+    "[2026-10-04 02:59:32]   SIN RESOLVER: 2026-10-03-TSJ-AS-673-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 02:59:32]     diagnóstico: texto embebido 3433 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 673 Sucre, 29 de agosto de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Nicanor Tancara Silva c/ Club Bolívar. MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez. +++++++++++++++++",
+    "[2026-10-04 02:59:32]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 673\\n\\nSucre, 29 de agosto de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Nicanor Tancara Silva c/ Club Bolívar.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++++++++++++++++++++++++++++++",
+    "[2026-10-04 02:59:32]     fechas con formato de fecha halladas en el texto: ['18 de septiembre de 2003', '26 de julio de\\n2001', '18 de septiembre de 2003', '17 de julio de 2001', '3 de enero de 2001']",
+    "[2026-10-04 02:59:35]   SIN RESOLVER: 2026-10-03-TSJ-AS-674-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-04 02:59:35]     diagnóstico: texto embebido 3290 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 674 Sucre, 29 de agosto de 2.006 DISTRITO: Tarija PROCESO: Social. PARTES: Isaac Muruchi Mamani c/ Club Deportivo y Cultural \"UNIÓN CENTRAL\". MINISTRO RELATOR: Dr. Eddy Walter Fernández ",
+    "[2026-10-04 02:59:35]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 674\\n\\nSucre, 29 de agosto de 2.006\\n\\nDISTRITO: Tarija PROCESO: Social.\\n\\nPARTES: Isaac Muruchi Mamani c/ Club Deportivo y Cultural \"UNIÓN CENTRAL\".\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++",
+    "[2026-10-04 02:59:35]     fechas con formato de fecha halladas en el texto: ['10 de octubre de 2003', '29 de noviembre de 2002', '10 de octubre de 2003', '26 de octubre de 1949', '03/10/2026']"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791096854,
+   "ts": 1791097165,
    "version": "e974fd1",
    "procesos": [
     {
@@ -511,24 +511,24 @@
    "gestiones": {
     "2013": {
      "activo": true,
-     "total_archivos": 1370,
-     "docs_descargados": 2090,
+     "total_archivos": 1403,
+     "docs_descargados": 2123,
      "salas_n": 11,
      "salas_medidas": 11,
      "total_completo": true,
      "total_esperado": 5271,
-     "pct_total": 39.7,
+     "pct_total": 40.3,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
       "tasa_min": 5.0,
-      "restantes": 3181,
-      "segundos": 38161,
-      "fin_ts": 1791135015,
-      "fin_min_ts": 1791131199,
-      "fin_max_ts": 1791138831
+      "restantes": 3148,
+      "segundos": 37765,
+      "fin_ts": 1791134930,
+      "fin_min_ts": 1791131154,
+      "fin_max_ts": 1791138707
      },
      "salud": {
       "estado": "aviso",
@@ -536,7 +536,7 @@
       "fallos_30m": 4,
       "fallos_15m": 2,
       "fallos_total": 552,
-      "ultimo_movimiento_ts": 1791096797,
+      "ultimo_movimiento_ts": 1791097155,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": 1791096725,
       "detalle": "4 documento(s) fallido(s) en 30 min"
@@ -544,18 +544,18 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 02:50:55] Sala Penal Liquidadora: la descarga de la fila #538 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 17s...",
-    "[2026-10-04 02:51:31] AVISO: el documento #538 de Sala Penal Liquidadora falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
-    "=========================== logs ===========================",
-    "waiting for event \"download\"",
-    "============================================================",
-    "[2026-10-04 02:52:05] AVISO: el documento #539 de Sala Penal Liquidadora falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
-    "Call log:",
     "  - waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(539)",
     "[2026-10-04 02:52:05] Sala Penal Liquidadora: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
     "[2026-10-04 02:52:48] Sala Penal Liquidadora: el sitio volvió a responder tras ~0 min 40 s. Se continúa.",
     "[2026-10-04 02:52:52] Sala Penal Liquidadora: sigue revisando (fila 541 de 751; 0 ya existian, 527 nuevos).",
-    "[2026-10-04 02:53:17] Sala Penal Liquidadora: 530 documentos nuevos guardados, 0 ya existían (índice 542 de 751)."
+    "[2026-10-04 02:53:17] Sala Penal Liquidadora: 530 documentos nuevos guardados, 0 ya existían (índice 542 de 751).",
+    "[2026-10-04 02:54:28] Sala Penal Liquidadora: sigue revisando (fila 551 de 751; 0 ya existian, 537 nuevos).",
+    "[2026-10-04 02:54:53] Sala Penal Liquidadora: 540 documentos nuevos guardados, 0 ya existían (índice 552 de 751).",
+    "[2026-10-04 02:56:03] Sala Penal Liquidadora: sigue revisando (fila 561 de 751; 0 ya existian, 547 nuevos).",
+    "[2026-10-04 02:56:29] Sala Penal Liquidadora: 550 documentos nuevos guardados, 0 ya existían (índice 562 de 751).",
+    "[2026-10-04 02:57:38] Sala Penal Liquidadora: sigue revisando (fila 571 de 751; 0 ya existian, 557 nuevos).",
+    "[2026-10-04 02:58:05] Sala Penal Liquidadora: 560 documentos nuevos guardados, 0 ya existían (índice 572 de 751).",
+    "[2026-10-04 02:59:15] Sala Penal Liquidadora: sigue revisando (fila 581 de 751; 0 ya existian, 567 nuevos)."
    ]
   },
   {
@@ -583,7 +583,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791096853,
+   "ts": 1791097140,
    "version": "e974fd1",
    "procesos": [
     {
@@ -602,24 +602,24 @@
    "gestiones": {
     "2005": {
      "activo": true,
-     "total_archivos": 2003,
-     "docs_descargados": 2117,
+     "total_archivos": 2030,
+     "docs_descargados": 2144,
      "salas_n": 7,
      "salas_medidas": 7,
      "total_completo": true,
      "total_esperado": 2182,
-     "pct_total": 97.0,
+     "pct_total": 98.3,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 4.52,
-      "restantes": 65,
-      "segundos": 862,
-      "fin_ts": 1791097715,
-      "fin_min_ts": 1791097629,
-      "fin_max_ts": 1791097824
+      "tasa_min": 4.49,
+      "restantes": 38,
+      "segundos": 507,
+      "fin_ts": 1791097647,
+      "fin_min_ts": 1791097597,
+      "fin_max_ts": 1791097698
      },
      "salud": {
       "estado": "aviso",
@@ -627,7 +627,7 @@
       "fallos_30m": 4,
       "fallos_15m": 2,
       "fallos_total": 57,
-      "ultimo_movimiento_ts": 1791096788,
+      "ultimo_movimiento_ts": 1791097127,
       "ultimo_limite_ts": 1791070072,
       "ultima_falla_ts": 1791096721,
       "detalle": "4 documento(s) fallido(s) en 30 min"
@@ -635,24 +635,24 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 02:50:48] Sala Penal 2: la descarga de la fila #454 no respondio a tiempo, o llego en blanco (intento 2 de 3). Reintentando en 19s...",
-    "[2026-10-04 02:51:27] AVISO: el documento #454 de Sala Penal 2 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Timeout 20000ms exceeded while waiting for event \"download\"",
-    "=========================== logs ===========================",
-    "waiting for event \"download\"",
-    "============================================================",
-    "[2026-10-04 02:51:31] Sala Penal 2: sigue revisando (fila 456 de 491; 3 ya existian, 440 nuevos).",
-    "[2026-10-04 02:52:01] AVISO: el documento #455 de Sala Penal 2 falló y quedó registrado en _errores.csv. Se continúa con el siguiente. Detalle: Locator.click: Timeout 30000ms exceeded.",
     "Call log:",
     "waiting for locator(\"button\").filter(has_text=re.compile(r\"^AS/\")).nth(455)",
     "[2026-10-04 02:52:01] Sala Penal 2: el sitio dejó de responder (ráfaga de caída). Se espera a que vuelva, sin pedir documentos, hasta 15 min.",
     "[2026-10-04 02:52:46] Sala Penal 2: el sitio volvió a responder tras ~0 min 40 s. Se continúa.",
-    "[2026-10-04 02:53:08] Sala Penal 2: sigue revisando (fila 459 de 491; 3 ya existian, 442 nuevos)."
+    "[2026-10-04 02:53:08] Sala Penal 2: sigue revisando (fila 459 de 491; 3 ya existian, 442 nuevos).",
+    "[2026-10-04 02:54:25] Sala Penal 2: 450 documentos nuevos guardados, 3 ya existían (índice 465 de 491).",
+    "[2026-10-04 02:54:40] Sala Penal 2: sigue revisando (fila 468 de 491; 3 ya existian, 451 nuevos).",
+    "[2026-10-04 02:56:15] Sala Penal 2: 460 documentos nuevos guardados, 3 ya existían (índice 475 de 491).",
+    "[2026-10-04 02:56:18] Sala Penal 2: sigue revisando (fila 477 de 491; 3 ya existian, 460 nuevos).",
+    "[2026-10-04 02:57:54] Sala Penal 2: 470 documentos nuevos guardados, 3 ya existían (índice 485 de 491).",
+    "[2026-10-04 02:57:56] Sala Penal 2: sigue revisando (fila 487 de 491; 3 ya existian, 470 nuevos).",
+    "[2026-10-04 02:58:47] Sala Penal 2: 13 documento(s) fallaron; se reintentan tras una pausa de 3 min (el sitio suele recuperarse solo)."
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791096836,
+   "ts": 1791097152,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {
