@@ -442,7 +442,6 @@ function elegir(g) {
 const ACCION_A_PASO = { barrido: ['barrido'], detectar: ['detectar', 'releer'], cotejar: ['cotejar'], noas: ['noas'], revisar: ['corregir', 'releer'], recuperar: ['recuperar'] };
 
 // Pantallas locales que abre el agente en el equipo elegido (solo se ven desde ese mismo equipo).
-function urlLocalUI(accion, msg) { const m = /(http:\/\/[\d.]+:\d+)/.exec(msg || ''); return m ? m[1] : LOCAL_UI[accion].url; }
 const LOCAL_UI = { fechar: { url: 'http://localhost:8745', nombre: '«Fechar archivos»' }, cotejar: { url: 'http://localhost:8743', nombre: 'el cotejo' }, noas: { url: 'http://localhost:8747', nombre: 'el revisor de _no_AS' } };
 
 function pendienteGestion(el) {
@@ -835,7 +834,7 @@ function ordenGuiaHtml(g) {
   const r = e.orden && e.orden.seq === pendiente.seq ? e.orden : null, nom = NOMBRE_ACCION[pendiente.accion] || pendiente.accion;
   if (!r) return `<div class="g-orden">⏳ Orden enviada a ${esc(e.nombre)} (${esc(nom)}) — esperando respuesta…${enLinea(e) ? '' : ' El equipo está desconectado; se ejecuta al reconectarse (máx. 30 min).'}</div>`;
   const link = r.ok && (pendiente.accion in LOCAL_UI)
-    ? ` <a href="${urlLocalUI(pendiente.accion, r.mensaje)}" target="_blank">→ Abrir ${LOCAL_UI[pendiente.accion].nombre}</a> <span class="g-o">${/http:\/\/[\d.]+:/.test(r.mensaje || '') ? '(funciona desde cualquier equipo de la misma red que ' + esc(e.nombre.split(' (')[0]) + ')' : '(solo funciona en ' + esc(e.nombre.split(' (')[0]) + ')'}</span>` : '';
+    ? ` <a href="${LOCAL_UI[pendiente.accion].url}" target="_blank">→ Abrir ${LOCAL_UI[pendiente.accion].nombre}</a> <span class="g-o">(solo funciona en ${esc(e.nombre.split(' (')[0])})</span>` : '';
   return `<div class="g-orden ${r.ok ? 'ok' : 'mal'}">${r.ok ? '✓' : '✗'} ${esc(nom)} en ${esc(e.nombre)}: ${esc(r.mensaje)}${link}</div>`;
 }
 
@@ -1037,7 +1036,7 @@ function renderOrden() {
   if (r) {
     box.className = r.ok ? 'ok' : 'mal';
     box.textContent = (r.ok ? '✓ ' : '✗ ') + NOMBRE_ACCION[pendiente.accion] + ' en ' + e.nombre + ': ' + r.mensaje;
-    if (r.ok && (pendiente.accion in LOCAL_UI)) { const a = document.createElement('a'); a.href = urlLocalUI(pendiente.accion, r.mensaje); a.target = '_blank'; a.textContent = ' → Abrir ' + LOCAL_UI[pendiente.accion].nombre; a.style.fontWeight = '700'; box.appendChild(a); }
+    if (r.ok && (pendiente.accion in LOCAL_UI)) { const a = document.createElement('a'); a.href = LOCAL_UI[pendiente.accion].url; a.target = '_blank'; a.textContent = ' → Abrir ' + LOCAL_UI[pendiente.accion].nombre; a.style.fontWeight = '700'; box.appendChild(a); }
   } else {
     box.className = '';
     box.textContent = '⏳ Orden enviada a ' + (e ? e.nombre : pendiente.eid) + ' (' + NOMBRE_ACCION[pendiente.accion] + ', gestión ' + pendiente.g + ')' +
@@ -1272,6 +1271,14 @@ function tcpBarra(x) {
   return `<div class="t-barra" title="ok ${x.ok} · escaneo ${x.ocr} · revisar ${x.rev} · duplicado ${x.dup} · con error ${x.err}"><i class="b-ok" style="width:${w(x.ok)}%"></i><i class="b-ocr" style="width:${w(x.ocr)}%"></i><i class="b-rev" style="width:${w((x.rev || 0) + (x.dup || 0))}%"></i><i class="b-err" style="width:${w(x.err)}%"></i></div>`;
 }
 
+function tcpEquipo(x, b, g) {
+  // equipo que compila esa gestión ahora (●) o, si no, el que más avanzó en ella
+  const vivo = equipos.find(e => ((e.tcp && e.tcp.procesos) || []).some(p => p.tipo === 'tcp_compilacion' && String(p.gestion) === g && String(p.base) === b));
+  const e = vivo || (x.hechos ? equipos.find(q => q.id === x.eid) : null);
+  if (!e) return '<span class="pm">–</span>';
+  return (vivo ? '<span style="color:var(--active)">● </span>' : '') + esc(e.nombre.split(' (')[0]);
+}
+
 function tcpSiguiente(ag, base) {
   const x = ag.lista.find(y => y.k.startsWith(base + ':') && y.total - y.hechos > 0);
   return x ? x.k.split(':')[1] : null;
@@ -1298,7 +1305,7 @@ function renderTcp() {
   const baseCard = (b, s) => `<div><div class="res-sub" style="margin-top:0">${esc(TCP_BASES[b])}</div>${tcpBarra(s)}<div class="t-nota">${tcpNum(s.hechos)} de ${tcpNum(s.total)} (${tcpPct(s.hechos, s.total)} %)</div></div>`;
   const filas = ag.lista.map(x => {
     const [b, g] = x.k.split(':'), falta = Math.max(0, x.total - x.hechos), sel = (b === TCPSEL.base && g === TCPSEL.gestion);
-    return `<tr class="t-fila${sel ? ' sel' : ''}" data-tcp-fila="${x.k}"><td>${b === '2' ? 'TCP' : 'TC'}</td><td>${g}</td><td class="n">${tcpNum(x.total)}</td><td class="n">${tcpNum(x.ok)}</td><td class="n">${x.ocr || ''}</td><td class="n">${x.rev || ''}</td><td class="n">${x.dup || ''}</td><td class="n">${x.err ? '<span style="color:var(--bad)">' + x.err + '</span>' : ''}</td><td class="n">${falta ? tcpNum(falta) : '✓'}</td><td>${tcpBarra(x)}</td><td class="n">${tcpPct(x.hechos, x.total)} %</td></tr>`;
+    return `<tr class="t-fila${sel ? ' sel' : ''}" data-tcp-fila="${x.k}"><td>${b === '2' ? 'TCP' : 'TC'}</td><td>${g}</td><td class="n">${tcpNum(x.total)}</td><td class="n">${tcpNum(x.ok)}</td><td class="n">${x.ocr || ''}</td><td class="n">${x.rev || ''}</td><td class="n">${x.dup || ''}</td><td class="n">${x.err ? '<span style="color:var(--bad)">' + x.err + '</span>' : ''}</td><td class="n">${falta ? tcpNum(falta) : '✓'}</td><td>${tcpBarra(x)}</td><td class="n">${tcpPct(x.hechos, x.total)} %</td><td>${tcpEquipo(x, b, g)}</td></tr>`;
   }).join('');
   // equipos
   const tarjEq = equipos.map(e => {
@@ -1369,7 +1376,7 @@ function renderTcp() {
     </details>
   </section>
   <section class="tarjeta"><h2>Avance por gestión</h2><div class="t-nota">Toca una fila para elegirla arriba. Verde = ok · azul = escaneo · naranja = por revisar/duplicado · rojo = error.</div>
-    ${ag.lista.length ? `<div style="overflow-x:auto"><table class="t-tab"><thead><tr><th>Trib.</th><th>Gestión</th><th class="n">Total</th><th class="n">Ok</th><th class="n">Escaneo</th><th class="n">Revisar</th><th class="n">Dup.</th><th class="n">Error</th><th class="n">Faltan</th><th>Avance</th><th class="n">%</th></tr></thead><tbody>${filas}</tbody></table></div>` : '<div class="vacio">Esperando el primer reporte del TCP de algún equipo…</div>'}
+    ${ag.lista.length ? `<div style="overflow-x:auto"><table class="t-tab"><thead><tr><th>Trib.</th><th>Gestión</th><th class="n">Total</th><th class="n">Ok</th><th class="n">Escaneo</th><th class="n">Revisar</th><th class="n">Dup.</th><th class="n">Error</th><th class="n">Faltan</th><th>Avance</th><th class="n">%</th><th>Equipo</th></tr></thead><tbody>${filas}</tbody></table></div>` : '<div class="vacio">Esperando el primer reporte del TCP de algún equipo…</div>'}
   </section>
   <section class="tarjeta"><h2>Equipos</h2><div class="rejilla" style="margin-top:0">${tarjEq || '<div class="vacio">Sin equipos.</div>'}</div></section>
   </div>`;
