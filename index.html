@@ -442,6 +442,7 @@ function elegir(g) {
 const ACCION_A_PASO = { barrido: ['barrido'], detectar: ['detectar', 'releer'], cotejar: ['cotejar'], noas: ['noas'], revisar: ['corregir', 'releer'], recuperar: ['recuperar'] };
 
 // Pantallas locales que abre el agente en el equipo elegido (solo se ven desde ese mismo equipo).
+function urlLocalUI(accion, msg) { const m = /(http:\/\/[\d.]+:\d+)/.exec(msg || ''); return m ? m[1] : LOCAL_UI[accion].url; }
 const LOCAL_UI = { fechar: { url: 'http://localhost:8745', nombre: '«Fechar archivos»' }, cotejar: { url: 'http://localhost:8743', nombre: 'el cotejo' }, noas: { url: 'http://localhost:8747', nombre: 'el revisor de _no_AS' } };
 
 function pendienteGestion(el) {
@@ -834,7 +835,7 @@ function ordenGuiaHtml(g) {
   const r = e.orden && e.orden.seq === pendiente.seq ? e.orden : null, nom = NOMBRE_ACCION[pendiente.accion] || pendiente.accion;
   if (!r) return `<div class="g-orden">⏳ Orden enviada a ${esc(e.nombre)} (${esc(nom)}) — esperando respuesta…${enLinea(e) ? '' : ' El equipo está desconectado; se ejecuta al reconectarse (máx. 30 min).'}</div>`;
   const link = r.ok && (pendiente.accion in LOCAL_UI)
-    ? ` <a href="${LOCAL_UI[pendiente.accion].url}" target="_blank">→ Abrir ${LOCAL_UI[pendiente.accion].nombre}</a> <span class="g-o">(solo funciona en ${esc(e.nombre.split(' (')[0])})</span>` : '';
+    ? ` <a href="${urlLocalUI(pendiente.accion, r.mensaje)}" target="_blank">→ Abrir ${LOCAL_UI[pendiente.accion].nombre}</a> <span class="g-o">${/http:\/\/[\d.]+:/.test(r.mensaje || '') ? '(funciona desde cualquier equipo de la misma red que ' + esc(e.nombre.split(' (')[0]) + ')' : '(solo funciona en ' + esc(e.nombre.split(' (')[0]) + ')'}</span>` : '';
   return `<div class="g-orden ${r.ok ? 'ok' : 'mal'}">${r.ok ? '✓' : '✗'} ${esc(nom)} en ${esc(e.nombre)}: ${esc(r.mensaje)}${link}</div>`;
 }
 
@@ -1036,7 +1037,7 @@ function renderOrden() {
   if (r) {
     box.className = r.ok ? 'ok' : 'mal';
     box.textContent = (r.ok ? '✓ ' : '✗ ') + NOMBRE_ACCION[pendiente.accion] + ' en ' + e.nombre + ': ' + r.mensaje;
-    if (r.ok && (pendiente.accion in LOCAL_UI)) { const a = document.createElement('a'); a.href = LOCAL_UI[pendiente.accion].url; a.target = '_blank'; a.textContent = ' → Abrir ' + LOCAL_UI[pendiente.accion].nombre; a.style.fontWeight = '700'; box.appendChild(a); }
+    if (r.ok && (pendiente.accion in LOCAL_UI)) { const a = document.createElement('a'); a.href = urlLocalUI(pendiente.accion, r.mensaje); a.target = '_blank'; a.textContent = ' → Abrir ' + LOCAL_UI[pendiente.accion].nombre; a.style.fontWeight = '700'; box.appendChild(a); }
   } else {
     box.className = '';
     box.textContent = '⏳ Orden enviada a ' + (e ? e.nombre : pendiente.eid) + ' (' + NOMBRE_ACCION[pendiente.accion] + ', gestión ' + pendiente.g + ')' +
