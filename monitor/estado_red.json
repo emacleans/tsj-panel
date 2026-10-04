@@ -1,5 +1,5 @@
 {
- "ts": 1791129998,
+ "ts": 1791130037,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -28,20 +28,20 @@
    "estado_interno": "activa",
    "salas_n": 11,
    "salas_medidas": 11,
-   "docs": 4903,
+   "docs": 4906,
    "total_esperado": 5271,
    "total_completo": true,
-   "pct": 93.0,
+   "pct": 93.1,
    "eta": {
-    "tasa_min": 6.28,
-    "restantes": 368,
-    "segundos": 3515,
-    "fin_ts": 1791133509,
-    "fin_min_ts": 1791133157,
-    "fin_max_ts": 1791133860
+    "tasa_min": 6.27,
+    "restantes": 365,
+    "segundos": 3490,
+    "fin_ts": 1791133518,
+    "fin_min_ts": 1791133169,
+    "fin_max_ts": 1791133867
    },
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791129994,
+   "actualizado_ts": 1791130027,
    "viejo": false
   },
   {
@@ -56,7 +56,7 @@
    "pct": 79.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791129994,
+   "actualizado_ts": 1791130027,
    "viejo": false
   },
   {
@@ -71,7 +71,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791129929,
+   "actualizado_ts": 1791130013,
    "viejo": false
   },
   {
@@ -86,7 +86,7 @@
    "pct": 91.2,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791129934,
+   "actualizado_ts": 1791130015,
    "viejo": false
   },
   {
@@ -101,7 +101,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791129994,
+   "actualizado_ts": 1791130027,
    "viejo": false
   },
   {
@@ -116,7 +116,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791129930,
+   "actualizado_ts": 1791129994,
    "viejo": false
   },
   {
@@ -131,7 +131,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791129930,
+   "actualizado_ts": 1791129994,
    "viejo": false
   },
   {
@@ -146,7 +146,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791129950,
+   "actualizado_ts": 1791130014,
    "viejo": false
   },
   {
@@ -161,7 +161,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791129930,
+   "actualizado_ts": 1791129994,
    "viejo": false
   },
   {
@@ -176,7 +176,7 @@
    "pct": 99.4,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791129929,
+   "actualizado_ts": 1791130013,
    "viejo": false
   },
   {
@@ -191,7 +191,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791129930,
+   "actualizado_ts": 1791129994,
    "viejo": false
   },
   {
@@ -206,7 +206,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791129934,
+   "actualizado_ts": 1791130015,
    "viejo": false
   },
   {
@@ -221,7 +221,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791129930,
+   "actualizado_ts": 1791129994,
    "viejo": false
   },
   {
@@ -236,7 +236,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791129930,
+   "actualizado_ts": 1791129994,
    "viejo": false
   },
   {
@@ -251,7 +251,7 @@
    "pct": 10.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791129930,
+   "actualizado_ts": 1791129994,
    "viejo": false
   },
   {
@@ -266,16 +266,12 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791129934,
+   "actualizado_ts": 1791130015,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791022823,
-   "texto": "inicia 2007 en iMac-Sala (iMac de la sala) (sin_empezar; intento 1)"
-  },
   {
    "ts": 1791025539,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 07:35"
@@ -391,13 +387,17 @@
   {
    "ts": 1791129370,
    "texto": "reinicio de 2002 en IPE01 (Mac Mini oficina): corría con código anterior al último cambio"
+  },
+  {
+   "ts": 1791130034,
+   "texto": "inicia 2002 en IPE01 (Mac Mini oficina) (incompleta; relanzada tras reinicio)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791129929,
+   "ts": 1791130013,
    "version": "2278c84",
    "procesos": [],
    "gestiones": {
@@ -436,7 +436,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791129930,
+   "ts": 1791129994,
    "version": "2278c84",
    "procesos": [],
    "gestiones": {},
@@ -458,7 +458,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791129994,
+   "ts": 1791130027,
    "version": "2278c84",
    "procesos": [
     {
@@ -477,24 +477,24 @@
    "gestiones": {
     "2013": {
      "activo": true,
-     "total_archivos": 4179,
-     "docs_descargados": 4903,
+     "total_archivos": 4182,
+     "docs_descargados": 4906,
      "salas_n": 11,
      "salas_medidas": 11,
      "total_completo": true,
      "total_esperado": 5271,
-     "pct_total": 93.0,
+     "pct_total": 93.1,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 6.28,
-      "restantes": 368,
-      "segundos": 3515,
-      "fin_ts": 1791133509,
-      "fin_min_ts": 1791133157,
-      "fin_max_ts": 1791133860
+      "tasa_min": 6.27,
+      "restantes": 365,
+      "segundos": 3490,
+      "fin_ts": 1791133518,
+      "fin_min_ts": 1791133169,
+      "fin_max_ts": 1791133867
      },
      "salud": {
       "estado": "ok",
@@ -502,7 +502,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 470,
-      "ultimo_movimiento_ts": 1791129967,
+      "ultimo_movimiento_ts": 1791130019,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": 1791126052,
       "detalle": ""
@@ -510,7 +510,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 11:59:37] Sala Social 2da Liquidadora: 0 resultados encontrados en el sitio.",
     "[2026-10-04 11:59:37] --- Sala Social 2da Liquidadora terminada: 0 nuevos, 0 ya existentes. Archivos totales ahora en la carpeta: 0 (el sitio reporta 0 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
     "[2026-10-04 11:59:37] --- Iniciando Sala Penal 2 (Gestión 2013) ---",
     "[2026-10-04 11:59:40] Sala Penal 2: 361 resultados encontrados en el sitio.",
@@ -521,7 +520,8 @@
     "[2026-10-04 12:04:05] Sala Penal 2: 30 documentos nuevos guardados, 0 ya existían (índice 29 de 361).",
     "[2026-10-04 12:04:32] Sala Penal 2: sigue revisando (fila 34 de 361; 0 ya existian, 33 nuevos).",
     "[2026-10-04 12:05:29] Sala Penal 2: 40 documentos nuevos guardados, 0 ya existían (índice 39 de 361).",
-    "[2026-10-04 12:06:07] Sala Penal 2: sigue revisando (fila 45 de 361; 0 ya existian, 44 nuevos)."
+    "[2026-10-04 12:06:07] Sala Penal 2: sigue revisando (fila 45 de 361; 0 ya existian, 44 nuevos).",
+    "[2026-10-04 12:06:59] Sala Penal 2: 50 documentos nuevos guardados, 0 ya existían (índice 49 de 361)."
    ]
   },
   {
@@ -549,7 +549,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791129934,
+   "ts": 1791130015,
    "version": "2278c84",
    "procesos": [],
    "gestiones": {},
@@ -571,7 +571,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791129950,
+   "ts": 1791130014,
    "version": "2278c84",
    "procesos": [],
    "gestiones": {},
