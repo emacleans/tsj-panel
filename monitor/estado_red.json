@@ -1,5 +1,5 @@
 {
- "ts": 1791087503,
+ "ts": 1791087562,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": null,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791087485,
+   "actualizado_ts": 1791087549,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 79.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791087485,
+   "actualizado_ts": 1791087549,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 91.2,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791087477,
+   "actualizado_ts": 1791087552,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791087485,
+   "actualizado_ts": 1791087549,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791087490,
+   "actualizado_ts": 1791087555,
    "viejo": false
   },
   {
@@ -124,29 +124,29 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791087490,
+   "actualizado_ts": 1791087555,
    "viejo": false
   },
   {
    "gestion": "2009",
    "estado": "Compilando",
-   "estado_interno": "activa",
+   "estado_interno": "faltantes",
    "salas_n": 7,
    "salas_medidas": 7,
-   "docs": 2259,
+   "docs": 2248,
    "total_esperado": 2255,
    "total_completo": true,
-   "pct": 100.0,
+   "pct": 99.7,
    "eta": {
-    "segundos": 0,
-    "fin_ts": 1791087457,
-    "fin_min_ts": 1791087457,
-    "fin_max_ts": 1791087457,
-    "restantes": 0,
-    "tasa_min": 0
+    "tasa_min": 4.54,
+    "restantes": 7,
+    "segundos": 92,
+    "fin_ts": 1791087629,
+    "fin_min_ts": 1791087620,
+    "fin_max_ts": 1791087666
    },
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791087457,
+   "actualizado_ts": 1791087537,
    "viejo": false
   },
   {
@@ -161,7 +161,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791087490,
+   "actualizado_ts": 1791087555,
    "viejo": false
   },
   {
@@ -185,20 +185,20 @@
    "estado_interno": "activa",
    "salas_n": 6,
    "salas_medidas": 6,
-   "docs": 2516,
+   "docs": 2521,
    "total_esperado": 3009,
    "total_completo": true,
-   "pct": 83.6,
+   "pct": 83.8,
    "eta": {
-    "tasa_min": 5.48,
-    "restantes": 493,
-    "segundos": 5398,
-    "fin_ts": 1791092889,
-    "fin_min_ts": 1791092349,
-    "fin_max_ts": 1791093429
+    "tasa_min": 5.47,
+    "restantes": 488,
+    "segundos": 5357,
+    "fin_ts": 1791092913,
+    "fin_min_ts": 1791092377,
+    "fin_max_ts": 1791093449
    },
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791087490,
+   "actualizado_ts": 1791087555,
    "viejo": false
   },
   {
@@ -207,20 +207,20 @@
    "estado_interno": "activa",
    "salas_n": 7,
    "salas_medidas": 7,
-   "docs": 1380,
+   "docs": 1389,
    "total_esperado": 2182,
    "total_completo": true,
-   "pct": 63.2,
+   "pct": 63.7,
    "eta": {
-    "tasa_min": 4.79,
-    "restantes": 802,
-    "segundos": 10050,
-    "fin_ts": 1791097527,
-    "fin_min_ts": 1791096522,
-    "fin_max_ts": 1791099086
+    "tasa_min": 4.81,
+    "restantes": 793,
+    "segundos": 9882,
+    "fin_ts": 1791097434,
+    "fin_min_ts": 1791096446,
+    "fin_max_ts": 1791098814
    },
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791087477,
+   "actualizado_ts": 1791087552,
    "viejo": false
   },
   {
@@ -280,16 +280,12 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791087477,
+   "actualizado_ts": 1791087552,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1790967478,
-   "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 15:27"
-  },
   {
    "ts": 1790969352,
    "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 15:58"
@@ -405,6 +401,10 @@
   {
    "ts": 1791074672,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 21:13"
+  },
+  {
+   "ts": 1791087557,
+   "texto": "inicia 2013 en IPE02 (Mac Mini casa) (incompleta; intento 1)"
   }
  ],
  "equipos": [
@@ -450,7 +450,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791087490,
+   "ts": 1791087555,
    "version": "e974fd1",
    "procesos": [
     {
@@ -469,24 +469,24 @@
    "gestiones": {
     "2006": {
      "activo": true,
-     "total_archivos": 1067,
-     "docs_descargados": 2516,
+     "total_archivos": 1072,
+     "docs_descargados": 2521,
      "salas_n": 6,
      "salas_medidas": 6,
      "total_completo": true,
      "total_esperado": 3009,
-     "pct_total": 83.6,
+     "pct_total": 83.8,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 5.48,
-      "restantes": 493,
-      "segundos": 5398,
-      "fin_ts": 1791092889,
-      "fin_min_ts": 1791092349,
-      "fin_max_ts": 1791093429
+      "tasa_min": 5.47,
+      "restantes": 488,
+      "segundos": 5357,
+      "fin_ts": 1791092913,
+      "fin_min_ts": 1791092377,
+      "fin_max_ts": 1791093449
      },
      "salud": {
       "estado": "ok",
@@ -494,7 +494,7 @@
       "fallos_30m": 0,
       "fallos_15m": 0,
       "fallos_total": 0,
-      "ultimo_movimiento_ts": 1791087484,
+      "ultimo_movimiento_ts": 1791087502,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": null,
       "detalle": ""
@@ -502,7 +502,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 00:09:43] Sala Civil 1: fila #285 con identificador de catalogo no reconocible ('AS/SN/2006') -- se intenta igual, por si es un documento real.",
     "[2026-10-04 00:09:59] --- Sala Civil 1 terminada: 286 nuevos, 0 ya existentes. Archivos totales ahora en la carpeta: 284 (el sitio reporta 286 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
     "[2026-10-04 00:09:59] --- Iniciando Sala Penal 2 (Gestión 2006) ---",
     "[2026-10-04 00:10:03] Sala Penal 2: 525 resultados encontrados en el sitio.",
@@ -513,13 +512,14 @@
     "[2026-10-04 00:15:06] Sala Penal 2: sigue revisando (fila 26 de 525; 0 ya existian, 25 nuevos).",
     "[2026-10-04 00:16:00] Sala Penal 2: 30 documentos nuevos guardados, 0 ya existían (índice 29 de 525).",
     "[2026-10-04 00:16:46] Sala Penal 2: sigue revisando (fila 34 de 525; 0 ya existian, 33 nuevos).",
-    "[2026-10-04 00:18:04] Sala Penal 2: 40 documentos nuevos guardados, 0 ya existían (índice 39 de 525)."
+    "[2026-10-04 00:18:04] Sala Penal 2: 40 documentos nuevos guardados, 0 ya existían (índice 39 de 525).",
+    "[2026-10-04 00:18:22] Sala Penal 2: sigue revisando (fila 42 de 525; 0 ya existian, 41 nuevos)."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791087485,
+   "ts": 1791087549,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {},
@@ -541,7 +541,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791087460,
+   "ts": 1791087523,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {},
@@ -563,7 +563,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791087477,
+   "ts": 1791087552,
    "version": "e974fd1",
    "procesos": [
     {
@@ -582,24 +582,24 @@
    "gestiones": {
     "2005": {
      "activo": true,
-     "total_archivos": 1272,
-     "docs_descargados": 1380,
+     "total_archivos": 1281,
+     "docs_descargados": 1389,
      "salas_n": 7,
      "salas_medidas": 7,
      "total_completo": true,
      "total_esperado": 2182,
-     "pct_total": 63.2,
+     "pct_total": 63.7,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 4.79,
-      "restantes": 802,
-      "segundos": 10050,
-      "fin_ts": 1791097527,
-      "fin_min_ts": 1791096522,
-      "fin_max_ts": 1791099086
+      "tasa_min": 4.81,
+      "restantes": 793,
+      "segundos": 9882,
+      "fin_ts": 1791097434,
+      "fin_min_ts": 1791096446,
+      "fin_max_ts": 1791098814
      },
      "salud": {
       "estado": "aviso",
@@ -607,7 +607,7 @@
       "fallos_30m": 2,
       "fallos_15m": 0,
       "fallos_total": 39,
-      "ultimo_movimiento_ts": 1791087435,
+      "ultimo_movimiento_ts": 1791087525,
       "ultimo_limite_ts": 1791070072,
       "ultima_falla_ts": 1791086547,
       "detalle": "2 documento(s) fallido(s) en 30 min"
@@ -615,8 +615,6 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 00:09:00] Sala Civil 1: 230 documentos nuevos guardados, 2 ya existían (índice 236 de 244).",
-    "[2026-10-04 00:10:12] Sala Civil 1: 5 documento(s) fallaron; se reintentan tras una pausa de 3 min (el sitio suele recuperarse solo).",
     "[2026-10-04 00:13:12] --- Iniciando Sala Civil 1 (Gestión 2005) ---",
     "[2026-10-04 00:13:16] Sala Civil 1: 244 resultados encontrados en el sitio (reintento de filas que habían fallado).",
     "[2026-10-04 00:14:08] --- Sala Civil 1 terminada: 5 nuevos, 0 ya existentes. Archivos totales ahora en la carpeta: 242 (el sitio reporta 244 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
@@ -626,55 +624,38 @@
     "[2026-10-04 00:15:41] Sala Civil 2: 10 documentos nuevos guardados, 0 ya existían (índice 9 de 322).",
     "[2026-10-04 00:15:44] Sala Civil 2: sigue revisando (fila 11 de 322; 0 ya existian, 10 nuevos).",
     "[2026-10-04 00:17:13] Sala Civil 2: 20 documentos nuevos guardados, 1 ya existían (índice 20 de 322).",
-    "[2026-10-04 00:17:15] Sala Civil 2: sigue revisando (fila 22 de 322; 1 ya existian, 20 nuevos)."
+    "[2026-10-04 00:17:15] Sala Civil 2: sigue revisando (fila 22 de 322; 1 ya existian, 20 nuevos).",
+    "[2026-10-04 00:18:42] Sala Civil 2: 30 documentos nuevos guardados, 1 ya existían (índice 30 de 322).",
+    "[2026-10-04 00:18:45] Sala Civil 2: sigue revisando (fila 32 de 322; 1 ya existian, 30 nuevos)."
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791087457,
+   "ts": 1791087537,
    "version": "e974fd1",
-   "procesos": [
-    {
-     "pid": 63945,
-     "tipo": "barrido",
-     "gestion": "2009",
-     "inicio_ts": 1791087381
-    },
-    {
-     "pid": 64539,
-     "tipo": "deteccion",
-     "gestion": "2009",
-     "inicio_ts": 1791087457
-    },
-    {
-     "pid": 83559,
-     "tipo": "vigilante",
-     "gestion": "2009",
-     "inicio_ts": 1791054348
-    }
-   ],
+   "procesos": [],
    "gestiones": {
     "2009": {
      "activo": true,
      "total_archivos": 2238,
-     "docs_descargados": 2259,
+     "docs_descargados": 2248,
      "salas_n": 7,
      "salas_medidas": 7,
      "total_completo": true,
      "total_esperado": 2255,
-     "pct_total": 100.0,
+     "pct_total": 99.7,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": true,
      "con_faltantes": "GESTIÓN 2009 CON FALTANTES: Sala Civil 2: 1 fila(s) sin descargar (índices 41). Vuelve a lanzar «Iniciar compilación» (retoma lo que falta) o usa «Auditar contra el sitio» y «Recuperar faltantes».",
      "eta": {
-      "segundos": 0,
-      "fin_ts": 1791087457,
-      "fin_min_ts": 1791087457,
-      "fin_max_ts": 1791087457,
-      "restantes": 0,
-      "tasa_min": 0
+      "tasa_min": 4.54,
+      "restantes": 7,
+      "segundos": 92,
+      "fin_ts": 1791087629,
+      "fin_min_ts": 1791087620,
+      "fin_max_ts": 1791087666
      },
      "salud": {
       "estado": "aviso",
@@ -690,18 +671,18 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 00:17:36]   SIN RESOLVER: 2026-10-03-TSJ-SINID-SCA2_113-SCA2.pdf -> sin numero de AS ni de Expediente reconocible",
-    "[2026-10-04 00:17:36]     diagnóstico: texto embebido 1651 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: S/ N, Auto Complementario al 115 Sucre, 24 de abril de 2.009 DISTRITO: Santa Cruz PROCESO: Compulsa PARTES: GRACO Santa Cruz c/ Sala Social de la Corte Superior Santa Cruz. MINISTRO RELATOR",
-    "[2026-10-04 00:17:36]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: S/ N, Auto Complementario al 115\\n\\nSucre, 24 de abril de 2.009\\n\\nDISTRITO: Santa Cruz PROCESO: Compulsa\\n\\nPARTES: GRACO Santa Cruz c/ Sala Social de la Corte Superior Santa Cruz.\\n\\nMINISTRO RELATOR: Hugo R. Suárez ",
-    "[2026-10-04 00:17:36]     fechas con formato de fecha halladas en el texto: ['20 de julio de 1999', '24 de abril de 2009', '03/10/2026']",
-    "[2026-10-04 00:17:36]   2026-10-03-TSJ-SINID-_SPL_233-SPL.pdf: fecha 2009-08-31 tomada de la firma al final del documento",
-    "[2026-10-04 00:17:36]   OK: 2026-10-03-TSJ-SINID-_SPL_233-SPL.pdf -> Sala Plena/2009-08-31-TSJ-AS-281-SPL.pdf",
-    "[2026-10-04 00:17:37]",
-    "[2026-10-04 00:17:37] === RESUMEN ===",
-    "[2026-10-04 00:17:37] Resueltos y migrados a su Sala: 240 (de los cuales 0 necesitaron OCR)",
-    "[2026-10-04 00:17:37] Conflictos dejados en _revisar como POSIBLE-DUPLICADO: 11",
-    "[2026-10-04 00:17:37] Siguen sin poder identificarse (quedan en _revisar tal cual): 7",
-    "--- detectar_exp_obsoletos.py ---"
+    "Siguen siendo EXP- (sin numero de AS reconocible): 1",
+    "   de ellos: dicen «Auto Supremo» pero no se lee el número (revisar a mano): 1",
+    "   de ellos: sin texto legible ni siquiera con OCR (escaneos ilegibles, revisar a mano): 0",
+    "Huérfanos de _revisar revisados (pareja ya renombrada): 3",
+    "Huérfanos resueltos y migrados a su Sala: 0",
+    "Barrido de 2009 registrado (v3). Repite «Auditar contra el sitio» para esta gestión.",
+    "=== RESUMEN DEL BARRIDO GENERAL ===",
+    "  2009: completo",
+    "[2026-10-04 00:18:49] Corrección automática terminada. Lo que quede en _revisar como",
+    "[2026-10-04 00:18:49] -POSIBLE-DUPLICADO ya necesita tu revisión visual (opción 'Cotejar",
+    "[2026-10-04 00:18:49] duplicados' del panel). El vigilante se detiene, no hace falta reiniciar de nuevo.",
+    "[2026-10-04 00:18:49] Vigilante detenido."
    ]
   }
  ]
