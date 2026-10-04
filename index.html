@@ -262,19 +262,25 @@
 <main id="main-tsj">
   <div id="banner"></div>
 
+  <div class="t-grid">
+  <section class="tarjeta" id="tsj-avance"></section>
+
   <section class="tarjeta" id="guia"></section>
 
-  <details class="avanzado" id="det-resumen"><summary>Estado de todas las gestiones y equipos</summary>
   <section class="tarjeta" id="resumen">
-    <h2>Estado de la compilación</h2>
-    <div class="nota-lectura">Una fila por gestión y una por equipo. «Por medir» / «total por confirmar»: aún no se midieron todas las salas de la gestión, así que no hay % ni hora de término. Toca una gestión para ver su detalle.</div>
+    <h2>Avance por gestión</h2>
+    <div class="t-nota">Toca una fila para elegir esa gestión. «Por medir» / «total por confirmar»: aún no se midieron todas las salas de la gestión, así que no hay % ni hora de término.</div>
     <div id="res-gestiones"></div>
+  </section>
+
+  <section class="tarjeta" id="sec-equipos">
+    <h2>Equipos</h2>
     <div id="res-equipos"></div>
     <div id="res-aprendizaje"></div>
   </section>
-  </details>
+  </div>
 
-  <details class="avanzado" id="det-avanzado"><summary>Detalles y controles avanzados (avance por sala, acciones sueltas, registros)</summary>
+  <details class="avanzado" id="det-avanzado"><summary>Acciones y detalle de la gestión elegida (pasos sueltos, avance por sala, registros)</summary>
   <div class="rejilla" style="margin-top:0">
     <section class="tarjeta">
       <h2 id="av-titulo">Avance de la gestión</h2>
@@ -559,7 +565,27 @@ function filaGestionHtml(d) {
 }
 const CABECERA_GESTIONES = '<thead><tr><th>Gestión</th><th>Estado</th><th>Salas medidas</th><th>Documentos</th><th>%</th><th>ETA</th><th>Equipo</th><th>Dato</th></tr></thead>';
 
-function renderEquipos() {   // vista principal: una fila por gestión + una fila por equipo (detalle plegado)
+function renderAvanceTsj() {
+  const caja = $('tsj-avance');
+  const todas = [...new Set(equipos.flatMap(e => Object.keys(e.gestiones || {})))];
+  const ds = todas.map(datosGestion).filter(Boolean);
+  const n = f => ds.filter(f).length, num = v => Number(v || 0).toLocaleString('es-BO');
+  const conf = ds.filter(d => d.completo);
+  const totConf = conf.reduce((a, d) => a + Number(d.av.total_esperado || 0), 0);
+  const docsConf = conf.reduce((a, d) => a + Math.min(Number(d.docs || 0), Number(d.av.total_esperado || 0)), 0);
+  const docsTot = ds.reduce((a, d) => a + Number(d.docs || 0), 0);
+  const pct = totConf ? Math.floor(1000 * docsConf / totConf) / 10 : 0;
+  const kpi = (v, t) => `<div><b>${v}</b><span>${t}</span></div>`;
+  const online = equipos.filter(enLinea).length;
+  const html = `<h2>Avance del TSJ · Autos Supremos</h2>
+    <div class="res-sub" style="margin-top:0">${ds.length ? `${ds.length} gestiones reportadas · total confirmado en ${conf.length}` : 'Aún ningún equipo reportó gestiones'}${totConf ? ` (${num(totConf)} documentos esperados)` : ''}</div>
+    <div class="t-barra" title="${num(docsConf)} de ${num(totConf)}"><i class="b-ok" style="width:${totConf ? Math.min(100, 100 * docsConf / totConf).toFixed(2) : 0}%"></i></div>
+    <div class="t-kpis">${kpi(totConf ? pct + ' %' : '–', 'avance (gestiones con total confirmado)')}${kpi(num(docsTot), 'documentos descargados')}${kpi(n(d => d.cod === 'completa'), 'gestiones completas')}${kpi(n(d => d.cod === 'compilando' || d.cod === 'verificando'), 'en curso')}${kpi(n(d => d.cod === 'con_faltantes'), 'con faltantes')}${kpi(online + '/' + equipos.length, 'equipos en línea')}</div>`;
+  setHtmlKeep(caja, html);
+}
+
+function renderEquipos() {   // vista principal: una fila por gestión + una tarjeta por equipo
+  try { renderAvanceTsj(); } catch (e) { console.error('avance TSJ', e); }
   if (!equipos.length) {
     $('res-gestiones').innerHTML = '<div class="vacio">Aún ningún equipo ha reportado. Ejecuta Instalar_agente.command en cada Mac.</div>';
     $('res-equipos').innerHTML = ''; $('res-aprendizaje').innerHTML = '';
@@ -579,16 +605,15 @@ function renderEquipos() {   // vista principal: una fila por gestión + una fil
     const trabajo = ps.length ? ps.map(x => {
       const etq = (ETIQUETA[x.tipo] || x.tipo) + (x.gestion ? ' · ' + x.gestion : '');
       return `<div class="e-proceso"><span>${esc(etq)}</span><button type="button" data-detener-eid="${esc(e.id)}" data-detener-pid="${x.pid}" data-detener-etiqueta="${esc(etq)}">Detener</button></div>`;
-    }).join('') : '<span class="pm">Libre</span>';
+    }).join('') : '<div class="e-trabajo">Libre</div>';
     const detalle = `<div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>${insigniaVersion(e, on)}` +
       (Object.keys(e.cierres || {}).length ? `<div class="e-meta">cierres validados: ${Object.keys(e.cierres).map(esc).join(', ')}</div>` : '') +
       (e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : '');
-    const viejo = datoViejo(e);
-    return `<tr><td><b>${esc(e.nombre)}</b></td><td class="est ${on ? 'compilando' : 'en_pausa'}">${on ? '● En línea' : 'Desconectado'}</td><td>${trabajo}</td>
-      <td>${saludHtml(e, on) || '<span class="pm">–</span>'}</td><td class="dato ${viejo ? 'viejo' : ''}">${hace(e.ts)}${viejo ? ' · dato viejo' : ''}</td>
-      <td>${plegable('eq-' + e.id, 'Detalle', detalle, 'cmp')}</td></tr>`;
+    const viejo = datoViejo(e), salud = saludHtml(e, on);
+    return `<div class="equipo ${on ? 'on' : 'off'}"><div style="display:flex;gap:8px;align-items:center"><span class="punto"></span><b>${esc(e.nombre)}</b><span class="e-estado">${on ? 'en línea' : 'desconectado hace ' + haceCuanto(e.ts)}</span></div>
+      ${trabajo}${salud ? `<div class="e-meta">${salud}</div>` : ''}<div class="e-meta dato ${viejo ? 'viejo' : ''}">dato ${hace(e.ts)}${viejo ? ' · dato viejo' : ''}</div>${plegable('eq-' + e.id, 'Detalle', detalle, 'cmp')}</div>`;
   }).join('');
-  setHtmlKeep($('res-equipos'), `<div class="res-sub">Equipos</div><div class="tabla-wrap"><table class="res"><thead><tr><th>Equipo</th><th>Estado</th><th>Trabajo</th><th>Salud</th><th>Dato</th><th></th></tr></thead><tbody>${filasEq}</tbody></table></div>`);
+  setHtmlKeep($('res-equipos'), `<div class="rejilla" style="margin-top:0">${filasEq}</div>`);
   setHtmlKeep($('res-aprendizaje'), lineaAprendizaje());
 }
 $('resumen').addEventListener('click', ev => {
