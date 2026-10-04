@@ -1,5 +1,5 @@
 {
- "ts": 1791127651,
+ "ts": 1791127953,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -28,20 +28,20 @@
    "estado_interno": "activa",
    "salas_n": 11,
    "salas_medidas": 11,
-   "docs": 4663,
+   "docs": 4695,
    "total_esperado": 5271,
    "total_completo": true,
-   "pct": 88.5,
+   "pct": 89.1,
    "eta": {
-    "tasa_min": 5.27,
-    "restantes": 608,
-    "segundos": 6927,
-    "fin_ts": 1791134569,
-    "fin_min_ts": 1791133193,
-    "fin_max_ts": 1791135261
+    "tasa_min": 5.67,
+    "restantes": 576,
+    "segundos": 6094,
+    "fin_ts": 1791134028,
+    "fin_min_ts": 1791133198,
+    "fin_max_ts": 1791134638
    },
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791127641,
+   "actualizado_ts": 1791127934,
    "viejo": false
   },
   {
@@ -56,7 +56,7 @@
    "pct": 79.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791127641,
+   "actualizado_ts": 1791127934,
    "viejo": false
   },
   {
@@ -71,7 +71,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791127610,
+   "actualizado_ts": 1791127935,
    "viejo": false
   },
   {
@@ -86,7 +86,7 @@
    "pct": 91.2,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791127641,
+   "actualizado_ts": 1791127903,
    "viejo": false
   },
   {
@@ -101,7 +101,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791127641,
+   "actualizado_ts": 1791127934,
    "viejo": false
   },
   {
@@ -116,7 +116,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791127590,
+   "actualizado_ts": 1791127907,
    "viejo": false
   },
   {
@@ -131,7 +131,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791127590,
+   "actualizado_ts": 1791127907,
    "viejo": false
   },
   {
@@ -146,7 +146,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791127622,
+   "actualizado_ts": 1791127937,
    "viejo": false
   },
   {
@@ -161,7 +161,7 @@
    "pct": 99.3,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791127590,
+   "actualizado_ts": 1791127907,
    "viejo": false
   },
   {
@@ -176,7 +176,7 @@
    "pct": 99.4,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791127610,
+   "actualizado_ts": 1791127935,
    "viejo": false
   },
   {
@@ -191,7 +191,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791127590,
+   "actualizado_ts": 1791127907,
    "viejo": false
   },
   {
@@ -206,7 +206,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791127641,
+   "actualizado_ts": 1791127903,
    "viejo": false
   },
   {
@@ -221,7 +221,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791127590,
+   "actualizado_ts": 1791127907,
    "viejo": false
   },
   {
@@ -236,7 +236,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791127590,
+   "actualizado_ts": 1791127907,
    "viejo": false
   },
   {
@@ -266,16 +266,12 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791127641,
+   "actualizado_ts": 1791127903,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791016996,
-   "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 05:12"
-  },
   {
    "ts": 1791022176,
    "texto": "inicia 2015 en iMac-Sala (iMac de la sala) (faltantes; intento 1)"
@@ -391,13 +387,17 @@
   {
    "ts": 1791127344,
    "texto": "inicia 2003 en IPE01 (Mac Mini oficina) (incompleta; intento 2)"
+  },
+  {
+   "ts": 1791127949,
+   "texto": "inicia 2002 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791127610,
+   "ts": 1791127935,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {
@@ -436,7 +436,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791127590,
+   "ts": 1791127907,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {},
@@ -458,7 +458,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791127641,
+   "ts": 1791127934,
    "version": "e974fd1",
    "procesos": [
     {
@@ -477,51 +477,51 @@
    "gestiones": {
     "2013": {
      "activo": true,
-     "total_archivos": 3940,
-     "docs_descargados": 4663,
+     "total_archivos": 3972,
+     "docs_descargados": 4695,
      "salas_n": 11,
      "salas_medidas": 11,
      "total_completo": true,
      "total_esperado": 5271,
-     "pct_total": 88.5,
+     "pct_total": 89.1,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": false,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 5.27,
-      "restantes": 608,
-      "segundos": 6927,
-      "fin_ts": 1791134569,
-      "fin_min_ts": 1791133193,
-      "fin_max_ts": 1791135261
+      "tasa_min": 5.67,
+      "restantes": 576,
+      "segundos": 6094,
+      "fin_ts": 1791134028,
+      "fin_min_ts": 1791133198,
+      "fin_max_ts": 1791134638
      },
      "salud": {
-      "estado": "aviso",
+      "estado": "ok",
       "limite_30m": 0,
-      "fallos_30m": 2,
+      "fallos_30m": 0,
       "fallos_15m": 0,
-      "fallos_total": 482,
-      "ultimo_movimiento_ts": 1791127609,
+      "fallos_total": 480,
+      "ultimo_movimiento_ts": 1791127927,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": 1791126052,
-      "detalle": "2 documento(s) fallido(s) en 30 min"
+      "detalle": ""
      }
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 11:18:29] Sala Social Liquidadora: 240 documentos nuevos guardados, 0 ya existían (índice 243 de 334).",
-    "[2026-10-04 11:19:07] Sala Social Liquidadora: sigue revisando (fila 249 de 334; 0 ya existian, 244 nuevos).",
-    "[2026-10-04 11:19:56] Sala Social Liquidadora: 250 documentos nuevos guardados, 0 ya existían (índice 253 de 334).",
-    "[2026-10-04 11:20:45] Sala Social Liquidadora: sigue revisando (fila 260 de 334; 0 ya existian, 255 nuevos).",
-    "[2026-10-04 11:21:27] Sala Social Liquidadora: 260 documentos nuevos guardados, 0 ya existían (índice 263 de 334).",
-    "[2026-10-04 11:22:15] Sala Social Liquidadora: sigue revisando (fila 270 de 334; 0 ya existian, 265 nuevos).",
-    "[2026-10-04 11:22:58] Sala Social Liquidadora: 270 documentos nuevos guardados, 0 ya existían (índice 273 de 334).",
-    "[2026-10-04 11:23:46] Sala Social Liquidadora: sigue revisando (fila 280 de 334; 0 ya existian, 275 nuevos).",
     "[2026-10-04 11:24:29] Sala Social Liquidadora: 280 documentos nuevos guardados, 0 ya existían (índice 283 de 334).",
     "[2026-10-04 11:25:17] Sala Social Liquidadora: sigue revisando (fila 290 de 334; 0 ya existian, 285 nuevos).",
     "[2026-10-04 11:26:01] Sala Social Liquidadora: 290 documentos nuevos guardados, 0 ya existían (índice 293 de 334).",
-    "[2026-10-04 11:26:49] Sala Social Liquidadora: sigue revisando (fila 300 de 334; 0 ya existian, 295 nuevos)."
+    "[2026-10-04 11:26:49] Sala Social Liquidadora: sigue revisando (fila 300 de 334; 0 ya existian, 295 nuevos).",
+    "[2026-10-04 11:27:33] Sala Social Liquidadora: 300 documentos nuevos guardados, 0 ya existían (índice 303 de 334).",
+    "[2026-10-04 11:28:21] Sala Social Liquidadora: sigue revisando (fila 310 de 334; 0 ya existian, 305 nuevos).",
+    "[2026-10-04 11:29:02] Sala Social Liquidadora: 310 documentos nuevos guardados, 0 ya existían (índice 313 de 334).",
+    "[2026-10-04 11:29:51] Sala Social Liquidadora: sigue revisando (fila 320 de 334; 0 ya existian, 315 nuevos).",
+    "[2026-10-04 11:30:33] Sala Social Liquidadora: 320 documentos nuevos guardados, 0 ya existían (índice 323 de 334).",
+    "[2026-10-04 11:31:30] Sala Social Liquidadora: sigue revisando (fila 331 de 334; 0 ya existian, 326 nuevos).",
+    "[2026-10-04 11:32:05] Sala Social Liquidadora: 330 documentos nuevos guardados, 0 ya existían (índice 333 de 334).",
+    "[2026-10-04 11:32:07] Sala Social Liquidadora: 4 documento(s) fallaron; se reintentan tras una pausa de 3 min (el sitio suele recuperarse solo)."
    ]
   },
   {
@@ -549,7 +549,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791127641,
+   "ts": 1791127903,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {},
@@ -571,7 +571,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791127622,
+   "ts": 1791127937,
    "version": "e974fd1",
    "procesos": [],
    "gestiones": {},
