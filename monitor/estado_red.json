@@ -1,5 +1,5 @@
 {
- "ts": 1791152574,
+ "ts": 1791152648,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791152538,
+   "actualizado_ts": 1791152636,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.2,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791152538,
+   "actualizado_ts": 1791152636,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791152566,
+   "actualizado_ts": 1791152642,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791152494,
+   "actualizado_ts": 1791152634,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791152538,
+   "actualizado_ts": 1791152636,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791152559,
+   "actualizado_ts": 1791152635,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791152559,
+   "actualizado_ts": 1791152635,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791152525,
+   "actualizado_ts": 1791152610,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791152559,
+   "actualizado_ts": 1791152635,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791152566,
+   "actualizado_ts": 1791152642,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791152559,
+   "actualizado_ts": 1791152635,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791152494,
+   "actualizado_ts": 1791152634,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791152559,
+   "actualizado_ts": 1791152635,
    "viejo": false
   },
   {
@@ -229,29 +229,22 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791152559,
+   "actualizado_ts": 1791152635,
    "viejo": false
   },
   {
    "gestion": "2002",
-   "estado": "Compilando",
-   "estado_interno": "activa",
+   "estado": "Compilada completa",
+   "estado_interno": "completa",
    "salas_n": 5,
    "salas_medidas": 5,
    "docs": 1307,
    "total_esperado": 1323,
    "total_completo": true,
    "pct": 98.8,
-   "eta": {
-    "tasa_min": 6.36,
-    "restantes": 16,
-    "segundos": 150,
-    "fin_ts": 1791152709,
-    "fin_min_ts": 1791152694,
-    "fin_max_ts": 1791152734
-   },
+   "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791152559,
+   "actualizado_ts": 1791152635,
    "viejo": false
   },
   {
@@ -266,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791152494,
+   "actualizado_ts": 1791152634,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791053013,
-   "texto": "inicia 2006 en IPE01 (Mac Mini oficina) (incompleta; intento 2)"
-  },
   {
    "ts": 1791053682,
    "texto": "reinicio de 2007 en iMac-Sala (iMac de la sala): corría con código anterior al último cambio"
@@ -391,14 +380,18 @@
   {
    "ts": 1791150610,
    "texto": "inicia 2013 en IPE02 (Mac Mini casa) (incompleta; intento 1)"
+  },
+  {
+   "ts": 1791152644,
+   "texto": "inicia 2014 en IPE02 (Mac Mini casa) (incompleta; intento 1)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791152566,
-   "version": "c9bf27f",
+   "ts": 1791152642,
+   "version": "351a78e",
    "procesos": [],
    "gestiones": {
     "2018": {
@@ -436,7 +429,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791152531,
+   "ts": 1791152593,
    "version": "c9bf27f",
    "procesos": [],
    "gestiones": {},
@@ -445,7 +438,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791152508,
+   "ts": 1791152633,
    "version": "c9bf27f",
    "procesos": [],
    "gestiones": {},
@@ -454,83 +447,37 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791152559,
-   "version": "c9bf27f",
+   "ts": 1791152635,
+   "version": "351a78e",
    "procesos": [
     {
-     "pid": 62645,
-     "tipo": "vigilante",
+     "pid": 94829,
+     "tipo": "correccion",
      "gestion": "2002",
-     "inicio_ts": 1791143877
-    },
-    {
-     "pid": 92841,
-     "tipo": "barrido",
-     "gestion": "2002",
-     "inicio_ts": 1791152318
-    },
-    {
-     "pid": 93404,
-     "tipo": "deteccion",
-     "gestion": "2002",
-     "inicio_ts": 1791152544
+     "inicio_ts": 1791152596
     }
    ],
-   "gestiones": {
-    "2002": {
-     "activo": true,
-     "total_archivos": 1239,
-     "docs_descargados": 1307,
-     "salas_n": 5,
-     "salas_medidas": 5,
-     "total_completo": true,
-     "total_esperado": 1323,
-     "pct_total": 98.8,
-     "estado": "compilando",
-     "estado_texto": "Compilando",
-     "termino_con_exito": true,
-     "con_faltantes": null,
-     "eta": {
-      "tasa_min": 6.36,
-      "restantes": 16,
-      "segundos": 150,
-      "fin_ts": 1791152709,
-      "fin_min_ts": 1791152694,
-      "fin_max_ts": 1791152734
-     },
-     "salud": {
-      "estado": "ok",
-      "limite_30m": 0,
-      "fallos_30m": 0,
-      "fallos_15m": 0,
-      "fallos_total": 0,
-      "ultimo_movimiento_ts": 1791152298,
-      "ultimo_limite_ts": null,
-      "ultima_falla_ts": null,
-      "detalle": ""
-     }
-    }
-   },
+   "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-04 18:22:20]     fechas con formato de fecha halladas en el texto: ['23 de enero de 2002', '9 de junio de 1999', '5 de enero de 2000', '10 de mayo de 2000', '04/10/2026']",
-    "[2026-10-04 18:22:24]   SIN RESOLVER: 2026-10-04-TSJ-EXP-127-2000-SPL.pdf -> fecha no reconocida",
-    "[2026-10-04 18:22:24]     diagnóstico: texto embebido 3208 car.; inicio: 'SALA PLENA AUTO SUPREMO: N° 34B/2002 26 de marzo de 2002 EXP.: N° 127/2000 PROCESO : Revisión Extraordinaria de Sentencia DISTRITO : Chuquisaca PARTES : Juana Quispe vda. de Carazani c/ Mario Oliva Gumiel RELATORA : Ministra D",
-    "[2026-10-04 18:22:24]     crudo (400 car.): 'SALA PLENA\\n\\nAUTO SUPREMO: N° 34B/2002 26 de marzo de 2002 EXP.: N° 127/2000\\n\\nPROCESO : Revisión Extraordinaria de Sentencia\\n\\nDISTRITO : Chuquisaca\\n\\nPARTES : Juana Quispe vda. de Carazani c/ Mario Oliva Gumiel\\n\\nRELATORA : Ministra Dra. Emilse Ard",
-    "[2026-10-04 18:22:24]     fechas con formato de fecha halladas en el texto: ['26 de marzo de 2002', '04/10/2026']",
-    "[2026-10-04 18:22:24]",
-    "[2026-10-04 18:22:24] === RESUMEN ===",
-    "[2026-10-04 18:22:24] Resueltos y migrados a su Sala: 1 (de los cuales 0 necesitaron OCR)",
-    "[2026-10-04 18:22:24] Conflictos dejados en _revisar como POSIBLE-DUPLICADO: 0",
-    "[2026-10-04 18:22:24] Apartados a _revisar/_no_AS (no son Auto Supremo o llegaron en blanco): 9",
-    "[2026-10-04 18:22:24] Siguen sin poder identificarse (quedan en _revisar tal cual): 63",
-    "--- detectar_exp_obsoletos.py ---"
+    "[2026-10-04 18:23:46]     fechas con formato de fecha halladas en el texto: ['14 de\\nagosto de 2001', '14 de agosto de 2001', '04/10/2026']",
+    "[2026-10-04 18:23:46]   2002-11-07-TSJ-SINID-_SP1_429-SP1.pdf: fecha 2002-11-07 tomada de la firma al final del documento",
+    "[2026-10-04 18:23:49]   SIN RESOLVER: 2002-11-07-TSJ-SINID-_SP1_429-SP1.pdf -> sin numero de AS ni de Expediente reconocible",
+    "[2026-10-04 18:23:49]     diagnóstico: texto embebido 3802 car.; inicio: '437 Ministerio Público c/ Carlos Zenón Acuña Moreira Homicidio y lesiones gravísimas Distrito: Cochabamba AUTO SUPREMO VISTOS: El recurso de nulidad y casación de fs. 115, interpuesto por Carlos Zenón Acuña Moreira, contra el ",
+    "[2026-10-04 18:23:49]     crudo (400 car.): '437\\n\\nMinisterio Público c/ Carlos Zenón Acuña Moreira\\n\\nHomicidio y lesiones gravísimas\\n\\nDistrito: Cochabamba\\n\\nAUTO SUPREMO\\n\\nVISTOS: El recurso de nulidad y casación de fs. 115, interpuesto por Carlos Zenón Acuña\\nMoreira, contra el A.V. de fs. 1",
+    "[2026-10-04 18:23:49]     fechas con formato de fecha halladas en el texto: ['7 de mayo de 2001', '13 de diciembre de 1999', '04/10/2026']",
+    "[2026-10-04 18:23:49]   2002-11-07-TSJ-SINID-_SP1_430-SP1.pdf: fecha 2002-11-07 tomada de la firma al final del documento",
+    "[2026-10-04 18:23:53]   SIN RESOLVER: 2002-11-07-TSJ-SINID-_SP1_430-SP1.pdf -> sin numero de AS ni de Expediente reconocible",
+    "[2026-10-04 18:23:53]     diagnóstico: texto embebido 3479 car.; inicio: '438 Constancia Valdivia vda. de Mendoza c/ Alfredo Hinojosa Hurtado y otros Violación Distrito: Cochabamba AUTO SUPREMO VISTOS: El recurso de casación de fs. 522 interpuesto por Víctor Hugo Hinojosa Hurtado, impugnado el auto ",
+    "[2026-10-04 18:23:53]     crudo (400 car.): '438\\n\\nConstancia Valdivia vda. de Mendoza c/ Alfredo Hinojosa Hurtado y otros\\n\\nViolación\\n\\nDistrito: Cochabamba\\n\\nAUTO SUPREMO\\n\\nVISTOS: El recurso de casación de fs. 522 interpuesto por Víctor Hugo Hinojosa Hurtado,\\nimpugnado el auto de vista, cur",
+    "[2026-10-04 18:23:53]     fechas con formato de fecha halladas en el texto: ['8 de agosto de 2001', '04/10/2026']",
+    "[2026-10-04 18:23:53]   2002-11-07-TSJ-SINID-_SP1_431-SP1.pdf: fecha 2002-11-07 tomada de la firma al final del documento"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791152538,
-   "version": "c9bf27f",
+   "ts": 1791152636,
+   "version": "351a78e",
    "procesos": [],
    "gestiones": {},
    "ultimas_lineas": [
@@ -573,30 +520,35 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791152494,
-   "version": "c9bf27f",
-   "procesos": [],
+   "ts": 1791152634,
+   "version": "351a78e",
+   "procesos": [
+    {
+     "pid": 69335,
+     "tipo": "correccion",
+     "gestion": "2016",
+     "inicio_ts": 1791152609
+    }
+   ],
    "gestiones": {},
    "ultimas_lineas": [
-    "Siguen siendo EXP- (sin numero de AS reconocible): 0",
-    "   de ellos: dicen «Auto Supremo» pero no se lee el número (revisar a mano): 0",
-    "   de ellos: sin texto legible ni siquiera con OCR (escaneos ilegibles, revisar a mano): 0",
-    "Huérfanos de _revisar revisados (pareja ya renombrada): 0",
-    "Huérfanos resueltos y migrados a su Sala: 0",
-    "Barrido de 2016 registrado (v3). Repite «Auditar contra el sitio» para esta gestión.",
-    "=== RESUMEN DEL BARRIDO GENERAL ===",
-    "  2016: completo",
-    "[2026-10-04 17:45:56] Corrección automática terminada. Lo que quede en _revisar como",
-    "[2026-10-04 17:45:56] -POSIBLE-DUPLICADO ya necesita tu revisión visual (opción 'Cotejar",
-    "[2026-10-04 17:45:56] duplicados' del panel). El vigilante se detiene, no hace falta reiniciar de nuevo.",
-    "[2026-10-04 17:45:56] Vigilante detenido."
+    "[2026-10-04 18:23:29] === corregir_revisar.py -- Gestión 2016 -- EJECUCIÓN REAL ===",
+    "[2026-10-04 18:23:29] Candidatos a reprocesar: 6",
+    "[2026-10-04 18:23:39]   SIN RESOLVER: 2026-10-02-TSJ-AS-274-A-SCA1.pdf -> fecha no reconocida",
+    "[2026-10-04 18:23:39]     diagnóstico: texto embebido 2930 car.; inicio: 'TRIBUNAL SUPREMO DE JUSTICIA SALA CONTENCIOSA Y CONTENCIOSA ADM., SOCIAL Y ADM. PRIMERA Auto Supremo Nº 274-A Sucre, 31 de septiembre de 2016 Expediente : 318/2016-S Demandante : Martha Linez Peñaranda Demandada : Dirección De",
+    "[2026-10-04 18:23:39]     crudo (400 car.): 'TRIBUNAL SUPREMO DE JUSTICIA\\n SALA CONTENCIOSA Y CONTENCIOSA ADM., SOCIAL Y ADM. PRIMERA\\n Auto Supremo Nº 274-A\\n Sucre, 31 de septiembre de 2016\\n\\n Expediente : 318/2016-S\\n Demandante : Martha Linez Peñaranda\\n Demandada : Dirección Departamental de ",
+    "[2026-10-04 18:23:39]     fechas con formato de fecha halladas en el texto: ['31 de septiembre de 2016', '19 de noviembre de 2013', '6 de agosto de 2015', '19 de julio de 2016', '27 de julio de 2016']",
+    "[2026-10-04 18:23:47]   SIN RESOLVER: 2026-10-02-TSJ-AS-470-RA-SC.pdf -> fecha no reconocida",
+    "[2026-10-04 18:23:47]     diagnóstico: texto embebido 2146 car.; inicio: 'TRIBUNAL SUPREMO DE JUSTICIA SALA CIVIL Auto Supremo: 470/2016-RA Sucre: 11/05/2016 Expediente: PT-17-16-S Partes: Ambrosio Chávez Callapino. c/ Roberto Saavedra Secko. Proceso: Ordinario de Resolución de Contrato más Daños y ",
+    "[2026-10-04 18:23:47]     crudo (400 car.): 'TRIBUNAL SUPREMO DE JUSTICIA\\n SALA CIVIL\\n\\n\\n\\n\\n Auto Supremo: 470/2016-RA\\n Sucre: 11/05/2016\\n Expediente: PT-17-16-S\\n Partes: Ambrosio Chávez Callapino. c/ Roberto Saavedra Secko.\\n Proceso: Ordinario de Resolución de Contrato más Daños y Perjuicio",
+    "[2026-10-04 18:23:47]     fechas con formato de fecha halladas en el texto: ['11/05/2016', '02 de marzo\\n de 2016', '13 de octubre de 2015', '14 de octubre de 2015', '31 de mayo de\\n 2013']"
    ]
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791152525,
-   "version": "c9bf27f",
+   "ts": 1791152610,
+   "version": "351a78e",
    "procesos": [],
    "gestiones": {},
    "ultimas_lineas": [
