@@ -186,7 +186,10 @@
   nav.menu a:hover { color: #fff; }
   nav.menu a.act { color: #fff; font-weight: 600; border-bottom-color: var(--gold); }
   @media (max-width: 560px) { nav.menu { padding: 0 8px; } nav.menu a { padding: 10px 12px; } }
-  /* Guía «Qué hago ahora» */
+  /* Guía «Acciones pendientes» */
+  .g-cab { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .g-cab h2 { border: 0; margin: 0 0 10px; } .g-cab label { font-size: 13px; color: var(--muted); margin-bottom: 10px; } .g-cab select { font: inherit; padding: 6px 9px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); margin-left: 6px; }
+  label[for=sel-gestion], #sel-gestion { display: none; }
   #guia { border: 2px solid var(--gold); margin-bottom: 18px; }
   .g-etapas { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; }
   .g-etapas li { font-size: 12.5px; padding: 4px 11px; border-radius: 999px; background: #E4E0D4; color: var(--muted); }
@@ -839,18 +842,31 @@ function otrasGestionesGuia(g) {
   return esperan.length ? `<div class="g-otras">También te esperan: ${esperan.map(x => `<button type="button" class="g-chip" data-g-ir="${esc(x)}">${esc(x)}</button>`).join('')}</div>` : '';
 }
 
+function opcionesGestion(sel) {
+  let h = '';
+  for (let a = 2026; a >= 2001; a--) {
+    const el = elegir(String(a)), pend = pendienteGestion(el);
+    h += `<option value="${a}"${String(a) === String(sel) ? ' selected' : ''}>${pend ? '⚠ ' : ''}${a}${el ? ' · ' + esc(el.e.nombre.split(' ')[0]) + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : ''}</option>`;
+  }
+  return h;
+}
+document.addEventListener('change', ev => {
+  const x = ev.target.closest && ev.target.closest('[data-g-sel]'); if (!x) return;
+  gestion = x.value; guardar('tsj_gestion', gestion); destinoManual = false; render();
+});
+
 function renderGuia() {
   const box = $('guia');
   if (!box) return;
   const ae = document.activeElement;
   if (ae && ae.classList && ae.classList.contains('nota-manual') && box.contains && box.contains(ae)) return;   // no pisar lo que se está escribiendo
-  if (!equipos.length) { box.innerHTML = '<h2>Qué hago ahora</h2><div class="vacio">Conectando con los equipos…</div>'; return; }
+  if (!equipos.length) { box.innerHTML = '<h2>Acciones pendientes</h2><div class="vacio">Conectando con los equipos…</div>'; return; }
   const g = gestion, st = estadoGuia(g, true), eid = st.e ? st.e.id : '', nom = st.e ? esc(st.e.nombre.split(' (')[0]) : '';
   const etapas = '<ol class="g-etapas">' + ETAPAS_GUIA.map((n, i) => `<li class="${i < st.etapa ? 'hecha' : i === st.etapa ? 'act' : ''}"><b>${i + 1}</b> ${n}</li>`).join('') + '</ol>';
   let tit = '', cuerpo = '', clase = '';
   switch (st.fase) {
     case 'sin_datos':
-      tit = 'Esta gestión todavía no está iniciada'; cuerpo = '<p>Ningún equipo está reportando la gestión ' + esc(g) + '. Elige otra gestión arriba, o inicia su compilación desde «Detalles y controles avanzados».</p>'; break;
+      tit = 'Esta gestión todavía no está iniciada'; cuerpo = '<p>Ningún equipo está reportando la gestión ' + esc(g) + '. Elige otra gestión arriba, o inicia su compilación desde «Acciones y detalle de la gestión elegida».</p>'; break;
     case 'cerrada':
       clase = 'ok'; tit = '✓ Gestión cerrada'; cuerpo = `<p>El cierre de ${esc(g)} ya fue validado el ${esc(String(st.e.cierres[g].validado || '').replace('T', ' '))}. No hay nada más que hacer en esta gestión. El informe está en el «Repositorio de auditorías», al final de la página.</p>`; break;
     case 'desconectado':
@@ -895,7 +911,7 @@ function renderGuia() {
       break;
     }
   }
-  setHtmlKeep(box, `<h2>Qué hago ahora · gestión ${esc(g)}</h2>${etapas}<div class="g-cuerpo ${clase}"><div class="g-tit">${tit}</div>${cuerpo}</div>${ordenGuiaHtml(g)}${otrasGestionesGuia(g)}`);
+  setHtmlKeep(box, `<div class="g-cab"><h2>Acciones pendientes</h2><label>Gestión <select data-g-sel>${opcionesGestion(g)}</select></label></div>${etapas}<div class="g-cuerpo ${clase}"><div class="g-tit">${tit}</div>${cuerpo}</div>${ordenGuiaHtml(g)}${otrasGestionesGuia(g)}`);
   box.querySelectorAll('[data-nota]').forEach(i => { if (i.value !== (NOTAS_GUIA[i.dataset.nota] || '')) i.value = NOTAS_GUIA[i.dataset.nota] || ''; });
 }
 document.addEventListener('input', ev => { const i = ev.target; if (i && i.dataset && i.dataset.nota) NOTAS_GUIA[i.dataset.nota] = i.value; });
@@ -940,7 +956,7 @@ function cardCierre(av, e) {
         seccManual = `<div class="manual-sec urgente"><div class="manual-sec-tit">⚠ Revisión manual tuya — ${abiertos.length} de ${manual.length} sin marcar</div><ul class="manual-lista">${listaAbiertos}</ul>${listaHechos}</div>`;
       }
     }
-    const nota = manual.length ? `<div class="nota">Esto es solo el detalle técnico. Lo que tienes que hacer, paso a paso, está en «Qué hago ahora», arriba de todo.</div>` : '';
+    const nota = manual.length ? `<div class="nota">Esto es solo el detalle técnico. Lo que tienes que hacer, paso a paso, está en «Acciones pendientes», arriba de todo.</div>` : '';
     return `<div class="cierre-card mal"><b>Antes de cerrar la gestión ${esc(av.gestion)} hay ${v.acciones.length} cosa(s) por resolver:</b>${seccAutom}${seccManual}<div style="margin-top:10px">Cuando termines lo de arriba, pulsa <button type="button" class="btn" data-orden="auditar">Auditar contra el sitio</button> otra vez: el sistema volverá a evaluar y, si todo está resuelto, te pedirá validar el cierre.</div>${nota}</div>`;
   }
   const ex = (v.explicadas || []).length ? `<details><summary>Ver las ${v.explicadas.length} diferencia(s) explicadas</summary><ul>${v.explicadas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : '';
@@ -1219,7 +1235,7 @@ let TCPPEND = null, TCPENVIANDO = false;
 function tcpPestana(p) {
   guardar('tsj_pestana', p);
   const t = p === 'tcp';
-  $('main-tsj').hidden = t; $('main-tcp').hidden = !t; $('menu-tsj').hidden = t; $('ctrl-gestion').hidden = t;
+  $('main-tsj').hidden = t; $('main-tcp').hidden = !t; $('menu-tsj').hidden = t; 
   $('tab-tsj').classList.toggle('act', !t); $('tab-tcp').classList.toggle('act', t);
   document.title = t ? 'Panel central JurisPrud · TCP' : 'Panel central JurisPrud';
   if (t) renderTcp();
@@ -1305,6 +1321,22 @@ function renderTcp() {
       : `<div class="g-orden">⏳ Orden enviada a ${esc(e ? e.nombre : TCPPEND.eid)} (${esc(TCP_NOMBRE[TCPPEND.accion] || TCPPEND.accion)})${e && !enLinea(e) ? ' — el equipo está desconectado; se ejecutará al reconectarse (máx. 30 min).' : ' — esperando respuesta…'}</div>`;
   }
   const dis = TCPENVIANDO ? ' disabled' : '';
+  const xg = ag.lista.find(y => y.k === TCPSEL.base + ':' + TCPSEL.gestion);
+  const gtxt = (TCPSEL.base === '2' ? 'TCP ' : 'TC ') + TCPSEL.gestion;
+  const corriendo = equipos.flatMap(e => ((e.tcp && e.tcp.procesos) || []).filter(p => p.tipo === 'tcp_compilacion' && String(p.gestion) === TCPSEL.gestion && String(p.base) === TCPSEL.base).map(p => ({ e, p })))[0];
+  const item = (cls, tit, txt, btn) => `<div class="g-cuerpo ${cls}" style="margin-bottom:10px"><div class="g-tit">${tit}</div>${txt ? '<p>' + txt + '</p>' : ''}${btn ? '<div class="g-ctrl">' + btn + '</div>' : ''}</div>`;
+  const bt = (a, t, sec) => `<button type="button" class="g-btn${sec ? ' sec' : ''}" data-tcp-accion="${a}"${dis}>${t}</button>`;
+  const items = [];
+  if (!xg) items.push(item('', 'Sin datos de esta gestión', 'Ningún equipo ha reportado todavía el inventario de ' + esc(gtxt) + '.', ''));
+  else {
+    const falta = Math.max(0, xg.total - xg.hechos);
+    if (corriendo) items.push(item('trabaja', '⏳ Compilando ahora en ' + esc(corriendo.e.nombre) + ' — no tienes que hacer nada', `Faltan ${tcpNum(falta)} documentos${ritmoH ? ' · término estimado en ' + fmtDur(falta / ritmoH * 3600) : ''}.`, ''));
+    else if (falta) items.push(item('', `Quedan ${tcpNum(falta)} documentos por descargar${xg.err ? ` (${xg.err} con error, se reintentan)` : ''}`, 'No hay ninguna compilación de esta gestión en marcha. Pulsa para iniciarla o retomarla donde quedó.', bt('tcp_iniciar', '▶ Compilar / reanudar ' + esc(gtxt))));
+    if (xg.ocr) items.push(item('', `${xg.ocr} escaneos sin capa de texto`, 'Se convierten en PDF con texto (OCR) conservando el original.', bt('tcp_ocr', 'OCR de escaneos', true)));
+    if (xg.rev + xg.dup) items.push(item('turno', `👉 ${xg.rev + xg.dup} documentos para revisión manual`, 'Están en la carpeta _revisar de 05_Descargas (motivos en _progreso_tcp.csv). Aún no hay herramienta en el panel para revisarlos.', ''));
+    if (!falta && !corriendo) items.push(item(xg.ocr || xg.rev + xg.dup ? '' : 'ok', xg.ocr || xg.rev + xg.dup ? 'Descarga completa: falta conciliar' : '✓ Descarga completa', 'Compara lo descargado contra el inventario (no descarga ni borra).', bt('tcp_conciliar', 'Conciliar ' + esc(gtxt), true)));
+  }
+  const pendHtml = items.join('');
   const html = `<div class="t-grid">
   <section class="tarjeta"><h2>Avance del TCP</h2>
     <div class="res-sub" style="margin-top:0">Total del inventario: ${tcpNum(ag.total)} documentos (TC ${tcpNum(ag.b1.total)} · TCP ${tcpNum(ag.b2.total)})</div>
@@ -1313,21 +1345,24 @@ function renderTcp() {
     <div class="t-nota">${ag.total ? '' : 'Aún ningún equipo reportó el inventario del TCP. '}${eta ? 'Ritmo actual' + eta + '.' : 'Sin descargas en la última hora.'}</div>
     <div class="t-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:6px">${baseCard('2', ag.b2)}${baseCard('1', ag.b1)}</div>
   </section>
-  <section class="tarjeta"><h2>Acciones</h2>
+  <section class="tarjeta"><h2>Acciones pendientes</h2>
     <div class="t-ctrl">
-      <div><label>Ejecutar en</label><select data-tcp-sel="eid">${selEq}</select></div>
       <div><label>Tribunal</label><select data-tcp-sel="base"><option value="2"${TCPSEL.base === '2' ? ' selected' : ''}>TCP (2012–2026)</option><option value="1"${TCPSEL.base === '1' ? ' selected' : ''}>TC (1999–2011)</option></select></div>
       <div><label>Gestión</label><select data-tcp-sel="gestion">${selG}</select></div>
+      <div><label>Ejecutar en</label><select data-tcp-sel="eid">${selEq}</select></div>
     </div>
-    <div class="t-btns">
-      <button type="button" class="g-btn" data-tcp-accion="tcp_iniciar"${dis}>▶ Compilar / reanudar gestión</button>
-      <button type="button" class="g-btn sec" data-tcp-accion="tcp_conciliar"${dis}>Conciliar la gestión elegida</button>
-      <button type="button" class="g-btn sec" data-tcp-accion="tcp_conciliar_todo"${dis}>Conciliar todo</button>
-      <button type="button" class="g-btn sec" data-tcp-accion="tcp_ocr"${dis}>OCR de escaneos</button>
-      <button type="button" class="g-btn sec" data-tcp-accion="tcp_detener"${dis}>■ Detener TCP en este equipo</button>
-    </div>
-    <div class="t-nota">Cada Mac compila <b>una</b> gestión del TCP a la vez (≈ 14 s por documento) y retoma lo ya descargado. «Conciliar» compara lo descargado contra el inventario (la gestión elegida, o todo). «OCR» convierte los escaneos pendientes en PDF con texto, guardando el original.</div>
+    ${pendHtml}
     ${ord}
+    <details class="cmp" style="margin-top:12px"><summary>Todas las acciones del TCP</summary>
+      <div class="t-btns" style="margin-top:8px">
+        <button type="button" class="g-btn" data-tcp-accion="tcp_iniciar"${dis}>▶ Compilar / reanudar gestión</button>
+        <button type="button" class="g-btn sec" data-tcp-accion="tcp_conciliar"${dis}>Conciliar la gestión elegida</button>
+        <button type="button" class="g-btn sec" data-tcp-accion="tcp_conciliar_todo"${dis}>Conciliar todo</button>
+        <button type="button" class="g-btn sec" data-tcp-accion="tcp_ocr"${dis}>OCR de escaneos</button>
+        <button type="button" class="g-btn sec" data-tcp-accion="tcp_detener"${dis}>■ Detener TCP en este equipo</button>
+      </div>
+      <div class="t-nota">Cada Mac compila <b>una</b> gestión del TCP a la vez (≈ 14 s por documento) y retoma lo ya descargado. «Conciliar» compara lo descargado contra el inventario. «OCR» convierte los escaneos pendientes en PDF con texto, guardando el original.</div>
+    </details>
   </section>
   <section class="tarjeta"><h2>Avance por gestión</h2><div class="t-nota">Toca una fila para elegirla arriba. Verde = ok · azul = escaneo · naranja = por revisar/duplicado · rojo = error.</div>
     ${ag.lista.length ? `<div style="overflow-x:auto"><table class="t-tab"><thead><tr><th>Trib.</th><th>Gestión</th><th class="n">Total</th><th class="n">Ok</th><th class="n">Escaneo</th><th class="n">Revisar</th><th class="n">Dup.</th><th class="n">Error</th><th class="n">Faltan</th><th>Avance</th><th class="n">%</th></tr></thead><tbody>${filas}</tbody></table></div>` : '<div class="vacio">Esperando el primer reporte del TCP de algún equipo…</div>'}
