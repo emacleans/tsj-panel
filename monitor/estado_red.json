@@ -1,5 +1,5 @@
 {
- "ts": 1791167977,
+ "ts": 1791168281,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791167966,
+   "actualizado_ts": 1791168262,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791167966,
+   "actualizado_ts": 1791168262,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168211,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791167938,
+   "actualizado_ts": 1791168266,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791167966,
+   "actualizado_ts": 1791168262,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168273,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168273,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791167969,
+   "actualizado_ts": 1791168224,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168273,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168211,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168273,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791167938,
+   "actualizado_ts": 1791168266,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168273,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168273,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167968,
+   "actualizado_ts": 1791168273,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791167938,
+   "actualizado_ts": 1791168266,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791099249,
-   "texto": "inicia 2009 en MM-Sofi (Mac Mini Sofía) (faltantes; intento 1)"
-  },
   {
    "ts": 1791099916,
    "texto": "inicia 2007 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
@@ -384,27 +380,31 @@
   {
    "ts": 1791167255,
    "texto": "orden de Claude 2026-10-05-cotejo-auto-2018-v8: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
+  },
+  {
+   "ts": 1791168014,
+   "texto": "orden de Claude 2026-10-05-cotejo-auto-2018-v9: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791167968,
+   "ts": 1791168211,
    "version": "a0cb4e0",
    "procesos": [],
    "orden": {
-    "seq": 1791167485951,
-    "accion": "cotejar",
+    "seq": 1791168012714,
+    "accion": "cotejo_auto_real",
     "gestion": "2018",
     "ok": true,
-    "mensaje": "Cotejo de 2018 listo en http://192.168.0.9:8743 (ábrelo desde cualquier equipo de la misma red).",
-    "ts": 1791167491
+    "mensaje": "Lanzado: cotejo_auto_real, gestión 2018",
+    "ts": 1791168015
    },
    "gestiones": {
     "2018": {
      "activo": false,
-     "total_archivos": 4044,
+     "total_archivos": 4045,
      "docs_descargados": 4046,
      "salas_n": 5,
      "salas_medidas": 5,
@@ -420,14 +420,16 @@
     }
    },
    "ultimas_lineas": [
-    "/Users/enriquemaclean/Documents/TSJ/_scripts/cotejo_ui.py:894: SyntaxWarning: invalid escape sequence '\\d'",
-    "  if (/^\\d{4}-00-00$/.test(f)) {"
+    "cotejo_auto: gestión 2018, 2 par(es) en _revisar (aplicando)",
+    "AUTO  2018-10-30-TSJ-AS-120-SPL-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, partes y decisión distintos; casos 11-2018 / 12-2017",
+    "MANUAL  2018-11-01-TSJ-AS-616-SCA1-POSIBLE-DUPLICADO.pdf: expediente distinto (320 2018 ca / 322 2018 ca); las partes no son claramente distintas",
+    "RESUMEN gestión 2018: pares 2, resueltos automáticamente 1, para cotejo manual 1"
    ]
   },
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791167965,
+   "ts": 1791168276,
    "version": "a0cb4e0",
    "procesos": [],
    "orden": {
@@ -444,7 +446,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791167968,
+   "ts": 1791168263,
    "version": "a0cb4e0",
    "procesos": [],
    "orden": {
@@ -461,7 +463,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791167968,
+   "ts": 1791168273,
    "version": "a0cb4e0",
    "procesos": [],
    "orden": {
@@ -491,7 +493,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791167966,
+   "ts": 1791168262,
    "version": "a0cb4e0",
    "procesos": [],
    "orden": {
@@ -551,7 +553,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791167938,
+   "ts": 1791168266,
    "version": "a0cb4e0",
    "procesos": [],
    "orden": {
@@ -581,7 +583,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791167969,
+   "ts": 1791168224,
    "version": "a0cb4e0",
    "procesos": [],
    "orden": {
