@@ -319,6 +319,7 @@
         <li class="modo"><label><input type="radio" name="a-barrido" value="esta" checked> Esta gestión</label><label><input type="radio" name="a-barrido" value="todas"> Todas las gestiones de este equipo</label></li>
         <li><button class="paso" data-accion="fechar"><span class="num">5</span><span><div class="titulo">Fechar archivos de _revisar</div><div class="desc">Paso previo al cotejo: les pones a mano la fecha a los documentos que el script no pudo fechar, y pasan a su sala.</div></span></button></li>
         <li><button class="paso" data-accion="noas"><span class="num">5b</span><span><div class="titulo">Revisar _no_AS</div><div class="desc">Abre el revisor de los documentos que el sistema apartó por no parecer Autos Supremos (Decretos, Resoluciones, PDF en blanco…). «Confirmar descarte» o, si el sistema se equivocó, «Es AS» con número y fecha: el sistema aprende de lo que corriges.</div></span></button></li>
+        <li><button class="paso" data-accion="exp"><span class="num">5c</span><span><div class="titulo">Identificar archivos EXP-</div><div class="desc">Abre un visor con cada archivo de nombre provisional: ves el documento, escribes el número de AS y su fecha, y se renombra solo.</div></span></button></li>
         <li><button class="paso" data-accion="cotejar"><span class="num">6</span><span><div class="titulo">Cotejar duplicados</div><div class="desc">Abre la pantalla de cotejo en el equipo elegido (necesita ver los PDF, así que se usa desde ese mismo equipo).</div></span></button></li>
         <li><button class="paso" data-accion="auditar"><span class="num">7</span><span><div class="titulo">Auditar contra el sitio</div><div class="desc">Paso final antes del cierre: compara la lista completa del sitio (sin descargar PDF) con tus carpetas y dice qué AS faltan.</div></span></button></li>
         <li><button class="paso" data-accion="recuperar"><span class="num">8</span><span><div class="titulo">Recuperar faltantes</div><div class="desc">Después de auditar: vuelve a bajar del sitio solo los AS que faltan (los iguales a los que ya tienes se descartan solos; los distintos van a «Cotejar duplicados»). Luego audita otra vez.</div></span></button></li>
@@ -365,7 +366,7 @@
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
 const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
-const NOMBRE_ACCION = { fechar: 'Fechar archivos de _revisar', noas: 'Revisar _no_AS', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
+const NOMBRE_ACCION = { exp: 'Identificar archivos EXP-', fechar: 'Fechar archivos de _revisar', noas: 'Revisar _no_AS', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre',
   barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)',
   releer_sim: 'Releer pendientes (simulación)', releer_real: 'Releer pendientes (real)' };
@@ -451,11 +452,11 @@ function elegir(g) {
 // a los data-accion de los botones correspondientes en el menú "Acciones" (puede ser más de uno: "revisar"
 // y "detectar" marcan también el botón combinado "releer", que hace lo mismo encadenado). "manual" no tiene
 // botón: solo se puede resolver revisando el archivo a mano (ya se explica con texto en la tarjeta de cierre).
-const ACCION_A_PASO = { barrido: ['barrido'], detectar: ['detectar', 'releer'], cotejar: ['cotejar'], noas: ['noas'], revisar: ['corregir', 'releer'], recuperar: ['recuperar'] };
+const ACCION_A_PASO = { barrido: ['barrido'], detectar: ['detectar', 'releer'], cotejar: ['cotejar'], noas: ['noas'], exp: ['exp'], revisar: ['corregir', 'releer'], recuperar: ['recuperar'] };
 
 // Pantallas locales que abre el agente en el equipo elegido (solo se ven desde ese mismo equipo).
 function urlLocalUI(accion, msg) { const m = /(http:\/\/[\d.]+:\d+)/.exec(msg || ''); return m ? m[1] : LOCAL_UI[accion].url; }
-const LOCAL_UI = { fechar: { url: 'http://localhost:8745', nombre: '«Fechar archivos»' }, cotejar: { url: 'http://localhost:8743', nombre: 'el cotejo' }, noas: { url: 'http://localhost:8747', nombre: 'el revisor de _no_AS' } };
+const LOCAL_UI = { fechar: { url: 'http://localhost:8745', nombre: '«Fechar archivos»' }, cotejar: { url: 'http://localhost:8743', nombre: 'el cotejo' }, noas: { url: 'http://localhost:8747', nombre: 'el revisor de _no_AS' }, exp: { url: 'http://localhost:8749', nombre: 'el identificador de archivos EXP-' } };
 
 function pendienteGestion(el) {
   const v = el && el.av && el.av.auditoria && el.av.auditoria.veredicto;
@@ -824,8 +825,8 @@ function cuerpoTarea(t, st) {
     const arc = a0.archivos || [];
     return { titulo: `${arc.length || 'Varios'} archivo(s) con nombre provisional (EXP-)`,
       html: `<p>El sistema los leyó y no encontró el número del Auto Supremo (suelen ser escaneos o textos raros).</p>${listaCorta(arc)}${arc.length ? '' : `<p class="g-o">${esc(a0.texto)}</p>`}
-        <div class="g-o">Si prefieres identificarlos tú, ábrelos en ${eq} y renómbralos con su número; luego:</div><div class="g-ctrl">${aud}</div>
-        <div class="g-o">Si no se pueden identificar:</div>${acepta('Aceptar que queden así')}` };
+        <ol class="g-pasos"><li>Pulsa «Abrir el identificador»: se abre una pantalla (funciona desde cualquier equipo de la red) donde ves cada documento.</li><li>Escribe el número del Auto Supremo y su fecha; el archivo se renombra solo. Si no se puede identificar, «Dejar así».</li><li>Al terminar, la auditoría se lanza sola.</li></ol><div class="g-ctrl">${gBtn('exp', 'Abrir el identificador de archivos EXP-', '', eid)}${aud}</div>
+        <div class="g-o">Si ya sabes que ninguno se puede identificar:</div>${acepta('Aceptar que queden así')}` };
   }
   if (t.tipo === 'recuperar') {
     const filas = t.acciones.map(a => a.sala && a.numeros ? `${a.sala}: AS ${a.numeros.join(', ')}` : a.texto);
