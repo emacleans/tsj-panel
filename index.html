@@ -153,6 +153,7 @@
   footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 26px; }
   .aud { border:1px solid var(--line); border-radius:10px; margin-bottom:8px; padding:8px 12px; }
   .aud summary { cursor:pointer; font-weight:600; font-size:14px; }
+  .aud-g { font:600 17px Georgia,serif; margin:18px 0 8px; border-bottom:1px solid var(--line); padding-bottom:4px; } .aud-g small { font:400 12px sans-serif; color:var(--muted); margin-left:8px; }
   .aud summary small { font-weight:400; color:var(--muted); margin-left:8px; }
   .aud h4 { margin:16px 0 6px; font-size:13px; }
   .aud table { width:100%; border-collapse:collapse; font-size:12.5px; }
@@ -340,7 +341,7 @@
   <details class="avanzado" id="det-aud"><summary>Informes de cierre</summary>
   <section class="tarjeta" id="auditorias">
     <h2>Informes de cierre</h2>
-    <div class="desc" style="margin-bottom:10px">Cada vez que se valida el cierre de una gestión (o se revisa una gestión ya cerrada) queda aquí una foto de cómo estaba ese día, explicada en lenguaje sencillo. Orden cronológico: lo más reciente primero. Toca una auditoría para leerla.</div>
+    <div class="desc" style="margin-bottom:10px">Cada vez que se valida el cierre de una gestión (o se revisa una gestión ya cerrada) queda aquí su informe, explicado en lenguaje sencillo. Están agrupados por gestión (la más reciente primero) y, dentro de cada gestión, del informe más reciente al más antiguo. Toca un informe para leerlo y descargarlo en PDF.</div>
     <div id="aud-lista"><div class="vacio">Cargando…</div></div>
   </section>
   </details>
@@ -909,7 +910,7 @@ function renderGuia() {
     case 'sin_datos':
       tit = 'Esta gestión todavía no está iniciada'; cuerpo = '<p>Ningún equipo está reportando la gestión ' + esc(g) + '. Elige otra gestión arriba, o inicia su compilación desde «Acciones y detalle de la gestión elegida».</p>'; break;
     case 'cerrada':
-      clase = 'ok'; tit = '✓ Gestión cerrada'; cuerpo = `<p>El cierre de ${esc(g)} ya fue validado el ${esc(String(st.e.cierres[g].validado || '').replace('T', ' '))}. No hay nada más que hacer en esta gestión. El informe está en el «Informes de cierre», al final de la página.</p>`; break;
+      clase = 'ok'; tit = '✓ Gestión cerrada'; cuerpo = `<p>El cierre de ${esc(g)} ya fue validado el ${esc(String(st.e.cierres[g].validado || '').replace('T', ' '))}. No hay nada más que hacer en esta gestión. El informe está en «Informes de cierre», al final de la página.</p>`; break;
     case 'desconectado':
       clase = 'aviso'; tit = `⏸ ${nom} está desconectado`; cuerpo = `<p>No se puede avanzar hasta que ese equipo se reconecte (último dato ${esc(hace(st.e.ts))}). Aquí no hay nada que hacer salvo esperar o encender el equipo.</p>`; break;
     case 'trabaja':
@@ -1012,7 +1013,7 @@ function cardCierre(av, e) {
   const au = av.auditoria, v = au && au.veredicto;
   if (!au || !v) return av.auditoria ? '<div class="cierre-card info">Esta auditoría es de una versión anterior y no trae veredicto. Repite «Auditar contra el sitio» para ver si la gestión puede cerrarse.</div>' : '';
   const cv = (e.cierres || {})[av.gestion];
-  if (cv) return `<div class="cierre-card ok"><b>Cierre validado</b> el ${esc(String(cv.validado || '').replace('T', ' '))}. El informe completo está en el «Informes de cierre», al final de la página.</div>`;
+  if (cv) return `<div class="cierre-card ok"><b>Cierre validado</b> el ${esc(String(cv.validado || '').replace('T', ' '))}. El informe completo está en «Informes de cierre», al final de la página.</div>`;
   if (v.estado === 'en_curso') return '<div class="cierre-card info"><b>Gestión en curso.</b> Se puede auditar para ver el estado, pero el cierre solo se valida cuando el año haya terminado.</div>';
   if (v.estado === 'acciones') {
     const manual = v.acciones.filter(a => a.id === 'manual'), resto = v.acciones.filter(a => a.id !== 'manual');
@@ -1222,7 +1223,7 @@ async function enviarOrden(base, obs, opts) {
   opts = opts || {};
   const accion = opts.directa || accionFinal(base), eid = opts.eid || $('sel-destino').value, e = equipos.find(x => x.id === eid);
   if (!e) { alert('No hay equipo destino.'); return; }
-  if (accion === 'validar_cierre' && !confirm(`Validar el cierre de la gestión ${gestion}. Queda registrado con su informe en el sección «Informes de cierre». ¿Confirmas?`)) return;
+  if (accion === 'validar_cierre' && !confirm(`Validar el cierre de la gestión ${gestion}. Queda registrado con su informe en «Informes de cierre». ¿Confirmas?`)) return;
   const gEtiqueta = opts.pid ? (opts.etiqueta || '') : `gestión ${gestion}`;
   const pide = ['iniciar', 'detener', 'actualizar', 'corregir_real', 'detectar_real', 'barrido_real', 'barrido_todas_real', 'releer_real'].includes(accion);
   if (pide && !confirm(`${opts.pid ? 'Detener' : NOMBRE_ACCION[accion]} en ${e.nombre} (${gEtiqueta}). ¿Confirmas?`)) return;
@@ -1288,11 +1289,14 @@ function htmlAud(d) {
 }
 function renderAuditorias() {
   const box = $('aud-lista');
-  if (!audLista.length) { setHtmlKeep(box, '<div class="vacio">Aún no hay auditorías guardadas. Aparecerán aquí al validar el cierre de una gestión.</div>'); return; }
-  setHtmlKeep(box, audLista.map(n => {
+  if (!audLista.length) { setHtmlKeep(box, '<div class="vacio">Aún no hay informes de cierre. Aparecerán aquí al validar el cierre de una gestión.</div>'); return; }
+  const porG = {};
+  audLista.forEach(n => { const i = nombreAud(n); (porG[i.g || 'Otros'] = porG[i.g || 'Otros'] || []).push(n); });
+  const gs = Object.keys(porG).sort((a, b) => b.localeCompare(a));
+  setHtmlKeep(box, gs.map(g => `<h3 class="aud-g">Gestión ${esc(g)} <small>${porG[g].length} informe(s)</small></h3>` + porG[g].slice().sort((a, b) => b.localeCompare(a)).map(n => {
     const i = nombreAud(n), d = audDet[n];
-    return `<details class="aud" data-n="${esc(n)}"${audAbiertas.has(n) ? ' open' : ''}><summary>Gestión ${esc(i.g)} · ${esc(i.tipo)}<small>${esc(i.fecha)}</small></summary>${audAbiertas.has(n) ? (d ? htmlAud(d).replace('__N__', esc(n)) : '<p>Cargando…</p>') : ''}</details>`;
-  }).join(''));
+    return `<details class="aud" data-n="${esc(n)}"${audAbiertas.has(n) ? ' open' : ''}><summary>${esc(i.tipo)}<small>${esc(i.fecha)}</small></summary>${audAbiertas.has(n) ? (d ? htmlAud(d).replace('__N__', esc(n)) : '<p>Cargando…</p>') : ''}</details>`;
+  }).join('')).join(''));
 }
 document.addEventListener('toggle', async ev => {
   const el = ev.target; if (!el.classList || !el.classList.contains('aud')) return;
