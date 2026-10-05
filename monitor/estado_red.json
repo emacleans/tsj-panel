@@ -1,5 +1,5 @@
 {
- "ts": 1791159980,
+ "ts": 1791160289,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -24,17 +24,24 @@
  "gestiones": [
   {
    "gestion": "2013",
-   "estado": "Compilada completa",
-   "estado_interno": "completa",
+   "estado": "Compilando",
+   "estado_interno": "incompleta",
    "salas_n": 11,
    "salas_medidas": 11,
-   "docs": 5217,
+   "docs": 5218,
    "total_esperado": 5271,
    "total_completo": true,
    "pct": 99.0,
-   "eta": null,
+   "eta": {
+    "tasa_min": 0.03,
+    "restantes": 53,
+    "segundos": 91504,
+    "fin_ts": 1791251774,
+    "fin_min_ts": 1791188863,
+    "fin_max_ts": 1791260925
+   },
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791159916,
+   "actualizado_ts": 1791160270,
    "viejo": false
   },
   {
@@ -49,7 +56,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791159916,
+   "actualizado_ts": 1791160270,
    "viejo": false
   },
   {
@@ -64,7 +71,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791159868,
+   "actualizado_ts": 1791160269,
    "viejo": false
   },
   {
@@ -79,7 +86,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791159919,
+   "actualizado_ts": 1791160248,
    "viejo": false
   },
   {
@@ -94,7 +101,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791159916,
+   "actualizado_ts": 1791160270,
    "viejo": false
   },
   {
@@ -109,7 +116,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791159917,
+   "actualizado_ts": 1791160268,
    "viejo": false
   },
   {
@@ -124,7 +131,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791159917,
+   "actualizado_ts": 1791160268,
    "viejo": false
   },
   {
@@ -139,7 +146,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791159921,
+   "actualizado_ts": 1791160249,
    "viejo": false
   },
   {
@@ -154,7 +161,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791159917,
+   "actualizado_ts": 1791160268,
    "viejo": false
   },
   {
@@ -169,7 +176,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791159868,
+   "actualizado_ts": 1791160269,
    "viejo": false
   },
   {
@@ -184,7 +191,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791159917,
+   "actualizado_ts": 1791160268,
    "viejo": false
   },
   {
@@ -199,7 +206,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791159919,
+   "actualizado_ts": 1791160248,
    "viejo": false
   },
   {
@@ -214,7 +221,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791159917,
+   "actualizado_ts": 1791160268,
    "viejo": false
   },
   {
@@ -229,7 +236,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791159917,
+   "actualizado_ts": 1791160268,
    "viejo": false
   },
   {
@@ -244,7 +251,7 @@
    "pct": 98.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791159917,
+   "actualizado_ts": 1791160268,
    "viejo": false
   },
   {
@@ -259,16 +266,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791159919,
+   "actualizado_ts": 1791160248,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791054345,
-   "texto": "inicia 2009 en MM-Sofi (Mac Mini Sofía) (incompleta; intento 1)"
-  },
   {
    "ts": 1791064302,
    "texto": "inicia 2005 en MM-Ali (Mac Mini Alicia) (sin_empezar; intento 1)"
@@ -384,25 +387,29 @@
   {
    "ts": 1791159113,
    "texto": "orden de Claude 2026-10-05-releer-2018-cotejo-auto: releer_real 2018 en iMac-Sala (iMac de la sala)"
+  },
+  {
+   "ts": 1791160002,
+   "texto": "orden de Claude 2026-10-05-releer-2018-v2: releer_real 2018 en iMac-Sala (iMac de la sala)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791159868,
-   "version": "ccfd623",
+   "ts": 1791160269,
+   "version": "7caa478",
    "procesos": [],
    "gestiones": {
     "2018": {
      "activo": false,
      "total_archivos": 4020,
-     "docs_descargados": 4056,
+     "docs_descargados": 4048,
      "salas_n": 5,
      "salas_medidas": 5,
      "total_completo": true,
      "total_esperado": 4051,
-     "pct_total": 100.0,
+     "pct_total": 99.9,
      "estado": "con_faltantes",
      "estado_texto": "Con faltantes (2)",
      "termino_con_exito": true,
@@ -411,13 +418,26 @@
      "salud": null
     }
    },
-   "ultimas_lineas": []
+   "ultimas_lineas": [
+    "[2026-10-04 20:31:08] AUDITORÍA Sala Penal                : sitio 1111 filas (1108 AS distintos, 3 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
+    "[2026-10-04 20:31:08] AUDITORÍA Sala Civil                : sitio 1306 filas (1306 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-04 20:31:08] AUDITORÍA Sala Plena                : sitio 127 filas (126 AS distintos, 1 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-04 20:31:08] AUDITORÍA Sala Contenciosa Primera  : sitio 911 filas (804 AS distintos, 107 repetidos, 19 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 3",
+    "[2026-10-04 20:31:08] AUDITORÍA Sala Contenciosa Segunda  : sitio 596 filas (473 AS distintos, 123 repetidos, 0 sin número legible) | sin archivo 3, de ellas 3 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-04 20:31:08]   DETALLE SOBRANTES Sala Penal: AS 917 (2 archivos / 1 filas)",
+    "[2026-10-04 20:31:08]   DETALLE SOBRANTES Sala Contenciosa Primera: AS 16 (4 archivos / 3 filas); AS 34 (4 archivos / 3 filas)",
+    "[2026-10-04 20:31:08] CONCLUSIÓN: antes de cerrar 2018 hay 2 cosa(s) por resolver:",
+    "[2026-10-04 20:31:08]   1) Hay 28 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2018-01-29-TSJ-AS-34-A-SCA1-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
+    "[2026-10-04 20:31:08]   2) 1 archivo(s) en las salas tienen un nombre provisional (empiezan con «EXP-», porque al bajarlos no se leyó el número del Auto Supremo). Esta acción vuelve a leerlos y les pone su nombre definitivo. Los que sean escaneos sin texto necesitarán lectura por reconocimiento ópti",
+    "[2026-10-04 20:31:08]   Luego repite «Auditar contra el sitio».",
+    "[2026-10-04 20:31:08] Detalle en /Users/enriquemaclean/Documents/TSJ/Compilacion/2018/_faltantes.csv y /Users/enriquemaclean/Documents/TSJ/Compilacion/2018/_auditoria.json."
+   ]
   },
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791159967,
-   "version": "ccfd623",
+   "ts": 1791160280,
+   "version": "7caa478",
    "procesos": [],
    "gestiones": {},
    "ultimas_lineas": []
@@ -425,7 +445,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791159972,
+   "ts": 1791160282,
    "version": "ccfd623",
    "procesos": [],
    "gestiones": {},
@@ -434,47 +454,87 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791159917,
-   "version": "ccfd623",
-   "procesos": [
-    {
-     "pid": 11573,
-     "tipo": "correccion",
-     "gestion": "2002",
-     "inicio_ts": 1791159892
-    }
-   ],
+   "ts": 1791160268,
+   "version": "7caa478",
+   "procesos": [],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-04 20:25:07]     fechas con formato de fecha halladas en el texto: ['12 de abril de 2001', '04/10/2026']",
-    "[2026-10-04 20:25:07]   2002-11-07-TSJ-SINID-_SP1_425-SP1.pdf: fecha 2002-11-07 tomada de la firma al final del documento",
-    "[2026-10-04 20:25:10]   SIN RESOLVER: 2002-11-07-TSJ-SINID-_SP1_425-SP1.pdf -> sin numero de AS ni de Expediente reconocible",
-    "[2026-10-04 20:25:10]     diagnóstico: texto embebido 3593 car.; inicio: '433 Ministerio Público c/ David Cruz Tusco Tráfico de sustancias controladas Distrito: La Paz AUTO SUPREMO VISTOS: El recurso de casación interpuesto por David Cruz Tusco a fs. 139-140, impugnado el auto de vista de 13 de agos",
-    "[2026-10-04 20:25:10]     crudo (400 car.): '433\\n\\nMinisterio Público c/ David Cruz Tusco\\n\\nTráfico de sustancias controladas\\n\\nDistrito: La Paz\\n\\nAUTO SUPREMO\\n\\nVISTOS: El recurso de casación interpuesto por David Cruz Tusco a fs. 139-140,\\nimpugnado el auto de vista de 13 de agosto de 2001 de",
-    "[2026-10-04 20:25:10]     fechas con formato de fecha halladas en el texto: ['13 de agosto de 2001', '15 de enero de 2001', '14 de enero de 2000', '04/10/2026']",
-    "[2026-10-04 20:25:10]   2002-11-07-TSJ-SINID-_SP1_426-SP1.pdf: fecha 2002-11-07 tomada de la firma al final del documento",
-    "[2026-10-04 20:25:14]   SIN RESOLVER: 2002-11-07-TSJ-SINID-_SP1_426-SP1.pdf -> sin numero de AS ni de Expediente reconocible",
-    "[2026-10-04 20:25:14]     diagnóstico: texto embebido 3719 car.; inicio: '434 Ministerio Público c/ Reynaldo Pinto Quispe y Pedro Jesús Lima Sorzano Suministro de sustancias controladas Distrito: La Paz AUTO SUPREMO VISTOS: El recurso de casación de fs. 322 interpuesto por Reynaldo Pinto Quispe, con",
-    "[2026-10-04 20:25:14]     crudo (400 car.): '434\\n\\nMinisterio Público c/ Reynaldo Pinto Quispe y Pedro Jesús Lima Sorzano\\n\\nSuministro de sustancias controladas\\n\\nDistrito: La Paz\\n\\nAUTO SUPREMO\\n\\nVISTOS: El recurso de casación de fs. 322 interpuesto por Reynaldo Pinto Quispe, contra el\\nA.V. d",
-    "[2026-10-04 20:25:14]     fechas con formato de fecha halladas en el texto: ['3 de septiembre de 2001', '30 de septiembre de 1999', '04/10/2026']",
-    "[2026-10-04 20:25:14]   2002-11-07-TSJ-SINID-_SP1_427-SP1.pdf: fecha 2002-11-07 tomada de la firma al final del documento"
+    "[2026-10-04 20:31:04]   1) Hay 5 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2002-06-11-TSJ-AS-219-SP1-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
+    "[2026-10-04 20:31:04]   2) Hay 63 archivo(s) en «_revisar» que el programa no pudo identificar con seguridad (por ejemplo: no se leyó el número o la fecha). Ejemplo: 2002-09-03-TSJ-SINID-_SP1_329-SP1.pdf. El corrector intenta resolverlos solo.",
+    "[2026-10-04 20:31:04]   3) Hay 9 documento(s) en «_revisar/_no_AS» (Decretos, Resoluciones, PDF en blanco…) que el programa apartó porque no parecen Autos Supremos y que aún no has revisado. Ejemplo: 2002-03-14-TSJ-SINID-p_SP1_98-SP1.pdf. Para cada uno, «Confirmar descarte» (de verdad no es un AS) o",
+    "[2026-10-04 20:31:04]   4) Sala Plena: el sitio lista los Autos Supremos N.º 31, 34 y no tenemos archivo con ese número. Hay que pedirlos de nuevo al sitio: o se descargan, o queda comprobado que el sitio no los entrega.",
+    "[2026-10-04 20:31:04]   5) Sala Contenciosa Primera: el sitio lista los Autos Supremos N.º 357, 358, 359, 370, 371, 372 y no tenemos archivo con ese número. Hay que pedirlos de nuevo al sitio: o se descargan, o queda comprobado que el sitio no los entrega.",
+    "[2026-10-04 20:31:04]   6) Sala Penal 1: el sitio lista los Autos Supremos N.º 99, 107, 124, 139, 199, 284, 331, 333, 334, 364, 383, 428… y no tenemos archivo con ese número. Hay que pedirlos de nuevo al sitio: o se descargan, o queda comprobado que el sitio no los entrega.",
+    "[2026-10-04 20:31:04]   7) Sala Civil 1: el sitio lista los Autos Supremos N.º 169, 188 y no tenemos archivo con ese número. Hay que pedirlos de nuevo al sitio: o se descargan, o queda comprobado que el sitio no los entrega.",
+    "[2026-10-04 20:31:04]   8) Sala Civil 1: el archivo con el número 184 (2002-06-06-TSJ-AS-184-SC1.pdf) no figura en la lista del sitio y no se ha podido explicar por qué. Revisa su encabezado: puede que el número esté mal leído. Si es correcto, pide recuperar los faltantes de la sala.",
+    "[2026-10-04 20:31:04]   Luego repite «Auditar contra el sitio».",
+    "[2026-10-04 20:31:04] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Penal 1 9.",
+    "[2026-10-04 20:31:04] OBSERVACIÓN Sala Contenciosa Primera: el sitio lista bajo 2002 4 fila(s) de OTRA gestión (no cuentan como faltantes): #161 AS/0159-C/2001; #191 AS/0189-C/2001; #210 AS/0206-C/2001; #275 AS/0269-C/2001.",
+    "[2026-10-04 20:31:04] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2002/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2002/_auditoria.json."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791159916,
-   "version": "ccfd623",
+   "ts": 1791160270,
+   "version": "7caa478",
    "procesos": [
     {
-     "pid": 1426,
-     "tipo": "deteccion",
+     "pid": 7236,
+     "tipo": "recuperacion",
      "gestion": "2013",
-     "inicio_ts": 1791159853
+     "inicio_ts": 1791160130
     }
    ],
-   "gestiones": {},
-   "ultimas_lineas": []
+   "gestiones": {
+    "2013": {
+     "activo": true,
+     "total_archivos": 5214,
+     "docs_descargados": 5218,
+     "salas_n": 11,
+     "salas_medidas": 11,
+     "total_completo": true,
+     "total_esperado": 5271,
+     "pct_total": 99.0,
+     "estado": "compilando",
+     "estado_texto": "Compilando",
+     "termino_con_exito": true,
+     "con_faltantes": null,
+     "eta": {
+      "tasa_min": 0.03,
+      "restantes": 53,
+      "segundos": 91504,
+      "fin_ts": 1791251774,
+      "fin_min_ts": 1791188863,
+      "fin_max_ts": 1791260925
+     },
+     "salud": {
+      "estado": "ok",
+      "limite_30m": 0,
+      "fallos_30m": 0,
+      "fallos_15m": 0,
+      "fallos_total": 410,
+      "ultimo_movimiento_ts": 1791160268,
+      "ultimo_limite_ts": null,
+      "ultima_falla_ts": 1791133134,
+      "detalle": ""
+     }
+    }
+   },
+   "ultimas_lineas": [
+    "[2026-10-04 20:30:23] Sala Penal Liquidadora: 751 resultados encontrados en el sitio.",
+    "[2026-10-04 20:30:32] Sala Penal Liquidadora: la fila #412 ('AS/0416/2013') entregó un PDF idéntico a «2013-08-30-TSJ-SINID-PLIQ_412-SPLIQ.pdf», que ya existe: se descarta.",
+    "[2026-10-04 20:30:40] Sala Penal Liquidadora: la fila #560 ('AS/0566/2013') entregó un PDF idéntico a «2013-10-29-TSJ-AS-556-SPLIQ.pdf», que ya existe: se descarta.",
+    "[2026-10-04 20:30:48] Sala Penal Liquidadora: la fila #583 ('AS/0589/2013') entregó un PDF idéntico a «2013-11-06-TSJ-AS-598-SPLIQ.pdf», que ya existe: se descarta.",
+    "[2026-10-04 20:30:48] --- Sala Penal Liquidadora terminada: 0 nuevos, 3 ya existentes. Archivos totales ahora en la carpeta: 749 (el sitio reporta 751 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-04 20:30:48] --- Iniciando Sala Civil 1 (Gestión 2013) ---",
+    "[2026-10-04 20:30:51] Sala Civil 1: 674 resultados encontrados en el sitio.",
+    "[2026-10-04 20:30:51] Sala Civil 1: 1 filas ya estan guardadas en _revisar (pendientes de corregir): no se vuelven a descargar.",
+    "[2026-10-04 20:31:01] Sala Civil 1: la fila #247 ('AS/0248/2013') entregó un PDF idéntico a «2026-10-04-TSJ-EXP-SC-24-13-S-SC1.pdf», que ya existe: se descarta.",
+    "[2026-10-04 20:31:08] Sala Civil 1: la fila #388 ('AS/0389/2013') entregó un PDF idéntico a «2013-07-22-TSJ-AS-381-SC1.pdf», que ya existe: se descarta.",
+    "[2026-10-04 20:31:08] --- Sala Civil 1 terminada: 0 nuevos, 2 ya existentes. Archivos totales ahora en la carpeta: 671 (el sitio reporta 674 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-04 20:31:08] --- Iniciando Sala Civil Liquidadora (Gestión 2013) ---"
+   ]
   },
   {
    "id": "macbook-air-de-enrique",
@@ -501,7 +561,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791159919,
+   "ts": 1791160248,
    "version": "ccfd623",
    "procesos": [],
    "gestiones": {},
@@ -523,7 +583,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791159921,
+   "ts": 1791160249,
    "version": "ccfd623",
    "procesos": [],
    "gestiones": {},
