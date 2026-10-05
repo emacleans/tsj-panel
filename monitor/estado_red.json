@@ -1,5 +1,5 @@
 {
- "ts": 1791167458,
+ "ts": 1791167674,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791167448,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791167448,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791167420,
+   "actualizado_ts": 1791167621,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791167436,
+   "actualizado_ts": 1791167609,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791167448,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167444,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167444,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791167394,
+   "actualizado_ts": 1791167648,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167444,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791167420,
+   "actualizado_ts": 1791167621,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167444,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791167436,
+   "actualizado_ts": 1791167609,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167444,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167444,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791167444,
+   "actualizado_ts": 1791167658,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791167436,
+   "actualizado_ts": 1791167609,
    "viejo": false
   }
  ],
@@ -390,9 +390,17 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791167420,
+   "ts": 1791167621,
    "version": "3e01d6a",
    "procesos": [],
+   "orden": {
+    "seq": 1791167485951,
+    "accion": "cotejar",
+    "gestion": "2018",
+    "ok": true,
+    "mensaje": "Cotejo de 2018 listo en http://192.168.0.9:8743 (ábrelo desde cualquier equipo de la misma red).",
+    "ts": 1791167491
+   },
    "gestiones": {
     "2018": {
      "activo": false,
@@ -419,27 +427,51 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791167450,
+   "ts": 1791167662,
    "version": "3e01d6a",
    "procesos": [],
+   "orden": {
+    "seq": 1791161058560,
+    "accion": "tcp_iniciar",
+    "gestion": "2025",
+    "ok": true,
+    "mensaje": "Lanzado: compilación TCP, gestión 2025, base 2 (TCP); retoma lo ya hecho.",
+    "ts": 1791161060
+   },
    "gestiones": {},
    "ultimas_lineas": []
   },
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791167433,
+   "ts": 1791167665,
    "version": "3e01d6a",
    "procesos": [],
+   "orden": {
+    "seq": 1791155101887,
+    "accion": "tcp_iniciar",
+    "gestion": "2024",
+    "ok": true,
+    "mensaje": "Lanzado: compilación TCP, gestión 2024, base 2 (TCP); retoma lo ya hecho.",
+    "ts": 1791155105
+   },
    "gestiones": {},
    "ultimas_lineas": []
   },
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791167444,
+   "ts": 1791167658,
    "version": "3e01d6a",
    "procesos": [],
+   "orden": {
+    "seq": 1791157808708,
+    "accion": "tcp_iniciar",
+    "gestion": "2023",
+    "ok": true,
+    "mensaje": "Lanzado: compilación TCP, gestión 2023, base 2 (TCP); retoma lo ya hecho.",
+    "ts": 1791157809
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-04 20:39:22]   DETALLE FALTAN Sala Plena: AS 31",
@@ -459,9 +491,17 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791167448,
+   "ts": 1791167658,
    "version": "3e01d6a",
    "procesos": [],
+   "orden": {
+    "seq": 1791164657175,
+    "accion": "tcp_iniciar",
+    "gestion": "2022",
+    "ok": true,
+    "mensaje": "Lanzado: compilación TCP, gestión 2022, base 2 (TCP); retoma lo ya hecho.",
+    "ts": 1791164660
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "Siguen siendo EXP- (sin numero de AS reconocible): 5",
@@ -484,6 +524,14 @@
    "ts": 1791165716,
    "version": "191418b",
    "procesos": [],
+   "orden": {
+    "seq": 1791141682030,
+    "accion": "detener",
+    "gestion": "2014",
+    "ok": true,
+    "mensaje": "Detenido: recuperacion 2014",
+    "ts": 1791141688
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "    at PipeTransport.send (/Users/enriquemaclean/Library/Python/3.14/lib/python/site-packages/playwright/driver/package/lib/server/utils/pipeTransport.js:52:21)",
@@ -503,9 +551,17 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791167436,
+   "ts": 1791167609,
    "version": "3e01d6a",
    "procesos": [],
+   "orden": {
+    "seq": 1791149531564,
+    "accion": "iniciar",
+    "gestion": "2016",
+    "ok": true,
+    "mensaje": "Lanzado: iniciar, gestión 2016",
+    "ts": 1791149534
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-04 18:24:13]     crudo (400 car.): 'TRIBUNAL SUPREMO DE JUSTICIA\\n SALA CIVIL\\n\\n\\n Auto Supremo: 544/2016-RA\\n Sucre: 23/05/2016\\n Expediente: O-34-16-S\\n Partes: Juan Román Guaygua Llanos\\n C/\\n Oscar Pedro Heredia Orellana y Otra.\\n Proceso: Nulidad de Documento\\n Distrito: Oruro\\n\\n VIS",
@@ -525,9 +581,17 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791167394,
+   "ts": 1791167648,
    "version": "3e01d6a",
    "procesos": [],
+   "orden": {
+    "seq": 1791132591590,
+    "accion": "iniciar",
+    "gestion": "2009",
+    "ok": true,
+    "mensaje": "Lanzado: iniciar, gestión 2009",
+    "ts": 1791132593
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-04 13:37:09] AUDITORÍA Sala Civil 2              : sitio 109 filas (109 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
