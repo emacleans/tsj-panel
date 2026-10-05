@@ -1598,7 +1598,7 @@ function gacEquipo(x) {
   const e = vivo || (x.hechos ? equipos.find(q => q.id === x.eid) : null);
   if (!e) return '<span class="pm">–</span>';
   const g = e.gaceta || {};
-  const activo = !vivo && enLinea(e) && g.ultimo_ts && ahora() - g.ultimo_ts < 180;
+  const activo = false;
   const ocupado = (g.procesos || []).length > 0;
   const [col, txt] = vivo ? ['var(--active)', 'compilando esta sección ahora'] : !enLinea(e) ? ['#B9B3A4', 'desconectado hace ' + haceCuanto(e.ts)] : activo ? ['var(--active)', 'compilando (guardó algo hace ' + haceCuanto(g.ultimo_ts) + ')'] : ocupado ? ['var(--active)', 'en línea, ocupado con otra sección'] : ['var(--ok)', 'en línea, sin trabajo de Gaceta'];
   return `<span title="${esc(txt)}"><span style="color:${col}">●</span> ${esc(e.nombre.split(' (')[0])}</span>`;
@@ -1663,7 +1663,7 @@ function renderGaceta() {
   }).join('');
   const tarjEq = equipos.map(e => {
     const g = e.gaceta, on = enLinea(e);
-    const trabajando = on && g && ((g.procesos || []).length || (g.ultimo_ts && ahora() - g.ultimo_ts < 180));
+    const trabajando = !!(on && g && (g.procesos || []).length);   // solo cuenta un proceso real, no «guardó algo hace poco»
     let cuerpo;
     if (!g) cuerpo = '<div class="e-meta">Este equipo aún no reporta el módulo Gaceta. Necesita el agente actualizado y el instalador de la Gaceta (carpeta GACETA).</div>';
     else if (!g.disponible) cuerpo = `<div class="e-meta">Módulo Gaceta no disponible${g.error ? ' (' + esc(g.error) + ')' : ''}.</div>`;
@@ -1678,7 +1678,7 @@ function renderGaceta() {
         return `<div class="e-meta">${estado}${v.pct != null ? ' · tanda al ' + v.pct + ' %' : ''}${eta}${tanda}${esp ? '' : ' · ritmo ' + (v.ritmo ? (v.ritmo * 60).toFixed(0) + ' /h' : '—')}</div><div class="t-barra" style="margin:2px 0 4px"><i class="b-ok" style="width:${Math.min(100, v.pct || 0)}%"></i></div>`;
       };
       const ps = (g.procesos || []).map(p => `<div class="e-proceso"><span>Gaceta · ${esc(GAC_ETQ[p.seccion] || p.seccion || '')} (${p.modo === 'completo' ? 'completa' : 'piloto'}) · hace ${haceCuanto(p.inicio_ts)}</span><button type="button" data-gac-detener="${esc(e.id)}" data-pid="${p.pid}">Detener</button></div>${progreso(p)}`).join('');
-      cuerpo = `${ps || (trabajando ? '<div class="e-trabajo ocupado">Compilando (guardó algo hace ' + haceCuanto(g.ultimo_ts) + ')</div>' : '<div class="e-trabajo">Sin procesos de Gaceta en curso.</div>')}
+      cuerpo = `${ps || '<div class="e-trabajo">Sin procesos de Gaceta en curso.</div>'}
         <div class="e-meta">Script ${esc(g.script || (g.script_presente ? '?' : 'no instalado'))} · ritmo ${g.ritmo_min ? g.ritmo_min.toFixed(1) + ' /min' : '—'}${g.error ? ' · error ' + esc(g.error) : ''}${g.ultimo_ts ? ' · último guardado hace ' + haceCuanto(g.ultimo_ts) : ''}</div>
         ${(g.log || []).length ? `<details class="cmp" data-k="gaclog-${esc(e.id)}"${ABIERTOS.has('gaclog-' + e.id) ? ' open' : ''}><summary>Registro reciente</summary><div class="t-log" data-scroll="gaclog-${esc(e.id)}">${esc((g.log || []).join('\n'))}</div></details>` : ''}`;
     }
