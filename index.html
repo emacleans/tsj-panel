@@ -1742,6 +1742,12 @@ async function enviarOrdenGaceta(accion, pid, over) {
   if (!e) { alert('No hay equipo destino.'); return; }
   const sec = GACSEL.seccion, modo = GACSEL.modo;
   if (accion === 'gaceta_iniciar') {
+    // Protecciones contra una selección equivocada de equipo (el mismo trabajo en dos Macs duplica descargas y carga el sitio)
+    const otro = equipos.find(x => x.id !== e.id && ((x.gaceta && x.gaceta.procesos) || []).some(p => p.seccion === sec || (p.seccion === 'departamental' && sec.startsWith('dep_'))));
+    if (otro) { alert(`No se envió la orden: ${otro.nombre} ya está compilando esta sección (${GAC_ETQ[sec] || sec}). Dos equipos con lo mismo duplican descargas y cargan el servidor de la Gaceta. Detén esa compilación primero si de verdad quieres cambiar de equipo.`); return; }
+    const hechosEn = x => { const v = x.gaceta && x.gaceta.por && x.gaceta.por[sec]; return v && v.modo === modo ? (v.hechos || 0) : 0; };
+    const lider = equipos.filter(x => x.id !== e.id).sort((a, b) => hechosEn(b) - hechosEn(a))[0];
+    if (lider && hechosEn(lider) > hechosEn(e) + 20 && !confirm(`⚠ ${lider.nombre} ya lleva ${hechosEn(lider)} documentos de esta sección y ${e.nombre} solo ${hechosEn(e)}. Si compilas en ${e.nombre}, el trabajo empieza casi de cero en un equipo distinto. ¿Seguro que quieres ${e.nombre}?`)) return;
     if (!confirm(`Compilar la Gaceta (${GAC_ETQ[sec] || sec}) en ${e.nombre}, modo ${modo === 'piloto' ? 'piloto (≈100 documentos)' : 'COMPLETO (puede tardar horas o días; retoma lo ya hecho)'}. ¿Confirmas?`)) return;
   } else if (accion === 'gaceta_detener') {
     if (!confirm(`Detener lo que corre de la Gaceta en ${e.nombre} (se guarda lo avanzado y se puede reanudar). ¿Confirmas?`)) return;
