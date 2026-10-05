@@ -27,6 +27,7 @@
   .ok { color:var(--ok); font-weight:600; } .aviso { color:var(--warn); font-weight:600; }
   .btn { font:inherit; font-size:13px; padding:6px 12px; border-radius:8px; border:1px solid var(--gold); background:var(--gold); color:#fff; cursor:pointer; white-space:nowrap; }
   .btn.sec { background:transparent; color:var(--ink); border-color:var(--line); }
+  .grupo-g { font:600 18px Georgia,serif; margin:20px 0 6px; } .grupo-g small { font:400 12px sans-serif; color:var(--muted); margin-left:8px; }
   .vacio { color:var(--muted); padding:18px 4px; }
   .e-meta { color:var(--muted); font-size:12px; }
   @media (max-width:700px) { .tabla th.oc, .tabla td.oc { display:none; } main { padding:16px 12px; } }
@@ -57,7 +58,7 @@
 <nav class="menu" aria-label="Secciones"><a href="./">Inicio</a><a href="auditorias.html" class="act" aria-current="page">Informes de cierre</a></nav>
 <main>
   <section class="tarjeta">
-    <p class="desc">Cada fila es una auditoría guardada: una «foto» de cómo estaba una gestión (año) el día en que se validó su cierre, o cuando se revisó de nuevo después. Pulsa <b>Descargar PDF</b> para guardar el informe completo en tamaño carta: se abre una ventana y, en el cuadro de impresión de tu navegador, eliges «Guardar como PDF».</p>
+    <p class="desc">Aquí están los informes de cierre, agrupados por gestión (la más reciente primero) y, dentro de cada una, del más reciente al más antiguo. Pulsa <b>Descargar PDF</b> para guardar el informe completo en tamaño carta: se abre una ventana y, en el cuadro de impresión de tu navegador, eliges «Guardar como PDF».</p>
     <div class="barra">
       <label for="f-tipo">Mostrar:</label>
       <select id="f-tipo"><option value="cierre">Solo cierres validados</option><option value="todas">Cierres y revisiones periódicas</option></select>
@@ -136,12 +137,14 @@ function render() {
   const tipo = $('f-tipo').value, g = $('f-g').value;
   const filas = lista.map(n => ({ n, i: nombreAud(n) })).filter(x => (tipo === 'todas' || x.i.tipo === 'Cierre validado') && (!g || x.i.g === g));
   filas.sort((a, b) => (b.i.g.localeCompare(a.i.g)) || b.n.localeCompare(a.n));
-  $('cuenta').textContent = filas.length + ' auditoría(s)';
-  if (!filas.length) { $('caja').innerHTML = '<div class="vacio">No hay auditorías que mostrar con este filtro. Aparecen aquí al validar el cierre de una gestión desde el panel.</div>'; return; }
-  $('caja').innerHTML = `<table class="tabla"><thead><tr><th>Gestión</th><th>Tipo</th><th>Fecha y hora</th><th class="num oc">En sala</th><th class="oc">Resultado</th><th>Informe</th></tr></thead><tbody>` + filas.map(x => {
+  $('cuenta').textContent = filas.length + ' informe(s)';
+  if (!filas.length) { $('caja').innerHTML = '<div class="vacio">No hay informes que mostrar con este filtro. Aparecen aquí al validar el cierre de una gestión desde el panel.</div>'; return; }
+  const porG = {}; filas.forEach(x => { (porG[x.i.g || 'Otros'] = porG[x.i.g || 'Otros'] || []).push(x); });
+  const gs = Object.keys(porG).sort((a, b) => b.localeCompare(a));
+  $('caja').innerHTML = gs.map(g => `<h3 class="grupo-g">Gestión ${esc(g)} <small>${porG[g].length} informe(s)</small></h3><table class="tabla"><thead><tr><th>Tipo</th><th>Fecha y hora</th><th class="num oc">En sala</th><th class="oc">Resultado</th><th>Informe</th></tr></thead><tbody>` + porG[g].map(x => {
     const d = det[x.n];
-    return `<tr><td><b>${esc(x.i.g)}</b></td><td><span class="etq ${x.i.tipo === 'Cierre validado' ? 'cierre' : 'rev'}">${esc(x.i.tipo)}</span></td><td>${esc(x.i.fecha)}</td><td class="num oc">${d && d.totales ? esc(d.totales.en_sala) : '…'}</td><td class="oc">${resultado(d)}</td><td><button class="btn" data-pdf="${esc(x.n)}">⬇ Descargar PDF</button> <button class="btn sec" data-ver="${esc(x.n)}">Ver</button></td></tr>`;
-  }).join('') + '</tbody></table>';
+    return `<tr><td><span class="etq ${x.i.tipo === 'Cierre validado' ? 'cierre' : 'rev'}">${esc(x.i.tipo)}</span></td><td>${esc(x.i.fecha)}</td><td class="num oc">${d && d.totales ? esc(d.totales.en_sala) : '…'}</td><td class="oc">${resultado(d)}</td><td><button class="btn" data-pdf="${esc(x.n)}">⬇ Descargar PDF</button> <button class="btn sec" data-ver="${esc(x.n)}">Ver</button></td></tr>`;
+  }).join('') + '</tbody></table>').join('');
 }
 async function detalle(n) {
   if (det[n]) return det[n];
