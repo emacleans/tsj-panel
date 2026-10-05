@@ -242,6 +242,18 @@
   .t-nota { font-size: 12.5px; color: var(--muted); margin: 6px 0 10px; }
   .t-log { font: 11.5px/1.45 ui-monospace, Menlo, monospace; background: #1F2733; color: #D8DEE8; border-radius: 8px; padding: 8px 10px; max-height: 150px; overflow: auto; white-space: pre-wrap; word-break: break-all; margin-top: 6px; }
   .t-sub { font: 600 13px Georgia, serif; color: var(--navy); margin: 18px 0 8px; }
+  /* ---- Alineación uniforme: títulos y datos de tablas y cuadros centrados ---- */
+  table.res th, table.res td, table.t-tab th, table.t-tab td, table.t-tab td.n { text-align: center; vertical-align: middle; }
+  table.res th, table.t-tab th { padding: 8px 10px; }
+  table.res td, table.t-tab td { padding: 8px 10px; }
+  table.t-tab .t-barra, table.res .t-barra { margin: 0 auto; }
+  .t-kpis { justify-content: space-around; text-align: center; gap: 12px 28px; }
+  .t-kpis > div { min-width: 96px; }
+  .t-nota, .t-grid .res-sub { text-align: left; }
+  .t-barra + .t-nota { text-align: center; }
+  .equipo { text-align: left; }
+  .conc th, .conc td { text-align: center; }
+  .conc th:first-child, .conc td:first-child { text-align: left; }
 </style>
 </head>
 <body>
@@ -1273,11 +1285,13 @@ function tcpBarra(x) {
 }
 
 function tcpEquipo(x, b, g) {
-  // equipo que compila esa gestión ahora (●) o, si no, el que más avanzó en ella
+  // equipo que compila esa gestión ahora, o si no el que más avanzó; el punto indica su estado actual
   const vivo = equipos.find(e => ((e.tcp && e.tcp.procesos) || []).some(p => p.tipo === 'tcp_compilacion' && String(p.gestion) === g && String(p.base) === b));
   const e = vivo || (x.hechos ? equipos.find(q => q.id === x.eid) : null);
   if (!e) return '<span class="pm">–</span>';
-  return (vivo ? '<span style="color:var(--active)">● </span>' : '') + esc(e.nombre.split(' (')[0]);
+  const ocupado = ((e.tcp && e.tcp.procesos) || []).length > 0;
+  const [col, txt] = vivo ? ['var(--active)', 'compilando esta gestión ahora'] : !enLinea(e) ? ['#B9B3A4', 'desconectado hace ' + haceCuanto(e.ts)] : ocupado ? ['var(--active)', 'en línea, ocupado con otra tarea TCP'] : ['var(--ok)', 'en línea, sin trabajo TCP'];
+  return `<span title="${esc(txt)}"><span style="color:${col}">●</span> ${esc(e.nombre.split(' (')[0])}</span>`;
 }
 
 function tcpSiguiente(ag, base) {
@@ -1376,7 +1390,7 @@ function renderTcp() {
       <div class="t-nota">Cada Mac compila <b>una</b> gestión del TCP a la vez (≈ 14 s por documento) y retoma lo ya descargado. «Conciliar» compara lo descargado contra el inventario. «OCR» convierte los escaneos pendientes en PDF con texto, guardando el original.</div>
     </details>
   </section>
-  <section class="tarjeta"><h2>Avance por gestión</h2><div class="t-nota">Toca una fila para elegirla arriba. Verde = ok · azul = escaneo · naranja = por revisar/duplicado · rojo = error.</div>
+  <section class="tarjeta"><h2>Avance por gestión</h2><div class="t-nota">Toca una fila para elegirla arriba. Verde = ok · azul = escaneo · naranja = por revisar/duplicado · rojo = error. Equipo: <span style="color:var(--active)">●</span> compilando · <span style="color:var(--ok)">●</span> en línea · <span style="color:#B9B3A4">●</span> desconectado.</div>
     ${ag.lista.length ? `<div style="overflow-x:auto"><table class="t-tab"><thead><tr><th>Trib.</th><th>Gestión</th><th class="n">Total</th><th class="n">Ok</th><th class="n">Escaneo</th><th class="n">Revisar</th><th class="n">Dup.</th><th class="n">Error</th><th class="n">Faltan</th><th>Avance</th><th class="n">%</th><th>Equipo</th></tr></thead><tbody>${filas}</tbody></table></div>` : '<div class="vacio">Esperando el primer reporte del TCP de algún equipo…</div>'}
   </section>
   <section class="tarjeta"><h2>Equipos</h2><div class="rejilla" style="margin-top:0">${tarjEq || '<div class="vacio">Sin equipos.</div>'}</div></section>
