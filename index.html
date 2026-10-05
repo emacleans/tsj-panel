@@ -216,6 +216,7 @@
   .g-orden { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: #F1EEE5; font-size: 13.5px; }
   .g-orden.ok { background: #E1F0E5; color: var(--ok); } .g-orden.mal { background: #F6DEDE; color: var(--bad); }
   .g-orden a { font-weight: 700; }
+  .cuadre { margin: 10px 0; } .cuadre table td, .cuadre table th { text-align: right; } .cuadre table td:first-child, .cuadre table th:first-child { text-align: left; } .cuadre .mal { color: var(--bad); }
   .g-otras { margin-top: 12px; font-size: 13px; color: var(--muted); }
   .g-chip { font: inherit; font-weight: 600; margin-left: 6px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--gold); background: var(--gold-soft); color: var(--navy); cursor: pointer; }
   details.avanzado { margin-top: 18px; }
@@ -922,6 +923,7 @@ function renderGuia() {
       const ex = excepcionesCierre(g);
       tit = '✓ Todo resuelto: último paso, validar el cierre';
       cuerpo = `<p>Lo manual está hecho. Al validar, la gestión ${esc(g)} queda cerrada y se guarda su informe de auditoría.${ex.length ? ` Quedan <b>${ex.length}</b> excepción(es) que aceptaste; se anotan en ese informe.` : ''}</p>
+        ${cuadreAuditoriaHtml(st.av)}
         ${ex.length ? plegable('g-exc-' + g, 'Ver las excepciones aceptadas', '<ul class="g-lista">' + ex.map(x => `<li>${esc(x.texto)}${x.nota ? ' <i>— «' + esc(x.nota) + '»</i>' : ''}</li>`).join('') + '</ul>') : ''}
         <div class="g-ctrl">${gBtn('validar_cierre', `Validar el cierre de ${esc(g)}`, '', eid)}</div>`;
       break;
@@ -947,6 +949,28 @@ document.addEventListener('click', ev => {
   const b = ev.target.closest('[data-g-ir]'); if (!b) return;
   gestion = b.dataset.gIr; guardar('tsj_gestion', gestion); destinoManual = false; render(); window.scrollTo(0, 0);
 });
+
+// Cuadro de la auditoría para decidir con datos antes de validar el cierre: por sala, lo del sitio contra lo que hay en carpeta.
+function cuadreAuditoriaHtml(av) {
+  const au = av && av.auditoria, sal = au && au.salas;
+  if (!sal || !Object.keys(sal).length) return '<div class="g-o">No hay datos de auditoría para mostrar.</div>';
+  const n = v => Number(v || 0).toLocaleString('es-BO');
+  const arch = {}; (av.salas || []).forEach(x => { arch[x.sala] = x.archivos; });
+  let T = { f: 0, a: 0, d: 0, fa: 0, so: 0, ap: 0, og: 0 }, todoCuadra = true;
+  const filas = Object.entries(sal).map(([sala, r]) => {
+    const f = Number(r.filas_sitio || 0), a = arch[sala], d = Number(r.explicados_depurados || 0), fa = Number(r.faltan || 0), so = Number(r.sobran || 0);
+    const esperado = f - d - fa + so, dif = a == null ? null : a - esperado;
+    const ok = dif === 0 && fa === 0; if (!ok) todoCuadra = false;
+    T.f += f; T.a += Number(a || 0); T.d += d; T.fa += fa; T.so += so; T.ap += Number(r.apartados_no_as || 0); T.og += Number(r.otra_gestion_sitio || 0);
+    return `<tr><td>${esc(sala)}</td><td>${n(f)}</td><td>${a == null ? '–' : n(a)}</td><td>${n(r.repetidos_en_sitio)}</td><td>${n(d)}</td><td>${fa ? `<b class="mal">${n(fa)}</b>` : '0'}</td><td>${n(so)}</td><td>${ok ? '✓' : (dif ? `<b class="mal">dif. ${dif > 0 ? '+' : ''}${dif}</b>` : '<b class="mal">faltan</b>')}</td></tr>`;
+  }).join('');
+  const sob = (au.veredicto && au.veredicto.explicadas) || [];
+  return `<div class="cuadre"><div class="g-o"><b>Datos de la auditoría${au.fecha ? ' (' + esc(String(au.fecha).replace('T', ' ')) + ')' : ''}</b> — por sala, lo que lista el sitio contra lo que hay en tus carpetas:</div>
+    <div class="tabla-wrap"><table class="res"><thead><tr><th>Sala</th><th>Filas del sitio</th><th>Archivos en carpeta</th><th>Repetidas en el sitio</th><th>Duplicados descartados (registrados)</th><th>Faltan</th><th>Sobran</th><th>Cuadra</th></tr></thead>
+    <tbody>${filas}<tr><td><b>Total</b></td><td><b>${n(T.f)}</b></td><td><b>${n(T.a)}</b></td><td></td><td><b>${n(T.d)}</b></td><td><b>${n(T.fa)}</b></td><td><b>${n(T.so)}</b></td><td>${todoCuadra ? '<b>✓</b>' : '<b class="mal">revisar</b>'}</td></tr></tbody></table></div>
+    <div class="g-o">Cuenta de control por sala: filas del sitio − duplicados descartados − faltan + sobran = archivos en carpeta. «Repetidas en el sitio» son filas con el mismo número de AS; «Duplicados descartados» son las copias que ya cotejaste y quedaron registradas.${av.en_revision ? ` Aparte, hay ${n(av.en_revision)} archivo(s) en «_revisar» (no cuentan en las carpetas).` : ''}${T.ap ? ` Documentos apartados por no ser Autos Supremos: ${n(T.ap)}.` : ''}${T.og ? ` Filas del sitio de otra gestión (no cuentan): ${n(T.og)}.` : ''}</div>
+    ${sob.length ? plegable('cuadre-expl-' + av.gestion, `Diferencias explicadas por el sistema (${sob.length})`, '<ul class="g-lista">' + sob.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>') : ''}</div>`;
+}
 
 function cardCierre(av, e) {
   const au = av.auditoria, v = au && au.veredicto;
@@ -976,7 +1000,7 @@ function cardCierre(av, e) {
     return `<div class="cierre-card mal"><b>Antes de cerrar la gestión ${esc(av.gestion)} hay ${v.acciones.length} cosa(s) por resolver:</b>${seccAutom}${seccManual}<div style="margin-top:10px">Cuando termines lo de arriba, pulsa <button type="button" class="btn" data-orden="auditar">Auditar contra el sitio</button> otra vez: el sistema volverá a evaluar y, si todo está resuelto, te pedirá validar el cierre.</div>${nota}</div>`;
   }
   const ex = (v.explicadas || []).length ? `<details><summary>Ver las ${v.explicadas.length} diferencia(s) explicadas</summary><ul>${v.explicadas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : '';
-  return `<div class="cierre-card ok"><b>La auditoría terminó sin nada que corregir.</b> Las diferencias que aparecen entre el sitio y las carpetas están comprobadas y explicadas (no son errores nuestros). ${ex}<div style="margin-top:8px"><button type="button" class="btn" data-orden="validar_cierre">Validar el cierre de la gestión ${esc(av.gestion)}</button></div></div>`;
+  return `<div class="cierre-card ok"><b>La auditoría terminó sin nada que corregir.</b> Las diferencias que aparecen entre el sitio y las carpetas están comprobadas y explicadas (no son errores nuestros). ${cuadreAuditoriaHtml(av)}${ex}<div style="margin-top:8px"><button type="button" class="btn" data-orden="validar_cierre">Validar el cierre de la gestión ${esc(av.gestion)}</button></div></div>`;
 }
 document.addEventListener('click', ev => { const b = ev.target.closest('[data-orden]'); if (b) enviarOrden(b.dataset.orden); });
 document.addEventListener('click', ev => {
