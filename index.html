@@ -337,10 +337,7 @@
     </section>
   </div>
   </details>
-  <footer>Datos en vivo desde GitHub (repositorio tsj-estado) · se actualiza cada pocos segundos · <span id="gh-chip"></span></footer>
-  <details class="avanzado" id="det-gh"><summary>Consumo de GitHub (cuota compartida)</summary>
-  <section class="tarjeta" id="gh-card"><div class="vacio">Midiendo…</div></section>
-  </details>
+  <footer>Datos en vivo desde GitHub (repositorio tsj-estado) · se actualiza cada 5 s</footer>
   <details class="avanzado" id="det-aud"><summary>Informes de cierre</summary>
   <section class="tarjeta" id="auditorias">
     <h2>Informes de cierre</h2>
@@ -423,32 +420,7 @@ async function gh(path, opciones) {
   const o = opciones || {};
   const h = { 'Authorization': 'token ' + TOKEN, 'Accept': o.raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json' };
   if (o.body) h['Content-Type'] = 'application/json';
-  const t0 = Date.now();
-  const r = await fetch(API + path, { method: o.method || 'GET', headers: h, body: o.body || null, cache: 'no-cache' });
-  ghMedir(o.method || 'GET', path, r);
-  return r;
-}
-// ---- Medición del consumo de GitHub de ESTE navegador (la cuota de 5.000/h es compartida con todos los equipos).
-const GHM = { min: {}, lim: null };
-function ghClase(m, path) {
-  const p = path.split('?')[0].replace(/^\/repos\/[^/]+\//, ''), i = p.indexOf('/contents/'); if (i < 0) return p.slice(0, 30);
-  const repo = p.slice(0, i), rs = p.slice(i + 10);
-  if (rs === 'equipos') return 'lista de equipos';
-  if (rs.startsWith('equipos/')) return m === 'GET' ? 'lectura de un equipo' : 'reporte';
-  if (rs.startsWith('ordenes')) return 'órdenes'; if (rs.startsWith('revision_manual')) return 'revisión manual'; if (rs.startsWith('auditorias')) return 'informes de cierre';
-  return repo + ':' + rs.split('/')[0].slice(0, 20);
-}
-function ghMedir(m, path, r) {
-  const k = Math.floor(Date.now() / 60000), c = ghClase(m, path);
-  (GHM.min[k] = GHM.min[k] || {})[c] = (GHM.min[k][c] || 0) + 1;
-  Object.keys(GHM.min).forEach(x => { if (x < k - 62) delete GHM.min[x]; });
-  const rem = r.headers.get('x-ratelimit-remaining');
-  if (rem != null) GHM.lim = { remaining: Number(rem), limit: Number(r.headers.get('x-ratelimit-limit') || 5000), reset: Number(r.headers.get('x-ratelimit-reset') || 0), ts: Math.floor(Date.now() / 1000) };
-}
-function ghResumenLocal() {
-  const k = Math.floor(Date.now() / 60000); let hora = 0, min5 = 0; const por = {};
-  Object.entries(GHM.min).forEach(([x, o]) => Object.entries(o).forEach(([c, n]) => { if (x >= k - 60) { hora += n; por[c] = (por[c] || 0) + n; } if (x >= k - 5) min5 += n; }));
-  return { hora, min5, por };
+  return fetch(API + path, { method: o.method || 'GET', headers: h, body: o.body || null, cache: 'no-cache' });
 }
 
 // Si GitHub frena las consultas (límite de uso por hora o límite secundario), el panel NO se rompe: conserva los últimos datos, avisa hasta
@@ -1245,38 +1217,7 @@ function renderActividad() {
   setHtmlKeep(box, `<div class="tit2"><span>${a.en_curso ? '⏳ En curso' : '✓ Última acción'} · ${esc(nombreAccion)} (gestión ${esc(a.gestion)}) en ${esc(e.nombre)}${semaforo(a.en_curso)}</span>${btnCopiar('act', a.en_curso)}</div>${progresoHtml(a)}<div class="sub2">Salida en vivo del último comando lanzado desde este panel en ese equipo (verificar, compilar, corregir, auditar…); último movimiento ${cuando}. No es el registro de toda la gestión: ese está arriba, en «Avance».</div><div class="registro" data-scroll="act">${a.lineas.map(esc).join('\n')}</div>${(a.otras || []).length ? '<div class="otras"><b>También en curso en este equipo (otras gestiones):</b>' + a.otras.map(o => `<div class="o-tit">${esc(NOMBRE_ACCION[o.accion] || o.accion)} · gestión ${esc(o.gestion)}</div>${progresoHtml(o)}`).join('') + '</div>' : ''}`);
 }
 
-// ---- Consumo de GitHub: cuota de 5.000 consultas/hora COMPARTIDA por todos los equipos y por los navegadores abiertos con el panel.
-function renderGh() {
-  const box = $('gh-card'); if (!box) return;
-  const ahoraS = Math.floor(Date.now() / 1000);
-  const lims = equipos.map(e => e.gh_uso && e.gh_uso.limite).filter(l => l && l.remaining != null && ahoraS - l.ts < 900);
-  if (GHM.lim) lims.push(GHM.lim);
-  const lim = lims.sort((a, b) => a.remaining - b.remaining)[0];
-  const loc = ghResumenLocal();
-  let chip = '';
-  if (lim) {
-    const pct = Math.round(100 * lim.remaining / (lim.limit || 5000)), hr = new Date(lim.reset * 1000).toLocaleTimeString('es-BO', { hour: '2-digit', minute: '2-digit' });
-    chip = `GitHub: quedan ${lim.remaining.toLocaleString('es-BO')} de ${(lim.limit || 5000).toLocaleString('es-BO')} (${pct}%) · se renueva a las ${hr}`;
-    if (pct < 20) chip = '⚠ ' + chip;
-  }
-  const ch = $('gh-chip'); if (ch) ch.textContent = chip;
-  const filas = equipos.filter(e => e.gh_uso).map(e => {
-    const h = e.gh_uso.hora || {}, m5 = e.gh_uso.min5 || {}, top = Object.entries(h.por_clase || {}).slice(0, 3).map(([c, n]) => `${esc(c)} <b>${n}</b>`).join(' · ');
-    return `<tr><td>${esc(e.nombre.split(' (')[0])}</td><td>${(h.cuota || 0).toLocaleString('es-BO')}</td><td>${((m5.cuota || 0) / 5).toFixed(1)}</td><td style="text-align:left;font-size:12px">${top || '–'}</td></tr>`;
-  });
-  const totAg = equipos.reduce((a, e) => a + (((e.gh_uso || {}).hora || {}).cuota || 0), 0);
-  const topLoc = Object.entries(loc.por).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c, n]) => `${esc(c)} <b>${n}</b>`).join(' · ');
-  const barra = lim ? `<div style="height:10px;border-radius:6px;background:#E3DED2;overflow:hidden;margin:6px 0"><div style="height:100%;width:${Math.max(2, Math.round(100 * lim.remaining / (lim.limit || 5000)))}%;background:${lim.remaining / (lim.limit || 5000) < 0.2 ? 'var(--bad,#A33B3B)' : 'var(--ok,#3F7D4E)'}"></div></div>` : '';
-  setHtmlKeep(box, `<h2>Consumo de GitHub</h2>
-    <div class="desc">La API de GitHub permite 5.000 consultas por hora en total para tu usuario; todos los equipos y todos los navegadores con el panel abierto gastan de la misma bolsa. Las respuestas «sin cambios» (304) no gastan cuota.</div>
-    ${lim ? `<p><b>${lim.remaining.toLocaleString('es-BO')}</b> de ${(lim.limit || 5000).toLocaleString('es-BO')} restantes · se renueva a las ${new Date(lim.reset * 1000).toLocaleTimeString('es-BO', { hour: '2-digit', minute: '2-digit' })}</p>${barra}` : '<p class="g-o">Aún no hay lectura de la cuota (aparece apenas un equipo o este navegador reciba una respuesta de GitHub).</p>'}
-    <div class="tabla-wrap"><table class="res"><thead><tr><th>Quién</th><th>Consultas que gastan cuota (última hora)</th><th>Por minuto (últ. 5 min)</th><th>En qué gasta más</th></tr></thead><tbody>${filas.join('')}
-    <tr><td>Este navegador (${'' + loc.hora} peticiones, incluidas las «sin cambios»)</td><td>≤ ${loc.hora.toLocaleString('es-BO')}</td><td>≤ ${(loc.min5 / 5).toFixed(1)}</td><td style="text-align:left;font-size:12px">${topLoc || '–'}</td></tr>
-    <tr><td><b>Suma de los equipos</b></td><td><b>${totAg.toLocaleString('es-BO')}</b></td><td></td><td></td></tr></tbody></table></div>
-    <div class="g-o">El historial (cada 5 min: cuánto queda y cuánto gasta cada equipo) queda guardado en la carpeta _monitor del equipo publicador (gh_uso_historial.jsonl).</div>`);
-}
-setInterval(() => { try { if (equipos.length) renderGh(); } catch (e) {} }, 5000);
-function render() { renderSelectorGestion(); renderGuia(); renderEquipos(); renderAvance(); renderDestino(); marcarPasosCumplidos(); renderOrden(); renderActividad(); try { renderGh(); } catch (e) {} }
+function render() { renderSelectorGestion(); renderGuia(); renderEquipos(); renderAvance(); renderDestino(); marcarPasosCumplidos(); renderOrden(); renderActividad(); }
 
 function mostrarError(msg) {
   const b = $('banner');
