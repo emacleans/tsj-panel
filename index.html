@@ -1289,8 +1289,10 @@ function tcpEquipo(x, b, g) {
   const vivo = equipos.find(e => ((e.tcp && e.tcp.procesos) || []).some(p => p.tipo === 'tcp_compilacion' && String(p.gestion) === g && String(p.base) === b));
   const e = vivo || (x.hechos ? equipos.find(q => q.id === x.eid) : null);
   if (!e) return '<span class="pm">–</span>';
+  // además del proceso detectado, la actividad reciente (documento guardado hace < 3 min) también cuenta como «compilando»
+  const activo = !vivo && enLinea(e) && e.tcp && e.tcp.ultimo_ts && ahora() - e.tcp.ultimo_ts < 180;
   const ocupado = ((e.tcp && e.tcp.procesos) || []).length > 0;
-  const [col, txt] = vivo ? ['var(--active)', 'compilando esta gestión ahora'] : !enLinea(e) ? ['#B9B3A4', 'desconectado hace ' + haceCuanto(e.ts)] : ocupado ? ['var(--active)', 'en línea, ocupado con otra tarea TCP'] : ['var(--ok)', 'en línea, sin trabajo TCP'];
+  const [col, txt] = vivo ? ['var(--active)', 'compilando esta gestión ahora'] : !enLinea(e) ? ['#B9B3A4', 'desconectado hace ' + haceCuanto(e.ts)] : activo ? ['var(--active)', 'compilando (guardó un documento hace ' + haceCuanto(e.tcp.ultimo_ts) + ')'] : ocupado ? ['var(--active)', 'en línea, ocupado con otra tarea TCP'] : ['var(--ok)', 'en línea, sin trabajo TCP'];
   return `<span title="${esc(txt)}"><span style="color:${col}">●</span> ${esc(e.nombre.split(' (')[0])}</span>`;
 }
 
