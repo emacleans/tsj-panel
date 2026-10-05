@@ -263,7 +263,7 @@
     <div class="sello">TSJ</div>
     <div>
       <h1>Panel central JurisPrud</h1>
-      <div class="subtitulo">Compilación de jurisprudencia · TSJ y Tribunal Constitucional · todos los equipos</div>
+      <div class="subtitulo">Compilación de jurisprudencia · TSJ, Tribunal Constitucional y Gaceta Oficial · todos los equipos</div>
     </div>
   </div>
   <div class="ctrl" id="ctrl-gestion">
@@ -272,7 +272,7 @@
     <button class="icono" id="btn-token" title="Token de GitHub">⚙</button>
   </div>
 </header>
-<nav class="pestanas" aria-label="Proyecto"><button type="button" id="tab-tsj" class="act">TSJ · Autos Supremos</button><button type="button" id="tab-tcp">TCP · Tribunal Constitucional</button></nav>
+<nav class="pestanas" aria-label="Proyecto"><button type="button" id="tab-tsj" class="act">TSJ · Autos Supremos</button><button type="button" id="tab-tcp">TCP · Tribunal Constitucional</button><button type="button" id="tab-gaceta">Gaceta · Normativa</button></nav>
 <nav class="menu" id="menu-tsj" aria-label="Secciones"><a href="./" class="act" aria-current="page">Inicio</a><a href="auditorias.html">Repositorio de auditorías</a></nav>
 
 <main id="main-tsj">
@@ -344,6 +344,7 @@
   </details>
 </main>
 <main id="main-tcp" hidden></main>
+<main id="main-gaceta" hidden></main>
 
 <dialog id="dlg-cierre">
   <h2 style="border:0;margin-bottom:4px">Validar cierre</h2>
@@ -1329,12 +1330,14 @@ const TCPSEL = { eid: null, base: '2', gestion: null };
 let TCPPEND = null, TCPENVIANDO = false;
 
 function tcpPestana(p) {
+  if (p !== 'tcp' && p !== 'gaceta') p = 'tsj';
   guardar('tsj_pestana', p);
-  const t = p === 'tcp';
-  $('main-tsj').hidden = t; $('main-tcp').hidden = !t; $('menu-tsj').hidden = t; 
-  $('tab-tsj').classList.toggle('act', !t); $('tab-tcp').classList.toggle('act', t);
-  document.title = t ? 'Panel central JurisPrud · TCP' : 'Panel central JurisPrud';
+  const t = p === 'tcp', g = p === 'gaceta', tsj = p === 'tsj';
+  $('main-tsj').hidden = !tsj; $('main-tcp').hidden = !t; $('main-gaceta').hidden = !g; $('menu-tsj').hidden = !tsj;
+  $('tab-tsj').classList.toggle('act', tsj); $('tab-tcp').classList.toggle('act', t); $('tab-gaceta').classList.toggle('act', g);
+  document.title = t ? 'Panel central JurisPrud · TCP' : g ? 'Panel central JurisPrud · Gaceta' : 'Panel central JurisPrud';
   if (t) renderTcp();
+  if (g) renderGaceta();
 }
 
 function tcpAgregar() {
@@ -1530,7 +1533,185 @@ $('tab-tsj').onclick = () => tcpPestana('tsj');
 $('tab-tcp').onclick = () => tcpPestana('tcp');
 (function () { const r0 = render; render = function () { r0(); try { renderTcp(); } catch (e) { console.error('TCP', e); } }; })();
 setInterval(() => { try { if (equipos.length && !$('main-tcp').hidden) renderTcp(); } catch (e) {} }, 1000);
-tcpPestana(leer('tsj_pestana') === 'tcp' ? 'tcp' : 'tsj');
+
+// ======================= Pestaña Gaceta (Gaceta Oficial de Bolivia) =======================
+// Aislada: solo LEE e.gaceta de cada equipo y envía órdenes con acción «gaceta_*». Si algo falla aquí, TSJ y TCP siguen igual.
+const GAC_SECC = [
+  ['leyes', 'Leyes', 5948], ['decretos', 'Decretos supremos y presidenciales', 28214], ['decretos_ley', 'Decretos ley', 1340],
+  ['sentencias', 'Sentencias constitucionales (Gaceta)', 41], ['resoluciones', 'Resoluciones supremas', 4552],
+  ['dep_1', 'Departamental · La Paz', 15234], ['dep_2', 'Departamental · Santa Cruz', 499], ['dep_3', 'Departamental · Cochabamba', 3332],
+  ['dep_4', 'Departamental · Potosí', 505], ['dep_5', 'Departamental · Chuquisaca', 1694], ['dep_6', 'Departamental · Oruro', 639],
+  ['dep_7', 'Departamental · Tarija', 2826], ['dep_8', 'Departamental · Beni', 27]
+];
+const GAC_ETQ = Object.fromEntries(GAC_SECC.map(s => [s[0], s[1]])); GAC_ETQ.departamental = 'Departamental (las 8 gobernaciones)';
+const GAC_NOMBRE = { gaceta_iniciar: 'Compilar Gaceta', gaceta_detener: 'Detener Gaceta' };
+const GACSEL = { eid: null, seccion: 'leyes', modo: 'piloto' };
+let GACPEND = null, GACENVIANDO = false;
+
+function gacAgregar() {
+  // por sección se toma el equipo que más avanzó
+  const por = {}; let ritmo = 0;
+  for (const e of equipos) {
+    const g = e.gaceta;
+    if (!g || !g.disponible || !g.por) continue;
+    if (enLinea(e)) ritmo += g.ritmo_min || 0;
+    for (const [k, v] of Object.entries(g.por)) {
+      const c = por[k];
+      if (!c || (v.hechos || 0) > (c.hechos || 0) || (v.modo === 'completo' && c.modo !== 'completo')) por[k] = Object.assign({ eid: e.id }, v);
+    }
+  }
+  const lista = GAC_SECC.map(([k, etq, conocido]) => Object.assign({ k, etq, esperado: conocido, total: conocido, hechos: 0, ok: 0, rev: 0, inval: 0, sinpdf: 0, fallo: 0, inv: 0, modo: null, tipo: (k === 'resoluciones' || k.startsWith('dep_')) ? 'registro' : 'pdf' }, por[k] || {}, { k, etq }));
+  const sum = f => lista.reduce((s, x) => s + f(x), 0);
+  const esp = x => x.esperado || x.total || 0;
+  return { lista, ritmo, esperado: sum(esp), hechos: sum(x => x.hechos || 0), ok: sum(x => x.ok || 0), rev: sum(x => x.rev || 0), err: sum(x => (x.inval || 0) + (x.fallo || 0)), inv: sum(x => x.inv || 0) };
+}
+const gacPct = (a, b) => b ? Math.floor(1000 * a / b) / 10 : 0;
+const gacNum = n => Number(n || 0).toLocaleString('es-BO');
+function gacBarra(x) {
+  const t = x.esperado || x.total || 1, w = v => Math.min(100, 100 * v / t).toFixed(2);
+  const okv = x.tipo === 'registro' ? (x.hechos || 0) : (x.ok || 0);
+  return `<div class="t-barra" title="ok ${okv} · por revisar ${x.rev || 0} · con error ${(x.inval || 0) + (x.fallo || 0)}"><i class="b-ok" style="width:${w(okv)}%"></i><i class="b-rev" style="width:${w(x.rev || 0)}%"></i><i class="b-err" style="width:${w((x.inval || 0) + (x.fallo || 0))}%"></i></div>`;
+}
+function gacEquipo(x) {
+  const vivo = equipos.find(e => ((e.gaceta && e.gaceta.procesos) || []).some(p => p.seccion === x.k || (p.seccion === 'departamental' && x.k.startsWith('dep_'))));
+  const e = vivo || (x.hechos ? equipos.find(q => q.id === x.eid) : null);
+  if (!e) return '<span class="pm">–</span>';
+  const g = e.gaceta || {};
+  const activo = !vivo && enLinea(e) && g.ultimo_ts && ahora() - g.ultimo_ts < 180;
+  const ocupado = (g.procesos || []).length > 0;
+  const [col, txt] = vivo ? ['var(--active)', 'compilando esta sección ahora'] : !enLinea(e) ? ['#B9B3A4', 'desconectado hace ' + haceCuanto(e.ts)] : activo ? ['var(--active)', 'compilando (guardó algo hace ' + haceCuanto(g.ultimo_ts) + ')'] : ocupado ? ['var(--active)', 'en línea, ocupado con otra sección'] : ['var(--ok)', 'en línea, sin trabajo de Gaceta'];
+  return `<span title="${esc(txt)}"><span style="color:${col}">●</span> ${esc(e.nombre.split(' (')[0])}</span>`;
+}
+
+function renderGaceta() {
+  const cont = $('main-gaceta');
+  if (cont.hidden) return;
+  if (!TOKEN) { setHtmlKeep(cont, '<div class="vacio">Sin token: toca ⚙ para ponerlo.</div>'); return; }
+  const ag = gacAgregar();
+  if (!GACSEL.eid || !equipos.some(e => e.id === GACSEL.eid)) {
+    const pref = equipos.filter(e => enLinea(e) && e.gaceta && e.gaceta.disponible)[0] || equipos.filter(enLinea)[0] || equipos[0];
+    GACSEL.eid = pref ? pref.id : null;
+  }
+  const pend = Math.max(0, ag.esperado - ag.hechos), ritmoH = ag.ritmo * 60;
+  const hayCompleta = equipos.some(e => ((e.gaceta && e.gaceta.procesos) || []).some(p => p.modo === 'completo'));
+  const eta = (ritmoH > 0 && hayCompleta) ? ` · término estimado en ${fmtDur(pend / ritmoH * 3600)}` : '';
+  const selEq = equipos.map(e => `<option value="${esc(e.id)}"${e.id === GACSEL.eid ? ' selected' : ''}>${esc(e.nombre)}${enLinea(e) ? '' : ' (desconectado)'}${e.gaceta && e.gaceta.disponible ? '' : ' · sin módulo Gaceta'}</option>`).join('');
+  const opS = [['departamental', GAC_ETQ.departamental]].concat(GAC_SECC.filter(s => !s[0].startsWith('dep_')).map(s => [s[0], s[1]]));
+  const selS = opS.concat(GAC_SECC.filter(s => s[0].startsWith('dep_')).map(s => [s[0], s[1]])).map(([k, t]) => `<option value="${k}"${k === GACSEL.seccion ? ' selected' : ''}>${esc(t)}</option>`).join('');
+  const kpi = (n, t) => `<div><b>${n}</b><span>${t}</span></div>`;
+  const filas = ag.lista.map(x => {
+    const falta = Math.max(0, (x.esperado || x.total) - (x.hechos || 0)), sel = x.k === GACSEL.seccion;
+    const modo = x.modo === 'completo' ? 'completa' : x.modo === 'piloto' ? 'piloto' : '';
+    return `<tr class="t-fila${sel ? ' sel' : ''}" data-gac-fila="${x.k}"><td style="text-align:left">${esc(x.etq)}</td><td>${x.tipo === 'registro' ? 'registro' : 'PDF'}</td><td class="n">${gacNum(x.esperado || x.total)}</td><td class="n">${gacNum(x.inv)}</td><td class="n">${gacNum(x.ok)}</td><td class="n">${x.rev || ''}</td><td class="n">${(x.inval || x.fallo) ? '<span style="color:var(--bad)">' + ((x.inval || 0) + (x.fallo || 0)) + '</span>' : ''}</td><td class="n">${x.sinpdf || ''}</td><td class="n">${falta ? gacNum(falta) : '✓'}</td><td>${gacBarra(x)}</td><td class="n">${gacPct(x.hechos || 0, x.esperado || x.total)} %</td><td>${modo}</td><td>${gacEquipo(x)}</td></tr>`;
+  }).join('');
+  const tarjEq = equipos.map(e => {
+    const g = e.gaceta, on = enLinea(e);
+    const trabajando = on && g && ((g.procesos || []).length || (g.ultimo_ts && ahora() - g.ultimo_ts < 180));
+    let cuerpo;
+    if (!g) cuerpo = '<div class="e-meta">Este equipo aún no reporta el módulo Gaceta. Necesita el agente actualizado y el instalador de la Gaceta (carpeta GACETA).</div>';
+    else if (!g.disponible) cuerpo = `<div class="e-meta">Módulo Gaceta no disponible${g.error ? ' (' + esc(g.error) + ')' : ''}.</div>`;
+    else {
+      const ps = (g.procesos || []).map(p => `<div class="e-proceso"><span>Gaceta · ${esc(GAC_ETQ[p.seccion] || p.seccion || '')} (${p.modo === 'completo' ? 'completa' : 'piloto'}) · hace ${haceCuanto(p.inicio_ts)}</span><button type="button" data-gac-detener="${esc(e.id)}" data-pid="${p.pid}">Detener</button></div>`).join('');
+      cuerpo = `${ps || (trabajando ? '<div class="e-trabajo ocupado">Compilando (guardó algo hace ' + haceCuanto(g.ultimo_ts) + ')</div>' : '<div class="e-trabajo">Sin procesos de Gaceta en curso.</div>')}
+        <div class="e-meta">Script ${esc(g.script || (g.script_presente ? '?' : 'no instalado'))} · ritmo ${g.ritmo_min ? g.ritmo_min.toFixed(1) + ' /min' : '—'}${g.error ? ' · error ' + esc(g.error) : ''}${g.ultimo_ts ? ' · último guardado hace ' + haceCuanto(g.ultimo_ts) : ''}</div>
+        ${(g.log || []).length ? `<details class="cmp" data-k="gaclog-${esc(e.id)}"${ABIERTOS.has('gaclog-' + e.id) ? ' open' : ''}><summary>Registro reciente</summary><div class="t-log" data-scroll="gaclog-${esc(e.id)}">${esc((g.log || []).join('\n'))}</div></details>` : ''}`;
+    }
+    return `<div class="equipo ${on ? 'on' : 'off'}"><div style="display:flex;gap:8px;align-items:center"><span class="punto"${trabajando ? ' style="background:var(--active)"' : ''}></span><b>${esc(e.nombre)}</b><span class="e-estado">${on ? 'en línea' : 'desconectado hace ' + haceCuanto(e.ts)}</span></div>${cuerpo}</div>`;
+  }).join('');
+  let ord = '';
+  if (GACPEND) {
+    const e = equipos.find(x => x.id === GACPEND.eid), r = e && e.orden && e.orden.seq === GACPEND.seq ? e.orden : null;
+    ord = r ? `<div class="g-orden ${r.ok ? 'ok' : 'mal'}">${r.ok ? '✓' : '✗'} ${esc(GAC_NOMBRE[GACPEND.accion] || GACPEND.accion)} en ${esc(e.nombre)}: ${esc(r.mensaje)}</div>`
+      : `<div class="g-orden">⏳ Orden enviada a ${esc(e ? e.nombre : GACPEND.eid)} (${esc(GAC_NOMBRE[GACPEND.accion] || GACPEND.accion)})${e && !enLinea(e) ? ' — el equipo está desconectado; se ejecutará al reconectarse (máx. 30 min).' : ' — esperando respuesta…'}</div>`;
+  }
+  const dis = GACENVIANDO ? ' disabled' : '';
+  const sec = GACSEL.seccion, stxt = GAC_ETQ[sec] || sec;
+  const xg = ag.lista.find(y => y.k === sec);
+  const corriendo = equipos.flatMap(e => ((e.gaceta && e.gaceta.procesos) || []).filter(p => p.seccion === sec).map(p => ({ e, p })))[0];
+  const item = (cls, tit, txt, btn) => `<div class="g-cuerpo ${cls}" style="margin-bottom:10px"><div class="g-tit">${tit}</div>${txt ? '<p>' + txt + '</p>' : ''}${btn ? '<div class="g-ctrl">' + btn + '</div>' : ''}</div>`;
+  const bt = (a, t, s) => `<button type="button" class="g-btn${s ? ' sec' : ''}" data-gac-accion="${a}"${dis}>${t}</button>`;
+  const items = [];
+  const modoTxt = GACSEL.modo === 'piloto' ? 'piloto (≈100 documentos)' : 'compilación completa';
+  if (corriendo) items.push(item('trabaja', '⏳ Compilando ahora en ' + esc(corriendo.e.nombre) + ' — no tienes que hacer nada', `${esc(stxt)} · ${corriendo.p.modo === 'completo' ? 'completa' : 'piloto'}.`, ''));
+  else items.push(item('', `Compilar: ${esc(stxt)}`, `Modo ${modoTxt}. Retoma lo ya descargado. ${xg && xg.hechos ? 'Llevas ' + gacNum(xg.hechos) + ' de ' + gacNum(xg.esperado || xg.total) + '.' : 'Aún no hay datos de esta sección.'}`, bt('gaceta_iniciar', '▶ Compilar ' + esc(stxt))));
+  const rv = ag.lista.filter(x => (x.rev || 0) + (x.inval || 0) > 0);
+  if (rv.length) items.push(item('turno', `👉 ${rv.reduce((s, x) => s + (x.rev || 0) + (x.inval || 0), 0)} documentos por revisar`, 'Quedan en la carpeta _revisar / _invalidos de cada sección (motivos en _progreso.csv).', ''));
+  const noCuadra = ag.lista.filter(x => x.cuadra === false);
+  if (noCuadra.length) items.push(item('turno', '⚠ Inventario que no cuadra', noCuadra.map(x => esc(x.etq)).join(' · ') + ': el total inventariado difiere del declarado por el sitio. Reintentar el inventario.', ''));
+  const html = `<div class="t-grid">
+  <section class="tarjeta"><h2>Avance de la Gaceta</h2>
+    <div class="res-sub" style="margin-top:0">Total declarado por el sitio: ${gacNum(ag.esperado)} normas (sin propiedad intelectual)</div>
+    ${gacBarra({ esperado: ag.esperado, hechos: ag.hechos, ok: ag.ok, rev: ag.rev, inval: ag.err, fallo: 0, tipo: 'registro' })}
+    <div class="t-kpis">${kpi(gacPct(ag.hechos, ag.esperado) + ' %', 'avance')}${kpi(gacNum(ag.hechos), 'compiladas y verificadas')}${kpi(gacNum(pend), 'por compilar')}${kpi(gacNum(ag.inv), 'inventariadas')}${kpi(gacNum(ag.rev), 'por revisar')}${kpi(gacNum(ag.err), 'con error (se reintentan)')}${kpi(ritmoH ? Math.round(ritmoH) + '/h' : '—', 'ritmo ahora')}</div>
+    <div class="t-nota">${ag.inv ? '' : 'Aún ningún equipo reportó datos de la Gaceta. '}${eta ? 'Ritmo actual' + eta + '.' : 'Sin descargas en la última hora.'} Las secciones de «registro» (resoluciones y departamental) se compilan como tablas CSV/JSONL porque el sitio no ofrece PDF.</div>
+  </section>
+  <section class="tarjeta"><h2>Acciones pendientes</h2>
+    <div class="t-ctrl">
+      <div><label>Sección</label><select data-gac-sel="seccion">${selS}</select></div>
+      <div><label>Modo</label><select data-gac-sel="modo"><option value="piloto"${GACSEL.modo === 'piloto' ? ' selected' : ''}>Piloto (≈100)</option><option value="completo"${GACSEL.modo === 'completo' ? ' selected' : ''}>Compilación completa</option></select></div>
+      <div><label>Ejecutar en</label><select data-gac-sel="eid">${selEq}</select></div>
+    </div>
+    ${items.join('')}
+    ${ord}
+    <details class="cmp" style="margin-top:12px" data-k="gac-todas"${ABIERTOS.has('gac-todas') ? ' open' : ''}><summary>Todas las acciones de la Gaceta</summary>
+      <div class="t-btns" style="margin-top:8px">
+        <button type="button" class="g-btn" data-gac-accion="gaceta_iniciar"${dis}>▶ Compilar la sección elegida</button>
+        <button type="button" class="g-btn sec" data-gac-accion="gaceta_detener"${dis}>■ Detener Gaceta en este equipo</button>
+      </div>
+      <div class="t-nota">Cada Mac compila <b>una</b> sección a la vez, con 1 solicitud cada ~3 s (cortés con el sitio), y retoma lo ya descargado. Si el sitio responde 403, se detiene solo («posible bloqueo»): cambiar de IP o de red es decisión tuya, nunca automática.</div>
+    </details>
+  </section>
+  <section class="tarjeta"><h2>Avance por sección</h2><div class="t-nota">Toca una fila para elegirla arriba. Verde = ok · naranja = por revisar · rojo = error. Equipo: <span style="color:var(--active)">●</span> compilando · <span style="color:var(--ok)">●</span> en línea · <span style="color:#B9B3A4">●</span> desconectado.</div>
+    <div style="overflow-x:auto"><table class="t-tab"><thead><tr><th>Sección</th><th>Tipo</th><th class="n">Declarado</th><th class="n">Inventariadas</th><th class="n">Ok</th><th class="n">Revisar</th><th class="n">Error</th><th class="n">Sin PDF</th><th class="n">Faltan</th><th>Avance</th><th class="n">%</th><th>Corrida</th><th>Equipo</th></tr></thead><tbody>${filas}</tbody></table></div>
+  </section>
+  <section class="tarjeta"><h2>Equipos</h2><div class="rejilla" style="margin-top:0">${tarjEq || '<div class="vacio">Sin equipos.</div>'}</div></section>
+  </div>`;
+  setHtmlKeep(cont, html);
+}
+
+async function enviarOrdenGaceta(accion, pid) {
+  const e = equipos.find(x => x.id === GACSEL.eid);
+  if (!e) { alert('No hay equipo destino.'); return; }
+  const sec = GACSEL.seccion, modo = GACSEL.modo;
+  if (accion === 'gaceta_iniciar') {
+    if (!confirm(`Compilar la Gaceta (${GAC_ETQ[sec] || sec}) en ${e.nombre}, modo ${modo === 'piloto' ? 'piloto (≈100 documentos)' : 'COMPLETO (puede tardar horas o días; retoma lo ya hecho)'}. ¿Confirmas?`)) return;
+  } else if (accion === 'gaceta_detener') {
+    if (!confirm(`Detener lo que corre de la Gaceta en ${e.nombre} (se guarda lo avanzado y se puede reanudar). ¿Confirmas?`)) return;
+  }
+  const ruta = `/repos/${OWNER}/${REPO}/contents/ordenes/${e.id}.json`;
+  GACENVIANDO = true; renderGaceta();
+  try {
+    let sha = null;
+    const actual = await gh(ruta);
+    if (actual.ok) sha = (await actual.json()).sha;
+    const seq = Date.now();
+    const orden = { seq, ts: ahora(), accion, seccion: sec, modo, origen: 'panel-central' };
+    if (pid) { orden.pid = pid; delete orden.seccion; delete orden.modo; }
+    const cuerpo = { message: `orden ${accion} ${sec} -> ${e.id}`, content: btoa(unescape(encodeURIComponent(JSON.stringify(orden)))) };
+    if (sha) cuerpo.sha = sha;
+    const r = await gh(ruta, { method: 'PUT', body: JSON.stringify(cuerpo) });
+    if (!r.ok) throw new Error('No se pudo enviar la orden (HTTP ' + r.status + ').');
+    GACPEND = { seq, eid: e.id, accion };
+  } catch (err) { mostrarError(err.message || String(err)); }
+  finally { GACENVIANDO = false; renderGaceta(); }
+}
+
+$('main-gaceta').addEventListener('change', ev => {
+  const s = ev.target.closest('[data-gac-sel]'); if (!s) return;
+  GACSEL[s.dataset.gacSel] = s.value;
+  renderGaceta();
+});
+$('main-gaceta').addEventListener('click', ev => {
+  const f = ev.target.closest('[data-gac-fila]'), a = ev.target.closest('[data-gac-accion]'), d = ev.target.closest('[data-gac-detener]');
+  if (d) { GACSEL.eid = d.dataset.gacDetener; enviarOrdenGaceta('gaceta_detener', Number(d.dataset.pid)); return; }
+  if (a) { enviarOrdenGaceta(a.dataset.gacAccion); return; }
+  if (f) { GACSEL.seccion = f.dataset.gacFila; renderGaceta(); }
+});
+$('tab-gaceta').onclick = () => tcpPestana('gaceta');
+(function () { const r0 = render; render = function () { r0(); try { renderGaceta(); } catch (e) { console.error('Gaceta', e); } }; })();
+setInterval(() => { try { if (equipos.length && !$('main-gaceta').hidden) renderGaceta(); } catch (e) {} }, 1000);
+
+tcpPestana(leer('tsj_pestana') || 'tsj');
 </script>
 </body>
 </html>
