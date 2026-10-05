@@ -1,5 +1,5 @@
 {
- "ts": 1791160593,
+ "ts": 1791160821,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -28,20 +28,20 @@
    "estado_interno": "incompleta",
    "salas_n": 11,
    "salas_medidas": 11,
-   "docs": 5249,
+   "docs": 5261,
    "total_esperado": 5271,
    "total_completo": true,
-   "pct": 99.6,
+   "pct": 99.8,
    "eta": {
-    "tasa_min": 0.56,
-    "restantes": 22,
-    "segundos": 2356,
-    "fin_ts": 1791162929,
-    "fin_min_ts": 1791161342,
-    "fin_max_ts": 1791163165
+    "tasa_min": 0.76,
+    "restantes": 10,
+    "segundos": 789,
+    "fin_ts": 1791161602,
+    "fin_min_ts": 1791161060,
+    "fin_max_ts": 1791161681
    },
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791160573,
+   "actualizado_ts": 1791160813,
    "viejo": false
   },
   {
@@ -56,7 +56,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791160573,
+   "actualizado_ts": 1791160813,
    "viejo": false
   },
   {
@@ -71,7 +71,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791160560,
+   "actualizado_ts": 1791160766,
    "viejo": false
   },
   {
@@ -86,7 +86,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791160543,
+   "actualizado_ts": 1791160805,
    "viejo": false
   },
   {
@@ -101,7 +101,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791160573,
+   "actualizado_ts": 1791160813,
    "viejo": false
   },
   {
@@ -116,7 +116,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791160577,
+   "actualizado_ts": 1791160804,
    "viejo": false
   },
   {
@@ -131,7 +131,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791160577,
+   "actualizado_ts": 1791160804,
    "viejo": false
   },
   {
@@ -146,7 +146,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791160552,
+   "actualizado_ts": 1791160790,
    "viejo": false
   },
   {
@@ -161,7 +161,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791160577,
+   "actualizado_ts": 1791160804,
    "viejo": false
   },
   {
@@ -176,7 +176,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791160560,
+   "actualizado_ts": 1791160766,
    "viejo": false
   },
   {
@@ -191,7 +191,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791160577,
+   "actualizado_ts": 1791160804,
    "viejo": false
   },
   {
@@ -206,7 +206,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791160543,
+   "actualizado_ts": 1791160805,
    "viejo": false
   },
   {
@@ -221,7 +221,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791160577,
+   "actualizado_ts": 1791160804,
    "viejo": false
   },
   {
@@ -236,7 +236,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791160577,
+   "actualizado_ts": 1791160804,
    "viejo": false
   },
   {
@@ -251,7 +251,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791160577,
+   "actualizado_ts": 1791160804,
    "viejo": false
   },
   {
@@ -266,20 +266,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791160543,
+   "actualizado_ts": 1791160805,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791065262,
-   "texto": "orden de Claude 2026-10-03-reiniciar-intentos-2007: contador de lanzamientos de 2007 puesto en cero"
-  },
-  {
-   "ts": 1791066517,
-   "texto": "el sitio limitó a 3 equipos: se pausan los arranques nuevos hasta 18:57"
-  },
   {
    "ts": 1791074672,
    "texto": "el sitio limitó a 2 equipos: se pausan los arranques nuevos hasta 21:13"
@@ -391,13 +383,21 @@
   {
    "ts": 1791160477,
    "texto": "orden de Claude 2026-10-05-releer-2018-v3: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
+  },
+  {
+   "ts": 1791160679,
+   "texto": "orden de Claude 2026-10-05-releer-2018-v4: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
+  },
+  {
+   "ts": 1791160817,
+   "texto": "inicia 2013 en IPE02 (Mac Mini casa) (incompleta; intento 1)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791160560,
+   "ts": 1791160766,
    "version": "c3424ff",
    "procesos": [],
    "gestiones": {
@@ -436,7 +436,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791160575,
+   "ts": 1791160803,
    "version": "c3424ff",
    "procesos": [],
    "gestiones": {},
@@ -445,7 +445,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791160576,
+   "ts": 1791160805,
    "version": "c3424ff",
    "procesos": [],
    "gestiones": {},
@@ -454,74 +454,60 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791160577,
+   "ts": 1791160804,
    "version": "c3424ff",
-   "procesos": [
-    {
-     "pid": 13818,
-     "tipo": "recuperacion",
-     "gestion": "2002",
-     "inicio_ts": 1791160305
-    }
-   ],
+   "procesos": [],
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-04 20:34:30] Sala Penal 1: la fila #280 ('AS/0284/2002') entregó un PDF idéntico a «2002-07-29-TSJ-SINID-_SP1_280-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:34:41] Sala Penal 1: la fila #326 ('AS/0331/2002') entregó un PDF idéntico a «2002-08-27-TSJ-SINID-_SP1_326-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:34:51] Sala Penal 1: la fila #328 ('AS/0333/2002') entregó un PDF idéntico a «2002-08-27-TSJ-SINID-_SP1_328-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:35:01] Sala Penal 1: la fila #329 ('AS/0334/2002') entregó un PDF idéntico a «2002-09-03-TSJ-SINID-_SP1_329-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:35:01] Sala Penal 1: sigue revisando (fila 360 de 438; 9 ya existian, 0 nuevos).",
-    "[2026-10-04 20:35:08] Sala Penal 1: la fila #359 ('AS/0364/2002') entregó un PDF idéntico a «2002-09-30-TSJ-AS-369-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:35:19] Sala Penal 1: la fila #376 ('AS/0383/2002') entregó un PDF idéntico a «2002-10-10-TSJ-SINID-_SP1_376-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:35:30] Sala Penal 1: la fila #421 ('AS/0428/2002') entregó un PDF idéntico a «2002-11-01-TSJ-SINID-_SP1_421-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:35:40] Sala Penal 1: la fila #422 ('AS/0429/2002') entregó un PDF idéntico a «2002-11-06-TSJ-SINID-_SP1_422-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:35:50] Sala Penal 1: la fila #423 ('AS/0430/2002') entregó un PDF idéntico a «2002-11-06-TSJ-SINID-_SP1_423-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:36:01] Sala Penal 1: la fila #424 ('AS/0432/2002') entregó un PDF idéntico a «2002-11-07-TSJ-SINID-_SP1_424-SP1.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:36:12] Sala Penal 1: la fila #425 ('AS/0433/2002') entregó un PDF idéntico a «2002-11-07-TSJ-SINID-_SP1_425-SP1.pdf», que ya existe: se descarta."
+    "[2026-10-04 20:39:22]   DETALLE FALTAN Sala Plena: AS 31",
+    "[2026-10-04 20:39:22]   DETALLE SOBRANTES Sala Contenciosa Primera: AS 143 (2 archivos / 1 filas); AS 159 (2 archivos / 1 filas); AS 189 (2 archivos / 1 filas); AS 206 (2 archivos / 1 filas); AS 267 (2 archivos / 1 filas); AS 269 (2 archivos / 1 filas); AS 292 (2 archivos / 1 filas)",
+    "[2026-10-04 20:39:22]   DETALLE SOBRANTES Sala Penal 1: AS 219 (2 archivos / 1 filas); AS 266 (2 archivos / 1 filas); AS 272 (2 archivos / 1 filas); AS 273 (2 archivos / 1 filas); AS 337 (2 archivos / 1 filas)",
+    "[2026-10-04 20:39:22]   DETALLE SOBRANTES Sala Civil 1: AS 184 (1 archivos / 0 filas)",
+    "[2026-10-04 20:39:22] CONCLUSIÓN: antes de cerrar 2002 hay 3 cosa(s) por resolver:",
+    "[2026-10-04 20:39:22]   1) Hay 5 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2002-06-11-TSJ-AS-219-SP1-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
+    "[2026-10-04 20:39:22]   2) Hay 65 archivo(s) en «_revisar» que el programa no pudo identificar con seguridad (por ejemplo: no se leyó el número o la fecha). Ejemplo: 2002-09-03-TSJ-SINID-_SP1_329-SP1.pdf. El corrector intenta resolverlos solo.",
+    "[2026-10-04 20:39:22]   3) Hay 9 documento(s) en «_revisar/_no_AS» (Decretos, Resoluciones, PDF en blanco…) que el programa apartó porque no parecen Autos Supremos y que aún no has revisado. Ejemplo: 2002-03-14-TSJ-SINID-p_SP1_98-SP1.pdf. Para cada uno, «Confirmar descarte» (de verdad no es un AS) o",
+    "[2026-10-04 20:39:22]   Luego repite «Auditar contra el sitio».",
+    "[2026-10-04 20:39:22] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Penal 1 9.",
+    "[2026-10-04 20:39:22] OBSERVACIÓN Sala Contenciosa Primera: el sitio lista bajo 2002 4 fila(s) de OTRA gestión (no cuentan como faltantes): #161 AS/0159-C/2001; #191 AS/0189-C/2001; #210 AS/0206-C/2001; #275 AS/0269-C/2001.",
+    "[2026-10-04 20:39:22] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2002/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2002/_auditoria.json."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791160573,
-   "version": "c3424ff",
-   "procesos": [
-    {
-     "pid": 7236,
-     "tipo": "recuperacion",
-     "gestion": "2013",
-     "inicio_ts": 1791160130
-    }
-   ],
+   "ts": 1791160813,
+   "version": "2686f37",
+   "procesos": [],
    "gestiones": {
     "2013": {
      "activo": true,
-     "total_archivos": 5245,
-     "docs_descargados": 5249,
+     "total_archivos": 5257,
+     "docs_descargados": 5261,
      "salas_n": 11,
      "salas_medidas": 11,
      "total_completo": true,
      "total_esperado": 5271,
-     "pct_total": 99.6,
+     "pct_total": 99.8,
      "estado": "compilando",
      "estado_texto": "Compilando",
      "termino_con_exito": true,
      "con_faltantes": null,
      "eta": {
-      "tasa_min": 0.56,
-      "restantes": 22,
-      "segundos": 2356,
-      "fin_ts": 1791162929,
-      "fin_min_ts": 1791161342,
-      "fin_max_ts": 1791163165
+      "tasa_min": 0.76,
+      "restantes": 10,
+      "segundos": 789,
+      "fin_ts": 1791161602,
+      "fin_min_ts": 1791161060,
+      "fin_max_ts": 1791161681
      },
      "salud": {
       "estado": "ok",
       "limite_30m": 0,
       "fallos_30m": 0,
       "fallos_15m": 0,
-      "fallos_total": 406,
-      "ultimo_movimiento_ts": 1791160557,
+      "fallos_total": 401,
+      "ultimo_movimiento_ts": 1791160732,
       "ultimo_limite_ts": null,
       "ultima_falla_ts": 1791133134,
       "detalle": ""
@@ -529,18 +515,18 @@
     }
    },
    "ultimas_lineas": [
-    "[2026-10-04 20:31:12] Sala Civil Liquidadora: 1 filas ya estan guardadas en _revisar (pendientes de corregir): no se vuelven a descargar.",
-    "[2026-10-04 20:31:18] Sala Civil Liquidadora: la fila #69 ('AS/0070/2013') entregó un PDF idéntico a «2013-03-25-TSJ-AS-69-SCLIQ-POSIBLE-DUPLICADO.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:31:25] Sala Civil Liquidadora: la fila #186 ('AS/0187/2013') entregó un PDF idéntico a «2013-05-03-TSJ-AS-167-SCLIQ.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:31:25] --- Sala Civil Liquidadora terminada: 0 nuevos, 2 ya existentes. Archivos totales ahora en la carpeta: 648 (el sitio reporta 649 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
-    "[2026-10-04 20:31:25] --- Iniciando Sala Social (Gestión 2013) ---",
-    "[2026-10-04 20:31:29] Sala Social: 785 resultados encontrados en el sitio.",
-    "[2026-10-04 20:32:54] Sala Social: 10 documentos nuevos guardados, 0 ya existían (índice 637 de 785).",
-    "[2026-10-04 20:33:06] Sala Social: sigue revisando (fila 644 de 785; 0 ya existian, 11 nuevos).",
-    "[2026-10-04 20:33:29] Sala Social: la fila #655 ('AS/0662/2013') entregó un PDF idéntico a «2013-11-04-TSJ-AS-6624-SS.pdf», que ya existe: se descarta.",
-    "[2026-10-04 20:34:26] Sala Social: 20 documentos nuevos guardados, 1 ya existían (índice 673 de 785).",
-    "[2026-10-04 20:34:38] Sala Social: sigue revisando (fila 677 de 785; 1 ya existian, 21 nuevos).",
-    "[2026-10-04 20:35:57] Sala Social: 30 documentos nuevos guardados, 1 ya existían (índice 723 de 785)."
+    "[2026-10-04 20:40:06]   DETALLE SOBRANTES Sala Civil Liquidadora: AS 69 (2 archivos / 1 filas); AS 167 (2 archivos / 1 filas)",
+    "[2026-10-04 20:40:06]   DETALLE SOBRANTES Sala Social: AS 6624 (1 archivos / 0 filas)",
+    "[2026-10-04 20:40:06]   DETALLE SOBRANTES Sala Social Liquidadora: AS 134 (2 archivos / 1 filas)",
+    "[2026-10-04 20:40:06] CONCLUSIÓN: antes de cerrar 2013 hay 4 cosa(s) por resolver:",
+    "[2026-10-04 20:40:06]   1) Hay 1 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2013-03-25-TSJ-AS-69-SCLIQ-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
+    "[2026-10-04 20:40:06]   2) Hay 3 archivo(s) en «_revisar» que el programa no pudo identificar con seguridad (por ejemplo: no se leyó el número o la fecha). Ejemplo: 2013-09-09-TSJ-SINID-_SS1L_25-SS1L.pdf. El corrector intenta resolverlos solo.",
+    "[2026-10-04 20:40:06]   3) Hay 2 documento(s) en «_revisar/_no_AS» (Decretos, Resoluciones, PDF en blanco…) que el programa apartó porque no parecen Autos Supremos y que aún no has revisado. Ejemplo: 2013-08-30-TSJ-SINID-PLIQ_412-SPLIQ.pdf. Para cada uno, «Confirmar descarte» (de verdad no es un AS)",
+    "[2026-10-04 20:40:06]   4) 5 archivo(s) en las salas tienen un nombre provisional (empiezan con «EXP-», porque al bajarlos no se leyó el número del Auto Supremo). Esta acción vuelve a leerlos y les pone su nombre definitivo. Los que sean escaneos sin texto necesitarán lectura por reconocimiento ópti",
+    "[2026-10-04 20:40:06]   Luego repite «Auditar contra el sitio».",
+    "[2026-10-04 20:40:06] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Penal Liquidadora 1, Sala Penal 2 1.",
+    "[2026-10-04 20:40:06] Apartados en _revisar/_otra_gestion (autos de otro año descargados por error): 3.",
+    "[2026-10-04 20:40:06] Detalle en /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2013/_faltantes.csv y /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2013/_auditoria.json."
    ]
   },
   {
@@ -568,7 +554,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791160543,
+   "ts": 1791160805,
    "version": "c3424ff",
    "procesos": [],
    "gestiones": {},
@@ -590,8 +576,8 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791160552,
-   "version": "c3424ff",
+   "ts": 1791160790,
+   "version": "2686f37",
    "procesos": [],
    "gestiones": {},
    "ultimas_lineas": [
