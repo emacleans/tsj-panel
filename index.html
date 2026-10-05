@@ -1668,7 +1668,16 @@ function renderGaceta() {
     if (!g) cuerpo = '<div class="e-meta">Este equipo aún no reporta el módulo Gaceta. Necesita el agente actualizado y el instalador de la Gaceta (carpeta GACETA).</div>';
     else if (!g.disponible) cuerpo = `<div class="e-meta">Módulo Gaceta no disponible${g.error ? ' (' + esc(g.error) + ')' : ''}.</div>`;
     else {
-      const ps = (g.procesos || []).map(p => `<div class="e-proceso"><span>Gaceta · ${esc(GAC_ETQ[p.seccion] || p.seccion || '')} (${p.modo === 'completo' ? 'completa' : 'piloto'}) · hace ${haceCuanto(p.inicio_ts)}</span><button type="button" data-gac-detener="${esc(e.id)}" data-pid="${p.pid}">Detener</button></div>`).join('');
+      const progreso = p => {
+        const v = (g.por || {})[p.seccion]; if (!v) return '';
+        const esp = /^(esperando|reintentando)/.test(v.fase || '');
+        const falta = Math.max(0, (v.esperado || v.total || 0) - (v.hechos || 0));
+        const tanda = (p.modo === 'piloto' || !v.esperado) ? '' : ` · sección: ${gacNum(v.hechos)} de ${gacNum(v.esperado)} (${gacPct(v.hechos || 0, v.esperado)} %)`;
+        const eta = (!esp && v.eta != null && v.pct != null && v.pct < 100) ? ` · quedan ≈ ${fmtDur(v.eta)} de esta tanda` : '';
+        const estado = esp ? `<b style="color:var(--warn)">⏳ ${esc(v.fase)}</b> — el script espera y reintenta solo` : 'Descargando';
+        return `<div class="e-meta">${estado}${v.pct != null ? ' · tanda al ' + v.pct + ' %' : ''}${eta}${tanda}${esp ? '' : ' · ritmo ' + (v.ritmo ? (v.ritmo * 60).toFixed(0) + ' /h' : '—')}</div><div class="t-barra" style="margin:2px 0 4px"><i class="b-ok" style="width:${Math.min(100, v.pct || 0)}%"></i></div>`;
+      };
+      const ps = (g.procesos || []).map(p => `<div class="e-proceso"><span>Gaceta · ${esc(GAC_ETQ[p.seccion] || p.seccion || '')} (${p.modo === 'completo' ? 'completa' : 'piloto'}) · hace ${haceCuanto(p.inicio_ts)}</span><button type="button" data-gac-detener="${esc(e.id)}" data-pid="${p.pid}">Detener</button></div>${progreso(p)}`).join('');
       cuerpo = `${ps || (trabajando ? '<div class="e-trabajo ocupado">Compilando (guardó algo hace ' + haceCuanto(g.ultimo_ts) + ')</div>' : '<div class="e-trabajo">Sin procesos de Gaceta en curso.</div>')}
         <div class="e-meta">Script ${esc(g.script || (g.script_presente ? '?' : 'no instalado'))} · ritmo ${g.ritmo_min ? g.ritmo_min.toFixed(1) + ' /min' : '—'}${g.error ? ' · error ' + esc(g.error) : ''}${g.ultimo_ts ? ' · último guardado hace ' + haceCuanto(g.ultimo_ts) : ''}</div>
         ${(g.log || []).length ? `<details class="cmp" data-k="gaclog-${esc(e.id)}"${ABIERTOS.has('gaclog-' + e.id) ? ' open' : ''}><summary>Registro reciente</summary><div class="t-log" data-scroll="gaclog-${esc(e.id)}">${esc((g.log || []).join('\n'))}</div></details>` : ''}`;
