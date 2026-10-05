@@ -957,17 +957,25 @@ function cuadreAuditoriaHtml(av) {
   const n = v => Number(v || 0).toLocaleString('es-BO');
   const arch = {}; (av.salas || []).forEach(x => { arch[x.sala] = x.archivos; });
   let T = { f: 0, a: 0, d: 0, fa: 0, so: 0, ap: 0, og: 0 }, todoCuadra = true;
+  const expl = (au.veredicto && au.veredicto.explicadas) || [];
+  const motivoSobran = (sala, r) => (r.sobran_detalle || []).map(d => {
+    const nom = String(d.nombres || '').split(' | ').filter(Boolean).join(', ');
+    if (d.filas_sitio >= 1) return `AS ${esc(d.numero)}: ${d.archivos} archivos y el sitio lista ${d.filas_sitio} fila(s); tienen contenido distinto (Autos Supremos diferentes), se conservan todos. <small>${esc(nom)}</small>`;
+    const otro = expl.some(x => x.indexOf(sala + ':') === 0 && new RegExp('N\\.º ' + d.numero + '\\b').test(x));
+    return otro ? `AS ${esc(d.numero)}: el sitio no lo lista con ese número pero entrega ese documento bajo otra fila (error de numeración del sitio). <small>${esc(nom)}</small>`
+      : `<b class="mal">AS ${esc(d.numero)}: sin explicación, revísalo.</b> <small>${esc(nom)}</small>`;
+  }).join('<br>') || (r.sobran ? 'cubre filas del sitio sin número legible' : '');
   const filas = Object.entries(sal).map(([sala, r]) => {
     const f = Number(r.filas_sitio || 0), a = arch[sala], d = Number(r.explicados_depurados || 0), fa = Number(r.faltan || 0), so = Number(r.sobran || 0);
     const esperado = f - d - fa + so, dif = a == null ? null : a - esperado;
     const ok = dif === 0 && fa === 0; if (!ok) todoCuadra = false;
     T.f += f; T.a += Number(a || 0); T.d += d; T.fa += fa; T.so += so; T.ap += Number(r.apartados_no_as || 0); T.og += Number(r.otra_gestion_sitio || 0);
-    return `<tr><td>${esc(sala)}</td><td>${n(f)}</td><td>${a == null ? '–' : n(a)}</td><td>${n(r.repetidos_en_sitio)}</td><td>${n(d)}</td><td>${fa ? `<b class="mal">${n(fa)}</b>` : '0'}</td><td>${n(so)}</td><td>${ok ? '✓' : (dif ? `<b class="mal">dif. ${dif > 0 ? '+' : ''}${dif}</b>` : '<b class="mal">faltan</b>')}</td></tr>`;
+    return `<tr><td>${esc(sala)}</td><td>${n(f)}</td><td>${a == null ? '–' : n(a)}</td><td>${n(r.repetidos_en_sitio)}</td><td>${n(d)}</td><td>${fa ? `<b class="mal">${n(fa)}</b>` : '0'}</td><td>${n(so)}</td><td style="text-align:left;font-size:12px">${motivoSobran(sala, r) || '–'}</td><td>${ok ? '✓' : (dif ? `<b class="mal">dif. ${dif > 0 ? '+' : ''}${dif}</b>` : '<b class="mal">faltan</b>')}</td></tr>`;
   }).join('');
   const sob = (au.veredicto && au.veredicto.explicadas) || [];
   return `<div class="cuadre"><div class="g-o"><b>Datos de la auditoría${au.fecha ? ' (' + esc(String(au.fecha).replace('T', ' ')) + ')' : ''}</b> — por sala, lo que lista el sitio contra lo que hay en tus carpetas:</div>
-    <div class="tabla-wrap"><table class="res"><thead><tr><th>Sala</th><th>Filas del sitio</th><th>Archivos en carpeta</th><th>Repetidas en el sitio</th><th>Duplicados descartados (registrados)</th><th>Faltan</th><th>Sobran</th><th>Cuadra</th></tr></thead>
-    <tbody>${filas}<tr><td><b>Total</b></td><td><b>${n(T.f)}</b></td><td><b>${n(T.a)}</b></td><td></td><td><b>${n(T.d)}</b></td><td><b>${n(T.fa)}</b></td><td><b>${n(T.so)}</b></td><td>${todoCuadra ? '<b>✓</b>' : '<b class="mal">revisar</b>'}</td></tr></tbody></table></div>
+    <div class="tabla-wrap"><table class="res"><thead><tr><th>Sala</th><th>Filas del sitio</th><th>Archivos en carpeta</th><th>Repetidas en el sitio</th><th>Duplicados descartados (registrados)</th><th>Faltan</th><th>Sobran</th><th>Por qué sobran</th><th>Cuadra</th></tr></thead>
+    <tbody>${filas}<tr><td><b>Total</b></td><td><b>${n(T.f)}</b></td><td><b>${n(T.a)}</b></td><td></td><td><b>${n(T.d)}</b></td><td><b>${n(T.fa)}</b></td><td><b>${n(T.so)}</b></td><td></td><td>${todoCuadra ? '<b>✓</b>' : '<b class="mal">revisar</b>'}</td></tr></tbody></table></div>
     <div class="g-o">Cuenta de control por sala: filas del sitio − duplicados descartados − faltan + sobran = archivos en carpeta. «Repetidas en el sitio» son filas con el mismo número de AS; «Duplicados descartados» son las copias que ya cotejaste y quedaron registradas.${av.en_revision ? ` Aparte, hay ${n(av.en_revision)} archivo(s) en «_revisar» (no cuentan en las carpetas).` : ''}${T.ap ? ` Documentos apartados por no ser Autos Supremos: ${n(T.ap)}.` : ''}${T.og ? ` Filas del sitio de otra gestión (no cuentan): ${n(T.og)}.` : ''}</div>
     ${sob.length ? plegable('cuadre-expl-' + av.gestion, `Diferencias explicadas por el sistema (${sob.length})`, '<ul class="g-lista">' + sob.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>') : ''}</div>`;
 }
