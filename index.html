@@ -522,7 +522,7 @@ function renderSelectorGestion() {
     const el = elegir(o.value);
     const pend = pendienteGestion(el);
     o.classList.toggle('pendiente', pend);
-    o.textContent = (pend ? '⚠ ' : '') + o.value + (el ? ' · ' + el.e.nombre.split(' ')[0] + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : '');
+    o.textContent = iconoGestion(el, o.value) + o.value + (el ? ' · ' + el.e.nombre.split(' ')[0] + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : '');
   }
   sel.value = gestion;
 }
@@ -859,14 +859,24 @@ function otrasGestionesGuia(g) {
   return esperan.length ? `<div class="g-otras">También te esperan: ${esperan.map(x => `<button type="button" class="g-chip" data-g-ir="${esc(x)}">${esc(x)}</button>`).join('')}</div>` : '';
 }
 
+// ✓ cierre validado · ⚠ te toca a ti (hay algo que solo tú decides) · ⟳ pendiente, pero lo resuelve el sistema solo · sin icono: sin novedades
+function iconoGestion(el, g) {
+  if (!el) return '';
+  if ((el.e.cierres || {})[g]) return '✓ ';
+  const v = el.av && el.av.auditoria && el.av.auditoria.veredicto;
+  if (!v || v.estado !== 'acciones') return '';
+  return v.acciones.some(a => esTareaTuya(a)) ? '⚠ ' : '⟳ ';
+}
 function opcionesGestion(sel) {
   let h = '';
   for (let a = 2026; a >= 2001; a--) {
-    const el = elegir(String(a)), pend = pendienteGestion(el);
-    h += `<option value="${a}"${String(a) === String(sel) ? ' selected' : ''}>${pend ? '⚠ ' : ''}${a}${el ? ' · ' + esc(el.e.nombre.split(' ')[0]) + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : ''}</option>`;
+    const el = elegir(String(a)), pend = iconoGestion(el, String(a));
+    h += `<option value="${a}"${String(a) === String(sel) ? ' selected' : ''}>${pend}${a}${el ? ' · ' + esc(el.e.nombre.split(' ')[0]) + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : ''}</option>`;
   }
   return h;
 }
+// Un <select> que conserva el foco bloquea el redibujado (setHtmlKeep no redibuja con un menú abierto): al elegir, soltar el foco para que el cambio se vea de inmediato.
+document.addEventListener('change', ev => { if (ev.target && ev.target.tagName === 'SELECT') ev.target.blur(); }, true);
 document.addEventListener('change', ev => {
   const x = ev.target.closest && ev.target.closest('[data-g-sel]'); if (!x) return;
   gestion = x.value; guardar('tsj_gestion', gestion); destinoManual = false; render();
@@ -929,7 +939,7 @@ function renderGuia() {
       break;
     }
   }
-  setHtmlKeep(box, `<div class="g-cab"><h2>Acciones pendientes</h2><label>Gestión <select data-g-sel>${opcionesGestion(g)}</select></label></div>${etapas}<div class="g-cuerpo ${clase}"><div class="g-tit">${tit}</div>${cuerpo}</div>${ordenGuiaHtml(g)}${otrasGestionesGuia(g)}`);
+  setHtmlKeep(box, `<div class="g-cab"><h2>Acciones pendientes</h2><label>Gestión <select data-g-sel>${opcionesGestion(g)}</select></label></div><div class="g-o" style="text-align:right;margin:-4px 0 6px">✓ cerrada · ⚠ te toca a ti · ⟳ pendiente, lo resuelve el sistema · ● trabajando ahora</div>${etapas}<div class="g-cuerpo ${clase}"><div class="g-tit">${tit}</div>${cuerpo}</div>${ordenGuiaHtml(g)}${otrasGestionesGuia(g)}`);
   box.querySelectorAll('[data-nota]').forEach(i => { if (i.value !== (NOTAS_GUIA[i.dataset.nota] || '')) i.value = NOTAS_GUIA[i.dataset.nota] || ''; });
 }
 document.addEventListener('input', ev => { const i = ev.target; if (i && i.dataset && i.dataset.nota) NOTAS_GUIA[i.dataset.nota] = i.value; });
