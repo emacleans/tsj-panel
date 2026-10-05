@@ -365,7 +365,7 @@
 
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
-const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
+const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-', cotejo_auto: 'Cotejo automático', barrido: 'Barrido general' };
 const NOMBRE_ACCION = { exp: 'Identificar archivos EXP-', fechar: 'Fechar archivos de _revisar', noas: 'Revisar _no_AS', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre',
   barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)',
@@ -559,6 +559,9 @@ function datosGestion(g) {
   const base = estado.split(' (')[0];
   const cod = { 'Compilando': 'compilando', 'Verificando totales': 'verificando', 'Compilada completa': 'completa', 'Con faltantes': 'con_faltantes',
     'En pausa': 'en_pausa', 'Sin verificar': 'sin_verificar', 'Verificada': 'verificada' }[base] || 'sin_verificar';
+  let estadoF = estado, codF = cod;
+  const procRev = on ? (e.procesos || []).find(p => p.gestion === g && !['compilacion', 'vigilante', 'fase0'].includes(p.tipo)) : null;
+  if (procRev) { estadoF = (ETIQUETA[procRev.tipo] || procRev.tipo) + ' (en curso)'; codF = 'verificando'; }
   let eta;
   if (completo && on && av.activo && av.eta) {
     if (av.eta.calculando) eta = '<span class="pm">por calcular</span>';
@@ -569,7 +572,7 @@ function datosGestion(g) {
     }
   } else if (av.activo && !completo) eta = '<span class="pm">sin total</span>';
   else eta = '–';
-  return { g, e, av, on, estado, cod, completo, docs, eta,
+  return { g, e, av, on, estado: estadoF, cod: codF, completo, docs, eta,
     salas: av.salas_n != null ? `${av.salas_medidas} de ${av.salas_n}` : '<span class="pm">por medir</span>',
     docsTxt: completo ? `${docs} / ${av.total_esperado}${av.en_revision ? ` <small>(${av.en_revision} en revisión)</small>` : ''}` : (docs ? `${docs} · <span class="pm">total por confirmar</span>` : '–'),
     pct: completo && av.pct_total != null ? av.pct_total + ' %' : '–' };
@@ -621,10 +624,7 @@ function renderEquipos() {   // vista principal: una fila por gestión + una tar
 
   const filasEq = equipos.map(e => {
     const on = enLinea(e), ps = e.procesos || [];
-    const trabajo = ps.length ? ps.map(x => {
-      const etq = (ETIQUETA[x.tipo] || x.tipo) + (x.gestion ? ' · ' + x.gestion : '');
-      return `<div class="e-proceso"><span>${esc(etq)}</span><button type="button" data-detener-eid="${esc(e.id)}" data-detener-pid="${x.pid}" data-detener-etiqueta="${esc(etq)}">Detener</button></div>`;
-    }).join('') : '<div class="e-trabajo">Libre</div>';
+    const trabajo = ps.length ? ps.map(x => procesoEquipoHtml(e, x, (ETIQUETA[x.tipo] || x.tipo) + (x.gestion ? ' · ' + x.gestion : ''))).join('') : libreEquipoHtml(e);
     const detalle = `<div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>${insigniaVersion(e, on)}` +
       (Object.keys(e.cierres || {}).length ? `<div class="e-meta">cierres validados: ${Object.keys(e.cierres).map(esc).join(', ')}</div>` : '') +
       (e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : '');
@@ -1067,15 +1067,52 @@ function fmtDur(s) {
   return Math.floor(m / 60) + ' h ' + (m % 60) + ' min';
 }
 function progresoHtml(a) {
-  if (!CON_BARRA.includes(a.accion) || !a.inicio) return '';
+  if (!a.inicio) return '';
   const trans = Math.max(0, Date.now() / 1000 - a.inicio);
   if (!a.en_curso) return `<div class="prog fin"><div class="txt">Terminada en ${fmtDur(a.ts - a.inicio)}</div></div>`;
-  if (a.pasos && a.pasos.total) {   // solo cuando el registro permite contar de verdad (salas terminadas de N)
+  if (a.pasos && a.pasos.total) {   // progreso real: salas terminadas de N
     const f = a.pasos.hecho / a.pasos.total, pct = Math.min(99, f * 100);
     const eta = f >= 0.1 ? 'faltan ~' + fmtDur(trans * (1 - f) / f) : 'tiempo restante por calcular';
     return `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt"><b>${Math.round(pct)} %</b> · ${a.pasos.hecho} de ${a.pasos.total} salas · ${eta} · lleva ${fmtDur(trans)}</div></div>`;
   }
-  return `<div class="prog"><div class="txt">En curso desde hace ${fmtDur(trans)} · <span class="pm">sin porcentaje: esta acción no informa su avance</span></div></div>`;
+  if (a.estimado) {   // sin conteo real: porcentaje ESTIMADO con la duración de ejecuciones anteriores
+    const pct = Math.min(95, 100 * trans / a.estimado), falta = a.estimado - trans;
+    const eta = falta > 0 ? 'faltan ~' + fmtDur(falta) : 'tarda más de lo habitual';
+    return `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt"><b>~${Math.round(pct)} %</b> (estimado, ${esc(a.base_estimado || '')}) · ${eta} · lleva ${fmtDur(trans)}</div></div>`;
+  }
+  return `<div class="prog"><div class="txt">En curso desde hace ${fmtDur(trans)} · <span class="pm">tiempo estimado: calculando</span></div></div>`;
+}
+
+// Estado de un equipo en su tarjeta: qué corre, % y tiempo estimado; si está libre, qué hizo por última vez.
+const TIPO_A_ACCION = { auditoria: ['auditar'], verificacion: ['verificar'], recuperacion: ['recuperar'], correccion: ['corregir_sim', 'corregir_real'], deteccion: ['detectar_sim', 'detectar_real'], barrido: ['barrido_sim', 'barrido_real', 'barrido_todas_sim', 'barrido_todas_real'], cotejo_auto: ['cotejo_auto_sim', 'cotejo_auto_real'] };
+function actividadDe(e, p) {
+  const acts = [e.actividad, ...((e.actividad && e.actividad.otras) || [])].filter(Boolean);
+  const accs = TIPO_A_ACCION[p.tipo] || [];
+  return acts.find(a => a.en_curso && a.gestion === p.gestion && accs.includes(a.accion));
+}
+function procesoEquipoHtml(e, p, etq) {
+  const trans = p.inicio_ts ? Math.max(0, Date.now() / 1000 - p.inicio_ts) : null;
+  let prog = '';
+  if (['compilacion', 'vigilante', 'fase0'].includes(p.tipo)) {
+    const av = (e.gestiones || {})[p.gestion];
+    if (av) {
+      const pct = av.pct_total != null ? Math.min(99.9, av.pct_total) : null;
+      prog = (pct != null ? `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt"><b>${pct} %</b> · ${Number(av.docs_descargados || 0).toLocaleString('es-BO')} de ${Number(av.total_esperado || 0).toLocaleString('es-BO')} documentos</div></div>`
+        : `<div class="prog"><div class="txt"><span class="pm">% por calcular: aún no se midieron todas las salas</span></div></div>`) + etaHtml(e, av);
+    }
+  } else {
+    const a = actividadDe(e, p);
+    if (a) prog = progresoHtml(a);
+    else prog = `<div class="prog"><div class="txt">En curso${trans != null ? ' desde hace ' + fmtDur(trans) : ''} · <span class="pm">% y tiempo estimado: calculando</span></div></div>`;
+  }
+  return `<div class="e-proceso"><span>${esc(etq)}</span><button type="button" data-detener-eid="${esc(e.id)}" data-detener-pid="${p.pid}" data-detener-etiqueta="${esc(etq)}">Detener</button></div>${prog}`;
+}
+function libreEquipoHtml(e) {
+  const cola = (e.releer_en_curso || []).length ? `<div class="e-trabajo">Revisión automática en curso: ${(e.releer_en_curso || []).map(esc).join(', ')} (corrigiendo, auditando o recuperando)</div>`
+    : (e.releer_pendiente || []).length ? `<div class="e-trabajo">Revisión automática en cola: ${(e.releer_pendiente || []).map(esc).join(', ')} (arranca sola cuando el equipo no compile)</div>` : '';
+  const a = e.actividad;
+  const ult = a && !a.en_curso ? `<div class="e-meta">Última acción: ${esc(NOMBRE_ACCION[a.accion] || a.accion)} (gestión ${esc(a.gestion)}), ${a.inicio ? 'terminó hace ' : 'hace '}${fmtDur(Date.now() / 1000 - a.ts)}${a.inicio ? ' · duró ' + fmtDur(a.ts - a.inicio) : ''}</div>` : '';
+  return (cola || '<div class="e-trabajo">Libre (sin procesos en curso)</div>') + ult;
 }
 
 function renderActividad() {
