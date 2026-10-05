@@ -990,15 +990,19 @@ function cuadreAuditoriaHtml(av) {
   const filas = Object.entries(sal).map(([sala, r]) => {
     const f = Number(r.filas_sitio || 0), a = arch[sala], d = Number(r.explicados_depurados || 0), fa = Number(r.faltan || 0), so = Number(r.sobran || 0);
     const esperado = f - d - fa + so, dif = a == null ? null : a - esperado;
-    const ok = dif === 0 && fa === 0; if (!ok) todoCuadra = false;
+    // Faltantes que el sistema ya explicó (p. ej. el sitio entrega otro documento al pedir ese número): no son trabajo pendiente.
+    const faExp = (r.faltan_detalle || []).reduce((acc, d) => acc + (expl.some(x => x.indexOf(sala + ':') === 0 && new RegExp('N\\.º ' + d.numero + '\\b').test(x)) ? Number(d.pendientes || 0) : 0), 0);
+    const faSin = Math.max(0, fa - faExp);
+    const ok = dif === 0 && faSin === 0; if (!ok) todoCuadra = false;
+    T.fe = (T.fe || 0) + faExp;
     T.f += f; T.a += Number(a || 0); T.d += d; T.fa += fa; T.so += so; T.ap += Number(r.apartados_no_as || 0); T.og += Number(r.otra_gestion_sitio || 0);
-    return `<tr><td>${esc(sala)}</td><td>${n(f)}</td><td>${a == null ? '–' : n(a)}</td><td>${n(r.repetidos_en_sitio)}</td><td>${n(d)}</td><td>${fa ? `<b class="mal">${n(fa)}</b>` : '0'}</td><td>${n(so)}</td><td style="text-align:left;font-size:12px">${motivoSobran(sala, r) || '–'}</td><td>${ok ? '✓' : (dif ? `<b class="mal">dif. ${dif > 0 ? '+' : ''}${dif}</b>` : '<b class="mal">faltan</b>')}</td></tr>`;
+    return `<tr><td>${esc(sala)}</td><td>${n(f)}</td><td>${a == null ? '–' : n(a)}</td><td>${n(r.repetidos_en_sitio)}</td><td>${n(d)}</td><td>${faSin ? `<b class="mal">${n(faSin)}</b>` : '0'}${faExp ? ` <small>(+${n(faExp)} explicada${faExp > 1 ? 's' : ''}: error del sitio)</small>` : ''}</td><td>${n(so)}</td><td style="text-align:left;font-size:12px">${motivoSobran(sala, r) || '–'}</td><td>${ok ? '✓' : (dif ? `<b class="mal">dif. ${dif > 0 ? '+' : ''}${dif}</b>` : '<b class="mal">faltan</b>')}</td></tr>`;
   }).join('');
   const sob = (au.veredicto && au.veredicto.explicadas) || [];
   return `<div class="cuadre"><div class="g-o"><b>Datos de la auditoría${au.fecha ? ' (' + esc(String(au.fecha).replace('T', ' ')) + ')' : ''}</b> — por sala, lo que lista el sitio contra lo que hay en tus carpetas:</div>
     <div class="tabla-wrap"><table class="res"><thead><tr><th>Sala</th><th>Filas del sitio</th><th>Archivos en carpeta</th><th>Repetidas en el sitio</th><th>Duplicados descartados (registrados)</th><th>Faltan</th><th>Sobran</th><th>Por qué sobran</th><th>Cuadra</th></tr></thead>
-    <tbody>${filas}<tr><td><b>Total</b></td><td><b>${n(T.f)}</b></td><td><b>${n(T.a)}</b></td><td></td><td><b>${n(T.d)}</b></td><td><b>${n(T.fa)}</b></td><td><b>${n(T.so)}</b></td><td></td><td>${todoCuadra ? '<b>✓</b>' : '<b class="mal">revisar</b>'}</td></tr></tbody></table></div>
-    <div class="g-o">Cuenta de control por sala: filas del sitio − duplicados descartados − faltan + sobran = archivos en carpeta. «Repetidas en el sitio» son filas con el mismo número de AS; «Duplicados descartados» son las copias que ya cotejaste y quedaron registradas.${av.en_revision ? ` Aparte, hay ${n(av.en_revision)} archivo(s) en «_revisar» (no cuentan en las carpetas).` : ''}${T.ap ? ` Documentos apartados por no ser Autos Supremos: ${n(T.ap)}.` : ''}${T.og ? ` Filas del sitio de otra gestión (no cuentan): ${n(T.og)}.` : ''}</div>
+    <tbody>${filas}<tr><td><b>Total</b></td><td><b>${n(T.f)}</b></td><td><b>${n(T.a)}</b></td><td></td><td><b>${n(T.d)}</b></td><td><b>${n(T.fa - (T.fe || 0))}</b>${T.fe ? ` <small>(+${n(T.fe)} explicadas)</small>` : ''}</td><td><b>${n(T.so)}</b></td><td></td><td>${todoCuadra ? '<b>✓</b>' : '<b class="mal">revisar</b>'}</td></tr></tbody></table></div>
+    <div class="g-o">Cuenta de control por sala: filas del sitio − duplicados descartados − faltan (las «explicadas» también restan: el sitio no entrega ese documento) + sobran = archivos en carpeta. «Faltan» en rojo = sin explicación, requiere tu revisión; «explicadas» = error del sitio ya verificado, no es trabajo pendiente. «Repetidas en el sitio» son filas con el mismo número de AS; «Duplicados descartados» son las copias que ya cotejaste y quedaron registradas.${av.en_revision ? ` Aparte, hay ${n(av.en_revision)} archivo(s) en «_revisar» (no cuentan en las carpetas).` : ''}${T.ap ? ` Documentos apartados por no ser Autos Supremos: ${n(T.ap)}.` : ''}${T.og ? ` Filas del sitio de otra gestión (no cuentan): ${n(T.og)}.` : ''}</div>
     ${sob.length ? plegable('cuadre-expl-' + av.gestion, `Diferencias explicadas por el sistema (${sob.length})`, '<ul class="g-lista">' + sob.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>') : ''}</div>`;
 }
 
