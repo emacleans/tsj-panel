@@ -1,5 +1,5 @@
 {
- "ts": 1791205503,
+ "ts": 1791205804,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791205486,
+   "actualizado_ts": 1791205791,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791205486,
+   "actualizado_ts": 1791205791,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791205463,
+   "actualizado_ts": 1791205794,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791205464,
+   "actualizado_ts": 1791205746,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791205486,
+   "actualizado_ts": 1791205791,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791205483,
+   "actualizado_ts": 1791205793,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791205483,
+   "actualizado_ts": 1791205793,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791205474,
+   "actualizado_ts": 1791205795,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791205483,
+   "actualizado_ts": 1791205793,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791205463,
+   "actualizado_ts": 1791205794,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791205483,
+   "actualizado_ts": 1791205793,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791205464,
+   "actualizado_ts": 1791205746,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791205483,
+   "actualizado_ts": 1791205793,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791205483,
+   "actualizado_ts": 1791205793,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791205483,
+   "actualizado_ts": 1791205793,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791205464,
+   "actualizado_ts": 1791205746,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791129370,
-   "texto": "reinicio de 2002 en IPE01 (Mac Mini oficina): corría con código anterior al último cambio"
-  },
   {
    "ts": 1791130034,
    "texto": "inicia 2002 en IPE01 (Mac Mini oficina) (incompleta; relanzada tras reinicio)"
@@ -384,13 +380,17 @@
   {
    "ts": 1791205396,
    "texto": "orden de Claude 2026-10-05-cotejo-auto-2023-d: cotejo_auto_real 2023 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1791205799,
+   "texto": "orden de Claude 2026-10-05-auditar-2023-b: auditar 2023 en IPE01 (Mac Mini oficina)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791205463,
+   "ts": 1791205794,
    "version": "53a53d9",
    "procesos": [],
    "orden": {
@@ -420,7 +420,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791205491,
+   "ts": 1791205788,
    "version": "53a53d9",
    "procesos": [],
    "orden": {
@@ -437,7 +437,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791205495,
+   "ts": 1791205794,
    "version": "53a53d9",
    "procesos": [],
    "orden": {
@@ -454,29 +454,24 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791205483,
+   "ts": 1791205793,
    "version": "53a53d9",
    "procesos": [],
    "orden": {
-    "seq": 1791205395558,
-    "accion": "cotejo_auto_real",
+    "seq": 1791205718258,
+    "accion": "cotejar",
     "gestion": "2023",
     "ok": true,
-    "mensaje": "Lanzado: cotejo_auto_real, gestión 2023",
-    "ts": 1791205398
+    "mensaje": "Cotejo de 2023 listo en http://192.168.4.29:8743 (ábrelo desde cualquier equipo de la misma red).",
+    "ts": 1791205722
    },
    "gestiones": {},
-   "ultimas_lineas": [
-    "cotejo_auto: gestión 2023, 2 par(es) en _revisar (aplicando)",
-    "MANUAL  2023-11-20-TSJ-AS-1889-SP-POSIBLE-DUPLICADO.pdf: no se pudo leer el expediente en alguna copia; las partes no son claramente distintas",
-    "MANUAL  2023-12-29-TSJ-AS-304-SPL-POSIBLE-DUPLICADO.pdf: no se pudieron leer las partes ni el párrafo de VISTOS",
-    "RESUMEN gestión 2023: pares 2, resueltos automáticamente 0, para cotejo manual 2"
-   ]
+   "ultimas_lineas": []
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791205486,
+   "ts": 1791205791,
    "version": "53a53d9",
    "procesos": [],
    "orden": {
@@ -536,7 +531,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791205464,
+   "ts": 1791205746,
    "version": "53a53d9",
    "procesos": [],
    "orden": {
@@ -566,7 +561,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791205474,
+   "ts": 1791205795,
    "version": "53a53d9",
    "procesos": [],
    "orden": {
