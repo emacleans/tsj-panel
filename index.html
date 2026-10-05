@@ -216,7 +216,6 @@
   .g-orden { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: #F1EEE5; font-size: 13.5px; }
   .g-orden.ok { background: #E1F0E5; color: var(--ok); } .g-orden.mal { background: #F6DEDE; color: var(--bad); }
   .g-orden a { font-weight: 700; }
-  .cuadre { margin: 10px 0; } .cuadre table td, .cuadre table th { text-align: right; } .cuadre table td:first-child, .cuadre table th:first-child { text-align: left; } .cuadre .mal { color: var(--bad); }
   .g-otras { margin-top: 12px; font-size: 13px; color: var(--muted); }
   .g-chip { font: inherit; font-weight: 600; margin-left: 6px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--gold); background: var(--gold-soft); color: var(--navy); cursor: pointer; }
   details.avanzado { margin-top: 18px; }
@@ -366,7 +365,7 @@
 
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
-const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-', cotejo_auto: 'Cotejo automático', barrido: 'Barrido general' };
+const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-' };
 const NOMBRE_ACCION = { exp: 'Identificar archivos EXP-', fechar: 'Fechar archivos de _revisar', noas: 'Revisar _no_AS', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre',
   barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)',
@@ -522,7 +521,7 @@ function renderSelectorGestion() {
     const el = elegir(o.value);
     const pend = pendienteGestion(el);
     o.classList.toggle('pendiente', pend);
-    o.textContent = iconoGestion(el, o.value) + o.value + (el ? ' · ' + el.e.nombre.split(' ')[0] + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : '');
+    o.textContent = (pend ? '⚠ ' : '') + o.value + (el ? ' · ' + el.e.nombre.split(' ')[0] + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : '');
   }
   sel.value = gestion;
 }
@@ -560,9 +559,6 @@ function datosGestion(g) {
   const base = estado.split(' (')[0];
   const cod = { 'Compilando': 'compilando', 'Verificando totales': 'verificando', 'Compilada completa': 'completa', 'Con faltantes': 'con_faltantes',
     'En pausa': 'en_pausa', 'Sin verificar': 'sin_verificar', 'Verificada': 'verificada' }[base] || 'sin_verificar';
-  let estadoF = estado, codF = cod;
-  const procRev = on ? (e.procesos || []).find(p => p.gestion === g && !['compilacion', 'vigilante', 'fase0'].includes(p.tipo)) : null;
-  if (procRev) { estadoF = (ETIQUETA[procRev.tipo] || procRev.tipo) + ' (en curso)'; codF = 'verificando'; }
   let eta;
   if (completo && on && av.activo && av.eta) {
     if (av.eta.calculando) eta = '<span class="pm">por calcular</span>';
@@ -573,7 +569,7 @@ function datosGestion(g) {
     }
   } else if (av.activo && !completo) eta = '<span class="pm">sin total</span>';
   else eta = '–';
-  return { g, e, av, on, estado: estadoF, cod: codF, completo, docs, eta,
+  return { g, e, av, on, estado, cod, completo, docs, eta,
     salas: av.salas_n != null ? `${av.salas_medidas} de ${av.salas_n}` : '<span class="pm">por medir</span>',
     docsTxt: completo ? `${docs} / ${av.total_esperado}${av.en_revision ? ` <small>(${av.en_revision} en revisión)</small>` : ''}` : (docs ? `${docs} · <span class="pm">total por confirmar</span>` : '–'),
     pct: completo && av.pct_total != null ? av.pct_total + ' %' : '–' };
@@ -625,7 +621,10 @@ function renderEquipos() {   // vista principal: una fila por gestión + una tar
 
   const filasEq = equipos.map(e => {
     const on = enLinea(e), ps = e.procesos || [];
-    const trabajo = ps.length ? ps.map(x => procesoEquipoHtml(e, x, (ETIQUETA[x.tipo] || x.tipo) + (x.gestion ? ' · ' + x.gestion : ''))).join('') : libreEquipoHtml(e);
+    const trabajo = ps.length ? ps.map(x => {
+      const etq = (ETIQUETA[x.tipo] || x.tipo) + (x.gestion ? ' · ' + x.gestion : '');
+      return `<div class="e-proceso"><span>${esc(etq)}</span><button type="button" data-detener-eid="${esc(e.id)}" data-detener-pid="${x.pid}" data-detener-etiqueta="${esc(etq)}">Detener</button></div>`;
+    }).join('') : '<div class="e-trabajo">Libre</div>';
     const detalle = `<div class="e-meta">scripts ${esc(e.version)}${e.publicador ? ' · publicador' : ''}${e.anti_reposo ? ' · reposo bloqueado' : ''}</div>${insigniaVersion(e, on)}` +
       (Object.keys(e.cierres || {}).length ? `<div class="e-meta">cierres validados: ${Object.keys(e.cierres).map(esc).join(', ')}</div>` : '') +
       (e.error_git ? `<div class="e-error">${esc(e.error_git)}</div>` : '');
@@ -859,24 +858,14 @@ function otrasGestionesGuia(g) {
   return esperan.length ? `<div class="g-otras">También te esperan: ${esperan.map(x => `<button type="button" class="g-chip" data-g-ir="${esc(x)}">${esc(x)}</button>`).join('')}</div>` : '';
 }
 
-// ✓ cierre validado · ⚠ te toca a ti (hay algo que solo tú decides) · ⟳ pendiente, pero lo resuelve el sistema solo · sin icono: sin novedades
-function iconoGestion(el, g) {
-  if (!el) return '';
-  if ((el.e.cierres || {})[g]) return '✓ ';
-  const v = el.av && el.av.auditoria && el.av.auditoria.veredicto;
-  if (!v || v.estado !== 'acciones') return '';
-  return v.acciones.some(a => esTareaTuya(a)) ? '⚠ ' : '⟳ ';
-}
 function opcionesGestion(sel) {
   let h = '';
   for (let a = 2026; a >= 2001; a--) {
-    const el = elegir(String(a)), pend = iconoGestion(el, String(a));
-    h += `<option value="${a}"${String(a) === String(sel) ? ' selected' : ''}>${pend}${a}${el ? ' · ' + esc(el.e.nombre.split(' ')[0]) + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : ''}</option>`;
+    const el = elegir(String(a)), pend = pendienteGestion(el);
+    h += `<option value="${a}"${String(a) === String(sel) ? ' selected' : ''}>${pend ? '⚠ ' : ''}${a}${el ? ' · ' + esc(el.e.nombre.split(' ')[0]) + ((enLinea(el.e) && el.av.activo) ? ' ●' : '') : ''}</option>`;
   }
   return h;
 }
-// Un <select> que conserva el foco bloquea el redibujado (setHtmlKeep no redibuja con un menú abierto): al elegir, soltar el foco para que el cambio se vea de inmediato.
-document.addEventListener('change', ev => { if (ev.target && ev.target.tagName === 'SELECT') ev.target.blur(); }, true);
 document.addEventListener('change', ev => {
   const x = ev.target.closest && ev.target.closest('[data-g-sel]'); if (!x) return;
   gestion = x.value; guardar('tsj_gestion', gestion); destinoManual = false; render();
@@ -933,13 +922,12 @@ function renderGuia() {
       const ex = excepcionesCierre(g);
       tit = '✓ Todo resuelto: último paso, validar el cierre';
       cuerpo = `<p>Lo manual está hecho. Al validar, la gestión ${esc(g)} queda cerrada y se guarda su informe de auditoría.${ex.length ? ` Quedan <b>${ex.length}</b> excepción(es) que aceptaste; se anotan en ese informe.` : ''}</p>
-        ${cuadreAuditoriaHtml(st.av)}
         ${ex.length ? plegable('g-exc-' + g, 'Ver las excepciones aceptadas', '<ul class="g-lista">' + ex.map(x => `<li>${esc(x.texto)}${x.nota ? ' <i>— «' + esc(x.nota) + '»</i>' : ''}</li>`).join('') + '</ul>') : ''}
         <div class="g-ctrl">${gBtn('validar_cierre', `Validar el cierre de ${esc(g)}`, '', eid)}</div>`;
       break;
     }
   }
-  setHtmlKeep(box, `<div class="g-cab"><h2>Acciones pendientes</h2><label>Gestión <select data-g-sel>${opcionesGestion(g)}</select></label></div><div class="g-o" style="text-align:right;margin:-4px 0 6px">✓ cerrada · ⚠ te toca a ti · ⟳ pendiente, lo resuelve el sistema · ● trabajando ahora</div>${etapas}<div class="g-cuerpo ${clase}"><div class="g-tit">${tit}</div>${cuerpo}</div>${ordenGuiaHtml(g)}${otrasGestionesGuia(g)}`);
+  setHtmlKeep(box, `<div class="g-cab"><h2>Acciones pendientes</h2><label>Gestión <select data-g-sel>${opcionesGestion(g)}</select></label></div>${etapas}<div class="g-cuerpo ${clase}"><div class="g-tit">${tit}</div>${cuerpo}</div>${ordenGuiaHtml(g)}${otrasGestionesGuia(g)}`);
   box.querySelectorAll('[data-nota]').forEach(i => { if (i.value !== (NOTAS_GUIA[i.dataset.nota] || '')) i.value = NOTAS_GUIA[i.dataset.nota] || ''; });
 }
 document.addEventListener('input', ev => { const i = ev.target; if (i && i.dataset && i.dataset.nota) NOTAS_GUIA[i.dataset.nota] = i.value; });
@@ -959,36 +947,6 @@ document.addEventListener('click', ev => {
   const b = ev.target.closest('[data-g-ir]'); if (!b) return;
   gestion = b.dataset.gIr; guardar('tsj_gestion', gestion); destinoManual = false; render(); window.scrollTo(0, 0);
 });
-
-// Cuadro de la auditoría para decidir con datos antes de validar el cierre: por sala, lo del sitio contra lo que hay en carpeta.
-function cuadreAuditoriaHtml(av) {
-  const au = av && av.auditoria, sal = au && au.salas;
-  if (!sal || !Object.keys(sal).length) return '<div class="g-o">No hay datos de auditoría para mostrar.</div>';
-  const n = v => Number(v || 0).toLocaleString('es-BO');
-  const arch = {}; (av.salas || []).forEach(x => { arch[x.sala] = x.archivos; });
-  let T = { f: 0, a: 0, d: 0, fa: 0, so: 0, ap: 0, og: 0 }, todoCuadra = true;
-  const expl = (au.veredicto && au.veredicto.explicadas) || [];
-  const motivoSobran = (sala, r) => (r.sobran_detalle || []).map(d => {
-    const nom = String(d.nombres || '').split(' | ').filter(Boolean).join(', ');
-    if (d.filas_sitio >= 1) return `AS ${esc(d.numero)}: ${d.archivos} archivos y el sitio lista ${d.filas_sitio} fila(s); tienen contenido distinto (Autos Supremos diferentes), se conservan todos. <small>${esc(nom)}</small>`;
-    const otro = expl.some(x => x.indexOf(sala + ':') === 0 && new RegExp('N\\.º ' + d.numero + '\\b').test(x));
-    return otro ? `AS ${esc(d.numero)}: el sitio no lo lista con ese número pero entrega ese documento bajo otra fila (error de numeración del sitio). <small>${esc(nom)}</small>`
-      : `<b class="mal">AS ${esc(d.numero)}: sin explicación, revísalo.</b> <small>${esc(nom)}</small>`;
-  }).join('<br>') || (r.sobran ? 'cubre filas del sitio sin número legible' : '');
-  const filas = Object.entries(sal).map(([sala, r]) => {
-    const f = Number(r.filas_sitio || 0), a = arch[sala], d = Number(r.explicados_depurados || 0), fa = Number(r.faltan || 0), so = Number(r.sobran || 0);
-    const esperado = f - d - fa + so, dif = a == null ? null : a - esperado;
-    const ok = dif === 0 && fa === 0; if (!ok) todoCuadra = false;
-    T.f += f; T.a += Number(a || 0); T.d += d; T.fa += fa; T.so += so; T.ap += Number(r.apartados_no_as || 0); T.og += Number(r.otra_gestion_sitio || 0);
-    return `<tr><td>${esc(sala)}</td><td>${n(f)}</td><td>${a == null ? '–' : n(a)}</td><td>${n(r.repetidos_en_sitio)}</td><td>${n(d)}</td><td>${fa ? `<b class="mal">${n(fa)}</b>` : '0'}</td><td>${n(so)}</td><td style="text-align:left;font-size:12px">${motivoSobran(sala, r) || '–'}</td><td>${ok ? '✓' : (dif ? `<b class="mal">dif. ${dif > 0 ? '+' : ''}${dif}</b>` : '<b class="mal">faltan</b>')}</td></tr>`;
-  }).join('');
-  const sob = (au.veredicto && au.veredicto.explicadas) || [];
-  return `<div class="cuadre"><div class="g-o"><b>Datos de la auditoría${au.fecha ? ' (' + esc(String(au.fecha).replace('T', ' ')) + ')' : ''}</b> — por sala, lo que lista el sitio contra lo que hay en tus carpetas:</div>
-    <div class="tabla-wrap"><table class="res"><thead><tr><th>Sala</th><th>Filas del sitio</th><th>Archivos en carpeta</th><th>Repetidas en el sitio</th><th>Duplicados descartados (registrados)</th><th>Faltan</th><th>Sobran</th><th>Por qué sobran</th><th>Cuadra</th></tr></thead>
-    <tbody>${filas}<tr><td><b>Total</b></td><td><b>${n(T.f)}</b></td><td><b>${n(T.a)}</b></td><td></td><td><b>${n(T.d)}</b></td><td><b>${n(T.fa)}</b></td><td><b>${n(T.so)}</b></td><td></td><td>${todoCuadra ? '<b>✓</b>' : '<b class="mal">revisar</b>'}</td></tr></tbody></table></div>
-    <div class="g-o">Cuenta de control por sala: filas del sitio − duplicados descartados − faltan + sobran = archivos en carpeta. «Repetidas en el sitio» son filas con el mismo número de AS; «Duplicados descartados» son las copias que ya cotejaste y quedaron registradas.${av.en_revision ? ` Aparte, hay ${n(av.en_revision)} archivo(s) en «_revisar» (no cuentan en las carpetas).` : ''}${T.ap ? ` Documentos apartados por no ser Autos Supremos: ${n(T.ap)}.` : ''}${T.og ? ` Filas del sitio de otra gestión (no cuentan): ${n(T.og)}.` : ''}</div>
-    ${sob.length ? plegable('cuadre-expl-' + av.gestion, `Diferencias explicadas por el sistema (${sob.length})`, '<ul class="g-lista">' + sob.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>') : ''}</div>`;
-}
 
 function cardCierre(av, e) {
   const au = av.auditoria, v = au && au.veredicto;
@@ -1018,7 +976,7 @@ function cardCierre(av, e) {
     return `<div class="cierre-card mal"><b>Antes de cerrar la gestión ${esc(av.gestion)} hay ${v.acciones.length} cosa(s) por resolver:</b>${seccAutom}${seccManual}<div style="margin-top:10px">Cuando termines lo de arriba, pulsa <button type="button" class="btn" data-orden="auditar">Auditar contra el sitio</button> otra vez: el sistema volverá a evaluar y, si todo está resuelto, te pedirá validar el cierre.</div>${nota}</div>`;
   }
   const ex = (v.explicadas || []).length ? `<details><summary>Ver las ${v.explicadas.length} diferencia(s) explicadas</summary><ul>${v.explicadas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></details>` : '';
-  return `<div class="cierre-card ok"><b>La auditoría terminó sin nada que corregir.</b> Las diferencias que aparecen entre el sitio y las carpetas están comprobadas y explicadas (no son errores nuestros). ${cuadreAuditoriaHtml(av)}${ex}<div style="margin-top:8px"><button type="button" class="btn" data-orden="validar_cierre">Validar el cierre de la gestión ${esc(av.gestion)}</button></div></div>`;
+  return `<div class="cierre-card ok"><b>La auditoría terminó sin nada que corregir.</b> Las diferencias que aparecen entre el sitio y las carpetas están comprobadas y explicadas (no son errores nuestros). ${ex}<div style="margin-top:8px"><button type="button" class="btn" data-orden="validar_cierre">Validar el cierre de la gestión ${esc(av.gestion)}</button></div></div>`;
 }
 document.addEventListener('click', ev => { const b = ev.target.closest('[data-orden]'); if (b) enviarOrden(b.dataset.orden); });
 document.addEventListener('click', ev => {
@@ -1109,52 +1067,15 @@ function fmtDur(s) {
   return Math.floor(m / 60) + ' h ' + (m % 60) + ' min';
 }
 function progresoHtml(a) {
-  if (!a.inicio) return '';
+  if (!CON_BARRA.includes(a.accion) || !a.inicio) return '';
   const trans = Math.max(0, Date.now() / 1000 - a.inicio);
   if (!a.en_curso) return `<div class="prog fin"><div class="txt">Terminada en ${fmtDur(a.ts - a.inicio)}</div></div>`;
-  if (a.pasos && a.pasos.total) {   // progreso real: salas terminadas de N
+  if (a.pasos && a.pasos.total) {   // solo cuando el registro permite contar de verdad (salas terminadas de N)
     const f = a.pasos.hecho / a.pasos.total, pct = Math.min(99, f * 100);
     const eta = f >= 0.1 ? 'faltan ~' + fmtDur(trans * (1 - f) / f) : 'tiempo restante por calcular';
     return `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt"><b>${Math.round(pct)} %</b> · ${a.pasos.hecho} de ${a.pasos.total} salas · ${eta} · lleva ${fmtDur(trans)}</div></div>`;
   }
-  if (a.estimado) {   // sin conteo real: porcentaje ESTIMADO con la duración de ejecuciones anteriores
-    const pct = Math.min(95, 100 * trans / a.estimado), falta = a.estimado - trans;
-    const eta = falta > 0 ? 'faltan ~' + fmtDur(falta) : 'tarda más de lo habitual';
-    return `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt"><b>~${Math.round(pct)} %</b> (estimado, ${esc(a.base_estimado || '')}) · ${eta} · lleva ${fmtDur(trans)}</div></div>`;
-  }
-  return `<div class="prog"><div class="txt">En curso desde hace ${fmtDur(trans)} · <span class="pm">tiempo estimado: calculando</span></div></div>`;
-}
-
-// Estado de un equipo en su tarjeta: qué corre, % y tiempo estimado; si está libre, qué hizo por última vez.
-const TIPO_A_ACCION = { auditoria: ['auditar'], verificacion: ['verificar'], recuperacion: ['recuperar'], correccion: ['corregir_sim', 'corregir_real'], deteccion: ['detectar_sim', 'detectar_real'], barrido: ['barrido_sim', 'barrido_real', 'barrido_todas_sim', 'barrido_todas_real'], cotejo_auto: ['cotejo_auto_sim', 'cotejo_auto_real'] };
-function actividadDe(e, p) {
-  const acts = [e.actividad, ...((e.actividad && e.actividad.otras) || [])].filter(Boolean);
-  const accs = TIPO_A_ACCION[p.tipo] || [];
-  return acts.find(a => a.en_curso && a.gestion === p.gestion && accs.includes(a.accion));
-}
-function procesoEquipoHtml(e, p, etq) {
-  const trans = p.inicio_ts ? Math.max(0, Date.now() / 1000 - p.inicio_ts) : null;
-  let prog = '';
-  if (['compilacion', 'vigilante', 'fase0'].includes(p.tipo)) {
-    const av = (e.gestiones || {})[p.gestion];
-    if (av) {
-      const pct = av.pct_total != null ? Math.min(99.9, av.pct_total) : null;
-      prog = (pct != null ? `<div class="prog"><div class="pista"><div class="relleno" style="width:${pct}%"></div></div><div class="txt"><b>${pct} %</b> · ${Number(av.docs_descargados || 0).toLocaleString('es-BO')} de ${Number(av.total_esperado || 0).toLocaleString('es-BO')} documentos</div></div>`
-        : `<div class="prog"><div class="txt"><span class="pm">% por calcular: aún no se midieron todas las salas</span></div></div>`) + etaHtml(e, av);
-    }
-  } else {
-    const a = actividadDe(e, p);
-    if (a) prog = progresoHtml(a);
-    else prog = `<div class="prog"><div class="txt">En curso${trans != null ? ' desde hace ' + fmtDur(trans) : ''} · <span class="pm">% y tiempo estimado: calculando</span></div></div>`;
-  }
-  return `<div class="e-proceso"><span>${esc(etq)}</span><button type="button" data-detener-eid="${esc(e.id)}" data-detener-pid="${p.pid}" data-detener-etiqueta="${esc(etq)}">Detener</button></div>${prog}`;
-}
-function libreEquipoHtml(e) {
-  const cola = (e.releer_en_curso || []).length ? `<div class="e-trabajo">Revisión automática en curso: ${(e.releer_en_curso || []).map(esc).join(', ')} (corrigiendo, auditando o recuperando)</div>`
-    : (e.releer_pendiente || []).length ? `<div class="e-trabajo">Revisión automática en cola: ${(e.releer_pendiente || []).map(esc).join(', ')} (arranca sola cuando el equipo no compile)</div>` : '';
-  const a = e.actividad;
-  const ult = a && !a.en_curso ? `<div class="e-meta">Última acción: ${esc(NOMBRE_ACCION[a.accion] || a.accion)} (gestión ${esc(a.gestion)}), ${a.inicio ? 'terminó hace ' : 'hace '}${fmtDur(Date.now() / 1000 - a.ts)}${a.inicio ? ' · duró ' + fmtDur(a.ts - a.inicio) : ''}</div>` : '';
-  return (cola || '<div class="e-trabajo">Libre (sin procesos en curso)</div>') + ult;
+  return `<div class="prog"><div class="txt">En curso desde hace ${fmtDur(trans)} · <span class="pm">sin porcentaje: esta acción no informa su avance</span></div></div>`;
 }
 
 function renderActividad() {
