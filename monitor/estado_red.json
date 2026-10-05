@@ -1,5 +1,5 @@
 {
- "ts": 1791196706,
+ "ts": 1791197018,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791196696,
+   "actualizado_ts": 1791197006,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791196696,
+   "actualizado_ts": 1791197006,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791196662,
+   "actualizado_ts": 1791196998,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791196648,
+   "actualizado_ts": 1791196976,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791196696,
+   "actualizado_ts": 1791197006,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791196697,
+   "actualizado_ts": 1791197003,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791196697,
+   "actualizado_ts": 1791197003,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791196665,
+   "actualizado_ts": 1791196968,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791196697,
+   "actualizado_ts": 1791197003,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791196662,
+   "actualizado_ts": 1791196998,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791196697,
+   "actualizado_ts": 1791197003,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791196648,
+   "actualizado_ts": 1791196976,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791196697,
+   "actualizado_ts": 1791197003,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791196697,
+   "actualizado_ts": 1791197003,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791196697,
+   "actualizado_ts": 1791197003,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791196648,
+   "actualizado_ts": 1791196976,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791114225,
-   "texto": "inicia 2004 en IPE01 (Mac Mini oficina) (incompleta; intento 2)"
-  },
   {
    "ts": 1791114891,
    "texto": "inicia 2003 en IPE01 (Mac Mini oficina) (sin_empezar; intento 1)"
@@ -384,22 +380,33 @@
   {
    "ts": 1791195043,
    "texto": "orden de Claude 2026-10-05-auditar-2018-a: auditar 2018 en iMac-Sala (iMac de la sala)"
+  },
+  {
+   "ts": 1791196995,
+   "texto": "orden de Claude 2026-10-05-auditar-2018-b: auditar 2018 en iMac-Sala (iMac de la sala)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791196662,
-   "version": "950f3b1",
-   "procesos": [],
+   "ts": 1791196998,
+   "version": "53253f4",
+   "procesos": [
+    {
+     "pid": 45887,
+     "tipo": "auditoria",
+     "gestion": "2018",
+     "inicio_ts": 1791196997
+    }
+   ],
    "orden": {
-    "seq": 1791195427389,
+    "seq": 1791196993534,
     "accion": "auditar",
     "gestion": "2018",
     "ok": true,
     "mensaje": "Lanzado: auditar, gestión 2018",
-    "ts": 1791195429
+    "ts": 1791196997
    },
    "gestiones": {
     "2018": {
@@ -419,26 +426,13 @@
      "salud": null
     }
    },
-   "ultimas_lineas": [
-    "[2026-10-05 06:17:27] AUDITORÍA Sala Contenciosa Primera  : 911 filas leídas del sitio.",
-    "[2026-10-05 06:17:31] AUDITORÍA Sala Contenciosa Segunda  : 596 filas leídas del sitio.",
-    "[2026-10-05 06:17:31] AUDITORÍA Sala Penal                : sitio 1111 filas (1108 AS distintos, 3 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
-    "[2026-10-05 06:17:31] AUDITORÍA Sala Civil                : sitio 1306 filas (1306 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 06:17:31] AUDITORÍA Sala Plena                : sitio 127 filas (126 AS distintos, 1 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 06:17:31] AUDITORÍA Sala Contenciosa Primera  : sitio 911 filas (804 AS distintos, 107 repetidos, 19 sin número legible) | sin archivo 3, de ellas 3 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
-    "[2026-10-05 06:17:31] AUDITORÍA Sala Contenciosa Segunda  : sitio 596 filas (473 AS distintos, 123 repetidos, 0 sin número legible) | sin archivo 3, de ellas 3 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 06:17:31]   DETALLE SOBRANTES Sala Penal: AS 917 (2 archivos / 1 filas)",
-    "[2026-10-05 06:17:31] CONCLUSIÓN: antes de cerrar 2018 hay 1 cosa(s) por resolver:",
-    "[2026-10-05 06:17:31]   1) 1 archivo(s) en las salas tienen un nombre provisional (empiezan con «EXP-», porque al bajarlos no se leyó el número del Auto Supremo). Esta acción vuelve a leerlos y les pone su nombre definitivo. Los que sean escaneos sin texto necesitarán lectura por reconocimiento ópti",
-    "[2026-10-05 06:17:31]   Luego repite «Auditar contra el sitio».",
-    "[2026-10-05 06:17:31] Detalle en /Users/enriquemaclean/Documents/TSJ/Compilacion/2018/_faltantes.csv y /Users/enriquemaclean/Documents/TSJ/Compilacion/2018/_auditoria.json."
-   ]
+   "ultimas_lineas": []
   },
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791196690,
-   "version": "950f3b1",
+   "ts": 1791197008,
+   "version": "53253f4",
    "procesos": [],
    "orden": {
     "seq": 1791195189120,
@@ -454,8 +448,8 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791196688,
-   "version": "950f3b1",
+   "ts": 1791196998,
+   "version": "53253f4",
    "procesos": [],
    "orden": {
     "seq": 1791195312736,
@@ -471,8 +465,8 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791196697,
-   "version": "950f3b1",
+   "ts": 1791197003,
+   "version": "53253f4",
    "procesos": [],
    "orden": {
     "seq": 1791195164889,
@@ -501,8 +495,8 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791196696,
-   "version": "950f3b1",
+   "ts": 1791197006,
+   "version": "53253f4",
    "procesos": [],
    "orden": {
     "seq": 1791195105627,
@@ -561,8 +555,8 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791196648,
-   "version": "950f3b1",
+   "ts": 1791196976,
+   "version": "53253f4",
    "procesos": [],
    "orden": {
     "seq": 1791149531564,
@@ -591,8 +585,8 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791196665,
-   "version": "950f3b1",
+   "ts": 1791196968,
+   "version": "53253f4",
    "procesos": [],
    "orden": {
     "seq": 1791132591590,
