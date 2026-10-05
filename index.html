@@ -423,18 +423,45 @@ async function gh(path, opciones) {
   return fetch(API + path, { method: o.method || 'GET', headers: h, body: o.body || null, cache: 'no-cache' });
 }
 
+// Si GitHub frena las consultas (límite de uso por hora o límite secundario), el panel NO se rompe: conserva los últimos datos, avisa hasta
+// cuándo y se reanuda solo.
+let pausaGhHasta = 0;
+const EQUIPOS_CACHE = {};   // nombre de archivo -> { sha, datos }: solo se vuelve a bajar un equipo cuando cambió su archivo
+async function ghLimitado(r) {
+  if (r.status !== 403 && r.status !== 429) return null;
+  let msg = ''; try { msg = (await r.clone().json()).message || ''; } catch (e) {}
+  const rest = r.headers.get('x-ratelimit-remaining'), reset = Number(r.headers.get('x-ratelimit-reset') || 0), ra = Number(r.headers.get('retry-after') || 0);
+  const esLimite = /rate limit|abuse|secondary/i.test(msg) || rest === '0' || ra > 0 || r.status === 429;
+  if (!esLimite) return { permisos: true, msg };
+  const hasta = ra ? Date.now() + ra * 1000 : (rest === '0' && reset ? reset * 1000 : Date.now() + 90 * 1000);
+  pausaGhHasta = Math.max(pausaGhHasta, hasta + 2000);
+  return { limite: true, hasta };
+}
 async function cargar() {
+  if (Date.now() < pausaGhHasta) {
+    const m = Math.max(1, Math.ceil((pausaGhHasta - Date.now()) / 60000));
+    throw new Error(`GitHub limitó temporalmente las consultas (demasiados accesos en poco tiempo). Se muestran los últimos datos y el panel se reanuda solo en ~${m} min.`);
+  }
   const r = await gh(`/repos/${OWNER}/${REPO}/contents/equipos`);
   if (r.status === 401) throw new Error('Token inválido o vencido. Toca ⚙ para poner uno nuevo.');
-  if (r.status === 403) throw new Error('GitHub rechazó la consulta (límite de uso o permisos del token).');
+  const lim = await ghLimitado(r);
+  if (lim && lim.limite) throw new Error('GitHub limitó temporalmente las consultas (demasiados accesos en poco tiempo). Se muestran los últimos datos y el panel se reanuda solo.');
+  if (lim && lim.permisos) throw new Error('GitHub rechazó la consulta por permisos del token' + (lim.msg ? ' (' + lim.msg + ')' : '') + '. Toca ⚙ para poner un token válido.');
   if (r.status === 404) { equipos = []; return; }
   if (!r.ok) throw new Error('GitHub respondió HTTP ' + r.status);
   const lista = (await r.json()).filter(f => f.name.endsWith('.json'));
-  const datos = await Promise.all(lista.map(async f => {
+  let fallo = null;
+  await Promise.all(lista.map(async f => {
+    const c = EQUIPOS_CACHE[f.name];
+    if (c && c.sha === f.sha) return;          // sin cambios desde la última vez: no se vuelve a pedir
     const x = await gh(`/repos/${OWNER}/${REPO}/contents/equipos/${f.name}`, { raw: true });
-    return x.ok ? x.json() : null;
+    if (x.ok) { EQUIPOS_CACHE[f.name] = { sha: f.sha, datos: await x.json() }; return; }
+    const l2 = await ghLimitado(x); if (l2 && l2.limite) fallo = fallo || l2;
   }));
-  equipos = datos.filter(Boolean).sort((a, b) => a.nombre.localeCompare(b.nombre));
+  const vivos = new Set(lista.map(f => f.name));
+  Object.keys(EQUIPOS_CACHE).forEach(k => { if (!vivos.has(k)) delete EQUIPOS_CACHE[k]; });
+  equipos = Object.values(EQUIPOS_CACHE).map(c => c.datos).filter(Boolean).sort((a, b) => a.nombre.localeCompare(b.nombre));
+  if (fallo) throw new Error('GitHub limitó temporalmente las consultas. Se muestran los últimos datos y el panel se reanuda solo.');
 }
 
 const enLinea = e => ahora() - e.ts < 150;
@@ -1208,7 +1235,7 @@ async function tick() {
     }
     render(); cargarAuditorias();
   }
-  catch (e) { mostrarError(e.message || String(e)); }
+  catch (e) { mostrarError(e.message || String(e)); try { if (equipos.length) render(); } catch (e2) {} }
 }
 
 function accionFinal(accion) {
