@@ -843,11 +843,22 @@ function cuerpoTarea(t, st) {
       <div class="g-o">Cuando los hayas mirado y estén bien así:</div>${acepta('Ya los revisé: aceptar')}` };
 }
 
+// Deja claro que la auditoría corrió y qué resultó, para que un resultado igual al anterior no parezca "el panel no reaccionó".
+function ultimaAuditoriaHtml(st) {
+  const v = st && st.v, f = v && v.fecha; if (!f) return '';
+  if (!['turno', 'validar', 'sistema_pendiente', 'lanzar'].includes(st.fase)) return '';
+  const t = Date.parse(f); if (isNaN(t)) return '';
+  const n = v.estado === 'acciones' ? (v.acciones || []).length : 0;
+  const res = v.estado === 'listo' ? 'sin pendientes' : `quedan ${n} punto(s) por resolver`;
+  return `<div class="g-o" style="margin:6px 0">Última auditoría: ${esc(String(f).replace('T', ' '))} (${esc(hace(Math.floor(t / 1000)))}) · ${res}.</div>`;
+}
+
 function ordenGuiaHtml(g) {
   if (!pendiente || pendiente.g !== g || Date.now() - pendiente.seq > 15 * 60 * 1000) return '';
   const e = equipos.find(x => x.id === pendiente.eid);
   if (!e) return '';
   const r = e.orden && e.orden.seq === pendiente.seq ? e.orden : null, nom = NOMBRE_ACCION[pendiente.accion] || pendiente.accion;
+  if (r && r.ok && pendiente.accion === 'auditar') { const el0 = elegir(g), f0 = el0 && el0.av.auditoria && el0.av.auditoria.veredicto && el0.av.auditoria.veredicto.fecha; if (f0 && Date.parse(f0) / 1000 > r.ts) return ''; }   // la auditoría ya terminó: el aviso de «lanzado» es historia vieja
   if (!r) return `<div class="g-orden">⏳ Orden enviada a ${esc(e.nombre)} (${esc(nom)}) — esperando respuesta…${enLinea(e) ? '' : ' El equipo está desconectado; se ejecuta al reconectarse (máx. 30 min).'}</div>`;
   const link = r.ok && (pendiente.accion in LOCAL_UI)
     ? ` <a href="${urlLocalUI(pendiente.accion, r.mensaje)}" target="_blank">→ Abrir ${LOCAL_UI[pendiente.accion].nombre}</a> <span class="g-o">${/http:\/\/[\d.]+:/.test(r.mensaje || '') ? '(funciona desde cualquier equipo de la misma red que ' + esc(e.nombre.split(' (')[0]) + ')' : '(solo funciona en ' + esc(e.nombre.split(' (')[0]) + ')'}</span>` : '';
@@ -940,7 +951,7 @@ function renderGuia() {
       break;
     }
   }
-  setHtmlKeep(box, `<div class="g-cab"><h2>Acciones pendientes</h2><label>Gestión <select data-g-sel>${opcionesGestion(g)}</select></label></div><div class="g-o" style="text-align:right;margin:-4px 0 6px">✓ cerrada · ⚠ te toca a ti · ⟳ pendiente, lo resuelve el sistema · ● trabajando ahora</div>${etapas}<div class="g-cuerpo ${clase}"><div class="g-tit">${tit}</div>${cuerpo}</div>${ordenGuiaHtml(g)}${otrasGestionesGuia(g)}`);
+  setHtmlKeep(box, `<div class="g-cab"><h2>Acciones pendientes</h2><label>Gestión <select data-g-sel>${opcionesGestion(g)}</select></label></div><div class="g-o" style="text-align:right;margin:-4px 0 6px">✓ cerrada · ⚠ te toca a ti · ⟳ pendiente, lo resuelve el sistema · ● trabajando ahora</div>${etapas}<div class="g-cuerpo ${clase}"><div class="g-tit">${tit}</div>${cuerpo}</div>${ultimaAuditoriaHtml(st)}${ordenGuiaHtml(g)}${otrasGestionesGuia(g)}`);
   box.querySelectorAll('[data-nota]').forEach(i => { if (i.value !== (NOTAS_GUIA[i.dataset.nota] || '')) i.value = NOTAS_GUIA[i.dataset.nota] || ''; });
 }
 document.addEventListener('input', ev => { const i = ev.target; if (i && i.dataset && i.dataset.nota) NOTAS_GUIA[i.dataset.nota] = i.value; });
