@@ -1604,8 +1604,44 @@ function gacEquipo(x) {
   return `<span title="${esc(txt)}"><span style="color:${col}">●</span> ${esc(e.nombre.split(' (')[0])}</span>`;
 }
 
+function gacOcultos() { try { return JSON.parse(localStorage.getItem('gac_ocultos') || '[]'); } catch (e) { return []; } }
+function gacOcultar(k) { try { const l = gacOcultos(); if (!l.includes(k)) l.push(k); localStorage.setItem('gac_ocultos', JSON.stringify(l.slice(-300))); } catch (e) {} }
+function gacAvisos() {
+  // avisos que calcula cada equipo (por qué se detuvo y qué botones corresponden) + los que solo el panel puede ver
+  const oc = gacOcultos(), res = [];
+  for (const e of equipos) {
+    const g = e.gaceta;
+    if (!g) continue;
+    for (const a of (g.avisos || [])) if (!oc.includes(a.k)) res.push(Object.assign({}, a, { eid: e.id, enombre: e.nombre }));
+    if (!enLinea(e) && (g.procesos || []).length) {
+      const k = 'off|' + e.id + '|' + (g.procesos[0].inicio_ts || 0);
+      if (!oc.includes(k)) res.push({ k, eid: e.id, enombre: e.nombre, sec: g.procesos[0].seccion, modo: g.procesos[0].modo, nivel: 'alto', etq: GAC_ETQ[g.procesos[0].seccion] || g.procesos[0].seccion,
+        t: e.nombre + ' está desconectado con una compilación de la Gaceta en curso',
+        d: 'Su último reporte decía que compilaba ' + (GAC_ETQ[g.procesos[0].seccion] || '') + ' y hace ' + haceCuanto(e.ts) + ' que no responde. Causas probables: el Mac se durmió o apagó, se cortó la luz o perdió internet. No se puede reanudar desde aquí mientras esté desconectado: en cuanto vuelva a conectarse, si la compilación no siguió sola, aparecerá aquí el botón para reanudar. Lo descargado está a salvo.', ac: [] });
+    }
+  }
+  const peso = { alto: 0, medio: 1, info: 2 };
+  return res.sort((a, b) => (peso[a.nivel] - peso[b.nivel]) || String(b.act || '').localeCompare(String(a.act || '')));
+}
+function gacInsignia() {
+  try {
+    const n = gacAvisos().filter(a => a.nivel !== 'info').length, b = $('tab-gaceta');
+    const txt = 'Gaceta · Normativa' + (n ? ' ●' + n : '');
+    if (b.textContent !== txt) { b.textContent = txt; b.style.color = n ? '#E07A5F' : ''; }
+    b.title = n ? n + ' aviso' + (n === 1 ? '' : 's') + ' de la Gaceta que requieren tu atención' : '';
+  } catch (e) {}
+}
+function gacAccionAviso(i, a) {
+  const av = gacAvisos().find(x => x.k === i); if (!av) return;
+  GACSEL.eid = av.eid;
+  if (a === 'ocultar') { gacOcultar(av.k); renderGaceta(); gacInsignia(); return; }
+  if (a === 'detener') { const e = equipos.find(x => x.id === av.eid), p = ((e && e.gaceta && e.gaceta.procesos) || []).find(x => x.seccion === av.sec); enviarOrdenGaceta('gaceta_detener', p ? p.pid : undefined, { eid: av.eid }); return; }
+  enviarOrdenGaceta('gaceta_iniciar', undefined, { eid: av.eid, seccion: av.sec, modo: a === 'completo' ? 'completo' : av.modo });
+}
+
 function renderGaceta() {
   const cont = $('main-gaceta');
+  gacInsignia();
   if (cont.hidden) return;
   if (!TOKEN) { setHtmlKeep(cont, '<div class="vacio">Sin token: toca ⚙ para ponerlo.</div>'); return; }
   const ag = gacAgregar();
@@ -1664,7 +1700,12 @@ function renderGaceta() {
   if (rv.length) items.push(item('turno', `👉 ${rv.reduce((s, x) => s + (x.rev || 0) + (x.inval || 0), 0)} documentos por revisar`, 'Quedan en la carpeta _revisar / _invalidos de cada sección (motivos en _progreso.csv).', ''));
   const noCuadra = ag.lista.filter(x => x.cuadra === false);
   if (noCuadra.length) items.push(item('turno', '⚠ Inventario que no cuadra', noCuadra.map(x => esc(x.etq)).join(' · ') + ': el total inventariado difiere del declarado por el sitio. Reintentar el inventario.', ''));
+  const dis0 = GACENVIANDO ? ' disabled' : '';
+  const _av = gacAvisos();
+  const colAv = { alto: 'turno', medio: '', info: 'ok' }, icoAv = { alto: '⚠', medio: '⏳', info: 'ℹ' };
+  const avisosHtml = _av.length ? `<section class="tarjeta"><h2>Avisos${_av.filter(a => a.nivel !== 'info').length ? ' · requieren atención' : ''}</h2>` + _av.map(a => `<div class="g-cuerpo ${colAv[a.nivel] || ''}" style="margin-bottom:10px"><div class="g-tit">${icoAv[a.nivel] || ''} ${esc(a.t)}</div><div class="t-nota" style="margin:2px 0 6px">${esc(a.enombre)} · ${esc(a.etq || '')}${a.modo ? ' · ' + (a.modo === 'completo' ? 'compilación completa' : 'piloto') : ''}${a.act ? ' · ' + esc(a.act) : ''}</div><p>${esc(a.d)}</p><div class="g-ctrl">${(a.ac || []).map(x => `<button type="button" class="g-btn${x[0] === 'detener' ? ' sec' : ''}" data-gac-av="${esc(a.k)}" data-gac-av-a="${x[0]}"${dis0}>${esc(x[1])}</button>`).join('')}<button type="button" class="g-btn sec" data-gac-av="${esc(a.k)}" data-gac-av-a="ocultar">Entendido, ocultar</button></div></div>`).join('') + '</section>' : '';
   const html = `<div class="t-grid">
+  ${avisosHtml}
   <section class="tarjeta"><h2>Avance de la Gaceta</h2>
     <div class="res-sub" style="margin-top:0">Total declarado por el sitio: ${gacNum(ag.esperado)} normas (sin propiedad intelectual)</div>
     ${gacBarra({ esperado: ag.esperado, hechos: ag.hechos, ok: ag.ok, rev: ag.rev, inval: ag.err, fallo: 0, tipo: 'registro' })}
@@ -1695,7 +1736,8 @@ function renderGaceta() {
   setHtmlKeep(cont, html);
 }
 
-async function enviarOrdenGaceta(accion, pid) {
+async function enviarOrdenGaceta(accion, pid, over) {
+  if (over) Object.assign(GACSEL, over);
   const e = equipos.find(x => x.id === GACSEL.eid);
   if (!e) { alert('No hay equipo destino.'); return; }
   const sec = GACSEL.seccion, modo = GACSEL.modo;
@@ -1730,6 +1772,8 @@ $('main-gaceta').addEventListener('change', ev => {
 });
 $('main-gaceta').addEventListener('click', ev => {
   const f = ev.target.closest('[data-gac-fila]'), a = ev.target.closest('[data-gac-accion]'), d = ev.target.closest('[data-gac-detener]');
+  const av = ev.target.closest('[data-gac-av]');
+  if (av) { gacAccionAviso(av.dataset.gacAv, av.dataset.gacAvA); return; }
   const u = ev.target.closest('[data-gac-actualizar]');
   if (u) { GACSEL.eid = u.dataset.gacActualizar; enviarOrdenGaceta('actualizar'); return; }
   if (d) { GACSEL.eid = d.dataset.gacDetener; enviarOrdenGaceta('gaceta_detener', Number(d.dataset.pid)); return; }
