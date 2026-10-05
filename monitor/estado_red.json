@@ -1,5 +1,5 @@
 {
- "ts": 1791235168,
+ "ts": 1791235484,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791235159,
+   "actualizado_ts": 1791235451,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791235159,
+   "actualizado_ts": 1791235451,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791235122,
+   "actualizado_ts": 1791235435,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791235142,
+   "actualizado_ts": 1791235454,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791235159,
+   "actualizado_ts": 1791235451,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791235155,
+   "actualizado_ts": 1791235462,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791235155,
+   "actualizado_ts": 1791235462,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791235152,
+   "actualizado_ts": 1791235431,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791235155,
+   "actualizado_ts": 1791235462,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791235122,
+   "actualizado_ts": 1791235435,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791235155,
+   "actualizado_ts": 1791235462,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791235142,
+   "actualizado_ts": 1791235454,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791235155,
+   "actualizado_ts": 1791235462,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791235155,
+   "actualizado_ts": 1791235462,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791235155,
+   "actualizado_ts": 1791235462,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791235142,
+   "actualizado_ts": 1791235454,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791140695,
-   "texto": "inicia 2007 en iMac-Sala (iMac de la sala) (incompleta; intento 1)"
-  },
   {
    "ts": 1791143875,
    "texto": "inicia 2002 en IPE01 (Mac Mini oficina) (incompleta; intento 2)"
@@ -384,14 +380,18 @@
   {
    "ts": 1791224016,
    "texto": "orden de Claude 2026-10-05-auditar-2025-d: auditar 2025 en MacBook Air"
+  },
+  {
+   "ts": 1791235377,
+   "texto": "orden de Claude 2026-10-05-cotejo-auto-2021-a: cotejo_auto_real 2021 en IPE02 (Mac Mini casa)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791235122,
-   "version": "dff379c",
+   "ts": 1791235435,
+   "version": "91ff019",
    "procesos": [],
    "orden": {
     "seq": 1791233735984,
@@ -420,16 +420,16 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791235156,
-   "version": "dff379c",
+   "ts": 1791235463,
+   "version": "91ff019",
    "procesos": [],
    "orden": {
-    "seq": 1791233737131,
+    "seq": 1791235226577,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a dff379c.",
-    "ts": 1791233745
+    "mensaje": "Scripts actualizados a 91ff019.",
+    "ts": 1791235230
    },
    "gestiones": {},
    "ultimas_lineas": []
@@ -437,16 +437,16 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791235153,
-   "version": "dff379c",
+   "ts": 1791235465,
+   "version": "91ff019",
    "procesos": [],
    "orden": {
-    "seq": 1791233738388,
+    "seq": 1791235227655,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
     "mensaje": "Ya estaba al día.",
-    "ts": 1791233742
+    "ts": 1791235232
    },
    "gestiones": {},
    "ultimas_lineas": []
@@ -454,8 +454,8 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791235155,
-   "version": "dff379c",
+   "ts": 1791235462,
+   "version": "91ff019",
    "procesos": [],
    "orden": {
     "seq": 1791233739448,
@@ -484,33 +484,46 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791235159,
-   "version": "dff379c",
+   "ts": 1791235451,
+   "version": "91ff019",
    "procesos": [],
    "orden": {
-    "seq": 1791234020470,
-    "accion": "cotejar",
+    "seq": 1791235376026,
+    "accion": "cotejo_auto_real",
     "gestion": "2021",
     "ok": true,
-    "mensaje": "Cotejo de 2021 listo en http://100.125.224.24:8743 (ábrelo desde cualquier equipo de la misma red).",
-    "ts": 1791234026
+    "mensaje": "Lanzado: cotejo_auto_real, gestión 2021",
+    "ts": 1791235380
    },
    "gestiones": {},
-   "ultimas_lineas": []
+   "ultimas_lineas": [
+    "[2026-10-05 17:23:52] AUDITORÍA Sala Civil                : sitio 1094 filas (1094 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-05 17:23:52] AUDITORÍA Sala Plena                : sitio 166 filas (150 AS distintos, 16 repetidos, 18 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-05 17:23:52] AUDITORÍA Sala Contenciosa Primera  : sitio 775 filas (767 AS distintos, 8 repetidos, 7 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-05 17:23:52] AUDITORÍA Sala Contenciosa Segunda  : sitio 367 filas (367 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
+    "[2026-10-05 17:23:52]   DETALLE SOBRANTES Sala Contenciosa Segunda: AS 187 (1 archivos / 0 filas)",
+    "[2026-10-05 17:23:52] CONCLUSIÓN: antes de cerrar 2021 hay 2 cosa(s) por resolver:",
+    "[2026-10-05 17:23:52]   1) Hay 1 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2021-03-31-TSJ-AS-27-SPL-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
+    "[2026-10-05 17:23:52]   2) Hay 1 documento(s) en «_revisar/_no_AS» (Decretos, Resoluciones, PDF en blanco…) que el programa apartó porque no parecen Autos Supremos y que aún no has revisado. Ejemplo: 2021-03-31-TSJ-EXP-23-2020-SPL.pdf. Para cada uno, «Confirmar descarte» (de verdad no es un AS) o «E",
+    "[2026-10-05 17:23:52]   Luego repite «Auditar contra el sitio».",
+    "[2026-10-05 17:23:52] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Plena 1.",
+    "[2026-10-05 17:23:52] Apartados en _revisar/_otra_gestion (autos de otro año descargados por error): 1.",
+    "[2026-10-05 17:23:52] Detalle en /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2021/_faltantes.csv y /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2021/_auditoria.json."
+   ]
   },
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791235123,
-   "version": "dff379c",
+   "ts": 1791235452,
+   "version": "91ff019",
    "procesos": [],
    "orden": {
-    "seq": 1791233741475,
+    "seq": 1791235231356,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a dff379c.",
-    "ts": 1791233789
+    "mensaje": "Scripts actualizados a 91ff019.",
+    "ts": 1791235236
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -531,16 +544,16 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791235142,
-   "version": "dff379c",
+   "ts": 1791235454,
+   "version": "91ff019",
    "procesos": [],
    "orden": {
-    "seq": 1791233742543,
+    "seq": 1791235232614,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a dff379c.",
-    "ts": 1791233746
+    "mensaje": "Ya estaba al día.",
+    "ts": 1791235237
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -561,16 +574,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791235152,
-   "version": "dff379c",
+   "ts": 1791235431,
+   "version": "91ff019",
    "procesos": [],
    "orden": {
-    "seq": 1791233616226,
+    "seq": 1791235233680,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 596ea27.",
-    "ts": 1791233622
+    "mensaje": "Scripts actualizados a 91ff019.",
+    "ts": 1791235238
    },
    "gestiones": {},
    "ultimas_lineas": [
