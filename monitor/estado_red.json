@@ -1,5 +1,5 @@
 {
- "ts": 1791164097,
+ "ts": 1791164399,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791164083,
+   "actualizado_ts": 1791164393,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791164083,
+   "actualizado_ts": 1791164393,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791164039,
+   "actualizado_ts": 1791164385,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791164037,
+   "actualizado_ts": 1791164364,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791164083,
+   "actualizado_ts": 1791164393,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791164077,
+   "actualizado_ts": 1791164383,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791164077,
+   "actualizado_ts": 1791164383,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791164060,
+   "actualizado_ts": 1791164378,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791164077,
+   "actualizado_ts": 1791164383,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791164039,
+   "actualizado_ts": 1791164385,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791164077,
+   "actualizado_ts": 1791164383,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791164037,
+   "actualizado_ts": 1791164364,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791164077,
+   "actualizado_ts": 1791164383,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791164077,
+   "actualizado_ts": 1791164383,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791164077,
+   "actualizado_ts": 1791164383,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791164037,
+   "actualizado_ts": 1791164364,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791087557,
-   "texto": "inicia 2013 en IPE02 (Mac Mini casa) (incompleta; intento 1)"
-  },
   {
    "ts": 1791096848,
    "texto": "INCIDENCIA [aviso] La gestión 2006 (IPE01 (Mac Mini oficina)) está en marcha pero no suma documentos procesados hace 60 min (se quedó en 2999). Revisar el registro de la compilación."
@@ -384,19 +380,23 @@
   {
    "ts": 1791162326,
    "texto": "orden de Claude 2026-10-05-cotejo-auto-2018-v5: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
+  },
+  {
+   "ts": 1791164166,
+   "texto": "orden de Claude 2026-10-05-cotejo-auto-2018-v6: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791164039,
+   "ts": 1791164385,
    "version": "191418b",
    "procesos": [],
    "gestiones": {
     "2018": {
      "activo": false,
-     "total_archivos": 4020,
+     "total_archivos": 4044,
      "docs_descargados": 4046,
      "salas_n": 5,
      "salas_medidas": 5,
@@ -412,14 +412,24 @@
     }
    },
    "ultimas_lineas": [
-    "/Users/enriquemaclean/Documents/TSJ/_scripts/cotejo_ui.py:892: SyntaxWarning: invalid escape sequence '\\d'",
-    "  if (/^\\d{4}-00-00$/.test(f)) {"
+    "AUTO  2018-05-07-TSJ-AS-210-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (001-2016-CA / 086-2017)",
+    "AUTO  2018-08-17-TSJ-AS-451-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (200-2017-CA / 222-2017)",
+    "AUTO  2018-10-02-TSJ-AS-520-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (416-2018 / 411-2018)",
+    "AUTO  2018-10-29-TSJ-AS-562-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (442-2018 / 310-2016-CA)",
+    "MANUAL  2018-10-30-TSJ-AS-120-SPL-POSIBLE-DUPLICADO.pdf: no se pudo leer el expediente en alguna copia",
+    "AUTO  2018-10-30-TSJ-AS-585-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (334-2017 / 263-2018-CA)",
+    "AUTO  2018-11-01-TSJ-AS-612-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (316-2018-CA / 279-2018-CA)",
+    "MANUAL  2018-11-01-TSJ-AS-616-SCA1-POSIBLE-DUPLICADO.pdf: expediente distinto (320 2018 ca / 322 2018 ca); las partes no son claramente distintas",
+    "AUTO  2018-12-12-TSJ-AS-742-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (407-2017-S / N-488-2018-S)",
+    "AUTO  2018-12-13-TSJ-AS-753-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (422-2017 / 490-2018)",
+    "AUTO  2018-12-13-TSJ-AS-754-SCA1-POSIBLE-DUPLICADO.pdf: NO ES DUPLICADO, expediente, partes y decisión distintos (423-2017 / 321-2018-CA)",
+    "RESUMEN gestión 2018: pares 26, resueltos automáticamente 24, para cotejo manual 2"
    ]
   },
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791164089,
+   "ts": 1791164384,
    "version": "191418b",
    "procesos": [],
    "gestiones": {},
@@ -428,7 +438,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791164086,
+   "ts": 1791164379,
    "version": "191418b",
    "procesos": [],
    "gestiones": {},
@@ -437,7 +447,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791164077,
+   "ts": 1791164383,
    "version": "191418b",
    "procesos": [],
    "gestiones": {},
@@ -459,7 +469,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791164083,
+   "ts": 1791164393,
    "version": "191418b",
    "procesos": [],
    "gestiones": {},
@@ -503,7 +513,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791164037,
+   "ts": 1791164364,
    "version": "191418b",
    "procesos": [],
    "gestiones": {},
@@ -525,7 +535,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791164060,
+   "ts": 1791164378,
    "version": "191418b",
    "procesos": [],
    "gestiones": {},
