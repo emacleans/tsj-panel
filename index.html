@@ -898,7 +898,8 @@ function cuerpoTarea(t, st) {
   const filas = t.acciones.map(a => a.sala && a.numero != null ? `${a.sala}: AS ${a.numero}${a.archivo ? ' — ' + a.archivo : ''}` : a.texto);
   return { titulo: `${t.acciones.length} archivo(s) que el sitio no lista`,
     html: `<p>Tenemos estos archivos, pero el sitio no los lista con ese número y no se pudo explicar por qué. Abre cada PDF y mira su encabezado: puede que el número esté mal leído.</p>${listaCorta(filas, 10)}
-      <div class="g-o">Cuando los hayas mirado y estén bien así:</div>${acepta('Ya los revisé: aceptar')}` };
+      <ol class="g-pasos"><li>Pulsa «Abrir visor de los documentos»: se abre una pantalla (funciona desde cualquier equipo de la red) donde ves cada PDF.</li><li>Mira el encabezado. Si el número o la fecha están mal, corrígelos y el archivo se renombra; si están bien, escribe los mismos datos y queda confirmado.</li></ol><div class="g-ctrl">${gBtn('exp', 'Abrir visor de los documentos', '', eid)}${gBtn('auditar', 'Ya terminé: volver a auditar', '', eid)}</div>
+      <div class="g-o">O, si ya los miraste y están bien así:</div>${acepta('Ya los revisé: aceptar')}` };
 }
 
 // Deja claro que la auditoría corrió y qué resultó, para que un resultado igual al anterior no parezca "el panel no reaccionó".
