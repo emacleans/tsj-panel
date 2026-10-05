@@ -1,5 +1,5 @@
 {
- "ts": 1791165929,
+ "ts": 1791166245,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791165908,
+   "actualizado_ts": 1791166234,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791165908,
+   "actualizado_ts": 1791166234,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791165893,
+   "actualizado_ts": 1791166220,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791165884,
+   "actualizado_ts": 1791166160,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791165908,
+   "actualizado_ts": 1791166234,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791165919,
+   "actualizado_ts": 1791166226,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791165919,
+   "actualizado_ts": 1791166226,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791165903,
+   "actualizado_ts": 1791166208,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791165919,
+   "actualizado_ts": 1791166226,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791165893,
+   "actualizado_ts": 1791166220,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791165919,
+   "actualizado_ts": 1791166226,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791165884,
+   "actualizado_ts": 1791166160,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791165919,
+   "actualizado_ts": 1791166226,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791165919,
+   "actualizado_ts": 1791166226,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791165919,
+   "actualizado_ts": 1791166226,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791165884,
+   "actualizado_ts": 1791166160,
    "viejo": false
   }
  ],
@@ -390,8 +390,8 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791165893,
-   "version": "191418b",
+   "ts": 1791166220,
+   "version": "c98d49d",
    "procesos": [],
    "gestiones": {
     "2018": {
@@ -412,14 +412,24 @@
     }
    },
    "ultimas_lineas": [
-    "/Users/enriquemaclean/Documents/TSJ/_scripts/cotejo_ui.py:892: SyntaxWarning: invalid escape sequence '\\d'",
-    "  if (/^\\d{4}-00-00$/.test(f)) {"
+    "  File \"/Users/enriquemaclean/Documents/TSJ/_scripts/cotejo_ui.py\", line 1090, in do_GET",
+    "    self._json({\"error\": str(e)}, 500)",
+    "  File \"/Users/enriquemaclean/Documents/TSJ/_scripts/cotejo_ui.py\", line 1043, in _json",
+    "    self.end_headers()",
+    "  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py\", line 538, in end_headers",
+    "    self.flush_headers()",
+    "  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/server.py\", line 542, in flush_headers",
+    "    self.wfile.write(b\"\".join(self._headers_buffer))",
+    "  File \"/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socketserver.py\", line 845, in write",
+    "    self._sock.sendall(b)",
+    "BrokenPipeError: [Errno 32] Broken pipe",
+    "----------------------------------------"
    ]
   },
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791165914,
+   "ts": 1791166229,
    "version": "c98d49d",
    "procesos": [],
    "gestiones": {},
@@ -428,7 +438,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791165912,
+   "ts": 1791166227,
    "version": "c98d49d",
    "procesos": [],
    "gestiones": {},
@@ -437,7 +447,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791165919,
+   "ts": 1791166226,
    "version": "c98d49d",
    "procesos": [],
    "gestiones": {},
@@ -459,7 +469,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791165908,
+   "ts": 1791166234,
    "version": "c98d49d",
    "procesos": [],
    "gestiones": {},
@@ -503,7 +513,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791165884,
+   "ts": 1791166160,
    "version": "c98d49d",
    "procesos": [],
    "gestiones": {},
@@ -525,8 +535,8 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791165903,
-   "version": "191418b",
+   "ts": 1791166208,
+   "version": "c98d49d",
    "procesos": [],
    "gestiones": {},
    "ultimas_lineas": [
