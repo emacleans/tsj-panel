@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Panel central JurisPrud</title>
+<title>Compilatore</title>
 <style>
   :root {
     --navy: #263449; --bg: #E9E5DC; --card: #F9F7F2; --line: #DAD5C8;
@@ -255,14 +255,16 @@
   .equipo { text-align: left; }
   .conc th, .conc td { text-align: center; }
   .conc th:first-child, .conc td:first-child { text-align: left; }
+  .logo { width:46px; height:46px; border-radius:10px; background:#fff; padding:3px; object-fit:contain; flex:none; }
 </style>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
 </head>
 <body>
 <header>
   <div class="marca">
-    <div class="sello">TSJ</div>
+    <img class="logo" alt="Iuris Pactum Editorial" src="data:image/png;base64,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">
     <div>
-      <h1>Panel central JurisPrud</h1>
+      <h1>Compilatore</h1>
       <div class="subtitulo">Compilación de jurisprudencia · TSJ, Tribunal Constitucional y Gaceta Oficial · todos los equipos</div>
     </div>
   </div>
@@ -273,7 +275,7 @@
   </div>
 </header>
 <nav class="pestanas" aria-label="Proyecto"><button type="button" id="tab-tsj" class="act">TSJ · Autos Supremos</button><button type="button" id="tab-tcp">TCP · Tribunal Constitucional</button><button type="button" id="tab-gaceta">Gaceta · Normativa</button></nav>
-<nav class="menu" id="menu-tsj" aria-label="Secciones"><a href="./" class="act" aria-current="page">Inicio</a><a href="auditorias.html">Repositorio de auditorías</a></nav>
+<nav class="menu" id="menu-tsj" aria-label="Secciones"><a href="./" class="act" aria-current="page">Inicio</a><a href="auditorias.html">Informes de cierre</a></nav>
 
 <main id="main-tsj">
   <div id="banner"></div>
@@ -335,9 +337,9 @@
   </div>
   </details>
   <footer>Datos en vivo desde GitHub (repositorio tsj-estado) · se actualiza cada 5 s</footer>
-  <details class="avanzado" id="det-aud"><summary>Repositorio de auditorías (informes de cierre)</summary>
+  <details class="avanzado" id="det-aud"><summary>Informes de cierre</summary>
   <section class="tarjeta" id="auditorias">
-    <h2>Repositorio de auditorías</h2>
+    <h2>Informes de cierre</h2>
     <div class="desc" style="margin-bottom:10px">Cada vez que se valida el cierre de una gestión (o se revisa una gestión ya cerrada) queda aquí una foto de cómo estaba ese día, explicada en lenguaje sencillo. Orden cronológico: lo más reciente primero. Toca una auditoría para leerla.</div>
     <div id="aud-lista"><div class="vacio">Cargando…</div></div>
   </section>
@@ -907,7 +909,7 @@ function renderGuia() {
     case 'sin_datos':
       tit = 'Esta gestión todavía no está iniciada'; cuerpo = '<p>Ningún equipo está reportando la gestión ' + esc(g) + '. Elige otra gestión arriba, o inicia su compilación desde «Acciones y detalle de la gestión elegida».</p>'; break;
     case 'cerrada':
-      clase = 'ok'; tit = '✓ Gestión cerrada'; cuerpo = `<p>El cierre de ${esc(g)} ya fue validado el ${esc(String(st.e.cierres[g].validado || '').replace('T', ' '))}. No hay nada más que hacer en esta gestión. El informe está en el «Repositorio de auditorías», al final de la página.</p>`; break;
+      clase = 'ok'; tit = '✓ Gestión cerrada'; cuerpo = `<p>El cierre de ${esc(g)} ya fue validado el ${esc(String(st.e.cierres[g].validado || '').replace('T', ' '))}. No hay nada más que hacer en esta gestión. El informe está en el «Informes de cierre», al final de la página.</p>`; break;
     case 'desconectado':
       clase = 'aviso'; tit = `⏸ ${nom} está desconectado`; cuerpo = `<p>No se puede avanzar hasta que ese equipo se reconecte (último dato ${esc(hace(st.e.ts))}). Aquí no hay nada que hacer salvo esperar o encender el equipo.</p>`; break;
     case 'trabaja':
@@ -1010,7 +1012,7 @@ function cardCierre(av, e) {
   const au = av.auditoria, v = au && au.veredicto;
   if (!au || !v) return av.auditoria ? '<div class="cierre-card info">Esta auditoría es de una versión anterior y no trae veredicto. Repite «Auditar contra el sitio» para ver si la gestión puede cerrarse.</div>' : '';
   const cv = (e.cierres || {})[av.gestion];
-  if (cv) return `<div class="cierre-card ok"><b>Cierre validado</b> el ${esc(String(cv.validado || '').replace('T', ' '))}. El informe completo está en el «Repositorio de auditorías», al final de la página.</div>`;
+  if (cv) return `<div class="cierre-card ok"><b>Cierre validado</b> el ${esc(String(cv.validado || '').replace('T', ' '))}. El informe completo está en el «Informes de cierre», al final de la página.</div>`;
   if (v.estado === 'en_curso') return '<div class="cierre-card info"><b>Gestión en curso.</b> Se puede auditar para ver el estado, pero el cierre solo se valida cuando el año haya terminado.</div>';
   if (v.estado === 'acciones') {
     const manual = v.acciones.filter(a => a.id === 'manual'), resto = v.acciones.filter(a => a.id !== 'manual');
@@ -1220,7 +1222,7 @@ async function enviarOrden(base, obs, opts) {
   opts = opts || {};
   const accion = opts.directa || accionFinal(base), eid = opts.eid || $('sel-destino').value, e = equipos.find(x => x.id === eid);
   if (!e) { alert('No hay equipo destino.'); return; }
-  if (accion === 'validar_cierre' && !confirm(`Validar el cierre de la gestión ${gestion}. Queda registrado con su informe en el repositorio de auditorías. ¿Confirmas?`)) return;
+  if (accion === 'validar_cierre' && !confirm(`Validar el cierre de la gestión ${gestion}. Queda registrado con su informe en el sección «Informes de cierre». ¿Confirmas?`)) return;
   const gEtiqueta = opts.pid ? (opts.etiqueta || '') : `gestión ${gestion}`;
   const pide = ['iniciar', 'detener', 'actualizar', 'corregir_real', 'detectar_real', 'barrido_real', 'barrido_todas_real', 'releer_real'].includes(accion);
   if (pide && !confirm(`${opts.pid ? 'Detener' : NOMBRE_ACCION[accion]} en ${e.nombre} (${gEtiqueta}). ¿Confirmas?`)) return;
@@ -1264,7 +1266,7 @@ $('tok-borrar').onclick = () => { borrar('tsj_token'); TOKEN = null; equipos = [
 iniciarToken();
 gestion = leer('tsj_gestion') || '2026';
 
-// ---------- Repositorio de auditorías ----------
+// ---------- Informes de cierre ----------
 let audLista = [], audDet = {}, audAbiertas = new Set(), audUltima = 0;
 function nombreAud(n) {
   const m = n.match(/^(\d{4})(\d\d)(\d\d)-(\d\d)(\d\d)(\d\d)_(\d{4})_(\w+)\.json$/);
@@ -1311,8 +1313,8 @@ function imprimirAud(n) {
     h1{font-size:20px;margin:0 0 2px}h2{font-size:13px;color:#555;margin:0 0 14px;font-weight:400}h4{font-size:13px;margin:16px 0 6px;border-bottom:1px solid #999;padding-bottom:2px}
     table{width:100%;border-collapse:collapse;font-size:11.5px}th,td{padding:4px 6px;border-bottom:1px solid #ccc;text-align:right}th:first-child,td:first-child{text-align:left}
     dt{font-weight:700;margin-top:6px}dd{margin:1px 0 0}p{margin:4px 0}li{margin:2px 0}.e-meta{color:#666;font-size:11px;margin-top:14px}button{display:none}small{color:#666}`;
-  w.document.write(`<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Auditoría ${d.gestion} · ${i.tipo} · ${i.fecha}</title><style>${estilos}</style></head><body>
-    <h1>Informe de auditoría · Gestión ${esc(d.gestion)}</h1><h2>${esc(i.tipo)} · ${esc(i.fecha)} · JurisPrud (Iuris Pactum Editorial) · Autos Supremos del TSJ de Bolivia</h2>${htmlAud(d).replace('__N__', '')}</body></html>`);
+  w.document.write(`<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Informe de cierre ${d.gestion} · ${i.tipo} · ${i.fecha}</title><style>${estilos}</style></head><body>
+    <h1>Informe de cierre · Gestión ${esc(d.gestion)}</h1><h2>${esc(i.tipo)} · ${esc(i.fecha)} · JurisPrud (Iuris Pactum Editorial) · Autos Supremos del TSJ de Bolivia</h2>${htmlAud(d).replace('__N__', '')}</body></html>`);
   w.document.close();
   let hecho = false;
   const imprimir = () => { if (hecho) return; hecho = true; try { w.focus(); w.print(); } catch (e) {} };
@@ -1350,7 +1352,7 @@ function tcpPestana(p) {
   const t = p === 'tcp', g = p === 'gaceta', tsj = p === 'tsj';
   $('main-tsj').hidden = !tsj; $('main-tcp').hidden = !t; $('main-gaceta').hidden = !g; $('menu-tsj').hidden = !tsj;
   $('tab-tsj').classList.toggle('act', tsj); $('tab-tcp').classList.toggle('act', t); $('tab-gaceta').classList.toggle('act', g);
-  document.title = t ? 'Panel central JurisPrud · TCP' : g ? 'Panel central JurisPrud · Gaceta' : 'Panel central JurisPrud';
+  document.title = t ? 'Compilatore · TCP' : g ? 'Compilatore · Gaceta' : 'Compilatore';
   if (t) renderTcp();
   if (g) renderGaceta();
 }
