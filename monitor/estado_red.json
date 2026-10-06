@@ -1,5 +1,5 @@
 {
- "ts": 1791320225,
+ "ts": 1791320540,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791320219,
+   "actualizado_ts": 1791320532,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791320219,
+   "actualizado_ts": 1791320532,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791320208,
+   "actualizado_ts": 1791320476,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791320166,
+   "actualizado_ts": 1791320502,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791320219,
+   "actualizado_ts": 1791320532,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791320157,
+   "actualizado_ts": 1791320503,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791320157,
+   "actualizado_ts": 1791320503,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791320178,
+   "actualizado_ts": 1791320506,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791320157,
+   "actualizado_ts": 1791320503,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791320208,
+   "actualizado_ts": 1791320476,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791320157,
+   "actualizado_ts": 1791320503,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791320166,
+   "actualizado_ts": 1791320502,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791320157,
+   "actualizado_ts": 1791320503,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791320157,
+   "actualizado_ts": 1791320503,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791320157,
+   "actualizado_ts": 1791320503,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791320166,
+   "actualizado_ts": 1791320502,
    "viejo": false
   }
  ],
@@ -390,7 +390,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791320208,
+   "ts": 1791320476,
    "version": "2bdafb5",
    "procesos": [],
    "orden": {
@@ -420,7 +420,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791320208,
+   "ts": 1791320497,
    "version": "2bdafb5",
    "procesos": [],
    "orden": {
@@ -437,7 +437,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791320201,
+   "ts": 1791320520,
    "version": "2bdafb5",
    "procesos": [],
    "orden": {
@@ -454,9 +454,22 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791320157,
+   "ts": 1791320503,
    "version": "2bdafb5",
-   "procesos": [],
+   "procesos": [
+    {
+     "pid": 43171,
+     "tipo": "barrido",
+     "gestion": "2006",
+     "inicio_ts": 1791320494
+    },
+    {
+     "pid": 43180,
+     "tipo": "deteccion",
+     "gestion": "2006",
+     "inicio_ts": 1791320494
+    }
+   ],
    "orden": {
     "seq": 1791317130224,
     "accion": "subir_log",
@@ -467,24 +480,24 @@
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-06 16:55:56]   DETALLE SOBRANTES Sala Contenciosa Primera: AS 143 (2 archivos / 1 filas); AS 159 (2 archivos / 1 filas); AS 189 (2 archivos / 1 filas); AS 206 (2 archivos / 1 filas); AS 267 (2 archivos / 1 filas); AS 269 (2 archivos / 1 filas); AS 292 (2 archivos / 1 filas)",
-    "[2026-10-06 16:55:56]   DETALLE SOBRANTES Sala Penal 1: AS 219 (2 archivos / 1 filas); AS 266 (2 archivos / 1 filas); AS 272 (2 archivos / 1 filas); AS 273 (2 archivos / 1 filas); AS 337 (2 archivos / 1 filas)",
-    "[2026-10-06 16:55:56]   DETALLE SOBRANTES Sala Civil 1: AS 184 (1 archivos / 0 filas)",
-    "[2026-10-06 16:55:56] CONCLUSIÓN: antes de cerrar 2002 hay 4 cosa(s) por resolver:",
-    "[2026-10-06 16:55:56]   1) Hay 2 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2002-06-11-TSJ-AS-219-SP1-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
-    "[2026-10-06 16:55:56]   2) Hay 1 archivo(s) en «_revisar» que el programa no pudo identificar con seguridad (por ejemplo: no se leyó el número o la fecha). Ejemplo: 2026-10-04-TSJ-AS-26-SPL.pdf. El corrector intenta resolverlos solo.",
-    "[2026-10-06 16:55:56]   3) Hay 9 documento(s) en «_revisar/_no_AS» (Decretos, Resoluciones, PDF en blanco…) que el programa apartó porque no parecen Autos Supremos y que aún no has revisado. Ejemplo: 2002-03-14-TSJ-SINID-p_SP1_98-SP1.pdf. Para cada uno, «Confirmar descarte» (de verdad no es un AS) o",
-    "[2026-10-06 16:55:56]   4) 3 archivo(s) en las salas tienen un nombre provisional (empiezan con «EXP-», porque al bajarlos no se leyó el número del Auto Supremo). Esta acción vuelve a leerlos y les pone su nombre definitivo. Los que sean escaneos sin texto necesitarán lectura por reconocimiento ópti",
-    "[2026-10-06 16:55:56]   Luego repite «Auditar contra el sitio».",
-    "[2026-10-06 16:55:56] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Penal 1 9.",
-    "[2026-10-06 16:55:56] OBSERVACIÓN Sala Contenciosa Primera: el sitio lista bajo 2002 4 fila(s) de OTRA gestión (no cuentan como faltantes): #161 AS/0159-C/2001; #191 AS/0189-C/2001; #210 AS/0206-C/2001; #275 AS/0269-C/2001.",
-    "[2026-10-06 16:55:56] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2002/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2002/_auditoria.json."
+    "--- sentencias.py ---",
+    "sentencias: gestión 2006: 0 archivada(s) como SEN",
+    "--- corregir_revisar.py ---",
+    "[2026-10-06 17:01:34] === corregir_revisar.py -- Gestión 2006 -- EJECUCIÓN REAL ===",
+    "[2026-10-06 17:01:34] Candidatos a reprocesar: 0",
+    "[2026-10-06 17:01:34]",
+    "[2026-10-06 17:01:34] === RESUMEN ===",
+    "[2026-10-06 17:01:34] Resueltos y migrados a su Sala: 0 (de los cuales 0 necesitaron OCR)",
+    "[2026-10-06 17:01:34] Conflictos dejados en _revisar como POSIBLE-DUPLICADO: 0",
+    "[2026-10-06 17:01:34] Apartados a _revisar/_no_AS (no son Auto Supremo o llegaron en blanco): 0",
+    "[2026-10-06 17:01:34] Siguen sin poder identificarse (quedan en _revisar tal cual): 0",
+    "--- detectar_exp_obsoletos.py ---"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791320219,
+   "ts": 1791320532,
    "version": "2bdafb5",
    "procesos": [],
    "orden": {
@@ -514,7 +527,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791320197,
+   "ts": 1791320530,
    "version": "2bdafb5",
    "procesos": [],
    "orden": {
@@ -544,7 +557,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791320166,
+   "ts": 1791320502,
    "version": "2bdafb5",
    "procesos": [],
    "orden": {
@@ -574,7 +587,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791320178,
+   "ts": 1791320506,
    "version": "2bdafb5",
    "procesos": [],
    "orden": {
