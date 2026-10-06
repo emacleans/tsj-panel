@@ -1,5 +1,5 @@
 {
- "ts": 1791316217,
+ "ts": 1791316524,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791316138,
+   "actualizado_ts": 1791316507,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791316138,
+   "actualizado_ts": 1791316507,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791316198,
+   "actualizado_ts": 1791316504,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791316196,
+   "actualizado_ts": 1791316500,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791316138,
+   "actualizado_ts": 1791316507,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316202,
+   "actualizado_ts": 1791316503,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316202,
+   "actualizado_ts": 1791316503,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791316200,
+   "actualizado_ts": 1791316511,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316202,
+   "actualizado_ts": 1791316503,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791316198,
+   "actualizado_ts": 1791316504,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316202,
+   "actualizado_ts": 1791316503,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791316196,
+   "actualizado_ts": 1791316500,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316202,
+   "actualizado_ts": 1791316503,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316202,
+   "actualizado_ts": 1791316503,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316202,
+   "actualizado_ts": 1791316503,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791316196,
+   "actualizado_ts": 1791316500,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791160477,
-   "texto": "orden de Claude 2026-10-05-releer-2018-v3: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
-  },
   {
    "ts": 1791160679,
    "texto": "orden de Claude 2026-10-05-releer-2018-v4: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
@@ -384,22 +380,26 @@
   {
    "ts": 1791315793,
    "texto": "orden de Claude 2026-10-06-corregir-sim-2002-a: corregir_sim 2002 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1791316363,
+   "texto": "orden de Claude 2026-10-06-log-2002-a: subir_log 2002 en IPE01 (Mac Mini oficina)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791316198,
-   "version": "cb7bfba",
+   "ts": 1791316504,
+   "version": "319d2e1",
    "procesos": [],
    "orden": {
-    "seq": 1791316192815,
+    "seq": 1791316487861,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a cb7bfba.",
-    "ts": 1791316198
+    "mensaje": "No se pudo consultar GitHub (fetch).",
+    "ts": 1791316497
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -420,16 +420,16 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791316201,
-   "version": "cb7bfba",
+   "ts": 1791316496,
+   "version": "319d2e1",
    "procesos": [],
    "orden": {
-    "seq": 1791316195180,
+    "seq": 1791316489891,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a cb7bfba.",
-    "ts": 1791316200
+    "mensaje": "Scripts actualizados a 319d2e1.",
+    "ts": 1791316495
    },
    "gestiones": {},
    "ultimas_lineas": []
@@ -437,16 +437,16 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791316202,
-   "version": "cb7bfba",
+   "ts": 1791316499,
+   "version": "319d2e1",
    "procesos": [],
    "orden": {
-    "seq": 1791316197387,
+    "seq": 1791316492527,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a cb7bfba.",
-    "ts": 1791316201
+    "mensaje": "Scripts actualizados a 319d2e1.",
+    "ts": 1791316497
    },
    "gestiones": {},
    "ultimas_lineas": []
@@ -454,16 +454,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791316202,
-   "version": "cb7bfba",
+   "ts": 1791316503,
+   "version": "319d2e1",
    "procesos": [],
    "orden": {
-    "seq": 1791316095132,
+    "seq": 1791316493613,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 4f93574.",
-    "ts": 1791316100
+    "mensaje": "Scripts actualizados a 319d2e1.",
+    "ts": 1791316499
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -484,8 +484,8 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791316138,
-   "version": "4f93574",
+   "ts": 1791316507,
+   "version": "319d2e1",
    "procesos": [],
    "orden": {
     "seq": 1791315041719,
@@ -514,29 +514,29 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791316209,
-   "version": "cb7bfba",
+   "ts": 1791316497,
+   "version": "319d2e1",
    "procesos": [
     {
      "pid": 17649,
      "tipo": "barrido",
      "gestion": "2025",
-     "inicio_ts": 1791307962
+     "inicio_ts": 1791307963
     },
     {
      "pid": 17661,
      "tipo": "deteccion",
      "gestion": "2025",
-     "inicio_ts": 1791307962
+     "inicio_ts": 1791307963
     }
    ],
    "orden": {
-    "seq": 1791315866592,
+    "seq": 1791316347779,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 507cb01.",
-    "ts": 1791316037
+    "mensaje": "Scripts actualizados a 0d57c78.",
+    "ts": 1791316352
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -557,16 +557,16 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791316196,
-   "version": "cb7bfba",
+   "ts": 1791316500,
+   "version": "319d2e1",
    "procesos": [],
    "orden": {
-    "seq": 1791315994688,
+    "seq": 1791316495806,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 507cb01.",
-    "ts": 1791315998
+    "mensaje": "Scripts actualizados a 319d2e1.",
+    "ts": 1791316500
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -587,16 +587,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791316200,
-   "version": "4f93574",
+   "ts": 1791316511,
+   "version": "319d2e1",
    "procesos": [],
    "orden": {
-    "seq": 1791316099534,
+    "seq": 1791316496930,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
     "mensaje": "Ya estaba al día.",
-    "ts": 1791316103
+    "ts": 1791316502
    },
    "gestiones": {},
    "ultimas_lineas": [
