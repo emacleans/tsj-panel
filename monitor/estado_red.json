@@ -1,5 +1,5 @@
 {
- "ts": 1791316524,
+ "ts": 1791316831,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791316507,
+   "actualizado_ts": 1791316790,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791316507,
+   "actualizado_ts": 1791316790,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791316504,
+   "actualizado_ts": 1791316810,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791316500,
+   "actualizado_ts": 1791316798,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791316507,
+   "actualizado_ts": 1791316790,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316503,
+   "actualizado_ts": 1791316783,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316503,
+   "actualizado_ts": 1791316783,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791316511,
+   "actualizado_ts": 1791316769,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316503,
+   "actualizado_ts": 1791316783,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791316504,
+   "actualizado_ts": 1791316810,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316503,
+   "actualizado_ts": 1791316783,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791316500,
+   "actualizado_ts": 1791316798,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316503,
+   "actualizado_ts": 1791316783,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316503,
+   "actualizado_ts": 1791316783,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791316503,
+   "actualizado_ts": 1791316783,
    "viejo": false
   },
   {
@@ -259,20 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791316500,
+   "actualizado_ts": 1791316798,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791160679,
-   "texto": "orden de Claude 2026-10-05-releer-2018-v4: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
-  },
-  {
-   "ts": 1791160817,
-   "texto": "inicia 2013 en IPE02 (Mac Mini casa) (incompleta; intento 1)"
-  },
   {
    "ts": 1791162326,
    "texto": "orden de Claude 2026-10-05-cotejo-auto-2018-v5: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
@@ -384,13 +376,21 @@
   {
    "ts": 1791316363,
    "texto": "orden de Claude 2026-10-06-log-2002-a: subir_log 2002 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1791316699,
+   "texto": "orden de Claude 2026-10-06-cotejo-sim-2019-a: cotejo_auto_sim 2019 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1791316776,
+   "texto": "orden de Claude 2026-10-06-log-2019-a: subir_log 2019 en IPE01 (Mac Mini oficina)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791316504,
+   "ts": 1791316810,
    "version": "319d2e1",
    "procesos": [],
    "orden": {
@@ -420,7 +420,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791316496,
+   "ts": 1791316785,
    "version": "319d2e1",
    "procesos": [],
    "orden": {
@@ -437,7 +437,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791316499,
+   "ts": 1791316805,
    "version": "319d2e1",
    "procesos": [],
    "orden": {
@@ -454,46 +454,46 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791316503,
+   "ts": 1791316783,
    "version": "319d2e1",
    "procesos": [],
    "orden": {
-    "seq": 1791316493613,
-    "accion": "actualizar",
-    "gestion": "0000",
+    "seq": 1791316774908,
+    "accion": "subir_log",
+    "gestion": "2019",
     "ok": true,
-    "mensaje": "Scripts actualizados a 319d2e1.",
-    "ts": 1791316499
+    "mensaje": "Subidos 3 registro(s) de 2019 a tsj-estado/diagnosticos/.",
+    "ts": 1791316781
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-06 15:45:55]     fechas con formato de fecha halladas en el texto: ['18 de marzo de 2002', '31 de\\ndiciembre de 2001', '18 de\\nmayo de 2001', '8 de noviembre de 2001', '12 de diciembre de 2001']",
-    "[2026-10-06 15:45:58]   SIN RESOLVER: 2026-10-04-TSJ-EXP-99-2001-SPL.pdf -> fecha no reconocida",
-    "[2026-10-06 15:45:58]     diagnóstico: texto embebido 3217 car.; inicio: 'SALA PLENA AUTO SUPREMO: N° 31B/2002 18 de marzo de 2002 EXP.: N° 99/2001 PROCESO : Extradición DISTRITO : Santa Cruz PARTES : Embajada del Reino de España c/ ciudadano español Carlos García Julia RELATOR : Ministro Dr. Carlos",
-    "[2026-10-06 15:45:58]     crudo (400 car.): 'SALA PLENA\\n\\nAUTO SUPREMO: N° 31B/2002 18 de marzo de 2002 EXP.: N° 99/2001\\n\\nPROCESO : Extradición\\n\\nDISTRITO : Santa Cruz\\n\\nPARTES : Embajada del Reino de España c/ ciudadano español Carlos García Julia\\n\\nRELATOR : Ministro Dr. Carlos Rocha Orosco\\",
-    "[2026-10-06 15:45:58]     fechas con formato de fecha halladas en el texto: ['18 de marzo de 2002', '24 de abril de 1990', '05/10/2026']",
-    "[2026-10-06 15:45:58]",
-    "[2026-10-06 15:45:58] === RESUMEN ===",
-    "[2026-10-06 15:45:58] Resueltos y migrados a su Sala: 0 (de los cuales 0 necesitaron OCR)",
-    "[2026-10-06 15:45:58] Conflictos dejados en _revisar como POSIBLE-DUPLICADO: 0",
-    "[2026-10-06 15:45:58] Apartados a _revisar/_no_AS (no son Auto Supremo o llegaron en blanco): 0",
-    "[2026-10-06 15:45:58] Siguen sin poder identificarse (quedan en _revisar tal cual): 52",
-    "[2026-10-06 15:45:58] (--dry-run: no se movio ni escribio nada todavia; corre sin --dry-run para aplicarlo de verdad)"
+    "MANUAL  2019-03-19-TSJ-AS-148-SCA1-POSIBLE-DUPLICADO.pdf: partes distintas",
+    "MANUAL  2019-03-19-TSJ-AS-161-SCA1-POSIBLE-DUPLICADO.pdf: partes distintas",
+    "MANUAL  2019-03-19-TSJ-AS-168-SCA1-POSIBLE-DUPLICADO.pdf: partes distintas",
+    "MANUAL  2019-04-03-TSJ-AS-180-SCA1-POSIBLE-DUPLICADO.pdf: partes distintas",
+    "MANUAL  2019-04-22-TSJ-AS-193-SCA1-POSIBLE-DUPLICADO.pdf: decisión (parte resolutiva) distinta (similitud 0.989)",
+    "MANUAL  2019-05-27-TSJ-AS-269-SCA1-POSIBLE-DUPLICADO.pdf: partes distintas",
+    "MANUAL  2019-05-30-TSJ-AS-71-1-CA-SCA1-POSIBLE-DUPLICADO.pdf: decisión (parte resolutiva) distinta (similitud 0.990)",
+    "MANUAL  2019-06-11-TSJ-AS-79-SCA1-POSIBLE-DUPLICADO.pdf: partes distintas",
+    "MANUAL  2019-06-11-TSJ-AS-84-SCA1-POSIBLE-DUPLICADO.pdf: decisión (parte resolutiva) distinta (similitud 0.980)",
+    "MANUAL  2019-06-14-TSJ-AS-87-SCA1-POSIBLE-DUPLICADO.pdf: expediente distinto (107 2019 ca / 117 2019 ca); las partes no son claramente distintas",
+    "MANUAL  2019-09-24-TSJ-AS-131-CA-SCA1-POSIBLE-DUPLICADO.pdf: partes distintas",
+    "RESUMEN gestión 2019: pares 21, resolubles automáticamente 0, para cotejo manual 21"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791316507,
+   "ts": 1791316790,
    "version": "319d2e1",
    "procesos": [],
    "orden": {
-    "seq": 1791315041719,
+    "seq": 1791316721387,
     "accion": "tcp_revisar",
     "gestion": "2026",
     "ok": true,
     "mensaje": "Pantalla de revisión lista en http://localhost:8751 (funciona desde equipos de la misma red; con Tailscale usa su dirección 100.x).",
-    "ts": 1791315045
+    "ts": 1791316728
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -514,29 +514,29 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791316497,
+   "ts": 1791316809,
    "version": "319d2e1",
    "procesos": [
     {
      "pid": 17649,
      "tipo": "barrido",
      "gestion": "2025",
-     "inicio_ts": 1791307963
+     "inicio_ts": 1791307962
     },
     {
      "pid": 17661,
      "tipo": "deteccion",
      "gestion": "2025",
-     "inicio_ts": 1791307963
+     "inicio_ts": 1791307962
     }
    ],
    "orden": {
-    "seq": 1791316347779,
+    "seq": 1791316494755,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 0d57c78.",
-    "ts": 1791316352
+    "mensaje": "Ya estaba al día.",
+    "ts": 1791316500
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -557,7 +557,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791316500,
+   "ts": 1791316798,
    "version": "319d2e1",
    "procesos": [],
    "orden": {
@@ -587,7 +587,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791316511,
+   "ts": 1791316769,
    "version": "319d2e1",
    "procesos": [],
    "orden": {
