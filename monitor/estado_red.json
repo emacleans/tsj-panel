@@ -1,5 +1,5 @@
 {
- "ts": 1791315642,
+ "ts": 1791315944,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791315634,
+   "actualizado_ts": 1791315923,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791315634,
+   "actualizado_ts": 1791315923,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791315589,
+   "actualizado_ts": 1791315878,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791315603,
+   "actualizado_ts": 1791315881,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791315634,
+   "actualizado_ts": 1791315923,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791315597,
+   "actualizado_ts": 1791315937,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791315597,
+   "actualizado_ts": 1791315937,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791315605,
+   "actualizado_ts": 1791315887,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791315597,
+   "actualizado_ts": 1791315937,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791315589,
+   "actualizado_ts": 1791315878,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791315597,
+   "actualizado_ts": 1791315937,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791315603,
+   "actualizado_ts": 1791315881,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791315597,
+   "actualizado_ts": 1791315937,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791315597,
+   "actualizado_ts": 1791315937,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791315597,
+   "actualizado_ts": 1791315937,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791315603,
+   "actualizado_ts": 1791315881,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791160002,
-   "texto": "orden de Claude 2026-10-05-releer-2018-v2: releer_real 2018 en iMac-Sala (iMac de la sala)"
-  },
   {
    "ts": 1791160477,
    "texto": "orden de Claude 2026-10-05-releer-2018-v3: cotejo_auto_real 2018 en iMac-Sala (iMac de la sala)"
@@ -384,22 +380,26 @@
   {
    "ts": 1791283761,
    "texto": "orden de Claude 2026-10-06-retirar-2014-ipe01: retirar_vacia 2014 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1791315793,
+   "texto": "orden de Claude 2026-10-06-corregir-sim-2002-a: corregir_sim 2002 en IPE01 (Mac Mini oficina)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791315589,
-   "version": "fb8d959",
+   "ts": 1791315878,
+   "version": "e12d6cd",
    "procesos": [],
    "orden": {
-    "seq": 1791315520362,
+    "seq": 1791315849025,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Ya estaba al día.",
-    "ts": 1791315524
+    "mensaje": "Scripts actualizados a e12d6cd.",
+    "ts": 1791315866
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -420,16 +420,16 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791315626,
-   "version": "fb8d959",
+   "ts": 1791315923,
+   "version": "e12d6cd",
    "procesos": [],
    "orden": {
-    "seq": 1791315521436,
+    "seq": 1791315854077,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a fb8d959.",
-    "ts": 1791315527
+    "mensaje": "Scripts actualizados a e12d6cd.",
+    "ts": 1791315860
    },
    "gestiones": {},
    "ultimas_lineas": []
@@ -437,16 +437,16 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791315592,
-   "version": "fb8d959",
+   "ts": 1791315864,
+   "version": "e12d6cd",
    "procesos": [],
    "orden": {
-    "seq": 1791315524754,
+    "seq": 1791315855306,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a fb8d959.",
-    "ts": 1791315529
+    "mensaje": "Scripts actualizados a e12d6cd.",
+    "ts": 1791315864
    },
    "gestiones": {},
    "ultimas_lineas": []
@@ -454,38 +454,45 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791315597,
-   "version": "fb8d959",
-   "procesos": [],
+   "ts": 1791315937,
+   "version": "e12d6cd",
+   "procesos": [
+    {
+     "pid": 31004,
+     "tipo": "correccion",
+     "gestion": "2002",
+     "inicio_ts": 1791315796
+    }
+   ],
    "orden": {
-    "seq": 1791315525957,
-    "accion": "actualizar",
-    "gestion": "0000",
+    "seq": 1791315792839,
+    "accion": "corregir_sim",
+    "gestion": "2002",
     "ok": true,
-    "mensaje": "Ya estaba al día.",
-    "ts": 1791315531
+    "mensaje": "Lanzado: corregir_sim, gestión 2002",
+    "ts": 1791315796
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-06 09:50:35] AUDITORÍA Sala Contenciosa Primera  : 642 filas leídas del sitio.",
-    "[2026-10-06 09:50:39] AUDITORÍA Sala Contenciosa Segunda  : 173 filas leídas del sitio.",
-    "[2026-10-06 09:50:39] AUDITORÍA Sala Penal                : sitio 2000 filas (1998 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 4, de ellas 4 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-06 09:50:39] AUDITORÍA Sala Civil                : sitio 1288 filas (1286 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-06 09:50:39] AUDITORÍA Sala Plena                : sitio 305 filas (304 AS distintos, 1 repetidos, 1 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-06 09:50:39] AUDITORÍA Sala Contenciosa Primera  : sitio 642 filas (627 AS distintos, 15 repetidos, 15 sin número legible) | sin archivo 3, de ellas 1 ya explicadas por descartes registrados | FALTAN 2 (2 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-06 09:50:39] AUDITORÍA Sala Contenciosa Segunda  : sitio 172 filas (172 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-06 09:50:39]   DETALLE FALTAN Sala Contenciosa Primera: AS 54 (x2)",
-    "[2026-10-06 09:50:39] CONCLUSIÓN: la auditoría de 2023 no encontró nada que corregir. Las diferencias que aparecen (5) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
-    "[2026-10-06 09:50:39] OBSERVACIÓN Sala Contenciosa Segunda: el sitio lista bajo 2023 1 fila(s) de OTRA gestión (no cuentan como faltantes): #15 AS/0033/2022.",
-    "[2026-10-06 09:50:39] Apartados en _revisar/_otra_gestion (autos de otro año descargados por error): 4.",
-    "[2026-10-06 09:50:39] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2023/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2023/_auditoria.json."
+    "[2026-10-06 15:45:29]   SIN RESOLVER: 2026-10-04-TSJ-AS-49-SPL.pdf -> fecha no reconocida",
+    "[2026-10-06 15:45:29]     diagnóstico: texto embebido 2520 car.; inicio: 'SALA PLENA AUTO SUPREMO: N° 49/2002 6 de junio de 2002 EXP.: N° 103/2002 PROCESO : Revisión Extraordinaria de Sentencia DISTRITO : La Paz PARTES: Ministerio de Desarrollo Sostenible y Planificación c/ Marco Antonio Jerez Vera ",
+    "[2026-10-06 15:45:29]     crudo (400 car.): 'SALA PLENA\\n\\nAUTO SUPREMO: N° 49/2002 6 de junio de 2002 EXP.: N° 103/2002\\n\\nPROCESO : Revisión Extraordinaria de Sentencia\\n\\nDISTRITO : La Paz\\n\\nPARTES: Ministerio de Desarrollo Sostenible y Planificación c/ Marco Antonio Jerez Vera\\n\\nRELATOR :\\n\\n\\",
+    "[2026-10-06 15:45:29]     fechas con formato de fecha halladas en el texto: ['6 de junio de 2002', '04/10/2026']",
+    "[2026-10-06 15:45:30]   SIN RESOLVER: 2026-10-04-TSJ-AS-5-SPL.pdf -> fecha no reconocida",
+    "[2026-10-06 15:45:30]     diagnóstico: texto embebido 1304 car.; inicio: 'SALA PLENA AUTO SUPREMO: N° 5/2002 16 de enero de 2002 EXP.: N° 234/98 PROCESO : Auto Complementario DISTRITO : PARTES : Ayllus Originarios de Quila Quila c/ Fiscal General de la República RELATOR : VISTOS EN SALA PLENA: El me",
+    "[2026-10-06 15:45:30]     crudo (400 car.): 'SALA PLENA\\n\\nAUTO SUPREMO: N° 5/2002 16 de enero de 2002 EXP.: N° 234/98\\n\\nPROCESO : Auto Complementario\\n\\nDISTRITO :\\n\\nPARTES : Ayllus Originarios de Quila Quila c/ Fiscal General de la República\\n\\nRELATOR :\\n\\n\\n\\n\\nVISTOS EN SALA PLENA: El memoria",
+    "[2026-10-06 15:45:30]     fechas con formato de fecha halladas en el texto: ['16 de enero de 2002', '19 de\\nseptiembre de 2001', '04/10/2026']",
+    "[2026-10-06 15:45:33]   SIN RESOLVER: 2026-10-04-TSJ-AS-51-SPL.pdf -> fecha no reconocida",
+    "[2026-10-06 15:45:33]     diagnóstico: texto embebido 2403 car.; inicio: 'SALA PLENA AUTO SUPREMO: N° 51/2002 18 de junio de 2002 EXP.: N° 106/2002 PROCESO : Recurso de Compulsa DISTRITO : La Paz PARTES: René Velásquez Deheza c/ Sala Plena de la Corte Superior del Distrito Judicial de La Paz VISTOS ",
+    "[2026-10-06 15:45:33]     crudo (400 car.): 'SALA PLENA\\n\\nAUTO SUPREMO: N° 51/2002 18 de junio de 2002 EXP.: N° 106/2002\\n\\nPROCESO : Recurso de Compulsa\\n\\nDISTRITO : La Paz\\n\\nPARTES: René Velásquez Deheza c/ Sala Plena de la Corte Superior del Distrito Judicial\\nde La Paz\\n\\n\\n\\n\\nVISTOS EN SALA",
+    "[2026-10-06 15:45:33]     fechas con formato de fecha halladas en el texto: ['18 de junio de 2002', '30 de abril\\nde 2002', '30 de abril de 2002', '04/10/2026']"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791315634,
-   "version": "fb8d959",
+   "ts": 1791315923,
+   "version": "e12d6cd",
    "procesos": [],
    "orden": {
     "seq": 1791315041719,
@@ -557,16 +564,16 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791315603,
-   "version": "fb8d959",
+   "ts": 1791315881,
+   "version": "e12d6cd",
    "procesos": [],
    "orden": {
-    "seq": 1791315529772,
+    "seq": 1791315870871,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a fb8d959.",
-    "ts": 1791315534
+    "mensaje": "Ya estaba al día.",
+    "ts": 1791315880
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -587,16 +594,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791315605,
-   "version": "fb8d959",
+   "ts": 1791315887,
+   "version": "e12d6cd",
    "procesos": [],
    "orden": {
-    "seq": 1791315532301,
+    "seq": 1791315754430,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a fb8d959.",
-    "ts": 1791315540
+    "mensaje": "Scripts actualizados a 9e6597a.",
+    "ts": 1791315759
    },
    "gestiones": {},
    "ultimas_lineas": [
