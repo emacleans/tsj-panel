@@ -1,5 +1,5 @@
 {
- "ts": 1791282917,
+ "ts": 1791283062,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791282910,
+   "actualizado_ts": 1791283043,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791282910,
+   "actualizado_ts": 1791283043,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791282859,
+   "actualizado_ts": 1791283047,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791282881,
+   "actualizado_ts": 1791283013,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791282910,
+   "actualizado_ts": 1791283043,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791282896,
+   "actualizado_ts": 1791283044,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791282896,
+   "actualizado_ts": 1791283044,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791282889,
+   "actualizado_ts": 1791283057,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791282896,
+   "actualizado_ts": 1791283044,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791282859,
+   "actualizado_ts": 1791283047,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791282896,
+   "actualizado_ts": 1791283044,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791282881,
+   "actualizado_ts": 1791283013,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791282896,
+   "actualizado_ts": 1791283044,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791282896,
+   "actualizado_ts": 1791283044,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791282896,
+   "actualizado_ts": 1791283044,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791282881,
+   "actualizado_ts": 1791283013,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791143875,
-   "texto": "inicia 2002 en IPE01 (Mac Mini oficina) (incompleta; intento 2)"
-  },
   {
    "ts": 1791149533,
    "texto": "inicia 2016 en MM-Ali (Mac Mini Alicia) (incompleta; intento 1)"
@@ -384,22 +380,26 @@
   {
    "ts": 1791235377,
    "texto": "orden de Claude 2026-10-05-cotejo-auto-2021-a: cotejo_auto_real 2021 en IPE02 (Mac Mini casa)"
+  },
+  {
+   "ts": 1791283058,
+   "texto": "orden de Claude 2026-10-06-corregir-sim-2006-a: corregir_sim 2006 en IPE01 (Mac Mini oficina)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791282859,
-   "version": "08a1015",
+   "ts": 1791283047,
+   "version": "336bae1",
    "procesos": [],
    "orden": {
-    "seq": 1791242909335,
+    "seq": 1791283040402,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 08a1015.",
-    "ts": 1791242915
+    "mensaje": "Ya estaba al día.",
+    "ts": 1791283046
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -420,7 +420,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791282851,
+   "ts": 1791283040,
    "version": "08a1015",
    "procesos": [],
    "orden": {
@@ -437,8 +437,8 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791282866,
-   "version": "08a1015",
+   "ts": 1791283052,
+   "version": "336bae1",
    "procesos": [],
    "orden": {
     "seq": 1791242911534,
@@ -454,38 +454,45 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791282896,
+   "ts": 1791283044,
    "version": "08a1015",
-   "procesos": [],
+   "procesos": [
+    {
+     "pid": 41661,
+     "tipo": "correccion",
+     "gestion": "2006",
+     "inicio_ts": 1791283010
+    }
+   ],
    "orden": {
-    "seq": 1791242914122,
-    "accion": "actualizar",
-    "gestion": "0000",
+    "seq": 1791283008804,
+    "accion": "corregir_sim",
+    "gestion": "2006",
     "ok": true,
-    "mensaje": "Scripts actualizados a 08a1015.",
-    "ts": 1791242919
+    "mensaje": "Lanzado: corregir_sim, gestión 2006",
+    "ts": 1791283010
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-05 19:55:14] AUDITORÍA Sala Contenciosa Primera  : 642 filas leídas del sitio.",
-    "[2026-10-05 19:55:18] AUDITORÍA Sala Contenciosa Segunda  : 173 filas leídas del sitio.",
-    "[2026-10-05 19:55:18] AUDITORÍA Sala Penal                : sitio 2000 filas (1998 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 4, de ellas 4 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 19:55:18] AUDITORÍA Sala Civil                : sitio 1288 filas (1286 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 19:55:18] AUDITORÍA Sala Plena                : sitio 305 filas (304 AS distintos, 1 repetidos, 1 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 19:55:18] AUDITORÍA Sala Contenciosa Primera  : sitio 642 filas (627 AS distintos, 15 repetidos, 15 sin número legible) | sin archivo 3, de ellas 1 ya explicadas por descartes registrados | FALTAN 2 (2 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 19:55:18] AUDITORÍA Sala Contenciosa Segunda  : sitio 172 filas (172 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 19:55:18]   DETALLE FALTAN Sala Contenciosa Primera: AS 54 (x2)",
-    "[2026-10-05 19:55:18] CONCLUSIÓN: la auditoría de 2023 no encontró nada que corregir. Las diferencias que aparecen (5) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
-    "[2026-10-05 19:55:18] OBSERVACIÓN Sala Contenciosa Segunda: el sitio lista bajo 2023 1 fila(s) de OTRA gestión (no cuentan como faltantes): #15 AS/0033/2022.",
-    "[2026-10-05 19:55:18] Apartados en _revisar/_otra_gestion (autos de otro año descargados por error): 4.",
-    "[2026-10-05 19:55:18] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2023/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2023/_auditoria.json."
+    "[2026-10-06 06:37:15]   SIN RESOLVER: 2026-10-03-TSJ-AS-1000-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-06 06:37:15]     diagnóstico: texto embebido 3546 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1000 Sucre, 11 de octubre de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: José Luís Tedesqui Brun c/ La Asociación Mutual de Ahorro y Préstamo para la Vivienda La Paz. MINISTRO RELATO",
+    "[2026-10-06 06:37:15]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1000\\n\\nSucre, 11 de octubre de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: José Luís Tedesqui Brun c/ La Asociación Mutual de Ahorro y Préstamo para la\\nVivienda La Paz.\\n\\nMINISTRO RELATOR: Dr. Juan José",
+    "[2026-10-06 06:37:15]     fechas con formato de fecha halladas en el texto: ['21 de mayo de 2004', '17 de junio de\\n2002', '29 de diciembre de 1992', '21 de mayo de 2004', '30 de junio de 2001']",
+    "[2026-10-06 06:37:19]   SIN RESOLVER: 2026-10-03-TSJ-AS-1001-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-06 06:37:19]     diagnóstico: texto embebido 3369 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1001 Sucre, 11 de octubre de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Víctor Hugo Romero Gutiérrez y otros c/ La Financiera ACCESO S.A. FFP.. MINISTRO RELATOR: Dr. Eddy Walter Fer",
+    "[2026-10-06 06:37:19]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1001\\n\\nSucre, 11 de octubre de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Víctor Hugo Romero Gutiérrez y otros c/ La Financiera ACCESO S.A. FFP..\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.",
+    "[2026-10-06 06:37:19]     fechas con formato de fecha halladas en el texto: ['8 de noviembre de 2004', '14 de junio de\\n2003', '8 de noviembre de 2004', '14 de junio de 2003', '8\\nde noviembre de 2004']",
+    "[2026-10-06 06:37:23]   SIN RESOLVER: 2026-10-03-TSJ-AS-1002-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-06 06:37:23]     diagnóstico: texto embebido 3410 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1002 Sucre, 11 de octubre de 2.006 DISTRITO: Cochabamba PROCESO: Social. PARTES: Freddy Calderón Álvarez c/ La Universidad Técnica Privada Cosmos. MINISTRO RELATOR: Dr. Eddy Walter Ferná",
+    "[2026-10-06 06:37:23]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1002\\n\\nSucre, 11 de octubre de 2.006\\n\\nDISTRITO: Cochabamba PROCESO: Social.\\n\\nPARTES: Freddy Calderón Álvarez c/ La Universidad Técnica Privada Cosmos.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n",
+    "[2026-10-06 06:37:23]     fechas con formato de fecha halladas en el texto: ['22 de septiembre de 2004', '3 de febrero de 2003', '29 de diciembre de 1992', '22 de septiembre de 2004', '3 de febrero de 1996']"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791282910,
-   "version": "08a1015",
+   "ts": 1791283043,
+   "version": "336bae1",
    "procesos": [],
    "orden": {
     "seq": 1791282802554,
@@ -501,16 +508,16 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791282904,
-   "version": "08a1015",
+   "ts": 1791283052,
+   "version": "336bae1",
    "procesos": [],
    "orden": {
-    "seq": 1791239105621,
+    "seq": 1791283048092,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 179040d.",
-    "ts": 1791239110
+    "mensaje": "Scripts actualizados a 336bae1.",
+    "ts": 1791283052
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -531,7 +538,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791282881,
+   "ts": 1791283013,
    "version": "08a1015",
    "procesos": [],
    "orden": {
@@ -561,16 +568,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791282889,
-   "version": "08a1015",
+   "ts": 1791283057,
+   "version": "336bae1",
    "procesos": [],
    "orden": {
-    "seq": 1791242919888,
+    "seq": 1791283051855,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Ya estaba al día.",
-    "ts": 1791242925
+    "mensaje": "Scripts actualizados a 336bae1.",
+    "ts": 1791283057
    },
    "gestiones": {},
    "ultimas_lineas": [
