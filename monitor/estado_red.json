@@ -1,5 +1,5 @@
 {
- "ts": 1791283374,
+ "ts": 1791283691,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791283353,
+   "actualizado_ts": 1791283684,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791283353,
+   "actualizado_ts": 1791283684,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791283332,
+   "actualizado_ts": 1791283657,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791283321,
+   "actualizado_ts": 1791283683,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791283353,
+   "actualizado_ts": 1791283684,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791283367,
+   "actualizado_ts": 1791283670,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791283367,
+   "actualizado_ts": 1791283670,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791283321,
+   "actualizado_ts": 1791283680,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791283367,
+   "actualizado_ts": 1791283670,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791283332,
+   "actualizado_ts": 1791283657,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791283367,
+   "actualizado_ts": 1791283670,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791283321,
+   "actualizado_ts": 1791283683,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791283367,
+   "actualizado_ts": 1791283670,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791283367,
+   "actualizado_ts": 1791283670,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791283367,
+   "actualizado_ts": 1791283670,
    "viejo": false
   },
   {
@@ -259,20 +259,12 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791283321,
+   "actualizado_ts": 1791283683,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791152644,
-   "texto": "inicia 2014 en IPE02 (Mac Mini casa) (incompleta; intento 1)"
-  },
-  {
-   "ts": 1791155186,
-   "texto": "orden de Claude 2026-10-04-releer-2018: releer_real 2018 en iMac-Sala (iMac de la sala)"
-  },
   {
    "ts": 1791159113,
    "texto": "orden de Claude 2026-10-05-releer-2018-cotejo-auto: releer_real 2018 en iMac-Sala (iMac de la sala)"
@@ -384,13 +376,21 @@
   {
    "ts": 1791283134,
    "texto": "orden de Claude 2026-10-06-retirar-2012-sofi: retirar_vacia 2012 en MM-Sofi (Mac Mini Sofía)"
+  },
+  {
+   "ts": 1791283481,
+   "texto": "orden de Claude 2026-10-06-retirar-2020-ali: retirar_vacia 2020 en MM-Ali (Mac Mini Alicia)"
+  },
+  {
+   "ts": 1791283482,
+   "texto": "orden de Claude 2026-10-06-retirar-2019-sofi: retirar_vacia 2019 en MM-Sofi (Mac Mini Sofía)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791283332,
+   "ts": 1791283657,
    "version": "b39a279",
    "procesos": [],
    "orden": {
@@ -420,7 +420,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791283314,
+   "ts": 1791283630,
    "version": "b39a279",
    "procesos": [],
    "orden": {
@@ -437,7 +437,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791283322,
+   "ts": 1791283636,
    "version": "b39a279",
    "procesos": [],
    "orden": {
@@ -454,7 +454,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791283367,
+   "ts": 1791283670,
    "version": "b39a279",
    "procesos": [
     {
@@ -474,24 +474,24 @@
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-06 06:42:38]   SIN RESOLVER: 2026-10-03-TSJ-AS-1081-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-06 06:42:38]     diagnóstico: texto embebido 3524 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1081 Sucre, 20 de octubre de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Luís Fernando García y otros c/ La Empresa Unipersonal \"CONTACTOS AEREOS\". MINISTRO RELATOR: Dr. Eddy Walter ",
-    "[2026-10-06 06:42:38]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1081\\n\\nSucre, 20 de octubre de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Luís Fernando García y otros c/ La Empresa Unipersonal \"CONTACTOS\\nAEREOS\".\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiér",
-    "[2026-10-06 06:42:38]     fechas con formato de fecha halladas en el texto: ['26 de noviembre de 2004', '29 de diciembre de 1992', '26 de noviembre de 2004', '04/10/2026']",
-    "[2026-10-06 06:42:42]   SIN RESOLVER: 2026-10-03-TSJ-AS-1082-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-06 06:42:42]     diagnóstico: texto embebido 3606 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1082 Sucre, 20 de octubre de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: David Alfredo Gutiérrez Bolívar c/ Radio \"Chacaltaya\". MINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.",
-    "[2026-10-06 06:42:42]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1082\\n\\nSucre, 20 de octubre de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: David Alfredo Gutiérrez Bolívar c/ Radio \"Chacaltaya\".\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++++++++++++",
-    "[2026-10-06 06:42:42]     fechas con formato de fecha halladas en el texto: ['10 de diciembre de 2004', '17 de diciembre de\\n2003', '10 de diciembre de 2004', '17 de diciembre de 2003', '04/10/2026']",
-    "[2026-10-06 06:42:46]   SIN RESOLVER: 2026-10-03-TSJ-AS-1083-SCA2.pdf -> fecha no reconocida",
-    "[2026-10-06 06:42:46]     diagnóstico: texto embebido 3355 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1083 Sucre, 20 de octubre de 2.006 DISTRITO: Santa Cruz PROCESO: Social. PARTES: Adolfo Ustarez Ferreyra c/ Petrona Patricia Suárez Vaca. MINISTRO RELATOR: Dr. Eddy Walter Fernández Guti",
-    "[2026-10-06 06:42:46]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1083\\n\\nSucre, 20 de octubre de 2.006\\n\\nDISTRITO: Santa Cruz PROCESO: Social.\\n\\nPARTES: Adolfo Ustarez Ferreyra c/ Petrona Patricia Suárez Vaca.\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez.\\n\\n+++++++",
-    "[2026-10-06 06:42:46]     fechas con formato de fecha halladas en el texto: ['15 de febrero de 2005', '15 de noviembre de 2004', '15 de\\nfebrero de 2005', '15 de febrero de 2005', '04/10/2026']"
+    "[2026-10-06 06:47:43]   SIN RESOLVER: 2026-10-03-TSJ-AS-1155-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-06 06:47:43]     diagnóstico: texto embebido 3545 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1155 Sucre, 10 de noviembre de 2.006 DISTRITO: Potosí PROCESO: Social. PARTES: Raúl Tinuco Gonzáles c/ Empresa Constructora \"IASA\" Ltda.. MINISTRO RELATOR: Dr. Juan José González Osio. +",
+    "[2026-10-06 06:47:43]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1155\\n\\nSucre, 10 de noviembre de 2.006\\n\\nDISTRITO: Potosí PROCESO: Social.\\n\\nPARTES: Raúl Tinuco Gonzáles c/ Empresa Constructora \"IASA\" Ltda..\\n\\nMINISTRO RELATOR: Dr. Juan José González Osio.\\n\\n+++++++++++++++",
+    "[2026-10-06 06:47:43]     fechas con formato de fecha halladas en el texto: ['28 de mayo de 2005', '7 de abril de 2005', '28 de mayo de 2005', '29 de\\ndiciembre de 1992', '16 de febrero de 1979']",
+    "[2026-10-06 06:47:46]   SIN RESOLVER: 2026-10-03-TSJ-AS-1156-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-06 06:47:46]     diagnóstico: texto embebido 3294 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1156 Sucre, 10 de noviembre de 2.006 DISTRITO: Santa Cruz PROCESO: Social. PARTES: Miguel Ángel Vargas Román c/ Colegio Particular Santo Tomás de Aquino. MINISTRO RELATOR: Dr. Juan José ",
+    "[2026-10-06 06:47:46]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1156\\n\\nSucre, 10 de noviembre de 2.006\\n\\nDISTRITO: Santa Cruz PROCESO: Social.\\n\\nPARTES: Miguel Ángel Vargas Román c/ Colegio Particular Santo Tomás de Aquino.\\n\\nMINISTRO RELATOR: Dr. Juan José González Osio.\\n\\",
+    "[2026-10-06 06:47:46]     fechas con formato de fecha halladas en el texto: ['28 de abril de 2005', '13 de enero de\\n2005', '15 de febrero de 2005', '29 de diciembre de\\n1992', '28 de abril de 2005']",
+    "[2026-10-06 06:47:50]   SIN RESOLVER: 2026-10-03-TSJ-AS-1157-SCA2.pdf -> fecha no reconocida",
+    "[2026-10-06 06:47:50]     diagnóstico: texto embebido 3207 car.; inicio: 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1157 Sucre, 10 de noviembre de 2.006 DISTRITO: La Paz PROCESO: Social. PARTES: Cristina Blanco Condori c/ Snack \"Giros Paladar\". MINISTRO RELATOR: Dr. Juan José González Osio. ++++++++++",
+    "[2026-10-06 06:47:50]     crudo (400 car.): 'SALA SOCIAL Y ADM. II. AUTO SUPREMO: Nº 1157\\n\\nSucre, 10 de noviembre de 2.006\\n\\nDISTRITO: La Paz PROCESO: Social.\\n\\nPARTES: Cristina Blanco Condori c/ Snack \"Giros Paladar\".\\n\\nMINISTRO RELATOR: Dr. Juan José González Osio.\\n\\n++++++++++++++++++++++++",
+    "[2026-10-06 06:47:50]     fechas con formato de fecha halladas en el texto: ['26 de\\nnoviembre de 2003', '29 de\\ndiciembre de 1992', '2 de marzo de 1988', '04/10/2026']"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791283353,
+   "ts": 1791283684,
    "version": "b39a279",
    "procesos": [],
    "orden": {
@@ -508,7 +508,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1791283317,
+   "ts": 1791283645,
    "version": "b39a279",
    "procesos": [],
    "orden": {
@@ -538,16 +538,16 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791283321,
+   "ts": 1791283683,
    "version": "b39a279",
    "procesos": [],
    "orden": {
-    "seq": 1791283314493,
-    "accion": "actualizar",
-    "gestion": "0000",
+    "seq": 1791283480838,
+    "accion": "retirar_vacia",
+    "gestion": "2020",
     "ok": true,
-    "mensaje": "Scripts actualizados a b39a279.",
-    "ts": 1791283317
+    "mensaje": "Gestión 2020 sin PDFs retirada de este equipo (movida a Compilacion/_retiradas).",
+    "ts": 1791283484
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -568,16 +568,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791283321,
+   "ts": 1791283680,
    "version": "b39a279",
    "procesos": [],
    "orden": {
-    "seq": 1791283315498,
-    "accion": "actualizar",
-    "gestion": "0000",
+    "seq": 1791283481948,
+    "accion": "retirar_vacia",
+    "gestion": "2019",
     "ok": true,
-    "mensaje": "Scripts actualizados a b39a279.",
-    "ts": 1791283321
+    "mensaje": "Gestión 2019 sin PDFs retirada de este equipo (movida a Compilacion/_retiradas).",
+    "ts": 1791283484
    },
    "gestiones": {},
    "ultimas_lineas": [
