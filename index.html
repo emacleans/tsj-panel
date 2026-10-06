@@ -1541,7 +1541,7 @@ function renderTcp() {
   let ord = '';
   if (TCPPEND) {
     const e = equipos.find(x => x.id === TCPPEND.eid), r = e && e.orden && e.orden.seq === TCPPEND.seq ? e.orden : null;
-    ord = r ? `<div class="g-orden ${r.ok ? 'ok' : 'mal'}">${r.ok ? '✓' : '✗'} ${esc(TCP_NOMBRE[TCPPEND.accion] || TCPPEND.accion)} en ${esc(e.nombre)}: ${esc(r.mensaje).replace(/(http:\/\/[\d.]+:\d+)/, '<a href="$1" target="_blank">$1</a>')}</div>`
+    ord = r ? `<div class="g-orden ${r.ok ? 'ok' : 'mal'}">${r.ok ? '✓' : '✗'} ${esc(TCP_NOMBRE[TCPPEND.accion] || TCPPEND.accion)} en ${esc(e.nombre)}: ${esc(r.mensaje).replace(/(http:\/\/[\w.\-]+:\d+)/, '<a href="$1" target="_blank">$1</a>')}</div>`
       : `<div class="g-orden">⏳ Orden enviada a ${esc(e ? e.nombre : TCPPEND.eid)} (${esc(TCP_NOMBRE[TCPPEND.accion] || TCPPEND.accion)})${e && !enLinea(e) ? ' — el equipo está desconectado; se ejecutará al reconectarse (máx. 30 min).' : ' — esperando respuesta…'}</div>`;
   }
   const dis = TCPENVIANDO ? ' disabled' : '';
