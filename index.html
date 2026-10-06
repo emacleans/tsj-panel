@@ -1506,10 +1506,18 @@ function renderTcp() {
     TCPSEL.eid = pref ? pref.id : null;
   }
   if (!TCPSEL.gestion || !ag.lista.some(x => x.k === TCPSEL.base + ':' + TCPSEL.gestion)) TCPSEL.gestion = tcpSiguiente(ag, TCPSEL.base) || (TCPSEL.base === '2' ? '2026' : '2011');
+  // «Ejecutar en» se limita a los equipos que tienen descargada esa gestión (ahí están sus archivos); si ninguno la tiene aún, se ofrecen todos
+  const kSel = TCPSEL.base + ':' + TCPSEL.gestion;
+  const duenos = equipos.filter(e => { const v = e.tcp && e.tcp.disponible && e.tcp.por && e.tcp.por[kSel]; return v && (v[1] + v[2] + v[3] + v[5]) > 0; });
+  if (duenos.length && !duenos.some(e => e.id === TCPSEL.eid)) {
+    const vivo = e => ((e.tcp && e.tcp.procesos) || []).some(p => p.tipo === 'tcp_compilacion' && String(p.gestion) === TCPSEL.gestion && String(p.base) === TCPSEL.base);
+    const mejor = duenos.slice().sort((x, y) => (vivo(y) - vivo(x)) || (enLinea(y) - enLinea(x)) || ((y.tcp.por[kSel][1] + y.tcp.por[kSel][3]) - (x.tcp.por[kSel][1] + x.tcp.por[kSel][3])))[0];
+    TCPSEL.eid = mejor.id;
+  }
   const pend = ag.total - ag.hechos, ritmoH = ag.ritmo * 60;
   const eta = ritmoH > 0 ? ` · término estimado en ${fmtDur(pend / ritmoH * 3600)}` : '';
   const eSel = equipos.find(e => e.id === TCPSEL.eid);
-  const selEq = equipos.map(e => `<option value="${esc(e.id)}"${e.id === TCPSEL.eid ? ' selected' : ''}>${esc(e.nombre)}${enLinea(e) ? '' : ' (desconectado)'}${e.tcp && e.tcp.disponible ? '' : ' · sin módulo TCP'}</option>`).join('');
+  const selEq = (duenos.length ? duenos : equipos).map(e => `<option value="${esc(e.id)}"${e.id === TCPSEL.eid ? ' selected' : ''}>${esc(e.nombre)}${enLinea(e) ? '' : ' (desconectado)'}${e.tcp && e.tcp.disponible ? '' : ' · sin módulo TCP'}</option>`).join('');
   const gests = ag.lista.filter(x => x.k.startsWith(TCPSEL.base + ':'));
   const selG = gests.map(x => { const g = x.k.split(':')[1]; return `<option value="${g}"${g === TCPSEL.gestion ? ' selected' : ''}>${g} (${tcpNum(x.hechos)}/${tcpNum(x.total)})</option>`; }).join('');
   const kpi = (n, t) => `<div><b>${n}</b><span>${t}</span></div>`;
