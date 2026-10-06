@@ -1,5 +1,5 @@
 {
- "ts": 1791291994,
+ "ts": 1791292299,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791291986,
+   "actualizado_ts": 1791292287,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791291986,
+   "actualizado_ts": 1791292287,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791291939,
+   "actualizado_ts": 1791292271,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791291930,
+   "actualizado_ts": 1791292258,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791291986,
+   "actualizado_ts": 1791292287,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791291983,
+   "actualizado_ts": 1791292290,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791291983,
+   "actualizado_ts": 1791292290,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1791291947,
+   "actualizado_ts": 1791292258,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791291983,
+   "actualizado_ts": 1791292290,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1791291939,
+   "actualizado_ts": 1791292271,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791291983,
+   "actualizado_ts": 1791292290,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791291930,
+   "actualizado_ts": 1791292258,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791291983,
+   "actualizado_ts": 1791292290,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.5,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791291983,
+   "actualizado_ts": 1791292290,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 98.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791291983,
+   "actualizado_ts": 1791292290,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 97.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791291930,
+   "actualizado_ts": 1791292258,
    "viejo": false
   }
  ],
@@ -390,7 +390,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1791291939,
+   "ts": 1791292271,
    "version": "74d4792",
    "procesos": [],
    "orden": {
@@ -420,7 +420,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791291930,
+   "ts": 1791292247,
    "version": "74d4792",
    "procesos": [],
    "orden": {
@@ -437,7 +437,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791291933,
+   "ts": 1791292247,
    "version": "74d4792",
    "procesos": [],
    "orden": {
@@ -454,9 +454,22 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791291983,
+   "ts": 1791292290,
    "version": "74d4792",
-   "procesos": [],
+   "procesos": [
+    {
+     "pid": 66609,
+     "tipo": "barrido",
+     "gestion": "2002",
+     "inicio_ts": 1791292205
+    },
+    {
+     "pid": 66621,
+     "tipo": "correccion",
+     "gestion": "2002",
+     "inicio_ts": 1791292205
+    }
+   ],
    "orden": {
     "seq": 1791289500715,
     "accion": "actualizar",
@@ -467,24 +480,24 @@
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-06 08:06:07]     fechas con formato de fecha halladas en el texto: ['28 de septiembre de\\n2006', '28 de septiembre de\\n2006', '04/10/2026']",
-    "[2026-10-06 08:06:09]   SIN RESOLVER: 2026-10-04-TSJ-SINID-_SCA2_89-SCA2.pdf -> fecha no reconocida; sin numero de AS ni de Expediente reconocible",
-    "[2026-10-06 08:06:09]     diagnóstico: texto embebido 1631 car.; inicio: 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA AUTO SUPREMO COMPLEMENTARIO A 88 Sucre, 10 de enero de 2.006 DISTRITO: Oruro PROCESO: Social PARTES: Gonzalo Guzmán Antezana c/ Ministerio de Trabajo MINISTRO RELATOR: Dr. Eddy Walter Ferná",
-    "[2026-10-06 08:06:09]     crudo (400 car.): 'SALA SOCIAL Y ADMINISTRATIVA SEGUNDA\\n\\nAUTO SUPREMO COMPLEMENTARIO A 88\\n\\nSucre, 10 de enero de 2.006\\n\\nDISTRITO: Oruro PROCESO: Social\\n\\nPARTES: Gonzalo Guzmán Antezana c/ Ministerio de Trabajo\\n\\nMINISTRO RELATOR: Dr. Eddy Walter Fernández Gutiérrez",
-    "[2026-10-06 08:06:09]     fechas con formato de fecha halladas en el texto: ['16 de diciembre de 2005', '5 de noviembre de 1965', '31 de octubre\\nde 1967', '23 de agosto de 1943', '27 de octubre de 1999']",
-    "[2026-10-06 08:06:09]",
-    "[2026-10-06 08:06:09] === RESUMEN ===",
-    "[2026-10-06 08:06:09] Resueltos y migrados a su Sala: 0 (de los cuales 0 necesitaron OCR)",
-    "[2026-10-06 08:06:09] Conflictos dejados en _revisar como POSIBLE-DUPLICADO: 0",
-    "[2026-10-06 08:06:09] Apartados a _revisar/_no_AS (no son Auto Supremo o llegaron en blanco): 0",
-    "[2026-10-06 08:06:09] Siguen sin poder identificarse (quedan en _revisar tal cual): 1455",
-    "[2026-10-06 08:06:09] (--dry-run: no se movio ni escribio nada todavia; corre sin --dry-run para aplicarlo de verdad)"
+    "[2026-10-06 09:11:17]   SIN RESOLVER: 2026-10-04-TSJ-AS-16-SPL.pdf -> fecha no reconocida",
+    "[2026-10-06 09:11:17]     diagnóstico: texto embebido 2869 car.; inicio: 'SALA PLENA AUTO SUPREMO: N° 16/2002 6 de febrero de 2002 EXP.: N° 181/2001 PROCESO : Conflicto de Competencia DISTRITO : Tarija PARTES: Juzgado Ordinario de Partido de Yacuiba c/ Juzgado Agrario deVillamontes dentro del proces",
+    "[2026-10-06 09:11:17]     crudo (400 car.): 'SALA PLENA\\n\\nAUTO SUPREMO: N° 16/2002 6 de febrero de 2002 EXP.: N° 181/2001\\n\\nPROCESO : Conflicto de Competencia\\n\\nDISTRITO : Tarija\\n\\nPARTES: Juzgado Ordinario de Partido de Yacuiba c/ Juzgado Agrario deVillamontes\\ndentro del proceso interpuesto po",
+    "[2026-10-06 09:11:17]     fechas con formato de fecha halladas en el texto: ['6 de febrero de 2002', '04/10/2026']",
+    "[2026-10-06 09:11:21]   SIN RESOLVER: 2026-10-04-TSJ-AS-17-SPL.pdf -> fecha no reconocida",
+    "[2026-10-06 09:11:21]     diagnóstico: texto embebido 3272 car.; inicio: 'SALA PLENA AUTO SUPREMO: N° 17/2002 27 de febrero de 2002 EXP.: N° 96/2001 PROCESO : Detención Preventiva con fines de Extradición DISTRITO : Santa Cruz PARTES : Embajada Argentina c/ Guillermo Antonio Gómez Augier RELATOR : V",
+    "[2026-10-06 09:11:21]     crudo (400 car.): 'SALA PLENA\\n\\nAUTO SUPREMO: N° 17/2002 27 de febrero de 2002 EXP.: N° 96/2001\\n\\nPROCESO : Detención Preventiva con fines de Extradición\\n\\nDISTRITO : Santa Cruz\\n\\nPARTES : Embajada Argentina c/ Guillermo Antonio Gómez Augier\\n\\nRELATOR :\\n\\n\\n\\n\\nVISTOS",
+    "[2026-10-06 09:11:21]     fechas con formato de fecha halladas en el texto: ['27 de febrero de 2002', '14 de mayo de 2001', '17 de abril de 2001', '04/10/2026']",
+    "[2026-10-06 09:11:24]   SIN RESOLVER: 2026-10-04-TSJ-AS-18-SPL.pdf -> fecha no reconocida",
+    "[2026-10-06 09:11:24]     diagnóstico: texto embebido 2968 car.; inicio: 'SALA PLENA AUTO SUPREMO: N° 18/2002 27 de febrero de 2002 EXP.: N° 107/2001 PROCESO : Detención Preventiva con fines de Extradición DISTRITO : PARTES: Embajada Argentina (Enzo Ernesto Rostán) c/ María FlorenciaGómez y el menor",
+    "[2026-10-06 09:11:24]     crudo (400 car.): 'SALA PLENA\\n\\nAUTO SUPREMO: N° 18/2002 27 de febrero de 2002 EXP.: N° 107/2001\\n\\nPROCESO : Detención Preventiva con fines de Extradición\\n\\nDISTRITO :\\n\\nPARTES: Embajada Argentina (Enzo Ernesto Rostán) c/ María FlorenciaGómez y el menor\\nGeo Lucas Rostá",
+    "[2026-10-06 09:11:24]     fechas con formato de fecha halladas en el texto: ['27 de febrero de 2002', '24 de agosto de 2001', '23 de enero de 1889', '04/10/2026']"
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791291986,
+   "ts": 1791292287,
    "version": "74d4792",
    "procesos": [],
    "orden": {
@@ -497,18 +510,18 @@
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "Identificados solo gracias al respaldo de OCR (no tenían ninguna capa de texto): 0",
-    "Siguen siendo EXP- (sin numero de AS reconocible): 0",
-    "   de ellos: dicen «Auto Supremo» pero no se lee el número (revisar a mano): 0",
-    "   de ellos: sin texto legible ni siquiera con OCR (escaneos ilegibles, revisar a mano): 0",
-    "Huérfanos de _revisar revisados (pareja ya renombrada): 0",
-    "Huérfanos resueltos y migrados a su Sala: 0",
-    "--- cotejo_auto.py ---",
-    "cotejo_auto: gestión 2022, 0 par(es) en _revisar (aplicando)",
-    "RESUMEN gestión 2022: pares 0, resueltos automáticamente 0, para cotejo manual 0",
-    "Barrido de 2022 registrado (v8). Se lanzará sola la auditoría de esta gestión.",
-    "=== RESUMEN DEL BARRIDO GENERAL ===",
-    "  2022: completo"
+    "[2026-10-06 09:07:14] AUDITORÍA Sala Contenciosa Primera  : 943 filas leídas del sitio.",
+    "[2026-10-06 09:07:19] AUDITORÍA Sala Contenciosa Segunda  : 313 filas leídas del sitio.",
+    "[2026-10-06 09:07:19] AUDITORÍA Sala Penal                : sitio 1859 filas (1858 AS distintos, 1 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-06 09:07:19] AUDITORÍA Sala Civil                : sitio 985 filas (984 AS distintos, 1 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-06 09:07:19] AUDITORÍA Sala Plena                : sitio 242 filas (233 AS distintos, 9 repetidos, 1 sin número legible) | sin archivo 3, de ellas 3 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-06 09:07:19] AUDITORÍA Sala Contenciosa Primera  : sitio 943 filas (788 AS distintos, 155 repetidos, 20 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-06 09:07:19] AUDITORÍA Sala Contenciosa Segunda  : sitio 313 filas (313 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-06 09:07:19] CONCLUSIÓN: antes de cerrar 2022 hay 1 cosa(s) por resolver:",
+    "[2026-10-06 09:07:19]   1) Hay 2 documento(s) en «_revisar/_no_AS» (Decretos, Resoluciones, PDF en blanco…) que el programa apartó porque no parecen Autos Supremos y que aún no has revisado. Ejemplo: 2022-03-23-TSJ-EXP-03-2022-SPL.pdf. Para cada uno, «Confirmar descarte» (de verdad no es un AS) o «E",
+    "[2026-10-06 09:07:19]   Luego repite «Auditar contra el sitio».",
+    "[2026-10-06 09:07:19] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Plena 2.",
+    "[2026-10-06 09:07:19] Detalle en /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2022/_faltantes.csv y /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2022/_auditoria.json."
    ]
   },
   {
@@ -544,7 +557,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791291930,
+   "ts": 1791292258,
    "version": "74d4792",
    "procesos": [],
    "orden": {
@@ -574,7 +587,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1791291947,
+   "ts": 1791292258,
    "version": "74d4792",
    "procesos": [],
    "orden": {
@@ -587,18 +600,18 @@
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-05 21:34:16] AUDITORÍA Sala Civil 2              : sitio 109 filas (109 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 21:34:16] AUDITORÍA Sala Penal 2              : sitio 489 filas (489 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-05 21:34:16]   DETALLE SOBRANTES Sala Contenciosa Segunda: AS 21 (2 archivos / 1 filas); AS 22 (2 archivos / 1 filas); AS 36 (2 archivos / 1 filas)",
-    "[2026-10-05 21:34:16]   DETALLE SOBRANTES Sala Civil 1: AS 8 (2 archivos / 1 filas)",
-    "[2026-10-05 21:34:16] CONCLUSIÓN: antes de cerrar 2009 hay 4 cosa(s) por resolver:",
-    "[2026-10-05 21:34:16]   1) Hay 3 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2026-10-03-TSJ-AS-21-SCA2-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
-    "[2026-10-05 21:34:16]   2) Hay 5 archivo(s) en «_revisar» que el programa no pudo identificar con seguridad (por ejemplo: no se leyó el número o la fecha). Ejemplo: 2009-10-22-TSJ-SINID-_SC1_209-SC1.pdf. El corrector intenta resolverlos solo.",
-    "[2026-10-05 21:34:16]   3) Hay 3 documento(s) en «_revisar/_no_AS» (Decretos, Resoluciones, PDF en blanco…) que el programa apartó porque no parecen Autos Supremos y que aún no has revisado. Ejemplo: 2009-03-16-TSJ-SINID-p_SC1_70-SC1.pdf. Para cada uno, «Confirmar descarte» (de verdad no es un AS) o",
-    "[2026-10-05 21:34:16]   4) 1 archivo(s) en las salas tienen un nombre provisional (empiezan con «EXP-», porque al bajarlos no se leyó el número del Auto Supremo). Esta acción vuelve a leerlos y les pone su nombre definitivo. Los que sean escaneos sin texto necesitarán lectura por reconocimiento ópti",
-    "[2026-10-05 21:34:16]   Luego repite «Auditar contra el sitio».",
-    "[2026-10-05 21:34:16] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Civil 1 3.",
-    "[2026-10-05 21:34:16] Detalle en /Users/emaclean-mmsofi/Documents/TSJ/Compilacion/2009/_faltantes.csv y /Users/emaclean-mmsofi/Documents/TSJ/Compilacion/2009/_auditoria.json."
+    "[2026-10-06 09:09:49] AUDITORÍA Sala Civil 2              : sitio 109 filas (109 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-06 09:09:49] AUDITORÍA Sala Penal 2              : sitio 489 filas (489 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-06 09:09:49]   DETALLE SOBRANTES Sala Contenciosa Segunda: AS 21 (2 archivos / 1 filas); AS 22 (2 archivos / 1 filas); AS 36 (2 archivos / 1 filas)",
+    "[2026-10-06 09:09:49]   DETALLE SOBRANTES Sala Civil 1: AS 8 (2 archivos / 1 filas)",
+    "[2026-10-06 09:09:49] CONCLUSIÓN: antes de cerrar 2009 hay 4 cosa(s) por resolver:",
+    "[2026-10-06 09:09:49]   1) Hay 3 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2026-10-03-TSJ-AS-21-SCA2-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
+    "[2026-10-06 09:09:49]   2) Hay 2 archivo(s) en «_revisar» que el programa no pudo identificar con seguridad (por ejemplo: no se leyó el número o la fecha). Ejemplo: 2026-10-03-TSJ-AS-2-SCA1.pdf. El corrector intenta resolverlos solo.",
+    "[2026-10-06 09:09:49]   3) Hay 3 documento(s) en «_revisar/_no_AS» (Decretos, Resoluciones, PDF en blanco…) que el programa apartó porque no parecen Autos Supremos y que aún no has revisado. Ejemplo: 2009-03-16-TSJ-SINID-p_SC1_70-SC1.pdf. Para cada uno, «Confirmar descarte» (de verdad no es un AS) o",
+    "[2026-10-06 09:09:49]   4) 1 archivo(s) en las salas tienen un nombre provisional (empiezan con «EXP-», porque al bajarlos no se leyó el número del Auto Supremo). Esta acción vuelve a leerlos y les pone su nombre definitivo. Los que sean escaneos sin texto necesitarán lectura por reconocimiento ópti",
+    "[2026-10-06 09:09:49]   Luego repite «Auditar contra el sitio».",
+    "[2026-10-06 09:09:49] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Civil 1 3.",
+    "[2026-10-06 09:09:49] Detalle en /Users/emaclean-mmsofi/Documents/TSJ/Compilacion/2009/_faltantes.csv y /Users/emaclean-mmsofi/Documents/TSJ/Compilacion/2009/_auditoria.json."
    ]
   }
  ]
