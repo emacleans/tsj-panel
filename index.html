@@ -1565,7 +1565,7 @@ function renderTcp() {
     if (corriendo) items.push(item('trabaja', '⏳ Compilando ahora en ' + esc(corriendo.e.nombre) + ' — no tienes que hacer nada', `Faltan ${tcpNum(falta)} documentos${ritmoH ? ' · término estimado en ' + fmtDur(falta / ritmoH * 3600) : ''}.`, ''));
     else if (falta) items.push(item('', `Quedan ${tcpNum(falta)} documentos por descargar${xg.err ? ` (${xg.err} con error, se reintentan)` : ''}`, 'No hay ninguna compilación de esta gestión en marcha. Pulsa para iniciarla o retomarla donde quedó.', bt('tcp_iniciar', '▶ Compilar / reanudar ' + esc(gtxt))));
     if (xg.ocr) items.push(item('', `${xg.ocr} escaneos sin capa de texto`, 'Se convierten en PDF con texto (OCR) conservando el original.', bt('tcp_ocr', 'OCR de escaneos', true)));
-    if (ag.rev + ag.dup) items.push(item('turno', `👉 ${ag.rev + ag.dup} documentos para revisión manual (todas las gestiones)`, 'La mesa de revisión reúne en una sola página los grupos de todos los equipos con acceso: ves el motivo y capturas de cada grupo, escribes tus pautas y pulsas «Aplicar todo». Puedes abrirla desde cualquier equipo; el enlace usa el equipo elegido en «Ejecutar en».', bt('tcp_revisar', 'Abrir mesa de revisión')));
+    /* la mesa de revisión es transversal: tiene su propia tarjeta (arriba), no depende de la gestión ni del equipo elegido */
     if (!falta && !corriendo) items.push(item(xg.ocr || xg.rev + xg.dup ? '' : 'ok', xg.ocr || xg.rev + xg.dup ? 'Descarga completa: falta conciliar' : '✓ Descarga completa', 'Compara lo descargado contra el inventario (no descarga ni borra).', bt('tcp_conciliar', 'Conciliar ' + esc(gtxt), true)));
   }
   const pendHtml = items.join('');
@@ -1576,6 +1576,12 @@ function renderTcp() {
     <div class="t-kpis">${kpi(tcpPct(ag.hechos, ag.total) + ' %', 'avance')}${kpi(tcpNum(ag.hechos), 'descargados y verificados')}${kpi(tcpNum(pend), 'por descargar')}${kpi(tcpNum(ag.ok), 'ok')}${kpi(tcpNum(ag.ocr), 'escaneos (OCR)')}${kpi(tcpNum(ag.rev + ag.dup), 'por revisar')}${kpi(tcpNum(ag.err), 'con error (se reintentan)')}${kpi(ritmoH ? Math.round(ritmoH) + '/h' : '—', 'ritmo ahora' )}</div>
     <div class="t-nota">${ag.total ? '' : 'Aún ningún equipo reportó el inventario del TCP. '}${eta ? 'Ritmo actual' + eta + '.' : 'Sin descargas en la última hora.'}</div>
     <div class="t-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:6px">${baseCard('2', ag.b2)}${baseCard('1', ag.b1)}</div>
+  </section>
+  <section class="tarjeta"><h2>Mesa de revisión</h2>
+    <div class="res-sub" style="margin-top:0">${tcpNum(ag.rev + ag.dup)} documentos en revisión en todas las gestiones y equipos</div>
+    <div class="t-nota">Una sola página para todos los casos en revisión: ves el motivo y capturas de cada grupo, escribes tus pautas y pulsas «Aplicar todo». No depende de la gestión ni del equipo que elijas abajo.</div>
+    <div class="t-btns" style="margin-top:8px"><button type="button" class="g-btn" data-mesa-abrir="1">Abrir mesa de revisión</button></div>
+    <div class="t-nota" id="mesa-alt">${mesaAlternativas()}</div>
   </section>
   <section class="tarjeta"><h2>Acciones pendientes</h2>
     <div class="t-ctrl">
@@ -1604,6 +1610,30 @@ function renderTcp() {
   setHtmlKeep(cont, html);
 }
 
+// ---- mesa de revisión: transversal (no depende de gestión ni de equipo elegido) ----
+function equiposMesa() {
+  // equipos en línea cuyo agente ya trae la mesa (publica la lista de grupos); primero los que tienen Tailscale
+  const l = equipos.filter(e => enLinea(e) && e.tcp && e.tcp.revision && Array.isArray(e.tcp.revision.fam) && e.red && (e.red.tailscale || e.red.lan));
+  return l.sort((a, b) => (b.red.tailscale ? 1 : 0) - (a.red.tailscale ? 1 : 0));
+}
+const urlMesa = e => 'http://' + (e.red.tailscale || e.red.lan) + ':8751/';
+function mesaAlternativas() {
+  const l = equiposMesa();
+  if (!l.length) return 'Ningún equipo en línea trae todavía la mesa (se instala sola con la actualización de los agentes).';
+  return 'También puedes abrirla desde: ' + l.map(e => `<a href="${urlMesa(e)}" target="_blank" title="${e.red.tailscale ? 'por Tailscale' : 'solo desde la misma red local'}">${esc(e.nombre.split(' (')[0])}${e.red.tailscale ? '' : ' (red local)'}</a>`).join(' · ');
+}
+async function abrirMesa() {
+  const w = window.open('', '_blank');
+  let url = null;
+  try {   // si este mismo equipo tiene la mesa, es lo más directo
+    const c = new AbortController(); setTimeout(() => c.abort(), 1500);
+    const r = await fetch('http://localhost:8751/api/estado?local=1', { signal: c.signal });
+    if (r.ok) url = 'http://localhost:8751/';
+  } catch (e) { /* no hay mesa local (o el navegador bloquea localhost): se usa otro equipo */ }
+  if (!url) { const e = equiposMesa()[0]; if (e) url = urlMesa(e); }
+  if (url && w) w.location = url;
+  else { if (w) w.close(); alert(url ? 'Tu navegador bloqueó la ventana: usa uno de los enlaces de abajo.' : 'Ningún equipo en línea trae todavía la mesa de revisión. Espera a que se actualicen los agentes (unos minutos).'); }
+}
 async function enviarOrdenTcp(accion, pid) {
   const e = equipos.find(x => x.id === TCPSEL.eid);
   if (!e) { alert('No hay equipo destino.'); return; }
@@ -1643,6 +1673,7 @@ $('main-tcp').addEventListener('change', ev => {
   renderTcp();
 });
 $('main-tcp').addEventListener('click', ev => {
+  if (ev.target.closest('[data-mesa-abrir]')) { abrirMesa(); return; }
   const f = ev.target.closest('[data-tcp-fila]'), a = ev.target.closest('[data-tcp-accion]'), d = ev.target.closest('[data-tcp-detener]');
   if (d) { TCPSEL.eid = d.dataset.tcpDetener; enviarOrdenTcp('tcp_detener', Number(d.dataset.pid)); return; }
   if (a) { enviarOrdenTcp(a.dataset.tcpAccion); return; }
