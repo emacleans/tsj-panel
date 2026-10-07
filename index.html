@@ -1435,7 +1435,7 @@ setInterval(() => { if (equipos.length) { renderGuia(); renderEquipos(); renderA
 // ======================= Pestaña TCP (Tribunal Constitucional / Plurinacional) =======================
 // Aislada del TSJ: solo LEE e.tcp de cada equipo y envía órdenes con acción «tcp_*». Si algo falla aquí, el TSJ sigue igual.
 const TCP_BASES = { '1': 'Tribunal Constitucional (TC)', '2': 'Tribunal Constitucional Plurinacional (TCP)' };
-const TCP_NOMBRE = { tcp_iniciar: 'Compilar TCP', tcp_reanudar: 'Reanudar TCP', tcp_detener: 'Detener TCP', tcp_conciliar: 'Conciliación TCP', tcp_ocr: 'OCR de escaneos TCP', tcp_revisar: 'Pantalla de revisión TCP' };
+const TCP_NOMBRE = { tcp_iniciar: 'Compilar TCP', tcp_reanudar: 'Reanudar TCP', tcp_detener: 'Detener TCP', tcp_conciliar: 'Conciliación TCP', tcp_ocr: 'OCR de escaneos TCP', tcp_revisar: 'Mesa de revisión TCP' };
 const TCP_ETQ = { tcp_compilacion: 'Compilando', tcp_conciliacion: 'Conciliando', tcp_ocr: 'OCR', tcp_revision: 'Revisión' };
 const TCPSEL = { eid: null, base: '2', gestion: null };
 let TCPPEND = null, TCPENVIANDO = false;
@@ -1565,7 +1565,7 @@ function renderTcp() {
     if (corriendo) items.push(item('trabaja', '⏳ Compilando ahora en ' + esc(corriendo.e.nombre) + ' — no tienes que hacer nada', `Faltan ${tcpNum(falta)} documentos${ritmoH ? ' · término estimado en ' + fmtDur(falta / ritmoH * 3600) : ''}.`, ''));
     else if (falta) items.push(item('', `Quedan ${tcpNum(falta)} documentos por descargar${xg.err ? ` (${xg.err} con error, se reintentan)` : ''}`, 'No hay ninguna compilación de esta gestión en marcha. Pulsa para iniciarla o retomarla donde quedó.', bt('tcp_iniciar', '▶ Compilar / reanudar ' + esc(gtxt))));
     if (xg.ocr) items.push(item('', `${xg.ocr} escaneos sin capa de texto`, 'Se convierten en PDF con texto (OCR) conservando el original.', bt('tcp_ocr', 'OCR de escaneos', true)));
-    if (xg.rev + xg.dup) items.push(item('turno', `👉 ${xg.rev + xg.dup} documentos para revisión manual`, 'Revisas un documento por familia y das una pauta: se aplica a todos los análogos, en todos los equipos. La pantalla se abre en el equipo elegido en «Ejecutar en» y muestra los documentos de ese equipo.', bt('tcp_revisar', 'Abrir pantalla de revisión')));
+    if (ag.rev + ag.dup) items.push(item('turno', `👉 ${ag.rev + ag.dup} documentos para revisión manual (todas las gestiones)`, 'La mesa de revisión reúne en una sola página los grupos de todos los equipos con acceso: ves el motivo y capturas de cada grupo, escribes tus pautas y pulsas «Aplicar todo». Puedes abrirla desde cualquier equipo; el enlace usa el equipo elegido en «Ejecutar en».', bt('tcp_revisar', 'Abrir mesa de revisión')));
     if (!falta && !corriendo) items.push(item(xg.ocr || xg.rev + xg.dup ? '' : 'ok', xg.ocr || xg.rev + xg.dup ? 'Descarga completa: falta conciliar' : '✓ Descarga completa', 'Compara lo descargado contra el inventario (no descarga ni borra).', bt('tcp_conciliar', 'Conciliar ' + esc(gtxt), true)));
   }
   const pendHtml = items.join('');
