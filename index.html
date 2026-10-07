@@ -1004,8 +1004,8 @@ async function abrirMesaTsj() {
   let url = null;
   try {
     const c = new AbortController(); setTimeout(() => c.abort(), 1500);
-    const r = await fetch('http://localhost:8752/api/estado?local=1', { signal: c.signal });
-    if (r.ok) url = 'http://localhost:8752/';
+    await fetch('http://localhost:8752/api/estado?local=1', { signal: c.signal, mode: 'no-cors' });   // «no-cors»: desde github.io el navegador no deja LEER la respuesta, pero si la mesa local contesta (no lanza error) basta
+    url = 'http://localhost:8752/';
   } catch (e) { /* sin mesa local: se usa otro equipo */ }
   if (!url) { const e = equiposMesaTsj()[0]; if (e) url = urlMesaTsj(e); }
   if (url && w) w.location = url;
@@ -1685,8 +1685,8 @@ async function abrirMesa() {
   let url = null;
   try {   // si este mismo equipo tiene la mesa, es lo más directo
     const c = new AbortController(); setTimeout(() => c.abort(), 1500);
-    const r = await fetch('http://localhost:8751/api/estado?local=1', { signal: c.signal });
-    if (r.ok) url = 'http://localhost:8751/';
+    await fetch('http://localhost:8751/api/estado?local=1', { signal: c.signal, mode: 'no-cors' });   // «no-cors»: desde github.io el navegador no deja LEER la respuesta, pero si la mesa local contesta (no lanza error) basta
+    url = 'http://localhost:8751/';
   } catch (e) { /* no hay mesa local (o el navegador bloquea localhost): se usa otro equipo */ }
   if (!url) { const e = equiposMesa()[0]; if (e) url = urlMesa(e); }
   if (url && w) w.location = url;
