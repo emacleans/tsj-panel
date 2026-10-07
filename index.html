@@ -987,7 +987,7 @@ function avisoListo(st) {
   const t = document.title.replace(/^✅ /, ''); document.title = (st.listo ? '✅ ' : '') + t;
 }
 // ¿Se puede revisar? Reglas de Enrique programadas por Claude + corrección ya bajada en cada equipo en línea (misma versión de reglas y de código)
-function veredictoMesa(getL) {
+function veredictoMesa(getL, clave) {
   const en = equipos.filter(enLinea), raz = [];
   const sin = en.filter(e => !getL(e)).map(e => e.nombre.split(' (')[0]);
   if (sin.length) raz.push('estos equipos aún no traen la última versión: ' + sin.join(', '));
@@ -997,19 +997,40 @@ function veredictoMesa(getL) {
   const mal = con.filter(x => !x.l.codigo_ok).map(x => x.e.nombre.split(' (')[0]);
   if (mal.length) raz.push('la corrección aún está llegando a: ' + mal.join(', '));
   if (new Set(con.map(x => x.l.v)).size > 1) raz.push('los equipos tienen versiones distintas de las reglas (se están actualizando)');
-  return { ok: !raz.length && en.length > 0, razones: raz };
+  // avance de la actualización: equipos que ya traen la misma versión que IPE02 (la que origina los cambios) y su corrección
+  const ref = con.find(x => x.e.id === 'ipe02') || con[0], vref = ref ? ref.l.v : null;
+  const done = con.filter(x => x.l.codigo_ok && x.l.v === vref).length, total = en.length, pct = total ? Math.round(done * 100 / total) : 0;
+  const ok = !raz.length && en.length > 0;
+  let eta = '';
+  try {
+    const k = 'mesa_act_' + (clave || 'x'), now = Date.now();
+    let st = JSON.parse(sessionStorage.getItem(k) || 'null');
+    if (ok) { sessionStorage.removeItem(k); }
+    else {
+      if (!st || done < st.done0) st = { t0: now, done0: done };
+      sessionStorage.setItem(k, JSON.stringify(st));
+      const gan = done - st.done0;
+      if (gan > 0) { const rest = Math.max(1, Math.round(((now - st.t0) / gan) * (total - done) / 60000)); eta = '~' + rest + ' min'; }
+      else eta = 'entre 5 y 10 min (estimación inicial: cada equipo baja los cambios en su propio ciclo)';
+    }
+  } catch (e) { eta = 'entre 5 y 10 min'; }
+  return { ok, razones: raz, done, total, pct, eta, pendRegla: pend };
+}
+function barraAvance(v) {
+  if (v.ok || !v.total) return '';
+  return `<div style="margin:6px 0 2px"><b>Actualizando equipos: ${v.done} de ${v.total} (${v.pct} %)</b> · tiempo estimado: ${esc(v.eta)}<div style="height:8px;background:#f0dcc0;border-radius:5px;margin-top:4px"><div style="height:8px;width:${v.pct}%;background:#b45309;border-radius:5px"></div></div></div>`;
 }
 function renderMesaTsj() {
   const box = $('mesa-tsj'); if (!box) return;
   const l = equiposMesaTsj(), total = equipos.reduce((n, e) => n + ((e.mesa && e.mesa.total) || 0), 0);
   const alt = l.length ? 'También puedes abrirla desde: ' + l.map(e => `<a href="${urlMesaTsj(e)}" target="_blank" title="${e.red.tailscale ? 'por Tailscale' : 'solo desde la misma red local'}">${esc(e.nombre.split(' (')[0])}${e.red.tailscale ? '' : ' (red local)'}</a>`).join(' · ') : 'Ningún equipo en línea trae todavía la mesa (se instala sola con la actualización de los agentes).';
-  const st = estadoRevisionManual(); const vm = veredictoMesa(e => e.mesa && e.mesa.listo); st.listo = st.listo && vm.ok; st.razonesMesa = vm.razones; avisoListo(st);
+  const st = estadoRevisionManual(); const vm = veredictoMesa(e => e.mesa && e.mesa.listo, 'tsj'); st.listo = st.listo && vm.ok; st.razonesMesa = vm.razones; st.barraMesa = barraAvance(vm); avisoListo(st);
   const ban = st.listo
     ? `<div class="t-nota" style="background:#e6f4ea;border:1px solid #1e7e34;padding:8px 10px;border-radius:6px"><b style="color:#1e7e34">✅ Todo actualizado: ya puedes revisar a mano.</b> Los ${st.nEn} equipos en línea terminaron el barrido y la auditoría.${st.offPend.length ? ' <b>Ojo:</b> ' + esc(st.offPend.join(', ')) + ' está sin conexión con trabajo pendiente; sus casos aparecerán al reconectar.' : ''}</div>`
-    : `<div class="t-nota" style="background:#fff7e6;border:1px solid #b45309;padding:8px 10px;border-radius:6px"><b style="color:#b45309">⏳ Todavía NO puedes revisar.</b> ${st.razonesMesa && st.razonesMesa.length ? esc(st.razonesMesa.join(' · ')) + '. ' : ''}${st.desact ? 'Hay equipos con versiones distintas del programa (se están actualizando). ' : ''}${st.bloq.map(b => esc(b.n) + ': ' + (b.pend ? b.pend + ' gestión(es) por barrer' : '') + (b.ocupado ? (b.pend ? ', ' : '') + 'trabajando ahora' : '')).join(' · ')}. Este aviso se vuelve verde y suena cuando termine.${(window.Notification && Notification.permission === 'default') ? ' <button type="button" class="g-btn" data-notif="1">Activar aviso del navegador</button>' : ''}</div>`;
+    : `<div class="t-nota" style="background:#fff7e6;border:1px solid #b45309;padding:8px 10px;border-radius:6px"><b style="color:#b45309">⏳ Todavía NO puedes revisar.</b> ${st.razonesMesa && st.razonesMesa.length ? esc(st.razonesMesa.join(' · ')) + '. ' : ''}${st.barraMesa || ''}${st.desact ? 'Hay equipos con versiones distintas del programa (se están actualizando). ' : ''}${st.bloq.map(b => esc(b.n) + ': ' + (b.pend ? b.pend + ' gestión(es) por barrer' : '') + (b.ocupado ? (b.pend ? ', ' : '') + 'trabajando ahora' : '')).join(' · ')}. Este aviso se vuelve verde y suena cuando termine.${(window.Notification && Notification.permission === 'default') ? ' <button type="button" class="g-btn" data-notif="1">Activar aviso del navegador</button>' : ''}</div>`;
   const html = ban + `<h2>Mesa de revisión TSJ</h2><div class="res-sub" style="margin-top:0">${total} casos por revisar a mano según la última auditoría de cada equipo (por identificar, no-AS y AS que el sitio no lista; la mesa suma además los duplicados por cotejar)</div>
     <div class="t-nota">Una sola página para todo lo que impide cerrar una gestión, en todos los equipos: ves el motivo y capturas de cada grupo, decides por grupo o por documento y pulsas «Aplicar todo». Al terminar, la auditoría de cada gestión se lanza sola.</div>
-    <div class="t-btns" style="margin-top:8px"><button type="button" class="g-btn" data-mesa-tsj-abrir="1"${st.listo ? '' : ' disabled title="Todavía no: espera el aviso verde" style="opacity:.45;cursor:not-allowed"'}>${st.listo ? 'Abrir mesa de revisión TSJ' : 'Aún no disponible: espera el aviso verde'}</button></div><div class="t-nota">${alt}</div><div class="t-nota" style="font-size:11px;opacity:.7">Versión del panel: guardia-mesa-1 (si no ves esta línea, recarga con Cmd+Shift+R: estás viendo una versión vieja y el botón no es confiable).</div>`;
+    <div class="t-btns" style="margin-top:8px"><button type="button" class="g-btn" data-mesa-tsj-abrir="1"${st.listo ? '' : ' disabled title="Todavía no: espera el aviso verde" style="opacity:.45;cursor:not-allowed"'}>${st.listo ? 'Abrir mesa de revisión TSJ' : 'Aún no disponible: espera el aviso verde'}</button></div><div class="t-nota">${alt}</div><div class="t-nota" style="font-size:11px;opacity:.7">Versión del panel: guardia-mesa-2 (si no ves esta línea, recarga con Cmd+Shift+R: estás viendo una versión vieja y el botón no es confiable).</div>`;
   if (box.dataset.h !== html) { box.dataset.h = html; box.innerHTML = html; }
 }
 async function abrirMesaTsj() {
@@ -1025,6 +1046,7 @@ async function abrirMesaTsj() {
   if (url && w) w.location = url;
   else { if (w) w.close(); alert(url ? 'Tu navegador bloqueó la ventana: usa uno de los enlaces de abajo.' : 'Ningún equipo en línea trae todavía la mesa. Espera a que se actualicen los agentes (unos minutos).'); }
 }
+setInterval(() => { try { renderMesaTsj(); } catch (e) {} }, 10000);
 document.addEventListener('click', ev => { if (ev.target.closest && ev.target.closest('[data-mesa-tsj-abrir]')) abrirMesaTsj(); if (ev.target.closest && ev.target.closest('[data-notif]')) { try { Notification.requestPermission(); } catch (e) {} } });
 
 function renderGuia() {
@@ -1652,7 +1674,7 @@ function renderTcp() {
   <section class="tarjeta"><h2>Mesa de revisión</h2>
     <div class="res-sub" style="margin-top:0">${tcpNum(ag.rev + ag.dup)} documentos en revisión en todas las gestiones y equipos</div>
     <div class="t-nota">Una sola página para todos los casos en revisión: ves el motivo y capturas de cada grupo, escribes tus pautas y pulsas «Aplicar todo». No depende de la gestión ni del equipo que elijas abajo.</div>
-    <div class="t-btns" style="margin-top:8px">${(() => { const v = veredictoMesa(e => e.tcp && e.tcp.revision && e.tcp.revision.listo); return v.ok ? '<button type="button" class="g-btn" data-mesa-abrir="1">Abrir mesa de revisión</button>' : '<button type="button" class="g-btn" disabled style="opacity:.45;cursor:not-allowed">Aún no disponible</button> <span class="t-nota"><b style="color:#b45309">⏳ Todavía NO puedes revisar:</b> ' + esc(v.razones.join(' · ')) + '.</span>'; })()}</div>
+    <div class="t-btns" style="margin-top:8px">${(() => { const v = veredictoMesa(e => e.tcp && e.tcp.revision && e.tcp.revision.listo, 'tcp'); return v.ok ? '<button type="button" class="g-btn" data-mesa-abrir="1">Abrir mesa de revisión</button>' : '<button type="button" class="g-btn" disabled style="opacity:.45;cursor:not-allowed">Aún no disponible</button> <span class="t-nota"><b style="color:#b45309">⏳ Todavía NO puedes revisar:</b> ' + esc(v.razones.join(' · ')) + '.' + barraAvance(v) + '</span>'; })()}</div>
     <div class="t-nota" id="mesa-alt">${mesaAlternativas()}</div>
   </section>
   <section class="tarjeta"><h2>Acciones pendientes</h2>
