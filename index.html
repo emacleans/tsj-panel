@@ -287,7 +287,6 @@
   <div class="t-grid">
   <section class="tarjeta" id="tsj-avance"></section>
 
-  <section class="tarjeta" id="mesa-tsj"></section>
   <section class="tarjeta" id="guia"></section>
 
   <section class="tarjeta" id="resumen">
@@ -957,36 +956,7 @@ document.addEventListener('change', ev => {
   gestion = x.value; guardar('tsj_gestion', gestion); destinoManual = false; render();
 });
 
-// ---- mesa de revisión TSJ (puerto 8752 de cada equipo; transversal) ----
-const urlMesaTsj = e => 'http://' + (e.red.tailscale || e.red.lan) + ':8752/';
-function equiposMesaTsj() {
-  return equipos.filter(e => enLinea(e) && e.mesa && !e.mesa.error && e.red && (e.red.tailscale || e.red.lan)).sort((a, b) => (b.red.tailscale ? 1 : 0) - (a.red.tailscale ? 1 : 0));
-}
-function renderMesaTsj() {
-  const box = $('mesa-tsj'); if (!box) return;
-  const l = equiposMesaTsj(), total = equipos.reduce((n, e) => n + ((e.mesa && e.mesa.total) || 0), 0);
-  const alt = l.length ? 'También puedes abrirla desde: ' + l.map(e => `<a href="${urlMesaTsj(e)}" target="_blank" title="${e.red.tailscale ? 'por Tailscale' : 'solo desde la misma red local'}">${esc(e.nombre.split(' (')[0])}${e.red.tailscale ? '' : ' (red local)'}</a>`).join(' · ') : 'Ningún equipo en línea trae todavía la mesa (se instala sola con la actualización de los agentes).';
-  const html = `<h2>Mesa de revisión TSJ</h2><div class="res-sub" style="margin-top:0">${total} casos por revisar a mano según la última auditoría de cada equipo (por identificar, no-AS y AS que el sitio no lista; la mesa suma además los duplicados por cotejar)</div>
-    <div class="t-nota">Una sola página para todo lo que impide cerrar una gestión, en todos los equipos: ves el motivo y capturas de cada grupo, decides por grupo o por documento y pulsas «Aplicar todo». Al terminar, la auditoría de cada gestión se lanza sola.</div>
-    <div class="t-btns" style="margin-top:8px"><button type="button" class="g-btn" data-mesa-tsj-abrir="1">Abrir mesa de revisión TSJ</button></div><div class="t-nota">${alt}</div>`;
-  if (box.dataset.h !== html) { box.dataset.h = html; box.innerHTML = html; }
-}
-async function abrirMesaTsj() {
-  const w = window.open('', '_blank');
-  let url = null;
-  try {
-    const c = new AbortController(); setTimeout(() => c.abort(), 1500);
-    const r = await fetch('http://localhost:8752/api/estado?local=1', { signal: c.signal });
-    if (r.ok) url = 'http://localhost:8752/';
-  } catch (e) { /* sin mesa local: se usa otro equipo */ }
-  if (!url) { const e = equiposMesaTsj()[0]; if (e) url = urlMesaTsj(e); }
-  if (url && w) w.location = url;
-  else { if (w) w.close(); alert(url ? 'Tu navegador bloqueó la ventana: usa uno de los enlaces de abajo.' : 'Ningún equipo en línea trae todavía la mesa. Espera a que se actualicen los agentes (unos minutos).'); }
-}
-document.addEventListener('click', ev => { if (ev.target.closest && ev.target.closest('[data-mesa-tsj-abrir]')) abrirMesaTsj(); });
-
 function renderGuia() {
-  renderMesaTsj();
   const box = $('guia');
   if (!box) return;
   const ae = document.activeElement;
