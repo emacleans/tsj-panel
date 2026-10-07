@@ -1030,7 +1030,7 @@ function renderMesaTsj() {
     : `<div class="t-nota" style="background:#fff7e6;border:1px solid #b45309;padding:8px 10px;border-radius:6px"><b style="color:#b45309">⏳ Todavía NO puedes revisar.</b> ${st.razonesMesa && st.razonesMesa.length ? esc(st.razonesMesa.join(' · ')) + '. ' : ''}${st.barraMesa || ''}${st.desact ? 'Hay equipos con versiones distintas del programa (se están actualizando). ' : ''}${st.bloq.map(b => esc(b.n) + ': ' + (b.pend ? b.pend + ' gestión(es) por barrer' : '') + (b.ocupado ? (b.pend ? ', ' : '') + 'trabajando ahora' : '')).join(' · ')}. Este aviso se vuelve verde y suena cuando termine.${(window.Notification && Notification.permission === 'default') ? ' <button type="button" class="g-btn" data-notif="1">Activar aviso del navegador</button>' : ''}</div>`;
   const html = ban + `<h2>Mesa de revisión TSJ</h2><div class="res-sub" style="margin-top:0">${total} casos por revisar a mano según la última auditoría de cada equipo (por identificar, no-AS y AS que el sitio no lista; la mesa suma además los duplicados por cotejar)</div>
     <div class="t-nota">Una sola página para todo lo que impide cerrar una gestión, en todos los equipos: ves el motivo y capturas de cada grupo, decides por grupo o por documento y pulsas «Aplicar todo». Al terminar, la auditoría de cada gestión se lanza sola.</div>
-    <div class="t-btns" style="margin-top:8px"><button type="button" class="g-btn" data-mesa-tsj-abrir="1"${st.listo ? '' : ' disabled title="Todavía no: espera el aviso verde" style="opacity:.45;cursor:not-allowed"'}>${st.listo ? 'Abrir mesa de revisión TSJ' : 'Aún no disponible: espera el aviso verde'}</button></div><div class="t-nota">${alt}</div><div class="t-nota" style="font-size:11px;opacity:.7">Versión del panel: guardia-mesa-2 (si no ves esta línea, recarga con Cmd+Shift+R: estás viendo una versión vieja y el botón no es confiable).</div>`;
+    <div class="t-btns" style="margin-top:8px"><button type="button" class="g-btn" data-mesa-tsj-abrir="1"${st.listo ? '' : ' disabled title="Todavía no: espera el aviso verde" style="opacity:.45;cursor:not-allowed"'}>${st.listo ? 'Abrir mesa de revisión TSJ' : 'Aún no disponible: espera el aviso verde'}</button></div><div class="t-nota">${alt}</div><div class="t-nota" style="font-size:11px;opacity:.7">Versión del panel: guardia-mesa-3 (si no ves esta línea, recarga con Cmd+Shift+R: estás viendo una versión vieja y el botón no es confiable).</div>`;
   if (box.dataset.h !== html) { box.dataset.h = html; box.innerHTML = html; }
 }
 async function abrirMesaTsj() {
@@ -1042,9 +1042,10 @@ async function abrirMesaTsj() {
     await fetch('http://localhost:8752/api/estado?local=1', { signal: c.signal, mode: 'no-cors' });   // «no-cors»: desde github.io el navegador no deja LEER la respuesta, pero si la mesa local contesta (no lanza error) basta
     url = 'http://localhost:8752/';
   } catch (e) { /* sin mesa local: se usa otro equipo */ }
-  if (!url) { const e = equiposMesaTsj()[0]; if (e) url = urlMesaTsj(e); }
-  if (url && w) w.location = url;
-  else { if (w) w.close(); alert(url ? 'Tu navegador bloqueó la ventana: usa uno de los enlaces de abajo.' : 'Ningún equipo en línea trae todavía la mesa. Espera a que se actualicen los agentes (unos minutos).'); }
+  if (url && w) { w.location = url; return; }
+  if (w) w.close();
+  // NO se abre en silencio la mesa de OTRO equipo (así se llegó a ver la de VJ1 creyendo que era la de IPE02, y los equipos de la red local salían «sin acceso»)
+  alert('No pude comprobar que este equipo tenga su propia mesa abierta (Chrome puede haber bloqueado el acceso a tu red local desde esta página: pulsa el candado de la barra de direcciones y permite «Dispositivos de la red local»).\n\nAbre tu mesa escribiendo directamente  localhost:8752  en una pestaña nueva. Si prefieres entrar por otro equipo, usa sus enlaces de abajo, sabiendo que desde allí solo verás los equipos que ese equipo alcanza.');
 }
 setInterval(() => { try { renderMesaTsj(); } catch (e) {} }, 10000);
 document.addEventListener('click', ev => { if (ev.target.closest && ev.target.closest('[data-mesa-tsj-abrir]')) abrirMesaTsj(); if (ev.target.closest && ev.target.closest('[data-notif]')) { try { Notification.requestPermission(); } catch (e) {} } });
@@ -1725,9 +1726,9 @@ async function abrirMesa() {
     await fetch('http://localhost:8751/api/estado?local=1', { signal: c.signal, mode: 'no-cors' });   // «no-cors»: desde github.io el navegador no deja LEER la respuesta, pero si la mesa local contesta (no lanza error) basta
     url = 'http://localhost:8751/';
   } catch (e) { /* no hay mesa local (o el navegador bloquea localhost): se usa otro equipo */ }
-  if (!url) { const e = equiposMesa()[0]; if (e) url = urlMesa(e); }
-  if (url && w) w.location = url;
-  else { if (w) w.close(); alert(url ? 'Tu navegador bloqueó la ventana: usa uno de los enlaces de abajo.' : 'Ningún equipo en línea trae todavía la mesa de revisión. Espera a que se actualicen los agentes (unos minutos).'); }
+  if (url && w) { w.location = url; return; }
+  if (w) w.close();
+  alert('No pude comprobar que este equipo tenga su propia mesa (Chrome puede haber bloqueado el acceso a tu red local desde esta página: pulsa el candado de la barra de direcciones y permite «Dispositivos de la red local»).\n\nAbre tu mesa escribiendo directamente  localhost:8751  en una pestaña nueva, o usa los enlaces de abajo sabiendo que desde otro equipo solo verás los equipos que ese equipo alcanza.');
 }
 async function enviarOrdenTcp(accion, pid) {
   const e = equipos.find(x => x.id === TCPSEL.eid);
