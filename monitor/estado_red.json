@@ -1,5 +1,5 @@
 {
- "ts": 1791422047,
+ "ts": 1791422071,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791422024,
+   "actualizado_ts": 1791422043,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791422024,
+   "actualizado_ts": 1791422043,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791422012,
+   "actualizado_ts": 1791422049,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1791422024,
+   "actualizado_ts": 1791422043,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791422006,
+   "actualizado_ts": 1791422042,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791422006,
+   "actualizado_ts": 1791422042,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791422006,
+   "actualizado_ts": 1791422042,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791422006,
+   "actualizado_ts": 1791422042,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791422012,
+   "actualizado_ts": 1791422049,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791422006,
+   "actualizado_ts": 1791422042,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791422006,
+   "actualizado_ts": 1791422042,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1791422006,
+   "actualizado_ts": 1791422042,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1791422012,
+   "actualizado_ts": 1791422049,
    "viejo": false
   }
  ],
@@ -420,7 +420,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1791422039,
+   "ts": 1791422042,
    "version": "788d308",
    "procesos": [],
    "orden": {
@@ -454,16 +454,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1791422006,
-   "version": "f0ec3a3",
+   "ts": 1791422042,
+   "version": "788d308",
    "procesos": [],
    "orden": {
-    "seq": 1791422003134,
+    "seq": 1791422034509,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a f0ec3a3.",
-    "ts": 1791422005
+    "mensaje": "Scripts actualizados a 788d308.",
+    "ts": 1791422037
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -484,22 +484,9 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1791422024,
-   "version": "f0ec3a3",
-   "procesos": [
-    {
-     "pid": 16979,
-     "tipo": "barrido",
-     "gestion": "2013",
-     "inicio_ts": 1791421910
-    },
-    {
-     "pid": 17007,
-     "tipo": "deteccion",
-     "gestion": "2013",
-     "inicio_ts": 1791421915
-    }
-   ],
+   "ts": 1791422043,
+   "version": "788d308",
+   "procesos": [],
    "orden": {
     "seq": 1791377465591,
     "accion": "tcp_revisar",
@@ -510,18 +497,18 @@
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-07 21:11:51] Candidatos a reprocesar: 1",
-    "[2026-10-07 21:11:55]   SIN RESOLVER: 2026-10-04-TSJ-AS-266-SC1.pdf -> fecha no reconocida",
-    "[2026-10-07 21:11:55]     diagnóstico: texto embebido 3631 car.; inicio: 'TRIBUNAL SUPREMO DE JUSTICIA SALACIVIL Auto Supremo: 266/ 2013 Sucre: 2013 Expediente: SC-72-12-S Partes: Romeo Tito Orellana MéndezJorge Willam Bowles Camacho c/ Rudy Rivero Ribera Ángela Arminda Foianin Abdar Proceso: Reivin",
-    "[2026-10-07 21:11:55]     crudo (400 car.): 'TRIBUNAL SUPREMO DE JUSTICIA\\nSALACIVIL\\n\\nAuto Supremo: 266/ 2013\\nSucre: 2013\\nExpediente: SC-72-12-S\\nPartes: Romeo Tito Orellana MéndezJorge Willam Bowles Camacho c/ Rudy Rivero Ribera\\nÁngela Arminda Foianin Abdar\\nProceso: Reivindicación, Desocupaci",
-    "[2026-10-07 21:11:55]     fechas con formato de fecha halladas en el texto: ['8 de\\nmarzo de 2012', '21 de octubre de 2011', '08 de\\nmarzo de 2012', '21 de octubre de 2011', '24 de enero de 2009']",
-    "[2026-10-07 21:11:55]",
-    "[2026-10-07 21:11:55] === RESUMEN ===",
-    "[2026-10-07 21:11:55] Resueltos y migrados a su Sala: 0 (de los cuales 0 necesitaron OCR)",
-    "[2026-10-07 21:11:55] Conflictos dejados en _revisar como POSIBLE-DUPLICADO: 0",
-    "[2026-10-07 21:11:55] Apartados a _revisar/_no_AS (no son Auto Supremo o llegaron en blanco): 0",
-    "[2026-10-07 21:11:55] Siguen sin poder identificarse (quedan en _revisar tal cual): 1",
-    "--- detectar_exp_obsoletos.py ---"
+    "complementarios: gestión 2013: 0 integrado(s)",
+    "--- cotejo_auto.py ---",
+    "cotejo_auto: gestión 2013, 1 par(es) en _revisar (aplicando)",
+    "MANUAL  2013-03-25-TSJ-AS-69-SCLIQ-POSIBLE-DUPLICADO.pdf: expediente distinto (o 2 08 s / t 9 08 s); la decisión no es claramente distinta",
+    "   DIAG exp: 'o 2 08 s' | 't 9 08 s'; partes dup: 'partes:favio jesus calle ramirez c crescencia apulaca condori y otra'; partes orig: 'partes:seferina choque ramos c miguel martinez'",
+    "   DIAG decisión insert: 'asacion en el fondo cursante de fojas 13' -> 'asacion en el fondo y en la forma cursante de fojas 97'",
+    "   DIAG decisión delete: 'o cursante de fojas 139 a 140 vuelta inter' -> 'a cursante de fojas 97 a 98 interpuesto '",
+    "   DIAG decisión insert: 'ursante de fojas 139 a 140 vuelta interp' -> ' cursante de fojas 97 a 98 interpuesto po'",
+    "RESUMEN gestión 2013: pares 1, resueltos automáticamente 0, para cotejo manual 1",
+    "Barrido de 2013 registrado (v12). Se lanzará sola la auditoría de esta gestión.",
+    "=== RESUMEN DEL BARRIDO GENERAL ===",
+    "  2013: completo"
    ]
   },
   {
@@ -557,16 +544,16 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1791422012,
-   "version": "f0ec3a3",
+   "ts": 1791422049,
+   "version": "788d308",
    "procesos": [],
    "orden": {
-    "seq": 1791422006303,
+    "seq": 1791422036470,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a f0ec3a3.",
-    "ts": 1791422012
+    "mensaje": "Scripts actualizados a 788d308.",
+    "ts": 1791422041
    },
    "gestiones": {},
    "ultimas_lineas": [
