@@ -337,16 +337,6 @@
       </ul>
       <div id="orden"></div>
       <div id="actividad"></div>
-      <div id="traspaso" class="nota" style="margin-top:10px"><b>Traspaso de gestiones entre equipos (AirDrop)</b><br>
-        <span id="tr-info">Mueve las gestiones de la MacBook Air a IPE01 con verificación archivo por archivo. No borra nada: al cerrar, la MacBook las guarda en «Compilacion/_transferidas».</span>
-        <div class="t-btns" style="margin-top:6px">
-          <button type="button" class="g-btn" data-tr="macbook-air-de-enrique|preparar_transferencia">1 · Preparar lista (en MacBook)</button>
-          <button type="button" class="g-btn" data-tr="ipe01|recibir_transferencia">3 · Recibir y verificar (en IPE01)</button>
-          <button type="button" class="g-btn" data-tr="macbook-air-de-enrique|cerrar_transferencia">4 · Cerrar traspaso (en MacBook)</button>
-        </div>
-        <div style="margin-top:4px">2 · Entre el 1 y el 3: en la MacBook, en Finder, selecciona las carpetas de año dentro de Documents/TSJ/Compilacion y envíalas por AirDrop a IPE01 (llegan a Descargas).</div>
-        <div id="tr-estado" style="margin-top:6px"></div>
-      </div>
       <div class="nota">El cotejo abre una pantalla local del equipo elegido: úsalo desde ese mismo equipo (o con <code>4_Cotejar_duplicados.command</code>). Una orden para un equipo apagado se ejecuta al reconectarse, si tiene menos de 30 min.</div>
     </section>
   </div>
@@ -388,7 +378,7 @@
 <script>
 const OWNER = 'emacleans', REPO = 'tsj-estado', API = 'https://api.github.com';
 const ETIQUETA = { compilacion: 'Compilando', vigilante: 'Compilando', fase0: 'Verificando totales', verificacion: 'Verificando', auditoria: 'Auditando contra el sitio', recuperacion: 'Recuperando faltantes', correccion: 'Corrigiendo _revisar', deteccion: 'Detectando EXP-', cotejo_auto: 'Cotejo automático', barrido: 'Barrido general' };
-const NOMBRE_ACCION = { preparar_transferencia: 'Preparar traspaso', recibir_transferencia: 'Recibir y verificar traspaso', cerrar_transferencia: 'Cerrar traspaso', exp: 'Identificar archivos EXP-', fechar: 'Fechar archivos de _revisar', noas: 'Revisar _no_AS', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
+const NOMBRE_ACCION = { exp: 'Identificar archivos EXP-', fechar: 'Fechar archivos de _revisar', noas: 'Revisar _no_AS', cotejar: 'Cotejar duplicados', verificar: 'Verificar', auditar: 'Auditar contra el sitio', recuperar: 'Recuperar faltantes', iniciar: 'Iniciar compilación', corregir_sim: 'Corregir _revisar (simulación)', corregir_real: 'Corregir _revisar (real)',
   detectar_sim: 'Detectar EXP- (simulación)', detectar_real: 'Detectar EXP- (real)', detener: 'Detener todo', actualizar: 'Actualizar scripts', validar_cierre: 'Validar cierre',
   barrido_sim: 'Barrido general (simulación)', barrido_real: 'Barrido general (real)', barrido_todas_sim: 'Barrido general de todas las gestiones (simulación)', barrido_todas_real: 'Barrido general de todas las gestiones (real)',
   releer_sim: 'Releer pendientes (simulación)', releer_real: 'Releer pendientes (real)' };
@@ -1040,7 +1030,7 @@ function renderMesaTsj() {
     : `<div class="t-nota" style="background:#fff7e6;border:1px solid #b45309;padding:8px 10px;border-radius:6px"><b style="color:#b45309">⏳ Todavía NO puedes revisar.</b> ${st.razonesMesa && st.razonesMesa.length ? esc(st.razonesMesa.join(' · ')) + '. ' : ''}${st.barraMesa || ''}${st.desact ? 'Hay equipos con versiones distintas del programa (se están actualizando). ' : ''}${st.bloq.map(b => esc(b.n) + ': ' + (b.pend ? b.pend + ' gestión(es) por barrer' : '') + (b.ocupado ? (b.pend ? ', ' : '') + 'trabajando ahora' : '')).join(' · ')}. Este aviso se vuelve verde y suena cuando termine.${(window.Notification && Notification.permission === 'default') ? ' <button type="button" class="g-btn" data-notif="1">Activar aviso del navegador</button>' : ''}</div>`;
   const html = ban + `<h2>Mesa de revisión TSJ</h2><div class="res-sub" style="margin-top:0">El número de casos pendientes se ve dentro de la mesa (cifra en vivo); aquí solo se indica si ya puedes entrar.</div>
     <div class="t-nota">Una sola página para todo lo que impide cerrar una gestión, en todos los equipos: ves el motivo y capturas de cada grupo, decides por grupo o por documento y pulsas «Aplicar todo». Al terminar, la auditoría de cada gestión se lanza sola.</div>
-    <div class="t-btns" style="margin-top:8px"><button type="button" class="g-btn" data-mesa-tsj-abrir="1"${st.listo ? '' : ' disabled title="Todavía no: espera el aviso verde" style="opacity:.45;cursor:not-allowed"'}>${st.listo ? 'Abrir mesa de revisión TSJ' : 'Aún no disponible: espera el aviso verde'}</button></div><div class="t-nota">${alt}</div><div class="t-nota" style="font-size:11px;opacity:.7">Versión del panel: guardia-mesa-5 (si no ves esta línea, recarga con Cmd+Shift+R: estás viendo una versión vieja y el botón no es confiable).</div>`;
+    <div class="t-btns" style="margin-top:8px"><button type="button" class="g-btn" data-mesa-tsj-abrir="1"${st.listo ? '' : ' disabled title="Todavía no: espera el aviso verde" style="opacity:.45;cursor:not-allowed"'}>${st.listo ? 'Abrir mesa de revisión TSJ' : 'Aún no disponible: espera el aviso verde'}</button></div><div class="t-nota">${alt}</div><div class="t-nota" style="font-size:11px;opacity:.7">Versión del panel: guardia-mesa-4 (si no ves esta línea, recarga con Cmd+Shift+R: estás viendo una versión vieja y el botón no es confiable).</div>`;
   if (box.dataset.h !== html) { box.dataset.h = html; box.innerHTML = html; }
 }
 async function abrirMesaTsj() {
@@ -2052,40 +2042,6 @@ tcpPestana(leer('tsj_pestana') || 'tsj');
   document.addEventListener('focusout', ocultar);
   window.addEventListener('scroll', ocultar, true);
 })();
-
-// ---- traspaso de gestiones entre equipos
-document.addEventListener('click', ev => {
-  const b = ev.target.closest('[data-tr]'); if (!b) return;
-  const [eid, accion] = b.dataset.tr.split('|'), e = equipos.find(x => x.id === eid);
-  const txt = { preparar_transferencia: 'Calcula la lista de archivos de la MacBook (puede tardar varios minutos).', recibir_transferencia: 'Verifica e integra en IPE01 lo recibido por AirDrop.', cerrar_transferencia: 'Mueve a «_transferidas» solo las gestiones que IPE01 confirmó completas. No borra nada.' }[accion];
-  if (!confirm(`${NOMBRE_ACCION[accion]} en ${e ? e.nombre : eid}. ${txt} ¿Confirmas?`)) return;
-  enviarOrden('x', null, { eid, directa: accion });
-});
-async function leerTraspaso(eid) {
-  try {
-    const r = await gh(`/repos/${OWNER}/${REPO}/contents/transferencias/${eid}_estado.json?t=${Date.now()}`);
-    if (!r.ok) return null;
-    const j = await r.json();
-    return JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, '')))));
-  } catch (e) { return null; }
-}
-async function renderTraspaso() {
-  const box = $('tr-estado'); if (!box || document.hidden) return;
-  const filas = [];
-  for (const [eid, nom] of [['macbook-air-de-enrique', 'MacBook'], ['ipe01', 'IPE01']]) {
-    const d = await leerTraspaso(eid); if (!d) continue;
-    const pct = d.total ? Math.round(100 * d.hecho / d.total) : 0;
-    const hace = Math.max(0, Math.round(Date.now() / 1000 - d.ts));
-    let t = `${nom}: ${d.fase}`;
-    if (d.fase === 'trabajando' || d.fase === 'verificando') t += d.total ? ` · ${pct}% (${d.hecho}/${d.total})` : '';
-    if (d.fase === 'lista' && d.resumen) t += ' · ' + Object.entries(d.resumen).map(([g, v]) => `${g}: ${v.n} archivos (${v.gb} GB)`).join(', ');
-    if (d.fase === 'recibida' && d.resultado) t += ' · ' + Object.entries(d.resultado).map(([g, v]) => `${g}: ${v}`).join(', ');
-    if (d.fase === 'error') t += ' · ' + (d.error || '');
-    filas.push(`<div>${esc(t)} <i>(hace ${hace < 90 ? hace + ' s' : Math.round(hace / 60) + ' min'})</i></div>`);
-  }
-  box.innerHTML = filas.join('');
-}
-setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }, 6000);
 </script>
 </body>
 </html>
