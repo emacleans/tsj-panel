@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gaceta · Avance</title>
+<style>
+:root{--navy:#263449;--bg:#E9E5DC;--card:#F9F7F2;--line:#DAD5C8;--ink:#1F2733;--muted:#6B7280;--gold:#A67C36;--ok:#3F7D4E;--warn:#B4691F;--bad:#A33B3B;--active:#2F6FB0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+header h1{font:600 18px Georgia,serif;margin:0;flex:1}
+header small{color:#cfd6e2}
+main{max-width:1000px;margin:0 auto;padding:16px}
+.t{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.t h2{font:600 16px Georgia,serif;color:var(--navy);margin:0 0 8px}
+.big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.big b{font-size:34px;font-variant-numeric:tabular-nums}
+.big span{color:var(--muted)}
+.bar{height:16px;background:#E4DFD2;border-radius:8px;overflow:hidden;display:flex;margin:8px 0}
+.bar i{display:block;height:100%}
+.ok{background:var(--ok)}.rev{background:var(--warn)}.err{background:var(--bad)}
+.kpis{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.kpis b{color:var(--ink)}
+.eq{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff;margin-top:8px}
+.eq .n{display:flex;gap:8px;align-items:center;font-weight:600}
+.dot{width:10px;height:10px;border-radius:50%;background:#B9B3A4;display:inline-block}
+.on .dot{background:var(--ok)}.work .dot{background:var(--active);animation:p 1.4s infinite}
+@keyframes p{50%{opacity:.3}}
+.m{font-size:12.5px;color:var(--muted);margin-top:3px}
+.av{border-left:4px solid var(--warn);background:#FBF1E2;padding:8px 12px;border-radius:6px;margin-top:8px;font-size:13.5px}
+.av.alto{border-color:var(--bad);background:#F6DEDE}.av.info{border-color:var(--active);background:#E6EEF8}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{font:600 11.5px sans-serif;color:var(--muted);text-align:right;padding:5px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+td{padding:6px 8px;border-bottom:1px solid #ECE8DC;text-align:right;font-variant-numeric:tabular-nums}
+td.pc{min-width:110px}
+.mini{height:8px;background:#E4DFD2;border-radius:4px;overflow:hidden}.mini i{display:block;height:100%;background:var(--ok)}
+pre{margin:6px 0 0;background:#1F2733;color:#D8DEE9;border-radius:8px;padding:8px 10px;font-size:11.5px;max-height:170px;overflow:auto;white-space:pre-wrap}
+#estado{font-size:12.5px;color:#cfd6e2}
+#err{display:none;background:#F6DEDE;border:1px solid #E0B4B4;color:var(--bad);padding:10px 14px;border-radius:10px;margin-bottom:12px}
+button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;cursor:pointer}
+@media(max-width:600px){.big b{font-size:26px}}
+</style></head><body>
+<header><h1>Gaceta Oficial · Avance de la compilación</h1><small id="estado">Conectando…</small><button id="tok" title="Token de GitHub">⚙</button></header>
+<main><div id="err"></div><div id="app"><div class="t">Cargando datos de los equipos…</div></div>
+<p style="color:var(--muted);font-size:12.5px">Esta página solo lee los datos que ya publican los equipos en GitHub y se actualiza sola cada 30 s. No usa Claude ni gasta crédito. Para detener o iniciar compilaciones, usa el panel central.</p></main>
+<script>
+const OWNER='emacleans',REPO='tsj-estado',API='https://api.github.com';
+const SECC=[['leyes','Leyes',5948],['decretos','Decretos supremos y presidenciales',28214],['decretos_ley','Decretos ley',1340],['sentencias','Sentencias constitucionales (Gaceta)',41],['resoluciones','Resoluciones supremas',4552],['dep_1','Departamental · La Paz',15234],['dep_2','Departamental · Santa Cruz',499],['dep_3','Departamental · Cochabamba',3332],['dep_4','Departamental · Potosí',505],['dep_5','Departamental · Chuquisaca',1694],['dep_6','Departamental · Oruro',639],['dep_7','Departamental · Tarija',2826],['dep_8','Departamental · Beni',27]];
+const ETQ=Object.fromEntries(SECC.map(s=>[s[0],s[1]]));ETQ.departamental='Departamental (8 gobernaciones)';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const num=n=>Number(n||0).toLocaleString('es-BO');
+const pct=(a,b)=>b?(Math.floor(1000*a/b)/10).toLocaleString('es-BO',{minimumFractionDigits:1}):'0,0';
+const ahora=()=>Math.floor(Date.now()/1000);
+const enLinea=e=>ahora()-e.ts<150;
+function hace(ts){const s=Math.max(0,ahora()-ts);return s<90?s+' s':s<5400?Math.round(s/60)+' min':s<172800?Math.round(s/3600)+' h':Math.round(s/86400)+' d'}
+function dur(seg){if(seg==null||!isFinite(seg))return '—';const h=seg/3600;if(h<1)return Math.max(1,Math.round(seg/60))+' min';if(h<48)return h.toFixed(1).replace('.',',')+' h';return Math.round(h/24)+' días'}
+function leer(k){try{return localStorage.getItem(k)}catch(e){return null}}
+let TOKEN=leer('tsj_token'),CACHE={},equipos=[],ultimoOk=0,falla='';
+async function gh(p,raw){return fetch(API+p,{headers:{Authorization:'token '+TOKEN,Accept:raw?'application/vnd.github.raw+json':'application/vnd.github+json'},cache:'no-cache'})}
+async function cargar(){
+  if(!TOKEN){throw new Error('Falta el token de GitHub. Ábrelo una vez desde el panel central (mismo navegador) o pulsa ⚙.')}
+  const r=await gh(`/repos/${OWNER}/${REPO}/contents/equipos`);
+  if(r.status===401)throw new Error('Token inválido o vencido. Pulsa ⚙ para poner uno nuevo.');
+  if(r.status===403||r.status===429)throw new Error('GitHub limitó temporalmente las consultas; se muestran los últimos datos y se reintenta solo.');
+  if(!r.ok)throw new Error('GitHub respondió HTTP '+r.status);
+  const lista=(await r.json()).filter(f=>f.name.endsWith('.json'));
+  await Promise.all(lista.map(async f=>{const c=CACHE[f.name];if(c&&c.sha===f.sha)return;const x=await gh(`/repos/${OWNER}/${REPO}/contents/equipos/${f.name}`,true);if(x.ok)CACHE[f.name]={sha:f.sha,datos:await x.json()}}));
+  const vivos=new Set(lista.map(f=>f.name));Object.keys(CACHE).forEach(k=>{if(!vivos.has(k))delete CACHE[k]});
+  equipos=Object.values(CACHE).map(c=>c.datos).filter(Boolean).sort((a,b)=>String(a.nombre).localeCompare(String(b.nombre)));
+}
+function agregar(){
+  const por={};let ritmo=0;
+  for(const e of equipos){const g=e.gaceta;if(!g||!g.disponible||!g.por)continue;if(enLinea(e))ritmo+=g.ritmo_min||0;
+    for(const [k,v] of Object.entries(g.por)){const c=por[k];if(!c||(v.hechos||0)>(c.hechos||0)||(v.modo==='completo'&&c.modo!=='completo'))por[k]=Object.assign({eid:e.id,enom:e.nombre},v)}}
+  const lista=SECC.map(([k,etq,cono])=>{const v=por[k]||{};const esp=v.esperado||v.total||cono;const reg=(k==='resoluciones'||k.startsWith('dep_'));
+    return Object.assign({},v,{k,etq,esp,registro:reg,okv:reg?(v.hechos||0):(v.ok||0),hechos:v.hechos||0})});
+  const sum=f=>lista.reduce((s,x)=>s+f(x),0);
+  return{lista,ritmo,esp:sum(x=>x.esp),hechos:sum(x=>x.hechos),ok:sum(x=>x.okv),rev:sum(x=>x.rev||0),err:sum(x=>(x.inval||0)+(x.fallo||0))};
+}
+function barra(ok,rev,err,t){const w=v=>Math.min(100,100*v/(t||1)).toFixed(2);return `<div class="bar"><i class="ok" style="width:${w(ok)}%"></i><i class="rev" style="width:${w(rev)}%"></i><i class="err" style="width:${w(err)}%"></i></div>`}
+function tarjetaEquipo(e){
+  const g=e.gaceta,on=enLinea(e);
+  if(!g||!g.disponible)return `<div class="eq"><div class="n"><span class="dot"></span>${esc(e.nombre)}</div><div class="m">Sin módulo Gaceta${on?'':' · desconectado hace '+hace(e.ts)}</div></div>`;
+  const ps=g.procesos||[],trab=on&&ps.length;
+  let h=`<div class="eq ${on?'on':''} ${trab?'work':''}"><div class="n"><span class="dot"></span>${esc(e.nombre)} <span class="m" style="margin:0">${on?(trab?'compilando':'en línea, sin compilar'):'desconectado hace '+hace(e.ts)}</span></div>`;
+  for(const p of ps){const v=(g.por||{})[p.seccion]||{};const esperando=/^(esperando|reintentando|pausa)/.test(v.fase||'');
+    const falta=Math.max(0,(v.esperado||0)-(v.hechos||0));const rate=g.ritmo_min||0;
+    const eta=(!esperando&&rate>0&&falta>0)?dur(falta/rate*60):'—';
+    h+=`<div class="m"><b style="color:var(--ink)">${esc(ETQ[p.seccion]||p.seccion)}</b> (${p.modo==='completo'?'completa':'piloto'}) · iniciada hace ${hace(p.inicio_ts)}</div>`;
+    h+=`<div class="m">${esperando?'<b style="color:var(--warn)">⏳ '+esc(v.fase)+'</b> — el script espera y reintenta solo':'Descargando'} · ritmo ${rate?Math.round(rate*60)+' /h':'—'} · quedan ≈ ${eta}</div>`}
+  h+=`<div class="m">Script ${esc(g.script||'?')}${g.ultimo_ts?' · último guardado hace '+hace(g.ultimo_ts):''}${g.error?' · <span style="color:var(--bad)">error '+esc(g.error)+'</span>':''}</div>`;
+  for(const a of (g.avisos||[]))h+=`<div class="av ${esc(a.nivel||'')}"><b>${esc(a.t||'')}</b><br>${esc(a.d||'')}</div>`;
+  if(!on&&ps.length)h+=`<div class="av alto"><b>Desconectado con una compilación en curso</b><br>Hace ${hace(e.ts)} que no reporta. Causas probables: el Mac se durmió o apagó, se cortó la luz o perdió internet.</div>`;
+  if((g.log||[]).length)h+=`<details><summary class="m" style="cursor:pointer">Registro reciente</summary><pre>${esc(g.log.slice(-25).join('\n'))}</pre></details>`;
+  return h+'</div>';
+}
+function render(){
+  const a=agregar();
+  const total=a.esp,pc=pct(a.hechos,total);
+  const falta=Math.max(0,total-a.hechos);
+    let h=`<div class="t"><h2>Avance total de la Gaceta</h2><div class="big"><b>${pc} %</b><span>${num(a.hechos)} de ${num(total)} normas</span></div>${barra(a.ok,a.rev,a.err,total)}
+  <div class="kpis"><span>Correctas <b>${num(a.ok)}</b></span><span>Por revisar <b>${num(a.rev)}</b></span><span>Con error <b>${num(a.err)}</b></span><span>Faltan <b>${num(falta)}</b></span><span>Ritmo conjunto <b>${a.ritmo?Math.round(a.ritmo*60)+' /h':'—'}</b></span></div></div>`;
+  h+=`<div class="t"><h2>Equipos</h2>${equipos.map(tarjetaEquipo).join('')||'<div class="m">Sin equipos.</div>'}</div>`;
+  h+=`<div class="t"><h2>Avance por sección</h2><div style="overflow-x:auto"><table><tr><th>Sección</th><th>Total</th><th>Correctas</th><th>Revisar</th><th>Error</th><th>Faltan</th><th>%</th><th></th></tr>`+
+    a.lista.map(x=>`<tr><td>${esc(x.etq)}</td><td>${num(x.esp)}</td><td>${num(x.okv)}</td><td>${num(x.rev)}</td><td>${num((x.inval||0)+(x.fallo||0))}</td><td>${num(Math.max(0,x.esp-x.hechos))}</td><td>${pct(x.hechos,x.esp)}</td><td class="pc"><div class="mini"><i style="width:${Math.min(100,100*x.hechos/(x.esp||1)).toFixed(1)}%"></i></div></td></tr>`).join('')+`</table></div></div>`;
+  $('app').innerHTML=h;
+  $('estado').textContent=falla?'⚠ '+falla:'Actualizado hace '+hace(ultimoOk)+' · se refresca solo cada 30 s';
+  $('err').style.display=falla?'block':'none';$('err').textContent=falla;
+}
+async function tick(){
+  try{await cargar();ultimoOk=ahora();falla=''}catch(e){falla=e.message||String(e)}
+  try{render()}catch(e){$('err').style.display='block';$('err').textContent='Error al dibujar: '+e.message}
+}
+$('tok').onclick=()=>{const v=prompt('Token de GitHub (se guarda solo en este navegador):');if(v){try{localStorage.setItem('tsj_token',v.trim())}catch(e){}TOKEN=v.trim();tick()}};
+tick();setInterval(tick,30000);setInterval(()=>{if(equipos.length)try{render()}catch(e){}},1000);
+</script></body></html>
