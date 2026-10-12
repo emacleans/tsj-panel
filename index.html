@@ -1408,9 +1408,13 @@ function mostrarError(msg) {
   if (msg) { b.textContent = msg; b.style.display = 'block'; } else { b.style.display = 'none'; }
 }
 
+let ultCargaGh = 0;
 async function tick() {
   if (!TOKEN) return;
   try {
+    // El panel compartía la cuota de GitHub (5.000/h) con los 8 equipos: con la ficha visible se consulta cada 20 s (no cada 3 s) y oculta, casi nada.
+    if (equipos.length && Date.now() - ultCargaGh < (document.hidden ? 120000 : 20000)) { render(); return; }
+    ultCargaGh = Date.now();
     await cargar(); mostrarError(null);
     if (autoGestion) {  // primera vez: abrir directamente la gestión que se está compilando ahora
       const viva = equipos.filter(enLinea).flatMap(e => Object.entries(e.gestiones || {}).filter(([g, a]) => a.activo).map(([g]) => g))[0];
