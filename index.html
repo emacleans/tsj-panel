@@ -904,7 +904,7 @@ function cuerpoTarea(t, st) {
         <div class="g-o">Si ya sabes que ninguno se puede identificar:</div>${acepta('Aceptar que queden así')}` };
   }
   if (t.tipo === 'recuperar') {
-    const filas = t.acciones.map(a => a.sala && a.numeros ? `${a.sala}: AS ${a.numeros.join(', ')}` : a.texto);
+    const filas = t.acciones.map(a => a.sala && a.numeros ? `${a.sala}: AS ${a.numeros.join(', ')}${a.numeros_total > a.numeros.length ? ' … (+' + (a.numeros_total - a.numeros.length) + ' más)' : ''}` : a.texto);
     return { titulo: 'Autos Supremos que el sitio no entrega',
       html: `<p>El sistema ya intentó bajarlos de nuevo y el sitio sigue sin entregarlos (o entrega un PDF en blanco).</p>${listaCorta(filas, 10)}
         <div class="g-o">Si es un error del sitio y no hay más que hacer:</div>${acepta('Aceptar: el sitio no los entrega')}
