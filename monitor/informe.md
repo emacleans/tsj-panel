@@ -1,4 +1,4 @@
-# Informe del orquestador — 13/10 11:30
+# Informe del orquestador — 13/10 11:35
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -32,7 +32,7 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 | IPE02 (Mac Mini casa) | en línea | libre | - | hace 2 min |
 | MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 2 min |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 2 min |
-| MacBook Air | DESCONECTADO | libre | - | hace 71 min (viejo) |
+| MacBook Air | DESCONECTADO | libre | - | hace 76 min (viejo) |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | hace 2 min |
 | iMac-VJ1 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 2 min |
 | iMac-VJ2 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 2 min |
