@@ -2141,6 +2141,20 @@ setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }
 
   let ULTIMO = '';
   function pintar(html) { if (html !== ULTIMO) { ULTIMO = html; cuerpo.innerHTML = html; } }
+  function comandoJuntar() {
+    const lineas = [], sin = [];
+    for (const e of equipos) {
+      const t = e.texto || {}, etq = String(e.nombre).split(' (')[0].toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      if (/^ipe02/i.test(e.nombre)) { lineas.push(etq + '|local:$HOME/Documents/_TEXTO_CLAUDE'); continue; }
+      if (!enLinea(e)) { sin.push(e.nombre + ' (desconectado)'); continue; }
+      const ip = e.red && (e.red.tailscale || e.red.lan);
+      if (!t.usuario || !ip) { sin.push(e.nombre + ' (aún no informa su usuario o su dirección)'); continue; }
+      lineas.push(`${etq}|${t.usuario}@${ip}`);
+    }
+    const cmd = `mkdir -p ~/Documents/_juntar_texto && cat > ~/Documents/_juntar_texto/Juntar_texto_origenes.txt <<'EOF'\n${lineas.join('\n')}\nEOF\nbash ~/Documents/_juntar_texto/Juntar_texto.sh`;
+    return { cmd, sin };
+  }
+
   function render() {
     if (!equipos || !equipos.length) { pintar('<div class="t-nota">Esperando datos de los equipos…</div>'); return; }
     const filas = equipos.map(filaEquipo).join('');
@@ -2148,7 +2162,12 @@ setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }
     pintar(`
       <div class="t-nota">Extrae el texto de los PDF ya compilados en cada equipo (TSJ, TCP y Gaceta) y lo deja en <code>Documentos/_TEXTO_CLAUDE</code>, para que Claude pueda buscar y leer toda la jurisprudencia. Solo lee los PDF: no cambia ni borra la compilación, trabaja con prioridad baja y retoma lo ya hecho.</div>
       <div style="margin:10px 0"><button type="button" class="g-btn" data-tc="*|texto_iniciar"${enLin ? '' : ' disabled'}>▶ Extraer texto en TODOS los equipos en línea (${enLin})</button> ${ENVIANDO ? '<i>enviando…</i>' : ''} ${AVISO ? `<span class="t-nota">${esc(AVISO)}</span>` : ''}</div>
-      <div class="tabla-wrap"><table class="res"><thead><tr><th>Equipo</th><th>Estado</th><th>Avance</th><th>Detalle</th><th>Acciones</th></tr></thead><tbody>${filas}</tbody></table></div>`);
+      <div class="tabla-wrap"><table class="res"><thead><tr><th>Equipo</th><th>Estado</th><th>Avance</th><th>Detalle</th><th>Acciones</th></tr></thead><tbody>${filas}</tbody></table></div>
+      ${(() => { const j = comandoJuntar(); return `<details style="margin-top:12px"><summary><b>Juntar los textos de todos los equipos en IPE02</b></summary>
+        <div class="t-nota">Pega este comando en la Terminal de IPE02. Copia solo lo que falta, no toca nada en los demás equipos y puede repetirse. Cada equipo debe tener «Sesión remota» activada; te pedirá la contraseña de cada uno.</div>
+        <textarea readonly rows="9" style="width:100%;font:12px ui-monospace,Menlo,monospace" id="tc-cmd">${esc(j.cmd)}</textarea>
+        <div><button type="button" class="g-btn" data-tc-copiar="1">Copiar comando</button> <span class="t-nota" id="tc-copiado"></span></div>
+        ${j.sin.length ? `<div class="t-nota" style="color:#B3261E">No incluidos: ${j.sin.map(esc).join('; ')}</div>` : ''}</details>`; })()}`);
   }
 
   async function enviar(eid, accion) {
@@ -2164,6 +2183,12 @@ setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }
     if (!r.ok) throw new Error(`No se pudo enviar la orden a ${e.nombre} (HTTP ${r.status}).`);
   }
 
+  caja.addEventListener('click', ev => {
+    if (!ev.target.closest('[data-tc-copiar]')) return;
+    const ta = document.getElementById('tc-cmd'), ok = document.getElementById('tc-copiado');
+    const listo = () => { if (ok) ok.textContent = 'Copiado.'; };
+    try { navigator.clipboard.writeText(ta.value).then(listo, () => { ta.select(); document.execCommand('copy'); listo(); }); } catch (e) { ta.select(); document.execCommand('copy'); listo(); }
+  });
   caja.addEventListener('click', async ev => {
     const b = ev.target.closest('[data-tc]'); if (!b || ENVIANDO) return;
     const [eid, accion] = b.dataset.tc.split('|');
