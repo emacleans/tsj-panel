@@ -2139,11 +2139,13 @@ setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }
       <td>${t.total != null ? num(t.total) + ' PDF' : ''}${sin}${err}${ver}${detalle}</td><td style="white-space:nowrap">${bIni} ${bDet} ${bOcr} ${bVer}</td></tr>`;
   }
 
+  // La MacBook Air ya no compila ni guarda gestiones: no participa en «Texto para Claude».
+  const participan = () => equipos.filter(e => !/macbook/i.test(String(e.nombre)));
   let ULTIMO = '';
   function pintar(html) { if (html !== ULTIMO) { ULTIMO = html; cuerpo.innerHTML = html; } }
   function comandoJuntar() {
     const lineas = [], sin = [];
-    for (const e of equipos) {
+    for (const e of participan()) {
       const t = e.texto || {}, etq = String(e.nombre).split(' (')[0].toLowerCase().replace(/[^a-z0-9]+/g, '-');
       if (/^ipe02/i.test(e.nombre)) { lineas.push(etq + '|local:$HOME/Documents/_TEXTO_CLAUDE'); continue; }
       if (!enLinea(e)) { sin.push(e.nombre + ' (desconectado)'); continue; }
@@ -2157,8 +2159,8 @@ setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }
 
   function render() {
     if (!equipos || !equipos.length) { pintar('<div class="t-nota">Esperando datos de los equipos…</div>'); return; }
-    const filas = equipos.map(filaEquipo).join('');
-    const enLin = equipos.filter(enLinea).length;
+    const filas = participan().map(filaEquipo).join('');
+    const enLin = participan().filter(enLinea).length;
     pintar(`
       <div class="t-nota">Extrae el texto de los PDF ya compilados en cada equipo (TSJ, TCP y Gaceta) y lo deja en <code>Documentos/_TEXTO_CLAUDE</code>, para que Claude pueda buscar y leer toda la jurisprudencia. Solo lee los PDF: no cambia ni borra la compilación, trabaja con prioridad baja y retoma lo ya hecho.</div>
       <div style="margin:10px 0"><button type="button" class="g-btn" data-tc="*|texto_iniciar"${enLin ? '' : ' disabled'}>▶ Extraer texto en TODOS los equipos en línea (${enLin})</button> ${ENVIANDO ? '<i>enviando…</i>' : ''} ${AVISO ? `<span class="t-nota">${esc(AVISO)}</span>` : ''}</div>
@@ -2192,7 +2194,7 @@ setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }
   caja.addEventListener('click', async ev => {
     const b = ev.target.closest('[data-tc]'); if (!b || ENVIANDO) return;
     const [eid, accion] = b.dataset.tc.split('|');
-    const destinos = eid === '*' ? equipos.filter(enLinea) : equipos.filter(x => x.id === eid);
+    const destinos = eid === '*' ? participan().filter(enLinea) : participan().filter(x => x.id === eid);
     if (!destinos.length) return;
     const que = { texto_iniciar: 'Extraer el texto de los PDF compilados', texto_detener: 'Detener con calma la extracción de texto', texto_verificar: 'Verificar la cobertura (solo cuenta PDF)', texto_ocr: 'Aplicar OCR a los PDF escaneados (lento: puede tardar horas)' }[accion];
     if (!confirm(`${que} en: ${destinos.map(x => x.nombre).join(', ')}. Solo lee los PDF; no cambia nada de la compilación. ¿Confirmas?`)) return;
