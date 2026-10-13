@@ -280,6 +280,7 @@
   </div>
 </header>
 <nav class="pestanas" aria-label="Proyecto"><button type="button" id="tab-tsj" class="act">TSJ · Autos Supremos</button><button type="button" id="tab-tcp">TCP · Tribunal Constitucional</button><button type="button" id="tab-gaceta">Gaceta · Normativa</button></nav>
+<details class="tarjeta" id="texto-claude" style="margin:12px 16px"><summary style="cursor:pointer;font-weight:600">Texto para Claude · extraer el texto de los PDF compilados</summary><div id="tc-cuerpo"></div></details>
 <nav class="menu" id="menu-tsj" aria-label="Secciones"><a href="./" class="act" aria-current="page">Inicio</a><a href="auditorias.html">Informes de cierre</a></nav>
 
 <main id="main-tsj">
@@ -2097,6 +2098,78 @@ async function renderTraspaso() {
   box.innerHTML = filas.join('');
 }
 setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }, 6000);
+
+// ---- «Texto para Claude» (AISLADO: solo LEE e.texto de cada equipo y envía órdenes «texto_*»; si algo falla aquí, TSJ, TCP y Gaceta siguen igual)
+(function () {
+  const caja = document.getElementById('texto-claude'); if (!caja) return;
+  const cuerpo = document.getElementById('tc-cuerpo');
+  let ENVIANDO = false, AVISO = '';
+  const FASE = { sin_iniciar: 'Sin iniciar', listando: 'Contando PDF…', extrayendo: 'Extrayendo texto', listo: 'Listo', detenido: 'Detenido (se puede reanudar)', interrumpido: 'Interrumpido (pulsa Extraer para reanudar)' };
+  const num = n => Number(n || 0).toLocaleString('es');
+
+  function filaEquipo(e) {
+    const t = e.texto || {}, on = enLinea(e), fase = t.fase || 'sin_iniciar';
+    const enCurso = fase === 'listando' || fase === 'extrayendo';
+    if (t.disponible === false) return `<tr><td><b>${esc(e.nombre)}</b></td><td colspan="4">Este equipo aún no tiene la función (se actualiza solo en unos minutos). ${esc(t.error || '')}</td><td></td></tr>`;
+    const hechos = (t.hechos || 0) + (t.sin_texto || 0) + (t.errores || 0) + (t.ocr_hechos || 0), pend = t.pendientes || 0;
+    const pct = enCurso && pend ? Math.min(99, Math.round(100 * hechos / pend)) : (fase === 'listo' ? 100 : 0);
+    const eta = enCurso && t.eta_s ? ` · faltan ≈ ${fmtDur(t.eta_s)}` : '';
+    const barra = (enCurso || fase === 'listo') ? `<div style="background:#E4E8EF;border-radius:6px;height:8px;width:160px;display:inline-block;vertical-align:middle"><div style="background:#1E7B34;height:8px;border-radius:6px;width:${pct}%"></div></div> ${pct}%${eta}` : '';
+    const cob = t.cobertura ? Object.entries(t.cobertura).map(([f, d]) => `<b>${esc(f)}</b>: ` + Object.entries(d).map(([k, n]) => `${esc(k)} (${num(n)})`).join(', ')).join('<br>') : '';
+    const detalle = cob ? `<details><summary>Qué gestiones tiene este equipo</summary><div class="t-nota" style="max-width:640px">${cob}</div></details>` : '';
+    const sin = t.sin_texto ? ` · ${num(t.sin_texto)} PDF sin texto (escaneados)` : '';
+    const err = t.errores ? ` · <span style="color:#B3261E">${num(t.errores)} con error</span> ${esc(t.ultimo_error || '')}` : '';
+    const dis = !on ? ' disabled' : '';
+    const bIni = `<button type="button" class="g-btn" data-tc="${esc(e.id)}|texto_iniciar"${dis || (enCurso ? ' disabled' : '')}>▶ Extraer texto</button>`;
+    const bDet = enCurso ? `<button type="button" class="g-btn sec" data-tc="${esc(e.id)}|texto_detener"${dis}>■ Detener</button>` : '';
+    const bOcr = (fase === 'listo' && t.sin_texto) ? `<button type="button" class="g-btn sec" data-tc="${esc(e.id)}|texto_ocr"${dis}>OCR de escaneados</button>` : '';
+    return `<tr><td><b>${esc(e.nombre)}</b><div class="t-nota">${on ? 'en línea' : 'desconectado'}</div></td>
+      <td>${esc(FASE[fase] || fase)}</td><td>${barra}</td>
+      <td>${t.total != null ? num(t.total) + ' PDF' : ''}${sin}${err}${detalle}</td><td style="white-space:nowrap">${bIni} ${bDet} ${bOcr}</td></tr>`;
+  }
+
+  let ULTIMO = '';
+  function pintar(html) { if (html !== ULTIMO) { ULTIMO = html; cuerpo.innerHTML = html; } }
+  function render() {
+    if (!equipos || !equipos.length) { pintar('<div class="t-nota">Esperando datos de los equipos…</div>'); return; }
+    const filas = equipos.map(filaEquipo).join('');
+    const enLin = equipos.filter(enLinea).length;
+    pintar(`
+      <div class="t-nota">Extrae el texto de los PDF ya compilados en cada equipo (TSJ, TCP y Gaceta) y lo deja en <code>Documentos/_TEXTO_CLAUDE</code>, para que Claude pueda buscar y leer toda la jurisprudencia. Solo lee los PDF: no cambia ni borra la compilación, trabaja con prioridad baja y retoma lo ya hecho.</div>
+      <div style="margin:10px 0"><button type="button" class="g-btn" data-tc="*|texto_iniciar"${enLin ? '' : ' disabled'}>▶ Extraer texto en TODOS los equipos en línea (${enLin})</button> ${ENVIANDO ? '<i>enviando…</i>' : ''} ${AVISO ? `<span class="t-nota">${esc(AVISO)}</span>` : ''}</div>
+      <div class="tabla-wrap"><table class="res"><thead><tr><th>Equipo</th><th>Estado</th><th>Avance</th><th>Detalle</th><th>Acciones</th></tr></thead><tbody>${filas}</tbody></table></div>`);
+  }
+
+  async function enviar(eid, accion) {
+    const e = equipos.find(x => x.id === eid); if (!e) return;
+    const ruta = `/repos/${OWNER}/${REPO}/contents/ordenes/${eid}.json`;
+    let sha = null;
+    const actual = await gh(ruta);
+    if (actual.ok) sha = (await actual.json()).sha;
+    const orden = { seq: Date.now(), ts: ahora(), accion, origen: 'panel-central' };
+    const cuerpoPut = { message: `orden ${accion} -> ${eid}`, content: btoa(unescape(encodeURIComponent(JSON.stringify(orden)))) };
+    if (sha) cuerpoPut.sha = sha;
+    const r = await gh(ruta, { method: 'PUT', body: JSON.stringify(cuerpoPut) });
+    if (!r.ok) throw new Error(`No se pudo enviar la orden a ${e.nombre} (HTTP ${r.status}).`);
+  }
+
+  caja.addEventListener('click', async ev => {
+    const b = ev.target.closest('[data-tc]'); if (!b || ENVIANDO) return;
+    const [eid, accion] = b.dataset.tc.split('|');
+    const destinos = eid === '*' ? equipos.filter(enLinea) : equipos.filter(x => x.id === eid);
+    if (!destinos.length) return;
+    const que = { texto_iniciar: 'Extraer el texto de los PDF compilados', texto_detener: 'Detener con calma la extracción de texto', texto_ocr: 'Aplicar OCR a los PDF escaneados (lento: puede tardar horas)' }[accion];
+    if (!confirm(`${que} en: ${destinos.map(x => x.nombre).join(', ')}. Solo lee los PDF; no cambia nada de la compilación. ¿Confirmas?`)) return;
+    ENVIANDO = true; AVISO = ''; render();
+    try {
+      for (const e of destinos) await enviar(e.id, accion);
+      AVISO = `Orden enviada a ${destinos.length} equipo(s). Cada uno la toma en menos de un minuto.`;
+    } catch (err) { mostrarError(err.message || String(err)); }
+    finally { ENVIANDO = false; render(); }
+  });
+
+  setInterval(() => { try { if (typeof equipos !== 'undefined' && equipos.length && !document.hidden) render(); } catch (e) { console.error('Texto', e); } }, 3000);
+})();
 </script>
 </body>
 </html>
