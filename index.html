@@ -2121,7 +2121,7 @@ setInterval(() => { try { if (equipos.length) renderTraspaso(); } catch (e) {} }
     if (t.verificacion) {
       const v = t.verificacion, fu = Object.entries(v.fuentes || {});
       const falta = fu.reduce((a, [, d]) => a + (d.sin_procesar || 0), 0), fuera = Object.entries(v.fuera_de_raiz || {}), otras = v.otras_ubicaciones || [];
-      const tabla = fu.map(([k, d]) => `${esc(k)}: ${num(d.pdf_leidos)} PDF leídos (${num(d.con_texto)} con texto, ${num(d.sin_texto)} escaneados, ${num(d.sin_procesar)} sin procesar), ${num(d.pdf_omitidos)} omitidos por ser copias/residuos`).join('<br>');
+      const tabla = fu.map(([k, d]) => `${esc(k)}: ${num(d.pdf_leidos)} PDF leídos (${num(d.con_texto)} con texto, ${num(d.sin_texto)} escaneados, ${num(d.ilegibles)} dañados o vacíos, ${num(d.sin_procesar)} sin procesar), ${num(d.pdf_omitidos)} omitidos por ser copias/residuos`).join('<br>');
       const alertas = (falta ? `<div style="color:#B3261E">⚠ ${num(falta)} PDF sin procesar: pulsa «Extraer texto» otra vez.</div>` : '')
         + (fuera.length ? `<div style="color:#B3261E">⚠ Hay PDF fuera de las carpetas que se leen: ${fuera.map(([k, n]) => esc(k) + ' (' + num(n) + ')').join(', ')}</div>` : '')
         + (otras.length ? `<div style="color:#B3261E">⚠ Hay otras ubicaciones con compilaciones: ${otras.map(esc).join(', ')}</div>` : '');
