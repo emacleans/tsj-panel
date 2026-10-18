@@ -1,5 +1,5 @@
 {
- "ts": 1792359329,
+ "ts": 1792359632,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792359225,
+   "actualizado_ts": 1792359500,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792359225,
+   "actualizado_ts": 1792359500,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792359253,
+   "actualizado_ts": 1792359524,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792359271,
+   "actualizado_ts": 1792359522,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792359225,
+   "actualizado_ts": 1792359500,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792359241,
+   "actualizado_ts": 1792359516,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792359241,
+   "actualizado_ts": 1792359516,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792359264,
+   "actualizado_ts": 1792359512,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792359241,
+   "actualizado_ts": 1792359516,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792359253,
+   "actualizado_ts": 1792359524,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792359241,
+   "actualizado_ts": 1792359516,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792359271,
+   "actualizado_ts": 1792359522,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792359241,
+   "actualizado_ts": 1792359516,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792359241,
+   "actualizado_ts": 1792359516,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792359241,
+   "actualizado_ts": 1792359516,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792359271,
+   "actualizado_ts": 1792359522,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792321934,
-   "texto": "director: tcp:imac-vj1 terminó «conc_2_2020»"
-  },
   {
    "ts": 1792322003,
    "texto": "director: tcp:imac-vj1 lanza «conc_2_2025» (tcp_conciliar {'base': '2'})"
@@ -384,13 +380,17 @@
   {
    "ts": 1792357857,
    "texto": "orden de Claude 2026-10-18-auditar3-2010-ipe01: auditar 2010 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1792359418,
+   "texto": "orden de Claude 2026-10-18-auditar4-2010-ipe01: auditar 2010 en IPE01 (Mac Mini oficina)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792359253,
+   "ts": 1792359524,
    "version": "91ca3ef",
    "procesos": [],
    "orden": {
@@ -1060,7 +1060,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792359262,
+   "ts": 1792359525,
    "version": "91ca3ef",
    "procesos": [],
    "orden": {
@@ -1733,7 +1733,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792359257,
+   "ts": 1792359517,
    "version": "91ca3ef",
    "procesos": [],
    "orden": {
@@ -2371,16 +2371,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792359241,
+   "ts": 1792359516,
    "version": "91ca3ef",
    "procesos": [],
    "orden": {
-    "seq": 1792357856126,
+    "seq": 1792359417476,
     "accion": "auditar",
     "gestion": "2010",
-    "ok": false,
-    "mensaje": "Ocupado: este equipo ya usa el navegador en 2 gestión(es) a la vez (2006, 2008); el máximo configurado es 2. Las acciones sin navegador (Detectar EXP-, Corregir _revisar, Cotejar, Fechar) sí se pueden lanzar.",
-    "ts": 1792357859
+    "ok": true,
+    "mensaje": "Lanzado: auditar, gestión 2010",
+    "ts": 1792359418
    },
    "auditorias": {
     "2002": {
@@ -2414,12 +2414,9 @@
      "explicadas": 1
     },
     "2010": {
-     "fecha": "2026-10-18T00:32:32",
-     "estado": "acciones",
-     "acciones": [
-      "cotejar",
-      "noas"
-     ],
+     "fecha": "2026-10-18T17:37:22",
+     "estado": "listo",
+     "acciones": [],
      "explicadas": 10
     },
     "2011": {
@@ -2474,18 +2471,18 @@
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-18 17:11:13] AUDITORÍA Sala Penal 1              : 462 filas leídas del sitio.",
-    "[2026-10-18 17:11:16] AUDITORÍA Sala Civil 1              : 314 filas leídas del sitio.",
-    "[2026-10-18 17:11:20] AUDITORÍA Sala Penal 2              : 260 filas leídas del sitio.",
-    "[2026-10-18 17:11:20] AUDITORÍA Sala Plena                : sitio 250 filas (241 AS distintos, 1 repetidos, 8 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 17:11:20] AUDITORÍA Sala Contenciosa Primera  : sitio 581 filas (579 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 17:11:20] AUDITORÍA Sala Contenciosa Segunda  : sitio 473 filas (467 AS distintos, 6 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 17:11:20] AUDITORÍA Sala Penal 1              : sitio 462 filas (462 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 17:11:20] AUDITORÍA Sala Civil 1              : sitio 314 filas (307 AS distintos, 7 repetidos, 0 sin número legible) | sin archivo 8, de ellas 8 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
-    "[2026-10-18 17:11:20] AUDITORÍA Sala Penal 2              : sitio 260 filas (260 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 17:11:20]   DETALLE SOBRANTES Sala Civil 1: AS 641 (1 archivos / 0 filas)",
-    "[2026-10-18 17:11:20] CONCLUSIÓN: la auditoría de 2008 no encontró nada que corregir. Las diferencias que aparecen (1) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
-    "[2026-10-18 17:11:20] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2008/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2008/_auditoria.json."
+    "[2026-10-18 17:37:22] AUDITORÍA Sala Plena                : sitio 222 filas (205 AS distintos, 6 repetidos, 11 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-18 17:37:22] AUDITORÍA Sala Contenciosa Primera  : sitio 589 filas (586 AS distintos, 3 repetidos, 0 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
+    "[2026-10-18 17:37:22] AUDITORÍA Sala Contenciosa Segunda  : sitio 570 filas (559 AS distintos, 10 repetidos, 1 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-18 17:37:22] AUDITORÍA Sala Penal 1              : sitio 703 filas (701 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 6, de ellas 6 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 6",
+    "[2026-10-18 17:37:22] AUDITORÍA Sala Civil 1              : sitio 430 filas (430 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 3, de ellas 3 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 3",
+    "[2026-10-18 17:37:22] AUDITORÍA Sala Penal 2              : sitio 433 filas (433 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-18 17:37:22]   DETALLE SOBRANTES Sala Plena: AS 17 (3 archivos / 2 filas)",
+    "[2026-10-18 17:37:22]   DETALLE SOBRANTES Sala Contenciosa Primera: AS 85 (2 archivos / 1 filas)",
+    "[2026-10-18 17:37:22]   DETALLE SOBRANTES Sala Penal 1: AS 125 (2 archivos / 1 filas); AS 165 (3 archivos / 1 filas); AS 296 (2 archivos / 1 filas); AS 370 (2 archivos / 1 filas); AS 581 (2 archivos / 1 filas)",
+    "[2026-10-18 17:37:22]   DETALLE SOBRANTES Sala Civil 1: AS 158 (2 archivos / 1 filas); AS 275 (2 archivos / 1 filas); AS 287 (2 archivos / 1 filas)",
+    "[2026-10-18 17:37:22] CONCLUSIÓN: la auditoría de 2010 no encontró nada que corregir. Las diferencias que aparecen (10) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
+    "[2026-10-18 17:37:22] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2010/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2010/_auditoria.json."
    ],
    "tcp": {
     "por": {
@@ -2900,7 +2897,7 @@
       "pend": 24,
       "en_curso": true,
       "ritmo": 0.0,
-      "act": "2026-10-18 17:24:38"
+      "act": "2026-10-18 17:36:46"
      },
      "decretos_ley": {
       "tipo": "pdf",
@@ -3131,9 +3128,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792353827,
     "log": [
-     "2026-10-18 17:19:08   aviso: TimeoutError: timed out; espero 240 s (intento 4/5)",
-     "2026-10-18 17:24:38   aviso: TimeoutError: timed out; espero 480 s (intento 5/5)",
-     "2026-10-18 17:32:39   FALLO Decreto Presidencial N° 29887: TimeoutError: timed out (seguidos: 4)"
+     "2026-10-18 17:32:39   FALLO Decreto Presidencial N° 29887: TimeoutError: timed out (seguidos: 4)",
+     "2026-10-18 17:34:11   aviso: TimeoutError: timed out; espero 30 s (intento 1/5)",
+     "2026-10-18 17:36:46   aviso: TimeoutError: timed out; espero 60 s (intento 2/5)"
     ],
     "avisos": [
      {
@@ -3174,7 +3171,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792359225,
+   "ts": 1792359500,
    "version": "91ca3ef",
    "procesos": [],
    "orden": {
@@ -4128,7 +4125,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792359259,
+   "ts": 1792359511,
    "version": "91ca3ef",
    "procesos": [],
    "orden": {
@@ -4751,7 +4748,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792359271,
+   "ts": 1792359522,
    "version": "91ca3ef",
    "procesos": [],
    "orden": {
@@ -5393,7 +5390,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792359264,
+   "ts": 1792359512,
    "version": "91ca3ef",
    "procesos": [],
    "orden": {
@@ -6193,6 +6190,11 @@
    "hora": "2026-10-18 17:11:20",
    "eq": "ipe01",
    "txt": "no encontró nada que corregir. Las diferencias que aparecen (1) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel."
+  },
+  "2010": {
+   "hora": "2026-10-18 17:37:22",
+   "eq": "ipe01",
+   "txt": "no encontró nada que corregir. Las diferencias que aparecen (10) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel."
   }
  }
 }
