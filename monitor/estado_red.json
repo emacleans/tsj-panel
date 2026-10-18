@@ -1,5 +1,5 @@
 {
- "ts": 1792339383,
+ "ts": 1792339692,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792339338,
+   "actualizado_ts": 1792339627,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792339338,
+   "actualizado_ts": 1792339627,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792339323,
+   "actualizado_ts": 1792339648,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792339310,
+   "actualizado_ts": 1792339632,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792339338,
+   "actualizado_ts": 1792339627,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792339127,
+   "actualizado_ts": 1792339670,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792339127,
+   "actualizado_ts": 1792339670,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792339294,
+   "actualizado_ts": 1792339644,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792339127,
+   "actualizado_ts": 1792339670,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792339323,
+   "actualizado_ts": 1792339648,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792339127,
+   "actualizado_ts": 1792339670,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792339310,
+   "actualizado_ts": 1792339632,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792339127,
+   "actualizado_ts": 1792339670,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792339127,
+   "actualizado_ts": 1792339670,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792339127,
+   "actualizado_ts": 1792339670,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792339310,
+   "actualizado_ts": 1792339632,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792321593,
-   "texto": "director: tcp:imac-vj1 terminó «ocr_imac-vj1»"
-  },
   {
    "ts": 1792321596,
    "texto": "director: gaceta:ipe02 lanza «p_res» (gaceta_iniciar {'seccion': 'resoluciones', 'modo': 'piloto'})"
@@ -384,13 +380,17 @@
   {
    "ts": 1792339170,
    "texto": "director: gaceta:ipe01 lanza «r_dec» (gaceta_iniciar {'seccion': 'decretos', 'modo': 'completo'})"
+  },
+  {
+   "ts": 1792339473,
+   "texto": "orden de Claude 2026-10-18-dl-relanzar-ipe01: gaceta_iniciar  {'seccion': 'decretos_ley', 'modo': 'completo'} en IPE01 (Mac Mini oficina)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792339323,
+   "ts": 1792339648,
    "version": "d6e88a3",
    "procesos": [],
    "orden": {
@@ -766,9 +766,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 06:15:06  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 09:24:21  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 11:58:10  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 11:58:10  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 12:01:59  red: TimeoutError: _ssl.c:993: The handshake operation timed out"
     ],
     "conciliacion": null
    },
@@ -1060,7 +1060,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792339317,
+   "ts": 1792339658,
    "version": "d6e88a3",
    "procesos": [],
    "orden": {
@@ -1733,7 +1733,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792339223,
+   "ts": 1792339661,
    "version": "d6e88a3",
    "procesos": [],
    "orden": {
@@ -2088,9 +2088,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 06:15:18  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 09:24:10  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 11:58:29  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 11:58:29  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 12:02:23  red: TimeoutError: _ssl.c:993: The handshake operation timed out"
     ],
     "conciliacion": {
      "ts": "2026-10-18T03:17:49",
@@ -2371,16 +2371,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792339127,
+   "ts": 1792339670,
    "version": "d6e88a3",
    "procesos": [],
    "orden": {
-    "seq": 1792339098533,
-    "accion": "gaceta_detener",
+    "seq": 1792339472246,
+    "accion": "gaceta_iniciar",
     "gestion": "0000",
-    "ok": true,
-    "mensaje": "Detenido (Gaceta): decretos_ley completo",
-    "ts": 1792339127
+    "ok": false,
+    "mensaje": "Este equipo ya compila la Gaceta (sección decretos, completo). Detén eso primero.",
+    "ts": 1792339474
    },
    "auditorias": {
     "2002": {
@@ -2830,9 +2830,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 06:14:44  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 09:24:09  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 11:57:39  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 11:57:39  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 12:05:04  encadenar: no pude leer a los otros equipos (TimeoutError); espero"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:03:58",
@@ -2884,28 +2884,28 @@
      "decretos": {
       "tipo": "pdf",
       "modo": "completo",
-      "esperado": 28223,
-      "inv": 28222,
-      "pdf": 28222,
+      "esperado": 18485,
+      "inv": 2750,
+      "pdf": 2750,
       "ok": 27755,
       "rev": 0,
       "inval": 450,
       "sinpdf": 1,
       "fallo": 16,
       "srv": 7,
-      "causa": "terminado_con_errores",
+      "causa": null,
       "rec": 27056,
       "hechos": 27755,
-      "total": 28223,
-      "fase": "terminado_inventario_incompleto",
-      "cuadra": false,
+      "total": 18485,
+      "fase": "inventario",
+      "cuadra": null,
       "ult": 1791764539,
-      "pct": 100.0,
-      "eta": 0,
-      "pend": 65,
-      "en_curso": false,
+      "pct": 0.0,
+      "eta": null,
+      "pend": 0,
+      "en_curso": true,
       "ritmo": 0.0,
-      "act": "2026-10-11 20:22:54"
+      "act": "2026-10-18 12:07:47"
      },
      "decretos_ley": {
       "tipo": "pdf",
@@ -2930,7 +2930,7 @@
       "eta": 1023008,
       "pend": 24185,
       "en_curso": true,
-      "ritmo": 2.4,
+      "ritmo": 1.88,
       "act": "2026-10-18 11:58:13"
      },
      "sentencias": {
@@ -3124,13 +3124,21 @@
       "act": null
      }
     },
-    "procesos": [],
-    "ritmo_min": 2.4,
+    "procesos": [
+     {
+      "pid": 82934,
+      "tipo": "gaceta_compilacion",
+      "seccion": "decretos",
+      "modo": "completo",
+      "inicio_ts": 1792339140
+     }
+    ],
+    "ritmo_min": 1.88,
     "ultimo_ts": 1792339093,
     "log": [
-     "2026-10-18 11:49:21   decretos_ley: 300/24185 descargadas",
-     "2026-10-18 11:54:24   decretos_ley: 325/24185 descargadas",
-     "2026-10-18 11:57:26   decretos_ley: 350/24185 descargadas"
+     "2026-10-18 12:03:38   inventario decretos: pagina 30/370 (1500 filas)",
+     "2026-10-18 12:05:04   inventario decretos: pagina 40/370 (2000 filas)",
+     "2026-10-18 12:06:14   inventario decretos: pagina 50/370 (2500 filas)"
     ],
     "avisos": [
      {
@@ -3150,18 +3158,18 @@
       ]
      },
      {
-      "sec": "decretos",
+      "sec": "decretos_ley",
       "modo": "completo",
-      "etq": "Decretos supremos y presidenciales",
-      "act": "2026-10-11 20:22:54",
-      "k": "decretos|completo|saneamiento|2026-10-11 20:22:54",
-      "nivel": "info",
-      "t": "La compilación terminó con 182 documentos pendientes, ya diagnosticados",
-      "d": "Se hicieron los reintentos automáticos y estos quedaron registrados con su causa en _diagnostico.csv y _diagnostico_resumen.json: 165 por error propio del documento en el servidor, 2 por PDF que el sitio no logra armar por memoria, 9 por fallos de conexión, 1 por respuesta que no es PDF, 5 por saturación del servidor (memoria). Ya se recuperaron 461 por la versión Word (carpeta saneados). Los que sigan pendientes quedan diagnosticados para la siguiente alternativa; no requiere acción ahora. Si lo prefieres, puedes forzar otro reintento.",
+      "etq": "Decretos ley",
+      "act": "2026-10-18 11:58:13",
+      "k": "decretos_ley|completo|cortada|2026-10-18 11:58:13",
+      "nivel": "alto",
+      "t": "Se interrumpió sin avisar (el proceso ya no existe)",
+      "d": "La compilación quedó marcada «en curso» pero ningún proceso la ejecuta. Causas probables: el Mac se reinició o se apagó, se cortó la luz, alguien cerró la sesión o el sistema terminó el proceso. Lo ya descargado está a salvo. Acción: reanudar (retoma donde quedó).",
       "ac": [
        [
         "iniciar",
-        "↻ Reintentar ahora"
+        "▶ Reanudar"
        ]
       ]
      }
@@ -3171,7 +3179,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792339338,
+   "ts": 1792339627,
    "version": "d6e88a3",
    "procesos": [],
    "orden": {
@@ -3758,25 +3766,25 @@
       "esperado": 1016,
       "inv": 1016,
       "pdf": 1016,
-      "ok": 114,
+      "ok": 116,
       "rev": 0,
       "inval": 60,
       "sinpdf": 0,
-      "fallo": 20,
-      "srv": 20,
+      "fallo": 23,
+      "srv": 23,
       "causa": null,
-      "rec": 114,
-      "hechos": 114,
+      "rec": 116,
+      "hechos": 116,
       "total": 1016,
-      "fase": "descarga",
+      "fase": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco",
       "cuadra": true,
-      "ult": 1792339337,
-      "pct": 11.2,
-      "eta": 70043,
+      "ult": 1792339364,
+      "pct": 11.4,
+      "eta": 68892,
       "pend": 1016,
       "en_curso": true,
-      "ritmo": 1.12,
-      "act": "2026-10-18 12:02:17"
+      "ritmo": 1.15,
+      "act": "2026-10-18 12:03:26"
      },
      "sentencias": {
       "tipo": "pdf",
@@ -4041,12 +4049,12 @@
       "inicio_ts": 1792330320
      }
     ],
-    "ritmo_min": 1.12,
-    "ultimo_ts": 1792339337,
+    "ritmo_min": 1.15,
+    "ultimo_ts": 1792339364,
     "log": [
-     "2026-10-18 11:55:45   decretos_ley: 75/1016 descargadas",
-     "2026-10-18 12:00:21   decretos_ley: 100/1016 descargadas",
-     "2026-10-18 12:01:41   SERVIDOR SATURADO en Decreto Ley N° 12884 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)"
+     "2026-10-18 12:03:20   SERVIDOR SATURADO en Decreto Ley N° 12702 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
+     "2026-10-18 12:03:26   SERVIDOR Decreto Ley N° 12702: sin respuesta sana (seguidos: 3); queda registrado",
+     "2026-10-18 12:03:26   PAUSA AUTOMATICA 5 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 12:08."
     ],
     "avisos": [
      {
@@ -4062,6 +4070,22 @@
        [
         "iniciar",
         "▶ Reanudar"
+       ]
+      ]
+     },
+     {
+      "sec": "decretos_ley",
+      "modo": "completo",
+      "etq": "Decretos ley",
+      "act": "2026-10-18 12:03:26",
+      "k": "decretos_ley|completo|pausa|a las 12:08)",
+      "nivel": "medio",
+      "t": "Pausa automática: el sitio está sufriendo; la compilación reanuda sola",
+      "d": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud) (reanuda sola a las 12:08). No hace falta que hagas nada: el script espera, sigue con el resto, deja cada documento fallido registrado y diagnosticado en _diagnostico.csv, y los reintenta en rondas automáticas al terminar.",
+      "ac": [
+       [
+        "detener",
+        "■ Detener"
        ]
       ]
      },
@@ -4101,17 +4125,6 @@
       "nivel": "info",
       "t": "Compilación completa terminada",
       "d": "505 documentos.",
-      "ac": []
-     },
-     {
-      "sec": "dep_6",
-      "modo": "completo",
-      "etq": "Departamental · Oruro",
-      "act": "2026-10-18 05:28:58",
-      "k": "dep_6|completo|completa|2026-10-18 05:28:58",
-      "nivel": "info",
-      "t": "Compilación completa terminada",
-      "d": "639 documentos.",
       "ac": []
      }
     ]
@@ -4743,7 +4756,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792339310,
+   "ts": 1792339632,
    "version": "d6e88a3",
    "procesos": [],
    "orden": {
@@ -5385,7 +5398,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792339294,
+   "ts": 1792339644,
    "version": "d6e88a3",
    "procesos": [],
    "orden": {
@@ -6106,7 +6119,7 @@
      "p_dl",
      "p_dl"
     ],
-    "visto": false
+    "visto": true
    },
    "gaceta:ipe02": {
     "i": 14,
