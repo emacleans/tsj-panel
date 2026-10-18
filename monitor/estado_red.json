@@ -1,5 +1,5 @@
 {
- "ts": 1792329859,
+ "ts": 1792330173,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792329820,
+   "actualizado_ts": 1792330082,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792329820,
+   "actualizado_ts": 1792330082,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792329831,
+   "actualizado_ts": 1792330090,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792329826,
+   "actualizado_ts": 1792330102,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792329820,
+   "actualizado_ts": 1792330082,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792329825,
+   "actualizado_ts": 1792330111,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792329825,
+   "actualizado_ts": 1792330111,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792329835,
+   "actualizado_ts": 1792330082,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792329825,
+   "actualizado_ts": 1792330111,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792329831,
+   "actualizado_ts": 1792330090,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792329825,
+   "actualizado_ts": 1792330111,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792329826,
+   "actualizado_ts": 1792330102,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792329825,
+   "actualizado_ts": 1792330111,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792329825,
+   "actualizado_ts": 1792330111,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792329825,
+   "actualizado_ts": 1792330111,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792329826,
+   "actualizado_ts": 1792330102,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792316760,
-   "texto": "director: gaceta:ipe02 lanza «c_dep_3» (gaceta_iniciar {'seccion': 'dep_3', 'modo': 'completo'})"
-  },
   {
    "ts": 1792317096,
    "texto": "director: gaceta:ipe02 terminó «c_dep_3»"
@@ -384,24 +380,49 @@
   {
    "ts": 1792326739,
    "texto": "orden de Claude 2026-10-18-dl-pilot-ipe02: gaceta_iniciar  {'seccion': 'decretos_ley', 'modo': 'piloto'} en IPE02 (Mac Mini casa)"
+  },
+  {
+   "ts": 1792329999,
+   "texto": "orden de Claude 2026-10-18-dl-completo-ipe02: gaceta_iniciar  {'seccion': 'decretos_ley', 'modo': 'completo'} en IPE02 (Mac Mini casa)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792329831,
-   "version": "253baee",
+   "ts": 1792330090,
+   "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792326442035,
+    "seq": 1792330021030,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 253baee.",
-    "ts": 1792326447
+    "mensaje": "Ya estaba al día.",
+    "ts": 1792330025
    },
-   "auditorias": null,
+   "auditorias": {
+    "2007": {
+     "fecha": "2026-10-18T00:02:08",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 1
+    },
+    "2015": {
+     "fecha": "2026-10-18T00:10:21",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar"
+     ],
+     "explicadas": 0
+    },
+    "2018": {
+     "fecha": "2026-10-07T11:33:13",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 1
+    }
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-18 00:10:21] AUDITORÍA Sala Civil                : sitio 1176 filas (1176 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
@@ -747,9 +768,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 02:35:57  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:41:30  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 06:15:06  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 06:15:06  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 09:24:21  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null
    },
@@ -1041,18 +1062,18 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792329798,
-   "version": "253baee",
+   "ts": 1792330110,
+   "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792326442962,
+    "seq": 1792330022967,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 253baee.",
-    "ts": 1792326446
+    "mensaje": "Scripts actualizados a d4e820d.",
+    "ts": 1792330029
    },
-   "auditorias": null,
+   "auditorias": {},
    "gestiones": {},
    "ultimas_lineas": [],
    "tcp": {
@@ -1394,11 +1415,11 @@
     "revision_total": 15,
     "ocr_pendientes": 0,
     "ritmo_min": 0.0,
-    "ultimo_ts": 1792321533,
+    "ultimo_ts": null,
     "log": [
-     "  Resultado: plan=5537, ok=5529, ocr=0, revisar=6, error=0, duplicado=0, faltan=2, sin_archivo=0, huerfanos=0, duplicados_sha=0",
-     "  Informe en: /Users/emaclean-sofivj/Documents/TCP/_conciliacion/20261018_071326",
-     "FIN de la conciliación."
+     "2026-10-18 02:41:33  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 06:15:04  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 09:25:08  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": {
      "ts": "2026-10-18T07:13:26",
@@ -1690,18 +1711,18 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792329800,
-   "version": "253baee",
+   "ts": 1792330108,
+   "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792326443972,
+    "seq": 1792330024872,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 253baee.",
-    "ts": 1792326449
+    "mensaje": "Scripts actualizados a d4e820d.",
+    "ts": 1792330028
    },
-   "auditorias": null,
+   "auditorias": {},
    "gestiones": {},
    "ultimas_lineas": [],
    "tcp": {
@@ -2045,9 +2066,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 02:37:06  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:41:44  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 06:15:18  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 06:15:18  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 09:24:10  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": {
      "ts": "2026-10-18T03:17:49",
@@ -2328,18 +2349,112 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792329825,
-   "version": "253baee",
+   "ts": 1792330111,
+   "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792326445146,
+    "seq": 1792329831617,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 253baee.",
-    "ts": 1792326448
+    "mensaje": "Ya estaba al día.",
+    "ts": 1792329836
    },
-   "auditorias": null,
+   "auditorias": {
+    "2002": {
+     "fecha": "2026-10-18T00:09:53",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 17
+    },
+    "2003": {
+     "fecha": "2026-10-18T00:14:17",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 3
+    },
+    "2004": {
+     "fecha": "2026-10-18T00:22:22",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 1
+    },
+    "2006": {
+     "fecha": "2026-10-18T00:25:43",
+     "estado": "acciones",
+     "acciones": [
+      "noas",
+      "recuperar"
+     ],
+     "explicadas": 2
+    },
+    "2008": {
+     "fecha": "2026-10-18T00:29:08",
+     "estado": "acciones",
+     "acciones": [
+      "cotejar"
+     ],
+     "explicadas": 1
+    },
+    "2010": {
+     "fecha": "2026-10-18T00:32:32",
+     "estado": "acciones",
+     "acciones": [
+      "cotejar",
+      "noas"
+     ],
+     "explicadas": 10
+    },
+    "2011": {
+     "fecha": "2026-10-18T01:51:44",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 6
+    },
+    "2019": {
+     "fecha": "2026-10-18T02:35:37",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 7
+    },
+    "2020": {
+     "fecha": "2026-10-18T03:39:40",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 2
+    },
+    "2023": {
+     "fecha": "2026-10-07T12:22:56",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 5
+    },
+    "2024": {
+     "fecha": "2026-10-07T12:35:38",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 12
+    },
+    "2025": {
+     "fecha": "2026-10-07T12:55:17",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 31
+    },
+    "2026": {
+     "fecha": "2026-10-17T23:55:34",
+     "estado": "en_curso",
+     "acciones": [
+      "detectar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 1103
+    }
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-18 03:39:36] AUDITORÍA Sala Contenciosa Primera  : 656 filas leídas del sitio.",
@@ -2693,9 +2808,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 02:35:26  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:40:56  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 06:14:44  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 06:14:44  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 09:24:09  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:03:58",
@@ -2793,7 +2908,7 @@
       "eta": 2699785,
       "pend": 24185,
       "en_curso": true,
-      "ritmo": 0.37,
+      "ritmo": 0.18,
       "act": "2026-10-18 09:14:24"
      },
      "sentencias": {
@@ -2996,7 +3111,7 @@
       "inicio_ts": 1792320540
      }
     ],
-    "ritmo_min": 0.37,
+    "ritmo_min": 0.18,
     "ultimo_ts": 1792326739,
     "log": [
      "2026-10-18 09:14:18   SERVIDOR SATURADO en Decreto Ley N° 18857 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
@@ -3058,18 +3173,166 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792329820,
-   "version": "253baee",
+   "ts": 1792330082,
+   "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792326737942,
+    "seq": 1792329996257,
     "accion": "gaceta_iniciar",
     "gestion": "0000",
-    "ok": true,
-    "mensaje": "Lanzado: Gaceta · decretos_ley · piloto; retoma lo ya hecho.",
-    "ts": 1792326742
+    "ok": false,
+    "mensaje": "Este equipo ya compila la Gaceta (sección decretos_ley, piloto). Detén eso primero.",
+    "ts": 1792330000
    },
-   "auditorias": null,
+   "auditorias": {
+    "2007": {
+     "fecha": "2026-10-09T20:07:47",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 0
+    },
+    "2012": {
+     "fecha": "2026-10-18T00:02:17",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 2
+    },
+    "2013": {
+     "fecha": "2026-10-18T00:10:39",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar"
+     ],
+     "explicadas": 4
+    },
+    "2014": {
+     "fecha": "2026-10-18T00:17:33",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 36
+    },
+    "2015": {
+     "fecha": "2026-10-09T07:09:55",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 0
+    },
+    "2016": {
+     "fecha": "2026-10-09T05:40:06",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 14
+    },
+    "2017": {
+     "fecha": "2026-10-18T00:20:02",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 0
+    },
+    "2018": {
+     "fecha": "2026-10-09T18:34:41",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 0
+    },
+    "2019": {
+     "fecha": "2026-10-09T03:39:19",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 0
+    },
+    "2020": {
+     "fecha": "2026-10-09T03:00:01",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 0
+    },
+    "2021": {
+     "fecha": "2026-10-18T00:23:24",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 5
+    },
+    "2022": {
+     "fecha": "2026-10-17T23:58:34",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 3
+    },
+    "2023": {
+     "fecha": "2026-10-09T01:10:59",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 4
+    },
+    "2024": {
+     "fecha": "2026-10-09T00:36:15",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 10
+    },
+    "2025": {
+     "fecha": "2026-10-08T23:50:16",
+     "estado": "acciones",
+     "acciones": [
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar",
+      "recuperar"
+     ],
+     "explicadas": 8
+    }
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-18 00:23:16] AUDITORÍA Sala Plena                : 166 filas leídas del sitio.",
@@ -3423,9 +3686,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 02:33:53  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:40:41  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 06:14:12  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 06:14:12  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 09:24:19  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:40:58",
@@ -3866,18 +4129,18 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792329817,
-   "version": "253baee",
+   "ts": 1792330063,
+   "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792326446088,
+    "seq": 1792330028149,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 253baee.",
-    "ts": 1792326451
+    "mensaje": "Scripts actualizados a d4e820d.",
+    "ts": 1792330032
    },
-   "auditorias": null,
+   "auditorias": {},
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-07 14:00:15]   DETALLE SOBRANTES Sala Plena: AS 47 (1 archivos / 0 filas); AS 1006 (1 archivos / 0 filas)",
@@ -4223,9 +4486,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 05:22:05  pautas: TimeoutError: The read operation timed out",
      "2026-10-18 06:11:31  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 06:14:51  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 06:14:51  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 09:24:23  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null
    },
@@ -4489,18 +4752,37 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792329826,
-   "version": "253baee",
+   "ts": 1792330102,
+   "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792326447016,
+    "seq": 1792330029956,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 253baee.",
-    "ts": 1792326451
+    "mensaje": "Ya estaba al día.",
+    "ts": 1792330035
    },
-   "auditorias": null,
+   "auditorias": {
+    "2001": {
+     "fecha": "2026-10-18T00:01:56",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 2
+    },
+    "2005": {
+     "fecha": "2026-10-18T00:10:03",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 2
+    },
+    "2016": {
+     "fecha": "2026-10-18T00:16:41",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 15
+    }
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-18 00:16:28] AUDITORÍA Sala Civil                : 1409 filas leídas del sitio.",
@@ -4846,9 +5128,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 02:37:05  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:41:57  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 06:15:19  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 06:15:19  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 09:24:09  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null
    },
@@ -5112,18 +5394,25 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792329835,
-   "version": "253baee",
+   "ts": 1792330082,
+   "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792326448179,
+    "seq": 1792330031838,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
     "mensaje": "Ya estaba al día.",
-    "ts": 1792326452
+    "ts": 1792330035
    },
-   "auditorias": null,
+   "auditorias": {
+    "2009": {
+     "fecha": "2026-10-18T00:02:13",
+     "estado": "listo",
+     "acciones": [],
+     "explicadas": 1
+    }
+   },
    "gestiones": {},
    "ultimas_lineas": [
     "[2026-10-18 00:02:13] AUDITORÍA Sala Penal 2              : 489 filas leídas del sitio.",
@@ -5469,9 +5758,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 02:36:14  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:41:45  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 06:15:15  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 06:15:15  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 09:24:11  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null
    },
@@ -5819,14 +6108,14 @@
     "visto": true
    },
    "gaceta:ipe01": {
-    "i": 1,
-    "lanz": 1792320575.977099,
-    "intentos": 1,
+    "i": 2,
+    "lanz": null,
+    "intentos": 0,
     "hist": [
      "p_dl",
      "p_dl"
     ],
-    "visto": true
+    "visto": false
    },
    "gaceta:ipe02": {
     "i": 14,
@@ -5868,7 +6157,7 @@
    "p_dl",
    "p_res"
   ],
-  "reset_v": 3
+  "reset_v": 4
  },
  "conclusiones": {
   "2020": {
