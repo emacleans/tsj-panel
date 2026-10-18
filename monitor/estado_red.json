@@ -1,5 +1,5 @@
 {
- "ts": 1792331931,
+ "ts": 1792332233,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792331857,
+   "actualizado_ts": 1792332136,
    "viejo": false
   },
   {
@@ -49,13 +49,13 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792331857,
+   "actualizado_ts": 1792332136,
    "viejo": false
   },
   {
    "gestion": "2015",
-   "estado": "Compilando",
-   "estado_interno": "activa",
+   "estado": "Compilada completa",
+   "estado_interno": "completa",
    "salas_n": 7,
    "salas_medidas": 7,
    "docs": 4293,
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332119,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792331833,
+   "actualizado_ts": 1792332106,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792331857,
+   "actualizado_ts": 1792332136,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332152,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332152,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792331855,
+   "actualizado_ts": 1792332115,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332152,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332119,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332152,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792331833,
+   "actualizado_ts": 1792332106,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332152,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332152,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792331844,
+   "actualizado_ts": 1792332152,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792331833,
+   "actualizado_ts": 1792332106,
    "viejo": false
   }
  ],
@@ -390,26 +390,14 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792331844,
+   "ts": 1792332119,
    "version": "ee61eb5",
    "procesos": [
     {
-     "pid": 42935,
-     "tipo": "vigilante",
-     "gestion": "2015",
-     "inicio_ts": 1792331631
-    },
-    {
-     "pid": 43017,
-     "tipo": "barrido",
-     "gestion": "2015",
-     "inicio_ts": 1792331691
-    },
-    {
-     "pid": 43022,
+     "pid": 47720,
      "tipo": "deteccion",
      "gestion": "2015",
-     "inicio_ts": 1792331692
+     "inicio_ts": 1792332110
     }
    ],
    "orden": {
@@ -428,11 +416,9 @@
      "explicadas": 1
     },
     "2015": {
-     "fecha": "2026-10-18T00:10:21",
-     "estado": "acciones",
-     "acciones": [
-      "recuperar"
-     ],
+     "fecha": "2026-10-18T09:58:50",
+     "estado": "listo",
+     "acciones": [],
      "explicadas": 0
     },
     "2018": {
@@ -443,20 +429,7 @@
     }
    },
    "gestiones": {},
-   "ultimas_lineas": [
-    "--- sentencias.py ---",
-    "sentencias: gestión 2015: 0 archivada(s) como SEN",
-    "--- corregir_revisar.py ---",
-    "[2026-10-18 09:54:52] === corregir_revisar.py -- Gestión 2015 -- EJECUCIÓN REAL ===",
-    "[2026-10-18 09:54:52] Candidatos a reprocesar: 0",
-    "[2026-10-18 09:54:52]",
-    "[2026-10-18 09:54:52] === RESUMEN ===",
-    "[2026-10-18 09:54:52] Resueltos y migrados a su Sala: 0 (de los cuales 0 necesitaron OCR)",
-    "[2026-10-18 09:54:52] Conflictos dejados en _revisar como POSIBLE-DUPLICADO: 0",
-    "[2026-10-18 09:54:52] Apartados a _revisar/_no_AS (no son Auto Supremo o llegaron en blanco): 0",
-    "[2026-10-18 09:54:52] Siguen sin poder identificarse (quedan en _revisar tal cual): 0",
-    "--- detectar_exp_obsoletos.py ---"
-   ],
+   "ultimas_lineas": [],
    "tcp": {
     "por": {
      "1:1999": [
@@ -1081,7 +1054,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792331870,
+   "ts": 1792332145,
    "version": "ee61eb5",
    "procesos": [],
    "orden": {
@@ -1754,7 +1727,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792331884,
+   "ts": 1792332147,
    "version": "ee61eb5",
    "procesos": [],
    "orden": {
@@ -2392,7 +2365,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792331844,
+   "ts": 1792332152,
    "version": "ee61eb5",
    "procesos": [],
    "orden": {
@@ -2924,7 +2897,7 @@
       "esperado": 1026,
       "inv": 24185,
       "pdf": 24185,
-      "ok": 54,
+      "ok": 77,
       "rev": 0,
       "inval": 0,
       "sinpdf": 0,
@@ -2932,17 +2905,17 @@
       "srv": 23,
       "causa": null,
       "rec": 27,
-      "hechos": 54,
+      "hechos": 77,
       "total": 24185,
       "fase": "descarga",
       "cuadra": true,
-      "ult": 1792331843,
-      "pct": 0.2,
-      "eta": 3628906,
+      "ult": 1792332143,
+      "pct": 0.3,
+      "eta": 2669318,
       "pend": 24185,
       "en_curso": true,
-      "ritmo": 0.45,
-      "act": "2026-10-18 09:57:23"
+      "ritmo": 0.83,
+      "act": "2026-10-18 10:02:17"
      },
      "sentencias": {
       "tipo": "pdf",
@@ -3144,12 +3117,12 @@
       "inicio_ts": 1792320540
      }
     ],
-    "ritmo_min": 0.45,
-    "ultimo_ts": 1792331843,
+    "ritmo_min": 0.83,
+    "ultimo_ts": 1792332143,
     "log": [
-     "2026-10-18 09:45:29   SERVIDOR SATURADO en Decreto Ley N° 18830 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
      "2026-10-18 09:45:34   SERVIDOR Decreto Ley N° 18830: sin respuesta sana (seguidos: 2); queda registrado",
-     "2026-10-18 09:56:22   decretos_ley: 50/24185 descargadas"
+     "2026-10-18 09:56:22   decretos_ley: 50/24185 descargadas",
+     "2026-10-18 10:02:08   decretos_ley: 75/24185 descargadas"
     ],
     "avisos": [
      {
@@ -3190,7 +3163,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792331857,
+   "ts": 1792332136,
    "version": "ee61eb5",
    "procesos": [],
    "orden": {
@@ -3773,25 +3746,25 @@
       "esperado": 1016,
       "inv": 1016,
       "pdf": 1016,
-      "ok": 12,
+      "ok": 26,
       "rev": 0,
       "inval": 0,
       "sinpdf": 0,
       "fallo": 6,
       "srv": 6,
       "causa": null,
-      "rec": 12,
-      "hechos": 12,
+      "rec": 26,
+      "hechos": 26,
       "total": 1016,
       "fase": "descarga",
       "cuadra": true,
-      "ult": 1792331849,
-      "pct": 1.2,
-      "eta": 114209,
+      "ult": 1792332122,
+      "pct": 2.5,
+      "eta": 64618,
       "pend": 1016,
       "en_curso": true,
-      "ritmo": 0.2,
-      "act": "2026-10-18 09:57:29"
+      "ritmo": 0.43,
+      "act": "2026-10-18 10:01:54"
      },
      "sentencias": {
       "tipo": "pdf",
@@ -4056,12 +4029,12 @@
       "inicio_ts": 1792330320
      }
     ],
-    "ritmo_min": 0.2,
-    "ultimo_ts": 1792331849,
+    "ritmo_min": 0.43,
+    "ultimo_ts": 1792332122,
     "log": [
-     "2026-10-18 09:41:39   SERVIDOR SATURADO en Decreto Ley N° 19183 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
      "2026-10-18 09:41:44   SERVIDOR Decreto Ley N° 19183: sin respuesta sana (seguidos: 3); queda registrado",
-     "2026-10-18 09:41:44   PAUSA AUTOMATICA 10 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 09:51."
+     "2026-10-18 09:41:44   PAUSA AUTOMATICA 10 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 09:51.",
+     "2026-10-18 10:01:54   decretos_ley: 25/1016 descargadas"
     ],
     "avisos": [
      {
@@ -4135,7 +4108,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792331831,
+   "ts": 1792332157,
    "version": "ee61eb5",
    "procesos": [],
    "orden": {
@@ -4758,7 +4731,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792331833,
+   "ts": 1792332106,
    "version": "ee61eb5",
    "procesos": [],
    "orden": {
@@ -5400,7 +5373,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792331855,
+   "ts": 1792332115,
    "version": "ee61eb5",
    "procesos": [],
    "orden": {
