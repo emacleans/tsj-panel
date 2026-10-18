@@ -1,5 +1,5 @@
 {
- "ts": 1792306856,
+ "ts": 1792307158,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792306835,
+   "actualizado_ts": 1792307091,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792306835,
+   "actualizado_ts": 1792307091,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792306822,
+   "actualizado_ts": 1792307091,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792306798,
+   "actualizado_ts": 1792307054,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792306835,
+   "actualizado_ts": 1792307091,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792306802,
+   "actualizado_ts": 1792307080,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792306802,
+   "actualizado_ts": 1792307080,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792306848,
+   "actualizado_ts": 1792307103,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792306802,
+   "actualizado_ts": 1792307080,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792306822,
+   "actualizado_ts": 1792307091,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792306802,
+   "actualizado_ts": 1792307080,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792306798,
+   "actualizado_ts": 1792307054,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792306802,
+   "actualizado_ts": 1792307080,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792306802,
+   "actualizado_ts": 1792307080,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792306802,
+   "actualizado_ts": 1792307080,
    "viejo": false
   },
   {
@@ -259,32 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792306798,
+   "actualizado_ts": 1792307054,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792305239,
-   "texto": "director: tcp:imac-vj1 lanza «ocr_imac-vj1» (tcp_ocr {})"
-  },
-  {
-   "ts": 1792305241,
-   "texto": "director: tcp:imac-vj2 lanza «ocr_imac-vj2» (tcp_ocr {})"
-  },
-  {
-   "ts": 1792305242,
-   "texto": "director: gaceta:ipe01 lanza «p_dl» (gaceta_iniciar {'seccion': 'decretos_ley', 'modo': 'piloto'})"
-  },
-  {
-   "ts": 1792305243,
-   "texto": "director: gaceta:ipe02 lanza «p_sent» (gaceta_iniciar {'seccion': 'sentencias', 'modo': 'piloto'})"
-  },
-  {
-   "ts": 1792305314,
-   "texto": "orden de Claude 2026-10-18-auditar-2019-ipe01: auditar 2019 en IPE01 (Mac Mini oficina)"
-  },
   {
    "ts": 1792305518,
    "texto": "director: tcp:ipe01 terminó «ocr_ipe01»"
@@ -384,13 +364,33 @@
   {
    "ts": 1792306854,
    "texto": "director: gaceta:ipe01 lanza «p_dl» (gaceta_iniciar {'seccion': 'decretos_ley', 'modo': 'piloto'})"
+  },
+  {
+   "ts": 1792307055,
+   "texto": "director: tcp:ipe01 terminó «conc_1_2003»"
+  },
+  {
+   "ts": 1792307055,
+   "texto": "director: tcp:ipe02 terminó «conc_1_2004»"
+  },
+  {
+   "ts": 1792307124,
+   "texto": "director: tcp:ipe01 lanza «conc_1_2005» (tcp_conciliar {'base': '1'})"
+  },
+  {
+   "ts": 1792307125,
+   "texto": "director: tcp:ipe02 lanza «conc_1_2006» (tcp_conciliar {'base': '1'})"
+  },
+  {
+   "ts": 1792307125,
+   "texto": "director: tcp:imac-vj2 terminó «ocr_imac-vj2»"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792306822,
+   "ts": 1792307091,
    "version": "2f52bba",
    "procesos": [],
    "orden": {
@@ -1040,7 +1040,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792306820,
+   "ts": 1792307084,
    "version": "2f52bba",
    "procesos": [],
    "orden": {
@@ -1265,9 +1265,9 @@
      ],
      "2:2025": [
       5537,
-      5365,
-      166,
-      4,
+      5367,
+      163,
+      5,
       0,
       0
      ],
@@ -1397,14 +1397,14 @@
      ],
      "msg": "Se cortó 3 veces en 1 h: dejo de reanudar sola la gestión 2013. Revisa el registro del equipo y relánzala desde el panel."
     },
-    "revision_total": 13,
-    "ocr_pendientes": 166,
-    "ritmo_min": 0.2,
-    "ultimo_ts": 1792306707,
+    "revision_total": 14,
+    "ocr_pendientes": 163,
+    "ritmo_min": 0.25,
+    "ultimo_ts": 1792307004,
     "log": [
-     "2026-10-18 02:55:47    [215553] OCR ok  (10/178)",
-     "2026-10-18 02:57:41    [215554] OCR ok  (11/178)",
-     "2026-10-18 02:58:28    [215555] OCR ok  (12/178)"
+     "2026-10-18 03:00:34    [215556] OCR ok  (13/178)",
+     "2026-10-18 03:02:36    [215557] OCR revisar  (14/178)",
+     "2026-10-18 03:03:24    [215558] OCR ok  (15/178)"
     ],
     "conciliacion": null
    },
@@ -1668,16 +1668,16 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792306829,
+   "ts": 1792307093,
    "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792305699430,
-    "accion": "actualizar",
+    "seq": 1792306852570,
+    "accion": "tcp_ocr",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 2f52bba.",
-    "ts": 1792305704
+    "mensaje": "Lanzado: OCR de los PDF escaneados pendientes (TCP).",
+    "ts": 1792306854
    },
    "gestiones": {},
    "ultimas_lineas": [],
@@ -2022,9 +2022,8 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 02:31:52  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 02:37:06  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 02:41:44  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 03:00:55  OCR: 0 PDF pendientes",
+     "2026-10-18 03:00:55  FIN del OCR: nada pendiente."
     ],
     "conciliacion": {
      "ts": "2026-10-18T02:39:51",
@@ -2305,16 +2304,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792306802,
+   "ts": 1792307080,
    "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792306782671,
-    "accion": "tcp_conciliar",
-    "gestion": "2003",
+    "seq": 1792306853591,
+    "accion": "gaceta_iniciar",
+    "gestion": "0000",
     "ok": true,
-    "mensaje": "Lanzada: conciliación TCP de 2003 contra el inventario.",
-    "ts": 1792306785
+    "mensaje": "Lanzado: Gaceta · decretos_ley · piloto; retoma lo ya hecho.",
+    "ts": 1792306855
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -2748,22 +2747,29 @@
      },
      "decretos_ley": {
       "tipo": "pdf",
-      "modo": null,
-      "esperado": 1340,
-      "inv": 0,
-      "pdf": 0,
+      "modo": "piloto",
+      "esperado": 1055,
+      "inv": 100,
+      "pdf": 100,
       "ok": 0,
       "rev": 0,
       "inval": 0,
       "sinpdf": 0,
-      "fallo": 0,
+      "fallo": 3,
+      "srv": 3,
+      "causa": null,
       "rec": 0,
       "hechos": 0,
-      "total": 1340,
-      "fase": "sin_iniciar",
+      "total": 100,
+      "fase": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco",
+      "cuadra": null,
       "ult": null,
+      "pct": 0.0,
+      "eta": null,
+      "pend": 100,
+      "en_curso": true,
       "ritmo": 0.0,
-      "act": null
+      "act": "2026-10-18 03:01:26"
      },
      "sentencias": {
       "tipo": "pdf",
@@ -2956,13 +2962,21 @@
       "act": null
      }
     },
-    "procesos": [],
+    "procesos": [
+     {
+      "pid": 43322,
+      "tipo": "gaceta_compilacion",
+      "seccion": "decretos_ley",
+      "modo": "piloto",
+      "inicio_ts": 1792306800
+     }
+    ],
     "ritmo_min": 0.0,
     "ultimo_ts": 1791764539,
     "log": [
-     "2026-10-18 02:40:44 !! FALLA: la pagina inicial no trae el contador 'Pagina x de y' (cambio en el sitio?)",
-     "2026-10-18 02:40:44 RESUMEN {\"seccion\": \"decretos_ley\", \"modo\": \"piloto\", \"esperado_por_el_sitio\": null, \"inventariadas\": 0, \"con_pdf\": 0, \"estados\": {}, \"pdf_con_basura_recortada\": 0, \"bytes_descargados\": 0, \"seg_por_pdf_promedio\": null, \"saneados_por_word\": 0, \"peticiones\": 1, \"reintentos_por_error\": 0, \"anios_cubiertos\": null, \"duracion_seg\": 1, \"fin\": \"2026-10-18 02:40:44\"}",
-     "2026-10-18 02:40:44 EN RESUMEN [decretos_ley]: el sitio declara None normas; inventarie 0; PDF bien descargados 0 (de ellos 0 con avisos del servidor recortados), a revisar 0, invalidos 0, sin PDF (404) 0; 1 peticiones, 0 reintentos por error; 1 s en total."
+     "2026-10-18 03:01:21   SERVIDOR SATURADO en Decreto Ley N° 19227 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
+     "2026-10-18 03:01:26   SERVIDOR Decreto Ley N° 19227: sin respuesta sana (seguidos: 3); queda registrado",
+     "2026-10-18 03:01:26   PAUSA AUTOMATICA 5 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 03:06."
     ],
     "avisos": [
      {
@@ -2996,6 +3010,22 @@
         "↻ Reintentar ahora"
        ]
       ]
+     },
+     {
+      "sec": "decretos_ley",
+      "modo": "piloto",
+      "etq": "Decretos ley",
+      "act": "2026-10-18 03:01:26",
+      "k": "decretos_ley|piloto|pausa|a las 03:06)",
+      "nivel": "medio",
+      "t": "Pausa automática: el sitio está sufriendo; la compilación reanuda sola",
+      "d": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud) (reanuda sola a las 03:06). No hace falta que hagas nada: el script espera, sigue con el resto, deja cada documento fallido registrado y diagnosticado en _diagnostico.csv, y los reintenta en rondas automáticas al terminar.",
+      "ac": [
+       [
+        "detener",
+        "■ Detener"
+       ]
+      ]
      }
     ]
    }
@@ -3003,7 +3033,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792306835,
+   "ts": 1792307091,
    "version": "2f52bba",
    "procesos": [],
    "orden": {
@@ -4300,7 +4330,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792306798,
+   "ts": 1792307054,
    "version": "2f52bba",
    "procesos": [],
    "orden": {
@@ -4922,7 +4952,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792306848,
+   "ts": 1792307103,
    "version": "2f52bba",
    "procesos": [],
    "orden": {
@@ -5545,28 +5575,30 @@
  "director": {
   "estado": {
    "tcp:ipe01": {
-    "i": 3,
-    "lanz": 1792306782.671773,
+    "i": 4,
+    "lanz": 1792307123.317884,
     "intentos": 1,
     "hist": [
      "ocr_ipe01",
      "ocr_ipe01",
      "conc_1_1999",
-     "conc_1_2001"
+     "conc_1_2001",
+     "conc_1_2003"
     ],
-    "visto": true
+    "visto": false
    },
    "tcp:ipe02": {
-    "i": 3,
-    "lanz": 1792306782.671773,
+    "i": 4,
+    "lanz": 1792307123.317884,
     "intentos": 1,
     "hist": [
      "ocr_ipe02",
      "ocr_ipe02",
      "conc_1_2000",
-     "conc_1_2002"
+     "conc_1_2002",
+     "conc_1_2004"
     ],
-    "visto": true
+    "visto": false
    },
    "tcp:imac-vj1": {
     "i": 0,
@@ -5576,13 +5608,14 @@
     "visto": true
    },
    "tcp:imac-vj2": {
-    "i": 0,
-    "lanz": 1792306852.57073,
-    "intentos": 2,
+    "i": 1,
+    "lanz": null,
+    "intentos": 0,
     "hist": [
+     "ocr_imac-vj2",
      "ocr_imac-vj2"
     ],
-    "visto": false
+    "visto": true
    },
    "gaceta:ipe01": {
     "i": 0,
@@ -5591,7 +5624,7 @@
     "hist": [
      "p_dl"
     ],
-    "visto": false
+    "visto": true
    },
    "gaceta:ipe02": {
     "i": 1,
