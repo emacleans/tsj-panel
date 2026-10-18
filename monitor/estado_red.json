@@ -1,5 +1,5 @@
 {
- "ts": 1792309897,
+ "ts": 1792310213,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792309770,
+   "actualizado_ts": 1792310039,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792309770,
+   "actualizado_ts": 1792310039,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792309789,
+   "actualizado_ts": 1792310048,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792309815,
+   "actualizado_ts": 1792310071,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792309770,
+   "actualizado_ts": 1792310039,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792309801,
+   "actualizado_ts": 1792310086,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792309801,
+   "actualizado_ts": 1792310086,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792309808,
+   "actualizado_ts": 1792310064,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792309801,
+   "actualizado_ts": 1792310086,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792309789,
+   "actualizado_ts": 1792310048,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792309801,
+   "actualizado_ts": 1792310086,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792309815,
+   "actualizado_ts": 1792310071,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792309801,
+   "actualizado_ts": 1792310086,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792309801,
+   "actualizado_ts": 1792310086,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792309801,
+   "actualizado_ts": 1792310086,
    "viejo": false
   },
   {
@@ -259,24 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792309815,
+   "actualizado_ts": 1792310071,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792308069,
-   "texto": "director: tcp:ipe01 terminó «conc_1_2012»"
-  },
-  {
-   "ts": 1792308069,
-   "texto": "director: tcp:ipe02 terminó «conc_1_2008»"
-  },
-  {
-   "ts": 1792308138,
-   "texto": "director: tcp:ipe01 lanza «conc_1_2017» (tcp_conciliar {'base': '1'})"
-  },
   {
    "ts": 1792308139,
    "texto": "director: tcp:ipe02 lanza «conc_1_2009» (tcp_conciliar {'base': '1'})"
@@ -384,13 +372,25 @@
   {
    "ts": 1792309896,
    "texto": "director: tcp:ipe01 terminó «conc_2_2014»"
+  },
+  {
+   "ts": 1792309967,
+   "texto": "director: tcp:ipe01 lanza «conc_2_2017» (tcp_conciliar {'base': '2'})"
+  },
+  {
+   "ts": 1792310097,
+   "texto": "director: tcp:ipe02 terminó «conc_1_2016»"
+  },
+  {
+   "ts": 1792310163,
+   "texto": "director: tcp:ipe02 lanza «conc_1_2018» (tcp_conciliar {'base': '1'})"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792309789,
+   "ts": 1792310048,
    "version": "5fcd6ae",
    "procesos": [],
    "orden": {
@@ -1040,7 +1040,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792309790,
+   "ts": 1792310057,
    "version": "5fcd6ae",
    "procesos": [],
    "orden": {
@@ -1265,8 +1265,8 @@
      ],
      "2:2025": [
       5537,
-      5396,
-      134,
+      5399,
+      131,
       5,
       0,
       0
@@ -1398,13 +1398,13 @@
      "msg": "Se cortó 3 veces en 1 h: dejo de reanudar sola la gestión 2013. Revisa el registro del equipo y relánzala desde el panel."
     },
     "revision_total": 14,
-    "ocr_pendientes": 134,
+    "ocr_pendientes": 131,
     "ritmo_min": 0.63,
-    "ultimo_ts": 1792309708,
+    "ultimo_ts": 1792309981,
     "log": [
-     "2026-10-18 03:46:01    [215730] OCR ok  (42/178)",
-     "2026-10-18 03:47:54    [215731] OCR ok  (43/178)",
-     "2026-10-18 03:48:28    [215732] OCR ok  (44/178)"
+     "2026-10-18 03:50:13    [215733] OCR ok  (45/178)",
+     "2026-10-18 03:50:50    [215734] OCR ok  (46/178)",
+     "2026-10-18 03:53:01    [215735] OCR ok  (47/178)"
     ],
     "conciliacion": null
    },
@@ -1668,7 +1668,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792309819,
+   "ts": 1792310058,
    "version": "5fcd6ae",
    "procesos": [],
    "orden": {
@@ -2305,16 +2305,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792309801,
+   "ts": 1792310086,
    "version": "5fcd6ae",
    "procesos": [],
    "orden": {
-    "seq": 1792309631485,
+    "seq": 1792309966810,
     "accion": "tcp_conciliar",
-    "gestion": "2014",
+    "gestion": "2017",
     "ok": true,
-    "mensaje": "Lanzada: conciliación TCP de 2014 contra el inventario.",
-    "ts": 1792309632
+    "mensaje": "Lanzada: conciliación TCP de 2017 contra el inventario.",
+    "ts": 1792309969
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -2669,27 +2669,27 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "  Resultado: plan=3725, ok=3716, ocr=0, revisar=9, error=0, duplicado=0, faltan=0, sin_archivo=0, huerfanos=0, duplicados_sha=0",
-     "  Informe en: /Users/emacleans/Documents/TCP/_conciliacion/20261018_034713",
+     "  Resultado: plan=4514, ok=4514, ocr=0, revisar=0, error=0, duplicado=0, faltan=0, sin_archivo=0, huerfanos=0, duplicados_sha=0",
+     "  Informe en: /Users/emacleans/Documents/TCP/_conciliacion/20261018_035249",
      "FIN de la conciliación."
     ],
     "conciliacion": {
-     "ts": "2026-10-18T03:47:13",
+     "ts": "2026-10-18T03:52:49",
      "alcance": {
-      "gestion": 2014,
+      "gestion": 2017,
       "base": 2
      },
-     "plan": 3725,
-     "ok": 3716,
+     "plan": 4514,
+     "ok": 4514,
      "ocr": 0,
-     "revisar": 9,
+     "revisar": 0,
      "error": 0,
      "duplicado": 0,
      "faltan": 0,
      "sin_archivo": 0,
      "huerfanos": 0,
      "duplicados_sha": 0,
-     "carpeta": "/Users/emacleans/Documents/TCP/_conciliacion/20261018_034713"
+     "carpeta": "/Users/emacleans/Documents/TCP/_conciliacion/20261018_035249"
     }
    },
    "gaceta": {
@@ -3034,16 +3034,16 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792309770,
+   "ts": 1792310039,
    "version": "5fcd6ae",
    "procesos": [],
    "orden": {
-    "seq": 1792309632419,
-    "accion": "gaceta_iniciar",
-    "gestion": "0000",
+    "seq": 1792309830684,
+    "accion": "tcp_conciliar",
+    "gestion": "2016",
     "ok": true,
-    "mensaje": "Lanzado: Gaceta · sentencias · piloto; retoma lo ya hecho.",
-    "ts": 1792309633
+    "mensaje": "Lanzada: conciliación TCP de 2016 contra el inventario.",
+    "ts": 1792309832
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -3398,18 +3398,18 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792305242,
     "log": [
-     "  Resultado: plan=5, ok=5, ocr=0, revisar=0, error=0, duplicado=0, faltan=0, sin_archivo=0, huerfanos=0, duplicados_sha=0",
-     "  Informe en: /Users/enriquemacleanipe02/Documents/TCP/_conciliacion/20261018_034455",
+     "  Resultado: plan=6, ok=6, ocr=0, revisar=0, error=0, duplicado=0, faltan=0, sin_archivo=0, huerfanos=0, duplicados_sha=0",
+     "  Informe en: /Users/enriquemacleanipe02/Documents/TCP/_conciliacion/20261018_035032",
      "FIN de la conciliación."
     ],
     "conciliacion": {
-     "ts": "2026-10-18T03:44:55",
+     "ts": "2026-10-18T03:50:32",
      "alcance": {
-      "gestion": 2015,
+      "gestion": 2016,
       "base": 1
      },
-     "plan": 5,
-     "ok": 5,
+     "plan": 6,
+     "ok": 6,
      "ocr": 0,
      "revisar": 0,
      "error": 0,
@@ -3418,7 +3418,7 @@
      "sin_archivo": 0,
      "huerfanos": 0,
      "duplicados_sha": 0,
-     "carpeta": "/Users/enriquemacleanipe02/Documents/TCP/_conciliacion/20261018_034455"
+     "carpeta": "/Users/enriquemacleanipe02/Documents/TCP/_conciliacion/20261018_035032"
     }
    },
    "gaceta": {
@@ -3497,8 +3497,8 @@
       "rev": 0,
       "inval": 0,
       "sinpdf": 0,
-      "fallo": 3,
-      "srv": 3,
+      "fallo": 6,
+      "srv": 6,
       "causa": null,
       "rec": 0,
       "hechos": 0,
@@ -3511,7 +3511,7 @@
       "pend": 31,
       "en_curso": true,
       "ritmo": 0.0,
-      "act": "2026-10-18 03:47:43"
+      "act": "2026-10-18 03:53:34"
      },
      "resoluciones": {
       "tipo": "registro",
@@ -3704,9 +3704,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792309299,
     "log": [
-     "2026-10-18 03:47:37   SERVIDOR SATURADO en Sentencia Constitucional N° SC (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
-     "2026-10-18 03:47:43   SERVIDOR Sentencia Constitucional N° SC: sin respuesta sana (seguidos: 3); queda registrado",
-     "2026-10-18 03:47:43   PAUSA AUTOMATICA 5 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 03:52."
+     "2026-10-18 03:53:28   SERVIDOR SATURADO en Sentencia Constitucional N° 67/2015 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
+     "2026-10-18 03:53:34   SERVIDOR Sentencia Constitucional N° 67/2015: sin respuesta sana (seguidos: 3); queda registrado",
+     "2026-10-18 03:53:34   PAUSA AUTOMATICA 10 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 04:03."
     ],
     "avisos": [
      {
@@ -3729,11 +3729,11 @@
       "sec": "sentencias",
       "modo": "piloto",
       "etq": "Sentencias constitucionales (Gaceta)",
-      "act": "2026-10-18 03:47:43",
-      "k": "sentencias|piloto|pausa|a las 03:52)",
+      "act": "2026-10-18 03:53:34",
+      "k": "sentencias|piloto|pausa|a las 04:03)",
       "nivel": "medio",
       "t": "Pausa automática: el sitio está sufriendo; la compilación reanuda sola",
-      "d": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud) (reanuda sola a las 03:52). No hace falta que hagas nada: el script espera, sigue con el resto, deja cada documento fallido registrado y diagnosticado en _diagnostico.csv, y los reintenta en rondas automáticas al terminar.",
+      "d": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud) (reanuda sola a las 04:03). No hace falta que hagas nada: el script espera, sigue con el resto, deja cada documento fallido registrado y diagnosticado en _diagnostico.csv, y los reintenta en rondas automáticas al terminar.",
       "ac": [
        [
         "detener",
@@ -4385,7 +4385,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792309815,
+   "ts": 1792310071,
    "version": "5fcd6ae",
    "procesos": [],
    "orden": {
@@ -5007,7 +5007,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792309808,
+   "ts": 1792310064,
    "version": "5fcd6ae",
    "procesos": [],
    "orden": {
@@ -5631,8 +5631,8 @@
   "estado": {
    "tcp:ipe01": {
     "i": 12,
-    "lanz": null,
-    "intentos": 0,
+    "lanz": 1792309966.810451,
+    "intentos": 1,
     "hist": [
      "ocr_ipe01",
      "ocr_ipe01",
@@ -5651,8 +5651,8 @@
     "visto": true
    },
    "tcp:ipe02": {
-    "i": 12,
-    "lanz": 1792309830.6842,
+    "i": 13,
+    "lanz": 1792310162.88709,
     "intentos": 1,
     "hist": [
      "ocr_ipe02",
@@ -5667,7 +5667,8 @@
      "conc_1_2011",
      "conc_1_2013",
      "conc_1_2014",
-     "conc_1_2015"
+     "conc_1_2015",
+     "conc_1_2016"
     ],
     "visto": false
    },
