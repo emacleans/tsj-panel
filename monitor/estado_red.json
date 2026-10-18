@@ -1,5 +1,5 @@
 {
- "ts": 1792330477,
+ "ts": 1792330781,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792330359,
+   "actualizado_ts": 1792330615,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792330359,
+   "actualizado_ts": 1792330615,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792330356,
+   "actualizado_ts": 1792330610,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792330369,
+   "actualizado_ts": 1792330629,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792330359,
+   "actualizado_ts": 1792330615,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792330363,
+   "actualizado_ts": 1792330630,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792330363,
+   "actualizado_ts": 1792330630,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792330365,
+   "actualizado_ts": 1792330615,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792330363,
+   "actualizado_ts": 1792330630,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792330356,
+   "actualizado_ts": 1792330610,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792330363,
+   "actualizado_ts": 1792330630,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792330369,
+   "actualizado_ts": 1792330629,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792330363,
+   "actualizado_ts": 1792330630,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792330363,
+   "actualizado_ts": 1792330630,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792330363,
+   "actualizado_ts": 1792330630,
    "viejo": false
   },
   {
@@ -259,24 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792330369,
+   "actualizado_ts": 1792330629,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792319552,
-   "texto": "director: gaceta:ipe01 terminó «p_dl»"
-  },
-  {
-   "ts": 1792320575,
-   "texto": "orden de Claude 2026-10-18-ok-p_dl: paso del director aprobado: p_dl"
-  },
-  {
-   "ts": 1792320576,
-   "texto": "director: gaceta:ipe01 lanza «c_dl» (gaceta_iniciar {'seccion': 'decretos_ley', 'modo': 'completo'})"
-  },
   {
    "ts": 1792320578,
    "texto": "director: gaceta:ipe02 lanza «r_dep_5» (gaceta_iniciar {'seccion': 'dep_5', 'modo': 'completo'})"
@@ -384,13 +372,25 @@
   {
    "ts": 1792330325,
    "texto": "orden de Claude 2026-10-18-dl-completo-ipe02b: gaceta_iniciar  {'seccion': 'decretos_ley', 'modo': 'completo'} en IPE02 (Mac Mini casa)"
+  },
+  {
+   "ts": 1792330531,
+   "texto": "orden de Claude 2026-10-18-recuperar-2013-ipe02: recuperar 2013 en IPE02 (Mac Mini casa)"
+  },
+  {
+   "ts": 1792330533,
+   "texto": "orden de Claude 2026-10-18-recuperar-2006-ipe01: recuperar 2006 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1792330676,
+   "texto": "orden de Claude 2026-10-18-dep3-test-vj1: gaceta_iniciar  {'seccion': 'dep_3', 'modo': 'completo'} en iMac-VJ1 (iMac 21,5 pulgadas 2017)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792330356,
+   "ts": 1792330610,
    "version": "d4e820d",
    "procesos": [],
    "orden": {
@@ -1062,7 +1062,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792330352,
+   "ts": 1792330664,
    "version": "d4e820d",
    "procesos": [],
    "orden": {
@@ -1711,7 +1711,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792330339,
+   "ts": 1792330663,
    "version": "d4e820d",
    "procesos": [],
    "orden": {
@@ -2349,7 +2349,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792330363,
+   "ts": 1792330630,
    "version": "d4e820d",
    "procesos": [],
    "orden": {
@@ -3173,16 +3173,16 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792330359,
+   "ts": 1792330615,
    "version": "d4e820d",
    "procesos": [],
    "orden": {
-    "seq": 1792330324562,
-    "accion": "gaceta_iniciar",
-    "gestion": "0000",
+    "seq": 1792330530597,
+    "accion": "recuperar",
+    "gestion": "2013",
     "ok": true,
-    "mensaje": "Lanzado: Gaceta · decretos_ley · compilación completa; retoma lo ya hecho.",
-    "ts": 1792330326
+    "mensaje": "Lanzado: recuperar, gestión 2013",
+    "ts": 1792330533
    },
    "auditorias": {
     "2007": {
@@ -3335,18 +3335,12 @@
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-18 00:23:16] AUDITORÍA Sala Plena                : 166 filas leídas del sitio.",
-    "[2026-10-18 00:23:20] AUDITORÍA Sala Contenciosa Primera  : 775 filas leídas del sitio.",
-    "[2026-10-18 00:23:24] AUDITORÍA Sala Contenciosa Segunda  : 367 filas leídas del sitio.",
-    "[2026-10-18 00:23:24] AUDITORÍA Sala Penal                : sitio 1172 filas (1172 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:23:24] AUDITORÍA Sala Civil                : sitio 1094 filas (1094 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:23:24] AUDITORÍA Sala Plena                : sitio 166 filas (150 AS distintos, 16 repetidos, 18 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:23:24] AUDITORÍA Sala Contenciosa Primera  : sitio 775 filas (767 AS distintos, 8 repetidos, 7 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:23:24] AUDITORÍA Sala Contenciosa Segunda  : sitio 367 filas (367 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
-    "[2026-10-18 00:23:24]   DETALLE SOBRANTES Sala Contenciosa Segunda: AS 187 (1 archivos / 0 filas)",
-    "[2026-10-18 00:23:24] CONCLUSIÓN: la auditoría de 2021 no encontró nada que corregir. Las diferencias que aparecen (5) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
-    "[2026-10-18 00:23:24] Apartados en _revisar/_otra_gestion (autos de otro año descargados por error): 1.",
-    "[2026-10-18 00:23:24] Detalle en /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2021/_faltantes.csv y /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2021/_auditoria.json."
+    "[2026-10-18 09:35:34] === RECUPERACIÓN: 1 fila(s) del sitio en 1 sala(s) ===",
+    "[2026-10-18 09:35:34] --- Iniciando Sala Civil Liquidadora (Gestión 2013) ---",
+    "[2026-10-18 09:35:38] Sala Civil Liquidadora: 649 resultados encontrados en el sitio.",
+    "[2026-10-18 09:35:44] Sala Civil Liquidadora: la fila #68 ('AS/0069/2013') entregó un PDF idéntico a «2013-03-25-TSJ-AS-T-9-08-S-SCLIQ.pdf», que ya existe: se descarta.",
+    "[2026-10-18 09:35:44] --- Sala Civil Liquidadora terminada: 0 nuevos, 1 ya existentes. Archivos totales ahora en la carpeta: 649 (el sitio reporta 649 resultados para esta sala/gestión; si el número final queda muy por debajo, conviene revisar _errores.csv). ---",
+    "[2026-10-18 09:35:44] === RECUPERACIÓN TERMINADA. Ejecuta «Cotejar duplicados» si aparecen pares, y luego «Auditar contra el sitio». ==="
    ],
    "tcp": {
     "por": {
@@ -3760,27 +3754,27 @@
       "tipo": "pdf",
       "modo": "completo",
       "esperado": 1016,
-      "inv": 150,
-      "pdf": 150,
+      "inv": 1016,
+      "pdf": 1016,
       "ok": 0,
       "rev": 0,
       "inval": 0,
       "sinpdf": 0,
-      "fallo": 0,
-      "srv": 0,
+      "fallo": 3,
+      "srv": 3,
       "causa": null,
       "rec": 0,
       "hechos": 0,
       "total": 1016,
-      "fase": "inventario",
-      "cuadra": null,
+      "fase": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco",
+      "cuadra": true,
       "ult": null,
       "pct": 0.0,
       "eta": null,
-      "pend": 0,
+      "pend": 1016,
       "en_curso": true,
       "ritmo": 0.0,
-      "act": "2026-10-18 09:32:21"
+      "act": "2026-10-18 09:35:25"
      },
      "sentencias": {
       "tipo": "pdf",
@@ -4048,9 +4042,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792326685,
     "log": [
-     "2026-10-18 09:32:07 === decretos_ley | modo completo | pausa 1.5 s | salida /Users/enriquemacleanipe02/Documents/GACETA/05_Descargas/decretos_ley ===",
-     "2026-10-18 09:32:07 version del script: 2026-10-08-i (horario dia/noche y tope diario; sin esperas inutiles: documentos que el sitio no puede armar van directo a saneamiento por Word; pausa 1,5 s)",
-     "2026-10-18 09:32:10 [decretos_ley] el sitio declara 1016 normas en 21 paginas"
+     "2026-10-18 09:35:19   SERVIDOR SATURADO en Decreto Ley N° 19227 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
+     "2026-10-18 09:35:25   SERVIDOR Decreto Ley N° 19227: sin respuesta sana (seguidos: 3); queda registrado",
+     "2026-10-18 09:35:25   PAUSA AUTOMATICA 5 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 09:40."
     ],
     "avisos": [
      {
@@ -4066,6 +4060,22 @@
        [
         "iniciar",
         "▶ Reanudar"
+       ]
+      ]
+     },
+     {
+      "sec": "decretos_ley",
+      "modo": "completo",
+      "etq": "Decretos ley",
+      "act": "2026-10-18 09:35:25",
+      "k": "decretos_ley|completo|pausa|a las 09:40)",
+      "nivel": "medio",
+      "t": "Pausa automática: el sitio está sufriendo; la compilación reanuda sola",
+      "d": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud) (reanuda sola a las 09:40). No hace falta que hagas nada: el script espera, sigue con el resto, deja cada documento fallido registrado y diagnosticado en _diagnostico.csv, y los reintenta en rondas automáticas al terminar.",
+      "ac": [
+       [
+        "detener",
+        "■ Detener"
        ]
       ]
      },
@@ -4106,17 +4116,6 @@
       "t": "Compilación completa terminada",
       "d": "505 documentos.",
       "ac": []
-     },
-     {
-      "sec": "dep_6",
-      "modo": "completo",
-      "etq": "Departamental · Oruro",
-      "act": "2026-10-18 05:28:58",
-      "k": "dep_6|completo|completa|2026-10-18 05:28:58",
-      "nivel": "info",
-      "t": "Compilación completa terminada",
-      "d": "639 documentos.",
-      "ac": []
      }
     ]
    }
@@ -4124,7 +4123,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792330346,
+   "ts": 1792330641,
    "version": "d4e820d",
    "procesos": [],
    "orden": {
@@ -4747,7 +4746,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792330369,
+   "ts": 1792330629,
    "version": "d4e820d",
    "procesos": [],
    "orden": {
@@ -5389,7 +5388,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792330365,
+   "ts": 1792330615,
    "version": "d4e820d",
    "procesos": [],
    "orden": {
