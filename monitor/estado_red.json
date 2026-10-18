@@ -1,5 +1,5 @@
 {
- "ts": 1792326115,
+ "ts": 1792326421,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792325995,
+   "actualizado_ts": 1792326319,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792325995,
+   "actualizado_ts": 1792326319,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792326034,
+   "actualizado_ts": 1792326308,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792326035,
+   "actualizado_ts": 1792326324,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792325995,
+   "actualizado_ts": 1792326319,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792326006,
+   "actualizado_ts": 1792326330,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792326006,
+   "actualizado_ts": 1792326330,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792326039,
+   "actualizado_ts": 1792326320,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792326006,
+   "actualizado_ts": 1792326330,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792326034,
+   "actualizado_ts": 1792326308,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792326006,
+   "actualizado_ts": 1792326330,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792326035,
+   "actualizado_ts": 1792326324,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792326006,
+   "actualizado_ts": 1792326330,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792326006,
+   "actualizado_ts": 1792326330,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792326006,
+   "actualizado_ts": 1792326330,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792326035,
+   "actualizado_ts": 1792326324,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792316557,
-   "texto": "director: gaceta:imac-vj1 terminó «c_dep1»"
-  },
   {
    "ts": 1792316693,
    "texto": "director: gaceta:ipe02 terminó «c_dep_7»"
@@ -384,22 +380,26 @@
   {
    "ts": 1792326064,
    "texto": "orden de Claude 2026-10-18-res-diag3: gaceta_iniciar  {'seccion': 'resoluciones', 'modo': 'completo'} en IPE02 (Mac Mini casa)"
+  },
+  {
+   "ts": 1792326269,
+   "texto": "orden de Claude 2026-10-18-res-pag: gaceta_iniciar  {'seccion': 'resoluciones', 'modo': 'completo'} en IPE02 (Mac Mini casa)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792326034,
-   "version": "231c6d2",
+   "ts": 1792326308,
+   "version": "9628a7f",
    "procesos": [],
    "orden": {
-    "seq": 1792324141927,
+    "seq": 1792326240043,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 231c6d2.",
-    "ts": 1792324147
+    "mensaje": "Ya estaba al día.",
+    "ts": 1792326242
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -1040,16 +1040,16 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792326023,
-   "version": "231c6d2",
+   "ts": 1792326325,
+   "version": "9628a7f",
    "procesos": [],
    "orden": {
-    "seq": 1792324143331,
+    "seq": 1792326241067,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 231c6d2.",
-    "ts": 1792324147
+    "mensaje": "Scripts actualizados a 9628a7f.",
+    "ts": 1792326245
    },
    "gestiones": {},
    "ultimas_lineas": [],
@@ -1688,16 +1688,16 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792326009,
-   "version": "231c6d2",
+   "ts": 1792326310,
+   "version": "9628a7f",
    "procesos": [],
    "orden": {
-    "seq": 1792324144349,
+    "seq": 1792326242245,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 231c6d2.",
-    "ts": 1792324148
+    "mensaje": "Scripts actualizados a 9628a7f.",
+    "ts": 1792326246
    },
    "gestiones": {},
    "ultimas_lineas": [],
@@ -2325,16 +2325,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792326006,
-   "version": "231c6d2",
+   "ts": 1792326330,
+   "version": "9628a7f",
    "procesos": [],
    "orden": {
-    "seq": 1792324145464,
+    "seq": 1792326243572,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 231c6d2.",
-    "ts": 1792324148
+    "mensaje": "Scripts actualizados a 9628a7f.",
+    "ts": 1792326247
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -2772,25 +2772,25 @@
       "esperado": 1026,
       "inv": 24185,
       "pdf": 24185,
-      "ok": 0,
+      "ok": 9,
       "rev": 0,
       "inval": 0,
       "sinpdf": 0,
       "fallo": 9,
       "srv": 9,
       "causa": null,
-      "rec": 0,
-      "hechos": 0,
+      "rec": 9,
+      "hechos": 9,
       "total": 24185,
-      "fase": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco",
+      "fase": "descarga",
       "cuadra": true,
-      "ult": null,
+      "ult": 1792326316,
       "pct": 0.0,
-      "eta": null,
+      "eta": 6968009,
       "pend": 24185,
       "en_curso": true,
-      "ritmo": 0.0,
-      "act": "2026-10-18 08:01:18"
+      "ritmo": 0.15,
+      "act": "2026-10-18 08:25:16"
      },
      "sentencias": {
       "tipo": "pdf",
@@ -2992,8 +2992,8 @@
       "inicio_ts": 1792320540
      }
     ],
-    "ritmo_min": 0.0,
-    "ultimo_ts": 1791764539,
+    "ritmo_min": 0.15,
+    "ultimo_ts": 1792326316,
     "log": [
      "2026-10-18 08:01:13   SERVIDOR SATURADO en Decreto Ley N° 19164 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
      "2026-10-18 08:01:18   SERVIDOR Decreto Ley N° 19164: sin respuesta sana (seguidos: 3); queda registrado",
@@ -3031,22 +3031,6 @@
         "↻ Reintentar ahora"
        ]
       ]
-     },
-     {
-      "sec": "decretos_ley",
-      "modo": "completo",
-      "etq": "Decretos ley",
-      "act": "2026-10-18 08:01:18",
-      "k": "decretos_ley|completo|pausa|a las 08:21)",
-      "nivel": "medio",
-      "t": "Pausa automática: el sitio está sufriendo; la compilación reanuda sola",
-      "d": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud) (reanuda sola a las 08:21). No hace falta que hagas nada: el script espera, sigue con el resto, deja cada documento fallido registrado y diagnosticado en _diagnostico.csv, y los reintenta en rondas automáticas al terminar.",
-      "ac": [
-       [
-        "detener",
-        "■ Detener"
-       ]
-      ]
      }
     ]
    }
@@ -3054,16 +3038,16 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792325995,
-   "version": "231c6d2",
+   "ts": 1792326319,
+   "version": "9628a7f",
    "procesos": [],
    "orden": {
-    "seq": 1792324173840,
+    "seq": 1792326268672,
     "accion": "gaceta_iniciar",
     "gestion": "0000",
     "ok": true,
     "mensaje": "Lanzado: Gaceta · resoluciones · compilación completa; retoma lo ya hecho.",
-    "ts": 1792324176
+    "ts": 1792326271
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -3537,7 +3521,7 @@
       "tipo": "registro",
       "modo": "completo",
       "esperado": 4367,
-      "inv": 50,
+      "inv": 550,
       "pdf": 0,
       "ok": 0,
       "rev": 0,
@@ -3545,19 +3529,19 @@
       "sinpdf": 0,
       "fallo": 0,
       "srv": 0,
-      "causa": "terminado",
+      "causa": null,
       "rec": 0,
-      "hechos": 50,
+      "hechos": 550,
       "total": 4367,
-      "fase": "terminado_inventario_incompleto",
-      "cuadra": false,
-      "ult": 1792322283,
-      "pct": 100.0,
-      "eta": 0,
+      "fase": "inventario",
+      "cuadra": null,
+      "ult": 1792326314,
+      "pct": 0.0,
+      "eta": null,
       "pend": 0,
-      "en_curso": false,
+      "en_curso": true,
       "ritmo": 0.0,
-      "act": "2026-10-18 07:49:43"
+      "act": "2026-10-18 08:25:09"
      },
      "dep_1": {
       "tipo": "registro",
@@ -3761,13 +3745,21 @@
       "act": "2026-10-18 05:11:22"
      }
     },
-    "procesos": [],
+    "procesos": [
+     {
+      "pid": 97760,
+      "tipo": "gaceta_compilacion",
+      "seccion": "resoluciones",
+      "modo": "completo",
+      "inicio_ts": 1792326240
+     }
+    ],
     "ritmo_min": 0.0,
-    "ultimo_ts": 1792322283,
+    "ultimo_ts": 1792326314,
     "log": [
-     "2026-10-18 07:49:43 [resoluciones] registros exportados: 50",
-     "2026-10-18 07:49:43 RESUMEN {\"seccion\": \"resoluciones\", \"modo\": \"completo\", \"esperado_por_el_sitio\": 4367, \"inventariadas\": 50, \"con_pdf\": 0, \"estados\": {}, \"pdf_con_basura_recortada\": 0, \"bytes_descargados\": 0, \"seg_por_pdf_promedio\": null, \"saneados_por_word\": 0, \"peticiones\": 2, \"reintentos_por_error\": 0, \"anios_cubiertos\": [\"2018\", \"2018\"], \"duracion_seg\": 6, \"fin\": \"2026-10-18 07:49:43\"}",
-     "2026-10-18 07:49:43 EN RESUMEN [resoluciones]: el sitio declara 4367 normas; inventarie 50; PDF bien descargados 0 (de ellos 0 con avisos del servidor recortados), a revisar 0, invalidos 0, sin PDF (404) 0; 2 peticiones, 0 reintentos por error; 6 s en total."
+     "2026-10-18 08:24:31 version del script: 2026-10-08-i (horario dia/noche y tope diario; sin esperas inutiles: documentos que el sitio no puede armar van directo a saneamiento por Word; pausa 1,5 s)",
+     "2026-10-18 08:24:34 [resoluciones] el sitio declara 4367 normas en 88 paginas",
+     "2026-10-18 08:25:09   inventario resoluciones: pagina 10/88 (500 filas)"
     ],
     "avisos": [
      {
@@ -3841,16 +3833,16 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792326022,
-   "version": "231c6d2",
+   "ts": 1792326311,
+   "version": "9628a7f",
    "procesos": [],
    "orden": {
-    "seq": 1792324146442,
+    "seq": 1792326244664,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Ya estaba al día.",
-    "ts": 1792324149
+    "mensaje": "Scripts actualizados a 9628a7f.",
+    "ts": 1792326248
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -4463,16 +4455,16 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792326035,
-   "version": "231c6d2",
+   "ts": 1792326324,
+   "version": "9628a7f",
    "procesos": [],
    "orden": {
-    "seq": 1792324147341,
+    "seq": 1792326245737,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 231c6d2.",
-    "ts": 1792324154
+    "mensaje": "Scripts actualizados a 9628a7f.",
+    "ts": 1792326250
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -5085,16 +5077,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792326039,
-   "version": "231c6d2",
+   "ts": 1792326320,
+   "version": "9628a7f",
    "procesos": [],
    "orden": {
-    "seq": 1792324149115,
+    "seq": 1792326246924,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
     "mensaje": "Ya estaba al día.",
-    "ts": 1792324154
+    "ts": 1792326252
    },
    "gestiones": {},
    "ultimas_lineas": [
