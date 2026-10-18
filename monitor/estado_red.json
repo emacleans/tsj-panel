@@ -1,5 +1,5 @@
 {
- "ts": 1792305641,
+ "ts": 1792305943,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792305590,
+   "actualizado_ts": 1792305854,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792305590,
+   "actualizado_ts": 1792305854,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792305592,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792305592,
+   "actualizado_ts": 1792305884,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792305590,
+   "actualizado_ts": 1792305854,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792305589,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792305589,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792305604,
+   "actualizado_ts": 1792305871,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792305589,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792305592,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792305589,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792305592,
+   "actualizado_ts": 1792305884,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792305589,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792305589,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792305589,
+   "actualizado_ts": 1792305863,
    "viejo": false
   },
   {
@@ -259,24 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792305592,
+   "actualizado_ts": 1792305884,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792296175,
-   "texto": "orden de Claude 2026-10-18-cotejo-huerf-2019-b: cotejo_auto_real 2019 en IPE01 (Mac Mini oficina)"
-  },
-  {
-   "ts": 1792296572,
-   "texto": "orden de Claude 2026-10-18-auditar-2005-mm-ali: auditar 2005 en MM-Ali (Mac Mini Alicia)"
-  },
-  {
-   "ts": 1792296573,
-   "texto": "orden de Claude 2026-10-18-auditar-2002-ipe01: auditar 2002 en IPE01 (Mac Mini oficina)"
-  },
   {
    "ts": 1792296574,
    "texto": "orden de Claude 2026-10-18-auditar-2015-imac-sala: auditar 2015 en iMac-Sala (iMac de la sala)"
@@ -384,22 +372,34 @@
   {
    "ts": 1792305640,
    "texto": "director: gaceta:ipe01 lanza «p_dl» (gaceta_iniciar {'seccion': 'decretos_ley', 'modo': 'piloto'})"
+  },
+  {
+   "ts": 1792305708,
+   "texto": "director: gaceta:ipe02 lanza «p_dep8» (gaceta_iniciar {'seccion': 'dep_8', 'modo': 'piloto'})"
+  },
+  {
+   "ts": 1792305779,
+   "texto": "director: tcp:ipe01 lanza «ocr_ipe01» (tcp_ocr {})"
+  },
+  {
+   "ts": 1792305780,
+   "texto": "director: tcp:ipe02 lanza «ocr_ipe02» (tcp_ocr {})"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792305592,
-   "version": "7faba90",
+   "ts": 1792305863,
+   "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792305305611,
+    "seq": 1792305696045,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 7faba90.",
-    "ts": 1792305310
+    "mensaje": "Scripts actualizados a 2f52bba.",
+    "ts": 1792305700
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -746,9 +746,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-17 23:17:08  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:32:50  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 02:35:57  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 02:35:57  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 02:41:30  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null
    },
@@ -1040,16 +1040,16 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792305597,
-   "version": "7faba90",
+   "ts": 1792305849,
+   "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792305306667,
+    "seq": 1792305697697,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 7faba90.",
-    "ts": 1792305312
+    "mensaje": "Scripts actualizados a 2f52bba.",
+    "ts": 1792305703
    },
    "gestiones": {},
    "ultimas_lineas": [],
@@ -1265,8 +1265,8 @@
      ],
      "2:2025": [
       5537,
-      5355,
-      176,
+      5357,
+      174,
       4,
       0,
       0
@@ -1398,13 +1398,13 @@
      "msg": "Se cortó 3 veces en 1 h: dejo de reanudar sola la gestión 2013. Revisa el registro del equipo y relánzala desde el panel."
     },
     "revision_total": 13,
-    "ocr_pendientes": 176,
-    "ritmo_min": 0.03,
-    "ultimo_ts": 1792305486,
+    "ocr_pendientes": 174,
+    "ritmo_min": 0.07,
+    "ultimo_ts": 1792305804,
     "log": [
-     "2026-10-18 02:34:02  OCR: 178 PDF pendientes",
-     "2026-10-18 02:36:21    [215544] OCR ok  (1/178)",
-     "2026-10-18 02:38:06    [215545] OCR ok  (2/178)"
+     "2026-10-18 02:38:06    [215545] OCR ok  (2/178)",
+     "2026-10-18 02:41:00    [215546] OCR ok  (3/178)",
+     "2026-10-18 02:43:24    [215547] OCR ok  (4/178)"
     ],
     "conciliacion": null
    },
@@ -1668,16 +1668,16 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792305588,
-   "version": "7faba90",
+   "ts": 1792305866,
+   "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792305307725,
+    "seq": 1792305699430,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 7faba90.",
-    "ts": 1792305311
+    "mensaje": "Scripts actualizados a 2f52bba.",
+    "ts": 1792305704
    },
    "gestiones": {},
    "ultimas_lineas": [],
@@ -2022,11 +2022,28 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-17 23:23:25  red: TimeoutError: The read operation timed out",
      "2026-10-18 02:31:52  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 02:37:06  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 02:37:06  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 02:41:44  Mesa de revisión activa en el puerto 8751"
     ],
-    "conciliacion": null
+    "conciliacion": {
+     "ts": "2026-10-18T02:39:51",
+     "alcance": {
+      "gestion": 2015,
+      "base": 2
+     },
+     "plan": 5466,
+     "ok": 5432,
+     "ocr": 0,
+     "revisar": 33,
+     "error": 0,
+     "duplicado": 0,
+     "faltan": 1,
+     "sin_archivo": 0,
+     "huerfanos": 0,
+     "duplicados_sha": 0,
+     "carpeta": "/Users/emaclean-amvj/Documents/TCP/_conciliacion/20261018_023951"
+    }
    },
    "gaceta": {
     "por": {
@@ -2288,16 +2305,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792305589,
-   "version": "7faba90",
+   "ts": 1792305863,
+   "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792305586615,
-    "accion": "tcp_conciliar",
-    "gestion": "1999",
+    "seq": 1792305778758,
+    "accion": "tcp_ocr",
+    "gestion": "0000",
     "ok": true,
-    "mensaje": "Lanzada: conciliación TCP de 1999 contra el inventario.",
-    "ts": 1792305588
+    "mensaje": "Lanzado: OCR de los PDF escaneados pendientes (TCP).",
+    "ts": 1792305780
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -2637,15 +2654,7 @@
       0
      ]
     },
-    "procesos": [
-     {
-      "pid": 41509,
-      "tipo": "tcp_conciliacion",
-      "gestion": "1999",
-      "base": 1,
-      "inicio_ts": 1792305540
-     }
-    ],
+    "procesos": [],
     "auto": {
      "gestion": "2026",
      "base": 2,
@@ -2660,9 +2669,28 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "02:39:48  Conciliación TCP local · alcance: gestión=1999 base=1"
+     "2026-10-18 02:43:01  OCR: 1 PDF pendientes",
+     "2026-10-18 02:43:01    012305_b1_1.pdf: no está en el inventario; se deja.",
+     "2026-10-18 02:43:01  FIN del OCR: {'ok': 0, 'revisar': 0, 'error': 0}"
     ],
-    "conciliacion": null
+    "conciliacion": {
+     "ts": "2026-10-18T02:39:48",
+     "alcance": {
+      "gestion": 1999,
+      "base": 1
+     },
+     "plan": 506,
+     "ok": 505,
+     "ocr": 0,
+     "revisar": 1,
+     "error": 0,
+     "duplicado": 0,
+     "faltan": 0,
+     "sin_archivo": 0,
+     "huerfanos": 0,
+     "duplicados_sha": 0,
+     "carpeta": "/Users/emacleans/Documents/TCP/_conciliacion/20261018_023948"
+    }
    },
    "gaceta": {
     "por": {
@@ -2932,9 +2960,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1791764539,
     "log": [
-     "2026-10-18 02:34:03 !! FALLA: la pagina inicial no trae el contador 'Pagina x de y' (cambio en el sitio?)",
-     "2026-10-18 02:34:03 RESUMEN {\"seccion\": \"decretos_ley\", \"modo\": \"piloto\", \"esperado_por_el_sitio\": null, \"inventariadas\": 0, \"con_pdf\": 0, \"estados\": {}, \"pdf_con_basura_recortada\": 0, \"bytes_descargados\": 0, \"seg_por_pdf_promedio\": null, \"saneados_por_word\": 0, \"peticiones\": 1, \"reintentos_por_error\": 0, \"anios_cubiertos\": null, \"duracion_seg\": 1, \"fin\": \"2026-10-18 02:34:03\"}",
-     "2026-10-18 02:34:03 EN RESUMEN [decretos_ley]: el sitio declara None normas; inventarie 0; PDF bien descargados 0 (de ellos 0 con avisos del servidor recortados), a revisar 0, invalidos 0, sin PDF (404) 0; 1 peticiones, 0 reintentos por error; 1 s en total."
+     "2026-10-18 02:40:44 !! FALLA: la pagina inicial no trae el contador 'Pagina x de y' (cambio en el sitio?)",
+     "2026-10-18 02:40:44 RESUMEN {\"seccion\": \"decretos_ley\", \"modo\": \"piloto\", \"esperado_por_el_sitio\": null, \"inventariadas\": 0, \"con_pdf\": 0, \"estados\": {}, \"pdf_con_basura_recortada\": 0, \"bytes_descargados\": 0, \"seg_por_pdf_promedio\": null, \"saneados_por_word\": 0, \"peticiones\": 1, \"reintentos_por_error\": 0, \"anios_cubiertos\": null, \"duracion_seg\": 1, \"fin\": \"2026-10-18 02:40:44\"}",
+     "2026-10-18 02:40:44 EN RESUMEN [decretos_ley]: el sitio declara None normas; inventarie 0; PDF bien descargados 0 (de ellos 0 con avisos del servidor recortados), a revisar 0, invalidos 0, sin PDF (404) 0; 1 peticiones, 0 reintentos por error; 1 s en total."
     ],
     "avisos": [
      {
@@ -2975,16 +3003,16 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792305590,
-   "version": "7faba90",
+   "ts": 1792305854,
+   "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792305587586,
-    "accion": "tcp_conciliar",
-    "gestion": "2000",
+    "seq": 1792305779697,
+    "accion": "tcp_ocr",
+    "gestion": "0000",
     "ok": true,
-    "mensaje": "Lanzada: conciliación TCP de 2000 contra el inventario.",
-    "ts": 1792305589
+    "mensaje": "Lanzado: OCR de los PDF escaneados pendientes (TCP).",
+    "ts": 1792305782
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -3324,15 +3352,7 @@
       0
      ]
     },
-    "procesos": [
-     {
-      "pid": 75090,
-      "tipo": "tcp_conciliacion",
-      "gestion": "2000",
-      "base": 1,
-      "inicio_ts": 1792305540
-     }
-    ],
+    "procesos": [],
     "auto": {
      "gestion": "2016",
      "base": 2,
@@ -3347,9 +3367,28 @@
     "ritmo_min": 0.03,
     "ultimo_ts": 1792305242,
     "log": [
-     "02:39:49  Conciliación TCP local · alcance: gestión=2000 base=1"
+     "2026-10-18 02:43:03    004688_b1_0017-2002-R.pdf: no está en el inventario; se deja.",
+     "2026-10-18 02:43:03    009265_b1_0621-2004-R.pdf: no está en el inventario; se deja.",
+     "2026-10-18 02:43:03  FIN del OCR: {'ok': 0, 'revisar': 0, 'error': 0}"
     ],
-    "conciliacion": null
+    "conciliacion": {
+     "ts": "2026-10-18T02:39:49",
+     "alcance": {
+      "gestion": 2000,
+      "base": 1
+     },
+     "plan": 1399,
+     "ok": 1398,
+     "ocr": 0,
+     "revisar": 0,
+     "error": 0,
+     "duplicado": 0,
+     "faltan": 1,
+     "sin_archivo": 1,
+     "huerfanos": 0,
+     "duplicados_sha": 0,
+     "carpeta": "/Users/enriquemacleanipe02/Documents/TCP/_conciliacion/20261018_023949"
+    }
    },
    "gaceta": {
     "por": {
@@ -3612,9 +3651,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1791480256,
     "log": [
-     "2026-10-18 02:34:05 !! FALLA: la pagina inicial no trae el contador 'Pagina x de y' (cambio en el sitio?)",
-     "2026-10-18 02:34:05 RESUMEN {\"seccion\": \"sentencias\", \"modo\": \"piloto\", \"esperado_por_el_sitio\": null, \"inventariadas\": 0, \"con_pdf\": 0, \"estados\": {}, \"pdf_con_basura_recortada\": 0, \"bytes_descargados\": 0, \"seg_por_pdf_promedio\": null, \"saneados_por_word\": 0, \"peticiones\": 1, \"reintentos_por_error\": 0, \"anios_cubiertos\": null, \"duracion_seg\": 1, \"fin\": \"2026-10-18 02:34:05\"}",
-     "2026-10-18 02:34:05 EN RESUMEN [sentencias]: el sitio declara None normas; inventarie 0; PDF bien descargados 0 (de ellos 0 con avisos del servidor recortados), a revisar 0, invalidos 0, sin PDF (404) 0; 1 peticiones, 0 reintentos por error; 1 s en total."
+     "2026-10-18 02:41:50 !! FALLA: la pagina inicial no trae el contador 'Pagina x de y' (cambio en el sitio?)",
+     "2026-10-18 02:41:50 RESUMEN {\"seccion\": \"dep_8\", \"modo\": \"piloto\", \"esperado_por_el_sitio\": null, \"inventariadas\": 0, \"con_pdf\": 0, \"estados\": {}, \"pdf_con_basura_recortada\": 0, \"bytes_descargados\": 0, \"seg_por_pdf_promedio\": null, \"saneados_por_word\": 0, \"peticiones\": 1, \"reintentos_por_error\": 0, \"anios_cubiertos\": null, \"duracion_seg\": 1, \"fin\": \"2026-10-18 02:41:50\"}",
+     "2026-10-18 02:41:50 EN RESUMEN [dep_8]: el sitio declara None normas; inventarie 0; PDF bien descargados 0 (de ellos 0 con avisos del servidor recortados), a revisar 0, invalidos 0, sin PDF (404) 0; 1 peticiones, 0 reintentos por error; 1 s en total."
     ],
     "avisos": [
      {
@@ -4261,16 +4300,16 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792305592,
-   "version": "7faba90",
+   "ts": 1792305884,
+   "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792305310763,
+    "seq": 1792305703027,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 7faba90.",
-    "ts": 1792305314
+    "mensaje": "Scripts actualizados a 2f52bba.",
+    "ts": 1792305707
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -4617,9 +4656,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-17 23:16:21  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:31:52  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 02:37:05  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 02:37:05  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 02:41:57  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null
    },
@@ -4883,16 +4922,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792305604,
-   "version": "7faba90",
+   "ts": 1792305871,
+   "version": "2f52bba",
    "procesos": [],
    "orden": {
-    "seq": 1792305311887,
+    "seq": 1792305704698,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 7faba90.",
-    "ts": 1792305318
+    "mensaje": "Scripts actualizados a 2f52bba.",
+    "ts": 1792305708
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -5239,9 +5278,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-17 23:16:34  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 02:32:05  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 02:36:14  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 02:36:14  Mesa de revisión activa en el puerto 8751",
+     "2026-10-18 02:41:45  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null
    },
@@ -5507,21 +5546,21 @@
   "estado": {
    "tcp:ipe01": {
     "i": 0,
-    "lanz": null,
-    "intentos": 0,
+    "lanz": 1792305778.758347,
+    "intentos": 1,
     "hist": [
      "ocr_ipe01"
     ],
-    "visto": false
+    "visto": true
    },
    "tcp:ipe02": {
     "i": 0,
-    "lanz": null,
-    "intentos": 0,
+    "lanz": 1792305778.758347,
+    "intentos": 1,
     "hist": [
      "ocr_ipe02"
     ],
-    "visto": false
+    "visto": true
    },
    "tcp:imac-vj1": {
     "i": 0,
@@ -5549,12 +5588,13 @@
     "visto": false
    },
    "gaceta:ipe02": {
-    "i": 1,
-    "lanz": null,
-    "intentos": 0,
+    "i": 0,
+    "lanz": 1792305706.3607318,
+    "intentos": 1,
     "hist": [
      "p_sent"
-    ]
+    ],
+    "visto": true
    },
    "gaceta:imac-vj1": {
     "i": 0,
@@ -5564,6 +5604,6 @@
    }
   },
   "ok": [],
-  "reset_v": 1
+  "reset_v": 2
  }
 }
