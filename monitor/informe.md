@@ -1,4 +1,4 @@
-# Informe del orquestador — 18/10 10:03
+# Informe del orquestador — 18/10 10:08
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -12,30 +12,30 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 | 2015 | Compilada completa | 7 de 7 | 4293 / 4298 | 99.9 % | - | iMac-Sala (iMac de la sala) | hace 2 min |
 | 2016 | Compilada completa | 5 de 5 | 4043 / 4051 | 99.8 % | - | MM-Ali (Mac Mini Alicia) | hace 2 min |
 | 2012 | Compilada completa | 8 de 8 | 3207 / 3211 | 99.9 % | - | IPE02 (Mac Mini casa) | hace 2 min |
-| 2011 | Compilada completa | 6 de 6 | 1568 / 1572 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 79 s |
-| 2010 | Compilada completa | 6 de 6 | 2944 / 2947 | 99.9 % | - | IPE01 (Mac Mini oficina) | hace 79 s |
+| 2011 | Compilada completa | 6 de 6 | 1568 / 1572 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 2 min |
+| 2010 | Compilada completa | 6 de 6 | 2944 / 2947 | 99.9 % | - | IPE01 (Mac Mini oficina) | hace 2 min |
 | 2009 | Compilada completa | 7 de 7 | 2245 / 2255 | 99.6 % | - | MM-Sofi (Mac Mini Sofía) | hace 2 min |
-| 2008 | Compilada completa | 6 de 6 | 2333 / 2340 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 79 s |
+| 2008 | Compilada completa | 6 de 6 | 2333 / 2340 | 99.7 % | - | IPE01 (Mac Mini oficina) | hace 2 min |
 | 2007 | Compilada completa | 6 de 6 | 3319 / 3331 | 99.6 % | - | iMac-Sala (iMac de la sala) | hace 2 min |
-| 2006 | Compilada completa | 6 de 6 | 3008 / 3009 | 100.0 % | - | IPE01 (Mac Mini oficina) | hace 79 s |
+| 2006 | Compilada completa | 6 de 6 | 3008 / 3009 | 100.0 % | - | IPE01 (Mac Mini oficina) | hace 2 min |
 | 2005 | Compilada completa | 7 de 7 | 2179 / 2182 | 99.9 % | - | MM-Ali (Mac Mini Alicia) | hace 2 min |
-| 2004 | Compilada completa | 6 de 6 | 1743 / 1747 | 99.8 % | - | IPE01 (Mac Mini oficina) | hace 79 s |
-| 2003 | Compilada completa | 4 de 4 | 1377 / 1379 | 99.9 % | - | IPE01 (Mac Mini oficina) | hace 79 s |
-| 2002 | Compilada completa | 5 de 5 | 1318 / 1323 | 99.6 % | - | IPE01 (Mac Mini oficina) | hace 79 s |
+| 2004 | Compilada completa | 6 de 6 | 1743 / 1747 | 99.8 % | - | IPE01 (Mac Mini oficina) | hace 2 min |
+| 2003 | Compilada completa | 4 de 4 | 1377 / 1379 | 99.9 % | - | IPE01 (Mac Mini oficina) | hace 2 min |
+| 2002 | Compilada completa | 5 de 5 | 1318 / 1323 | 99.6 % | - | IPE01 (Mac Mini oficina) | hace 2 min |
 | 2001 | Compilada completa | 3 de 3 | 419 / 423 | 99.1 % | - | MM-Ali (Mac Mini Alicia) | hace 2 min |
 
 ## Equipos
 
 | Equipo | Estado | Trabajo | Salud | Dato |
 |---|---|---|---|---|
-| IPE01 (Mac Mini oficina) | en línea | libre | - | hace 79 s |
+| IPE01 (Mac Mini oficina) | en línea | libre | - | hace 2 min |
 | IPE02 (Mac Mini casa) | en línea | libre | - | hace 2 min |
 | MM-Ali (Mac Mini Alicia) | en línea | libre | - | hace 2 min |
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 2 min |
-| MacBook Air | en línea | libre | - | hace 74 s |
-| iMac-Sala (iMac de la sala) | en línea | libre | - | hace 2 min |
-| iMac-VJ1 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 86 s |
-| iMac-VJ2 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 84 s |
+| MacBook Air | en línea | libre | - | hace 2 min |
+| iMac-Sala (iMac de la sala) | en línea | auditoria 2015 | - | hace 2 min |
+| iMac-VJ1 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 2 min |
+| iMac-VJ2 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 2 min |
 
 ## Incidencias abiertas
 
@@ -43,8 +43,6 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 ## Últimas acciones del orquestador
 
-- 18/10 07:22 · director: gaceta:ipe02 terminó «c_res»
-- 18/10 07:23 · director: tcp:imac-vj1 terminó «pautas_imac-vj1»
 - 18/10 07:49 · orden de Claude 2026-10-18-res-diag: gaceta_iniciar  {'seccion': 'resoluciones', 'modo': 'completo'} en IPE02 (Mac Mini casa)
 - 18/10 08:19 · orden de Claude 2026-10-18-res-diag2: gaceta_iniciar  {'seccion': 'resoluciones', 'modo': 'completo'} en IPE02 (Mac Mini casa)
 - 18/10 08:21 · orden de Claude 2026-10-18-res-diag3: gaceta_iniciar  {'seccion': 'resoluciones', 'modo': 'completo'} en IPE02 (Mac Mini casa)
@@ -58,3 +56,5 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 - 18/10 09:51 · orden de Claude 2026-10-18-recuperar-2006-ipe01b: recuperar 2006 en IPE01 (Mac Mini oficina)
 - 18/10 09:51 · orden de Claude 2026-10-18-recuperar-2015-imac-sala: recuperar 2015 en iMac-Sala (iMac de la sala)
 - 18/10 09:53 · inicia 2015 en iMac-Sala (iMac de la sala) (incompleta; intento 1)
+- 18/10 10:08 · orden de Claude 2026-10-18-auditar2-2006-ipe01: auditar 2006 en IPE01 (Mac Mini oficina)
+- 18/10 10:08 · orden de Claude 2026-10-18-auditar2-2013-ipe02: auditar 2013 en IPE02 (Mac Mini casa)
