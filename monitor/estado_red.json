@@ -1,5 +1,5 @@
 {
- "ts": 1792296471,
+ "ts": 1792296642,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792296462,
+   "actualizado_ts": 1792296609,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792296462,
+   "actualizado_ts": 1792296609,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792296429,
+   "actualizado_ts": 1792296576,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792296459,
+   "actualizado_ts": 1792296574,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792296462,
+   "actualizado_ts": 1792296609,
    "viejo": false
   },
   {
@@ -109,22 +109,24 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792296422,
+   "actualizado_ts": 1792296623,
    "viejo": false
   },
   {
    "gestion": "2010",
-   "estado": "Compilada completa",
-   "estado_interno": "completa",
+   "estado": "Compilando",
+   "estado_interno": "incompleta",
    "salas_n": 6,
    "salas_medidas": 6,
    "docs": 2940,
    "total_esperado": 2947,
    "total_completo": true,
    "pct": 99.8,
-   "eta": null,
+   "eta": {
+    "calculando": true
+   },
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792296422,
+   "actualizado_ts": 1792296623,
    "viejo": false
   },
   {
@@ -139,7 +141,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792296446,
+   "actualizado_ts": 1792296591,
    "viejo": false
   },
   {
@@ -154,7 +156,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792296422,
+   "actualizado_ts": 1792296623,
    "viejo": false
   },
   {
@@ -169,7 +171,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792296429,
+   "actualizado_ts": 1792296576,
    "viejo": false
   },
   {
@@ -184,7 +186,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792296422,
+   "actualizado_ts": 1792296623,
    "viejo": false
   },
   {
@@ -199,7 +201,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792296459,
+   "actualizado_ts": 1792296574,
    "viejo": false
   },
   {
@@ -214,7 +216,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792296422,
+   "actualizado_ts": 1792296623,
    "viejo": false
   },
   {
@@ -229,7 +231,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792296422,
+   "actualizado_ts": 1792296623,
    "viejo": false
   },
   {
@@ -244,7 +246,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792296422,
+   "actualizado_ts": 1792296623,
    "viejo": false
   },
   {
@@ -259,32 +261,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792296459,
+   "actualizado_ts": 1792296574,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1791283058,
-   "texto": "orden de Claude 2026-10-06-corregir-sim-2006-a: corregir_sim 2006 en IPE01 (Mac Mini oficina)"
-  },
-  {
-   "ts": 1791283133,
-   "texto": "orden de Claude 2026-10-06-retirar-2018-ali: retirar_vacia 2018 en MM-Ali (Mac Mini Alicia)"
-  },
-  {
-   "ts": 1791283134,
-   "texto": "orden de Claude 2026-10-06-retirar-2012-sofi: retirar_vacia 2012 en MM-Sofi (Mac Mini Sofía)"
-  },
-  {
-   "ts": 1791283481,
-   "texto": "orden de Claude 2026-10-06-retirar-2020-ali: retirar_vacia 2020 en MM-Ali (Mac Mini Alicia)"
-  },
-  {
-   "ts": 1791283482,
-   "texto": "orden de Claude 2026-10-06-retirar-2019-sofi: retirar_vacia 2019 en MM-Sofi (Mac Mini Sofía)"
-  },
   {
    "ts": 1791283761,
    "texto": "orden de Claude 2026-10-06-retirar-2014-ipe01: retirar_vacia 2014 en IPE01 (Mac Mini oficina)"
@@ -384,43 +366,57 @@
   {
    "ts": 1792296175,
    "texto": "orden de Claude 2026-10-18-cotejo-huerf-2019-b: cotejo_auto_real 2019 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1792296572,
+   "texto": "orden de Claude 2026-10-18-auditar-2005-mm-ali: auditar 2005 en MM-Ali (Mac Mini Alicia)"
+  },
+  {
+   "ts": 1792296573,
+   "texto": "orden de Claude 2026-10-18-auditar-2002-ipe01: auditar 2002 en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1792296574,
+   "texto": "orden de Claude 2026-10-18-auditar-2015-imac-sala: auditar 2015 en iMac-Sala (iMac de la sala)"
+  },
+  {
+   "ts": 1792296575,
+   "texto": "orden de Claude 2026-10-18-auditar-2013-ipe02: auditar 2013 en IPE02 (Mac Mini casa)"
+  },
+  {
+   "ts": 1792296640,
+   "texto": "inicia 2010 en IPE01 (Mac Mini oficina) (incompleta; intento 1)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792296429,
+   "ts": 1792296576,
    "version": "340414f",
-   "procesos": [],
+   "procesos": [
+    {
+     "pid": 16441,
+     "tipo": "auditoria",
+     "gestion": "2015",
+     "inicio_ts": 1792296570
+    }
+   ],
    "orden": {
-    "seq": 1792296324328,
-    "accion": "actualizar",
-    "gestion": "0000",
-    "ok": true,
-    "mensaje": "Scripts actualizados a 340414f.",
-    "ts": 1792296327
+    "seq": 1792296573164,
+    "accion": "auditar",
+    "gestion": "2015",
+    "ok": false,
+    "mensaje": "Ocupado: en este equipo ya corre auditoria 2015 para la gestión 2015. Detén eso primero, o espera a que termine (otras gestiones sí pueden correr a la vez).",
+    "ts": 1792296575
    },
    "gestiones": {},
-   "ultimas_lineas": [
-    "[2026-10-18 00:02:04] AUDITORÍA Sala Civil 1              : 487 filas leídas del sitio.",
-    "[2026-10-18 00:02:08] AUDITORÍA Sala Penal 2              : 416 filas leídas del sitio.",
-    "[2026-10-18 00:02:08] AUDITORÍA Sala Plena                : sitio 290 filas (290 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:08] AUDITORÍA Sala Contenciosa Primera  : sitio 634 filas (632 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:08] AUDITORÍA Sala Contenciosa Segunda  : sitio 850 filas (844 AS distintos, 5 repetidos, 1 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:08] AUDITORÍA Sala Penal 1              : sitio 654 filas (651 AS distintos, 3 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:08] AUDITORÍA Sala Civil 1              : sitio 487 filas (474 AS distintos, 13 repetidos, 0 sin número legible) | sin archivo 10, de ellas 10 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:08] AUDITORÍA Sala Penal 2              : sitio 416 filas (412 AS distintos, 3 repetidos, 1 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:08]   DETALLE SOBRANTES Sala Penal 2: AS 158 (2 archivos / 1 filas)",
-    "[2026-10-18 00:02:08] CONCLUSIÓN: la auditoría de 2007 no encontró nada que corregir. Las diferencias que aparecen (1) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
-    "[2026-10-18 00:02:08] Apartados en _revisar/_no_AS (el encabezado no dice «Auto Supremo»; no cuentan como sobrantes): Sala Civil 1 1.",
-    "[2026-10-18 00:02:08] Detalle en /Users/enriquemaclean/Documents/TSJ/Compilacion/2007/_faltantes.csv y /Users/enriquemaclean/Documents/TSJ/Compilacion/2007/_auditoria.json."
-   ]
+   "ultimas_lineas": []
   },
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792296413,
+   "ts": 1792296578,
    "version": "340414f",
    "procesos": [],
    "orden": {
@@ -437,7 +433,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792296462,
+   "ts": 1792296587,
    "version": "340414f",
    "procesos": [],
    "orden": {
@@ -454,61 +450,93 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792296422,
+   "ts": 1792296623,
    "version": "340414f",
    "procesos": [],
    "orden": {
-    "seq": 1792296327371,
-    "accion": "actualizar",
-    "gestion": "0000",
+    "seq": 1792296572216,
+    "accion": "auditar",
+    "gestion": "2002",
     "ok": true,
-    "mensaje": "Scripts actualizados a 340414f.",
-    "ts": 1792296331
+    "mensaje": "Lanzado: auditar, gestión 2002",
+    "ts": 1792296573
    },
-   "gestiones": {},
+   "gestiones": {
+    "2010": {
+     "activo": true,
+     "total_archivos": 2939,
+     "docs_descargados": 2940,
+     "salas_n": 6,
+     "salas_medidas": 6,
+     "total_completo": true,
+     "total_esperado": 2947,
+     "pct_total": 99.8,
+     "estado": "compilando",
+     "estado_texto": "Compilando",
+     "termino_con_exito": true,
+     "con_faltantes": null,
+     "eta": {
+      "calculando": true
+     },
+     "salud": {
+      "estado": "parado",
+      "limite_30m": 0,
+      "fallos_30m": 0,
+      "fallos_15m": 0,
+      "fallos_total": 0,
+      "ultimo_movimiento_ts": 1791140258,
+      "ultimo_limite_ts": null,
+      "ultima_falla_ts": null,
+      "detalle": "sin movimiento hace 19272 min"
+     }
+    }
+   },
    "ultimas_lineas": [
-    "[2026-10-18 00:03:21] AUDITORÍA Sala Penal 2              : 260 filas leídas del sitio.",
-    "[2026-10-18 00:03:21] AUDITORÍA Sala Plena                : sitio 250 filas (241 AS distintos, 1 repetidos, 8 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:03:21] AUDITORÍA Sala Contenciosa Primera  : sitio 581 filas (579 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:03:21] AUDITORÍA Sala Contenciosa Segunda  : sitio 473 filas (467 AS distintos, 6 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:03:21] AUDITORÍA Sala Penal 1              : sitio 462 filas (462 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:03:21] AUDITORÍA Sala Civil 1              : sitio 314 filas (307 AS distintos, 7 repetidos, 0 sin número legible) | sin archivo 8, de ellas 8 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
-    "[2026-10-18 00:03:21] AUDITORÍA Sala Penal 2              : sitio 260 filas (260 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:03:21]   DETALLE SOBRANTES Sala Civil 1: AS 641 (1 archivos / 0 filas)",
-    "[2026-10-18 00:03:21] CONCLUSIÓN: antes de cerrar 2008 hay 1 cosa(s) por resolver:",
-    "[2026-10-18 00:03:21]   1) Hay 1 archivo(s) en «_revisar» marcados como posible duplicado cuyo texto SÍ difiere del que ya tenemos (ejemplo: 2008-07-18-TSJ-EXP-211-2007-SPL-POSIBLE-DUPLICADO.pdf). Hay que compararlos y decidir cuál se conserva.",
-    "[2026-10-18 00:03:21]   Luego repite «Auditar contra el sitio».",
-    "[2026-10-18 00:03:21] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2008/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2008/_auditoria.json."
+    "[2026-10-18 00:09:53] AUDITORÍA Sala Civil 1              : 343 filas leídas del sitio.",
+    "[2026-10-18 00:09:53] AUDITORÍA Sala Plena                : sitio 101 filas (98 AS distintos, 3 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-18 00:09:53] AUDITORÍA Sala Contenciosa Primera  : sitio 360 filas (356 AS distintos, 4 repetidos, 0 sin número legible) | sin archivo 6, de ellas 6 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 7",
+    "[2026-10-18 00:09:53] AUDITORÍA Sala Contenciosa Segunda  : sitio 77 filas (77 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
+    "[2026-10-18 00:09:53] AUDITORÍA Sala Penal 1              : sitio 438 filas (438 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 6, de ellas 6 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 5",
+    "[2026-10-18 00:09:53] AUDITORÍA Sala Civil 1              : sitio 343 filas (343 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
+    "[2026-10-18 00:09:53]   DETALLE SOBRANTES Sala Contenciosa Primera: AS 143 (2 archivos / 1 filas); AS 159 (2 archivos / 1 filas); AS 189 (2 archivos / 1 filas); AS 206 (2 archivos / 1 filas); AS 267 (2 archivos / 1 filas); AS 269 (2 archivos / 1 filas); AS 292 (2 archivos / 1 filas)",
+    "[2026-10-18 00:09:53]   DETALLE SOBRANTES Sala Penal 1: AS 219 (2 archivos / 1 filas); AS 266 (2 archivos / 1 filas); AS 272 (2 archivos / 1 filas); AS 273 (2 archivos / 1 filas); AS 337 (2 archivos / 1 filas)",
+    "[2026-10-18 00:09:53]   DETALLE SOBRANTES Sala Civil 1: AS 184 (1 archivos / 0 filas)",
+    "[2026-10-18 00:09:53] CONCLUSIÓN: la auditoría de 2002 no encontró nada que corregir. Las diferencias que aparecen (17) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
+    "[2026-10-18 00:09:53] OBSERVACIÓN Sala Contenciosa Primera: el sitio lista bajo 2002 4 fila(s) de OTRA gestión (no cuentan como faltantes): #161 AS/0159-C/2001; #191 AS/0189-C/2001; #210 AS/0206-C/2001; #275 AS/0269-C/2001.",
+    "[2026-10-18 00:09:53] Detalle en /Users/emacleans/Documents/TSJ/Compilacion/2002/_faltantes.csv y /Users/emacleans/Documents/TSJ/Compilacion/2002/_auditoria.json."
    ]
   },
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792296462,
+   "ts": 1792296609,
    "version": "340414f",
-   "procesos": [],
+   "procesos": [
+    {
+     "pid": 64330,
+     "tipo": "auditoria",
+     "gestion": "2013",
+     "inicio_ts": 1792296576
+    }
+   ],
    "orden": {
-    "seq": 1792296100902,
+    "seq": 1792296574186,
     "accion": "auditar",
-    "gestion": "2012",
+    "gestion": "2013",
     "ok": true,
-    "mensaje": "Lanzado: auditar, gestión 2012",
-    "ts": 1792296105
+    "mensaje": "Lanzado: auditar, gestión 2013",
+    "ts": 1792296576
    },
    "gestiones": {},
    "ultimas_lineas": [
-    "[2026-10-18 00:02:17] AUDITORÍA Sala Plena                : sitio 184 filas (182 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:17] AUDITORÍA Sala Contenciosa Primera  : sitio 555 filas (554 AS distintos, 1 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:17] AUDITORÍA Sala Penal 1              : sitio 393 filas (393 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
-    "[2026-10-18 00:02:17] AUDITORÍA Sala Penal Liquidadora    : sitio 420 filas (420 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:17] AUDITORÍA Sala Civil 1              : sitio 535 filas (535 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:17] AUDITORÍA Sala Civil Liquidadora    : sitio 364 filas (364 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 2, de ellas 2 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
-    "[2026-10-18 00:02:17] AUDITORÍA Sala Social Liquidadora   : sitio 423 filas (421 AS distintos, 2 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:02:17] AUDITORÍA Sala Penal 2              : sitio 337 filas (337 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 1, de ellas 1 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 1",
-    "[2026-10-18 00:02:17]   DETALLE SOBRANTES Sala Civil Liquidadora: AS 251 (2 archivos / 1 filas)",
-    "[2026-10-18 00:02:17]   DETALLE SOBRANTES Sala Penal 2: AS 32 (2 archivos / 1 filas)",
-    "[2026-10-18 00:02:17] CONCLUSIÓN: la auditoría de 2012 no encontró nada que corregir. Las diferencias que aparecen (2) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
-    "[2026-10-18 00:02:17] Detalle en /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2012/_faltantes.csv y /Users/enriquemacleanipe02/Documents/TSJ/Compilacion/2012/_auditoria.json."
+    "[2026-10-18 00:09:42] AUDITORÍA Sala Plena                : 383 filas leídas del sitio.",
+    "[2026-10-18 00:09:46] AUDITORÍA Sala Contenciosa Primera  : 792 filas leídas del sitio.",
+    "[2026-10-18 00:09:50] AUDITORÍA Sala Penal 1              : 384 filas leídas del sitio.",
+    "[2026-10-18 00:09:53] AUDITORÍA Sala Penal Liquidadora    : 751 filas leídas del sitio.",
+    "[2026-10-18 00:09:57] AUDITORÍA Sala Civil 1              : 674 filas leídas del sitio.",
+    "[2026-10-18 00:10:00] AUDITORÍA Sala Civil Liquidadora    : 649 filas leídas del sitio.",
+    "[2026-10-18 00:10:04] AUDITORÍA Sala Social               : 785 filas leídas del sitio.",
+    "[2026-10-18 00:10:08] AUDITORÍA Sala Social Liquidadora   : 334 filas leídas del sitio."
    ]
   },
   {
@@ -544,34 +572,31 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792296459,
+   "ts": 1792296574,
    "version": "340414f",
-   "procesos": [],
+   "procesos": [
+    {
+     "pid": 85913,
+     "tipo": "auditoria",
+     "gestion": "2005",
+     "inicio_ts": 1792296573
+    }
+   ],
    "orden": {
-    "seq": 1792296330670,
-    "accion": "actualizar",
-    "gestion": "0000",
+    "seq": 1792296571038,
+    "accion": "auditar",
+    "gestion": "2005",
     "ok": true,
-    "mensaje": "Ya estaba al día.",
-    "ts": 1792296334
+    "mensaje": "Lanzado: auditar, gestión 2005",
+    "ts": 1792296573
    },
    "gestiones": {},
-   "ultimas_lineas": [
-    "[2026-10-18 00:01:49] AUDITORÍA Sala Contenciosa Primera  : 273 filas leídas del sitio.",
-    "[2026-10-18 00:01:53] AUDITORÍA Sala Penal 1              : 129 filas leídas del sitio.",
-    "[2026-10-18 00:01:56] AUDITORÍA Sala Civil 1              : 21 filas leídas del sitio.",
-    "[2026-10-18 00:01:56] AUDITORÍA Sala Contenciosa Primera  : sitio 273 filas (273 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 6, de ellas 6 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 2",
-    "[2026-10-18 00:01:56] AUDITORÍA Sala Penal 1              : sitio 129 filas (129 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:01:56] AUDITORÍA Sala Civil 1              : sitio 21 filas (21 AS distintos, 0 repetidos, 0 sin número legible) | sin archivo 0, de ellas 0 ya explicadas por descartes registrados | FALTAN 0 (0 AS + 0 sin número) | archivos sobrantes 0",
-    "[2026-10-18 00:01:56]   DETALLE SOBRANTES Sala Contenciosa Primera: AS 76 (2 archivos / 1 filas); AS 247 (2 archivos / 1 filas)",
-    "[2026-10-18 00:01:56] CONCLUSIÓN: la auditoría de 2001 no encontró nada que corregir. Las diferencias que aparecen (2) están comprobadas y explicadas. La gestión está lista para validar su cierre desde el panel.",
-    "[2026-10-18 00:01:56] Detalle en /Users/usuario/Documents/TSJ/Compilacion/2001/_faltantes.csv y /Users/usuario/Documents/TSJ/Compilacion/2001/_auditoria.json."
-   ]
+   "ultimas_lineas": []
   },
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792296446,
+   "ts": 1792296591,
    "version": "340414f",
    "procesos": [],
    "orden": {
