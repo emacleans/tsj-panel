@@ -176,8 +176,8 @@ window.fetch=async function(u,o){const url=String(typeof u==='string'?u:(u&&u.ur
  try{const r=await F0(u,o);let j=null;try{j=await r.clone().json()}catch(e){}
   const err=(j&&(j.error||j.ok===false))?(j.error||j.msg||'la acción no se pudo completar'):(!r.ok?('HTTP '+r.status):null);
   if(err)terminar(false,'No se completó: '+String(err).slice(0,300),'Corrige lo indicado y vuelve a pulsar el botón. Si se repite, copia este aviso y pégalo en la conversación con Claude.');
-  else{let det='';if(j&&j.equipos)det=j.equipos.map(e=>e.equipo+': '+e.ok+' de '+e.n).join(' · ');
-   const piden=j&&j.equipos?j.equipos.reduce((a,e)=>a+((e.piden||[]).length),0):0;
+  else{let det='';if(j&&Array.isArray(j.equipos)&&j.equipos.length&&j.equipos[0].ok!==undefined&&j.equipos[0].n!==undefined)det=j.equipos.map(e=>e.equipo+': '+e.ok+' de '+e.n).join(' · ');
+   const piden=j&&Array.isArray(j.equipos)?j.equipos.reduce((a,e)=>a+((e.piden||[]).length),0):0;
    terminar(true,piden?('Hecho, pero '+piden+' caso(s) esperan un dato tuyo'):'Hecho: terminó correctamente',piden?'completa el dato en los casos marcados en amarillo y vuelve a pulsar «Aplicar todo».':m[2],det)}
   return r}catch(e){terminar(false,'No se pudo conectar: '+e.message,'Comprueba que el programa siga abierto en este equipo y que Tailscale esté conectado; luego vuelve a pulsar el botón.');throw e}};
 /* TODO botón da acuse inmediato aunque su acción no use el servidor */
