@@ -1,5 +1,5 @@
 {
- "ts": 1792321537,
+ "ts": 1792321849,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792321416,
+   "actualizado_ts": 1792321802,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792321416,
+   "actualizado_ts": 1792321802,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792321383,
+   "actualizado_ts": 1792321834,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792321416,
+   "actualizado_ts": 1792321791,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792321416,
+   "actualizado_ts": 1792321802,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792321449,
+   "actualizado_ts": 1792321795,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792321449,
+   "actualizado_ts": 1792321795,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792321402,
+   "actualizado_ts": 1792321831,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792321449,
+   "actualizado_ts": 1792321795,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792321383,
+   "actualizado_ts": 1792321834,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792321449,
+   "actualizado_ts": 1792321795,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792321416,
+   "actualizado_ts": 1792321791,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792321449,
+   "actualizado_ts": 1792321795,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792321449,
+   "actualizado_ts": 1792321795,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792321449,
+   "actualizado_ts": 1792321795,
    "viejo": false
   },
   {
@@ -259,24 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792321416,
+   "actualizado_ts": 1792321791,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792313466,
-   "texto": "director: tcp:ipe02 terminó «pautas_ipe02»"
-  },
-  {
-   "ts": 1792314407,
-   "texto": "director: gaceta:ipe02 terminó «p_sent2»"
-  },
-  {
-   "ts": 1792314675,
-   "texto": "orden de Claude 2026-10-18-ok-p_dep8: paso del director aprobado: p_dep8"
-  },
   {
    "ts": 1792314677,
    "texto": "director: gaceta:ipe02 lanza «c_dep8» (gaceta_iniciar {'seccion': 'dep_8', 'modo': 'completo'})"
@@ -384,13 +372,25 @@
   {
    "ts": 1792321519,
    "texto": "director: gaceta:ipe02 terminó «r_dep_3»"
+  },
+  {
+   "ts": 1792321593,
+   "texto": "director: tcp:imac-vj1 terminó «ocr_imac-vj1»"
+  },
+  {
+   "ts": 1792321596,
+   "texto": "director: gaceta:ipe02 lanza «p_res» (gaceta_iniciar {'seccion': 'resoluciones', 'modo': 'piloto'})"
+  },
+  {
+   "ts": 1792321663,
+   "texto": "director: tcp:imac-vj1 lanza «conc_2_2020» (tcp_conciliar {'base': '2'})"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792321383,
+   "ts": 1792321834,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -1040,16 +1040,16 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792321407,
+   "ts": 1792321830,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
-    "seq": 1792320578739,
-    "accion": "gaceta_iniciar",
-    "gestion": "0000",
+    "seq": 1792321660970,
+    "accion": "tcp_conciliar",
+    "gestion": "2020",
     "ok": true,
-    "mensaje": "Lanzado: Gaceta · dep_1 · compilación completa; retoma lo ya hecho.",
-    "ts": 1792320600
+    "mensaje": "Lanzada: conciliación TCP de 2020 contra el inventario.",
+    "ts": 1792321665
    },
    "gestiones": {},
    "ultimas_lineas": [],
@@ -1265,8 +1265,8 @@
      ],
      "2:2025": [
       5537,
-      5527,
-      2,
+      5529,
+      0,
       6,
       0,
       0
@@ -1376,15 +1376,7 @@
       0
      ]
     },
-    "procesos": [
-     {
-      "pid": 40275,
-      "tipo": "tcp_ocr",
-      "gestion": null,
-      "base": null,
-      "inicio_ts": 1792305240
-     }
-    ],
+    "procesos": [],
     "auto": {
      "gestion": "2013",
      "base": 2,
@@ -1398,15 +1390,32 @@
      "msg": "Se cortó 3 veces en 1 h: dejo de reanudar sola la gestión 2013. Revisa el registro del equipo y relánzala desde el panel."
     },
     "revision_total": 15,
-    "ocr_pendientes": 2,
-    "ritmo_min": 0.68,
-    "ultimo_ts": 1792321403,
+    "ocr_pendientes": 0,
+    "ritmo_min": 0.67,
+    "ultimo_ts": 1792321533,
     "log": [
-     "2026-10-18 06:59:35    [218668] OCR ok  (174/178)",
-     "2026-10-18 07:01:51    [218675] OCR ok  (175/178)",
-     "2026-10-18 07:03:23    [218783] OCR ok  (176/178)"
+     "  Resultado: plan=4353, ok=4352, ocr=0, revisar=1, error=0, duplicado=0, faltan=0, sin_archivo=0, huerfanos=0, duplicados_sha=0",
+     "  Informe en: /Users/emaclean-sofivj/Documents/TCP/_conciliacion/20261018_070745",
+     "FIN de la conciliación."
     ],
-    "conciliacion": null
+    "conciliacion": {
+     "ts": "2026-10-18T07:07:45",
+     "alcance": {
+      "gestion": 2020,
+      "base": 2
+     },
+     "plan": 4353,
+     "ok": 4352,
+     "ocr": 0,
+     "revisar": 1,
+     "error": 0,
+     "duplicado": 0,
+     "faltan": 0,
+     "sin_archivo": 0,
+     "huerfanos": 0,
+     "duplicados_sha": 0,
+     "carpeta": "/Users/emaclean-sofivj/Documents/TCP/_conciliacion/20261018_070745"
+    }
    },
    "gaceta": {
     "por": {
@@ -1679,7 +1688,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792321408,
+   "ts": 1792321827,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -2316,7 +2325,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792321449,
+   "ts": 1792321795,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -2761,8 +2770,8 @@
       "tipo": "pdf",
       "modo": "completo",
       "esperado": 1026,
-      "inv": 7400,
-      "pdf": 7400,
+      "inv": 9850,
+      "pdf": 9850,
       "ok": 0,
       "rev": 0,
       "inval": 0,
@@ -2772,7 +2781,7 @@
       "causa": null,
       "rec": 0,
       "hechos": 0,
-      "total": 7400,
+      "total": 9850,
       "fase": "inventario",
       "cuadra": null,
       "ult": null,
@@ -2781,7 +2790,7 @@
       "pend": 0,
       "en_curso": true,
       "ritmo": 0.0,
-      "act": "2026-10-18 07:04:01"
+      "act": "2026-10-18 07:09:54"
      },
      "sentencias": {
       "tipo": "pdf",
@@ -2986,9 +2995,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1791764539,
     "log": [
-     "2026-10-18 07:00:19   inventario decretos_ley: pagina 120/21 (6000 filas)",
-     "2026-10-18 07:02:01   inventario decretos_ley: pagina 130/21 (6500 filas)",
-     "2026-10-18 07:03:09   inventario decretos_ley: pagina 140/21 (7000 filas)"
+     "2026-10-18 07:06:18   inventario decretos_ley: pagina 170/21 (8500 filas)",
+     "2026-10-18 07:08:00   inventario decretos_ley: pagina 180/21 (9000 filas)",
+     "2026-10-18 07:09:03   inventario decretos_ley: pagina 190/21 (9500 filas)"
     ],
     "avisos": [
      {
@@ -3029,16 +3038,16 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792321416,
+   "ts": 1792321802,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
-    "seq": 1792321253530,
+    "seq": 1792321593902,
     "accion": "gaceta_iniciar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Lanzado: Gaceta · dep_3 · compilación completa; retoma lo ya hecho.",
-    "ts": 1792321256
+    "mensaje": "Lanzado: Gaceta · resoluciones · piloto; retoma lo ya hecho.",
+    "ts": 1792321599
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -3510,22 +3519,29 @@
      },
      "resoluciones": {
       "tipo": "registro",
-      "modo": null,
-      "esperado": 4552,
-      "inv": 0,
+      "modo": "piloto",
+      "esperado": 4367,
+      "inv": 50,
       "pdf": 0,
       "ok": 0,
       "rev": 0,
       "inval": 0,
       "sinpdf": 0,
       "fallo": 0,
+      "srv": 0,
+      "causa": "terminado",
       "rec": 0,
-      "hechos": 0,
-      "total": 4552,
-      "fase": "sin_iniciar",
-      "ult": null,
+      "hechos": 50,
+      "total": 50,
+      "fase": "terminado",
+      "cuadra": null,
+      "ult": 1792321605,
+      "pct": 100.0,
+      "eta": 0,
+      "pend": 0,
+      "en_curso": false,
       "ritmo": 0.0,
-      "act": null
+      "act": "2026-10-18 07:06:49"
      },
      "dep_1": {
       "tipo": "registro",
@@ -3731,11 +3747,11 @@
     },
     "procesos": [],
     "ritmo_min": 0.0,
-    "ultimo_ts": 1792317076,
+    "ultimo_ts": 1792321605,
     "log": [
-     "2026-10-18 07:01:00 [dep_3] registros exportados: 3878",
-     "2026-10-18 07:01:00 RESUMEN {\"seccion\": \"dep_3\", \"modo\": \"completo\", \"esperado_por_el_sitio\": 3881, \"inventariadas\": 3878, \"con_pdf\": 0, \"estados\": {}, \"pdf_con_basura_recortada\": 0, \"bytes_descargados\": 0, \"seg_por_pdf_promedio\": null, \"saneados_por_word\": 0, \"peticiones\": 1, \"reintentos_por_error\": 0, \"anios_cubiertos\": [\"1899\", \"2029\"], \"duracion_seg\": 4, \"fin\": \"2026-10-18 07:01:00\"}",
-     "2026-10-18 07:01:00 EN RESUMEN [dep_3]: el sitio declara 3881 normas; inventarie 3878; PDF bien descargados 0 (de ellos 0 con avisos del servidor recortados), a revisar 0, invalidos 0, sin PDF (404) 0; 1 peticiones, 0 reintentos por error; 4 s en total."
+     "2026-10-18 07:06:49 [resoluciones] registros exportados: 50",
+     "2026-10-18 07:06:49 RESUMEN {\"seccion\": \"resoluciones\", \"modo\": \"piloto\", \"esperado_por_el_sitio\": 4367, \"inventariadas\": 50, \"con_pdf\": 0, \"estados\": {}, \"pdf_con_basura_recortada\": 0, \"bytes_descargados\": 0, \"seg_por_pdf_promedio\": null, \"saneados_por_word\": 0, \"peticiones\": 2, \"reintentos_por_error\": 0, \"anios_cubiertos\": [\"2018\", \"2018\"], \"duracion_seg\": 10, \"fin\": \"2026-10-18 07:06:49\"}",
+     "2026-10-18 07:06:49 EN RESUMEN [resoluciones]: el sitio declara 4367 normas; inventarie 50; PDF bien descargados 0 (de ellos 0 con avisos del servidor recortados), a revisar 0, invalidos 0, sin PDF (404) 0; 2 peticiones, 0 reintentos por error; 10 s en total."
     ],
     "avisos": [
      {
@@ -3771,6 +3787,22 @@
       ]
      },
      {
+      "sec": "resoluciones",
+      "modo": "piloto",
+      "etq": "Resoluciones supremas",
+      "act": "2026-10-18 07:06:49",
+      "k": "resoluciones|piloto|piloto_ok|2026-10-18 07:06:49",
+      "nivel": "info",
+      "t": "Piloto terminado sin errores",
+      "d": "50 documentos verificados. Siguiente paso: la compilación completa de esta sección.",
+      "ac": [
+       [
+        "completo",
+        "▶ Compilar completa"
+       ]
+      ]
+     },
+     {
       "sec": "dep_2",
       "modo": "completo",
       "etq": "Departamental · Santa Cruz",
@@ -3791,17 +3823,6 @@
       "t": "Compilación completa terminada",
       "d": "505 documentos.",
       "ac": []
-     },
-     {
-      "sec": "dep_6",
-      "modo": "completo",
-      "etq": "Departamental · Oruro",
-      "act": "2026-10-18 05:28:58",
-      "k": "dep_6|completo|completa|2026-10-18 05:28:58",
-      "nivel": "info",
-      "t": "Compilación completa terminada",
-      "d": "639 documentos.",
-      "ac": []
      }
     ]
    }
@@ -3809,7 +3830,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792321404,
+   "ts": 1792321793,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -4431,7 +4452,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792321416,
+   "ts": 1792321791,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -5053,7 +5074,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792321402,
+   "ts": 1792321831,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -5733,10 +5754,12 @@
     "visto": true
    },
    "tcp:imac-vj1": {
-    "i": 0,
-    "lanz": 1792305233.84194,
+    "i": 1,
+    "lanz": 1792321660.970283,
     "intentos": 1,
-    "hist": [],
+    "hist": [
+     "ocr_imac-vj1"
+    ],
     "visto": true
    },
    "tcp:imac-vj2": {
@@ -5765,8 +5788,8 @@
    },
    "gaceta:ipe02": {
     "i": 12,
-    "lanz": null,
-    "intentos": 0,
+    "lanz": 1792321593.902426,
+    "intentos": 1,
     "hist": [
      "p_sent",
      "p_dep8",
