@@ -1,4 +1,4 @@
-# Informe del orquestador — 18/10 03:31
+# Informe del orquestador — 18/10 03:36
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -34,7 +34,7 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 | MM-Sofi (Mac Mini Sofía) | en línea | libre | - | hace 2 min |
 | MacBook Air | DESCONECTADO | libre | - | hace 2 h (viejo) |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | hace 2 min |
-| iMac-VJ1 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 79 s |
+| iMac-VJ1 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 2 min |
 | iMac-VJ2 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 2 min |
 
 ## Incidencias abiertas
@@ -43,10 +43,6 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 
 ## Últimas acciones del orquestador
 
-- 18/10 03:16 · director: tcp:ipe01 lanza «conc_1_2012» (tcp_conciliar {'base': '1'})
-- 18/10 03:16 · director: tcp:ipe02 lanza «conc_1_2008» (tcp_conciliar {'base': '1'})
-- 18/10 03:16 · director: tcp:imac-vj2 terminó «conc_2_2019»
-- 18/10 03:17 · director: tcp:imac-vj2 lanza «conc_2_2024» (tcp_conciliar {'base': '2'})
 - 18/10 03:21 · director: tcp:ipe01 terminó «conc_1_2012»
 - 18/10 03:21 · director: tcp:ipe02 terminó «conc_1_2008»
 - 18/10 03:22 · director: tcp:ipe01 lanza «conc_1_2017» (tcp_conciliar {'base': '1'})
@@ -58,3 +54,7 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 - 18/10 03:27 · director: tcp:ipe01 lanza «conc_1_2021» (tcp_conciliar {'base': '1'})
 - 18/10 03:27 · director: tcp:ipe02 lanza «conc_1_2011» (tcp_conciliar {'base': '1'})
 - 18/10 03:27 · director: tcp:imac-vj2 terminó «pautas_imac-vj2»
+- 18/10 03:32 · director: tcp:ipe01 terminó «conc_1_2021»
+- 18/10 03:32 · director: tcp:ipe02 terminó «conc_1_2011»
+- 18/10 03:33 · director: tcp:ipe01 lanza «conc_1_2022» (tcp_conciliar {'base': '1'})
+- 18/10 03:33 · director: tcp:ipe02 lanza «conc_1_2013» (tcp_conciliar {'base': '1'})
