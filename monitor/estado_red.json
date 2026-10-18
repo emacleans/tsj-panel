@@ -1,5 +1,5 @@
 {
- "ts": 1792323985,
+ "ts": 1792324291,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792323846,
+   "actualizado_ts": 1792324139,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792323846,
+   "actualizado_ts": 1792324139,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792323854,
+   "actualizado_ts": 1792324163,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792323890,
+   "actualizado_ts": 1792324132,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792323846,
+   "actualizado_ts": 1792324139,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792323863,
+   "actualizado_ts": 1792324151,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792323863,
+   "actualizado_ts": 1792324151,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792323859,
+   "actualizado_ts": 1792324170,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792323863,
+   "actualizado_ts": 1792324151,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792323854,
+   "actualizado_ts": 1792324163,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792323863,
+   "actualizado_ts": 1792324151,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792323890,
+   "actualizado_ts": 1792324132,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792323863,
+   "actualizado_ts": 1792324151,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792323863,
+   "actualizado_ts": 1792324151,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792323863,
+   "actualizado_ts": 1792324151,
    "viejo": false
   },
   {
@@ -259,16 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792323890,
+   "actualizado_ts": 1792324132,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792316024,
-   "texto": "director: gaceta:ipe02 lanza «c_dep_5» (gaceta_iniciar {'seccion': 'dep_5', 'modo': 'completo'})"
-  },
   {
    "ts": 1792316287,
    "texto": "director: gaceta:ipe02 terminó «c_dep_5»"
@@ -384,22 +380,26 @@
   {
    "ts": 1792322616,
    "texto": "director: tcp:imac-vj1 terminó «pautas_imac-vj1»"
+  },
+  {
+   "ts": 1792324174,
+   "texto": "orden de Claude 2026-10-18-res-diag: gaceta_iniciar  {'seccion': 'resoluciones', 'modo': 'completo'} en IPE02 (Mac Mini casa)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792323854,
-   "version": "e9da9eb",
+   "ts": 1792324163,
+   "version": "231c6d2",
    "procesos": [],
    "orden": {
-    "seq": 1792320541028,
+    "seq": 1792324141927,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a e9da9eb.",
-    "ts": 1792320547
+    "mensaje": "Scripts actualizados a 231c6d2.",
+    "ts": 1792324147
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -1040,7 +1040,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792323871,
+   "ts": 1792324131,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -1391,7 +1391,7 @@
     },
     "revision_total": 15,
     "ocr_pendientes": 0,
-    "ritmo_min": 0.27,
+    "ritmo_min": 0.2,
     "ultimo_ts": 1792321533,
     "log": [
      "  Resultado: plan=5537, ok=5529, ocr=0, revisar=6, error=0, duplicado=0, faltan=2, sin_archivo=0, huerfanos=0, duplicados_sha=0",
@@ -1688,16 +1688,16 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792323895,
-   "version": "e9da9eb",
+   "ts": 1792324148,
+   "version": "231c6d2",
    "procesos": [],
    "orden": {
-    "seq": 1792320545332,
+    "seq": 1792324144349,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a e9da9eb.",
-    "ts": 1792320549
+    "mensaje": "Scripts actualizados a 231c6d2.",
+    "ts": 1792324148
    },
    "gestiones": {},
    "ultimas_lineas": [],
@@ -2325,16 +2325,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792323863,
-   "version": "e9da9eb",
+   "ts": 1792324151,
+   "version": "231c6d2",
    "procesos": [],
    "orden": {
-    "seq": 1792320575977,
-    "accion": "gaceta_iniciar",
+    "seq": 1792324145464,
+    "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Lanzado: Gaceta · decretos_ley · compilación completa; retoma lo ya hecho.",
-    "ts": 1792320577
+    "mensaje": "Scripts actualizados a 231c6d2.",
+    "ts": 1792324148
    },
    "gestiones": {},
    "ultimas_lineas": [
@@ -2776,13 +2776,13 @@
       "rev": 0,
       "inval": 0,
       "sinpdf": 0,
-      "fallo": 3,
-      "srv": 3,
+      "fallo": 4,
+      "srv": 4,
       "causa": null,
       "rec": 0,
       "hechos": 0,
       "total": 24185,
-      "fase": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco",
+      "fase": "esperando al servidor (error de memoria del sitio)",
       "cuadra": true,
       "ult": null,
       "pct": 0.0,
@@ -2790,7 +2790,7 @@
       "pend": 24185,
       "en_curso": true,
       "ritmo": 0.0,
-      "act": "2026-10-18 07:43:24"
+      "act": "2026-10-18 07:48:59"
      },
      "sentencias": {
       "tipo": "pdf",
@@ -2995,9 +2995,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1791764539,
     "log": [
-     "2026-10-18 07:43:18   SERVIDOR SATURADO en Decreto Ley N° 19227 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
-     "2026-10-18 07:43:24   SERVIDOR Decreto Ley N° 19227: sin respuesta sana (seguidos: 3); queda registrado",
-     "2026-10-18 07:43:24   PAUSA AUTOMATICA 5 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 07:48."
+     "2026-10-18 07:43:24   PAUSA AUTOMATICA 5 min: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud). Reanuda sola a las 07:48.",
+     "2026-10-18 07:48:59   SERVIDOR SATURADO en Decreto Ley N° 19190 (no contiene un PDF (empieza con b'<br />\\n<b>Fatal error</b>:  Out of ); espero 5 s y reintento (1/1)",
+     "2026-10-18 07:49:05   SERVIDOR Decreto Ley N° 19190: sin respuesta sana (seguidos: 1); queda registrado"
     ],
     "avisos": [
      {
@@ -3036,11 +3036,11 @@
       "sec": "decretos_ley",
       "modo": "completo",
       "etq": "Decretos ley",
-      "act": "2026-10-18 07:43:24",
-      "k": "decretos_ley|completo|pausa|a las 07:48)",
+      "act": "2026-10-18 07:48:59",
+      "k": "decretos_ley|completo|espera|2026-10-18 07",
       "nivel": "medio",
-      "t": "Pausa automática: el sitio está sufriendo; la compilación reanuda sola",
-      "d": "pausa automatica: el servidor no responde bien en 3 documentos seguidos (tampoco a la prueba de salud) (reanuda sola a las 07:48). No hace falta que hagas nada: el script espera, sigue con el resto, deja cada documento fallido registrado y diagnosticado en _diagnostico.csv, y los reintenta en rondas automáticas al terminar.",
+      "t": "El servidor de la Gaceta está saturado: la compilación espera y reintenta sola",
+      "d": "El sitio devolvió un error de memoria al generar un PDF. El script espera 20 s, 60 s y 3 min y reintenta el mismo documento; no hace falta que hagas nada. Si se repite 5 veces seguidas, se detiene sola y te lo avisa aquí.",
       "ac": [
        [
         "detener",
@@ -3054,8 +3054,8 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792323846,
-   "version": "e9da9eb",
+   "ts": 1792324139,
+   "version": "231c6d2",
    "procesos": [],
    "orden": {
     "seq": 1792322275922,
@@ -3841,7 +3841,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792323871,
+   "ts": 1792324134,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -4463,7 +4463,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792323890,
+   "ts": 1792324132,
    "version": "e9da9eb",
    "procesos": [],
    "orden": {
@@ -5085,16 +5085,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792323859,
-   "version": "e9da9eb",
+   "ts": 1792324170,
+   "version": "231c6d2",
    "procesos": [],
    "orden": {
-    "seq": 1792320553177,
+    "seq": 1792324149115,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
     "mensaje": "Ya estaba al día.",
-    "ts": 1792320558
+    "ts": 1792324154
    },
    "gestiones": {},
    "ultimas_lineas": [
