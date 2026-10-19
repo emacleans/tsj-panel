@@ -1,5 +1,5 @@
 {
- "ts": 1792383323,
+ "ts": 1792383636,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792383280,
+   "actualizado_ts": 1792383528,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792383280,
+   "actualizado_ts": 1792383528,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792383272,
+   "actualizado_ts": 1792383520,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792383249,
+   "actualizado_ts": 1792383543,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792383280,
+   "actualizado_ts": 1792383528,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792383246,
+   "actualizado_ts": 1792383545,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792383246,
+   "actualizado_ts": 1792383545,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792383261,
+   "actualizado_ts": 1792383532,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792383246,
+   "actualizado_ts": 1792383545,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792383272,
+   "actualizado_ts": 1792383520,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792383246,
+   "actualizado_ts": 1792383545,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792383249,
+   "actualizado_ts": 1792383543,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792383246,
+   "actualizado_ts": 1792383545,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792383246,
+   "actualizado_ts": 1792383545,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792383246,
+   "actualizado_ts": 1792383545,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792383249,
+   "actualizado_ts": 1792383543,
    "viejo": false
   }
  ],
@@ -390,16 +390,16 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792383272,
-   "version": "1d139ec",
+   "ts": 1792383520,
+   "version": "7fabd00",
    "procesos": [],
    "orden": {
-    "seq": 1792383248152,
+    "seq": 1792383293503,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 1d139ec.",
-    "ts": 1792383251
+    "mensaje": "Scripts actualizados a 7fabd00.",
+    "ts": 1792383298
    },
    "auditorias": {
     "2007": {
@@ -766,12 +766,24 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 09:24:21  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 11:58:10  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 12:01:59  red: TimeoutError: _ssl.c:993: The handshake operation timed out"
+     "2026-10-18 12:01:59  red: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-19 00:17:00  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null,
-    "formulario": {}
+    "formulario": {
+     "integrados": 0,
+     "independientes": 0,
+     "por_vincular_sentencia_pendiente": 0,
+     "sin_cuerpo": 0,
+     "vinculados_despues": 0,
+     "manual": 0,
+     "razones": {},
+     "resueltos": 0,
+     "por_vincular_total": 0,
+     "ts": "2026-10-19T00:17:00",
+     "vinculados_total": 0
+    }
    },
    "gaceta": {
     "por": {
@@ -1061,7 +1073,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792383310,
+   "ts": 1792383572,
    "version": "7fabd00",
    "procesos": [],
    "orden": {
@@ -1311,9 +1323,9 @@
      ],
      "2:2016": [
       5257,
-      5248,
+      5256,
       0,
-      8,
+      0,
       0,
       0
      ],
@@ -1351,9 +1363,9 @@
      ],
      "2:2020": [
       4353,
-      4352,
+      4353,
       0,
-      1,
+      0,
       0,
       0
      ],
@@ -1413,12 +1425,12 @@
     },
     "revision_total": 6,
     "ocr_pendientes": 0,
-    "ritmo_min": 0.0,
-    "ultimo_ts": null,
+    "ritmo_min": 0.2,
+    "ultimo_ts": 1792383308,
     "log": [
-     "2026-10-18 09:25:08  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 11:58:06  Mesa de revisión activa en el puerto 8751",
-     "2026-10-19 00:15:09  Pautas de revisión: 9 documentos resueltos, 0 revertidos"
+     "2026-10-19 00:15:09  Pautas de revisión: 9 documentos resueltos, 0 revertidos",
+     "2026-10-19 00:16:51  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": {
      "ts": "2026-10-18T07:13:26",
@@ -1439,19 +1451,16 @@
      "carpeta": "/Users/emaclean-sofivj/Documents/TCP/_conciliacion/20261018_071326"
     },
     "formulario": {
-     "integrados": 3,
-     "independientes": 6,
-     "por_vincular_sentencia_pendiente": 4,
+     "integrados": 0,
+     "independientes": 0,
+     "por_vincular_sentencia_pendiente": 0,
      "sin_cuerpo": 0,
      "vinculados_despues": 0,
      "manual": 0,
-     "razones": {
-      "no nombra con claridad la sentencia (ni en el cierre ni en el encabezado)": 1,
-      "ninguna candidata concuerda en tipo y fecha": 1
-     },
-     "resueltos": 9,
+     "razones": {},
+     "resueltos": 0,
      "por_vincular_total": 6,
-     "ts": "2026-10-19T00:15:09",
+     "ts": "2026-10-19T00:16:50",
      "vinculados_total": 0
     }
    },
@@ -1750,16 +1759,16 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792383253,
-   "version": "1d139ec",
+   "ts": 1792383578,
+   "version": "7fabd00",
    "procesos": [],
    "orden": {
-    "seq": 1792383250130,
+    "seq": 1792383295355,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Ya estaba al día.",
-    "ts": 1792383253
+    "mensaje": "Scripts actualizados a 7fabd00.",
+    "ts": 1792383299
    },
    "auditorias": {},
    "gestiones": {},
@@ -2008,9 +2017,9 @@
      ],
      "2:2015": [
       5466,
-      5432,
+      5464,
       0,
-      33,
+      1,
       0,
       0
      ],
@@ -2032,9 +2041,9 @@
      ],
      "2:2019": [
       5896,
-      5894,
+      5896,
       0,
-      2,
+      0,
       0,
       0
      ],
@@ -2072,9 +2081,9 @@
      ],
      "2:2024": [
       4313,
-      4311,
+      4312,
       0,
-      2,
+      1,
       0,
       0
      ],
@@ -2100,14 +2109,14 @@
      ],
      "msg": "Se cortó 3 veces en 1 h: dejo de reanudar sola la gestión 2013. Revisa el registro del equipo y relánzala desde el panel."
     },
-    "revision_total": 37,
+    "revision_total": 2,
     "ocr_pendientes": 0,
-    "ritmo_min": 0.0,
-    "ultimo_ts": null,
+    "ritmo_min": 0.82,
+    "ultimo_ts": 1792383327,
     "log": [
-     "2026-10-18 09:24:10  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 11:58:29  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 12:02:23  red: TimeoutError: _ssl.c:993: The handshake operation timed out"
+     "2026-10-18 12:02:23  red: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-19 00:15:28  Pautas de revisión: 35 documentos resueltos, 0 revertidos",
+     "2026-10-19 00:16:56  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": {
      "ts": "2026-10-18T03:17:49",
@@ -2127,7 +2136,19 @@
      "duplicados_sha": 0,
      "carpeta": "/Users/emaclean-amvj/Documents/TCP/_conciliacion/20261018_031749"
     },
-    "formulario": {}
+    "formulario": {
+     "integrados": 0,
+     "independientes": 0,
+     "por_vincular_sentencia_pendiente": 0,
+     "sin_cuerpo": 0,
+     "vinculados_despues": 0,
+     "manual": 0,
+     "razones": {},
+     "resueltos": 0,
+     "por_vincular_total": 21,
+     "ts": "2026-10-19T00:16:56",
+     "vinculados_total": 0
+    }
    },
    "gaceta": {
     "por": {
@@ -2389,16 +2410,16 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792383246,
-   "version": "3b8a3f5",
+   "ts": 1792383545,
+   "version": "7fabd00",
    "procesos": [],
    "orden": {
-    "seq": 1792383192398,
+    "seq": 1792383296233,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 3b8a3f5.",
-    "ts": 1792383197
+    "mensaje": "Scripts actualizados a 7fabd00.",
+    "ts": 1792383300
    },
    "auditorias": {
     "2002": {
@@ -2706,9 +2727,9 @@
      ],
      "2:2014": [
       3725,
-      3716,
+      3725,
       0,
-      9,
+      0,
       0,
       0
      ],
@@ -2786,9 +2807,9 @@
      ],
      "2:2021": [
       5335,
-      5330,
+      5335,
       0,
-      5,
+      0,
       0,
       0
      ],
@@ -2835,14 +2856,14 @@
      "msg": "Ya no queda ninguna gestión por compilar: todas están terminadas o en curso en otros equipos.",
      "fin": true
     },
-    "revision_total": 17,
+    "revision_total": 3,
     "ocr_pendientes": 1,
-    "ritmo_min": 0.0,
-    "ultimo_ts": null,
+    "ritmo_min": 0.23,
+    "ultimo_ts": 1792383312,
     "log": [
-     "2026-10-18 09:24:09  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 11:57:39  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 12:05:04  encadenar: no pude leer a los otros equipos (TimeoutError); espero"
+     "2026-10-18 12:05:04  encadenar: no pude leer a los otros equipos (TimeoutError); espero",
+     "2026-10-19 00:15:12  Pautas de revisión: 14 documentos resueltos, 0 revertidos",
+     "2026-10-19 00:15:39  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:03:58",
@@ -2862,7 +2883,19 @@
      "duplicados_sha": 0,
      "carpeta": "/Users/emacleans/Documents/TCP/_conciliacion/20261018_040358"
     },
-    "formulario": {}
+    "formulario": {
+     "integrados": 0,
+     "independientes": 0,
+     "por_vincular_sentencia_pendiente": 0,
+     "sin_cuerpo": 0,
+     "vinculados_despues": 0,
+     "manual": 0,
+     "razones": {},
+     "resueltos": 0,
+     "por_vincular_total": 14,
+     "ts": "2026-10-19T00:15:39",
+     "vinculados_total": 0
+    }
    },
    "gaceta": {
     "por": {
@@ -3206,8 +3239,8 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792383280,
-   "version": "1d139ec",
+   "ts": 1792383528,
+   "version": "7fabd00",
    "procesos": [],
    "orden": {
     "seq": 1792381203805,
@@ -3607,17 +3640,17 @@
      ],
      "2:2012": [
       2373,
-      2372,
+      2373,
       0,
-      1,
+      0,
       0,
       0
      ],
      "2:2016": [
       5257,
-      5247,
+      5257,
       0,
-      10,
+      0,
       0,
       0
      ],
@@ -3631,9 +3664,9 @@
      ],
      "2:2013": [
       3212,
-      3206,
+      3212,
       0,
-      6,
+      0,
       0,
       0
      ],
@@ -3671,9 +3704,9 @@
      ],
      "2:2022": [
       8262,
-      8261,
+      8262,
       0,
-      1,
+      0,
       0,
       0
      ],
@@ -3702,15 +3735,7 @@
       0
      ]
     },
-    "procesos": [
-     {
-      "pid": 36696,
-      "tipo": "tcp_revision",
-      "gestion": null,
-      "base": null,
-      "inicio_ts": 1792358160
-     }
-    ],
+    "procesos": [],
     "auto": {
      "gestion": "2016",
      "base": 2,
@@ -3722,12 +3747,12 @@
     },
     "revision_total": 0,
     "ocr_pendientes": 2,
-    "ritmo_min": 0.0,
-    "ultimo_ts": null,
+    "ritmo_min": 0.38,
+    "ultimo_ts": 1792383271,
     "log": [
-     "2026-10-18 11:57:14  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 17:19:45  Orden «aplicar pautas» enviada a macbook-air-de-enrique",
-     "2026-10-19 00:14:32  Pautas de revisión: 18 documentos resueltos, 0 revertidos"
+     "2026-10-19 00:14:32  Pautas de revisión: 18 documentos resueltos, 0 revertidos",
+     "2026-10-19 00:15:21  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:40:58",
@@ -3748,18 +3773,16 @@
      "carpeta": "/Users/enriquemacleanipe02/Documents/TCP/_conciliacion/20261018_044058"
     },
     "formulario": {
-     "integrados": 5,
-     "independientes": 11,
-     "por_vincular_sentencia_pendiente": 10,
-     "sin_cuerpo": 2,
+     "integrados": 0,
+     "independientes": 0,
+     "por_vincular_sentencia_pendiente": 0,
+     "sin_cuerpo": 0,
      "vinculados_despues": 0,
      "manual": 0,
-     "razones": {
-      "no nombra con claridad la sentencia (ni en el cierre ni en el encabezado)": 1
-     },
-     "resueltos": 18,
+     "razones": {},
+     "resueltos": 0,
      "por_vincular_total": 11,
-     "ts": "2026-10-19T00:14:32",
+     "ts": "2026-10-19T00:15:21",
      "vinculados_total": 0
     }
    },
@@ -4799,16 +4822,16 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792383249,
-   "version": "3b8a3f5",
+   "ts": 1792383543,
+   "version": "7fabd00",
    "procesos": [],
    "orden": {
-    "seq": 1792383196313,
+    "seq": 1792383298147,
     "accion": "actualizar",
     "gestion": "0000",
     "ok": true,
-    "mensaje": "Scripts actualizados a 3b8a3f5.",
-    "ts": 1792383201
+    "mensaje": "Scripts actualizados a 7fabd00.",
+    "ts": 1792383302
    },
    "auditorias": {
     "2001": {
@@ -5175,12 +5198,24 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 06:15:19  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 09:24:09  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 11:58:25  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 11:58:25  Mesa de revisión activa en el puerto 8751",
+     "2026-10-19 00:17:04  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null,
-    "formulario": {}
+    "formulario": {
+     "integrados": 0,
+     "independientes": 0,
+     "por_vincular_sentencia_pendiente": 0,
+     "sin_cuerpo": 0,
+     "vinculados_despues": 0,
+     "manual": 0,
+     "razones": {},
+     "resueltos": 0,
+     "por_vincular_total": 0,
+     "ts": "2026-10-19T00:17:04",
+     "vinculados_total": 0
+    }
    },
    "gaceta": {
     "por": {
@@ -5442,16 +5477,16 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792383261,
-   "version": "3b8a3f5",
+   "ts": 1792383532,
+   "version": "7fabd00",
    "procesos": [],
    "orden": {
-    "seq": 1792364070416,
-    "accion": "validar_cierre",
-    "gestion": "2009",
+    "seq": 1792383299056,
+    "accion": "actualizar",
+    "gestion": "0000",
     "ok": true,
-    "mensaje": "Cierre de 2009 validado (0 faltante(s) y 1 sobrante(s) explicados en las observaciones). Informe guardado en el repositorio de auditorías.",
-    "ts": 1792364075
+    "mensaje": "Scripts actualizados a 7fabd00.",
+    "ts": 1792383305
    },
    "auditorias": {
     "2009": {
@@ -5806,12 +5841,24 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-18 06:15:15  Mesa de revisión activa en el puerto 8751",
      "2026-10-18 09:24:11  Mesa de revisión activa en el puerto 8751",
-     "2026-10-18 11:58:10  Mesa de revisión activa en el puerto 8751"
+     "2026-10-18 11:58:10  Mesa de revisión activa en el puerto 8751",
+     "2026-10-19 00:17:14  Mesa de revisión activa en el puerto 8751"
     ],
     "conciliacion": null,
-    "formulario": {}
+    "formulario": {
+     "integrados": 0,
+     "independientes": 0,
+     "por_vincular_sentencia_pendiente": 0,
+     "sin_cuerpo": 0,
+     "vinculados_despues": 0,
+     "manual": 0,
+     "razones": {},
+     "resueltos": 0,
+     "por_vincular_total": 0,
+     "ts": "2026-10-19T00:17:13",
+     "vinculados_total": 0
+    }
    },
    "gaceta": {
     "por": {
