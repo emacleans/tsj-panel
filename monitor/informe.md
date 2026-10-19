@@ -1,4 +1,4 @@
-# Informe del orquestador — 19/10 00:56
+# Informe del orquestador — 19/10 01:01
 
 Pausado: no · máx. simultáneas: 4 · pausa por límite hasta: -
 Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas de la gestión (sin % ni ETA); ETA con «~» y rango; «viejo» = dato de hace más de 10 min.
@@ -35,7 +35,7 @@ Reglas de lectura: «total por confirmar» = aún no se midieron todas las salas
 | MacBook Air | DESCONECTADO | libre | - | hace 2 h (viejo) |
 | iMac-Sala (iMac de la sala) | en línea | libre | - | hace 2 min |
 | iMac-VJ1 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 2 min |
-| iMac-VJ2 (iMac 21,5 pulgadas 2017) | en línea | libre | - | hace 79 s |
+| iMac-VJ2 (iMac 21,5 pulgadas 2017) | DESCONECTADO | libre | - | hace 3 min |
 
 ## Incidencias abiertas
 
