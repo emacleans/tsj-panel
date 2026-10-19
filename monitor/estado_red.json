@@ -1,5 +1,5 @@
 {
- "ts": 1792409668,
+ "ts": 1792409981,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792409536,
+   "actualizado_ts": 1792409839,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792409536,
+   "actualizado_ts": 1792409839,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792409574,
+   "actualizado_ts": 1792409844,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792409580,
+   "actualizado_ts": 1792409855,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792409536,
+   "actualizado_ts": 1792409839,
    "viejo": false
   },
   {
@@ -109,7 +109,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792409573,
+   "actualizado_ts": 1792409819,
    "viejo": false
   },
   {
@@ -124,7 +124,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792409573,
+   "actualizado_ts": 1792409819,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792409581,
+   "actualizado_ts": 1792409833,
    "viejo": false
   },
   {
@@ -154,7 +154,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792409573,
+   "actualizado_ts": 1792409819,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792409574,
+   "actualizado_ts": 1792409844,
    "viejo": false
   },
   {
@@ -184,7 +184,7 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792409573,
+   "actualizado_ts": 1792409819,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792409580,
+   "actualizado_ts": 1792409855,
    "viejo": false
   },
   {
@@ -214,7 +214,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792409573,
+   "actualizado_ts": 1792409819,
    "viejo": false
   },
   {
@@ -229,7 +229,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792409573,
+   "actualizado_ts": 1792409819,
    "viejo": false
   },
   {
@@ -244,7 +244,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792409573,
+   "actualizado_ts": 1792409819,
    "viejo": false
   },
   {
@@ -259,24 +259,12 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792409580,
+   "actualizado_ts": 1792409855,
    "viejo": false
   }
  ],
  "incidencias_abiertas": [],
  "acciones": [
-  {
-   "ts": 1792322276,
-   "texto": "director: gaceta:ipe02 lanza «c_res» (gaceta_iniciar {'seccion': 'resoluciones', 'modo': 'completo'})"
-  },
-  {
-   "ts": 1792322344,
-   "texto": "director: tcp:imac-vj1 lanza «pautas_imac-vj1» (tcp_aplicar_pautas {})"
-  },
-  {
-   "ts": 1792322551,
-   "texto": "director: gaceta:ipe02 terminó «c_res»"
-  },
   {
    "ts": 1792322616,
    "texto": "director: tcp:imac-vj1 terminó «pautas_imac-vj1»"
@@ -384,13 +372,25 @@
   {
    "ts": 1792393828,
    "texto": "director: gaceta:ipe01 terminó «r_ley»"
+  },
+  {
+   "ts": 1792409861,
+   "texto": "orden de Claude 2026-10-19-tcp-pautas-doc-ipe01: tcp_aplicar_pautas  {} en IPE01 (Mac Mini oficina)"
+  },
+  {
+   "ts": 1792409863,
+   "texto": "orden de Claude 2026-10-19-tcp-pautas-doc-imac-vj1: tcp_aplicar_pautas  {} en iMac-VJ1 (iMac 21,5 pulgadas 2017)"
+  },
+  {
+   "ts": 1792409864,
+   "texto": "orden de Claude 2026-10-19-tcp-pautas-doc-imac-vj2: tcp_aplicar_pautas  {} en iMac-VJ2 (iMac 21,5 pulgadas 2017)"
   }
  ],
  "equipos": [
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792409574,
+   "ts": 1792409844,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -1073,7 +1073,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792409572,
+   "ts": 1792409834,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -1759,7 +1759,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792409516,
+   "ts": 1792409843,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -2146,7 +2146,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 21,
-     "ts": "2026-10-19T07:22:06",
+     "ts": "2026-10-19T07:32:17",
      "vinculados_total": 0
     }
    },
@@ -2410,7 +2410,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792409573,
+   "ts": 1792409819,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -2893,7 +2893,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 14,
-     "ts": "2026-10-19T07:21:42",
+     "ts": "2026-10-19T07:31:44",
      "vinculados_total": 0
     }
    },
@@ -3231,7 +3231,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792409536,
+   "ts": 1792409839,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -3742,9 +3742,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792383271,
     "log": [
-     "2026-10-18 17:19:45  Orden «aplicar pautas» enviada a macbook-air-de-enrique",
-     "2026-10-19 00:14:32  Pautas de revisión: 18 documentos resueltos, 0 revertidos",
-     "2026-10-19 00:15:21  Mesa de revisión activa en el puerto 8751"
+     "2026-10-19 11:36:55  Pauta nueva 20261019113655-f143: aceptar · Encabezado y clave · Doc",
+     "2026-10-19 11:36:55  Pauta nueva 20261019113655-a34a: aceptar · Encabezado y clave · Doc",
+     "2026-10-19 11:36:55  Pauta nueva 20261019113655-b492: aceptar · Encabezado y clave · Doc"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:40:58",
@@ -4190,7 +4190,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792403162,
+   "ts": 1792409665,
    "version": "377027e",
    "procesos": [],
    "orden": {
@@ -4547,9 +4547,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-19 03:09:14  Mesa de revisión activa en el puerto 8751",
      "2026-10-19 04:29:29  red: TimeoutError: The read operation timed out",
-     "2026-10-19 05:28:30  pautas: ConnectionResetError: [Errno 54] Connection reset by peer"
+     "2026-10-19 05:28:30  pautas: ConnectionResetError: [Errno 54] Connection reset by peer",
+     "2026-10-19 06:29:21  pautas: ConnectionResetError: [Errno 54] Connection reset by peer"
     ],
     "conciliacion": null,
     "formulario": {
@@ -4826,7 +4826,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792409580,
+   "ts": 1792409855,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -5217,7 +5217,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-19T07:23:48",
+     "ts": "2026-10-19T07:33:55",
      "vinculados_total": 0
     }
    },
@@ -5481,7 +5481,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792409581,
+   "ts": 1792409833,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -5860,7 +5860,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-19T07:23:26",
+     "ts": "2026-10-19T07:33:40",
      "vinculados_total": 0
     }
    },
