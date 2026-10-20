@@ -1,5 +1,5 @@
 {
- "ts": 1792463814,
+ "ts": 1792464175,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792463769,
+   "actualizado_ts": 1792463981,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792463769,
+   "actualizado_ts": 1792463981,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792463544,
+   "actualizado_ts": 1792464038,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792463667,
+   "actualizado_ts": 1792464114,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792463769,
+   "actualizado_ts": 1792463981,
    "viejo": false
   },
   {
@@ -109,8 +109,8 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792463034,
-   "viejo": true
+   "actualizado_ts": 1792463918,
+   "viejo": false
   },
   {
    "gestion": "2010",
@@ -124,8 +124,8 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792463034,
-   "viejo": true
+   "actualizado_ts": 1792463918,
+   "viejo": false
   },
   {
    "gestion": "2009",
@@ -139,8 +139,8 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792460837,
-   "viejo": true
+   "actualizado_ts": 1792464079,
+   "viejo": false
   },
   {
    "gestion": "2008",
@@ -154,8 +154,8 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792463034,
-   "viejo": true
+   "actualizado_ts": 1792463918,
+   "viejo": false
   },
   {
    "gestion": "2007",
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792463544,
+   "actualizado_ts": 1792464038,
    "viejo": false
   },
   {
@@ -184,8 +184,8 @@
    "pct": 100.0,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792463034,
-   "viejo": true
+   "actualizado_ts": 1792463918,
+   "viejo": false
   },
   {
    "gestion": "2005",
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792463667,
+   "actualizado_ts": 1792464114,
    "viejo": false
   },
   {
@@ -214,8 +214,8 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792463034,
-   "viejo": true
+   "actualizado_ts": 1792463918,
+   "viejo": false
   },
   {
    "gestion": "2003",
@@ -229,8 +229,8 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792463034,
-   "viejo": true
+   "actualizado_ts": 1792463918,
+   "viejo": false
   },
   {
    "gestion": "2002",
@@ -244,8 +244,8 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "IPE01 (Mac Mini oficina)",
-   "actualizado_ts": 1792463034,
-   "viejo": true
+   "actualizado_ts": 1792463918,
+   "viejo": false
   },
   {
    "gestion": "2001",
@@ -259,7 +259,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792463667,
+   "actualizado_ts": 1792464114,
    "viejo": false
   }
  ],
@@ -390,7 +390,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792463544,
+   "ts": 1792464038,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -766,9 +766,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-19 22:17:56  pautas: TimeoutError: _ssl.c:993: The handshake operation timed out",
-     "2026-10-19 22:18:35  red: TimeoutError: The read operation timed out",
-     "2026-10-19 22:27:52  pautas: RemoteDisconnected: Remote end closed connection without response"
+     "2026-10-19 22:27:52  pautas: RemoteDisconnected: Remote end closed connection without response",
+     "2026-10-19 22:34:25  red: TimeoutError: timed out",
+     "2026-10-19 22:38:15  pautas: TimeoutError: _ssl.c:993: The handshake operation timed out"
     ],
     "conciliacion": null,
     "formulario": {
@@ -1073,7 +1073,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792463769,
+   "ts": 1792464052,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -1759,7 +1759,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792463685,
+   "ts": 1792464116,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -2410,7 +2410,7 @@
   {
    "id": "ipe01",
    "nombre": "IPE01 (Mac Mini oficina)",
-   "ts": 1792463034,
+   "ts": 1792463918,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -2861,9 +2861,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792410482,
     "log": [
-     "2026-10-19 22:07:17  encadenar: no pude leer a los otros equipos (IncompleteRead); espero",
-     "2026-10-19 22:16:39  encadenar: no pude leer a los otros equipos (SSLEOFError); espero",
-     "2026-10-19 22:22:18  encadenar: no pude leer a los otros equipos (TimeoutError); espero"
+     "2026-10-19 22:34:06  encadenar: no pude leer a los otros equipos (SSLEOFError); espero",
+     "2026-10-19 22:34:38  red: TimeoutError: The read operation timed out",
+     "2026-10-19 22:38:38  encadenar: no pude leer a los otros equipos (TimeoutError); espero"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:03:58",
@@ -2893,7 +2893,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 14,
-     "ts": "2026-10-19T22:15:32",
+     "ts": "2026-10-19T22:36:51",
      "vinculados_total": 0
     }
    },
@@ -3231,7 +3231,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792463769,
+   "ts": 1792463981,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -4826,7 +4826,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792463667,
+   "ts": 1792464114,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -5481,7 +5481,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792460837,
+   "ts": 1792464079,
    "version": "617db3e",
    "procesos": [],
    "orden": {
@@ -5860,7 +5860,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-19T20:47:53",
+     "ts": "2026-10-19T22:41:19",
      "vinculados_total": 0
     }
    },
