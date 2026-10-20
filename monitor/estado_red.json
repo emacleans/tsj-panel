@@ -1,5 +1,5 @@
 {
- "ts": 1792534507,
+ "ts": 1792535189,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792534411,
+   "actualizado_ts": 1792534748,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792534411,
+   "actualizado_ts": 1792534748,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792534350,
+   "actualizado_ts": 1792535149,
    "viejo": false
   },
   {
@@ -79,8 +79,8 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792534326,
-   "viejo": false
+   "actualizado_ts": 1792534581,
+   "viejo": true
   },
   {
    "gestion": "2012",
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792534411,
+   "actualizado_ts": 1792534748,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792534477,
+   "actualizado_ts": 1792534934,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792534350,
+   "actualizado_ts": 1792535149,
    "viejo": false
   },
   {
@@ -199,8 +199,8 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792534326,
-   "viejo": false
+   "actualizado_ts": 1792534581,
+   "viejo": true
   },
   {
    "gestion": "2004",
@@ -259,8 +259,8 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792534326,
-   "viejo": false
+   "actualizado_ts": 1792534581,
+   "viejo": true
   }
  ],
  "incidencias_abiertas": [],
@@ -390,7 +390,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792534350,
+   "ts": 1792535149,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -766,9 +766,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 00:40:51  red: TimeoutError: The read operation timed out",
      "2026-10-20 02:42:32  red: RemoteDisconnected: Remote end closed connection without response",
-     "2026-10-20 06:42:56  red: TimeoutError: The read operation timed out"
+     "2026-10-20 06:42:56  red: TimeoutError: The read operation timed out",
+     "2026-10-20 18:22:30  red: TimeoutError: The read operation timed out"
     ],
     "conciliacion": null,
     "formulario": {
@@ -781,7 +781,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T18:09:29",
+     "ts": "2026-10-20T18:20:04",
      "vinculados_total": 0
     }
    },
@@ -1073,7 +1073,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792534381,
+   "ts": 1792535162,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -1428,9 +1428,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792410473,
     "log": [
-     "2026-10-20 01:12:01  red: TimeoutError: timed out",
-     "2026-10-20 05:00:04  pautas: TimeoutError: timed out",
-     "2026-10-20 05:00:29  red: TimeoutError: timed out"
+     "2026-10-20 05:00:29  red: TimeoutError: timed out",
+     "2026-10-20 18:19:03  red: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-20 18:22:07  red: TimeoutError: timed out"
     ],
     "conciliacion": {
      "ts": "2026-10-18T07:13:26",
@@ -1460,7 +1460,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 6,
-     "ts": "2026-10-20T18:11:15",
+     "ts": "2026-10-20T18:21:27",
      "vinculados_total": 0
     }
    },
@@ -1759,7 +1759,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792534448,
+   "ts": 1792535162,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -2114,9 +2114,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792410474,
     "log": [
-     "2026-10-20 05:00:35  red: TimeoutError: timed out",
-     "2026-10-20 06:44:13  pautas: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)",
-     "2026-10-20 09:22:31  red: RemoteDisconnected: Remote end closed connection without response"
+     "2026-10-20 09:22:31  red: RemoteDisconnected: Remote end closed connection without response",
+     "2026-10-20 18:21:11  red: TimeoutError: timed out",
+     "2026-10-20 18:23:52  red: TimeoutError: The read operation timed out"
     ],
     "conciliacion": {
      "ts": "2026-10-18T03:17:49",
@@ -2146,7 +2146,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 21,
-     "ts": "2026-10-20T18:03:49",
+     "ts": "2026-10-20T18:25:31",
      "vinculados_total": 0
     }
    },
@@ -3231,7 +3231,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792534411,
+   "ts": 1792534748,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -4190,7 +4190,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792532811,
+   "ts": 1792534508,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -4547,9 +4547,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 14:30:02  red: TimeoutError: [Errno 60] Operation timed out",
      "2026-10-20 15:39:39  pautas: gaierror: [Errno 8] nodename nor servname provided, or not known",
-     "2026-10-20 15:39:40  red: gaierror: [Errno 8] nodename nor servname provided, or not known"
+     "2026-10-20 15:39:40  red: gaierror: [Errno 8] nodename nor servname provided, or not known",
+     "2026-10-20 18:15:04  pautas: ConnectionResetError: [Errno 54] Connection reset by peer"
     ],
     "conciliacion": null,
     "formulario": {
@@ -4826,7 +4826,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792534326,
+   "ts": 1792534581,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -5481,7 +5481,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792534477,
+   "ts": 1792534934,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -5845,9 +5845,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 10:34:30  pautas: gaierror: [Errno 8] nodename nor servname provided, or not known",
      "2026-10-20 12:28:06  pautas: gaierror: [Errno 8] nodename nor servname provided, or not known",
-     "2026-10-20 13:27:34  pautas: gaierror: [Errno 8] nodename nor servname provided, or not known"
+     "2026-10-20 13:27:34  pautas: gaierror: [Errno 8] nodename nor servname provided, or not known",
+     "2026-10-20 18:19:01  red: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)"
     ],
     "conciliacion": null,
     "formulario": {
@@ -5860,7 +5860,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T18:10:14",
+     "ts": "2026-10-20T18:20:47",
      "vinculados_total": 0
     }
    },
