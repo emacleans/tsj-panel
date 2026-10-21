@@ -1,5 +1,5 @@
 {
- "ts": 1792547940,
+ "ts": 1792548241,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792547808,
+   "actualizado_ts": 1792548199,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792547808,
+   "actualizado_ts": 1792548199,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792547742,
+   "actualizado_ts": 1792548215,
    "viejo": false
   },
   {
@@ -79,8 +79,8 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792546979,
-   "viejo": true
+   "actualizado_ts": 1792548169,
+   "viejo": false
   },
   {
    "gestion": "2012",
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792547808,
+   "actualizado_ts": 1792548199,
    "viejo": false
   },
   {
@@ -139,8 +139,8 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792546896,
-   "viejo": true
+   "actualizado_ts": 1792548211,
+   "viejo": false
   },
   {
    "gestion": "2008",
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792547742,
+   "actualizado_ts": 1792548215,
    "viejo": false
   },
   {
@@ -199,8 +199,8 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792546979,
-   "viejo": true
+   "actualizado_ts": 1792548169,
+   "viejo": false
   },
   {
    "gestion": "2004",
@@ -259,8 +259,8 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792546979,
-   "viejo": true
+   "actualizado_ts": 1792548169,
+   "viejo": false
   }
  ],
  "incidencias_abiertas": [],
@@ -390,7 +390,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792547742,
+   "ts": 1792548215,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -781,7 +781,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T21:50:37",
+     "ts": "2026-10-20T22:00:46",
      "vinculados_total": 0
     }
    },
@@ -3231,7 +3231,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792547808,
+   "ts": 1792548199,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -3742,9 +3742,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792383271,
     "log": [
-     "2026-10-20 21:29:45  red: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)",
      "2026-10-20 21:45:08  encadenar: no pude leer a los otros equipos (TimeoutError); espero",
-     "2026-10-20 21:52:46  red: TimeoutError: The read operation timed out"
+     "2026-10-20 21:52:46  red: TimeoutError: The read operation timed out",
+     "2026-10-20 21:56:44  red: TimeoutError: timed out"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:40:58",
@@ -4826,7 +4826,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792546979,
+   "ts": 1792548169,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -5202,9 +5202,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 21:24:08  red: TimeoutError: The read operation timed out",
-     "2026-10-20 21:32:15  red: TimeoutError: The read operation timed out",
-     "2026-10-20 21:40:27  red: TimeoutError: The read operation timed out"
+     "2026-10-20 21:48:50  pautas: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-20 21:53:31  red: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-20 21:57:07  red: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)"
     ],
     "conciliacion": null,
     "formulario": {
@@ -5217,7 +5217,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T21:37:10",
+     "ts": "2026-10-20T21:58:56",
      "vinculados_total": 0
     }
    },
@@ -5481,7 +5481,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792546896,
+   "ts": 1792548211,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -5845,9 +5845,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 21:33:34  red: TimeoutError: _ssl.c:993: The handshake operation timed out",
-     "2026-10-20 21:39:26  red: TimeoutError: timed out",
-     "2026-10-20 21:40:54  pautas: TimeoutError: _ssl.c:993: The handshake operation timed out"
+     "2026-10-20 21:40:54  pautas: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-20 21:48:33  red: TimeoutError: The read operation timed out",
+     "2026-10-20 21:51:01  pautas: TimeoutError: timed out"
     ],
     "conciliacion": null,
     "formulario": {
@@ -5860,7 +5860,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T21:30:14",
+     "ts": "2026-10-20T22:00:46",
      "vinculados_total": 0
     }
    },
