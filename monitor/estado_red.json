@@ -1,5 +1,5 @@
 {
- "ts": 1792549167,
+ "ts": 1792549474,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,7 +34,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792549032,
+   "actualizado_ts": 1792549321,
    "viejo": false
   },
   {
@@ -49,7 +49,7 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792549032,
+   "actualizado_ts": 1792549321,
    "viejo": false
   },
   {
@@ -64,7 +64,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792549075,
+   "actualizado_ts": 1792549326,
    "viejo": false
   },
   {
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792549015,
+   "actualizado_ts": 1792549339,
    "viejo": false
   },
   {
@@ -94,7 +94,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792549032,
+   "actualizado_ts": 1792549321,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792549044,
+   "actualizado_ts": 1792549349,
    "viejo": false
   },
   {
@@ -169,7 +169,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792549075,
+   "actualizado_ts": 1792549326,
    "viejo": false
   },
   {
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792549015,
+   "actualizado_ts": 1792549339,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792549015,
+   "actualizado_ts": 1792549339,
    "viejo": false
   }
  ],
@@ -390,7 +390,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792549075,
+   "ts": 1792549326,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -3231,7 +3231,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792549032,
+   "ts": 1792549321,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -4190,7 +4190,7 @@
   {
    "id": "macbook-air-de-enrique",
    "nombre": "MacBook Air",
-   "ts": 1792534508,
+   "ts": 1792549154,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -4547,9 +4547,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 15:39:39  pautas: gaierror: [Errno 8] nodename nor servname provided, or not known",
-     "2026-10-20 15:39:40  red: gaierror: [Errno 8] nodename nor servname provided, or not known",
-     "2026-10-20 18:15:04  pautas: ConnectionResetError: [Errno 54] Connection reset by peer"
+     "2026-10-20 19:16:25  red: TimeoutError: _ssl.c:1064: The handshake operation timed out",
+     "2026-10-20 20:17:03  pautas: TimeoutError: [Errno 60] Operation timed out",
+     "2026-10-20 20:34:35  red: TimeoutError: [Errno 60] Operation timed out"
     ],
     "conciliacion": null,
     "formulario": {
@@ -4562,7 +4562,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T17:46:51",
+     "ts": "2026-10-20T22:19:14",
      "vinculados_total": 0
     }
    },
@@ -4826,7 +4826,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792549015,
+   "ts": 1792549339,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -5217,7 +5217,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T22:09:05",
+     "ts": "2026-10-20T22:19:13",
      "vinculados_total": 0
     }
    },
@@ -5481,7 +5481,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792549044,
+   "ts": 1792549349,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -5860,7 +5860,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T22:10:49",
+     "ts": "2026-10-20T22:20:51",
      "vinculados_total": 0
     }
    },
