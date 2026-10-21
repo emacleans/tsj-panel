@@ -1,5 +1,5 @@
 {
- "ts": 1792547628,
+ "ts": 1792547940,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -34,8 +34,8 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792546854,
-   "viejo": true
+   "actualizado_ts": 1792547808,
+   "viejo": false
   },
   {
    "gestion": "2014",
@@ -49,8 +49,8 @@
    "pct": 99.7,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792546854,
-   "viejo": true
+   "actualizado_ts": 1792547808,
+   "viejo": false
   },
   {
    "gestion": "2015",
@@ -64,8 +64,8 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792546943,
-   "viejo": true
+   "actualizado_ts": 1792547742,
+   "viejo": false
   },
   {
    "gestion": "2016",
@@ -94,8 +94,8 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "IPE02 (Mac Mini casa)",
-   "actualizado_ts": 1792546854,
-   "viejo": true
+   "actualizado_ts": 1792547808,
+   "viejo": false
   },
   {
    "gestion": "2011",
@@ -169,8 +169,8 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792546943,
-   "viejo": true
+   "actualizado_ts": 1792547742,
+   "viejo": false
   },
   {
    "gestion": "2006",
@@ -390,7 +390,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792546943,
+   "ts": 1792547742,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -766,9 +766,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 21:23:58  red: TimeoutError: timed out",
-     "2026-10-20 21:27:09  red: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)",
-     "2026-10-20 21:41:31  red: RemoteDisconnected: Remote end closed connection without response"
+     "2026-10-20 21:47:12  red: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-20 21:48:46  red: TimeoutError: timed out",
+     "2026-10-20 21:52:37  red: TimeoutError: timed out"
     ],
     "conciliacion": null,
     "formulario": {
@@ -781,7 +781,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T21:38:49",
+     "ts": "2026-10-20T21:50:37",
      "vinculados_total": 0
     }
    },
@@ -3231,7 +3231,7 @@
   {
    "id": "ipe02",
    "nombre": "IPE02 (Mac Mini casa)",
-   "ts": 1792546854,
+   "ts": 1792547808,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -3742,9 +3742,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792383271,
     "log": [
-     "2026-10-20 21:26:16  red: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)",
-     "2026-10-20 21:29:31  encadenar: no pude leer a los otros equipos (SSLEOFError); espero",
-     "2026-10-20 21:29:45  red: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)"
+     "2026-10-20 21:29:45  red: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)",
+     "2026-10-20 21:45:08  encadenar: no pude leer a los otros equipos (TimeoutError); espero",
+     "2026-10-20 21:52:46  red: TimeoutError: The read operation timed out"
     ],
     "conciliacion": {
      "ts": "2026-10-18T04:40:58",
@@ -3774,7 +3774,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 11,
-     "ts": "2026-10-20T21:32:26",
+     "ts": "2026-10-20T21:54:25",
      "vinculados_total": 0
     }
    },
