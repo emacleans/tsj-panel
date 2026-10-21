@@ -1,5 +1,5 @@
 {
- "ts": 1792541088,
+ "ts": 1792541455,
  "pausado": false,
  "max_simultaneas": 4,
  "pausa_hasta": 1791076434,
@@ -64,8 +64,8 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792540218,
-   "viejo": true
+   "actualizado_ts": 1792541297,
+   "viejo": false
   },
   {
    "gestion": "2016",
@@ -79,7 +79,7 @@
    "pct": 99.8,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792540694,
+   "actualizado_ts": 1792541400,
    "viejo": false
   },
   {
@@ -139,7 +139,7 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "MM-Sofi (Mac Mini Sofía)",
-   "actualizado_ts": 1792540925,
+   "actualizado_ts": 1792541423,
    "viejo": false
   },
   {
@@ -169,8 +169,8 @@
    "pct": 99.6,
    "eta": null,
    "equipo": "iMac-Sala (iMac de la sala)",
-   "actualizado_ts": 1792540218,
-   "viejo": true
+   "actualizado_ts": 1792541297,
+   "viejo": false
   },
   {
    "gestion": "2006",
@@ -199,7 +199,7 @@
    "pct": 99.9,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792540694,
+   "actualizado_ts": 1792541400,
    "viejo": false
   },
   {
@@ -259,7 +259,7 @@
    "pct": 99.1,
    "eta": null,
    "equipo": "MM-Ali (Mac Mini Alicia)",
-   "actualizado_ts": 1792540694,
+   "actualizado_ts": 1792541400,
    "viejo": false
   }
  ],
@@ -390,7 +390,7 @@
   {
    "id": "imac-sala",
    "nombre": "iMac-Sala (iMac de la sala)",
-   "ts": 1792540218,
+   "ts": 1792541297,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -766,9 +766,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 19:25:51  red: TimeoutError: timed out",
-     "2026-10-20 19:34:10  pautas: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)",
-     "2026-10-20 19:42:29  red: TimeoutError: timed out"
+     "2026-10-20 19:56:13  red: RemoteDisconnected: Remote end closed connection without response",
+     "2026-10-20 20:04:32  red: TimeoutError: timed out",
+     "2026-10-20 20:06:31  pautas: TimeoutError: _ssl.c:993: The handshake operation timed out"
     ],
     "conciliacion": null,
     "formulario": {
@@ -781,7 +781,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 0,
-     "ts": "2026-10-20T19:44:27",
+     "ts": "2026-10-20T19:55:06",
      "vinculados_total": 0
     }
    },
@@ -1073,7 +1073,7 @@
   {
    "id": "imac-vj1",
    "nombre": "iMac-VJ1 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792541044,
+   "ts": 1792541294,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -1460,7 +1460,7 @@
      "razones": {},
      "resueltos": 0,
      "por_vincular_total": 6,
-     "ts": "2026-10-20T19:54:01",
+     "ts": "2026-10-20T20:04:26",
      "vinculados_total": 0
     }
    },
@@ -1759,7 +1759,7 @@
   {
    "id": "imac-vj2",
    "nombre": "iMac-VJ2 (iMac 21,5 pulgadas 2017)",
-   "ts": 1792540812,
+   "ts": 1792541443,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -2114,9 +2114,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": 1792410474,
     "log": [
-     "2026-10-20 19:45:52  red: TimeoutError: The read operation timed out",
      "2026-10-20 19:48:01  red: TimeoutError: The read operation timed out",
-     "2026-10-20 19:59:25  pautas: TimeoutError: _ssl.c:993: The handshake operation timed out"
+     "2026-10-20 19:59:25  pautas: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-20 20:03:50  red: TimeoutError: The read operation timed out"
     ],
     "conciliacion": {
      "ts": "2026-10-18T03:17:49",
@@ -4826,7 +4826,7 @@
   {
    "id": "mm-ali",
    "nombre": "MM-Ali (Mac Mini Alicia)",
-   "ts": 1792540694,
+   "ts": 1792541400,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -5202,9 +5202,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 19:31:31  pautas: RemoteDisconnected: Remote end closed connection without response",
-     "2026-10-20 19:32:37  red: TimeoutError: timed out",
-     "2026-10-20 19:51:45  pautas: TimeoutError: timed out"
+     "2026-10-20 19:51:45  pautas: TimeoutError: timed out",
+     "2026-10-20 20:02:28  pautas: TimeoutError: timed out",
+     "2026-10-20 20:08:15  red: TimeoutError: timed out"
     ],
     "conciliacion": null,
     "formulario": {
@@ -5481,7 +5481,7 @@
   {
    "id": "mm-sofi",
    "nombre": "MM-Sofi (Mac Mini Sofía)",
-   "ts": 1792540925,
+   "ts": 1792541423,
    "version": "95cfd26",
    "procesos": [],
    "orden": {
@@ -5845,9 +5845,9 @@
     "ritmo_min": 0.0,
     "ultimo_ts": null,
     "log": [
-     "2026-10-20 19:47:30  red: TimeoutError: timed out",
-     "2026-10-20 19:49:13  red: TimeoutError: timed out",
-     "2026-10-20 19:56:20  red: TimeoutError: The read operation timed out"
+     "2026-10-20 20:01:42  red: TimeoutError: _ssl.c:993: The handshake operation timed out",
+     "2026-10-20 20:05:29  pautas: TimeoutError: The read operation timed out",
+     "2026-10-20 20:05:44  red: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)"
     ],
     "conciliacion": null,
     "formulario": {
